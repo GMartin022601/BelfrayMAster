@@ -22,5 +22,15 @@ namespace Belfray
             MainWindow main = new MainWindow();
             main.Show();
         }
+
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
+        }
     }
 }

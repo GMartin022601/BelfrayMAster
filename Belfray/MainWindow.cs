@@ -79,5 +79,67 @@ namespace Belfray
         {
             picAdmin.BackColor = Color.Transparent;
         }
+
+        private void picTabDisplay_MouseEnter(object sender, EventArgs e)
+        {
+            picTabDisplay.BackColor = Color.FromArgb(19, 19, 19);
+        }
+
+        private void picTabDisplay_MouseLeave(object sender, EventArgs e)
+        {
+            picTabDisplay.BackColor = Color.Transparent;
+        }
+
+        private void picTabSearch_MouseEnter(object sender, EventArgs e)
+        {
+            picTabSearch.BackColor = Color.FromArgb(19, 19, 19);
+        }
+
+        private void picTabSearch_MouseLeave(object sender, EventArgs e)
+        {
+            picTabSearch.BackColor = Color.Transparent;
+        }
+
+        private void picTabAdd_MouseEnter(object sender, EventArgs e)
+        {
+            picTabAdd.BackColor = Color.FromArgb(19, 19, 19);
+        }
+
+        private void picTabAdd_MouseLeave(object sender, EventArgs e)
+        {
+            picTabAdd.BackColor = Color.Transparent;
+        }
+
+        private void picTabEdit_MouseEnter(object sender, EventArgs e)
+        {
+            picTabEdit.BackColor = Color.FromArgb(19, 19, 19);
+        }
+
+        private void picTabEdit_MouseLeave(object sender, EventArgs e)
+        {
+            picTabEdit.BackColor = Color.Transparent;
+        }
+
+        private void picTabDelete_MouseEnter(object sender, EventArgs e)
+        {
+            picTabDelete.BackColor = Color.FromArgb(19, 19, 19);
+        }
+
+        private void picTabDelete_MouseLeave(object sender, EventArgs e)
+        {
+            picTabDelete.BackColor = Color.Transparent;
+        }
+
+        public void Reset()
+        {
+            pnlWelcome.Visible = false;
+            //pnlRoomBooking.Visible = false;
+        }
+
+        private void picRoomBooking_Click(object sender, EventArgs e)
+        {
+            Reset();
+            //pnlRoomBooking.Visible = true;
+        }
     }
 }

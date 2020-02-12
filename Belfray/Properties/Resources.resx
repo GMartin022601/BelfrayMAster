@@ -118,61 +118,97 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="RoomStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RoomStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DeleteButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DeleteButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UserButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UserButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RoomBookingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RoomBookingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DeleteButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DeleteButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EditButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DisplayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DisplayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="animal-chihuahua-cute-39317" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\animal-chihuahua-cute-39317.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RestStockButt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RestStockButt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HeaderImageTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeaderImageTemplate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HeaderImageTemplate (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HeaderImageTemplate (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TableBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TableBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SearchButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SearchButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DeleteButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SearchButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UserButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoomBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoomBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeaderImageTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeaderImageTemplate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="animal-chihuahua-cute-39317" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\animal-chihuahua-cute-39317.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AdminButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AdminButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RoomBooking1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoomBooking1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RestaurantStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestaurantStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RestStockButt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestStockButt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CleanningSupplies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CleanningSupplies.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoomBookingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoomBookingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableBookingTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableBookingTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoomBooking (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoomBooking (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoomStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoomStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoomStock (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoomStock (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DisplayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DisplayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thumbnail_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thumbnail_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserProfile2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserProfile2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DisplayButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DisplayButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RestaurantButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestaurantButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SearchButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SearchButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableBooking2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableBooking2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdminButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminButton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -155,5 +155,41 @@
   <ItemGroup>
     <None Include="Resources\SearchButton1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumbnail_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RestaurantButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoomBooking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoomBooking1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoomStock %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableBooking2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CleanningSupplies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableBookingTest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoomBooking %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RestaurantStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserProfile2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdminButton2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
