@@ -12,6 +12,10 @@ namespace Belfray
 {
     public partial class MainWindow : Form
     {
+        //Determines which menu option has been selected 
+        //(Room Booking = 1, Cleaning Stock = 2, Table Booking = 3, Restaurant Stock = 4, User Profile = 5, Administraion = 6)
+        public int menuSelected = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -132,14 +136,105 @@ namespace Belfray
 
         public void Reset()
         {
-            pnlWelcome.Visible = false;
-            //pnlRoomBooking.Visible = false;
+            //Resets to welcome screen
+            pnlWelcome.Visible = true;
+            pnlRoomBooking.Visible = false;
+
+            picTabDisplay.Visible = false;
+            picTabSearch.Visible = false;
+            picTabAdd.Visible = false;
+            picTabEdit.Visible = false;
+            picTabDelete.Visible = false;
         }
 
         private void picRoomBooking_Click(object sender, EventArgs e)
         {
+            //Set menu option select to Room Booking
+            menuSelected = 1;
+
+            Reset();
+            pnlRoomBooking.Visible = true;
+
+            picTabDisplay.Visible = true;
+            picTabSearch.Visible = true;
+            picTabAdd.Visible = true;
+            picTabEdit.Visible = true;
+            picTabDelete.Visible = true;
+        }
+
+        private void picRoomStock_Click(object sender, EventArgs e)
+        {
+            //Set menu option select to Cleaning Stock
+            menuSelected = 2;
+
             Reset();
             //pnlRoomBooking.Visible = true;
+
+            picTabDisplay.Visible = true;
+            picTabSearch.Visible = true;
+            picTabAdd.Visible = true;
+            picTabEdit.Visible = true;
+            picTabDelete.Visible = true;
+        }
+
+        private void picTableBooking_Click(object sender, EventArgs e)
+        {
+            //Set menu option select to Table Booking
+            menuSelected = 3;
+
+            Reset();
+            //pnlRoomBooking.Visible = true;
+
+            picTabDisplay.Visible = true;
+            picTabSearch.Visible = true;
+            picTabAdd.Visible = true;
+            picTabEdit.Visible = true;
+            picTabDelete.Visible = true;
+        }
+
+        private void picRestaurantStock_Click(object sender, EventArgs e)
+        {
+            //Set menu option select to Restaurant Stock
+            menuSelected = 4;
+
+            Reset();
+            //pnlRoomBooking.Visible = true;
+
+            picTabDisplay.Visible = true;
+            picTabSearch.Visible = true;
+            picTabAdd.Visible = true;
+            picTabEdit.Visible = true;
+            picTabDelete.Visible = true;
+        }
+
+        private void picAccount_Click(object sender, EventArgs e)
+        {
+            //Set menu option select to User Profile
+            menuSelected = 5;
+
+            Reset();
+            //pnlRoomBooking.Visible = true;
+
+            picTabDisplay.Visible = true;
+            picTabSearch.Visible = true;
+            picTabAdd.Visible = true;
+            picTabEdit.Visible = true;
+            picTabDelete.Visible = true;
+        }
+
+        private void picAdmin_Click(object sender, EventArgs e)
+        {
+            //Set menu option select to Administration
+            menuSelected = 6;
+
+            Reset();
+            //pnlRoomBooking.Visible = true;
+
+            picTabDisplay.Visible = true;
+            picTabSearch.Visible = true;
+            picTabAdd.Visible = true;
+            picTabEdit.Visible = true;
+            picTabDelete.Visible = true;
         }
     }
 }
