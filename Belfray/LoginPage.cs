@@ -32,5 +32,10 @@ namespace Belfray
         {
             txtPassword.Text = "";
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
