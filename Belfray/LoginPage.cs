@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Belfray
 {
     public partial class LoginPage : Form
     {
+        SqlDataAdapter daLogin;
+        DataSet dsBelfray = new DataSet();
+        SqlCommandBuilder cmdBLogin;
+        DataRow drLoging;
+        String connStr, sqlLogin;
+
         public LoginPage()
         {
             InitializeComponent();
@@ -19,8 +26,11 @@ namespace Belfray
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.Show();
+            //if()
+            //{
+                MainWindow main = new MainWindow();
+                main.Show();
+            //}            
         }
 
         private void txtUsername_Click(object sender, EventArgs e)
@@ -36,6 +46,16 @@ namespace Belfray
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+
+            //sqlLogin = @"select staffLogin, staffPassword from Staff";
+            //daLogin = new SqlDataAdapter(sqlLogin, connStr);
+            //cmdBLogin = new SqlCommandBuilder(daLogin);
         }
     }
 }
