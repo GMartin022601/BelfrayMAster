@@ -33,11 +33,11 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.picHeader = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picPasswordIcon = new System.Windows.Forms.PictureBox();
+            this.picUsernameIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPasswordIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsernameIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // lblForgotPW
@@ -45,10 +45,9 @@
             this.lblForgotPW.AutoSize = true;
             this.lblForgotPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPW.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblForgotPW.Location = new System.Drawing.Point(822, 523);
-            this.lblForgotPW.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblForgotPW.Location = new System.Drawing.Point(548, 340);
             this.lblForgotPW.Name = "lblForgotPW";
-            this.lblForgotPW.Size = new System.Drawing.Size(156, 22);
+            this.lblForgotPW.Size = new System.Drawing.Size(106, 15);
             this.lblForgotPW.TabIndex = 15;
             this.lblForgotPW.Text = "Forgot Password?";
             this.lblForgotPW.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -58,10 +57,9 @@
             this.btnLogin.BackColor = System.Drawing.SystemColors.Control;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnLogin.Location = new System.Drawing.Point(750, 462);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogin.Location = new System.Drawing.Point(500, 300);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(300, 46);
+            this.btnLogin.Size = new System.Drawing.Size(200, 30);
             this.btnLogin.TabIndex = 14;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -71,23 +69,22 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtPassword.Location = new System.Drawing.Point(705, 400);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPassword.Location = new System.Drawing.Point(470, 260);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(388, 41);
+            this.txtPassword.Size = new System.Drawing.Size(260, 30);
             this.txtPassword.TabIndex = 13;
             this.txtPassword.Text = "Password";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtUsername.Location = new System.Drawing.Point(705, 338);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsername.Location = new System.Drawing.Point(470, 220);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(388, 41);
+            this.txtUsername.Size = new System.Drawing.Size(260, 30);
             this.txtUsername.TabIndex = 12;
             this.txtUsername.Text = "Username";
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -97,58 +94,54 @@
             // 
             this.picHeader.Image = global::Belfray.Properties.Resources.HeaderImageTemplate__1_;
             this.picHeader.Location = new System.Drawing.Point(0, 0);
-            this.picHeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picHeader.Name = "picHeader";
-            this.picHeader.Size = new System.Drawing.Size(1830, 175);
+            this.picHeader.Size = new System.Drawing.Size(1220, 114);
             this.picHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHeader.TabIndex = 0;
             this.picHeader.TabStop = false;
             // 
-            // pictureBox2
+            // picPasswordIcon
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Belfray.Properties.Resources.edit;
-            this.pictureBox2.Location = new System.Drawing.Point(677, 400);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(53, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
+            this.picPasswordIcon.BackColor = System.Drawing.Color.Transparent;
+            this.picPasswordIcon.Image = global::Belfray.Properties.Resources.edit;
+            this.picPasswordIcon.Location = new System.Drawing.Point(429, 260);
+            this.picPasswordIcon.Name = "picPasswordIcon";
+            this.picPasswordIcon.Size = new System.Drawing.Size(35, 30);
+            this.picPasswordIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPasswordIcon.TabIndex = 17;
+            this.picPasswordIcon.TabStop = false;
             // 
-            // pictureBox1
+            // picUsernameIcon
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Belfray.Properties.Resources.edit;
-            this.pictureBox1.Location = new System.Drawing.Point(677, 338);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.picUsernameIcon.BackColor = System.Drawing.Color.Transparent;
+            this.picUsernameIcon.Image = global::Belfray.Properties.Resources.edit;
+            this.picUsernameIcon.Location = new System.Drawing.Point(429, 220);
+            this.picUsernameIcon.Name = "picUsernameIcon";
+            this.picUsernameIcon.Size = new System.Drawing.Size(35, 30);
+            this.picUsernameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUsernameIcon.TabIndex = 18;
+            this.picUsernameIcon.TabStop = false;
             // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1830, 931);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
+            this.ClientSize = new System.Drawing.Size(1220, 605);
+            this.Controls.Add(this.picUsernameIcon);
+            this.Controls.Add(this.picPasswordIcon);
             this.Controls.Add(this.lblForgotPW);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.picHeader);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginPage";
             this.Load += new System.EventHandler(this.LoginPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPasswordIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsernameIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +154,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picPasswordIcon;
+        private System.Windows.Forms.PictureBox picUsernameIcon;
     }
 }

@@ -13,24 +13,65 @@ namespace Belfray
 {
     public partial class LoginPage : Form
     {
+        //SQL Links
         SqlDataAdapter daLogin;
         DataSet dsBelfray = new DataSet();
         SqlCommandBuilder cmdBLogin;
-        DataRow drLoging;
+        DataRow drLogin;
         String connStr, sqlLogin;
+
+        //Global User's Name
+        public static string currUser = "";
 
         public LoginPage()
         {
             InitializeComponent();
         }
 
+        private void GetNumber(int noRows)
+        {
+            drLogin = dsBelfray.Tables["Staff"].Rows[noRows - 1];
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //if()
-            //{
-                MainWindow main = new MainWindow();
-                main.Show();
-            //}            
+            bool userFound = false, passFound = false;
+            int noRows = dsBelfray.Tables["Staff"].Rows.Count;
+
+            foreach(DataRow drUser in dsBelfray.Tables["Staff"].Rows)
+            {
+                string login = drUser["staffLogin"].ToString();
+                string password = drUser["staffPassword"].ToString();
+                if (txtUsername.Text.ToString().Equals(login))
+                {
+                    userFound = true;
+
+                    if(txtPassword.Text.ToString().Equals(password))
+                    {
+                        passFound = true;
+                        currUser = drUser["staffFName"].ToString() + " " + drUser["staffLName"].ToString();
+                    }
+
+                    break;
+                }
+            }
+
+            if (userFound)
+            {
+                if (passFound)
+                {
+                    MainWindow main = new MainWindow();
+                    main.Show();                    
+                }
+                else
+                {
+                    MessageBox.Show("Password incorrect, please try again!", "Access Denied");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Username does not exist, please try again!", "Access Denied");
+            }
         }
 
         private void txtUsername_Click(object sender, EventArgs e)
@@ -41,21 +82,26 @@ namespace Belfray
         private void txtPassword_Click(object sender, EventArgs e)
         {
             txtPassword.Text = "";
+            txtPassword.PasswordChar = '*';
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
+        private void txtPassword_Enter(object sender, EventArgs e)
         {
-
+            txtPassword.Text = "";
+            txtPassword.PasswordChar = '*';
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
-            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
-            //sqlLogin = @"select staffLogin, staffPassword from Staff";
-            //daLogin = new SqlDataAdapter(sqlLogin, connStr);
-            //cmdBLogin = new SqlCommandBuilder(daLogin);
+            sqlLogin = @"select StaffID, staffFName, staffLName, staffLogin, staffPassword, accTypeID from Staff";
+            daLogin = new SqlDataAdapter(sqlLogin, connStr);
+            cmdBLogin = new SqlCommandBuilder(daLogin);
+
+            daLogin.FillSchema(dsBelfray, SchemaType.Source, "Staff");
+            daLogin.Fill(dsBelfray, "Staff");
         }
     }
 }

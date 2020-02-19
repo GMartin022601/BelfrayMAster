@@ -36,19 +36,22 @@
             this.picRoomStock = new System.Windows.Forms.PictureBox();
             this.picRoomBooking = new System.Windows.Forms.PictureBox();
             this.pnlTabControl = new System.Windows.Forms.Panel();
+            this.picLogOut = new System.Windows.Forms.PictureBox();
+            this.lblNameUser = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.picTabDelete = new System.Windows.Forms.PictureBox();
             this.picTabEdit = new System.Windows.Forms.PictureBox();
             this.picTabDisplay = new System.Windows.Forms.PictureBox();
             this.picTabSearch = new System.Windows.Forms.PictureBox();
             this.picTabAdd = new System.Windows.Forms.PictureBox();
             this.pnlWelcome = new System.Windows.Forms.Panel();
-            this.picHeader = new System.Windows.Forms.PictureBox();
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlRoomBooking = new System.Windows.Forms.Panel();
-            this.dgvRoomBooking = new System.Windows.Forms.DataGridView();
-            this.pnlRoomPics = new System.Windows.Forms.Panel();
-            this.pnlBookingDetails = new System.Windows.Forms.Panel();
             this.pnlCustomerDetails = new System.Windows.Forms.Panel();
+            this.pnlBookingDetails = new System.Windows.Forms.Panel();
+            this.pnlRoomPics = new System.Windows.Forms.Panel();
+            this.dgvRoomBooking = new System.Windows.Forms.DataGridView();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.picHeader = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
@@ -57,15 +60,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).BeginInit();
             this.pnlTabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).BeginInit();
             this.pnlWelcome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
             this.pnlRoomBooking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomBooking)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -76,19 +80,17 @@
             this.pnlMenu.Controls.Add(this.picTableBooking);
             this.pnlMenu.Controls.Add(this.picRoomStock);
             this.pnlMenu.Controls.Add(this.picRoomBooking);
-            this.pnlMenu.Location = new System.Drawing.Point(0, 171);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 111);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(1830, 123);
+            this.pnlMenu.Size = new System.Drawing.Size(1220, 80);
             this.pnlMenu.TabIndex = 2;
             // 
             // picAdmin
             // 
             this.picAdmin.Image = global::Belfray.Properties.Resources.AdminButton2;
-            this.picAdmin.Location = new System.Drawing.Point(1534, 15);
-            this.picAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picAdmin.Location = new System.Drawing.Point(1023, 10);
             this.picAdmin.Name = "picAdmin";
-            this.picAdmin.Size = new System.Drawing.Size(184, 92);
+            this.picAdmin.Size = new System.Drawing.Size(123, 60);
             this.picAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAdmin.TabIndex = 11;
             this.picAdmin.TabStop = false;
@@ -99,10 +101,9 @@
             // picAccount
             // 
             this.picAccount.Image = global::Belfray.Properties.Resources.UserProfile2;
-            this.picAccount.Location = new System.Drawing.Point(1248, 15);
-            this.picAccount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picAccount.Location = new System.Drawing.Point(832, 10);
             this.picAccount.Name = "picAccount";
-            this.picAccount.Size = new System.Drawing.Size(184, 92);
+            this.picAccount.Size = new System.Drawing.Size(123, 60);
             this.picAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAccount.TabIndex = 10;
             this.picAccount.TabStop = false;
@@ -113,10 +114,9 @@
             // picRestaurantStock
             // 
             this.picRestaurantStock.Image = global::Belfray.Properties.Resources.RestaurantStock;
-            this.picRestaurantStock.Location = new System.Drawing.Point(962, 15);
-            this.picRestaurantStock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picRestaurantStock.Location = new System.Drawing.Point(641, 10);
             this.picRestaurantStock.Name = "picRestaurantStock";
-            this.picRestaurantStock.Size = new System.Drawing.Size(184, 92);
+            this.picRestaurantStock.Size = new System.Drawing.Size(123, 60);
             this.picRestaurantStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRestaurantStock.TabIndex = 9;
             this.picRestaurantStock.TabStop = false;
@@ -127,10 +127,9 @@
             // picTableBooking
             // 
             this.picTableBooking.Image = global::Belfray.Properties.Resources.TableBookingTest;
-            this.picTableBooking.Location = new System.Drawing.Point(675, 15);
-            this.picTableBooking.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picTableBooking.Location = new System.Drawing.Point(450, 10);
             this.picTableBooking.Name = "picTableBooking";
-            this.picTableBooking.Size = new System.Drawing.Size(184, 92);
+            this.picTableBooking.Size = new System.Drawing.Size(123, 60);
             this.picTableBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTableBooking.TabIndex = 8;
             this.picTableBooking.TabStop = false;
@@ -141,10 +140,9 @@
             // picRoomStock
             // 
             this.picRoomStock.Image = global::Belfray.Properties.Resources.CleanningSupplies;
-            this.picRoomStock.Location = new System.Drawing.Point(388, 15);
-            this.picRoomStock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picRoomStock.Location = new System.Drawing.Point(259, 10);
             this.picRoomStock.Name = "picRoomStock";
-            this.picRoomStock.Size = new System.Drawing.Size(184, 92);
+            this.picRoomStock.Size = new System.Drawing.Size(123, 60);
             this.picRoomStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRoomStock.TabIndex = 7;
             this.picRoomStock.TabStop = false;
@@ -155,10 +153,9 @@
             // picRoomBooking
             // 
             this.picRoomBooking.Image = global::Belfray.Properties.Resources.RoomBooking__1_;
-            this.picRoomBooking.Location = new System.Drawing.Point(102, 15);
-            this.picRoomBooking.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picRoomBooking.Location = new System.Drawing.Point(68, 10);
             this.picRoomBooking.Name = "picRoomBooking";
-            this.picRoomBooking.Size = new System.Drawing.Size(184, 92);
+            this.picRoomBooking.Size = new System.Drawing.Size(123, 60);
             this.picRoomBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRoomBooking.TabIndex = 6;
             this.picRoomBooking.TabStop = false;
@@ -168,24 +165,61 @@
             // 
             // pnlTabControl
             // 
+            this.pnlTabControl.BackColor = System.Drawing.Color.Black;
+            this.pnlTabControl.Controls.Add(this.picLogOut);
+            this.pnlTabControl.Controls.Add(this.lblNameUser);
+            this.pnlTabControl.Controls.Add(this.lblUser);
             this.pnlTabControl.Controls.Add(this.picTabDelete);
             this.pnlTabControl.Controls.Add(this.picTabEdit);
             this.pnlTabControl.Controls.Add(this.picTabDisplay);
             this.pnlTabControl.Controls.Add(this.picTabSearch);
             this.pnlTabControl.Controls.Add(this.picTabAdd);
-            this.pnlTabControl.Location = new System.Drawing.Point(0, 820);
-            this.pnlTabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlTabControl.Location = new System.Drawing.Point(0, 533);
             this.pnlTabControl.Name = "pnlTabControl";
-            this.pnlTabControl.Size = new System.Drawing.Size(1830, 114);
+            this.pnlTabControl.Size = new System.Drawing.Size(1220, 74);
             this.pnlTabControl.TabIndex = 4;
+            // 
+            // picLogOut
+            // 
+            this.picLogOut.Image = global::Belfray.Properties.Resources.DeleteButton1;
+            this.picLogOut.Location = new System.Drawing.Point(1094, 9);
+            this.picLogOut.Name = "picLogOut";
+            this.picLogOut.Size = new System.Drawing.Size(123, 60);
+            this.picLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogOut.TabIndex = 19;
+            this.picLogOut.TabStop = false;
+            this.picLogOut.Visible = false;
+            // 
+            // lblNameUser
+            // 
+            this.lblNameUser.AutoSize = true;
+            this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameUser.ForeColor = System.Drawing.Color.White;
+            this.lblNameUser.Location = new System.Drawing.Point(12, 47);
+            this.lblNameUser.Name = "lblNameUser";
+            this.lblNameUser.Size = new System.Drawing.Size(45, 16);
+            this.lblNameUser.TabIndex = 18;
+            this.lblNameUser.Text = "User:";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.White;
+            this.lblUser.Location = new System.Drawing.Point(63, 47);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(13, 16);
+            this.lblUser.TabIndex = 17;
+            this.lblUser.Text = "-";
             // 
             // picTabDelete
             // 
             this.picTabDelete.Image = global::Belfray.Properties.Resources.DeleteButton1;
-            this.picTabDelete.Location = new System.Drawing.Point(1209, 14);
-            this.picTabDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picTabDelete.Location = new System.Drawing.Point(806, 9);
             this.picTabDelete.Name = "picTabDelete";
-            this.picTabDelete.Size = new System.Drawing.Size(184, 92);
+            this.picTabDelete.Size = new System.Drawing.Size(123, 60);
             this.picTabDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTabDelete.TabIndex = 16;
             this.picTabDelete.TabStop = false;
@@ -196,10 +230,9 @@
             // picTabEdit
             // 
             this.picTabEdit.Image = global::Belfray.Properties.Resources.EditButton1;
-            this.picTabEdit.Location = new System.Drawing.Point(1016, 14);
-            this.picTabEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picTabEdit.Location = new System.Drawing.Point(677, 9);
             this.picTabEdit.Name = "picTabEdit";
-            this.picTabEdit.Size = new System.Drawing.Size(184, 92);
+            this.picTabEdit.Size = new System.Drawing.Size(123, 60);
             this.picTabEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTabEdit.TabIndex = 15;
             this.picTabEdit.TabStop = false;
@@ -210,10 +243,9 @@
             // picTabDisplay
             // 
             this.picTabDisplay.Image = global::Belfray.Properties.Resources.DisplayButton1;
-            this.picTabDisplay.Location = new System.Drawing.Point(435, 14);
-            this.picTabDisplay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picTabDisplay.Location = new System.Drawing.Point(290, 9);
             this.picTabDisplay.Name = "picTabDisplay";
-            this.picTabDisplay.Size = new System.Drawing.Size(184, 92);
+            this.picTabDisplay.Size = new System.Drawing.Size(123, 60);
             this.picTabDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTabDisplay.TabIndex = 14;
             this.picTabDisplay.TabStop = false;
@@ -224,10 +256,9 @@
             // picTabSearch
             // 
             this.picTabSearch.Image = global::Belfray.Properties.Resources.SearchButton1;
-            this.picTabSearch.Location = new System.Drawing.Point(628, 14);
-            this.picTabSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picTabSearch.Location = new System.Drawing.Point(419, 9);
             this.picTabSearch.Name = "picTabSearch";
-            this.picTabSearch.Size = new System.Drawing.Size(184, 92);
+            this.picTabSearch.Size = new System.Drawing.Size(123, 60);
             this.picTabSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTabSearch.TabIndex = 13;
             this.picTabSearch.TabStop = false;
@@ -238,10 +269,9 @@
             // picTabAdd
             // 
             this.picTabAdd.Image = global::Belfray.Properties.Resources.AddButton1;
-            this.picTabAdd.Location = new System.Drawing.Point(822, 14);
-            this.picTabAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picTabAdd.Location = new System.Drawing.Point(548, 9);
             this.picTabAdd.Name = "picTabAdd";
-            this.picTabAdd.Size = new System.Drawing.Size(184, 92);
+            this.picTabAdd.Size = new System.Drawing.Size(123, 60);
             this.picTabAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTabAdd.TabIndex = 12;
             this.picTabAdd.TabStop = false;
@@ -253,33 +283,10 @@
             // 
             this.pnlWelcome.Controls.Add(this.pnlRoomBooking);
             this.pnlWelcome.Controls.Add(this.lblWelcome);
-            this.pnlWelcome.Location = new System.Drawing.Point(0, 288);
-            this.pnlWelcome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlWelcome.Location = new System.Drawing.Point(0, 187);
             this.pnlWelcome.Name = "pnlWelcome";
-            this.pnlWelcome.Size = new System.Drawing.Size(1830, 537);
+            this.pnlWelcome.Size = new System.Drawing.Size(1220, 349);
             this.pnlWelcome.TabIndex = 5;
-            // 
-            // picHeader
-            // 
-            this.picHeader.Image = global::Belfray.Properties.Resources.HeaderImageTemplate__1_;
-            this.picHeader.Location = new System.Drawing.Point(0, 0);
-            this.picHeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.picHeader.Name = "picHeader";
-            this.picHeader.Size = new System.Drawing.Size(1830, 175);
-            this.picHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHeader.TabIndex = 1;
-            this.picHeader.TabStop = false;
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(584, 141);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(677, 163);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "Welcome";
             // 
             // pnlRoomBooking
             // 
@@ -287,59 +294,86 @@
             this.pnlRoomBooking.Controls.Add(this.pnlBookingDetails);
             this.pnlRoomBooking.Controls.Add(this.pnlRoomPics);
             this.pnlRoomBooking.Controls.Add(this.dgvRoomBooking);
-            this.pnlRoomBooking.Location = new System.Drawing.Point(0, 3);
+            this.pnlRoomBooking.Location = new System.Drawing.Point(0, 2);
+            this.pnlRoomBooking.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRoomBooking.Name = "pnlRoomBooking";
-            this.pnlRoomBooking.Size = new System.Drawing.Size(1827, 531);
+            this.pnlRoomBooking.Size = new System.Drawing.Size(1218, 345);
             this.pnlRoomBooking.TabIndex = 1;
+            this.pnlRoomBooking.Visible = false;
+            // 
+            // pnlCustomerDetails
+            // 
+            this.pnlCustomerDetails.Location = new System.Drawing.Point(713, 6);
+            this.pnlCustomerDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCustomerDetails.Name = "pnlCustomerDetails";
+            this.pnlCustomerDetails.Size = new System.Drawing.Size(493, 331);
+            this.pnlCustomerDetails.TabIndex = 2;
+            this.pnlCustomerDetails.Visible = false;
+            // 
+            // pnlBookingDetails
+            // 
+            this.pnlBookingDetails.Location = new System.Drawing.Point(327, 6);
+            this.pnlBookingDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlBookingDetails.Name = "pnlBookingDetails";
+            this.pnlBookingDetails.Size = new System.Drawing.Size(373, 331);
+            this.pnlBookingDetails.TabIndex = 2;
+            this.pnlBookingDetails.Visible = false;
+            // 
+            // pnlRoomPics
+            // 
+            this.pnlRoomPics.Location = new System.Drawing.Point(7, 6);
+            this.pnlRoomPics.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlRoomPics.Name = "pnlRoomPics";
+            this.pnlRoomPics.Size = new System.Drawing.Size(307, 331);
+            this.pnlRoomPics.TabIndex = 1;
+            this.pnlRoomPics.Visible = false;
             // 
             // dgvRoomBooking
             // 
             this.dgvRoomBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoomBooking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRoomBooking.Location = new System.Drawing.Point(0, 0);
+            this.dgvRoomBooking.Location = new System.Drawing.Point(2, 0);
+            this.dgvRoomBooking.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRoomBooking.Name = "dgvRoomBooking";
             this.dgvRoomBooking.RowTemplate.Height = 28;
-            this.dgvRoomBooking.Size = new System.Drawing.Size(1827, 531);
+            this.dgvRoomBooking.Size = new System.Drawing.Size(1216, 343);
             this.dgvRoomBooking.TabIndex = 0;
             // 
-            // pnlRoomPics
+            // lblWelcome
             // 
-            this.pnlRoomPics.Location = new System.Drawing.Point(10, 10);
-            this.pnlRoomPics.Name = "pnlRoomPics";
-            this.pnlRoomPics.Size = new System.Drawing.Size(460, 510);
-            this.pnlRoomPics.TabIndex = 1;
-            this.pnlRoomPics.Visible = false;
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(389, 92);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(451, 108);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "Welcome";
             // 
-            // pnlBookingDetails
+            // picHeader
             // 
-            this.pnlBookingDetails.Location = new System.Drawing.Point(490, 10);
-            this.pnlBookingDetails.Name = "pnlBookingDetails";
-            this.pnlBookingDetails.Size = new System.Drawing.Size(560, 510);
-            this.pnlBookingDetails.TabIndex = 2;
-            this.pnlBookingDetails.Visible = false;
-            // 
-            // pnlCustomerDetails
-            // 
-            this.pnlCustomerDetails.Location = new System.Drawing.Point(1070, 10);
-            this.pnlCustomerDetails.Name = "pnlCustomerDetails";
-            this.pnlCustomerDetails.Size = new System.Drawing.Size(740, 510);
-            this.pnlCustomerDetails.TabIndex = 2;
-            this.pnlCustomerDetails.Visible = false;
+            this.picHeader.Image = global::Belfray.Properties.Resources.HeaderImageTemplate__1_;
+            this.picHeader.Location = new System.Drawing.Point(0, 0);
+            this.picHeader.Name = "picHeader";
+            this.picHeader.Size = new System.Drawing.Size(1220, 114);
+            this.picHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picHeader.TabIndex = 1;
+            this.picHeader.TabStop = false;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1830, 931);
+            this.ClientSize = new System.Drawing.Size(1220, 605);
             this.Controls.Add(this.pnlWelcome);
             this.Controls.Add(this.pnlTabControl);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.picHeader);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
@@ -348,6 +382,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).EndInit();
             this.pnlTabControl.ResumeLayout(false);
+            this.pnlTabControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).EndInit();
@@ -355,9 +391,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).EndInit();
             this.pnlWelcome.ResumeLayout(false);
             this.pnlWelcome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
             this.pnlRoomBooking.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomBooking)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,5 +421,8 @@
         private System.Windows.Forms.Panel pnlRoomPics;
         private System.Windows.Forms.DataGridView dgvRoomBooking;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lblNameUser;
+        private System.Windows.Forms.PictureBox picLogOut;
     }
 }

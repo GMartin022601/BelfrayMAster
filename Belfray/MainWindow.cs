@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data.SqlClient;
+
 namespace Belfray
 {
     public partial class MainWindow : Form
@@ -15,6 +17,13 @@ namespace Belfray
         //Determines which menu option has been selected 
         //(Room Booking = 1, Cleaning Stock = 2, Table Booking = 3, Restaurant Stock = 4, User Profile = 5, Administraion = 6)
         public int menuSelected = 0;
+
+        //SQL links
+        SqlDataAdapter daLogin, daBooking;
+        DataSet dsBelfray = new DataSet();
+        SqlCommandBuilder cmdBLogin, cmdBBooking;
+        DataRow drLogin, drBooking;
+        String connStr, sqlLogin, sqlBooking;
 
         public MainWindow()
         {
@@ -147,19 +156,23 @@ namespace Belfray
             picTabDelete.Visible = false;
         }
 
+        public void TabVisible()
+        {
+            picTabDisplay.Visible = true;
+            picTabSearch.Visible = true;
+            picTabAdd.Visible = true;
+            picTabEdit.Visible = true;
+            picTabDelete.Visible = true;
+        }
+
         private void picRoomBooking_Click(object sender, EventArgs e)
         {
             //Set menu option select to Room Booking
             menuSelected = 1;
 
             Reset();
+            TabVisible();
             pnlRoomBooking.Visible = true;
-
-            picTabDisplay.Visible = true;
-            picTabSearch.Visible = true;
-            picTabAdd.Visible = true;
-            picTabEdit.Visible = true;
-            picTabDelete.Visible = true;
         }
 
         private void picRoomStock_Click(object sender, EventArgs e)
@@ -168,13 +181,8 @@ namespace Belfray
             menuSelected = 2;
 
             Reset();
+            TabVisible();
             //pnlRoomBooking.Visible = true;
-
-            picTabDisplay.Visible = true;
-            picTabSearch.Visible = true;
-            picTabAdd.Visible = true;
-            picTabEdit.Visible = true;
-            picTabDelete.Visible = true;
         }
 
         private void picTableBooking_Click(object sender, EventArgs e)
@@ -183,13 +191,8 @@ namespace Belfray
             menuSelected = 3;
 
             Reset();
+            TabVisible();
             //pnlRoomBooking.Visible = true;
-
-            picTabDisplay.Visible = true;
-            picTabSearch.Visible = true;
-            picTabAdd.Visible = true;
-            picTabEdit.Visible = true;
-            picTabDelete.Visible = true;
         }
 
         private void picRestaurantStock_Click(object sender, EventArgs e)
@@ -198,13 +201,8 @@ namespace Belfray
             menuSelected = 4;
 
             Reset();
+            TabVisible();
             //pnlRoomBooking.Visible = true;
-
-            picTabDisplay.Visible = true;
-            picTabSearch.Visible = true;
-            picTabAdd.Visible = true;
-            picTabEdit.Visible = true;
-            picTabDelete.Visible = true;
         }
 
         private void picAccount_Click(object sender, EventArgs e)
@@ -213,13 +211,8 @@ namespace Belfray
             menuSelected = 5;
 
             Reset();
+            TabVisible();
             //pnlRoomBooking.Visible = true;
-
-            picTabDisplay.Visible = true;
-            picTabSearch.Visible = true;
-            picTabAdd.Visible = true;
-            picTabEdit.Visible = true;
-            picTabDelete.Visible = true;
         }
 
         private void picAdmin_Click(object sender, EventArgs e)
@@ -228,13 +221,34 @@ namespace Belfray
             menuSelected = 6;
 
             Reset();
+            TabVisible();
             //pnlRoomBooking.Visible = true;
+        }
 
-            picTabDisplay.Visible = true;
-            picTabSearch.Visible = true;
-            picTabAdd.Visible = true;
-            picTabEdit.Visible = true;
-            picTabDelete.Visible = true;
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            //Current User
+            lblUser.Text = LoginPage.currUser;
+
+            //DB Connection
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+
+            sqlLogin = @"select StaffID, staffLogin, staffPassword, accTypeID from Staff";
+            daLogin = new SqlDataAdapter(sqlLogin, connStr);
+            cmdBLogin = new SqlCommandBuilder(daLogin);
+
+            daLogin.FillSchema(dsBelfray, SchemaType.Source, "Staff");
+            daLogin.Fill(dsBelfray, "Staff");
+
+            sqlBooking = @"select * from Booking";
+            daBooking = new SqlDataAdapter(sqlBooking, connStr);
+            cmdBBooking = new SqlCommandBuilder(daLogin);
+
+            daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
+            daBooking.Fill(dsBelfray, "Booking");
+
+            
         }
     }
 }
