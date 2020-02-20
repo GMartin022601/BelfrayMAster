@@ -148,21 +148,26 @@ namespace Belfray
             //Resets to welcome screen
             pnlWelcome.Visible = true;
             pnlRoomBooking.Visible = false;
-
-            picTabDisplay.Visible = false;
-            picTabSearch.Visible = false;
-            picTabAdd.Visible = false;
-            picTabEdit.Visible = false;
-            picTabDelete.Visible = false;
         }
 
         public void TabVisible()
         {
+            //Makes the Tab controls visible
             picTabDisplay.Visible = true;
             picTabSearch.Visible = true;
             picTabAdd.Visible = true;
             picTabEdit.Visible = true;
             picTabDelete.Visible = true;
+        }
+
+        public void TabReset()
+        {
+            //Makes the Tab controls invisible
+            picTabDisplay.Visible = false;
+            picTabSearch.Visible = false;
+            picTabAdd.Visible = false;
+            picTabEdit.Visible = false;
+            picTabDelete.Visible = false;
         }
 
         private void picRoomBooking_Click(object sender, EventArgs e)
@@ -183,6 +188,12 @@ namespace Belfray
             Reset();
             TabVisible();
             //pnlRoomBooking.Visible = true;
+        }
+
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            //Logs out of the system by closing the main window and sending the use back to the log in screen
+            this.Close();
         }
 
         private void picTableBooking_Click(object sender, EventArgs e)
@@ -234,13 +245,15 @@ namespace Belfray
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
-            sqlLogin = @"select StaffID, staffLogin, staffPassword, accTypeID from Staff";
+            //SQL for Staff
+            sqlLogin = @"select * from Staff";
             daLogin = new SqlDataAdapter(sqlLogin, connStr);
             cmdBLogin = new SqlCommandBuilder(daLogin);
 
             daLogin.FillSchema(dsBelfray, SchemaType.Source, "Staff");
             daLogin.Fill(dsBelfray, "Staff");
 
+            //SQL for Booking
             sqlBooking = @"select * from Booking";
             daBooking = new SqlDataAdapter(sqlBooking, connStr);
             cmdBBooking = new SqlCommandBuilder(daLogin);

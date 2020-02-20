@@ -60,6 +60,9 @@ namespace Belfray
             {
                 if (passFound)
                 {
+                    txtUsername.Text = "Username";
+                    txtPassword.Text = "Password";
+                    txtUsername.Focus();
                     MainWindow main = new MainWindow();
                     main.Show();                    
                 }
