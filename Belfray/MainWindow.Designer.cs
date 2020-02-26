@@ -390,11 +390,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1220, 605);
-            this.Controls.Add(this.pnlRestStock);
             this.Controls.Add(this.pnlWelcome);
             this.Controls.Add(this.pnlTabControl);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.picHeader);
+            this.Controls.Add(this.pnlRestStock);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
