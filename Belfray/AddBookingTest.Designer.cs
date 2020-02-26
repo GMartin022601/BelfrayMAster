@@ -43,6 +43,8 @@
             this.picTabAdd = new System.Windows.Forms.PictureBox();
             this.pnlWelcome = new System.Windows.Forms.Panel();
             this.picHeader = new System.Windows.Forms.PictureBox();
+            this.pnlRestStock = new System.Windows.Forms.Panel();
+            this.dgvRestStock = new System.Windows.Forms.DataGridView();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
@@ -56,7 +58,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).BeginInit();
+            this.pnlWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
+            this.pnlRestStock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRestStock)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -196,6 +201,7 @@
             // 
             // pnlWelcome
             // 
+            this.pnlWelcome.Controls.Add(this.pnlRestStock);
             this.pnlWelcome.Location = new System.Drawing.Point(0, 186);
             this.pnlWelcome.Name = "pnlWelcome";
             this.pnlWelcome.Size = new System.Drawing.Size(1220, 349);
@@ -209,6 +215,26 @@
             this.picHeader.Size = new System.Drawing.Size(1220, 114);
             this.picHeader.TabIndex = 6;
             this.picHeader.TabStop = false;
+            // 
+            // pnlRestStock
+            // 
+            this.pnlRestStock.Controls.Add(this.dgvRestStock);
+            this.pnlRestStock.Location = new System.Drawing.Point(1, 2);
+            this.pnlRestStock.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlRestStock.Name = "pnlRestStock";
+            this.pnlRestStock.Size = new System.Drawing.Size(1218, 345);
+            this.pnlRestStock.TabIndex = 2;
+            this.pnlRestStock.Visible = false;
+            // 
+            // dgvRestStock
+            // 
+            this.dgvRestStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRestStock.Location = new System.Drawing.Point(2, 0);
+            this.dgvRestStock.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvRestStock.Name = "dgvRestStock";
+            this.dgvRestStock.RowTemplate.Height = 28;
+            this.dgvRestStock.Size = new System.Drawing.Size(1207, 343);
+            this.dgvRestStock.TabIndex = 0;
             // 
             // AddBookingTest
             // 
@@ -234,7 +260,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).EndInit();
+            this.pnlWelcome.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
+            this.pnlRestStock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRestStock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,5 +285,7 @@
         private System.Windows.Forms.PictureBox picTabAdd;
         private System.Windows.Forms.Panel pnlWelcome;
         private System.Windows.Forms.PictureBox picHeader;
+        private System.Windows.Forms.Panel pnlRestStock;
+        private System.Windows.Forms.DataGridView dgvRestStock;
     }
 }
