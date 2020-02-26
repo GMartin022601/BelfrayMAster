@@ -19,11 +19,11 @@ namespace Belfray
         public int menuSelected = 0;        
 
         //SQL links
-        SqlDataAdapter daLogin, daBooking;
+        SqlDataAdapter daLogin, daBooking, daProduct;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBLogin, cmdBBooking;
-        DataRow drLogin, drBooking;
-        String connStr, sqlLogin, sqlBooking;
+        SqlCommandBuilder cmdBLogin, cmdBBooking, cmdBProduct;
+        DataRow drLogin, drBooking, drProduct;
+        String connStr, sqlLogin, sqlBooking, sqlProduct;
 
         public MainWindow()
         {
@@ -148,6 +148,7 @@ namespace Belfray
             //Resets to welcome screen
             pnlWelcome.Visible = true;
             pnlRoomBooking.Visible = false;
+            pnlRestStock.Visible = false;
         }
 
         public void TabVisible()
@@ -213,6 +214,10 @@ namespace Belfray
 
             Reset();
             TabVisible();
+            pnlRestStock.Visible = true;
+            dgvRestStock.DataSource = dsBelfray.Tables["Product"];
+            //Resize
+            dgvRestStock.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             //pnlRoomBooking.Visible = true;
         }
 
@@ -260,7 +265,15 @@ namespace Belfray
 
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
             daBooking.Fill(dsBelfray, "Booking");
-            
+
+            //SQL for Product
+            sqlProduct = @"select * from Product";
+            daProduct = new SqlDataAdapter(sqlProduct, connStr);
+            cmdBProduct = new SqlCommandBuilder(daLogin);
+
+            daProduct.FillSchema(dsBelfray, SchemaType.Source, "Product");
+            daProduct.Fill(dsBelfray, "Product");
+
         }
     }
 }
