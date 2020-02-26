@@ -16,7 +16,7 @@ namespace Belfray
     {
         //Determines which menu option has been selected 
         //(Room Booking = 1, Cleaning Stock = 2, Table Booking = 3, Restaurant Stock = 4, User Profile = 5, Administraion = 6)
-        public int menuSelected = 0;
+        public int menuSelected = 0;        
 
         //SQL links
         SqlDataAdapter daLogin, daBooking;
@@ -193,7 +193,7 @@ namespace Belfray
         private void picLogOut_Click(object sender, EventArgs e)
         {
             //Logs out of the system by closing the main window and sending the use back to the log in screen
-            this.Close();
+            this.Close();           
         }
 
         private void picTableBooking_Click(object sender, EventArgs e)
@@ -260,7 +260,6 @@ namespace Belfray
 
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
             daBooking.Fill(dsBelfray, "Booking");
-
             
         }
     }

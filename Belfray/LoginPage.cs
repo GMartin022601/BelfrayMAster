@@ -26,7 +26,7 @@ namespace Belfray
         public LoginPage()
         {
             InitializeComponent();
-        }
+    }
 
         private void GetNumber(int noRows)
         {
@@ -64,7 +64,7 @@ namespace Belfray
                     txtPassword.Text = "Password";
                     txtUsername.Focus();
                     MainWindow main = new MainWindow();
-                    main.Show();                    
+                    main.Show();
                 }
                 else
                 {
