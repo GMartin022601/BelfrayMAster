@@ -301,7 +301,7 @@
             this.pnlRoomBooking.Location = new System.Drawing.Point(0, 2);
             this.pnlRoomBooking.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRoomBooking.Name = "pnlRoomBooking";
-            this.pnlRoomBooking.Size = new System.Drawing.Size(1218, 345);
+            this.pnlRoomBooking.Size = new System.Drawing.Size(1209, 342);
             this.pnlRoomBooking.TabIndex = 1;
             this.pnlRoomBooking.Visible = false;
             // 
@@ -339,7 +339,7 @@
             this.dgvRoomBooking.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRoomBooking.Name = "dgvRoomBooking";
             this.dgvRoomBooking.RowTemplate.Height = 28;
-            this.dgvRoomBooking.Size = new System.Drawing.Size(1207, 343);
+            this.dgvRoomBooking.Size = new System.Drawing.Size(1207, 339);
             this.dgvRoomBooking.TabIndex = 0;
             // 
             // lblWelcome
@@ -383,6 +383,7 @@
             this.dgvRestStock.RowTemplate.Height = 28;
             this.dgvRestStock.Size = new System.Drawing.Size(1213, 343);
             this.dgvRestStock.TabIndex = 0;
+            this.dgvRestStock.Visible = false;
             // 
             // MainWindow
             // 

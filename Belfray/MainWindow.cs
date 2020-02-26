@@ -212,9 +212,10 @@ namespace Belfray
             //Set menu option select to Restaurant Stock
             menuSelected = 4;
 
-            Reset();
+            //Reset();
             TabVisible();
-            pnlRestStock.Visible = true;
+            //pnlRestStock.Visible = true;
+            dgvRestStock.Visible = true;
             dgvRestStock.DataSource = dsBelfray.Tables["Product"];
             //Resize
             dgvRestStock.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);

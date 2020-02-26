@@ -151,8 +151,8 @@
   <data name="HeaderImageTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HeaderImageTemplate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thumbnail_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thumbnail_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="animal-chihuahua-cute-39317" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\animal-chihuahua-cute-39317.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AdminButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AdminButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +172,8 @@
   <data name="CleanningSupplies" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CleanningSupplies.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RestaurantStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RestaurantStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Twin Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Twin Room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Double Room Rotate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Double Room Rotate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,8 +187,8 @@
   <data name="SearchButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SearchButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="animal-chihuahua-cute-39317" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\animal-chihuahua-cute-39317.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HoneyMoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HoneyMoon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TableBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TableBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,11 +202,17 @@
   <data name="floorplan layout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\floorplan layout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="thumbnail_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thumbnail_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TableBookingTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TableBookingTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RoomBooking (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RoomBooking (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdminButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminButton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EditButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,17 +223,23 @@
   <data name="DisplayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DisplayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AdminButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AdminButton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SaveTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TableBooking2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TableBooking2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Twin Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Twin Room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UserProfile2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UserProfile2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RestaurantStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestaurantStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveTest2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveTest2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RestaurantButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RestaurantButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,7 +253,7 @@
   <data name="DisplayButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DisplayButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HoneyMoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HoneyMoon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

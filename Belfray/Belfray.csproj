@@ -246,5 +246,17 @@
   <ItemGroup>
     <None Include="Resources\HoneyMoon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveTest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveTest2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
