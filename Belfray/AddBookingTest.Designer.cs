@@ -87,6 +87,9 @@
             this.txtSuppPC = new System.Windows.Forms.TextBox();
             this.txtSuppEmail = new System.Windows.Forms.TextBox();
             this.txtSuppTel = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
@@ -393,6 +396,7 @@
             // 
             // gbProdDetails
             // 
+            this.gbProdDetails.Controls.Add(this.groupBox1);
             this.gbProdDetails.Controls.Add(this.cbSuppID);
             this.gbProdDetails.Controls.Add(this.cbTypeCode);
             this.gbProdDetails.Controls.Add(this.lblSuppID);
@@ -477,6 +481,7 @@
             // 
             // gbProdType
             // 
+            this.gbProdType.Controls.Add(this.groupBox2);
             this.gbProdType.Controls.Add(this.txtProdDesc2);
             this.gbProdType.Controls.Add(this.lblProdDesc2);
             this.gbProdType.Controls.Add(this.cbTypeCode2);
@@ -491,6 +496,7 @@
             // 
             // gbSupplierDetails
             // 
+            this.gbSupplierDetails.Controls.Add(this.groupBox3);
             this.gbSupplierDetails.Controls.Add(this.txtSuppTel);
             this.gbSupplierDetails.Controls.Add(this.txtSuppEmail);
             this.gbSupplierDetails.Controls.Add(this.txtSuppPC);
@@ -687,6 +693,33 @@
             this.txtSuppTel.Size = new System.Drawing.Size(100, 25);
             this.txtSuppTel.TabIndex = 32;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(318, 261);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(68, 56);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "SAVE";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(409, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(68, 56);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "SAVE";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Location = new System.Drawing.Point(409, 172);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(68, 56);
+            this.groupBox3.TabIndex = 19;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "SAVE";
+            // 
             // AddBookingTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -788,5 +821,8 @@
         private System.Windows.Forms.Label lblProdTypeCode;
         private System.Windows.Forms.Label lblProdDesc;
         private System.Windows.Forms.Panel pnlImage;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
