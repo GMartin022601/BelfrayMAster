@@ -33,6 +33,13 @@ namespace Belfray
             pnlTabControl.BackColor = Color.FromArgb(63, 63, 63);
         }
 
+        //GetProductNumber
+        private void getProdNum(int noRows)
+        {
+            drProduct = dsBelfray.Tables["Product"].Rows[noRows - 1];
+            lblProductNumberDisplay.Text = (int.Parse(drProduct["productNo"].ToString()) + 1).ToString();
+        }
+
         private void picRoomBooking_MouseEnter(object sender, EventArgs e)
         {
             picRoomBooking.BackColor = Color.FromArgb(137, 36, 26);
@@ -166,6 +173,8 @@ namespace Belfray
             if (menuSelected == 4) {
                 Reset();
                 pnlRestStockAdd.Visible = true;
+
+                lblProductNumberDisplay.Text = prod
             }
             else
             {
@@ -264,7 +273,10 @@ namespace Belfray
 
             //DB Connection
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //****Code for Seans Laptop*****
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //Connection for Tech Machine***
+            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Staff
             sqlLogin = @"select * from Staff";
