@@ -29,21 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.picAdmin = new System.Windows.Forms.PictureBox();
-            this.picAccount = new System.Windows.Forms.PictureBox();
-            this.picRestaurantStock = new System.Windows.Forms.PictureBox();
-            this.picTableBooking = new System.Windows.Forms.PictureBox();
-            this.picRoomStock = new System.Windows.Forms.PictureBox();
-            this.picRoomBooking = new System.Windows.Forms.PictureBox();
             this.pnlTabControl = new System.Windows.Forms.Panel();
-            this.picLogOut = new System.Windows.Forms.PictureBox();
             this.lblNameUser = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.picTabDelete = new System.Windows.Forms.PictureBox();
-            this.picTabEdit = new System.Windows.Forms.PictureBox();
-            this.picTabDisplay = new System.Windows.Forms.PictureBox();
-            this.picTabSearch = new System.Windows.Forms.PictureBox();
-            this.picTabAdd = new System.Windows.Forms.PictureBox();
             this.pnlWelcome = new System.Windows.Forms.Panel();
             this.pnlRoomBooking = new System.Windows.Forms.Panel();
             this.pnlCustomerDetails = new System.Windows.Forms.Panel();
@@ -51,7 +39,6 @@
             this.pnlRoomPics = new System.Windows.Forms.Panel();
             this.dgvRoomBooking = new System.Windows.Forms.DataGridView();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.picHeader = new System.Windows.Forms.PictureBox();
             this.pnlRestStock = new System.Windows.Forms.Panel();
             this.dgvRestStock = new System.Windows.Forms.DataGridView();
             this.pnlRestStockAdd = new System.Windows.Forms.Panel();
@@ -83,7 +70,6 @@
             this.lblProdTypeCode2 = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.gbProdDetails = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbSuppID = new System.Windows.Forms.ComboBox();
             this.cbTypeCode = new System.Windows.Forms.ComboBox();
             this.lblSuppID = new System.Windows.Forms.Label();
@@ -101,24 +87,25 @@
             this.lblProdTypeCode = new System.Windows.Forms.Label();
             this.lblProdDesc = new System.Windows.Forms.Label();
             this.pnlImage = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogOut = new System.Windows.Forms.PictureBox();
+            this.picTabDelete = new System.Windows.Forms.PictureBox();
+            this.picTabEdit = new System.Windows.Forms.PictureBox();
+            this.picTabDisplay = new System.Windows.Forms.PictureBox();
+            this.picTabSearch = new System.Windows.Forms.PictureBox();
+            this.picTabAdd = new System.Windows.Forms.PictureBox();
+            this.picAdmin = new System.Windows.Forms.PictureBox();
+            this.picAccount = new System.Windows.Forms.PictureBox();
+            this.picRestaurantStock = new System.Windows.Forms.PictureBox();
+            this.picTableBooking = new System.Windows.Forms.PictureBox();
+            this.picRoomStock = new System.Windows.Forms.PictureBox();
+            this.picRoomBooking = new System.Windows.Forms.PictureBox();
+            this.picHeader = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTableBooking)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).BeginInit();
             this.pnlTabControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).BeginInit();
             this.pnlWelcome.SuspendLayout();
             this.pnlRoomBooking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomBooking)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
             this.pnlRestStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestStock)).BeginInit();
             this.pnlRestStockAdd.SuspendLayout();
@@ -128,6 +115,20 @@
             this.gbProdType.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             this.gbProdDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTableBooking)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -142,84 +143,6 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(1220, 80);
             this.pnlMenu.TabIndex = 2;
-            // 
-            // picAdmin
-            // 
-            this.picAdmin.Image = global::Belfray.Properties.Resources.AdminButton2;
-            this.picAdmin.Location = new System.Drawing.Point(1023, 10);
-            this.picAdmin.Name = "picAdmin";
-            this.picAdmin.Size = new System.Drawing.Size(123, 60);
-            this.picAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAdmin.TabIndex = 11;
-            this.picAdmin.TabStop = false;
-            this.picAdmin.Click += new System.EventHandler(this.picAdmin_Click);
-            this.picAdmin.MouseEnter += new System.EventHandler(this.picAdmin_MouseEnter);
-            this.picAdmin.MouseLeave += new System.EventHandler(this.picAdmin_MouseLeave);
-            // 
-            // picAccount
-            // 
-            this.picAccount.Image = global::Belfray.Properties.Resources.UserProfile2;
-            this.picAccount.Location = new System.Drawing.Point(832, 10);
-            this.picAccount.Name = "picAccount";
-            this.picAccount.Size = new System.Drawing.Size(123, 60);
-            this.picAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAccount.TabIndex = 10;
-            this.picAccount.TabStop = false;
-            this.picAccount.Click += new System.EventHandler(this.picAccount_Click);
-            this.picAccount.MouseEnter += new System.EventHandler(this.picAccount_MouseEnter);
-            this.picAccount.MouseLeave += new System.EventHandler(this.picAccount_MouseLeave);
-            // 
-            // picRestaurantStock
-            // 
-            this.picRestaurantStock.Image = global::Belfray.Properties.Resources.RestaurantStock;
-            this.picRestaurantStock.Location = new System.Drawing.Point(641, 10);
-            this.picRestaurantStock.Name = "picRestaurantStock";
-            this.picRestaurantStock.Size = new System.Drawing.Size(123, 60);
-            this.picRestaurantStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRestaurantStock.TabIndex = 9;
-            this.picRestaurantStock.TabStop = false;
-            this.picRestaurantStock.Click += new System.EventHandler(this.picRestaurantStock_Click);
-            this.picRestaurantStock.MouseEnter += new System.EventHandler(this.picRestaurantStock_MouseEnter);
-            this.picRestaurantStock.MouseLeave += new System.EventHandler(this.picRestaurantStock_MouseLeave);
-            // 
-            // picTableBooking
-            // 
-            this.picTableBooking.Image = global::Belfray.Properties.Resources.TableBookingTest;
-            this.picTableBooking.Location = new System.Drawing.Point(450, 10);
-            this.picTableBooking.Name = "picTableBooking";
-            this.picTableBooking.Size = new System.Drawing.Size(123, 60);
-            this.picTableBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTableBooking.TabIndex = 8;
-            this.picTableBooking.TabStop = false;
-            this.picTableBooking.Click += new System.EventHandler(this.picTableBooking_Click);
-            this.picTableBooking.MouseEnter += new System.EventHandler(this.picTableBooking_MouseEnter);
-            this.picTableBooking.MouseLeave += new System.EventHandler(this.picTableBooking_MouseLeave);
-            // 
-            // picRoomStock
-            // 
-            this.picRoomStock.Image = global::Belfray.Properties.Resources.CleanningSupplies;
-            this.picRoomStock.Location = new System.Drawing.Point(259, 10);
-            this.picRoomStock.Name = "picRoomStock";
-            this.picRoomStock.Size = new System.Drawing.Size(123, 60);
-            this.picRoomStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRoomStock.TabIndex = 7;
-            this.picRoomStock.TabStop = false;
-            this.picRoomStock.Click += new System.EventHandler(this.picRoomStock_Click);
-            this.picRoomStock.MouseEnter += new System.EventHandler(this.picRoomStock_MouseEnter);
-            this.picRoomStock.MouseLeave += new System.EventHandler(this.picRoomStock_MouseLeave);
-            // 
-            // picRoomBooking
-            // 
-            this.picRoomBooking.Image = global::Belfray.Properties.Resources.RoomBooking__1_;
-            this.picRoomBooking.Location = new System.Drawing.Point(68, 10);
-            this.picRoomBooking.Name = "picRoomBooking";
-            this.picRoomBooking.Size = new System.Drawing.Size(123, 60);
-            this.picRoomBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRoomBooking.TabIndex = 6;
-            this.picRoomBooking.TabStop = false;
-            this.picRoomBooking.Click += new System.EventHandler(this.picRoomBooking_Click);
-            this.picRoomBooking.MouseEnter += new System.EventHandler(this.picRoomBooking_MouseEnter);
-            this.picRoomBooking.MouseLeave += new System.EventHandler(this.picRoomBooking_MouseLeave);
             // 
             // pnlTabControl
             // 
@@ -236,17 +159,6 @@
             this.pnlTabControl.Name = "pnlTabControl";
             this.pnlTabControl.Size = new System.Drawing.Size(1220, 74);
             this.pnlTabControl.TabIndex = 4;
-            // 
-            // picLogOut
-            // 
-            this.picLogOut.Image = global::Belfray.Properties.Resources.LogOutLogo1;
-            this.picLogOut.Location = new System.Drawing.Point(1094, 9);
-            this.picLogOut.Name = "picLogOut";
-            this.picLogOut.Size = new System.Drawing.Size(123, 60);
-            this.picLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogOut.TabIndex = 19;
-            this.picLogOut.TabStop = false;
-            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
             // 
             // lblNameUser
             // 
@@ -271,72 +183,6 @@
             this.lblUser.Size = new System.Drawing.Size(13, 16);
             this.lblUser.TabIndex = 17;
             this.lblUser.Text = "-";
-            // 
-            // picTabDelete
-            // 
-            this.picTabDelete.Image = global::Belfray.Properties.Resources.DeleteButton1;
-            this.picTabDelete.Location = new System.Drawing.Point(806, 9);
-            this.picTabDelete.Name = "picTabDelete";
-            this.picTabDelete.Size = new System.Drawing.Size(123, 60);
-            this.picTabDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabDelete.TabIndex = 16;
-            this.picTabDelete.TabStop = false;
-            this.picTabDelete.Visible = false;
-            this.picTabDelete.MouseEnter += new System.EventHandler(this.picTabDelete_MouseEnter);
-            this.picTabDelete.MouseLeave += new System.EventHandler(this.picTabDelete_MouseLeave);
-            // 
-            // picTabEdit
-            // 
-            this.picTabEdit.Image = global::Belfray.Properties.Resources.EditButton1;
-            this.picTabEdit.Location = new System.Drawing.Point(677, 9);
-            this.picTabEdit.Name = "picTabEdit";
-            this.picTabEdit.Size = new System.Drawing.Size(123, 60);
-            this.picTabEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabEdit.TabIndex = 15;
-            this.picTabEdit.TabStop = false;
-            this.picTabEdit.Visible = false;
-            this.picTabEdit.Click += new System.EventHandler(this.PicTabEdit_Click);
-            this.picTabEdit.MouseEnter += new System.EventHandler(this.picTabEdit_MouseEnter);
-            this.picTabEdit.MouseLeave += new System.EventHandler(this.picTabEdit_MouseLeave);
-            // 
-            // picTabDisplay
-            // 
-            this.picTabDisplay.Image = global::Belfray.Properties.Resources.DisplayButton1;
-            this.picTabDisplay.Location = new System.Drawing.Point(290, 9);
-            this.picTabDisplay.Name = "picTabDisplay";
-            this.picTabDisplay.Size = new System.Drawing.Size(123, 60);
-            this.picTabDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabDisplay.TabIndex = 14;
-            this.picTabDisplay.TabStop = false;
-            this.picTabDisplay.Visible = false;
-            this.picTabDisplay.MouseEnter += new System.EventHandler(this.picTabDisplay_MouseEnter);
-            this.picTabDisplay.MouseLeave += new System.EventHandler(this.picTabDisplay_MouseLeave);
-            // 
-            // picTabSearch
-            // 
-            this.picTabSearch.Image = global::Belfray.Properties.Resources.SearchButton1;
-            this.picTabSearch.Location = new System.Drawing.Point(419, 9);
-            this.picTabSearch.Name = "picTabSearch";
-            this.picTabSearch.Size = new System.Drawing.Size(123, 60);
-            this.picTabSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabSearch.TabIndex = 13;
-            this.picTabSearch.TabStop = false;
-            this.picTabSearch.Visible = false;
-            this.picTabSearch.MouseEnter += new System.EventHandler(this.picTabSearch_MouseEnter);
-            this.picTabSearch.MouseLeave += new System.EventHandler(this.picTabSearch_MouseLeave);
-            // 
-            // picTabAdd
-            // 
-            this.picTabAdd.Image = global::Belfray.Properties.Resources.AddButton1;
-            this.picTabAdd.Location = new System.Drawing.Point(548, 9);
-            this.picTabAdd.Name = "picTabAdd";
-            this.picTabAdd.Size = new System.Drawing.Size(123, 60);
-            this.picTabAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabAdd.TabIndex = 12;
-            this.picTabAdd.TabStop = false;
-            this.picTabAdd.Visible = false;
-            this.picTabAdd.MouseEnter += new System.EventHandler(this.picTabAdd_MouseEnter);
-            this.picTabAdd.MouseLeave += new System.EventHandler(this.picTabAdd_MouseLeave);
             // 
             // pnlWelcome
             // 
@@ -409,16 +255,6 @@
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome";
             // 
-            // picHeader
-            // 
-            this.picHeader.Image = global::Belfray.Properties.Resources.HeaderImageTemplate__1_;
-            this.picHeader.Location = new System.Drawing.Point(0, 0);
-            this.picHeader.Name = "picHeader";
-            this.picHeader.Size = new System.Drawing.Size(1220, 114);
-            this.picHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHeader.TabIndex = 1;
-            this.picHeader.TabStop = false;
-            // 
             // pnlRestStock
             // 
             this.pnlRestStock.Controls.Add(this.dgvRestStock);
@@ -436,6 +272,7 @@
             this.dgvRestStock.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRestStock.Name = "dgvRestStock";
             this.dgvRestStock.RowTemplate.Height = 28;
+            this.dgvRestStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRestStock.Size = new System.Drawing.Size(1213, 343);
             this.dgvRestStock.TabIndex = 0;
             this.dgvRestStock.Visible = false;
@@ -668,7 +505,7 @@
             // 
             // txtProdDesc2
             // 
-            this.txtProdDesc2.Location = new System.Drawing.Point(164, 50);
+            this.txtProdDesc2.Location = new System.Drawing.Point(190, 48);
             this.txtProdDesc2.Name = "txtProdDesc2";
             this.txtProdDesc2.Size = new System.Drawing.Size(100, 25);
             this.txtProdDesc2.TabIndex = 19;
@@ -679,14 +516,20 @@
             this.lblProdDesc2.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProdDesc2.Location = new System.Drawing.Point(6, 53);
             this.lblProdDesc2.Name = "lblProdDesc2";
-            this.lblProdDesc2.Size = new System.Drawing.Size(143, 17);
+            this.lblProdDesc2.Size = new System.Drawing.Size(174, 17);
             this.lblProdDesc2.TabIndex = 18;
-            this.lblProdDesc2.Text = "PRODUCT DESCRIPTION";
+            this.lblProdDesc2.Text = "PRODUCT TYPE DESCRIPTION";
             // 
             // cbTypeCode2
             // 
             this.cbTypeCode2.FormattingEnabled = true;
-            this.cbTypeCode2.Location = new System.Drawing.Point(164, 18);
+            this.cbTypeCode2.Items.AddRange(new object[] {
+            "A",
+            "AF",
+            "L",
+            "RE",
+            "F"});
+            this.cbTypeCode2.Location = new System.Drawing.Point(190, 18);
             this.cbTypeCode2.Name = "cbTypeCode2";
             this.cbTypeCode2.Size = new System.Drawing.Size(121, 26);
             this.cbTypeCode2.TabIndex = 17;
@@ -712,7 +555,7 @@
             // 
             // gbProdDetails
             // 
-            this.gbProdDetails.Controls.Add(this.groupBox1);
+            this.gbProdDetails.Controls.Add(this.pictureBox1);
             this.gbProdDetails.Controls.Add(this.cbSuppID);
             this.gbProdDetails.Controls.Add(this.cbTypeCode);
             this.gbProdDetails.Controls.Add(this.lblSuppID);
@@ -737,18 +580,13 @@
             this.gbProdDetails.TabStop = false;
             this.gbProdDetails.Text = "Product Details";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(318, 261);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(68, 56);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "SAVE";
-            // 
             // cbSuppID
             // 
             this.cbSuppID.FormattingEnabled = true;
+            this.cbSuppID.Items.AddRange(new object[] {
+            "100",
+            "101",
+            "102"});
             this.cbSuppID.Location = new System.Drawing.Point(170, 253);
             this.cbSuppID.Name = "cbSuppID";
             this.cbSuppID.Size = new System.Drawing.Size(121, 26);
@@ -757,6 +595,12 @@
             // cbTypeCode
             // 
             this.cbTypeCode.FormattingEnabled = true;
+            this.cbTypeCode.Items.AddRange(new object[] {
+            "A",
+            "AF",
+            "L",
+            "RE",
+            "F"});
             this.cbTypeCode.Location = new System.Drawing.Point(170, 65);
             this.cbTypeCode.Name = "cbTypeCode";
             this.cbTypeCode.Size = new System.Drawing.Size(121, 26);
@@ -895,6 +739,181 @@
             this.pnlImage.Size = new System.Drawing.Size(232, 329);
             this.pnlImage.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.pictureBox1.Location = new System.Drawing.Point(350, 261);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picLogOut
+            // 
+            this.picLogOut.Image = global::Belfray.Properties.Resources.LogOutLogo1;
+            this.picLogOut.Location = new System.Drawing.Point(1094, 9);
+            this.picLogOut.Name = "picLogOut";
+            this.picLogOut.Size = new System.Drawing.Size(123, 60);
+            this.picLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogOut.TabIndex = 19;
+            this.picLogOut.TabStop = false;
+            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
+            // 
+            // picTabDelete
+            // 
+            this.picTabDelete.Image = global::Belfray.Properties.Resources.DeleteButton1;
+            this.picTabDelete.Location = new System.Drawing.Point(806, 9);
+            this.picTabDelete.Name = "picTabDelete";
+            this.picTabDelete.Size = new System.Drawing.Size(123, 60);
+            this.picTabDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabDelete.TabIndex = 16;
+            this.picTabDelete.TabStop = false;
+            this.picTabDelete.Visible = false;
+            this.picTabDelete.MouseEnter += new System.EventHandler(this.picTabDelete_MouseEnter);
+            this.picTabDelete.MouseLeave += new System.EventHandler(this.picTabDelete_MouseLeave);
+            // 
+            // picTabEdit
+            // 
+            this.picTabEdit.Image = global::Belfray.Properties.Resources.EditButton1;
+            this.picTabEdit.Location = new System.Drawing.Point(677, 9);
+            this.picTabEdit.Name = "picTabEdit";
+            this.picTabEdit.Size = new System.Drawing.Size(123, 60);
+            this.picTabEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabEdit.TabIndex = 15;
+            this.picTabEdit.TabStop = false;
+            this.picTabEdit.Visible = false;
+            this.picTabEdit.Click += new System.EventHandler(this.PicTabEdit_Click);
+            this.picTabEdit.MouseEnter += new System.EventHandler(this.picTabEdit_MouseEnter);
+            this.picTabEdit.MouseLeave += new System.EventHandler(this.picTabEdit_MouseLeave);
+            // 
+            // picTabDisplay
+            // 
+            this.picTabDisplay.Image = global::Belfray.Properties.Resources.DisplayButton1;
+            this.picTabDisplay.Location = new System.Drawing.Point(290, 9);
+            this.picTabDisplay.Name = "picTabDisplay";
+            this.picTabDisplay.Size = new System.Drawing.Size(123, 60);
+            this.picTabDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabDisplay.TabIndex = 14;
+            this.picTabDisplay.TabStop = false;
+            this.picTabDisplay.Visible = false;
+            this.picTabDisplay.MouseEnter += new System.EventHandler(this.picTabDisplay_MouseEnter);
+            this.picTabDisplay.MouseLeave += new System.EventHandler(this.picTabDisplay_MouseLeave);
+            // 
+            // picTabSearch
+            // 
+            this.picTabSearch.Image = global::Belfray.Properties.Resources.SearchButton1;
+            this.picTabSearch.Location = new System.Drawing.Point(419, 9);
+            this.picTabSearch.Name = "picTabSearch";
+            this.picTabSearch.Size = new System.Drawing.Size(123, 60);
+            this.picTabSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabSearch.TabIndex = 13;
+            this.picTabSearch.TabStop = false;
+            this.picTabSearch.Visible = false;
+            this.picTabSearch.MouseEnter += new System.EventHandler(this.picTabSearch_MouseEnter);
+            this.picTabSearch.MouseLeave += new System.EventHandler(this.picTabSearch_MouseLeave);
+            // 
+            // picTabAdd
+            // 
+            this.picTabAdd.Image = global::Belfray.Properties.Resources.AddButton1;
+            this.picTabAdd.Location = new System.Drawing.Point(548, 9);
+            this.picTabAdd.Name = "picTabAdd";
+            this.picTabAdd.Size = new System.Drawing.Size(123, 60);
+            this.picTabAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabAdd.TabIndex = 12;
+            this.picTabAdd.TabStop = false;
+            this.picTabAdd.Visible = false;
+            this.picTabAdd.MouseEnter += new System.EventHandler(this.picTabAdd_MouseEnter);
+            this.picTabAdd.MouseLeave += new System.EventHandler(this.picTabAdd_MouseLeave);
+            // 
+            // picAdmin
+            // 
+            this.picAdmin.Image = global::Belfray.Properties.Resources.AdminButton2;
+            this.picAdmin.Location = new System.Drawing.Point(1023, 10);
+            this.picAdmin.Name = "picAdmin";
+            this.picAdmin.Size = new System.Drawing.Size(123, 60);
+            this.picAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAdmin.TabIndex = 11;
+            this.picAdmin.TabStop = false;
+            this.picAdmin.Click += new System.EventHandler(this.picAdmin_Click);
+            this.picAdmin.MouseEnter += new System.EventHandler(this.picAdmin_MouseEnter);
+            this.picAdmin.MouseLeave += new System.EventHandler(this.picAdmin_MouseLeave);
+            // 
+            // picAccount
+            // 
+            this.picAccount.Image = global::Belfray.Properties.Resources.UserProfile2;
+            this.picAccount.Location = new System.Drawing.Point(832, 10);
+            this.picAccount.Name = "picAccount";
+            this.picAccount.Size = new System.Drawing.Size(123, 60);
+            this.picAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAccount.TabIndex = 10;
+            this.picAccount.TabStop = false;
+            this.picAccount.Click += new System.EventHandler(this.picAccount_Click);
+            this.picAccount.MouseEnter += new System.EventHandler(this.picAccount_MouseEnter);
+            this.picAccount.MouseLeave += new System.EventHandler(this.picAccount_MouseLeave);
+            // 
+            // picRestaurantStock
+            // 
+            this.picRestaurantStock.Image = global::Belfray.Properties.Resources.RestaurantStock;
+            this.picRestaurantStock.Location = new System.Drawing.Point(641, 10);
+            this.picRestaurantStock.Name = "picRestaurantStock";
+            this.picRestaurantStock.Size = new System.Drawing.Size(123, 60);
+            this.picRestaurantStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRestaurantStock.TabIndex = 9;
+            this.picRestaurantStock.TabStop = false;
+            this.picRestaurantStock.Click += new System.EventHandler(this.picRestaurantStock_Click);
+            this.picRestaurantStock.MouseEnter += new System.EventHandler(this.picRestaurantStock_MouseEnter);
+            this.picRestaurantStock.MouseLeave += new System.EventHandler(this.picRestaurantStock_MouseLeave);
+            // 
+            // picTableBooking
+            // 
+            this.picTableBooking.Image = global::Belfray.Properties.Resources.TableBookingTest;
+            this.picTableBooking.Location = new System.Drawing.Point(450, 10);
+            this.picTableBooking.Name = "picTableBooking";
+            this.picTableBooking.Size = new System.Drawing.Size(123, 60);
+            this.picTableBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTableBooking.TabIndex = 8;
+            this.picTableBooking.TabStop = false;
+            this.picTableBooking.Click += new System.EventHandler(this.picTableBooking_Click);
+            this.picTableBooking.MouseEnter += new System.EventHandler(this.picTableBooking_MouseEnter);
+            this.picTableBooking.MouseLeave += new System.EventHandler(this.picTableBooking_MouseLeave);
+            // 
+            // picRoomStock
+            // 
+            this.picRoomStock.Image = global::Belfray.Properties.Resources.CleanningSupplies;
+            this.picRoomStock.Location = new System.Drawing.Point(259, 10);
+            this.picRoomStock.Name = "picRoomStock";
+            this.picRoomStock.Size = new System.Drawing.Size(123, 60);
+            this.picRoomStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRoomStock.TabIndex = 7;
+            this.picRoomStock.TabStop = false;
+            this.picRoomStock.Click += new System.EventHandler(this.picRoomStock_Click);
+            this.picRoomStock.MouseEnter += new System.EventHandler(this.picRoomStock_MouseEnter);
+            this.picRoomStock.MouseLeave += new System.EventHandler(this.picRoomStock_MouseLeave);
+            // 
+            // picRoomBooking
+            // 
+            this.picRoomBooking.Image = global::Belfray.Properties.Resources.RoomBooking__1_;
+            this.picRoomBooking.Location = new System.Drawing.Point(68, 10);
+            this.picRoomBooking.Name = "picRoomBooking";
+            this.picRoomBooking.Size = new System.Drawing.Size(123, 60);
+            this.picRoomBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRoomBooking.TabIndex = 6;
+            this.picRoomBooking.TabStop = false;
+            this.picRoomBooking.Click += new System.EventHandler(this.picRoomBooking_Click);
+            this.picRoomBooking.MouseEnter += new System.EventHandler(this.picRoomBooking_MouseEnter);
+            this.picRoomBooking.MouseLeave += new System.EventHandler(this.picRoomBooking_MouseLeave);
+            // 
+            // picHeader
+            // 
+            this.picHeader.Image = global::Belfray.Properties.Resources.HeaderImageTemplate__1_;
+            this.picHeader.Location = new System.Drawing.Point(0, 0);
+            this.picHeader.Name = "picHeader";
+            this.picHeader.Size = new System.Drawing.Size(1220, 114);
+            this.picHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picHeader.TabIndex = 1;
+            this.picHeader.TabStop = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -912,25 +931,12 @@
             this.Text = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.pnlMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTableBooking)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).EndInit();
             this.pnlTabControl.ResumeLayout(false);
             this.pnlTabControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).EndInit();
             this.pnlWelcome.ResumeLayout(false);
             this.pnlWelcome.PerformLayout();
             this.pnlRoomBooking.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomBooking)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
             this.pnlRestStock.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestStock)).EndInit();
             this.pnlRestStockAdd.ResumeLayout(false);
@@ -943,6 +949,20 @@
             this.pnlDetails.ResumeLayout(false);
             this.gbProdDetails.ResumeLayout(false);
             this.gbProdDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTableBooking)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1004,7 +1024,6 @@
         private System.Windows.Forms.Label lblProdTypeCode2;
         private System.Windows.Forms.Panel pnlDetails;
         private System.Windows.Forms.GroupBox gbProdDetails;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbSuppID;
         private System.Windows.Forms.ComboBox cbTypeCode;
         private System.Windows.Forms.Label lblSuppID;
@@ -1022,5 +1041,6 @@
         private System.Windows.Forms.Label lblProdTypeCode;
         private System.Windows.Forms.Label lblProdDesc;
         private System.Windows.Forms.Panel pnlImage;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -16,14 +16,15 @@ namespace Belfray
     {
         //Determines which menu option has been selected 
         //(Room Booking = 1, Cleaning Stock = 2, Table Booking = 3, Restaurant Stock = 4, User Profile = 5, Administraion = 6)
-        public int menuSelected = 0;        
+        public int menuSelected = 0;
+        String prodNumSel = "";
 
         //SQL links
-        SqlDataAdapter daLogin, daBooking, daProduct;
+        SqlDataAdapter daLogin, daBooking, daProduct, daProductType;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBLogin, cmdBBooking, cmdBProduct;
-        DataRow drLogin, drBooking, drProduct;
-        String connStr, sqlLogin, sqlBooking, sqlProduct;
+        SqlCommandBuilder cmdBLogin, cmdBBooking, cmdBProduct, cmdBProductType;
+        DataRow drLogin, drBooking, drProduct, drProductType;
+        String connStr, sqlLogin, sqlBooking, sqlProduct, sqlProductType;
 
         public MainWindow()
         {
@@ -37,7 +38,7 @@ namespace Belfray
         private void getProdNum(int noRows)
         {
             drProduct = dsBelfray.Tables["Product"].Rows[noRows - 1];
-            lblProductNumberDisplay.Text = (int.Parse(drProduct["productNo"].ToString()) + 1).ToString();
+            lblProductNumberDisplay.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
         }
 
         private void picRoomBooking_MouseEnter(object sender, EventArgs e)
@@ -174,7 +175,59 @@ namespace Belfray
                 Reset();
                 pnlRestStockAdd.Visible = true;
 
-                lblProductNumberDisplay.Text = prod
+                prodNumSel = Convert.ToString((dgvRestStock).SelectedRows[0].Cells[0].Value);
+
+                if (prodNumSel == "0")
+                {
+                    MessageBox.Show("Error");
+                }
+                else
+                  {
+                    lblProductNumberDisplay.Text = prodNumSel.ToString();
+
+                    drProduct = dsBelfray.Tables["Product"].Rows.Find(lblProductNumberDisplay.Text);
+                    
+                    if (drProduct["productTypeCode"].ToString() == "A")
+                        cbTypeCode.SelectedIndex = 0;
+                    if(drProduct["productTypeCode"].ToString() == "AF")
+                        cbTypeCode.SelectedIndex = 1;
+                    if(drProduct["productTypeCode"].ToString() == "L")
+                        cbTypeCode.SelectedIndex = 2;
+                    if (drProduct["productTypeCode"].ToString() == "RE")
+                        cbTypeCode.SelectedIndex = 3;
+                    if (drProduct["productTypeCode"].ToString() == "F")
+                        cbTypeCode.SelectedIndex = 4;
+
+                    txtProdDesc.Text = drProduct["productDesc"].ToString();
+                    txtCostPrice.Text = drProduct["costPrice"].ToString();
+                    txtQTY.Text = drProduct["qtyInStock"].ToString();
+                    txtPackSize.Text = drProduct["packSize"].ToString();
+                    txtReOrder.Text = drProduct["reorderLvl"].ToString();
+
+                    if (drProduct["supplierID"].ToString() == "100")
+                        cbSuppID.SelectedIndex = 0;
+                    if (drProduct["supplierID"].ToString() == "101")
+                        cbSuppID.SelectedIndex = 1;
+                    if (drProduct["supplierID"].ToString() == "102")
+                        cbSuppID.SelectedIndex = 2;
+
+                    drProductType = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.Text.ToString());
+
+                    if (drProductType["productTypeCode"].ToString() == "A")
+                        cbTypeCode2.SelectedIndex = 0;
+                    if (drProductType["productTypeCode"].ToString() == "AF")
+                        cbTypeCode2.SelectedIndex = 1;
+                    if (drProductType["productTypeCode"].ToString() == "L")
+                        cbTypeCode2.SelectedIndex = 2;
+                    if (drProductType["productTypeCode"].ToString() == "RE")
+                        cbTypeCode2.SelectedIndex = 3;
+                    if (drProductType["productTypeCode"].ToString() == "F")
+                        cbTypeCode2.SelectedIndex = 4;
+
+                    txtProdDesc2.Text = drProductType["productTypeDesc"].ToString();
+
+                }
+                
             }
             else
             {
@@ -301,6 +354,14 @@ namespace Belfray
 
             daProduct.FillSchema(dsBelfray, SchemaType.Source, "Product");
             daProduct.Fill(dsBelfray, "Product");
+
+            //SQL For ProductType
+            sqlProductType = @"select * from ProductType";
+            daProductType = new SqlDataAdapter(sqlProductType, connStr);
+            cmdBProductType = new SqlCommandBuilder(daLogin);
+
+            daProductType.FillSchema(dsBelfray, SchemaType.Source, "ProductType");
+            daProductType.Fill(dsBelfray, "ProductType");
 
         }
     }
