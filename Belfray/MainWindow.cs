@@ -34,11 +34,24 @@ namespace Belfray
             pnlTabControl.BackColor = Color.FromArgb(63, 63, 63);
         }
 
+        //clear add panel
+        void clearAddPanel()
+        {
+            txtAddCP.Clear();
+            txtAddPackSize.Clear();
+            txtAddPD.Clear();
+            txtAddPTD.Clear();
+            txtAddQTY.Clear();
+            txtAddReOrder.Clear();
+            cbSuppID.SelectedIndex = -1;
+        }
+
         //GetProductNumber
         private void getProdNum(int noRows)
         {
             drProduct = dsBelfray.Tables["Product"].Rows[noRows - 1];
             lblProductNumberDisplay.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
+            lblAddProdNum.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
         }
 
         private void picRoomBooking_MouseEnter(object sender, EventArgs e)
@@ -126,6 +139,136 @@ namespace Belfray
             picTabAdd.BackColor = Color.FromArgb(19, 19, 19);
         }
 
+        private void picTabAdd_Click(object sender, EventArgs e)
+        {
+            if (menuSelected == 4)
+            {
+                Reset();
+                pnlRestStockAdd.Visible = true;
+
+                getProdNum(dsBelfray.Tables["Product"].Rows.Count);
+
+            }
+        }
+
+        private void picSaveAddProdDet_Click(object sender, EventArgs e)
+        {
+            MyProduct myProduct = new MyProduct();
+            bool ok = true;
+            //ErrP to be added!
+
+            try
+            {
+                myProduct.ProductNo = lblAddProdNum.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                MyEx.ToString();
+            }
+            try
+            {
+                myProduct.ProductTypeCode = cbAddPTC1.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                MyEx.ToString();
+            }
+            try
+            {
+                myProduct.ProductDesc = txtAddPD.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                MyEx.ToString();
+            }
+            try
+            {
+                myProduct.CostPrice = Convert.ToDouble(txtAddCP.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                MyEx.ToString();
+            }
+            try
+            {
+                myProduct.QtyInStock = Convert.ToInt32(txtAddQTY.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                MyEx.ToString();
+            }
+            try
+            {
+                myProduct.PackSize = Convert.ToInt32(txtAddPackSize.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                MyEx.ToString();
+            }
+            try
+            {
+                myProduct.ReOrderLvl = Convert.ToInt32(txtAddReOrder.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                MyEx.ToString();
+            }
+            try
+            {
+                myProduct.SupplierID = Convert.ToInt32(cbAddSuppID.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                MyEx.ToString();
+            }
+
+            //Try Adding
+            try
+            {
+                if (ok)
+                {
+                    drProduct = dsBelfray.Tables["Product"].NewRow();
+
+                    drProduct["productNo"] = myProduct.ProductNo;
+                    drProduct["productTypeCode"] = myProduct.ProductTypeCode;
+                    drProduct["productDesc"] = myProduct.ProductDesc;
+                    drProduct["costPrice"] = myProduct.CostPrice;
+                    drProduct["qtyInStock"] = myProduct.QtyInStock;
+                    drProduct["packSize"] = myProduct.PackSize;
+                    drProduct["reorderLvl"] = myProduct.ReOrderLvl;
+                    drProduct["supplierId"] = myProduct.SupplierID;
+
+                    dsBelfray.Tables["Product"].Rows.Add(drProduct);
+                    daProduct.Update(dsBelfray, "Product");
+
+                    MessageBox.Show("Product Added");
+
+                    if (MessageBox.Show("Do you wish to add another product?", "AddProduct", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        clearAddPanel();
+                        getProdNum(dsBelfray.Tables["Product"].Rows.Count);
+                    }
+                    else
+                    {
+                        Reset();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+        }
+
+
         private void picTabAdd_MouseLeave(object sender, EventArgs e)
         {
             picTabAdd.BackColor = Color.Transparent;
@@ -173,7 +316,7 @@ namespace Belfray
         {
             if (menuSelected == 4) {
                 Reset();
-                pnlRestStockAdd.Visible = true;
+                pnlRestStockEdit.Visible = true;
 
                 prodNumSel = Convert.ToString((dgvRestStock).SelectedRows[0].Cells[0].Value);
 
