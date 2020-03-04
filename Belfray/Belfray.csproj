@@ -259,13 +259,13 @@
     <None Include="Resources\Save3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Green Up.png" />
+    <None Include="Resources\SaveButtonTest.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Green.png" />
+    <None Include="Resources\SaveButtonTest2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Red.png" />
+    <None Include="Resources\CancelButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
