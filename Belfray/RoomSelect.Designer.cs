@@ -29,6 +29,22 @@
         private void InitializeComponent()
         {
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
+            this.pnlRed = new System.Windows.Forms.Panel();
+            this.lblRedCapacityValue = new System.Windows.Forms.Label();
+            this.lblRedCapacity = new System.Windows.Forms.Label();
+            this.lblRedRoomType = new System.Windows.Forms.Label();
+            this.lblRedNo = new System.Windows.Forms.Label();
+            this.lblRedAvailability = new System.Windows.Forms.Label();
+            this.lblRedType = new System.Windows.Forms.Label();
+            this.lblRedRoom = new System.Windows.Forms.Label();
+            this.pnlGreen = new System.Windows.Forms.Panel();
+            this.lblGreenCapacityValue = new System.Windows.Forms.Label();
+            this.lblGreenCapacity = new System.Windows.Forms.Label();
+            this.lblGreenRoomType = new System.Windows.Forms.Label();
+            this.lblGreenNo = new System.Windows.Forms.Label();
+            this.lblGreenAvailability = new System.Windows.Forms.Label();
+            this.lblGreenType = new System.Windows.Forms.Label();
+            this.lblGreenRoom = new System.Windows.Forms.Label();
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.lblBookingDate = new System.Windows.Forms.Label();
             this.picRoom119 = new System.Windows.Forms.PictureBox();
@@ -50,23 +66,9 @@
             this.picRoom103 = new System.Windows.Forms.PictureBox();
             this.picRoom102 = new System.Windows.Forms.PictureBox();
             this.picRoom101 = new System.Windows.Forms.PictureBox();
-            this.pnlGreen = new System.Windows.Forms.Panel();
-            this.lblGreenRoom = new System.Windows.Forms.Label();
-            this.lblGreenType = new System.Windows.Forms.Label();
-            this.lblGreenAvailability = new System.Windows.Forms.Label();
-            this.lblGreenNo = new System.Windows.Forms.Label();
-            this.lblGreenRoomType = new System.Windows.Forms.Label();
-            this.lblGreenCapacityValue = new System.Windows.Forms.Label();
-            this.lblGreenCapacity = new System.Windows.Forms.Label();
-            this.pnlRed = new System.Windows.Forms.Panel();
-            this.lblRedCapacityValue = new System.Windows.Forms.Label();
-            this.lblRedCapacity = new System.Windows.Forms.Label();
-            this.lblRedRoomType = new System.Windows.Forms.Label();
-            this.lblRedNo = new System.Windows.Forms.Label();
-            this.lblRedAvailability = new System.Windows.Forms.Label();
-            this.lblRedType = new System.Windows.Forms.Label();
-            this.lblRedRoom = new System.Windows.Forms.Label();
             this.pnlFloorPlan.SuspendLayout();
+            this.pnlRed.SuspendLayout();
+            this.pnlGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom119)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom118)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom117)).BeginInit();
@@ -86,8 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoom103)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom102)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom101)).BeginInit();
-            this.pnlGreen.SuspendLayout();
-            this.pnlRed.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlFloorPlan
@@ -120,6 +120,182 @@
             this.pnlFloorPlan.Name = "pnlFloorPlan";
             this.pnlFloorPlan.Size = new System.Drawing.Size(1200, 600);
             this.pnlFloorPlan.TabIndex = 22;
+            // 
+            // pnlRed
+            // 
+            this.pnlRed.BackColor = System.Drawing.Color.Transparent;
+            this.pnlRed.BackgroundImage = global::Belfray.Properties.Resources.Red;
+            this.pnlRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlRed.Controls.Add(this.lblRedCapacityValue);
+            this.pnlRed.Controls.Add(this.lblRedCapacity);
+            this.pnlRed.Controls.Add(this.lblRedRoomType);
+            this.pnlRed.Controls.Add(this.lblRedNo);
+            this.pnlRed.Controls.Add(this.lblRedAvailability);
+            this.pnlRed.Controls.Add(this.lblRedType);
+            this.pnlRed.Controls.Add(this.lblRedRoom);
+            this.pnlRed.Location = new System.Drawing.Point(557, 432);
+            this.pnlRed.Name = "pnlRed";
+            this.pnlRed.Size = new System.Drawing.Size(200, 120);
+            this.pnlRed.TabIndex = 54;
+            this.pnlRed.Visible = false;
+            // 
+            // lblRedCapacityValue
+            // 
+            this.lblRedCapacityValue.AutoSize = true;
+            this.lblRedCapacityValue.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedCapacityValue.Location = new System.Drawing.Point(84, 70);
+            this.lblRedCapacityValue.Name = "lblRedCapacityValue";
+            this.lblRedCapacityValue.Size = new System.Drawing.Size(12, 18);
+            this.lblRedCapacityValue.TabIndex = 53;
+            this.lblRedCapacityValue.Text = "-";
+            // 
+            // lblRedCapacity
+            // 
+            this.lblRedCapacity.AutoSize = true;
+            this.lblRedCapacity.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedCapacity.Location = new System.Drawing.Point(9, 70);
+            this.lblRedCapacity.Name = "lblRedCapacity";
+            this.lblRedCapacity.Size = new System.Drawing.Size(74, 18);
+            this.lblRedCapacity.TabIndex = 52;
+            this.lblRedCapacity.Text = "CAPACITY:";
+            // 
+            // lblRedRoomType
+            // 
+            this.lblRedRoomType.AutoSize = true;
+            this.lblRedRoomType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedRoomType.Location = new System.Drawing.Point(98, 40);
+            this.lblRedRoomType.Name = "lblRedRoomType";
+            this.lblRedRoomType.Size = new System.Drawing.Size(12, 18);
+            this.lblRedRoomType.TabIndex = 51;
+            this.lblRedRoomType.Text = "-";
+            // 
+            // lblRedNo
+            // 
+            this.lblRedNo.AutoSize = true;
+            this.lblRedNo.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedNo.Location = new System.Drawing.Point(88, 10);
+            this.lblRedNo.Name = "lblRedNo";
+            this.lblRedNo.Size = new System.Drawing.Size(12, 18);
+            this.lblRedNo.TabIndex = 50;
+            this.lblRedNo.Text = "-";
+            // 
+            // lblRedAvailability
+            // 
+            this.lblRedAvailability.AutoSize = true;
+            this.lblRedAvailability.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedAvailability.Location = new System.Drawing.Point(54, 94);
+            this.lblRedAvailability.Name = "lblRedAvailability";
+            this.lblRedAvailability.Size = new System.Drawing.Size(92, 18);
+            this.lblRedAvailability.TabIndex = 49;
+            this.lblRedAvailability.Text = "UNAVAILABLE";
+            // 
+            // lblRedType
+            // 
+            this.lblRedType.AutoSize = true;
+            this.lblRedType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedType.Location = new System.Drawing.Point(9, 40);
+            this.lblRedType.Name = "lblRedType";
+            this.lblRedType.Size = new System.Drawing.Size(87, 18);
+            this.lblRedType.TabIndex = 48;
+            this.lblRedType.Text = "ROOM TYPE:";
+            // 
+            // lblRedRoom
+            // 
+            this.lblRedRoom.AutoSize = true;
+            this.lblRedRoom.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedRoom.Location = new System.Drawing.Point(9, 10);
+            this.lblRedRoom.Name = "lblRedRoom";
+            this.lblRedRoom.Size = new System.Drawing.Size(77, 18);
+            this.lblRedRoom.TabIndex = 47;
+            this.lblRedRoom.Text = "ROOM NO:";
+            // 
+            // pnlGreen
+            // 
+            this.pnlGreen.BackColor = System.Drawing.Color.Transparent;
+            this.pnlGreen.BackgroundImage = global::Belfray.Properties.Resources.Green;
+            this.pnlGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGreen.Controls.Add(this.lblGreenCapacityValue);
+            this.pnlGreen.Controls.Add(this.lblGreenCapacity);
+            this.pnlGreen.Controls.Add(this.lblGreenRoomType);
+            this.pnlGreen.Controls.Add(this.lblGreenNo);
+            this.pnlGreen.Controls.Add(this.lblGreenAvailability);
+            this.pnlGreen.Controls.Add(this.lblGreenType);
+            this.pnlGreen.Controls.Add(this.lblGreenRoom);
+            this.pnlGreen.Location = new System.Drawing.Point(792, 432);
+            this.pnlGreen.Name = "pnlGreen";
+            this.pnlGreen.Size = new System.Drawing.Size(200, 120);
+            this.pnlGreen.TabIndex = 46;
+            this.pnlGreen.Visible = false;
+            // 
+            // lblGreenCapacityValue
+            // 
+            this.lblGreenCapacityValue.AutoSize = true;
+            this.lblGreenCapacityValue.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenCapacityValue.Location = new System.Drawing.Point(84, 70);
+            this.lblGreenCapacityValue.Name = "lblGreenCapacityValue";
+            this.lblGreenCapacityValue.Size = new System.Drawing.Size(12, 18);
+            this.lblGreenCapacityValue.TabIndex = 53;
+            this.lblGreenCapacityValue.Text = "-";
+            // 
+            // lblGreenCapacity
+            // 
+            this.lblGreenCapacity.AutoSize = true;
+            this.lblGreenCapacity.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenCapacity.Location = new System.Drawing.Point(9, 70);
+            this.lblGreenCapacity.Name = "lblGreenCapacity";
+            this.lblGreenCapacity.Size = new System.Drawing.Size(74, 18);
+            this.lblGreenCapacity.TabIndex = 52;
+            this.lblGreenCapacity.Text = "CAPACITY:";
+            // 
+            // lblGreenRoomType
+            // 
+            this.lblGreenRoomType.AutoSize = true;
+            this.lblGreenRoomType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenRoomType.Location = new System.Drawing.Point(98, 40);
+            this.lblGreenRoomType.Name = "lblGreenRoomType";
+            this.lblGreenRoomType.Size = new System.Drawing.Size(12, 18);
+            this.lblGreenRoomType.TabIndex = 51;
+            this.lblGreenRoomType.Text = "-";
+            // 
+            // lblGreenNo
+            // 
+            this.lblGreenNo.AutoSize = true;
+            this.lblGreenNo.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenNo.Location = new System.Drawing.Point(88, 10);
+            this.lblGreenNo.Name = "lblGreenNo";
+            this.lblGreenNo.Size = new System.Drawing.Size(12, 18);
+            this.lblGreenNo.TabIndex = 50;
+            this.lblGreenNo.Text = "-";
+            // 
+            // lblGreenAvailability
+            // 
+            this.lblGreenAvailability.AutoSize = true;
+            this.lblGreenAvailability.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenAvailability.Location = new System.Drawing.Point(60, 94);
+            this.lblGreenAvailability.Name = "lblGreenAvailability";
+            this.lblGreenAvailability.Size = new System.Drawing.Size(73, 18);
+            this.lblGreenAvailability.TabIndex = 49;
+            this.lblGreenAvailability.Text = "AVAILABLE";
+            // 
+            // lblGreenType
+            // 
+            this.lblGreenType.AutoSize = true;
+            this.lblGreenType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenType.Location = new System.Drawing.Point(9, 40);
+            this.lblGreenType.Name = "lblGreenType";
+            this.lblGreenType.Size = new System.Drawing.Size(87, 18);
+            this.lblGreenType.TabIndex = 48;
+            this.lblGreenType.Text = "ROOM TYPE:";
+            // 
+            // lblGreenRoom
+            // 
+            this.lblGreenRoom.AutoSize = true;
+            this.lblGreenRoom.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenRoom.Location = new System.Drawing.Point(9, 10);
+            this.lblGreenRoom.Name = "lblGreenRoom";
+            this.lblGreenRoom.Size = new System.Drawing.Size(77, 18);
+            this.lblGreenRoom.TabIndex = 47;
+            this.lblGreenRoom.Text = "ROOM NO:";
             // 
             // dtpBookingDate
             // 
@@ -389,182 +565,6 @@
             this.picRoom101.MouseEnter += new System.EventHandler(this.picRoom101_MouseEnter);
             this.picRoom101.MouseLeave += new System.EventHandler(this.picRoom101_MouseLeave);
             // 
-            // pnlGreen
-            // 
-            this.pnlGreen.BackColor = System.Drawing.Color.Transparent;
-            this.pnlGreen.BackgroundImage = global::Belfray.Properties.Resources.Green;
-            this.pnlGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlGreen.Controls.Add(this.lblGreenCapacityValue);
-            this.pnlGreen.Controls.Add(this.lblGreenCapacity);
-            this.pnlGreen.Controls.Add(this.lblGreenRoomType);
-            this.pnlGreen.Controls.Add(this.lblGreenNo);
-            this.pnlGreen.Controls.Add(this.lblGreenAvailability);
-            this.pnlGreen.Controls.Add(this.lblGreenType);
-            this.pnlGreen.Controls.Add(this.lblGreenRoom);
-            this.pnlGreen.Location = new System.Drawing.Point(792, 432);
-            this.pnlGreen.Name = "pnlGreen";
-            this.pnlGreen.Size = new System.Drawing.Size(200, 120);
-            this.pnlGreen.TabIndex = 46;
-            this.pnlGreen.Visible = false;
-            // 
-            // lblGreenRoom
-            // 
-            this.lblGreenRoom.AutoSize = true;
-            this.lblGreenRoom.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenRoom.Location = new System.Drawing.Point(9, 10);
-            this.lblGreenRoom.Name = "lblGreenRoom";
-            this.lblGreenRoom.Size = new System.Drawing.Size(77, 18);
-            this.lblGreenRoom.TabIndex = 47;
-            this.lblGreenRoom.Text = "ROOM NO:";
-            // 
-            // lblGreenType
-            // 
-            this.lblGreenType.AutoSize = true;
-            this.lblGreenType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenType.Location = new System.Drawing.Point(9, 40);
-            this.lblGreenType.Name = "lblGreenType";
-            this.lblGreenType.Size = new System.Drawing.Size(87, 18);
-            this.lblGreenType.TabIndex = 48;
-            this.lblGreenType.Text = "ROOM TYPE:";
-            // 
-            // lblGreenAvailability
-            // 
-            this.lblGreenAvailability.AutoSize = true;
-            this.lblGreenAvailability.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenAvailability.Location = new System.Drawing.Point(60, 94);
-            this.lblGreenAvailability.Name = "lblGreenAvailability";
-            this.lblGreenAvailability.Size = new System.Drawing.Size(73, 18);
-            this.lblGreenAvailability.TabIndex = 49;
-            this.lblGreenAvailability.Text = "AVAILABLE";
-            // 
-            // lblGreenNo
-            // 
-            this.lblGreenNo.AutoSize = true;
-            this.lblGreenNo.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenNo.Location = new System.Drawing.Point(88, 10);
-            this.lblGreenNo.Name = "lblGreenNo";
-            this.lblGreenNo.Size = new System.Drawing.Size(12, 18);
-            this.lblGreenNo.TabIndex = 50;
-            this.lblGreenNo.Text = "-";
-            // 
-            // lblGreenRoomType
-            // 
-            this.lblGreenRoomType.AutoSize = true;
-            this.lblGreenRoomType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenRoomType.Location = new System.Drawing.Point(98, 40);
-            this.lblGreenRoomType.Name = "lblGreenRoomType";
-            this.lblGreenRoomType.Size = new System.Drawing.Size(12, 18);
-            this.lblGreenRoomType.TabIndex = 51;
-            this.lblGreenRoomType.Text = "-";
-            // 
-            // lblGreenCapacityValue
-            // 
-            this.lblGreenCapacityValue.AutoSize = true;
-            this.lblGreenCapacityValue.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenCapacityValue.Location = new System.Drawing.Point(84, 70);
-            this.lblGreenCapacityValue.Name = "lblGreenCapacityValue";
-            this.lblGreenCapacityValue.Size = new System.Drawing.Size(12, 18);
-            this.lblGreenCapacityValue.TabIndex = 53;
-            this.lblGreenCapacityValue.Text = "-";
-            // 
-            // lblGreenCapacity
-            // 
-            this.lblGreenCapacity.AutoSize = true;
-            this.lblGreenCapacity.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenCapacity.Location = new System.Drawing.Point(9, 70);
-            this.lblGreenCapacity.Name = "lblGreenCapacity";
-            this.lblGreenCapacity.Size = new System.Drawing.Size(74, 18);
-            this.lblGreenCapacity.TabIndex = 52;
-            this.lblGreenCapacity.Text = "CAPACITY:";
-            // 
-            // pnlRed
-            // 
-            this.pnlRed.BackColor = System.Drawing.Color.Transparent;
-            this.pnlRed.BackgroundImage = global::Belfray.Properties.Resources.Red;
-            this.pnlRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlRed.Controls.Add(this.lblRedCapacityValue);
-            this.pnlRed.Controls.Add(this.lblRedCapacity);
-            this.pnlRed.Controls.Add(this.lblRedRoomType);
-            this.pnlRed.Controls.Add(this.lblRedNo);
-            this.pnlRed.Controls.Add(this.lblRedAvailability);
-            this.pnlRed.Controls.Add(this.lblRedType);
-            this.pnlRed.Controls.Add(this.lblRedRoom);
-            this.pnlRed.Location = new System.Drawing.Point(557, 432);
-            this.pnlRed.Name = "pnlRed";
-            this.pnlRed.Size = new System.Drawing.Size(200, 120);
-            this.pnlRed.TabIndex = 54;
-            this.pnlRed.Visible = false;
-            // 
-            // lblRedCapacityValue
-            // 
-            this.lblRedCapacityValue.AutoSize = true;
-            this.lblRedCapacityValue.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedCapacityValue.Location = new System.Drawing.Point(84, 70);
-            this.lblRedCapacityValue.Name = "lblRedCapacityValue";
-            this.lblRedCapacityValue.Size = new System.Drawing.Size(12, 18);
-            this.lblRedCapacityValue.TabIndex = 53;
-            this.lblRedCapacityValue.Text = "-";
-            // 
-            // lblRedCapacity
-            // 
-            this.lblRedCapacity.AutoSize = true;
-            this.lblRedCapacity.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedCapacity.Location = new System.Drawing.Point(9, 70);
-            this.lblRedCapacity.Name = "lblRedCapacity";
-            this.lblRedCapacity.Size = new System.Drawing.Size(74, 18);
-            this.lblRedCapacity.TabIndex = 52;
-            this.lblRedCapacity.Text = "CAPACITY:";
-            // 
-            // lblRedRoomType
-            // 
-            this.lblRedRoomType.AutoSize = true;
-            this.lblRedRoomType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedRoomType.Location = new System.Drawing.Point(98, 40);
-            this.lblRedRoomType.Name = "lblRedRoomType";
-            this.lblRedRoomType.Size = new System.Drawing.Size(12, 18);
-            this.lblRedRoomType.TabIndex = 51;
-            this.lblRedRoomType.Text = "-";
-            // 
-            // lblRedNo
-            // 
-            this.lblRedNo.AutoSize = true;
-            this.lblRedNo.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedNo.Location = new System.Drawing.Point(88, 10);
-            this.lblRedNo.Name = "lblRedNo";
-            this.lblRedNo.Size = new System.Drawing.Size(12, 18);
-            this.lblRedNo.TabIndex = 50;
-            this.lblRedNo.Text = "-";
-            // 
-            // lblRedAvailability
-            // 
-            this.lblRedAvailability.AutoSize = true;
-            this.lblRedAvailability.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedAvailability.Location = new System.Drawing.Point(54, 94);
-            this.lblRedAvailability.Name = "lblRedAvailability";
-            this.lblRedAvailability.Size = new System.Drawing.Size(92, 18);
-            this.lblRedAvailability.TabIndex = 49;
-            this.lblRedAvailability.Text = "UNAVAILABLE";
-            // 
-            // lblRedType
-            // 
-            this.lblRedType.AutoSize = true;
-            this.lblRedType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedType.Location = new System.Drawing.Point(9, 40);
-            this.lblRedType.Name = "lblRedType";
-            this.lblRedType.Size = new System.Drawing.Size(87, 18);
-            this.lblRedType.TabIndex = 48;
-            this.lblRedType.Text = "ROOM TYPE:";
-            // 
-            // lblRedRoom
-            // 
-            this.lblRedRoom.AutoSize = true;
-            this.lblRedRoom.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedRoom.Location = new System.Drawing.Point(9, 10);
-            this.lblRedRoom.Name = "lblRedRoom";
-            this.lblRedRoom.Size = new System.Drawing.Size(77, 18);
-            this.lblRedRoom.TabIndex = 47;
-            this.lblRedRoom.Text = "ROOM NO:";
-            // 
             // RoomSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -576,6 +576,10 @@
             this.Text = "RoomSelect";
             this.pnlFloorPlan.ResumeLayout(false);
             this.pnlFloorPlan.PerformLayout();
+            this.pnlRed.ResumeLayout(false);
+            this.pnlRed.PerformLayout();
+            this.pnlGreen.ResumeLayout(false);
+            this.pnlGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom119)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom118)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom117)).EndInit();
@@ -595,10 +599,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoom103)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom102)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom101)).EndInit();
-            this.pnlGreen.ResumeLayout(false);
-            this.pnlGreen.PerformLayout();
-            this.pnlRed.ResumeLayout(false);
-            this.pnlRed.PerformLayout();
             this.ResumeLayout(false);
 
         }

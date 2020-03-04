@@ -184,9 +184,6 @@
   <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RestaurantButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RestaurantButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SearchButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SearchButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,9 +205,6 @@
   <data name="TableBookingTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TableBookingTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SaveTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SaveTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RoomBooking (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RoomBooking (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -219,6 +213,9 @@
   </data>
   <data name="AdminButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AdminButton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Red1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RoomStock (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RoomStock (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +226,8 @@
   <data name="DisplayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DisplayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thumbnail_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thumbnail_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SaveTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SaveButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SaveButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -240,6 +237,9 @@
   </data>
   <data name="RestaurantStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RestaurantStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SaveTest2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SaveTest2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,7 +256,7 @@
   <data name="TableBooking2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TableBooking2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Green1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

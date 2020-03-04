@@ -113,16 +113,6 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CancelButton {
-            get {
-                object obj = ResourceManager.GetObject("CancelButton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap CleanningSupplies {
             get {
                 object obj = ResourceManager.GetObject("CleanningSupplies", resourceCulture);
@@ -156,16 +146,6 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap DisplayButton {
             get {
                 object obj = ResourceManager.GetObject("DisplayButton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DisplayButton1 {
-            get {
-                object obj = ResourceManager.GetObject("DisplayButton1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,16 +283,6 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogOutLogo {
-            get {
-                object obj = ResourceManager.GetObject("LogOutLogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap LogOutLogo1 {
             get {
                 object obj = ResourceManager.GetObject("LogOutLogo1", resourceCulture);
@@ -436,26 +406,6 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap SaveButton {
             get {
                 object obj = ResourceManager.GetObject("SaveButton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SaveButtonTest {
-            get {
-                object obj = ResourceManager.GetObject("SaveButtonTest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SaveButtonTest2 {
-            get {
-                object obj = ResourceManager.GetObject("SaveButtonTest2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
