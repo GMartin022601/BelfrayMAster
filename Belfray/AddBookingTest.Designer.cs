@@ -224,7 +224,7 @@
             // 
             // picTabDisplay
             // 
-            this.picTabDisplay.Image = global::Belfray.Properties.Resources.DisplayButton1;
+//            this.picTabDisplay.Image = global::Belfray.Properties.Resources.DisplayButton1;
             this.picTabDisplay.Location = new System.Drawing.Point(290, 9);
             this.picTabDisplay.Name = "picTabDisplay";
             this.picTabDisplay.Size = new System.Drawing.Size(123, 60);
@@ -701,7 +701,7 @@
             // 
             // picSaveAddProdDet
             // 
-            this.picSaveAddProdDet.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+//            this.picSaveAddProdDet.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
             this.picSaveAddProdDet.Location = new System.Drawing.Point(350, 261);
             this.picSaveAddProdDet.Name = "picSaveAddProdDet";
             this.picSaveAddProdDet.Size = new System.Drawing.Size(50, 50);
@@ -711,7 +711,7 @@
             // 
             // picSaveADDPTD
             // 
-            this.picSaveADDPTD.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+//            this.picSaveADDPTD.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
             this.picSaveADDPTD.Location = new System.Drawing.Point(409, 23);
             this.picSaveADDPTD.Name = "picSaveADDPTD";
             this.picSaveADDPTD.Size = new System.Drawing.Size(50, 50);
@@ -721,7 +721,7 @@
             // 
             // picSaveADDSupp
             // 
-            this.picSaveADDSupp.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+//            this.picSaveADDSupp.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
             this.picSaveADDSupp.Location = new System.Drawing.Point(409, 169);
             this.picSaveADDSupp.Name = "picSaveADDSupp";
             this.picSaveADDSupp.Size = new System.Drawing.Size(50, 50);
