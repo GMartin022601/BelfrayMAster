@@ -784,7 +784,7 @@
             this.pnlRestStockAdd.Location = new System.Drawing.Point(4, 10);
             this.pnlRestStockAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlRestStockAdd.Name = "pnlRestStockAdd";
-            this.pnlRestStockAdd.Size = new System.Drawing.Size(1603, 410);
+            this.pnlRestStockAdd.Size = new System.Drawing.Size(1624, 425);
             this.pnlRestStockAdd.TabIndex = 7;
             this.pnlRestStockAdd.Visible = false;
             // 

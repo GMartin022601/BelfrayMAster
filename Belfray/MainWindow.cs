@@ -161,6 +161,21 @@ namespace Belfray
             picTabDelete.Visible = true;
         }
 
+        private void PicTabEdit_Click(object sender, EventArgs e)
+        {
+            if (menuSelected == 4) {
+                Reset();
+                pnlRestStockAdd.Visible = true;
+            }
+            else
+            {
+                pnlWelcome.Visible = true;
+
+            }
+
+            
+        }
+
         public void TabReset()
         {
             //Makes the Tab controls invisible
