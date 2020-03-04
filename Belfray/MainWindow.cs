@@ -146,8 +146,8 @@ namespace Belfray
         public void Reset()
         {
             //Resets to welcome screen
-            pnlWelcome.Visible = true;
-            pnlRoomBooking.Visible = false;
+            pnlWelcome.Visible = false;
+            //pnlRoomBooking.Visible = false;
             pnlRestStock.Visible = false;
         }
 
@@ -212,14 +212,14 @@ namespace Belfray
             //Set menu option select to Restaurant Stock
             menuSelected = 4;
 
-            //Reset();
+            Reset();
             TabVisible();
-            //pnlRestStock.Visible = true;
+            pnlRestStock.Visible = true;
             dgvRestStock.Visible = true;
             dgvRestStock.DataSource = dsBelfray.Tables["Product"];
             //Resize
             dgvRestStock.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            //pnlRoomBooking.Visible = true;
+
         }
 
         private void picAccount_Click(object sender, EventArgs e)
@@ -249,7 +249,7 @@ namespace Belfray
 
             //DB Connection
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
-            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Staff
             sqlLogin = @"select * from Staff";
