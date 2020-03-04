@@ -20,11 +20,11 @@ namespace Belfray
         String prodNumSel = "";
 
         //SQL links
-        SqlDataAdapter daLogin, daBooking, daProduct, daProductType;
+        SqlDataAdapter daLogin, daBooking, daProduct, daProductType, daSupplier;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBLogin, cmdBBooking, cmdBProduct, cmdBProductType;
-        DataRow drLogin, drBooking, drProduct, drProductType;
-        String connStr, sqlLogin, sqlBooking, sqlProduct, sqlProductType;
+        SqlCommandBuilder cmdBLogin, cmdBBooking, cmdBProduct, cmdBProductType, cmdBSupplier;
+        DataRow drLogin, drBooking, drProduct, drProductType, drSupplier;
+        String connStr, sqlLogin, sqlBooking, sqlProduct, sqlProductType, sqlSupplier;
 
         public MainWindow()
         {
@@ -226,6 +226,23 @@ namespace Belfray
 
                     txtProdDesc2.Text = drProductType["productTypeDesc"].ToString();
 
+                    drSupplier = dsBelfray.Tables["Supplier"].Rows.Find(cbSuppID.Text.ToString());
+
+                    if (drSupplier["supplierID"].ToString() == "100")
+                        cbSuppID2.SelectedIndex = 0;
+                    if (drSupplier["supplierID"].ToString() == "101")
+                        cbSuppID2.SelectedIndex = 1;
+                    if (drSupplier["supplierID"].ToString() == "102")
+                        cbSuppID2.SelectedIndex = 2;
+
+                    txtSuppName.Text = drSupplier["supplierName"].ToString();
+                    txtSuppAddress.Text = drSupplier["supplierAddress"].ToString();
+                    txtSuppTown.Text = drSupplier["supplierTown"].ToString();
+                    txtSuppCounty.Text = drSupplier["supplierCounty"].ToString();
+                    txtSuppPC.Text = drSupplier["supplierPostCode"].ToString();
+                    txtSuppEmail.Text = drSupplier["supplierEmail"].ToString();
+                    txtSuppTel.Text = drSupplier["supplierTelNo"].ToString();
+
                 }
                 
             }
@@ -362,6 +379,14 @@ namespace Belfray
 
             daProductType.FillSchema(dsBelfray, SchemaType.Source, "ProductType");
             daProductType.Fill(dsBelfray, "ProductType");
+
+            //SQL For Supplier
+            sqlSupplier = @"select * from Supplier";
+            daSupplier = new SqlDataAdapter(sqlSupplier, connStr);
+            cmdBSupplier = new SqlCommandBuilder(daLogin);
+
+            daSupplier.FillSchema(dsBelfray, SchemaType.Source, "Supplier");
+            daSupplier.Fill(dsBelfray, "Supplier");
 
         }
     }

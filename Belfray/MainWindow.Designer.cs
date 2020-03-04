@@ -44,7 +44,6 @@
             this.pnlRestStockAdd = new System.Windows.Forms.Panel();
             this.pnlSuppDetails = new System.Windows.Forms.Panel();
             this.gbSupplierDetails = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtSuppTel = new System.Windows.Forms.TextBox();
             this.txtSuppEmail = new System.Windows.Forms.TextBox();
             this.txtSuppPC = new System.Windows.Forms.TextBox();
@@ -63,7 +62,6 @@
             this.lblSuppID2 = new System.Windows.Forms.Label();
             this.pnlProdType = new System.Windows.Forms.Panel();
             this.gbProdType = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtProdDesc2 = new System.Windows.Forms.TextBox();
             this.lblProdDesc2 = new System.Windows.Forms.Label();
             this.cbTypeCode2 = new System.Windows.Forms.ComboBox();
@@ -87,7 +85,7 @@
             this.lblProdTypeCode = new System.Windows.Forms.Label();
             this.lblProdDesc = new System.Windows.Forms.Label();
             this.pnlImage = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picSaveProdDet = new System.Windows.Forms.PictureBox();
             this.picLogOut = new System.Windows.Forms.PictureBox();
             this.picTabDelete = new System.Windows.Forms.PictureBox();
             this.picTabEdit = new System.Windows.Forms.PictureBox();
@@ -101,6 +99,8 @@
             this.picRoomStock = new System.Windows.Forms.PictureBox();
             this.picRoomBooking = new System.Windows.Forms.PictureBox();
             this.picHeader = new System.Windows.Forms.PictureBox();
+            this.picSavePTD = new System.Windows.Forms.PictureBox();
+            this.picSaveSupp = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             this.pnlTabControl.SuspendLayout();
             this.pnlWelcome.SuspendLayout();
@@ -115,7 +115,7 @@
             this.gbProdType.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             this.gbProdDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveProdDet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).BeginInit();
@@ -129,6 +129,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSavePTD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveSupp)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -300,7 +302,7 @@
             // 
             // gbSupplierDetails
             // 
-            this.gbSupplierDetails.Controls.Add(this.groupBox3);
+            this.gbSupplierDetails.Controls.Add(this.picSaveSupp);
             this.gbSupplierDetails.Controls.Add(this.txtSuppTel);
             this.gbSupplierDetails.Controls.Add(this.txtSuppEmail);
             this.gbSupplierDetails.Controls.Add(this.txtSuppPC);
@@ -325,15 +327,6 @@
             this.gbSupplierDetails.TabStop = false;
             this.gbSupplierDetails.Text = "Supplier Details";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(409, 172);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(68, 56);
-            this.groupBox3.TabIndex = 19;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "SAVE";
-            // 
             // txtSuppTel
             // 
             this.txtSuppTel.Location = new System.Drawing.Point(164, 169);
@@ -345,7 +338,7 @@
             // 
             this.txtSuppEmail.Location = new System.Drawing.Point(164, 200);
             this.txtSuppEmail.Name = "txtSuppEmail";
-            this.txtSuppEmail.Size = new System.Drawing.Size(100, 25);
+            this.txtSuppEmail.Size = new System.Drawing.Size(202, 25);
             this.txtSuppEmail.TabIndex = 31;
             // 
             // txtSuppPC
@@ -456,6 +449,10 @@
             // cbSuppID2
             // 
             this.cbSuppID2.FormattingEnabled = true;
+            this.cbSuppID2.Items.AddRange(new object[] {
+            "100",
+            "101",
+            "102"});
             this.cbSuppID2.Location = new System.Drawing.Point(164, 15);
             this.cbSuppID2.Name = "cbSuppID2";
             this.cbSuppID2.Size = new System.Drawing.Size(121, 26);
@@ -481,7 +478,7 @@
             // 
             // gbProdType
             // 
-            this.gbProdType.Controls.Add(this.groupBox2);
+            this.gbProdType.Controls.Add(this.picSavePTD);
             this.gbProdType.Controls.Add(this.txtProdDesc2);
             this.gbProdType.Controls.Add(this.lblProdDesc2);
             this.gbProdType.Controls.Add(this.cbTypeCode2);
@@ -493,15 +490,6 @@
             this.gbProdType.TabIndex = 0;
             this.gbProdType.TabStop = false;
             this.gbProdType.Text = "Product Type Details";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(409, 17);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(68, 56);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "SAVE";
             // 
             // txtProdDesc2
             // 
@@ -555,7 +543,7 @@
             // 
             // gbProdDetails
             // 
-            this.gbProdDetails.Controls.Add(this.pictureBox1);
+            this.gbProdDetails.Controls.Add(this.picSaveProdDet);
             this.gbProdDetails.Controls.Add(this.cbSuppID);
             this.gbProdDetails.Controls.Add(this.cbTypeCode);
             this.gbProdDetails.Controls.Add(this.lblSuppID);
@@ -739,15 +727,15 @@
             this.pnlImage.Size = new System.Drawing.Size(232, 329);
             this.pnlImage.TabIndex = 4;
             // 
-            // pictureBox1
+            // picSaveProdDet
             // 
-            this.pictureBox1.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.pictureBox1.Location = new System.Drawing.Point(350, 261);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.picSaveProdDet.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSaveProdDet.Location = new System.Drawing.Point(350, 261);
+            this.picSaveProdDet.Name = "picSaveProdDet";
+            this.picSaveProdDet.Size = new System.Drawing.Size(50, 50);
+            this.picSaveProdDet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSaveProdDet.TabIndex = 17;
+            this.picSaveProdDet.TabStop = false;
             // 
             // picLogOut
             // 
@@ -914,6 +902,26 @@
             this.picHeader.TabIndex = 1;
             this.picHeader.TabStop = false;
             // 
+            // picSavePTD
+            // 
+            this.picSavePTD.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSavePTD.Location = new System.Drawing.Point(437, 20);
+            this.picSavePTD.Name = "picSavePTD";
+            this.picSavePTD.Size = new System.Drawing.Size(50, 50);
+            this.picSavePTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSavePTD.TabIndex = 18;
+            this.picSavePTD.TabStop = false;
+            // 
+            // picSaveSupp
+            // 
+            this.picSaveSupp.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSaveSupp.Location = new System.Drawing.Point(437, 175);
+            this.picSaveSupp.Name = "picSaveSupp";
+            this.picSaveSupp.Size = new System.Drawing.Size(50, 50);
+            this.picSaveSupp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSaveSupp.TabIndex = 20;
+            this.picSaveSupp.TabStop = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -949,7 +957,7 @@
             this.pnlDetails.ResumeLayout(false);
             this.gbProdDetails.ResumeLayout(false);
             this.gbProdDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveProdDet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).EndInit();
@@ -963,6 +971,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSavePTD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveSupp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -998,7 +1008,6 @@
         private System.Windows.Forms.Panel pnlRestStockAdd;
         private System.Windows.Forms.Panel pnlSuppDetails;
         private System.Windows.Forms.GroupBox gbSupplierDetails;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtSuppTel;
         private System.Windows.Forms.TextBox txtSuppEmail;
         private System.Windows.Forms.TextBox txtSuppPC;
@@ -1017,7 +1026,6 @@
         private System.Windows.Forms.Label lblSuppID2;
         private System.Windows.Forms.Panel pnlProdType;
         private System.Windows.Forms.GroupBox gbProdType;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtProdDesc2;
         private System.Windows.Forms.Label lblProdDesc2;
         private System.Windows.Forms.ComboBox cbTypeCode2;
@@ -1041,6 +1049,8 @@
         private System.Windows.Forms.Label lblProdTypeCode;
         private System.Windows.Forms.Label lblProdDesc;
         private System.Windows.Forms.Panel pnlImage;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picSaveProdDet;
+        private System.Windows.Forms.PictureBox picSaveSupp;
+        private System.Windows.Forms.PictureBox picSavePTD;
     }
 }
