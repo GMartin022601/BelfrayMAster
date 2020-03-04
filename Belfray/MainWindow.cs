@@ -268,6 +268,20 @@ namespace Belfray
             }
         }
 
+        private void picEditCancelBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the edit of Product Number: " + lblProductNumberDisplay.Text + "?", "Edit Product", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                //NEEDS TO BE FINISHED TO RETURN OR MOVE TO ANOTHER SCREEN
+            Reset();
+            TabVisible();
+            pnlRestStockEdit.Visible = false;
+            pnlRestStock.Visible = true;
+            dgvRestStock.Visible = true;
+            dgvRestStock.DataSource = dsBelfray.Tables["Product"];
+            //Resize
+            dgvRestStock.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+        }
 
         private void picTabAdd_MouseLeave(object sender, EventArgs e)
         {
