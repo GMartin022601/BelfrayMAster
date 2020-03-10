@@ -35,6 +35,22 @@ namespace Belfray
             }
         }
 
+        //Creates the Down arrow
+        public void arrowControlDown(Color colour, bool created, int x, int y)
+        {
+            SolidBrush sb = new SolidBrush(colour);
+            Point[] pointArray = { new Point(x, y), new Point(x + 20, y - 25), new Point(x - 20, y - 25) };
+            Graphics g = pnlFloorPlan.CreateGraphics();
+            if (created == false)
+            {
+                g.FillPolygon(sb, pointArray);
+            }
+            else
+            {
+                pnlFloorPlan.Refresh();
+            }
+        }
+
         //Creates the Left arrow
         public void arrowControlLeft(Color colour, bool created, int x, int y)
         {
@@ -762,7 +778,39 @@ namespace Belfray
         //Room 113
         private void picRoom113_MouseEnter(object sender, EventArgs e)
         {
+            bool available = true;
+            Color colour = new Color();
+            arrowCreated = false;
 
+            if (available == true)
+            {
+                colour = Color.FromArgb(57, 181, 74);
+                //Location of 113 Green Panel
+                pnlGreen.Location = new Point(405, 434);
+                pnlGreen.Visible = true;
+            }
+            else
+            {
+                colour = Color.FromArgb(205, 36, 36);
+                //Location of 113 Red Panel
+                pnlRed.Location = new Point(405, 434);
+                pnlRed.Visible = true;
+            }
+
+            picRoom113.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlLeft(colour, arrowCreated, 385, 494);
+
+            //Set Pop-up box values (Green)
+            lblGreenNo.Text = "113";
+            lblGreenRoomType.Text = "Family";
+            lblGreenCapacityValue.Text = "4";
+
+            //Set Pop-up box values (Red)
+            lblRedNo.Text = "113";
+            lblRedRoomType.Text = "Family";
+            lblRedCapacityValue.Text = "4";
         }
 
         private void picRoom113_Click(object sender, EventArgs e)
@@ -772,13 +820,56 @@ namespace Belfray
 
         private void picRoom113_MouseLeave(object sender, EventArgs e)
         {
+            arrowCreated = true;
+            Color colour = new Color();
+            colour = Color.Transparent;
 
+            pnlGreen.Visible = false;
+            pnlRed.Visible = false;
+
+            //Change Picture background colour
+            picRoom113.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlLeft(colour, arrowCreated, 385, 494);
         }
 
         //Room 114
         private void picRoom114_MouseEnter(object sender, EventArgs e)
         {
+            bool available = true;
+            Color colour = new Color();
+            arrowCreated = false;
 
+            if (available == true)
+            {
+                colour = Color.FromArgb(57, 181, 74);
+                //Location of 114 Green Panel
+                pnlGreen.Location = new Point(405, 314);
+                pnlGreen.Visible = true;
+            }
+            else
+            {
+                colour = Color.FromArgb(205, 36, 36);
+                //Location of 114 Red Panel
+                pnlRed.Location = new Point(405, 314);
+                pnlRed.Visible = true;
+            }
+
+            picRoom114.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlLeft(colour, arrowCreated, 385, 374);
+
+            //Set Pop-up box values (Green)
+            lblGreenNo.Text = "114";
+            lblGreenRoomType.Text = "Family";
+            lblGreenCapacityValue.Text = "4";
+
+            //Set Pop-up box values (Red)
+            lblRedNo.Text = "114";
+            lblRedRoomType.Text = "Family";
+            lblRedCapacityValue.Text = "4";
         }
 
         private void picRoom114_Click(object sender, EventArgs e)
@@ -788,13 +879,56 @@ namespace Belfray
 
         private void picRoom114_MouseLeave(object sender, EventArgs e)
         {
+            arrowCreated = true;
+            Color colour = new Color();
+            colour = Color.Transparent;
 
+            pnlGreen.Visible = false;
+            pnlRed.Visible = false;
+
+            //Change Picture background colour
+            picRoom114.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlLeft(colour, arrowCreated, 385, 374);
         }
 
         //Room 115
         private void picRoom115_MouseEnter(object sender, EventArgs e)
         {
+            bool available = true;
+            Color colour = new Color();
+            arrowCreated = false;
 
+            if (available == true)
+            {
+                colour = Color.FromArgb(57, 181, 74);
+                //Location of 115 Green Panel
+                pnlGreen.Location = new Point(188, 54);
+                pnlGreen.Visible = true;
+            }
+            else
+            {
+                colour = Color.FromArgb(205, 36, 36);
+                //Location of 115 Red Panel
+                pnlRed.Location = new Point(188, 54);
+                pnlRed.Visible = true;
+            }
+
+            picRoom115.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 288, 194);
+
+            //Set Pop-up box values (Green)
+            lblGreenNo.Text = "115";
+            lblGreenRoomType.Text = "Family";
+            lblGreenCapacityValue.Text = "4";
+
+            //Set Pop-up box values (Red)
+            lblRedNo.Text = "115";
+            lblRedRoomType.Text = "Family";
+            lblRedCapacityValue.Text = "4";
         }
 
         private void picRoom115_Click(object sender, EventArgs e)
@@ -804,13 +938,56 @@ namespace Belfray
 
         private void picRoom115_MouseLeave(object sender, EventArgs e)
         {
+            arrowCreated = true;
+            Color colour = new Color();
+            colour = Color.Transparent;
 
+            pnlGreen.Visible = false;
+            pnlRed.Visible = false;
+
+            //Change Picture background colour
+            picRoom115.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 288, 174);
         }
 
         //Room 116
         private void picRoom116_MouseEnter(object sender, EventArgs e)
         {
+            bool available = true;
+            Color colour = new Color();
+            arrowCreated = false;
 
+            if (available == true)
+            {
+                colour = Color.FromArgb(57, 181, 74);
+                //Location of 116 Green Panel
+                pnlGreen.Location = new Point(382, 54);
+                pnlGreen.Visible = true;
+            }
+            else
+            {
+                colour = Color.FromArgb(205, 36, 36);
+                //Location of 116 Red Panel
+                pnlRed.Location = new Point(382, 54);
+                pnlRed.Visible = true;
+            }
+
+            picRoom116.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 482, 194);
+
+            //Set Pop-up box values (Green)
+            lblGreenNo.Text = "116";
+            lblGreenRoomType.Text = "Family";
+            lblGreenCapacityValue.Text = "4";
+
+            //Set Pop-up box values (Red)
+            lblRedNo.Text = "116";
+            lblRedRoomType.Text = "Family";
+            lblRedCapacityValue.Text = "4";
         }
 
         private void picRoom116_Click(object sender, EventArgs e)
@@ -820,13 +997,56 @@ namespace Belfray
 
         private void picRoom116_MouseLeave(object sender, EventArgs e)
         {
+            arrowCreated = true;
+            Color colour = new Color();
+            colour = Color.Transparent;
 
+            pnlGreen.Visible = false;
+            pnlRed.Visible = false;
+
+            //Change Picture background colour
+            picRoom116.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 482, 174);
         }
 
         //Room 117
         private void picRoom117_MouseEnter(object sender, EventArgs e)
         {
+            bool available = true;
+            Color colour = new Color();
+            arrowCreated = false;
 
+            if (available == true)
+            {
+                colour = Color.FromArgb(57, 181, 74);
+                //Location of 117 Green Panel
+                pnlGreen.Location = new Point(576, 54);
+                pnlGreen.Visible = true;
+            }
+            else
+            {
+                colour = Color.FromArgb(205, 36, 36);
+                //Location of 117 Red Panel
+                pnlRed.Location = new Point(576, 54);
+                pnlRed.Visible = true;
+            }
+
+            picRoom117.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 676, 194);
+
+            //Set Pop-up box values (Green)
+            lblGreenNo.Text = "117";
+            lblGreenRoomType.Text = "Twin";
+            lblGreenCapacityValue.Text = "2";
+
+            //Set Pop-up box values (Red)
+            lblRedNo.Text = "117";
+            lblRedRoomType.Text = "Twin";
+            lblRedCapacityValue.Text = "2";
         }
 
         private void picRoom117_Click(object sender, EventArgs e)
@@ -836,13 +1056,56 @@ namespace Belfray
 
         private void picRoom117_MouseLeave(object sender, EventArgs e)
         {
+            arrowCreated = true;
+            Color colour = new Color();
+            colour = Color.Transparent;
 
+            pnlGreen.Visible = false;
+            pnlRed.Visible = false;
+
+            //Change Picture background colour
+            picRoom117.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 676, 174);
         }
 
         //Room 118
         private void picRoom118_MouseEnter(object sender, EventArgs e)
         {
+            bool available = true;
+            Color colour = new Color();
+            arrowCreated = false;
 
+            if (available == true)
+            {
+                colour = Color.FromArgb(57, 181, 74);
+                //Location of 118 Green Panel
+                pnlGreen.Location = new Point(770, 54);
+                pnlGreen.Visible = true;
+            }
+            else
+            {
+                colour = Color.FromArgb(205, 36, 36);
+                //Location of 118 Red Panel
+                pnlRed.Location = new Point(770, 54);
+                pnlRed.Visible = true;
+            }
+
+            picRoom118.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 870, 194);
+
+            //Set Pop-up box values (Green)
+            lblGreenNo.Text = "118";
+            lblGreenRoomType.Text = "Twin";
+            lblGreenCapacityValue.Text = "2";
+
+            //Set Pop-up box values (Red)
+            lblRedNo.Text = "118";
+            lblRedRoomType.Text = "Twin";
+            lblRedCapacityValue.Text = "2";
         }
 
         private void picRoom118_Click(object sender, EventArgs e)
@@ -852,13 +1115,56 @@ namespace Belfray
 
         private void picRoom118_MouseLeave(object sender, EventArgs e)
         {
+            arrowCreated = true;
+            Color colour = new Color();
+            colour = Color.Transparent;
 
+            pnlGreen.Visible = false;
+            pnlRed.Visible = false;
+
+            //Change Picture background colour
+            picRoom118.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 870, 174);
         }
 
         //Room 119
         private void picRoom119_MouseEnter(object sender, EventArgs e)
         {
+            bool available = true;
+            Color colour = new Color();
+            arrowCreated = false;
 
+            if (available == true)
+            {
+                colour = Color.FromArgb(57, 181, 74);
+                //Location of 119 Green Panel
+                pnlGreen.Location = new Point(964, 54);
+                pnlGreen.Visible = true;
+            }
+            else
+            {
+                colour = Color.FromArgb(205, 36, 36);
+                //Location of 119 Red Panel
+                pnlRed.Location = new Point(964, 54);
+                pnlRed.Visible = true;
+            }
+
+            picRoom119.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 1064, 194);
+
+            //Set Pop-up box values (Green)
+            lblGreenNo.Text = "119";
+            lblGreenRoomType.Text = "Honeymoon";
+            lblGreenCapacityValue.Text = "2";
+
+            //Set Pop-up box values (Red)
+            lblRedNo.Text = "119";
+            lblRedRoomType.Text = "Honeymoon";
+            lblRedCapacityValue.Text = "2";
         }
 
         private void picRoom119_Click(object sender, EventArgs e)
@@ -868,7 +1174,18 @@ namespace Belfray
 
         private void picRoom119_MouseLeave(object sender, EventArgs e)
         {
+            arrowCreated = true;
+            Color colour = new Color();
+            colour = Color.Transparent;
 
+            pnlGreen.Visible = false;
+            pnlRed.Visible = false;
+
+            //Change Picture background colour
+            picRoom119.BackColor = colour;
+
+            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
+            arrowControlDown(colour, arrowCreated, 1064, 174);
         }
     }
 }

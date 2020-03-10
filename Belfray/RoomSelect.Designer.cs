@@ -45,8 +45,8 @@
             this.lblGreenAvailability = new System.Windows.Forms.Label();
             this.lblGreenType = new System.Windows.Forms.Label();
             this.lblGreenRoom = new System.Windows.Forms.Label();
-            this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
-            this.lblBookingDate = new System.Windows.Forms.Label();
+            this.dtpCheckInDate = new System.Windows.Forms.DateTimePicker();
+            this.lblCheckInDate = new System.Windows.Forms.Label();
             this.picRoom119 = new System.Windows.Forms.PictureBox();
             this.picRoom118 = new System.Windows.Forms.PictureBox();
             this.picRoom117 = new System.Windows.Forms.PictureBox();
@@ -66,6 +66,8 @@
             this.picRoom103 = new System.Windows.Forms.PictureBox();
             this.picRoom102 = new System.Windows.Forms.PictureBox();
             this.picRoom101 = new System.Windows.Forms.PictureBox();
+            this.lblCheckOutDate = new System.Windows.Forms.Label();
+            this.dtpCheckOutDate = new System.Windows.Forms.DateTimePicker();
             this.pnlFloorPlan.SuspendLayout();
             this.pnlRed.SuspendLayout();
             this.pnlGreen.SuspendLayout();
@@ -93,10 +95,12 @@
             // pnlFloorPlan
             // 
             this.pnlFloorPlan.BackgroundImage = global::Belfray.Properties.Resources.floorplan_layout;
+            this.pnlFloorPlan.Controls.Add(this.dtpCheckOutDate);
+            this.pnlFloorPlan.Controls.Add(this.lblCheckOutDate);
             this.pnlFloorPlan.Controls.Add(this.pnlRed);
             this.pnlFloorPlan.Controls.Add(this.pnlGreen);
-            this.pnlFloorPlan.Controls.Add(this.dtpBookingDate);
-            this.pnlFloorPlan.Controls.Add(this.lblBookingDate);
+            this.pnlFloorPlan.Controls.Add(this.dtpCheckInDate);
+            this.pnlFloorPlan.Controls.Add(this.lblCheckInDate);
             this.pnlFloorPlan.Controls.Add(this.picRoom119);
             this.pnlFloorPlan.Controls.Add(this.picRoom118);
             this.pnlFloorPlan.Controls.Add(this.picRoom117);
@@ -133,7 +137,7 @@
             this.pnlRed.Controls.Add(this.lblRedAvailability);
             this.pnlRed.Controls.Add(this.lblRedType);
             this.pnlRed.Controls.Add(this.lblRedRoom);
-            this.pnlRed.Location = new System.Drawing.Point(557, 432);
+            this.pnlRed.Location = new System.Drawing.Point(96, 588);
             this.pnlRed.Name = "pnlRed";
             this.pnlRed.Size = new System.Drawing.Size(200, 120);
             this.pnlRed.TabIndex = 54;
@@ -221,7 +225,7 @@
             this.pnlGreen.Controls.Add(this.lblGreenAvailability);
             this.pnlGreen.Controls.Add(this.lblGreenType);
             this.pnlGreen.Controls.Add(this.lblGreenRoom);
-            this.pnlGreen.Location = new System.Drawing.Point(792, 432);
+            this.pnlGreen.Location = new System.Drawing.Point(331, 588);
             this.pnlGreen.Name = "pnlGreen";
             this.pnlGreen.Size = new System.Drawing.Size(200, 120);
             this.pnlGreen.TabIndex = 46;
@@ -297,23 +301,23 @@
             this.lblGreenRoom.TabIndex = 47;
             this.lblGreenRoom.Text = "ROOM NO:";
             // 
-            // dtpBookingDate
+            // dtpCheckInDate
             // 
-            this.dtpBookingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBookingDate.Location = new System.Drawing.Point(557, 344);
-            this.dtpBookingDate.Name = "dtpBookingDate";
-            this.dtpBookingDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpBookingDate.TabIndex = 42;
+            this.dtpCheckInDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCheckInDate.Location = new System.Drawing.Point(541, 344);
+            this.dtpCheckInDate.Name = "dtpCheckInDate";
+            this.dtpCheckInDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpCheckInDate.TabIndex = 42;
             // 
-            // lblBookingDate
+            // lblCheckInDate
             // 
-            this.lblBookingDate.AutoSize = true;
-            this.lblBookingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingDate.Location = new System.Drawing.Point(431, 349);
-            this.lblBookingDate.Name = "lblBookingDate";
-            this.lblBookingDate.Size = new System.Drawing.Size(111, 16);
-            this.lblBookingDate.TabIndex = 41;
-            this.lblBookingDate.Text = "BOOKING DATE:";
+            this.lblCheckInDate.AutoSize = true;
+            this.lblCheckInDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckInDate.Location = new System.Drawing.Point(423, 349);
+            this.lblCheckInDate.Name = "lblCheckInDate";
+            this.lblCheckInDate.Size = new System.Drawing.Size(112, 16);
+            this.lblCheckInDate.TabIndex = 41;
+            this.lblCheckInDate.Text = "CHECK IN DATE:";
             // 
             // picRoom119
             // 
@@ -565,6 +569,24 @@
             this.picRoom101.MouseEnter += new System.EventHandler(this.picRoom101_MouseEnter);
             this.picRoom101.MouseLeave += new System.EventHandler(this.picRoom101_MouseLeave);
             // 
+            // lblCheckOutDate
+            // 
+            this.lblCheckOutDate.AutoSize = true;
+            this.lblCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckOutDate.Location = new System.Drawing.Point(823, 349);
+            this.lblCheckOutDate.Name = "lblCheckOutDate";
+            this.lblCheckOutDate.Size = new System.Drawing.Size(128, 16);
+            this.lblCheckOutDate.TabIndex = 55;
+            this.lblCheckOutDate.Text = "CHECK OUT DATE:";
+            // 
+            // dtpCheckOutDate
+            // 
+            this.dtpCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(957, 344);
+            this.dtpCheckOutDate.Name = "dtpCheckOutDate";
+            this.dtpCheckOutDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpCheckOutDate.TabIndex = 56;
+            // 
             // RoomSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,8 +628,8 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlFloorPlan;
-        private System.Windows.Forms.DateTimePicker dtpBookingDate;
-        private System.Windows.Forms.Label lblBookingDate;
+        private System.Windows.Forms.DateTimePicker dtpCheckInDate;
+        private System.Windows.Forms.Label lblCheckInDate;
         private System.Windows.Forms.PictureBox picRoom119;
         private System.Windows.Forms.PictureBox picRoom118;
         private System.Windows.Forms.PictureBox picRoom117;
@@ -643,5 +665,7 @@
         private System.Windows.Forms.Label lblRedAvailability;
         private System.Windows.Forms.Label lblRedType;
         private System.Windows.Forms.Label lblRedRoom;
+        private System.Windows.Forms.DateTimePicker dtpCheckOutDate;
+        private System.Windows.Forms.Label lblCheckOutDate;
     }
 }
