@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlRestStockAdd = new System.Windows.Forms.Panel();
+            this.pnlRestStockEdit = new System.Windows.Forms.Panel();
             this.pnlSuppDetails = new System.Windows.Forms.Panel();
             this.gbSupplierDetails = new System.Windows.Forms.GroupBox();
             this.txtSuppTel = new System.Windows.Forms.TextBox();
@@ -79,7 +79,7 @@
             this.txtSuppPC = new System.Windows.Forms.TextBox();
             this.lblSuppPC = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pnlRestStockAdd.SuspendLayout();
+            this.pnlRestStockEdit.SuspendLayout();
             this.pnlSuppDetails.SuspendLayout();
             this.gbSupplierDetails.SuspendLayout();
             this.pnlProdType.SuspendLayout();
@@ -95,18 +95,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlRestStockAdd
+            // pnlRestStockEdit
             // 
-            this.pnlRestStockAdd.Controls.Add(this.pnlSuppDetails);
-            this.pnlRestStockAdd.Controls.Add(this.pnlProdType);
-            this.pnlRestStockAdd.Controls.Add(this.pnlDetails);
-            this.pnlRestStockAdd.Controls.Add(this.pnlImage);
-            this.pnlRestStockAdd.Location = new System.Drawing.Point(-8, 2);
-            this.pnlRestStockAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlRestStockAdd.Name = "pnlRestStockAdd";
-            this.pnlRestStockAdd.Size = new System.Drawing.Size(1218, 345);
-            this.pnlRestStockAdd.TabIndex = 8;
-            this.pnlRestStockAdd.Visible = false;
+            this.pnlRestStockEdit.Controls.Add(this.pnlSuppDetails);
+            this.pnlRestStockEdit.Controls.Add(this.pnlProdType);
+            this.pnlRestStockEdit.Controls.Add(this.pnlDetails);
+            this.pnlRestStockEdit.Controls.Add(this.pnlImage);
+            this.pnlRestStockEdit.Location = new System.Drawing.Point(-8, 2);
+            this.pnlRestStockEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlRestStockEdit.Name = "pnlRestStockEdit";
+            this.pnlRestStockEdit.Size = new System.Drawing.Size(1218, 345);
+            this.pnlRestStockEdit.TabIndex = 8;
+            this.pnlRestStockEdit.Visible = false;
             // 
             // pnlSuppDetails
             // 
@@ -607,11 +607,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 345);
-            this.Controls.Add(this.pnlRestStockAdd);
+            this.Controls.Add(this.pnlRestStockEdit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RestaurantStock";
             this.Text = "RestaurantStock";
-            this.pnlRestStockAdd.ResumeLayout(false);
+            this.pnlRestStockEdit.ResumeLayout(false);
             this.pnlSuppDetails.ResumeLayout(false);
             this.gbSupplierDetails.ResumeLayout(false);
             this.gbSupplierDetails.PerformLayout();
@@ -634,7 +634,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlRestStockAdd;
+        private System.Windows.Forms.Panel pnlRestStockEdit;
         private System.Windows.Forms.Panel pnlSuppDetails;
         private System.Windows.Forms.GroupBox gbSupplierDetails;
         private System.Windows.Forms.TextBox txtSuppTel;
