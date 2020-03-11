@@ -31,33 +31,27 @@
             this.pnlRestStockAdd = new System.Windows.Forms.Panel();
             this.pnlSuppDetails = new System.Windows.Forms.Panel();
             this.gbSupplierDetails = new System.Windows.Forms.GroupBox();
-            this.picSaveADDSupp = new System.Windows.Forms.PictureBox();
             this.txtSuppTel = new System.Windows.Forms.TextBox();
             this.txtSuppEmail = new System.Windows.Forms.TextBox();
-            this.txtSuppPC = new System.Windows.Forms.TextBox();
             this.txtSuppCounty = new System.Windows.Forms.TextBox();
             this.txtSuppTown = new System.Windows.Forms.TextBox();
             this.txtSuppAddress = new System.Windows.Forms.TextBox();
             this.txtSuppName = new System.Windows.Forms.TextBox();
             this.lblSuppTelNo = new System.Windows.Forms.Label();
             this.lblSuppEmail = new System.Windows.Forms.Label();
-            this.lblSuppPC = new System.Windows.Forms.Label();
             this.lblSuppCounty = new System.Windows.Forms.Label();
             this.lblSuppTown = new System.Windows.Forms.Label();
             this.lblSuppAdd = new System.Windows.Forms.Label();
             this.lblSuppName = new System.Windows.Forms.Label();
-            this.cbSuppID2 = new System.Windows.Forms.ComboBox();
             this.lblSuppID2 = new System.Windows.Forms.Label();
             this.pnlProdType = new System.Windows.Forms.Panel();
             this.gbProdType = new System.Windows.Forms.GroupBox();
-            this.picSaveADDPTD = new System.Windows.Forms.PictureBox();
             this.txtProdDesc2 = new System.Windows.Forms.TextBox();
             this.lblProdDesc2 = new System.Windows.Forms.Label();
             this.cbTypeCode2 = new System.Windows.Forms.ComboBox();
             this.lblProdTypeCode2 = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.gbProdDetails = new System.Windows.Forms.GroupBox();
-            this.picSaveAddProdDet = new System.Windows.Forms.PictureBox();
             this.cbSuppID = new System.Windows.Forms.ComboBox();
             this.cbTypeCode = new System.Windows.Forms.ComboBox();
             this.lblSuppID = new System.Windows.Forms.Label();
@@ -75,16 +69,30 @@
             this.lblProdTypeCode = new System.Windows.Forms.Label();
             this.lblProdDesc = new System.Windows.Forms.Label();
             this.pnlImage = new System.Windows.Forms.Panel();
+            this.lblESupplierID = new System.Windows.Forms.Label();
+            this.picAddNewSupp = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picCancelADDPTD = new System.Windows.Forms.PictureBox();
+            this.picSaveADDPTD = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtSuppPC = new System.Windows.Forms.TextBox();
+            this.lblSuppPC = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnlRestStockAdd.SuspendLayout();
             this.pnlSuppDetails.SuspendLayout();
             this.gbSupplierDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveADDSupp)).BeginInit();
             this.pnlProdType.SuspendLayout();
             this.gbProdType.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveADDPTD)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.gbProdDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddNewSupp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancelADDPTD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveADDPTD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlRestStockAdd
@@ -102,6 +110,7 @@
             // 
             // pnlSuppDetails
             // 
+            this.pnlSuppDetails.BackColor = System.Drawing.Color.White;
             this.pnlSuppDetails.Controls.Add(this.gbSupplierDetails);
             this.pnlSuppDetails.Location = new System.Drawing.Point(676, 100);
             this.pnlSuppDetails.Name = "pnlSuppDetails";
@@ -110,22 +119,23 @@
             // 
             // gbSupplierDetails
             // 
-            this.gbSupplierDetails.Controls.Add(this.picSaveADDSupp);
+            this.gbSupplierDetails.Controls.Add(this.txtSuppPC);
+            this.gbSupplierDetails.Controls.Add(this.lblSuppPC);
+            this.gbSupplierDetails.Controls.Add(this.pictureBox2);
+            this.gbSupplierDetails.Controls.Add(this.pictureBox3);
+            this.gbSupplierDetails.Controls.Add(this.lblESupplierID);
             this.gbSupplierDetails.Controls.Add(this.txtSuppTel);
             this.gbSupplierDetails.Controls.Add(this.txtSuppEmail);
-            this.gbSupplierDetails.Controls.Add(this.txtSuppPC);
             this.gbSupplierDetails.Controls.Add(this.txtSuppCounty);
             this.gbSupplierDetails.Controls.Add(this.txtSuppTown);
             this.gbSupplierDetails.Controls.Add(this.txtSuppAddress);
             this.gbSupplierDetails.Controls.Add(this.txtSuppName);
             this.gbSupplierDetails.Controls.Add(this.lblSuppTelNo);
             this.gbSupplierDetails.Controls.Add(this.lblSuppEmail);
-            this.gbSupplierDetails.Controls.Add(this.lblSuppPC);
             this.gbSupplierDetails.Controls.Add(this.lblSuppCounty);
             this.gbSupplierDetails.Controls.Add(this.lblSuppTown);
             this.gbSupplierDetails.Controls.Add(this.lblSuppAdd);
             this.gbSupplierDetails.Controls.Add(this.lblSuppName);
-            this.gbSupplierDetails.Controls.Add(this.cbSuppID2);
             this.gbSupplierDetails.Controls.Add(this.lblSuppID2);
             this.gbSupplierDetails.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSupplierDetails.Location = new System.Drawing.Point(4, 3);
@@ -134,15 +144,6 @@
             this.gbSupplierDetails.TabIndex = 0;
             this.gbSupplierDetails.TabStop = false;
             this.gbSupplierDetails.Text = "Supplier Details";
-            // 
-            // picSaveADDSupp
-            // 
-            this.picSaveADDSupp.Location = new System.Drawing.Point(409, 169);
-            this.picSaveADDSupp.Name = "picSaveADDSupp";
-            this.picSaveADDSupp.Size = new System.Drawing.Size(50, 50);
-            this.picSaveADDSupp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSaveADDSupp.TabIndex = 34;
-            this.picSaveADDSupp.TabStop = false;
             // 
             // txtSuppTel
             // 
@@ -157,13 +158,6 @@
             this.txtSuppEmail.Name = "txtSuppEmail";
             this.txtSuppEmail.Size = new System.Drawing.Size(100, 25);
             this.txtSuppEmail.TabIndex = 31;
-            // 
-            // txtSuppPC
-            // 
-            this.txtSuppPC.Location = new System.Drawing.Point(387, 138);
-            this.txtSuppPC.Name = "txtSuppPC";
-            this.txtSuppPC.Size = new System.Drawing.Size(100, 25);
-            this.txtSuppPC.TabIndex = 30;
             // 
             // txtSuppCounty
             // 
@@ -213,16 +207,6 @@
             this.lblSuppEmail.TabIndex = 24;
             this.lblSuppEmail.Text = "EMAIL";
             // 
-            // lblSuppPC
-            // 
-            this.lblSuppPC.AutoSize = true;
-            this.lblSuppPC.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuppPC.Location = new System.Drawing.Point(292, 141);
-            this.lblSuppPC.Name = "lblSuppPC";
-            this.lblSuppPC.Size = new System.Drawing.Size(74, 17);
-            this.lblSuppPC.TabIndex = 23;
-            this.lblSuppPC.Text = "POST CODE";
-            // 
             // lblSuppCounty
             // 
             this.lblSuppCounty.AutoSize = true;
@@ -263,14 +247,6 @@
             this.lblSuppName.TabIndex = 19;
             this.lblSuppName.Text = "NAME";
             // 
-            // cbSuppID2
-            // 
-            this.cbSuppID2.FormattingEnabled = true;
-            this.cbSuppID2.Location = new System.Drawing.Point(164, 15);
-            this.cbSuppID2.Name = "cbSuppID2";
-            this.cbSuppID2.Size = new System.Drawing.Size(121, 26);
-            this.cbSuppID2.TabIndex = 18;
-            // 
             // lblSuppID2
             // 
             this.lblSuppID2.AutoSize = true;
@@ -283,6 +259,7 @@
             // 
             // pnlProdType
             // 
+            this.pnlProdType.BackColor = System.Drawing.Color.White;
             this.pnlProdType.Controls.Add(this.gbProdType);
             this.pnlProdType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlProdType.Location = new System.Drawing.Point(676, 8);
@@ -292,6 +269,7 @@
             // 
             // gbProdType
             // 
+            this.gbProdType.Controls.Add(this.picCancelADDPTD);
             this.gbProdType.Controls.Add(this.picSaveADDPTD);
             this.gbProdType.Controls.Add(this.txtProdDesc2);
             this.gbProdType.Controls.Add(this.lblProdDesc2);
@@ -304,15 +282,6 @@
             this.gbProdType.TabIndex = 0;
             this.gbProdType.TabStop = false;
             this.gbProdType.Text = "Product Type Details";
-            // 
-            // picSaveADDPTD
-            // 
-            this.picSaveADDPTD.Location = new System.Drawing.Point(409, 23);
-            this.picSaveADDPTD.Name = "picSaveADDPTD";
-            this.picSaveADDPTD.Size = new System.Drawing.Size(50, 50);
-            this.picSaveADDPTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSaveADDPTD.TabIndex = 33;
-            this.picSaveADDPTD.TabStop = false;
             // 
             // txtProdDesc2
             // 
@@ -351,6 +320,7 @@
             // 
             // pnlDetails
             // 
+            this.pnlDetails.BackColor = System.Drawing.Color.White;
             this.pnlDetails.Controls.Add(this.gbProdDetails);
             this.pnlDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlDetails.Location = new System.Drawing.Point(258, 8);
@@ -360,7 +330,9 @@
             // 
             // gbProdDetails
             // 
-            this.gbProdDetails.Controls.Add(this.picSaveAddProdDet);
+            this.gbProdDetails.Controls.Add(this.pictureBox4);
+            this.gbProdDetails.Controls.Add(this.pictureBox1);
+            this.gbProdDetails.Controls.Add(this.picAddNewSupp);
             this.gbProdDetails.Controls.Add(this.cbSuppID);
             this.gbProdDetails.Controls.Add(this.cbTypeCode);
             this.gbProdDetails.Controls.Add(this.lblSuppID);
@@ -384,15 +356,6 @@
             this.gbProdDetails.TabIndex = 9;
             this.gbProdDetails.TabStop = false;
             this.gbProdDetails.Text = "Product Details";
-            // 
-            // picSaveAddProdDet
-            // 
-            this.picSaveAddProdDet.Location = new System.Drawing.Point(350, 261);
-            this.picSaveAddProdDet.Name = "picSaveAddProdDet";
-            this.picSaveAddProdDet.Size = new System.Drawing.Size(50, 50);
-            this.picSaveAddProdDet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSaveAddProdDet.TabIndex = 18;
-            this.picSaveAddProdDet.TabStop = false;
             // 
             // cbSuppID
             // 
@@ -488,11 +451,10 @@
             // lblProductNumberDisplay
             // 
             this.lblProductNumberDisplay.AutoSize = true;
-            this.lblProductNumberDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblProductNumberDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductNumberDisplay.Location = new System.Drawing.Point(170, 33);
             this.lblProductNumberDisplay.Name = "lblProductNumberDisplay";
-            this.lblProductNumberDisplay.Size = new System.Drawing.Size(46, 18);
+            this.lblProductNumberDisplay.Size = new System.Drawing.Size(44, 16);
             this.lblProductNumberDisplay.TabIndex = 8;
             this.lblProductNumberDisplay.Text = "xxxxxx";
             // 
@@ -543,6 +505,103 @@
             this.pnlImage.Size = new System.Drawing.Size(232, 329);
             this.pnlImage.TabIndex = 4;
             // 
+            // lblESupplierID
+            // 
+            this.lblESupplierID.AutoSize = true;
+            this.lblESupplierID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblESupplierID.Location = new System.Drawing.Point(161, 21);
+            this.lblESupplierID.Name = "lblESupplierID";
+            this.lblESupplierID.Size = new System.Drawing.Size(44, 16);
+            this.lblESupplierID.TabIndex = 19;
+            this.lblESupplierID.Text = "xxxxxx";
+            // 
+            // picAddNewSupp
+            // 
+            this.picAddNewSupp.Image = global::Belfray.Properties.Resources.AddNew3;
+            this.picAddNewSupp.Location = new System.Drawing.Point(297, 65);
+            this.picAddNewSupp.Name = "picAddNewSupp";
+            this.picAddNewSupp.Size = new System.Drawing.Size(36, 26);
+            this.picAddNewSupp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAddNewSupp.TabIndex = 35;
+            this.picAddNewSupp.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Belfray.Properties.Resources.AddNew3;
+            this.pictureBox1.Location = new System.Drawing.Point(297, 255);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picCancelADDPTD
+            // 
+            this.picCancelADDPTD.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picCancelADDPTD.Location = new System.Drawing.Point(387, 44);
+            this.picCancelADDPTD.Name = "picCancelADDPTD";
+            this.picCancelADDPTD.Size = new System.Drawing.Size(36, 26);
+            this.picCancelADDPTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCancelADDPTD.TabIndex = 37;
+            this.picCancelADDPTD.TabStop = false;
+            // 
+            // picSaveADDPTD
+            // 
+            this.picSaveADDPTD.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSaveADDPTD.Location = new System.Drawing.Point(429, 20);
+            this.picSaveADDPTD.Name = "picSaveADDPTD";
+            this.picSaveADDPTD.Size = new System.Drawing.Size(50, 50);
+            this.picSaveADDPTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSaveADDPTD.TabIndex = 36;
+            this.picSaveADDPTD.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.pictureBox2.Location = new System.Drawing.Point(387, 199);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(36, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.pictureBox3.Location = new System.Drawing.Point(429, 175);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 38;
+            this.pictureBox3.TabStop = false;
+            // 
+            // txtSuppPC
+            // 
+            this.txtSuppPC.Location = new System.Drawing.Point(392, 137);
+            this.txtSuppPC.Name = "txtSuppPC";
+            this.txtSuppPC.Size = new System.Drawing.Size(87, 25);
+            this.txtSuppPC.TabIndex = 41;
+            // 
+            // lblSuppPC
+            // 
+            this.lblSuppPC.AutoSize = true;
+            this.lblSuppPC.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuppPC.Location = new System.Drawing.Point(312, 140);
+            this.lblSuppPC.Name = "lblSuppPC";
+            this.lblSuppPC.Size = new System.Drawing.Size(74, 17);
+            this.lblSuppPC.TabIndex = 40;
+            this.lblSuppPC.Text = "POST CODE";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.pictureBox4.Location = new System.Drawing.Point(350, 267);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 39;
+            this.pictureBox4.TabStop = false;
+            // 
             // RestaurantStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,15 +615,19 @@
             this.pnlSuppDetails.ResumeLayout(false);
             this.gbSupplierDetails.ResumeLayout(false);
             this.gbSupplierDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveADDSupp)).EndInit();
             this.pnlProdType.ResumeLayout(false);
             this.gbProdType.ResumeLayout(false);
             this.gbProdType.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveADDPTD)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.gbProdDetails.ResumeLayout(false);
             this.gbProdDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddNewSupp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancelADDPTD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveADDPTD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -574,33 +637,27 @@
         private System.Windows.Forms.Panel pnlRestStockAdd;
         private System.Windows.Forms.Panel pnlSuppDetails;
         private System.Windows.Forms.GroupBox gbSupplierDetails;
-        private System.Windows.Forms.PictureBox picSaveADDSupp;
         private System.Windows.Forms.TextBox txtSuppTel;
         private System.Windows.Forms.TextBox txtSuppEmail;
-        private System.Windows.Forms.TextBox txtSuppPC;
         private System.Windows.Forms.TextBox txtSuppCounty;
         private System.Windows.Forms.TextBox txtSuppTown;
         private System.Windows.Forms.TextBox txtSuppAddress;
         private System.Windows.Forms.TextBox txtSuppName;
         private System.Windows.Forms.Label lblSuppTelNo;
         private System.Windows.Forms.Label lblSuppEmail;
-        private System.Windows.Forms.Label lblSuppPC;
         private System.Windows.Forms.Label lblSuppCounty;
         private System.Windows.Forms.Label lblSuppTown;
         private System.Windows.Forms.Label lblSuppAdd;
         private System.Windows.Forms.Label lblSuppName;
-        private System.Windows.Forms.ComboBox cbSuppID2;
         private System.Windows.Forms.Label lblSuppID2;
         private System.Windows.Forms.Panel pnlProdType;
         private System.Windows.Forms.GroupBox gbProdType;
-        private System.Windows.Forms.PictureBox picSaveADDPTD;
         private System.Windows.Forms.TextBox txtProdDesc2;
         private System.Windows.Forms.Label lblProdDesc2;
         private System.Windows.Forms.ComboBox cbTypeCode2;
         private System.Windows.Forms.Label lblProdTypeCode2;
         private System.Windows.Forms.Panel pnlDetails;
         private System.Windows.Forms.GroupBox gbProdDetails;
-        private System.Windows.Forms.PictureBox picSaveAddProdDet;
         private System.Windows.Forms.ComboBox cbSuppID;
         private System.Windows.Forms.ComboBox cbTypeCode;
         private System.Windows.Forms.Label lblSuppID;
@@ -618,5 +675,15 @@
         private System.Windows.Forms.Label lblProdTypeCode;
         private System.Windows.Forms.Label lblProdDesc;
         private System.Windows.Forms.Panel pnlImage;
+        private System.Windows.Forms.Label lblESupplierID;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picAddNewSupp;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picCancelADDPTD;
+        private System.Windows.Forms.PictureBox picSaveADDPTD;
+        private System.Windows.Forms.TextBox txtSuppPC;
+        private System.Windows.Forms.Label lblSuppPC;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
