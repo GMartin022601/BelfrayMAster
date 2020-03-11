@@ -272,7 +272,7 @@ namespace Belfray
         private void getProdNum(int noRows)
         {
             drProduct = dsBelfray.Tables["Product"].Rows[noRows - 1];
-            lblProductNumberDisplay.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
+            //lblProductNumberDisplay.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
             //lblSupplierID.Text = (int.Parse(drProduct["supplierID"].ToString()) + 1).ToString();
             //lblAddProdNum.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
         }
