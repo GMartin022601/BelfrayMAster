@@ -83,12 +83,6 @@
     <Compile Include="RoomBookingEdit.Designer.cs">
       <DependentUpon>RoomBookingEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="RestaurantStockSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RestaurantStockSearch.Designer.cs">
-      <DependentUpon>RestaurantStockSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="RoomBookingSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,9 +155,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomBookingEdit.resx">
       <DependentUpon>RoomBookingEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RestaurantStockSearch.resx">
-      <DependentUpon>RestaurantStockSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoomBookingSearch.resx">
       <DependentUpon>RoomBookingSearch.cs</DependentUpon>
