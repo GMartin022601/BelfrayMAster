@@ -1,6 +1,6 @@
 ﻿namespace Belfray
 {
-    partial class BookingSearch
+    partial class RoomBookingDisplay
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvBookings = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).BeginInit();
             this.SuspendLayout();
             // 
-            // BookingSearch
+            // dgvBookings
+            // 
+            this.dgvBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBookings.Location = new System.Drawing.Point(2, 1);
+            this.dgvBookings.Name = "dgvBookings";
+            this.dgvBookings.Size = new System.Drawing.Size(1216, 347);
+            this.dgvBookings.TabIndex = 0;
+            // 
+            // BookingDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 349);
+            this.Controls.Add(this.dgvBookings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "BookingSearch";
-            this.Text = "BookingSearch";
+            this.Name = "BookingDisplay";
+            this.Text = "BookingDisplay";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvBookings;
     }
 }

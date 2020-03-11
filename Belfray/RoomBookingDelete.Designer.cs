@@ -1,6 +1,6 @@
 ﻿namespace Belfray
 {
-    partial class BookingDelete
+    partial class RoomBookingDelete
     {
         /// <summary>
         /// Required designer variable.

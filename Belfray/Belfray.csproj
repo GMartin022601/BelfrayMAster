@@ -58,35 +58,35 @@
     <Compile Include="AppDisplay.Designer.cs">
       <DependentUpon>AppDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookingAdd.cs">
+    <Compile Include="RoomBookingAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookingAdd.Designer.cs">
-      <DependentUpon>BookingAdd.cs</DependentUpon>
+    <Compile Include="RoomBookingAdd.Designer.cs">
+      <DependentUpon>RoomBookingAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookingDelete.cs">
+    <Compile Include="RoomBookingDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookingDelete.Designer.cs">
-      <DependentUpon>BookingDelete.cs</DependentUpon>
+    <Compile Include="RoomBookingDelete.Designer.cs">
+      <DependentUpon>RoomBookingDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookingDisplay.cs">
+    <Compile Include="RoomBookingDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookingDisplay.Designer.cs">
-      <DependentUpon>BookingDisplay.cs</DependentUpon>
+    <Compile Include="RoomBookingDisplay.Designer.cs">
+      <DependentUpon>RoomBookingDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookingEdit.cs">
+    <Compile Include="RoomBookingEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookingEdit.Designer.cs">
-      <DependentUpon>BookingEdit.cs</DependentUpon>
+    <Compile Include="RoomBookingEdit.Designer.cs">
+      <DependentUpon>RoomBookingEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookingSearch.cs">
+    <Compile Include="RoomBookingSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookingSearch.Designer.cs">
-      <DependentUpon>BookingSearch.cs</DependentUpon>
+    <Compile Include="RoomBookingSearch.Designer.cs">
+      <DependentUpon>RoomBookingSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -142,20 +142,20 @@
     <EmbeddedResource Include="AppDisplay.resx">
       <DependentUpon>AppDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookingAdd.resx">
-      <DependentUpon>BookingAdd.cs</DependentUpon>
+    <EmbeddedResource Include="RoomBookingAdd.resx">
+      <DependentUpon>RoomBookingAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookingDelete.resx">
-      <DependentUpon>BookingDelete.cs</DependentUpon>
+    <EmbeddedResource Include="RoomBookingDelete.resx">
+      <DependentUpon>RoomBookingDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookingDisplay.resx">
-      <DependentUpon>BookingDisplay.cs</DependentUpon>
+    <EmbeddedResource Include="RoomBookingDisplay.resx">
+      <DependentUpon>RoomBookingDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookingEdit.resx">
-      <DependentUpon>BookingEdit.cs</DependentUpon>
+    <EmbeddedResource Include="RoomBookingEdit.resx">
+      <DependentUpon>RoomBookingEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookingSearch.resx">
-      <DependentUpon>BookingSearch.cs</DependentUpon>
+    <EmbeddedResource Include="RoomBookingSearch.resx">
+      <DependentUpon>RoomBookingSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

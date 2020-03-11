@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Belfray
 {
-    public partial class BookingEdit : Form
+    public partial class RoomBookingAdd : Form
     {
-        public BookingEdit()
+        public RoomBookingAdd()
         {
             InitializeComponent();
         }

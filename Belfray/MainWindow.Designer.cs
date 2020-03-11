@@ -29,30 +29,24 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlTabControl = new System.Windows.Forms.Panel();
+            this.lblNameUser = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.pnlMainBody = new System.Windows.Forms.Panel();
+            this.picLogOut = new System.Windows.Forms.PictureBox();
+            this.picTabDelete = new System.Windows.Forms.PictureBox();
+            this.picTabEdit = new System.Windows.Forms.PictureBox();
+            this.picTabDisplay = new System.Windows.Forms.PictureBox();
+            this.picTabSearch = new System.Windows.Forms.PictureBox();
+            this.picTabAdd = new System.Windows.Forms.PictureBox();
             this.picAdmin = new System.Windows.Forms.PictureBox();
             this.picAccount = new System.Windows.Forms.PictureBox();
             this.picRestaurantStock = new System.Windows.Forms.PictureBox();
             this.picTableBooking = new System.Windows.Forms.PictureBox();
             this.picRoomStock = new System.Windows.Forms.PictureBox();
             this.picRoomBooking = new System.Windows.Forms.PictureBox();
-            this.pnlTabControl = new System.Windows.Forms.Panel();
-            this.picLogOut = new System.Windows.Forms.PictureBox();
-            this.lblNameUser = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.picTabDelete = new System.Windows.Forms.PictureBox();
-            this.picTabEdit = new System.Windows.Forms.PictureBox();
-            this.picTabDisplay = new System.Windows.Forms.PictureBox();
-            this.picTabSearch = new System.Windows.Forms.PictureBox();
-            this.picTabAdd = new System.Windows.Forms.PictureBox();
             this.picHeader = new System.Windows.Forms.PictureBox();
-            this.pnlMainBody = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTableBooking)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).BeginInit();
             this.pnlTabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).BeginInit();
@@ -60,6 +54,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTableBooking)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,135 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(1220, 80);
             this.pnlMenu.TabIndex = 2;
+            // 
+            // pnlTabControl
+            // 
+            this.pnlTabControl.BackColor = System.Drawing.Color.Black;
+            this.pnlTabControl.Controls.Add(this.picLogOut);
+            this.pnlTabControl.Controls.Add(this.lblNameUser);
+            this.pnlTabControl.Controls.Add(this.lblUser);
+            this.pnlTabControl.Controls.Add(this.picTabDelete);
+            this.pnlTabControl.Controls.Add(this.picTabEdit);
+            this.pnlTabControl.Controls.Add(this.picTabDisplay);
+            this.pnlTabControl.Controls.Add(this.picTabSearch);
+            this.pnlTabControl.Controls.Add(this.picTabAdd);
+            this.pnlTabControl.Location = new System.Drawing.Point(0, 533);
+            this.pnlTabControl.Name = "pnlTabControl";
+            this.pnlTabControl.Size = new System.Drawing.Size(1220, 74);
+            this.pnlTabControl.TabIndex = 4;
+            // 
+            // lblNameUser
+            // 
+            this.lblNameUser.AutoSize = true;
+            this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameUser.ForeColor = System.Drawing.Color.White;
+            this.lblNameUser.Location = new System.Drawing.Point(12, 47);
+            this.lblNameUser.Name = "lblNameUser";
+            this.lblNameUser.Size = new System.Drawing.Size(45, 16);
+            this.lblNameUser.TabIndex = 18;
+            this.lblNameUser.Text = "User:";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.White;
+            this.lblUser.Location = new System.Drawing.Point(63, 47);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(13, 16);
+            this.lblUser.TabIndex = 17;
+            this.lblUser.Text = "-";
+            // 
+            // pnlMainBody
+            // 
+            this.pnlMainBody.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlMainBody.Location = new System.Drawing.Point(0, 187);
+            this.pnlMainBody.Name = "pnlMainBody";
+            this.pnlMainBody.Size = new System.Drawing.Size(1220, 349);
+            this.pnlMainBody.TabIndex = 5;
+            // 
+            // picLogOut
+            // 
+            this.picLogOut.Image = global::Belfray.Properties.Resources.LogOutLogo1;
+            this.picLogOut.Location = new System.Drawing.Point(1094, 9);
+            this.picLogOut.Name = "picLogOut";
+            this.picLogOut.Size = new System.Drawing.Size(123, 60);
+            this.picLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogOut.TabIndex = 19;
+            this.picLogOut.TabStop = false;
+            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
+            // 
+            // picTabDelete
+            // 
+            this.picTabDelete.Image = global::Belfray.Properties.Resources.DeleteButton1;
+            this.picTabDelete.Location = new System.Drawing.Point(806, 9);
+            this.picTabDelete.Name = "picTabDelete";
+            this.picTabDelete.Size = new System.Drawing.Size(123, 60);
+            this.picTabDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabDelete.TabIndex = 16;
+            this.picTabDelete.TabStop = false;
+            this.picTabDelete.Visible = false;
+            this.picTabDelete.Click += new System.EventHandler(this.picTabDelete_Click);
+            this.picTabDelete.MouseEnter += new System.EventHandler(this.picTabDelete_MouseEnter);
+            this.picTabDelete.MouseLeave += new System.EventHandler(this.picTabDelete_MouseLeave);
+            // 
+            // picTabEdit
+            // 
+            this.picTabEdit.Image = global::Belfray.Properties.Resources.EditButton1;
+            this.picTabEdit.Location = new System.Drawing.Point(677, 9);
+            this.picTabEdit.Name = "picTabEdit";
+            this.picTabEdit.Size = new System.Drawing.Size(123, 60);
+            this.picTabEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabEdit.TabIndex = 15;
+            this.picTabEdit.TabStop = false;
+            this.picTabEdit.Visible = false;
+            this.picTabEdit.Click += new System.EventHandler(this.picTabEdit_Click);
+            this.picTabEdit.MouseEnter += new System.EventHandler(this.picTabEdit_MouseEnter);
+            this.picTabEdit.MouseLeave += new System.EventHandler(this.picTabEdit_MouseLeave);
+            // 
+            // picTabDisplay
+            // 
+            this.picTabDisplay.Image = global::Belfray.Properties.Resources.DisplayButton1;
+            this.picTabDisplay.Location = new System.Drawing.Point(290, 9);
+            this.picTabDisplay.Name = "picTabDisplay";
+            this.picTabDisplay.Size = new System.Drawing.Size(123, 60);
+            this.picTabDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabDisplay.TabIndex = 14;
+            this.picTabDisplay.TabStop = false;
+            this.picTabDisplay.Visible = false;
+            this.picTabDisplay.Click += new System.EventHandler(this.picTabDisplay_Click);
+            this.picTabDisplay.MouseEnter += new System.EventHandler(this.picTabDisplay_MouseEnter);
+            this.picTabDisplay.MouseLeave += new System.EventHandler(this.picTabDisplay_MouseLeave);
+            // 
+            // picTabSearch
+            // 
+            this.picTabSearch.Image = global::Belfray.Properties.Resources.SearchButton1;
+            this.picTabSearch.Location = new System.Drawing.Point(419, 9);
+            this.picTabSearch.Name = "picTabSearch";
+            this.picTabSearch.Size = new System.Drawing.Size(123, 60);
+            this.picTabSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabSearch.TabIndex = 13;
+            this.picTabSearch.TabStop = false;
+            this.picTabSearch.Visible = false;
+            this.picTabSearch.Click += new System.EventHandler(this.picTabSearch_Click);
+            this.picTabSearch.MouseEnter += new System.EventHandler(this.picTabSearch_MouseEnter);
+            this.picTabSearch.MouseLeave += new System.EventHandler(this.picTabSearch_MouseLeave);
+            // 
+            // picTabAdd
+            // 
+            this.picTabAdd.Image = global::Belfray.Properties.Resources.AddButton1;
+            this.picTabAdd.Location = new System.Drawing.Point(548, 9);
+            this.picTabAdd.Name = "picTabAdd";
+            this.picTabAdd.Size = new System.Drawing.Size(123, 60);
+            this.picTabAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabAdd.TabIndex = 12;
+            this.picTabAdd.TabStop = false;
+            this.picTabAdd.Visible = false;
+            this.picTabAdd.Click += new System.EventHandler(this.picTabAdd_Click);
+            this.picTabAdd.MouseEnter += new System.EventHandler(this.picTabAdd_MouseEnter);
+            this.picTabAdd.MouseLeave += new System.EventHandler(this.picTabAdd_MouseLeave);
             // 
             // picAdmin
             // 
@@ -111,6 +240,7 @@
             this.picRestaurantStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRestaurantStock.TabIndex = 9;
             this.picRestaurantStock.TabStop = false;
+            this.picRestaurantStock.Click += new System.EventHandler(this.picRestaurantStock_Click);
             this.picRestaurantStock.MouseEnter += new System.EventHandler(this.picRestaurantStock_MouseEnter);
             this.picRestaurantStock.MouseLeave += new System.EventHandler(this.picRestaurantStock_MouseLeave);
             // 
@@ -153,122 +283,6 @@
             this.picRoomBooking.MouseEnter += new System.EventHandler(this.picRoomBooking_MouseEnter);
             this.picRoomBooking.MouseLeave += new System.EventHandler(this.picRoomBooking_MouseLeave);
             // 
-            // pnlTabControl
-            // 
-            this.pnlTabControl.BackColor = System.Drawing.Color.Black;
-            this.pnlTabControl.Controls.Add(this.picLogOut);
-            this.pnlTabControl.Controls.Add(this.lblNameUser);
-            this.pnlTabControl.Controls.Add(this.lblUser);
-            this.pnlTabControl.Controls.Add(this.picTabDelete);
-            this.pnlTabControl.Controls.Add(this.picTabEdit);
-            this.pnlTabControl.Controls.Add(this.picTabDisplay);
-            this.pnlTabControl.Controls.Add(this.picTabSearch);
-            this.pnlTabControl.Controls.Add(this.picTabAdd);
-            this.pnlTabControl.Location = new System.Drawing.Point(0, 533);
-            this.pnlTabControl.Name = "pnlTabControl";
-            this.pnlTabControl.Size = new System.Drawing.Size(1220, 74);
-            this.pnlTabControl.TabIndex = 4;
-            // 
-            // picLogOut
-            // 
-            this.picLogOut.Image = global::Belfray.Properties.Resources.LogOutLogo1;
-            this.picLogOut.Location = new System.Drawing.Point(1094, 9);
-            this.picLogOut.Name = "picLogOut";
-            this.picLogOut.Size = new System.Drawing.Size(123, 60);
-            this.picLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogOut.TabIndex = 19;
-            this.picLogOut.TabStop = false;
-            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
-            // 
-            // lblNameUser
-            // 
-            this.lblNameUser.AutoSize = true;
-            this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameUser.ForeColor = System.Drawing.Color.White;
-            this.lblNameUser.Location = new System.Drawing.Point(12, 47);
-            this.lblNameUser.Name = "lblNameUser";
-            this.lblNameUser.Size = new System.Drawing.Size(45, 16);
-            this.lblNameUser.TabIndex = 18;
-            this.lblNameUser.Text = "User:";
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(63, 47);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(13, 16);
-            this.lblUser.TabIndex = 17;
-            this.lblUser.Text = "-";
-            // 
-            // picTabDelete
-            // 
-            this.picTabDelete.Image = global::Belfray.Properties.Resources.DeleteButton1;
-            this.picTabDelete.Location = new System.Drawing.Point(806, 9);
-            this.picTabDelete.Name = "picTabDelete";
-            this.picTabDelete.Size = new System.Drawing.Size(123, 60);
-            this.picTabDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabDelete.TabIndex = 16;
-            this.picTabDelete.TabStop = false;
-            this.picTabDelete.Visible = false;
-            this.picTabDelete.MouseEnter += new System.EventHandler(this.picTabDelete_MouseEnter);
-            this.picTabDelete.MouseLeave += new System.EventHandler(this.picTabDelete_MouseLeave);
-            // 
-            // picTabEdit
-            // 
-            this.picTabEdit.Image = global::Belfray.Properties.Resources.EditButton1;
-            this.picTabEdit.Location = new System.Drawing.Point(677, 9);
-            this.picTabEdit.Name = "picTabEdit";
-            this.picTabEdit.Size = new System.Drawing.Size(123, 60);
-            this.picTabEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabEdit.TabIndex = 15;
-            this.picTabEdit.TabStop = false;
-            this.picTabEdit.Visible = false;
-            this.picTabEdit.MouseEnter += new System.EventHandler(this.picTabEdit_MouseEnter);
-            this.picTabEdit.MouseLeave += new System.EventHandler(this.picTabEdit_MouseLeave);
-            // 
-            // picTabDisplay
-            // 
-            this.picTabDisplay.Image = global::Belfray.Properties.Resources.DisplayButton1;
-            this.picTabDisplay.Location = new System.Drawing.Point(290, 9);
-            this.picTabDisplay.Name = "picTabDisplay";
-            this.picTabDisplay.Size = new System.Drawing.Size(123, 60);
-            this.picTabDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabDisplay.TabIndex = 14;
-            this.picTabDisplay.TabStop = false;
-            this.picTabDisplay.Visible = false;
-            this.picTabDisplay.MouseEnter += new System.EventHandler(this.picTabDisplay_MouseEnter);
-            this.picTabDisplay.MouseLeave += new System.EventHandler(this.picTabDisplay_MouseLeave);
-            // 
-            // picTabSearch
-            // 
-            this.picTabSearch.Image = global::Belfray.Properties.Resources.SearchButton1;
-            this.picTabSearch.Location = new System.Drawing.Point(419, 9);
-            this.picTabSearch.Name = "picTabSearch";
-            this.picTabSearch.Size = new System.Drawing.Size(123, 60);
-            this.picTabSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabSearch.TabIndex = 13;
-            this.picTabSearch.TabStop = false;
-            this.picTabSearch.Visible = false;
-            this.picTabSearch.MouseEnter += new System.EventHandler(this.picTabSearch_MouseEnter);
-            this.picTabSearch.MouseLeave += new System.EventHandler(this.picTabSearch_MouseLeave);
-            // 
-            // picTabAdd
-            // 
-            this.picTabAdd.Image = global::Belfray.Properties.Resources.AddButton1;
-            this.picTabAdd.Location = new System.Drawing.Point(548, 9);
-            this.picTabAdd.Name = "picTabAdd";
-            this.picTabAdd.Size = new System.Drawing.Size(123, 60);
-            this.picTabAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabAdd.TabIndex = 12;
-            this.picTabAdd.TabStop = false;
-            this.picTabAdd.Visible = false;
-            this.picTabAdd.MouseEnter += new System.EventHandler(this.picTabAdd_MouseEnter);
-            this.picTabAdd.MouseLeave += new System.EventHandler(this.picTabAdd_MouseLeave);
-            // 
             // picHeader
             // 
             this.picHeader.Image = global::Belfray.Properties.Resources.HeaderImageTemplate__1_;
@@ -278,14 +292,6 @@
             this.picHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHeader.TabIndex = 1;
             this.picHeader.TabStop = false;
-            // 
-            // pnlMainBody
-            // 
-            this.pnlMainBody.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlMainBody.Location = new System.Drawing.Point(0, 187);
-            this.pnlMainBody.Name = "pnlMainBody";
-            this.pnlMainBody.Size = new System.Drawing.Size(1220, 349);
-            this.pnlMainBody.TabIndex = 5;
             // 
             // MainWindow
             // 
@@ -303,12 +309,6 @@
             this.Text = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.pnlMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTableBooking)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).EndInit();
             this.pnlTabControl.ResumeLayout(false);
             this.pnlTabControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
@@ -317,6 +317,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTableBooking)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomBooking)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
             this.ResumeLayout(false);
 

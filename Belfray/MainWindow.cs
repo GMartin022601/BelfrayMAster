@@ -107,7 +107,7 @@ namespace Belfray
         private void picTabSearch_MouseEnter(object sender, EventArgs e)
         {
             picTabSearch.BackColor = Color.FromArgb(19, 19, 19);
-        }
+        }        
 
         private void picTabSearch_MouseLeave(object sender, EventArgs e)
         {
@@ -146,10 +146,7 @@ namespace Belfray
 
         public void Reset()
         {
-            //Resets to welcome screen
-            //pnlWelcome.Visible = false;
-            //pnlRoomBooking.Visible = false;
-            //pnlRestStock.Visible = false;
+            
         }
 
         public void TabVisible()
@@ -179,7 +176,13 @@ namespace Belfray
 
             Reset();
             TabVisible();
-            //pnlRoomBooking.Visible = true;
+
+            RoomBookingDisplay frm = new RoomBookingDisplay();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.WindowState = FormWindowState.Maximized;
+            pnlMainBody.Controls.Add(frm);
+            frm.Show();
         }
 
         private void picRoomStock_Click(object sender, EventArgs e)
@@ -187,15 +190,7 @@ namespace Belfray
             //Set menu option select to Cleaning Stock
             menuSelected = 2;
 
-            Reset();
             TabVisible();
-            //pnlRoomBooking.Visible = true;
-        }
-
-        private void picLogOut_Click(object sender, EventArgs e)
-        {
-            //Logs out of the system by closing the main window and sending the use back to the log in screen
-            this.Close();           
         }
 
         private void picTableBooking_Click(object sender, EventArgs e)
@@ -203,9 +198,15 @@ namespace Belfray
             //Set menu option select to Table Booking
             menuSelected = 3;
 
-            Reset();
             TabVisible();
-            //pnlRoomBooking.Visible = true;
+        }
+
+        private void picRestaurantStock_Click(object sender, EventArgs e)
+        {
+            //Set menu option select to Table Booking
+            menuSelected = 4;
+
+            TabVisible();
         }
 
         private void picAccount_Click(object sender, EventArgs e)
@@ -213,9 +214,7 @@ namespace Belfray
             //Set menu option select to User Profile
             menuSelected = 5;
 
-            Reset();
             TabVisible();
-            //pnlRoomBooking.Visible = true;
         }
 
         private void picAdmin_Click(object sender, EventArgs e)
@@ -223,9 +222,13 @@ namespace Belfray
             //Set menu option select to Administration
             menuSelected = 6;
 
-            Reset();
             TabVisible();
-            //pnlRoomBooking.Visible = true;
+        }
+
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            //Logs out of the system by closing the main window and sending the use back to the log in screen
+            this.Close();
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -280,6 +283,141 @@ namespace Belfray
             daSupplier.FillSchema(dsBelfray, SchemaType.Source, "Supplier");
             daSupplier.Fill(dsBelfray, "Supplier");
 
+        }
+
+        private void picTabDisplay_Click(object sender, EventArgs e)
+        {
+            switch(menuSelected)
+            {
+                case 0: //Welcome
+                    break;
+                case 1: //Room Booking
+                    RoomBookingDisplay frm = new RoomBookingDisplay();
+                    frm.TopLevel = false;
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case 2: //Room Stock
+                    break;
+                case 3: //Table Booking
+                    break;
+                case 4: //Restaurant Stock
+                    break;
+                case 5: //Staff
+                    break;
+                case 6: //Administration
+                    break;
+            }
+        }
+
+        private void picTabSearch_Click(object sender, EventArgs e)
+        {
+            switch (menuSelected)
+            {
+                case 0: //Welcome
+                    break;
+                case 1: //Room Booking
+                    RoomBookingSearch frm = new RoomBookingSearch();
+                    frm.TopLevel = false;
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case 2: //Room Stock
+                    break;
+                case 3: //Table Booking
+                    break;
+                case 4: //Restaurant Stock
+                    break;
+                case 5: //Staff
+                    break;
+                case 6: //Administration
+                    break;
+            }
+        }
+
+        private void picTabAdd_Click(object sender, EventArgs e)
+        {
+            switch (menuSelected)
+            {
+                case 0: //Welcome
+                    break;
+                case 1: //Room Booking
+                    RoomBookingAdd frm = new RoomBookingAdd();
+                    frm.TopLevel = false;
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case 2: //Room Stock
+                    break;
+                case 3: //Table Booking
+                    break;
+                case 4: //Restaurant Stock
+                    break;
+                case 5: //Staff
+                    break;
+                case 6: //Administration
+                    break;
+            }
+        }
+
+        private void picTabEdit_Click(object sender, EventArgs e)
+        {
+            switch (menuSelected)
+            {
+                case 0: //Welcome
+                    break;
+                case 1: //Room Booking
+                    RoomBookingEdit frm = new RoomBookingEdit();
+                    frm.TopLevel = false;
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case 2: //Room Stock
+                    break;
+                case 3: //Table Booking
+                    break;
+                case 4: //Restaurant Stock
+                    break;
+                case 5: //Staff
+                    break;
+                case 6: //Administration
+                    break;
+            }
+        }
+
+        private void picTabDelete_Click(object sender, EventArgs e)
+        {
+            switch (menuSelected)
+            {
+                case 0: //Welcome
+                    break;
+                case 1: //Room Booking
+                    RoomBookingDelete frm = new RoomBookingDelete();
+                    frm.TopLevel = false;
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case 2: //Room Stock
+                    break;
+                case 3: //Table Booking
+                    break;
+                case 4: //Restaurant Stock
+                    break;
+                case 5: //Staff
+                    break;
+                case 6: //Administration
+                    break;
+            }
         }
     }
 }
