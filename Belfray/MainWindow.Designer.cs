@@ -261,7 +261,7 @@
             this.picTabEdit.TabIndex = 15;
             this.picTabEdit.TabStop = false;
             this.picTabEdit.Visible = false;
-            this.picTabEdit.Click += new System.EventHandler(this.PicTabEdit_Click);
+         //   this.picTabEdit.Click += new System.EventHandler(this.PicTabEdit_Click);
             this.picTabEdit.MouseEnter += new System.EventHandler(this.picTabEdit_MouseEnter);
             this.picTabEdit.MouseLeave += new System.EventHandler(this.picTabEdit_MouseLeave);
             // 
@@ -301,7 +301,7 @@
             this.picTabAdd.TabIndex = 12;
             this.picTabAdd.TabStop = false;
             this.picTabAdd.Visible = false;
-            this.picTabAdd.Click += new System.EventHandler(this.picTabAdd_Click);
+//            this.picTabAdd.Click += new System.EventHandler(this.picTabAdd_Click);
             this.picTabAdd.MouseEnter += new System.EventHandler(this.picTabAdd_MouseEnter);
             this.picTabAdd.MouseLeave += new System.EventHandler(this.picTabAdd_MouseLeave);
             // 
@@ -340,7 +340,7 @@
             this.picRestaurantStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRestaurantStock.TabIndex = 9;
             this.picRestaurantStock.TabStop = false;
-            this.picRestaurantStock.Click += new System.EventHandler(this.picRestaurantStock_Click);
+//            this.picRestaurantStock.Click += new System.EventHandler(this.picRestaurantStock_Click);
             this.picRestaurantStock.MouseEnter += new System.EventHandler(this.picRestaurantStock_MouseEnter);
             this.picRestaurantStock.MouseLeave += new System.EventHandler(this.picRestaurantStock_MouseLeave);
             // 
