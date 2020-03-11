@@ -1,6 +1,6 @@
 ﻿namespace Belfray
 {
-    partial class RestDisp
+    partial class RestaurantStockDisplay
     {
         /// <summary>
         /// Required designer variable.
@@ -35,23 +35,25 @@
             // dgvRestStock
             // 
             this.dgvRestStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRestStock.Location = new System.Drawing.Point(-206, 54);
+            this.dgvRestStock.Location = new System.Drawing.Point(1, 1);
             this.dgvRestStock.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRestStock.Name = "dgvRestStock";
             this.dgvRestStock.RowTemplate.Height = 28;
             this.dgvRestStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRestStock.Size = new System.Drawing.Size(1213, 343);
+            this.dgvRestStock.Size = new System.Drawing.Size(1211, 341);
             this.dgvRestStock.TabIndex = 1;
             this.dgvRestStock.Visible = false;
             // 
-            // RestDisp
+            // RestaurantStockDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1213, 343);
             this.Controls.Add(this.dgvRestStock);
-            this.Name = "RestDisp";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "RestaurantStockDisplay";
             this.Text = "RestDisp";
+            this.Load += new System.EventHandler(this.RestaurantStockDisplay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestStock)).EndInit();
             this.ResumeLayout(false);
 
