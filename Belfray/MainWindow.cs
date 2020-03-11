@@ -442,7 +442,13 @@ namespace Belfray
                     break;
                 case 3: //Table Booking
                     break;
-                case 4: //Restaurant Stock
+                case 4: //Restaurant Stock NEEDS WORK
+                    RestaurantStockEdit frm4 = new RestaurantStockEdit();
+                    frm4.TopLevel = false;
+                    frm4.FormBorderStyle = FormBorderStyle.None;
+                    frm4.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm4);
+                    frm4.Show();
                     break;
                 case 5: //Staff
                     break;
