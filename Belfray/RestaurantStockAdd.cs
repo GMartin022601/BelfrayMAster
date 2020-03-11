@@ -519,6 +519,8 @@ namespace Belfray
             {
                 getProdNum(noRows);
             }
+
+            lblProductNumberDisplay.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
         }
     }
 }
