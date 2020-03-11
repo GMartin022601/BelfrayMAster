@@ -16,7 +16,7 @@ namespace Belfray
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RoomSelect());
+            Application.Run(new RestaurantStockAdd());
         }
     }
 }

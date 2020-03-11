@@ -40,9 +40,8 @@
             this.dgvRestStock.Name = "dgvRestStock";
             this.dgvRestStock.RowTemplate.Height = 28;
             this.dgvRestStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRestStock.Size = new System.Drawing.Size(1211, 341);
+            this.dgvRestStock.Size = new System.Drawing.Size(1211, 342);
             this.dgvRestStock.TabIndex = 1;
-            this.dgvRestStock.Visible = false;
             // 
             // RestaurantStockDisplay
             // 

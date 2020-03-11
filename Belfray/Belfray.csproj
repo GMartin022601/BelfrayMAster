@@ -97,6 +97,7 @@
     <Compile Include="MyAccount.cs" />
     <Compile Include="MyException.cs" />
     <Compile Include="MyProduct.cs" />
+    <Compile Include="MyProdTypeCode.cs" />
     <Compile Include="MyValidation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

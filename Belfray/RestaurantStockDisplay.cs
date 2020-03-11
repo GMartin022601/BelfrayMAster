@@ -17,17 +17,14 @@ namespace Belfray
         //SQL links
         SqlDataAdapter daProduct, daProductType, daSupplier;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBProduct, cmdBProductType, cmdBSupplier;
-        DataRow drProduct, drProductType, drSupplier;
-        String connStr, sqlProduct, sqlProductType, sqlSupplier;
+        //SqlCommandBuilder cmdBProduct;
+        //DataRow drProduct;
+        String connStr, sqlProduct;
 
         public RestaurantStockDisplay()
         {
             InitializeComponent();
-            dgvRestStock.Visible = true;
-            dgvRestStock.DataSource = dsBelfray.Tables["Product"];
-            //Resize
-            dgvRestStock.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
         }
 
         private void RestaurantStockDisplay_Load(object sender, EventArgs e)
@@ -47,19 +44,10 @@ namespace Belfray
             daProduct.FillSchema(dsBelfray, SchemaType.Source, "Product");
             daProduct.Fill(dsBelfray, "Product");
 
-            //SQL For ProductType
-            sqlProductType = @"select * from ProductType";
-            daProductType = new SqlDataAdapter(sqlProductType, connStr);
-
-            daProductType.FillSchema(dsBelfray, SchemaType.Source, "ProductType");
-            daProductType.Fill(dsBelfray, "ProductType");
-
-            //SQL For Supplier
-            sqlSupplier = @"select * from Supplier";
-            daSupplier = new SqlDataAdapter(sqlSupplier, connStr);
-
-            daSupplier.FillSchema(dsBelfray, SchemaType.Source, "Supplier");
-            daSupplier.Fill(dsBelfray, "Supplier");
+            dgvRestStock.Visible = true;
+            dgvRestStock.DataSource = dsBelfray.Tables["Product"];
+            //Resize
+            dgvRestStock.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }
 }
