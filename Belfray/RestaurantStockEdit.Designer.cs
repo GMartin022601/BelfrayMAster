@@ -1,6 +1,6 @@
 ﻿namespace Belfray
 {
-    partial class RestaurantStock
+    partial class RestaurantStockEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -602,14 +602,14 @@
             this.pictureBox4.TabIndex = 39;
             this.pictureBox4.TabStop = false;
             // 
-            // RestaurantStock
+            // RestaurantStockEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 345);
             this.Controls.Add(this.pnlRestStockEdit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RestaurantStock";
+            this.Name = "RestaurantStockEdit";
             this.Text = "RestaurantStock";
             this.pnlRestStockEdit.ResumeLayout(false);
             this.pnlSuppDetails.ResumeLayout(false);
