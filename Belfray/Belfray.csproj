@@ -100,6 +100,18 @@
     <Compile Include="MyValidation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestaurantStock.Designer.cs">
+      <DependentUpon>RestaurantStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestDisp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestDisp.Designer.cs">
+      <DependentUpon>RestDisp.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoomSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RestaurantStock.resx">
+      <DependentUpon>RestaurantStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestDisp.resx">
+      <DependentUpon>RestDisp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomSelect.resx">
       <DependentUpon>RoomSelect.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +320,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Green1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DisplayButton11.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
