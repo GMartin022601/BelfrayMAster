@@ -21,6 +21,176 @@ namespace Belfray
         DataRow drProduct, drProductType, drSupplier;
         String connStr, sqlProduct, sqlProductType, sqlSupplier;
 
+        private void picCancellAddProd_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the edit of Product Number: " + lblProductNumberDisplay.Text + "?", "Edit Product", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                clearAddPanel();
+            errP.Clear();
+            //pnlDetails.Enabled = false;
+            //pnlProdType.Enabled = false;
+            //pnlSuppDetails.Enabled = false;
+        }
+
+        private void picCancelAddSupp_Click(object sender, EventArgs e)
+        {
+            clearSuppPanel();
+            pnlSuppDetails.Enabled = false;
+            pnlDetails.Enabled = true;
+            errP.Clear();
+        }
+
+        private void picAddNewSupp_Click(object sender, EventArgs e)
+        {
+            pnlDetails.Enabled = false;
+            pnlSuppDetails.Enabled = true;
+
+            int noRows = dsBelfray.Tables["Supplier"].Rows.Count;
+
+            if (noRows == 0)
+            {
+                lblSupplierID.Text = "101";
+            }
+            else
+            {
+                getProdNum(noRows);
+            }
+
+            lblSupplierID.Text = (int.Parse(drProduct["supplierID"].ToString()) + 1).ToString();
+
+        }
+
+        private void picSaveADDSupp_Click(object sender, EventArgs e)
+        {
+            MySupplier mySupp = new MySupplier();
+            bool ok = true;
+            errP.Clear();
+
+            try
+            {
+                mySupp.SupplierID = Convert.ToInt32(lblSupplierID.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(lblSupplierID, MyEx.ToString());
+            }
+            try
+            {
+                mySupp.SupplierName = txtSuppName.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppName, MyEx.ToString());
+            }
+            try
+            {
+                mySupp.SupplierAddress = txtSuppAddress.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppAddress, MyEx.ToString());
+            }
+            try
+            {
+                mySupp.SupplierTown = txtSuppTown.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppTown, MyEx.ToString());
+            }
+            try
+            {
+                mySupp.SupplierCounty = txtSuppCounty.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppCounty, MyEx.ToString());
+            }
+            try
+            {
+                mySupp.SupplierPostCode = txtSuppPC.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppPC, MyEx.ToString());
+            }
+            try
+            {
+                mySupp.SupplierEmail = txtSuppEmail.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppEmail, MyEx.ToString());
+            }
+            try
+            {
+                mySupp.SupplierTelNo = txtSuppTel.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppTel, MyEx.ToString());
+            }
+
+            //Try Adding
+            try
+            {
+                if (ok)
+                {
+                    drSupplier = dsBelfray.Tables["Supplier"].NewRow();
+                    drSupplier["supplierID"] = mySupp.SupplierID;
+                    drSupplier["supplierName"] = mySupp.SupplierName;
+                    drSupplier["supplierAddress"] = mySupp.SupplierAddress;
+                    drSupplier["supplierTown"] = mySupp.SupplierTown;
+                    drSupplier["supplierCounty"] = mySupp.SupplierCounty;
+                    drSupplier["supplierPostCode"] = mySupp.SupplierPostCode;
+                    drSupplier["supplierEmail"] = mySupp.SupplierEmail;
+                    drSupplier["supplierTelNo"] = mySupp.SupplierTelNo;
+                    dsBelfray.Tables["Supplier"].Rows.Add(drSupplier);
+                    daSupplier.Update(dsBelfray, "Supplier");
+
+                    MessageBox.Show("Supplier Added");
+                    if (MessageBox.Show("Do you wish to add another Supplier?", "AddSupplier", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        clearSuppPanel();
+                    }
+                    else
+                    {
+                        pnlSuppDetails.Enabled = false;
+                        pnlDetails.Enabled = true;
+                        clearSuppPanel();
+                        clearAddPanel();
+
+                        //cb ProductType
+                        cbSuppID.DataSource = dsBelfray.Tables["Supplier"];
+                        cbSuppID.ValueMember = "supplierID";
+                        cbSuppID.DisplayMember = "supplierName";
+                        cbSuppID.SelectedIndex = -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+        }
+
+        private void picCancelADDPTD_Click(object sender, EventArgs e)
+        {
+            pnlProdType.Enabled = false;
+            txtProdTypeCode.Text = "";
+            txtProdDesc2.Text = "";
+            pnlDetails.Enabled = true;
+            clearAddPanel();
+            errP.Clear();
+        }
+
         //ADD Product Type Details
         private void picSaveADDPTD_Click(object sender, EventArgs e)
         {
@@ -88,21 +258,22 @@ namespace Belfray
             }
         }
         //End Add Product Type Details Save
-
+        
+        //AddNew Product Type
         private void picAddNewPT_Click(object sender, EventArgs e)
         {
             pnlDetails.Enabled = false;
             pnlProdType.Enabled = true;
 
-        }//end of add prod type
-
-        
+        }
+        //end of add prod type
 
         //GetProductNumber
         private void getProdNum(int noRows)
         {
             drProduct = dsBelfray.Tables["Product"].Rows[noRows - 1];
             lblProductNumberDisplay.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
+            //lblSupplierID.Text = (int.Parse(drProduct["supplierID"].ToString()) + 1).ToString();
             //lblAddProdNum.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
         }
         //clear add panel
@@ -116,8 +287,20 @@ namespace Belfray
             cbSuppID.SelectedIndex = -1;
             cbTypeCode.SelectedIndex = -1;
         }
+        //clear supplier panel
+        void clearSuppPanel()
+        {
+            lblSupplierID.Text = "";
+            txtSuppAddress.Clear();
+            txtSuppCounty.Clear();
+            txtSuppEmail.Clear();
+            txtSuppName.Clear();
+            txtSuppPC.Clear();
+            txtSuppTel.Clear();
+            txtSuppTown.Clear();
+        }
 
-
+        //SaveProduct
         private void picSaveAddProdDet_Click(object sender, EventArgs e)
         {
             MyProduct myProduct = new MyProduct();
@@ -190,7 +373,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.SupplierID = Convert.ToInt32(cbSuppID.Text.Trim());
+                myProduct.SupplierID = Convert.ToInt32(cbSuppID.SelectedValue.ToString());
             }
             catch (MyException MyEx)
             {
@@ -204,15 +387,14 @@ namespace Belfray
                 if (ok)
                 {
                     drProduct = dsBelfray.Tables["Product"].NewRow();
-
-                    drProduct["productNo"] = myProduct.ProductNo;
+                    drProduct["productNumber"] = myProduct.ProductNo;
                     drProduct["productTypeCode"] = myProduct.ProductTypeCode;
                     drProduct["productDesc"] = myProduct.ProductDesc;
                     drProduct["costPrice"] = myProduct.CostPrice;
                     drProduct["qtyInStock"] = myProduct.QtyInStock;
                     drProduct["packSize"] = myProduct.PackSize;
                     drProduct["reorderLvl"] = myProduct.ReOrderLvl;
-                    drProduct["supplierId"] = myProduct.SupplierID;
+                    drProduct["supplierID"] = myProduct.SupplierID;
 
                     dsBelfray.Tables["Product"].Rows.Add(drProduct);
                     daProduct.Update(dsBelfray, "Product");
@@ -253,6 +435,18 @@ namespace Belfray
             tpSaveProduct.ShowAlways = true;
             tpSaveProduct.SetToolTip(picSaveAddProdDet, "Save New Product");
 
+            ToolTip tpCancelAddProd = new ToolTip();
+            tpCancelAddProd.ShowAlways = true;
+            tpCancelAddProd.SetToolTip(picCancellAddProd, "Cancel Add New");
+
+            ToolTip tpCancelAddPTD = new ToolTip();
+            tpCancelAddPTD.ShowAlways = true;
+            tpCancelAddPTD.SetToolTip(picCancelADDPTD, "Cancel Add New Product Type Details");
+
+            ToolTip tpCancelAddSupp = new ToolTip();
+            tpCancelAddSupp.ShowAlways = true;
+            tpCancelAddSupp.SetToolTip(picCancelAddSupp, "Cancel Add New Supplier");
+
             //End of tooltips
 
             //PANEL PRODUCT TYPE AND SUPPLIER ARE NOT ENABLED
@@ -282,7 +476,7 @@ namespace Belfray
             //SQL For ProductType
             sqlProductType = @"select * from ProductType";
             daProductType = new SqlDataAdapter(sqlProductType, connStr);
-            cmdBProduct = new SqlCommandBuilder(daProductType);
+            cmdBProductType = new SqlCommandBuilder(daProductType);
             daProductType.FillSchema(dsBelfray, SchemaType.Source, "ProductType");
             daProductType.Fill(dsBelfray, "ProductType");
             
