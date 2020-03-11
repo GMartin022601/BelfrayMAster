@@ -32,16 +32,7 @@
             this.pnlTabControl = new System.Windows.Forms.Panel();
             this.lblNameUser = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.pnlWelcome = new System.Windows.Forms.Panel();
-            this.pnlRoomBooking = new System.Windows.Forms.Panel();
-            this.pnlCustomerDetails = new System.Windows.Forms.Panel();
-            this.pnlBookingDetails = new System.Windows.Forms.Panel();
-            this.pnlRoomPics = new System.Windows.Forms.Panel();
-            this.dgvRoomBooking = new System.Windows.Forms.DataGridView();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.pnlRestStock = new System.Windows.Forms.Panel();
-            this.pnlRestStockEdit = new System.Windows.Forms.Panel();
-            this.pnlRestStockAdd = new System.Windows.Forms.Panel();
+            this.pnlMainBody = new System.Windows.Forms.Panel();
             this.picLogOut = new System.Windows.Forms.PictureBox();
             this.picTabDelete = new System.Windows.Forms.PictureBox();
             this.picTabEdit = new System.Windows.Forms.PictureBox();
@@ -57,9 +48,6 @@
             this.picHeader = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             this.pnlTabControl.SuspendLayout();
-            this.pnlWelcome.SuspendLayout();
-            this.pnlRoomBooking.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).BeginInit();
@@ -128,104 +116,13 @@
             this.lblUser.TabIndex = 17;
             this.lblUser.Text = "-";
             // 
-            // pnlWelcome
+            // pnlMainBody
             // 
-            this.pnlWelcome.Controls.Add(this.pnlRestStockEdit);
-            this.pnlWelcome.Controls.Add(this.pnlRoomBooking);
-            this.pnlWelcome.Controls.Add(this.lblWelcome);
-            this.pnlWelcome.Location = new System.Drawing.Point(0, 187);
-            this.pnlWelcome.Name = "pnlWelcome";
-            this.pnlWelcome.Size = new System.Drawing.Size(1220, 349);
-            this.pnlWelcome.TabIndex = 5;
-            // 
-            // pnlRoomBooking
-            // 
-            this.pnlRoomBooking.Controls.Add(this.pnlCustomerDetails);
-            this.pnlRoomBooking.Controls.Add(this.pnlBookingDetails);
-            this.pnlRoomBooking.Controls.Add(this.pnlRoomPics);
-            this.pnlRoomBooking.Controls.Add(this.dgvRoomBooking);
-            this.pnlRoomBooking.Location = new System.Drawing.Point(0, 2);
-            this.pnlRoomBooking.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlRoomBooking.Name = "pnlRoomBooking";
-            this.pnlRoomBooking.Size = new System.Drawing.Size(1209, 342);
-            this.pnlRoomBooking.TabIndex = 1;
-            this.pnlRoomBooking.Visible = false;
-            // 
-            // pnlCustomerDetails
-            // 
-            this.pnlCustomerDetails.Location = new System.Drawing.Point(713, 6);
-            this.pnlCustomerDetails.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlCustomerDetails.Name = "pnlCustomerDetails";
-            this.pnlCustomerDetails.Size = new System.Drawing.Size(493, 331);
-            this.pnlCustomerDetails.TabIndex = 2;
-            this.pnlCustomerDetails.Visible = false;
-            // 
-            // pnlBookingDetails
-            // 
-            this.pnlBookingDetails.Location = new System.Drawing.Point(327, 6);
-            this.pnlBookingDetails.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlBookingDetails.Name = "pnlBookingDetails";
-            this.pnlBookingDetails.Size = new System.Drawing.Size(373, 331);
-            this.pnlBookingDetails.TabIndex = 2;
-            this.pnlBookingDetails.Visible = false;
-            // 
-            // pnlRoomPics
-            // 
-            this.pnlRoomPics.Location = new System.Drawing.Point(7, 6);
-            this.pnlRoomPics.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlRoomPics.Name = "pnlRoomPics";
-            this.pnlRoomPics.Size = new System.Drawing.Size(307, 331);
-            this.pnlRoomPics.TabIndex = 1;
-            this.pnlRoomPics.Visible = false;
-            // 
-            // dgvRoomBooking
-            // 
-            this.dgvRoomBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoomBooking.Location = new System.Drawing.Point(2, 0);
-            this.dgvRoomBooking.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvRoomBooking.Name = "dgvRoomBooking";
-            this.dgvRoomBooking.RowTemplate.Height = 28;
-            this.dgvRoomBooking.Size = new System.Drawing.Size(1207, 339);
-            this.dgvRoomBooking.TabIndex = 0;
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(389, 92);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(451, 108);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "Welcome";
-            // 
-            // pnlRestStock
-            // 
-            this.pnlRestStock.Location = new System.Drawing.Point(1, 188);
-            this.pnlRestStock.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlRestStock.Name = "pnlRestStock";
-            this.pnlRestStock.Size = new System.Drawing.Size(1218, 345);
-            this.pnlRestStock.TabIndex = 6;
-            this.pnlRestStock.Visible = false;
-            // 
-            // pnlRestStockEdit
-            // 
-            this.pnlRestStockEdit.Location = new System.Drawing.Point(2, 0);
-            this.pnlRestStockEdit.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlRestStockEdit.Name = "pnlRestStockEdit";
-            this.pnlRestStockEdit.Size = new System.Drawing.Size(1218, 345);
-            this.pnlRestStockEdit.TabIndex = 8;
-            this.pnlRestStockEdit.Visible = false;
-            // 
-            // pnlRestStockAdd
-            // 
-            this.pnlRestStockAdd.Location = new System.Drawing.Point(2, 188);
-            this.pnlRestStockAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlRestStockAdd.Name = "pnlRestStockAdd";
-            this.pnlRestStockAdd.Size = new System.Drawing.Size(1218, 345);
-            this.pnlRestStockAdd.TabIndex = 9;
-            this.pnlRestStockAdd.Visible = false;
+            this.pnlMainBody.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlMainBody.Location = new System.Drawing.Point(0, 187);
+            this.pnlMainBody.Name = "pnlMainBody";
+            this.pnlMainBody.Size = new System.Drawing.Size(1220, 349);
+            this.pnlMainBody.TabIndex = 5;
             // 
             // picLogOut
             // 
@@ -248,6 +145,7 @@
             this.picTabDelete.TabIndex = 16;
             this.picTabDelete.TabStop = false;
             this.picTabDelete.Visible = false;
+            this.picTabDelete.Click += new System.EventHandler(this.picTabDelete_Click);
             this.picTabDelete.MouseEnter += new System.EventHandler(this.picTabDelete_MouseEnter);
             this.picTabDelete.MouseLeave += new System.EventHandler(this.picTabDelete_MouseLeave);
             // 
@@ -261,7 +159,7 @@
             this.picTabEdit.TabIndex = 15;
             this.picTabEdit.TabStop = false;
             this.picTabEdit.Visible = false;
-         //   this.picTabEdit.Click += new System.EventHandler(this.PicTabEdit_Click);
+            this.picTabEdit.Click += new System.EventHandler(this.picTabEdit_Click);
             this.picTabEdit.MouseEnter += new System.EventHandler(this.picTabEdit_MouseEnter);
             this.picTabEdit.MouseLeave += new System.EventHandler(this.picTabEdit_MouseLeave);
             // 
@@ -275,6 +173,7 @@
             this.picTabDisplay.TabIndex = 14;
             this.picTabDisplay.TabStop = false;
             this.picTabDisplay.Visible = false;
+            this.picTabDisplay.Click += new System.EventHandler(this.picTabDisplay_Click);
             this.picTabDisplay.MouseEnter += new System.EventHandler(this.picTabDisplay_MouseEnter);
             this.picTabDisplay.MouseLeave += new System.EventHandler(this.picTabDisplay_MouseLeave);
             // 
@@ -288,6 +187,7 @@
             this.picTabSearch.TabIndex = 13;
             this.picTabSearch.TabStop = false;
             this.picTabSearch.Visible = false;
+            this.picTabSearch.Click += new System.EventHandler(this.picTabSearch_Click);
             this.picTabSearch.MouseEnter += new System.EventHandler(this.picTabSearch_MouseEnter);
             this.picTabSearch.MouseLeave += new System.EventHandler(this.picTabSearch_MouseLeave);
             // 
@@ -301,7 +201,7 @@
             this.picTabAdd.TabIndex = 12;
             this.picTabAdd.TabStop = false;
             this.picTabAdd.Visible = false;
-//            this.picTabAdd.Click += new System.EventHandler(this.picTabAdd_Click);
+            this.picTabAdd.Click += new System.EventHandler(this.picTabAdd_Click);
             this.picTabAdd.MouseEnter += new System.EventHandler(this.picTabAdd_MouseEnter);
             this.picTabAdd.MouseLeave += new System.EventHandler(this.picTabAdd_MouseLeave);
             // 
@@ -340,7 +240,7 @@
             this.picRestaurantStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRestaurantStock.TabIndex = 9;
             this.picRestaurantStock.TabStop = false;
-//            this.picRestaurantStock.Click += new System.EventHandler(this.picRestaurantStock_Click);
+            this.picRestaurantStock.Click += new System.EventHandler(this.picRestaurantStock_Click);
             this.picRestaurantStock.MouseEnter += new System.EventHandler(this.picRestaurantStock_MouseEnter);
             this.picRestaurantStock.MouseLeave += new System.EventHandler(this.picRestaurantStock_MouseLeave);
             // 
@@ -399,12 +299,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1220, 605);
-            this.Controls.Add(this.pnlWelcome);
+            this.Controls.Add(this.pnlMainBody);
             this.Controls.Add(this.pnlTabControl);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.picHeader);
-            this.Controls.Add(this.pnlRestStock);
-            this.Controls.Add(this.pnlRestStockAdd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
@@ -412,10 +311,6 @@
             this.pnlMenu.ResumeLayout(false);
             this.pnlTabControl.ResumeLayout(false);
             this.pnlTabControl.PerformLayout();
-            this.pnlWelcome.ResumeLayout(false);
-            this.pnlWelcome.PerformLayout();
-            this.pnlRoomBooking.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomBooking)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).EndInit();
@@ -449,18 +344,9 @@
         private System.Windows.Forms.PictureBox picTabDisplay;
         private System.Windows.Forms.PictureBox picTabSearch;
         private System.Windows.Forms.PictureBox picTabAdd;
-        private System.Windows.Forms.Panel pnlWelcome;
-        private System.Windows.Forms.Panel pnlRoomBooking;
-        private System.Windows.Forms.Panel pnlCustomerDetails;
-        private System.Windows.Forms.Panel pnlBookingDetails;
-        private System.Windows.Forms.Panel pnlRoomPics;
-        private System.Windows.Forms.DataGridView dgvRoomBooking;
-        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblNameUser;
         private System.Windows.Forms.PictureBox picLogOut;
-        private System.Windows.Forms.Panel pnlRestStock;
-        private System.Windows.Forms.Panel pnlRestStockEdit;
-        private System.Windows.Forms.Panel pnlRestStockAdd;
+        private System.Windows.Forms.Panel pnlMainBody;
     }
 }

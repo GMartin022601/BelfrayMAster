@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
+            this.dtpCheckOutDate = new System.Windows.Forms.DateTimePicker();
+            this.lblCheckOutDate = new System.Windows.Forms.Label();
             this.pnlRed = new System.Windows.Forms.Panel();
             this.lblRedCapacityValue = new System.Windows.Forms.Label();
             this.lblRedCapacity = new System.Windows.Forms.Label();
@@ -66,8 +68,6 @@
             this.picRoom103 = new System.Windows.Forms.PictureBox();
             this.picRoom102 = new System.Windows.Forms.PictureBox();
             this.picRoom101 = new System.Windows.Forms.PictureBox();
-            this.lblCheckOutDate = new System.Windows.Forms.Label();
-            this.dtpCheckOutDate = new System.Windows.Forms.DateTimePicker();
             this.pnlFloorPlan.SuspendLayout();
             this.pnlRed.SuspendLayout();
             this.pnlGreen.SuspendLayout();
@@ -124,6 +124,24 @@
             this.pnlFloorPlan.Name = "pnlFloorPlan";
             this.pnlFloorPlan.Size = new System.Drawing.Size(1200, 600);
             this.pnlFloorPlan.TabIndex = 22;
+            // 
+            // dtpCheckOutDate
+            // 
+            this.dtpCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(957, 344);
+            this.dtpCheckOutDate.Name = "dtpCheckOutDate";
+            this.dtpCheckOutDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpCheckOutDate.TabIndex = 56;
+            // 
+            // lblCheckOutDate
+            // 
+            this.lblCheckOutDate.AutoSize = true;
+            this.lblCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckOutDate.Location = new System.Drawing.Point(823, 349);
+            this.lblCheckOutDate.Name = "lblCheckOutDate";
+            this.lblCheckOutDate.Size = new System.Drawing.Size(128, 16);
+            this.lblCheckOutDate.TabIndex = 55;
+            this.lblCheckOutDate.Text = "CHECK OUT DATE:";
             // 
             // pnlRed
             // 
@@ -569,30 +587,13 @@
             this.picRoom101.MouseEnter += new System.EventHandler(this.picRoom101_MouseEnter);
             this.picRoom101.MouseLeave += new System.EventHandler(this.picRoom101_MouseLeave);
             // 
-            // lblCheckOutDate
-            // 
-            this.lblCheckOutDate.AutoSize = true;
-            this.lblCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckOutDate.Location = new System.Drawing.Point(823, 349);
-            this.lblCheckOutDate.Name = "lblCheckOutDate";
-            this.lblCheckOutDate.Size = new System.Drawing.Size(128, 16);
-            this.lblCheckOutDate.TabIndex = 55;
-            this.lblCheckOutDate.Text = "CHECK OUT DATE:";
-            // 
-            // dtpCheckOutDate
-            // 
-            this.dtpCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckOutDate.Location = new System.Drawing.Point(957, 344);
-            this.dtpCheckOutDate.Name = "dtpCheckOutDate";
-            this.dtpCheckOutDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpCheckOutDate.TabIndex = 56;
-            // 
             // RoomSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 600);
             this.Controls.Add(this.pnlFloorPlan);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RoomSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoomSelect";

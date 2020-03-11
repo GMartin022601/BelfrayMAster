@@ -1,6 +1,6 @@
 ﻿namespace Belfray
 {
-    partial class BookingEdit
+    partial class RoomBookingDelete
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // BookingDelete
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "BookingEdit";
+            this.ClientSize = new System.Drawing.Size(1220, 349);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "BookingDelete";
+            this.Text = "BookingDelete";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

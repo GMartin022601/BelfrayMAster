@@ -23,6 +23,9 @@ namespace Belfray
         //Global User's Name
         public static string currUser = "";
 
+        //Login status
+        //public static bool loginStatus = false;
+
         public LoginPage()
         {
             InitializeComponent();
@@ -63,8 +66,8 @@ namespace Belfray
                     txtUsername.Text = "Username";
                     txtPassword.Text = "Password";
                     txtUsername.Focus();
-                    MainWindow main = new MainWindow();
-                    main.Show();
+                    AppDisplay.logOut = true;
+                    this.Close();                    
                 }
                 else
                 {
@@ -91,8 +94,8 @@ namespace Belfray
         private void txtPassword_Enter(object sender, EventArgs e)
         {
             txtPassword.Text = "";
-            txtPassword.PasswordChar = '*';
-        }
+            txtPassword.PasswordChar = '*';            
+        }        
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
