@@ -297,6 +297,7 @@
             this.Controls.Add(this.pnlTabControl);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.picHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";

@@ -52,6 +52,12 @@
     <Compile Include="AddBookingTest.Designer.cs">
       <DependentUpon>AddBookingTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppDisplay.Designer.cs">
+      <DependentUpon>AppDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookingAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,24 @@
     </Compile>
     <EmbeddedResource Include="AddBookingTest.resx">
       <DependentUpon>AddBookingTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppDisplay.resx">
+      <DependentUpon>AppDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingAdd.resx">
+      <DependentUpon>BookingAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingDelete.resx">
+      <DependentUpon>BookingDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingDisplay.resx">
+      <DependentUpon>BookingDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingEdit.resx">
+      <DependentUpon>BookingEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingSearch.resx">
+      <DependentUpon>BookingSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
