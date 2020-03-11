@@ -52,6 +52,36 @@
     <Compile Include="AddBookingTest.Designer.cs">
       <DependentUpon>AddBookingTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookingAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingAdd.Designer.cs">
+      <DependentUpon>BookingAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingDelete.Designer.cs">
+      <DependentUpon>BookingDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingDisplay.Designer.cs">
+      <DependentUpon>BookingDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingEdit.Designer.cs">
+      <DependentUpon>BookingEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingSearch.Designer.cs">
+      <DependentUpon>BookingSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
