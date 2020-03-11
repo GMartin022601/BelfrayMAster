@@ -58,6 +58,7 @@
     <Compile Include="AppDisplay.Designer.cs">
       <DependentUpon>AppDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="MySupplier.cs" />
     <Compile Include="RoomBookingAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +370,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AddNew3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

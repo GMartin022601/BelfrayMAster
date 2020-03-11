@@ -216,6 +216,12 @@ namespace Belfray
             //Set menu option select to Table Booking
             menuSelected = 4;
 
+            RestaurantStockDisplay frm = new RestaurantStockDisplay();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.WindowState = FormWindowState.Maximized;
+            pnlMainBody.Controls.Add(frm);
+            frm.Show();
             TabVisible();
         }
 
@@ -338,6 +344,13 @@ namespace Belfray
                 case 3: //Table Booking
                     break;
                 case 4: //Restaurant Stock
+                    RestaurantStockDisplay frm4 = new RestaurantStockDisplay();
+                    frm4.TopLevel = false;
+                    frm4.FormBorderStyle = FormBorderStyle.None;
+                    frm4.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm4);
+                    frm4.Show();
+                    TabVisible();
                     break;
                 case 5: //Staff
                     break;
@@ -396,6 +409,13 @@ namespace Belfray
                 case 3: //Table Booking
                     break;
                 case 4: //Restaurant Stock
+                    RestaurantStockAdd frm4 = new RestaurantStockAdd();
+                    frm4.TopLevel = false;
+                    frm4.FormBorderStyle = FormBorderStyle.None;
+                    frm4.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm4);
+                    frm4.Show();
+                    TabVisible();
                     break;
                 case 5: //Staff
                     break;
