@@ -68,6 +68,7 @@
             this.picRoom103 = new System.Windows.Forms.PictureBox();
             this.picRoom102 = new System.Windows.Forms.PictureBox();
             this.picRoom101 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlFloorPlan.SuspendLayout();
             this.pnlRed.SuspendLayout();
             this.pnlGreen.SuspendLayout();
@@ -95,6 +96,7 @@
             // pnlFloorPlan
             // 
             this.pnlFloorPlan.BackgroundImage = global::Belfray.Properties.Resources.floorplan_layout;
+            this.pnlFloorPlan.Controls.Add(this.button1);
             this.pnlFloorPlan.Controls.Add(this.dtpCheckOutDate);
             this.pnlFloorPlan.Controls.Add(this.lblCheckOutDate);
             this.pnlFloorPlan.Controls.Add(this.pnlRed);
@@ -587,6 +589,16 @@
             this.picRoom101.MouseEnter += new System.EventHandler(this.picRoom101_MouseEnter);
             this.picRoom101.MouseLeave += new System.EventHandler(this.picRoom101_MouseLeave);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(782, 500);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 57;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // RoomSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -668,5 +680,6 @@
         private System.Windows.Forms.Label lblRedRoom;
         private System.Windows.Forms.DateTimePicker dtpCheckOutDate;
         private System.Windows.Forms.Label lblCheckOutDate;
+        private System.Windows.Forms.Button button1;
     }
 }

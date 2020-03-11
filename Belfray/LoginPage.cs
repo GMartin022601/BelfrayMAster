@@ -23,6 +23,9 @@ namespace Belfray
         //Global User's Name
         public static string currUser = "";
 
+        //Global User Permissions
+        public static int accType = 0;
+
         //Login status
         //public static bool loginStatus = false;
 
@@ -53,6 +56,7 @@ namespace Belfray
                     {
                         passFound = true;
                         currUser = drUser["staffFName"].ToString() + " " + drUser["staffLName"].ToString();
+                        accType = Convert.ToInt32(drUser["accTypeID"].ToString());
                     }
 
                     break;

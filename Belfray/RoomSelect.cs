@@ -1187,5 +1187,10 @@ namespace Belfray
             //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
             arrowControlDown(colour, arrowCreated, 1064, 174);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

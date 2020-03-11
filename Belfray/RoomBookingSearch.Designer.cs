@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvBookingSearch = new System.Windows.Forms.DataGridView();
-            this.pnlSearchDets = new System.Windows.Forms.Panel();
+            this.pnlSearchMethod = new System.Windows.Forms.Panel();
+            this.pnlSearchDetails = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookingSearch)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,20 +42,29 @@
             this.dgvBookingSearch.Size = new System.Drawing.Size(755, 347);
             this.dgvBookingSearch.TabIndex = 1;
             // 
-            // pnlSearchDets
+            // pnlSearchMethod
             // 
-            this.pnlSearchDets.BackColor = System.Drawing.Color.White;
-            this.pnlSearchDets.Location = new System.Drawing.Point(763, 1);
-            this.pnlSearchDets.Name = "pnlSearchDets";
-            this.pnlSearchDets.Size = new System.Drawing.Size(455, 347);
-            this.pnlSearchDets.TabIndex = 2;
+            this.pnlSearchMethod.BackColor = System.Drawing.Color.White;
+            this.pnlSearchMethod.Location = new System.Drawing.Point(763, 1);
+            this.pnlSearchMethod.Name = "pnlSearchMethod";
+            this.pnlSearchMethod.Size = new System.Drawing.Size(455, 52);
+            this.pnlSearchMethod.TabIndex = 2;
+            // 
+            // pnlSearchDetails
+            // 
+            this.pnlSearchDetails.BackColor = System.Drawing.Color.White;
+            this.pnlSearchDetails.Location = new System.Drawing.Point(763, 59);
+            this.pnlSearchDetails.Name = "pnlSearchDetails";
+            this.pnlSearchDetails.Size = new System.Drawing.Size(455, 289);
+            this.pnlSearchDetails.TabIndex = 3;
             // 
             // RoomBookingSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 349);
-            this.Controls.Add(this.pnlSearchDets);
+            this.Controls.Add(this.pnlSearchDetails);
+            this.Controls.Add(this.pnlSearchMethod);
             this.Controls.Add(this.dgvBookingSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RoomBookingSearch";
@@ -67,6 +77,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvBookingSearch;
-        private System.Windows.Forms.Panel pnlSearchDets;
+        private System.Windows.Forms.Panel pnlSearchMethod;
+        private System.Windows.Forms.Panel pnlSearchDetails;
     }
 }

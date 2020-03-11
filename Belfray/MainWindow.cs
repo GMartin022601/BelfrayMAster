@@ -144,6 +144,16 @@ namespace Belfray
             picTabDelete.BackColor = Color.Transparent;
         }
 
+        private void picLogOut_MouseEnter(object sender, EventArgs e)
+        {
+            picLogOut.BackColor = Color.FromArgb(19, 19, 19);
+        }
+
+        private void picLogOut_MouseLeave(object sender, EventArgs e)
+        {
+            picLogOut.BackColor = Color.Transparent;
+        }
+
         public void Reset()
         {
             
@@ -235,6 +245,30 @@ namespace Belfray
         {               
             //Current User
             lblUser.Text = LoginPage.currUser;
+            
+            switch(LoginPage.accType)
+            {
+                case 1: //Admin            
+                    break;
+                case 2: //Hotel
+                    picTableBooking.Visible = false;
+                    picRestaurantStock.Visible = false;
+
+                    picRoomBooking.Location = new Point(259, 10);
+                    picRoomStock.Location = new Point(450, 10);
+                    picAccount.Location = new Point(641, 10);
+                    picAdmin.Location = new Point(832, 10);
+                    break;
+                case 3: //Restaurant
+                    picRoomBooking.Visible = false;
+                    picRoomStock.Visible = false;
+
+                    picTableBooking.Location = new Point(259, 10);
+                    picRestaurantStock.Location = new Point(450, 10);
+                    picAccount.Location = new Point(641, 10);
+                    picAdmin.Location = new Point(832, 10);
+                    break;
+            }
 
             //DB Connection
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
@@ -346,11 +380,15 @@ namespace Belfray
                 case 0: //Welcome
                     break;
                 case 1: //Room Booking
-                    RoomBookingAdd frm = new RoomBookingAdd();
+                    pnlRoomSelect.BringToFront();
+                    pnlRoomSelect.Visible = true;
+
+                    RoomSelect frm = new RoomSelect();
                     frm.TopLevel = false;
                     frm.FormBorderStyle = FormBorderStyle.None;
                     frm.WindowState = FormWindowState.Maximized;
-                    pnlMainBody.Controls.Add(frm);
+                    frm.FormClosed += RoomSelect_Closed;
+                    pnlRoomSelect.Controls.Add(frm);
                     frm.Show();
                     break;
                 case 2: //Room Stock
@@ -418,6 +456,17 @@ namespace Belfray
                 case 6: //Administration
                     break;
             }
+        }
+        private void RoomSelect_Closed(object sender, FormClosedEventArgs e)
+        {
+            pnlRoomSelect.Visible = false;
+
+            RoomBookingAdd frm = new RoomBookingAdd();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.WindowState = FormWindowState.Maximized;
+            pnlMainBody.Controls.Add(frm);
+            frm.Show();
         }
     }
 }

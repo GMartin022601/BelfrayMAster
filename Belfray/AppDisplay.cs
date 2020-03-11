@@ -61,9 +61,7 @@ namespace Belfray
                 frm.Show();
 
                 logOut = false;
-            }
-
-            
+            }            
         }
     }
 }
