@@ -63,8 +63,15 @@ namespace Belfray
                     txtUsername.Text = "Username";
                     txtPassword.Text = "Password";
                     txtUsername.Focus();
-                    MainWindow main = new MainWindow();
-                    main.Show();
+                    pnlMainWindow.Visible = true;
+                    pnlLogin.Visible = false;
+
+                    MainWindow frm = new MainWindow();
+                    frm.TopLevel = false;
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.WindowState = FormWindowState.Maximized;
+                    pnlMainWindow.Controls.Add(frm);
+                    frm.Show();
                 }
                 else
                 {

@@ -31,7 +31,7 @@ namespace Belfray
             InitializeComponent();
 
             pnlMenu.BackColor = Color.FromArgb(233, 233, 233);
-            pnlTabControl.BackColor = Color.FromArgb(63, 63, 63);
+            pnlTabControl.BackColor = Color.FromArgb(63, 63, 63);            
         }
 
         private void picRoomBooking_MouseEnter(object sender, EventArgs e)
@@ -147,9 +147,9 @@ namespace Belfray
         public void Reset()
         {
             //Resets to welcome screen
-            pnlWelcome.Visible = false;
+            //pnlWelcome.Visible = false;
             //pnlRoomBooking.Visible = false;
-            pnlRestStock.Visible = false;
+            //pnlRestStock.Visible = false;
         }
 
         public void TabVisible()
@@ -179,7 +179,7 @@ namespace Belfray
 
             Reset();
             TabVisible();
-            pnlRoomBooking.Visible = true;
+            //pnlRoomBooking.Visible = true;
         }
 
         private void picRoomStock_Click(object sender, EventArgs e)
@@ -229,7 +229,7 @@ namespace Belfray
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
-        {
+        {               
             //Current User
             lblUser.Text = LoginPage.currUser;
 
