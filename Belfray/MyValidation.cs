@@ -14,11 +14,14 @@ namespace Belfray
             bool ok = true;
 
             if (string.IsNullOrEmpty(txt))
+            {
                 ok = false;
+            }
 
             else if (txt.Length < min || txt.Length > max)
+            {
                 ok = false;
-
+            }
             return ok;
         }
         //Valid Number
@@ -124,7 +127,7 @@ namespace Belfray
             {
                 for (int x = 0; x < txt.Length; x++)
                 {
-                    if (!(char.IsLetter(txt[x])) && !(char.IsNumber(txt[x])) && !(char.IsWhiteSpace(txt[x])) && !(txt[x].Equals('-')))
+                    if (!(char.IsLetter(txt[x])) && !(char.IsNumber(txt[x])) && !(char.IsWhiteSpace(txt[x])) && !(txt[x].Equals('-')) && !(txt[x].Equals('.')))
                         ok = false;
                 }
             }

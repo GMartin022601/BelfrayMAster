@@ -8,16 +8,16 @@ namespace Belfray
 {
     class MyException : Exception
     {
-        private String message;
+        private string message;
 
-        public MyException(String message)
+        public MyException(string message)
         {
             this.message = message;
         }
 
-        public String toString()
+        public string toString()
         {
-            return String.Format("Error: {0} ", message);
+            return string.Format("Error: {0} ", message);
         }
     }
 }

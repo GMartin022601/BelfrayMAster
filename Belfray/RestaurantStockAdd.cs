@@ -72,7 +72,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(lblSupplierID, MyEx.ToString());
+                errP.SetError(lblSupplierID, MyEx.toString());
             }
             try
             {
@@ -81,7 +81,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(txtSuppName, MyEx.ToString());
+                errP.SetError(txtSuppName, MyEx.toString());
             }
             try
             {
@@ -90,7 +90,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(txtSuppAddress, MyEx.ToString());
+                errP.SetError(txtSuppAddress, MyEx.toString());
             }
             try
             {
@@ -99,7 +99,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(txtSuppTown, MyEx.ToString());
+                errP.SetError(txtSuppTown, MyEx.toString());
             }
             try
             {
@@ -108,7 +108,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(txtSuppCounty, MyEx.ToString());
+                errP.SetError(txtSuppCounty, MyEx.toString());
             }
             try
             {
@@ -117,7 +117,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(txtSuppPC, MyEx.ToString());
+                errP.SetError(txtSuppPC, MyEx.toString());
             }
             try
             {
@@ -126,7 +126,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(txtSuppEmail, MyEx.ToString());
+                errP.SetError(txtSuppEmail, MyEx.toString());
             }
             try
             {
@@ -135,7 +135,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(txtSuppTel, MyEx.ToString());
+                errP.SetError(txtSuppTel, MyEx.toString());
             }
 
             //Try Adding
@@ -206,7 +206,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(txtProdTypeCode, MyEx.ToString());
+                errP.SetError(txtProdTypeCode, MyEx.toString());
             }
             try
             {
@@ -215,7 +215,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                errP.SetError(txtProdDesc2, MyEx.ToString());
+                errP.SetError(txtProdDesc2, MyEx.toString());
             }
             //Try Adding
             try
@@ -305,7 +305,7 @@ namespace Belfray
         {
             MyProduct myProduct = new MyProduct();
             bool ok = true;
-
+            errP.Clear();
             //ErrP to be added!
 
             try
@@ -315,7 +315,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                MyEx.ToString();
+                errP.SetError(lblProductNumberDisplay, MyEx.toString());
             }
             try
             {
@@ -324,7 +324,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                MyEx.ToString();
+                errP.SetError(cbTypeCode, MyEx.toString());
             }
             try
             {
@@ -333,7 +333,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                MyEx.ToString();
+                errP.SetError(txtProdDesc, MyEx.toString());
             }
             try
             {
@@ -342,7 +342,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                MyEx.ToString();
+                errP.SetError(txtCostPrice, MyEx.toString());
             }
             try
             {
@@ -351,7 +351,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                MyEx.ToString();
+                errP.SetError(txtQTY, MyEx.toString());
             }
             try
             {
@@ -360,7 +360,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                MyEx.ToString();
+                errP.SetError(txtPackSize, MyEx.toString());
             }
             try
             {
@@ -369,7 +369,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                MyEx.ToString();
+                errP.SetError(txtReOrder, MyEx.toString());
             }
             try
             {
@@ -378,7 +378,7 @@ namespace Belfray
             catch (MyException MyEx)
             {
                 ok = false;
-                MyEx.ToString();
+                errP.SetError(cbSuppID, MyEx.toString());
             }
 
             //Try Adding
@@ -462,9 +462,9 @@ namespace Belfray
             //DB Connection
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
-            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Product
             sqlProduct = @"select * from Product";

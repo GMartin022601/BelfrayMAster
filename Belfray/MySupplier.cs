@@ -55,12 +55,12 @@ namespace Belfray
             get { return supplierAddress; }
             set
             {
-                if (MyValidation.validLetterWhiteSpace(value) && MyValidation.validLength(value, 5, 50))
+                if (MyValidation.validLetterNumberWhiteSpace(value) && MyValidation.validLength(value, 5, 50))
                 {
                     supplierAddress = MyValidation.firstLetterEachWordToUpper(value);
                 }
                 else
-                    throw new MyException("Address must be between 5 & 50 Characters");
+                    throw new MyException("Address must be between 5 - 50 Characters");
             }
         }
         public string SupplierTown
@@ -73,7 +73,7 @@ namespace Belfray
                     supplierTown = value;
                 }
                 else
-                    throw new MyException("Town must be between 3 & 20 Characters");
+                    throw new MyException("Town must be between 3 - 20 Characters");
             }
         }
         public string SupplierCounty
@@ -81,12 +81,12 @@ namespace Belfray
             get { return supplierCounty; }
             set
             {
-                if (MyValidation.validLength(value, 5, 18) && MyValidation.validLetterWhiteSpace(value))
+                if (MyValidation.validLength(value, 3, 18) && MyValidation.validDesc(value))
                 {
                     supplierCounty = MyValidation.firstLetterEachWordToUpper(value);
                 }
                 else
-                    throw new MyException("County must be between 5 & 18 Characters");
+                    throw new MyException("County must be between 3 - 18 Characters");
             }
         }
         public string SupplierPostCode
@@ -94,7 +94,7 @@ namespace Belfray
             get { return supplierPostCode; }
             set
             {
-                if (MyValidation.validLength(value, 8,8))
+                if (MyValidation.validLength(value, 7, 8) && MyValidation.validLetterNumberWhiteSpace(value))
                 {
                     supplierPostCode = value;
                 }
@@ -104,12 +104,12 @@ namespace Belfray
         }
         public string SupplierEmail
         {
-            get { return supplierPostCode; }
+            get { return supplierEmail; }
             set
             {
                 if (MyValidation.validEmail(value))
                 {
-                    supplierPostCode = value;
+                    supplierEmail = value;
                 }
                 else
                     throw new MyException("Invalid Email");
