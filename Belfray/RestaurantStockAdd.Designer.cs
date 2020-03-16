@@ -493,7 +493,7 @@
             this.cbTypeCode.Name = "cbTypeCode";
             this.cbTypeCode.Size = new System.Drawing.Size(121, 24);
             this.cbTypeCode.TabIndex = 15;
-           // this.cbTypeCode.SelectedIndexChanged += new System.EventHandler(this.CbTypeCode_SelectedIndexChanged);
+            this.cbTypeCode.SelectedIndexChanged += new System.EventHandler(this.CbTypeCode_SelectedIndexChanged);
             // 
             // lblSuppID
             // 

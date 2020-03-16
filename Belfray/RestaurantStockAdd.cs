@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.Data.SqlClient;
 
 namespace Belfray
@@ -181,11 +180,31 @@ namespace Belfray
             }
         }
         //**THIS NEEDS WORK**
-        //private void CbTypeCode_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    txtProdTypeCode.Text = drProductType["productTypeCode"].ToString();
-        //    //txtProdDesc2.Text = drProduct["productDesc"].ToString();
-        //}
+        private void CbTypeCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            // string s = cbTypeCode.SelectedValue.ToString();
+            // txtProdTypeCode.Text = s.ToString();
+
+            //SqlConnection conn = new SqlConnection("conn");
+            //conn.Open();
+            //SqlCommand cmd = new SqlCommand("Select productTypeCode,productTypeDesc FROM ProductType where productTypeCode=" + cbTypeCode.SelectedValue + "'", conn);
+            //SqlDataReader dr = cmd.ExecuteReader();
+
+            //if (dr.Read())
+            //{
+            //    txtProdTypeCode.Text = Convert.ToString(dr["productTypeCode"]);
+            //    txtProdDesc2.Text = Convert.ToString(dr["productTypeDesc"]);
+            //}
+
+            //txtProdTypeCode.Text = cbTypeCode.ValueMember;
+            //txtProdDesc2.Text = cbTypeCode.DisplayMember;
+
+            //drProductType = dsBelfray.Tables["ProductType"].Rows.Find(txtProdTypeCode.Text);
+            //txtProdDesc2.Text = drProductType["productTypeDesc"].ToString();
+            //txtProdTypeCode.Text = drProductType["productTypeCode"].ToString();
+            //txtProdDesc2.Text = drProduct["productDesc"].ToString();
+        }
 
         private void picCancelADDPTD_Click(object sender, EventArgs e)
         {
@@ -234,7 +253,7 @@ namespace Belfray
                     dsBelfray.Tables["ProductType"].Rows.Add(drProductType);
                     daProductType.Update(dsBelfray, "ProductType");
 
-                    MessageBox.Show("Product Added");
+                    MessageBox.Show("Product Type Added");
                     if (MessageBox.Show("Do you wish to add another product type?", "AddProductType", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
                         //clearAddPanel();
@@ -479,9 +498,9 @@ namespace Belfray
             //lblUser.Text = LoginPage.currUser;
 
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -515,8 +534,9 @@ namespace Belfray
             //cb ProductType
             cbTypeCode.DataSource = dsBelfray.Tables["ProductType"];
             cbTypeCode.ValueMember = "productTypeCode";
-            //cbTypeCode.DisplayMember = "productTypeDesc";
-            cbTypeCode.SelectedIndex = -1;
+            cbTypeCode.DisplayMember = "productTypeDesc";
+            cbTypeCode.SelectedIndex = 0;
+
             //ProductTypePanel
             //cbTypeCode2.DataSource = dsBelfray.Tables["ProductType"];
             //cbTypeCode2.ValueMember = "productTypeCode";
