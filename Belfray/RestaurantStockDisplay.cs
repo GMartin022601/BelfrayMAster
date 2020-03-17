@@ -15,10 +15,8 @@ namespace Belfray
     public partial class RestaurantStockDisplay : Form
     {
         //SQL links
-        SqlDataAdapter daProduct, daProductType, daSupplier;
+        SqlDataAdapter daProduct;
         DataSet dsBelfray = new DataSet();
-        //SqlCommandBuilder cmdBProduct;
-        //DataRow drProduct;
         String connStr, sqlProduct;
 
         public RestaurantStockDisplay()
@@ -31,9 +29,9 @@ namespace Belfray
         {
 
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 

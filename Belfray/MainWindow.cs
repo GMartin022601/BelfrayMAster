@@ -16,8 +16,8 @@ namespace Belfray
     {
         //Determines which menu option has been selected 
         //(Room Booking = 1, Cleaning Stock = 2, Table Booking = 3, Restaurant Stock = 4, User Profile = 5, Administraion = 6)
-        public int menuSelected = 0;
-        String prodNumSel = "";
+        public int menuSelected = 0, prdNoSelected = 0;
+        //String prodNumSel = "";
 
         //SQL links
         SqlDataAdapter daLogin, daBooking, daProduct, daProductType, daSupplier;
@@ -277,9 +277,9 @@ namespace Belfray
             }
 
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -443,12 +443,20 @@ namespace Belfray
                 case 3: //Table Booking
                     break;
                 case 4: //Restaurant Stock NEEDS WORK
-                    RestaurantStockEdit frm4 = new RestaurantStockEdit();
-                    frm4.TopLevel = false;
-                    frm4.FormBorderStyle = FormBorderStyle.None;
-                    frm4.WindowState = FormWindowState.Maximized;
-                    pnlMainBody.Controls.Add(frm4);
-                    frm4.Show();
+                    if (prdNoSelected == 0)
+                    {
+                        MessageBox.Show("Error: No Product Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        RestaurantStockEdit frm4 = new RestaurantStockEdit();
+                        frm4.TopLevel = false;
+                        frm4.FormBorderStyle = FormBorderStyle.None;
+                        frm4.WindowState = FormWindowState.Maximized;
+                        pnlMainBody.Controls.Add(frm4);
+                        frm4.Show();
+                        //break;
+                    }
                     break;
                 case 5: //Staff
                     break;
