@@ -59,6 +59,7 @@
       <DependentUpon>AppDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="MySupplier.cs" />
+    <Compile Include="ProdNoSelected.cs" />
     <Compile Include="RoomBookingAdd.cs">
       <SubType>Form</SubType>
     </Compile>

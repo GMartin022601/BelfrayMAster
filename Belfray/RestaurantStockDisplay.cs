@@ -25,6 +25,20 @@ namespace Belfray
 
         }
 
+        //private void DgvRestStock_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    if (ProdNoSelected.prdNoSelected == 0)
+        //    {
+
+        //        MessageBox.Show("Error: No Product Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    else
+        //    {
+        //        //
+        //    }
+            
+        //}
+
         private void RestaurantStockDisplay_Load(object sender, EventArgs e)
         {
 

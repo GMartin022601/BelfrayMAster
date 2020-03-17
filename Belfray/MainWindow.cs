@@ -16,7 +16,7 @@ namespace Belfray
     {
         //Determines which menu option has been selected 
         //(Room Booking = 1, Cleaning Stock = 2, Table Booking = 3, Restaurant Stock = 4, User Profile = 5, Administraion = 6)
-        public int menuSelected = 0, prdNoSelected = 0;
+        public int menuSelected = 0;
         //String prodNumSel = "";
 
         //SQL links
@@ -443,7 +443,7 @@ namespace Belfray
                 case 3: //Table Booking
                     break;
                 case 4: //Restaurant Stock NEEDS WORK
-                    if (prdNoSelected == 0)
+                    if (ProdNoSelected.prdNoSelected == 0)
                     {
                         MessageBox.Show("Error: No Product Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

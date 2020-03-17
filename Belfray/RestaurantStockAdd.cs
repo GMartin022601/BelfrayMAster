@@ -183,8 +183,8 @@ namespace Belfray
         private void CbTypeCode_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            // string s = cbTypeCode.SelectedValue.ToString();
-            // txtProdTypeCode.Text = s.ToString();
+             string s = cbTypeCode.SelectedValue.ToString();
+             txtProdTypeCode.Text = s.ToString();
 
             //SqlConnection conn = new SqlConnection("conn");
             //conn.Open();
