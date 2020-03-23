@@ -485,6 +485,7 @@
             this.cbSuppID.Name = "cbSuppID";
             this.cbSuppID.Size = new System.Drawing.Size(121, 24);
             this.cbSuppID.TabIndex = 16;
+            this.cbSuppID.SelectedIndexChanged += new System.EventHandler(this.CbSuppID_SelectedIndexChanged);
             // 
             // cbTypeCode
             // 

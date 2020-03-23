@@ -19,6 +19,7 @@ namespace Belfray
         SqlCommandBuilder cmdBProduct, cmdBProductType, cmdBSupplier;
         DataRow drProduct, drProductType, drSupplier;
         String connStr, sqlProduct, sqlProductType, sqlSupplier;
+        bool formLoad = true;
 
         private void picCancellAddProd_Click(object sender, EventArgs e)
         {
@@ -42,6 +43,7 @@ namespace Belfray
         {
             pnlDetails.Enabled = false;
             pnlSuppDetails.Enabled = true;
+            clearSuppPanel();
 
             int noRows = dsBelfray.Tables["Supplier"].Rows.Count;
 
@@ -183,27 +185,29 @@ namespace Belfray
         private void CbTypeCode_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-             string s = cbTypeCode.SelectedValue.ToString();
-             txtProdTypeCode.Text = s.ToString();
+            if (!formLoad)
+            {
+                DataRow drMethod = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue);
+                txtProdTypeCode.Text = drMethod["productTypeCode"].ToString();
+                txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
+            }
+        }
 
-            //SqlConnection conn = new SqlConnection("conn");
-            //conn.Open();
-            //SqlCommand cmd = new SqlCommand("Select productTypeCode,productTypeDesc FROM ProductType where productTypeCode=" + cbTypeCode.SelectedValue + "'", conn);
-            //SqlDataReader dr = cmd.ExecuteReader();
+        private void CbSuppID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!formLoad)
+            {
+                DataRow drSuppCombo = dsBelfray.Tables["Supplier"].Rows.Find(cbSuppID.SelectedValue);
+                lblSupplierID.Text = drSuppCombo["supplierID"].ToString();
+                txtSuppName.Text = drSuppCombo["supplierName"].ToString();
+                txtSuppAddress.Text = drSuppCombo["supplierAddress"].ToString();
+                txtSuppCounty.Text = drSuppCombo["supplierCounty"].ToString();
+                txtSuppTown.Text = drSuppCombo["supplierTown"].ToString();
+                txtSuppPC.Text = drSuppCombo["supplierPostCode"].ToString();
+                txtSuppEmail.Text = drSuppCombo["supplierEmail"].ToString();
+                txtSuppTel.Text = drSuppCombo["supplierTelNo"].ToString();
 
-            //if (dr.Read())
-            //{
-            //    txtProdTypeCode.Text = Convert.ToString(dr["productTypeCode"]);
-            //    txtProdDesc2.Text = Convert.ToString(dr["productTypeDesc"]);
-            //}
-
-            //txtProdTypeCode.Text = cbTypeCode.ValueMember;
-            //txtProdDesc2.Text = cbTypeCode.DisplayMember;
-
-            //drProductType = dsBelfray.Tables["ProductType"].Rows.Find(txtProdTypeCode.Text);
-            //txtProdDesc2.Text = drProductType["productTypeDesc"].ToString();
-            //txtProdTypeCode.Text = drProductType["productTypeCode"].ToString();
-            //txtProdDesc2.Text = drProduct["productDesc"].ToString();
+            }
         }
 
         private void picCancelADDPTD_Click(object sender, EventArgs e)
@@ -289,6 +293,8 @@ namespace Belfray
         {
             pnlDetails.Enabled = false;
             pnlProdType.Enabled = true;
+            txtProdTypeCode.Text = "";
+            txtProdDesc2.Text = "";
 
         }
         //end of add prod type
@@ -309,8 +315,8 @@ namespace Belfray
             txtCostPrice.Clear();
             txtQTY.Clear();
             txtReOrder.Clear();
-            cbSuppID.SelectedIndex = 1;
-            cbTypeCode.SelectedIndex = -1;
+            cbSuppID.SelectedIndex = 0;
+            cbTypeCode.SelectedIndex = 0;
         }
         //clear supplier panel
         void clearSuppPanel()
@@ -535,7 +541,7 @@ namespace Belfray
             cbTypeCode.DataSource = dsBelfray.Tables["ProductType"];
             cbTypeCode.ValueMember = "productTypeCode";
             cbTypeCode.DisplayMember = "productTypeDesc";
-            cbTypeCode.SelectedIndex = 0;
+            cbTypeCode.SelectedIndex = -1;
 
             //ProductTypePanel
             //cbTypeCode2.DataSource = dsBelfray.Tables["ProductType"];
@@ -547,6 +553,8 @@ namespace Belfray
             pnlImage.Visible = true;
             pnlProdType.Visible = true;
             pnlSuppDetails.Visible = true;
+
+            formLoad = false;
 
             int noRows = dsBelfray.Tables["Product"].Rows.Count;
 
