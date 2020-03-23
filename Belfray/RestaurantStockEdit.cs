@@ -162,7 +162,7 @@ namespace Belfray
             cbSuppID.DataSource = dsBelfray.Tables["Supplier"];
             cbSuppID.ValueMember = "supplierID";
             cbSuppID.DisplayMember = "supplierName";
-            cbSuppID.SelectedIndex = -1;
+            cbSuppID.SelectedIndex = 0;
 
             //cb ProductType
             cbTypeCode.DataSource = dsBelfray.Tables["ProductType"];
@@ -177,7 +177,18 @@ namespace Belfray
             pnlSuppDetails.Visible = true;
 
             //Fill Form
-            //lblProdNo.Text = prdNoSelected.ToString();
+            lblProductNumberDisplay.Text = Globals.prdNoSel.ToString();
+            //"100021";
+            //Globals.prdNoSel.ToString();
+
+            drProduct = dsBelfray.Tables["Product"].Rows.Find(lblProductNumberDisplay.Text);
+
+            txtProdDesc.Text = drProduct["productDesc"].ToString();
+            txtCostPrice.Text = drProduct["costPrice"].ToString();
+            txtQTY.Text = drProduct["qtyInStock"].ToString();
+            txtPackSize.Text = drProduct["packSize"].ToString();
+            txtReOrder.Text = drProduct["reorderLvl"].ToString();
+
         }
     }
 }

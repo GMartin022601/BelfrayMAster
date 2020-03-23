@@ -19,28 +19,47 @@ namespace Belfray
         DataSet dsBelfray = new DataSet();
         String connStr, sqlProduct;
         string prdSel = "";
+        bool prdSelected;
 
         public RestaurantStockDisplay()
         {
             InitializeComponent();
 
         }
+        
+        void ValidateSelected(object Sender, CancelEventArgs e)
+        {
+            if (dgvRestStock.SelectedRows.Count == 0)
+            {
+                prdSelected = false;
+                prdSel = null;
+            }
+            else if (dgvRestStock.SelectedRows.Count == 1)
+            {
+                prdSelected = true;
+                prdSel = dgvRestStock.SelectedRows[0].Cells[0].Value.ToString();
+                prdSel = Globals.prdNoSel;
+            }
+        }
+        private void DgvRestStock_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvRestStock.SelectedRows.Count == 0)
+            {
+                prdSelected = false;
+                prdSel = null;
+            }
+            else if (dgvRestStock.SelectedRows.Count == 1)
+            {
+                prdSelected = true;
+                prdSel = dgvRestStock.SelectedRows[0].Cells[0].Value.ToString();
+                prdSel = Globals.prdNoSel;
+            }
 
-        //private void DgvRestStock_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    if (dgvRestStock.SelectedRows.Count == 0)
-        //    {
+        }
 
-        //        MessageBox.Show("Error: No Product Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    else
-        //    {
-                
-        //    }
 
-        //}
 
-        private void RestaurantStockDisplay_Load(object sender, EventArgs e)
+private void RestaurantStockDisplay_Load(object sender, EventArgs e)
         {
 
             //DB Connection

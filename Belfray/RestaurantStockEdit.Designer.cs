@@ -52,6 +52,7 @@
             this.lblSuppID2 = new System.Windows.Forms.Label();
             this.pnlProdType = new System.Windows.Forms.Panel();
             this.gbProdType = new System.Windows.Forms.GroupBox();
+            this.txtPTC = new System.Windows.Forms.TextBox();
             this.btnCancelEditPTD = new System.Windows.Forms.PictureBox();
             this.picSaveADDPTD = new System.Windows.Forms.PictureBox();
             this.txtProdDesc2 = new System.Windows.Forms.TextBox();
@@ -59,6 +60,8 @@
             this.lblProdTypeCode2 = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.gbProdDetails = new System.Windows.Forms.GroupBox();
+            this.chkBxEditSupp = new System.Windows.Forms.CheckBox();
+            this.chkBxEditPTD = new System.Windows.Forms.CheckBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.cbSuppID = new System.Windows.Forms.ComboBox();
             this.cbTypeCode = new System.Windows.Forms.ComboBox();
@@ -77,9 +80,6 @@
             this.lblProdTypeCode = new System.Windows.Forms.Label();
             this.lblProdDesc = new System.Windows.Forms.Label();
             this.pnlImage = new System.Windows.Forms.Panel();
-            this.chkBxEditPTD = new System.Windows.Forms.CheckBox();
-            this.txtPTC = new System.Windows.Forms.TextBox();
-            this.chkBxEditSupp = new System.Windows.Forms.CheckBox();
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlRestStockEdit.SuspendLayout();
             this.pnlSuppDetails.SuspendLayout();
@@ -107,7 +107,6 @@
             this.pnlRestStockEdit.Name = "pnlRestStockEdit";
             this.pnlRestStockEdit.Size = new System.Drawing.Size(1218, 345);
             this.pnlRestStockEdit.TabIndex = 8;
-            this.pnlRestStockEdit.Visible = false;
             // 
             // pnlSuppDetails
             // 
@@ -334,6 +333,13 @@
             this.gbProdType.TabStop = false;
             this.gbProdType.Text = "Product Type Details";
             // 
+            // txtPTC
+            // 
+            this.txtPTC.Location = new System.Drawing.Point(212, 19);
+            this.txtPTC.Name = "txtPTC";
+            this.txtPTC.Size = new System.Drawing.Size(100, 22);
+            this.txtPTC.TabIndex = 38;
+            // 
             // btnCancelEditPTD
             // 
             this.btnCancelEditPTD.Image = global::Belfray.Properties.Resources.Cancel3;
@@ -420,6 +426,28 @@
             this.gbProdDetails.TabIndex = 9;
             this.gbProdDetails.TabStop = false;
             this.gbProdDetails.Text = "Product Details";
+            // 
+            // chkBxEditSupp
+            // 
+            this.chkBxEditSupp.AutoSize = true;
+            this.chkBxEditSupp.Location = new System.Drawing.Point(297, 257);
+            this.chkBxEditSupp.Name = "chkBxEditSupp";
+            this.chkBxEditSupp.Size = new System.Drawing.Size(50, 20);
+            this.chkBxEditSupp.TabIndex = 41;
+            this.chkBxEditSupp.Text = "Edit";
+            this.chkBxEditSupp.UseVisualStyleBackColor = true;
+            this.chkBxEditSupp.CheckedChanged += new System.EventHandler(this.ChkBxEditSupp_CheckedChanged);
+            // 
+            // chkBxEditPTD
+            // 
+            this.chkBxEditPTD.AutoSize = true;
+            this.chkBxEditPTD.Location = new System.Drawing.Point(297, 69);
+            this.chkBxEditPTD.Name = "chkBxEditPTD";
+            this.chkBxEditPTD.Size = new System.Drawing.Size(50, 20);
+            this.chkBxEditPTD.TabIndex = 40;
+            this.chkBxEditPTD.Text = "Edit";
+            this.chkBxEditPTD.UseVisualStyleBackColor = true;
+            this.chkBxEditPTD.CheckedChanged += new System.EventHandler(this.ChkBxEditPTD_CheckedChanged);
             // 
             // pictureBox4
             // 
@@ -578,35 +606,6 @@
             this.pnlImage.Name = "pnlImage";
             this.pnlImage.Size = new System.Drawing.Size(232, 329);
             this.pnlImage.TabIndex = 4;
-            // 
-            // chkBxEditPTD
-            // 
-            this.chkBxEditPTD.AutoSize = true;
-            this.chkBxEditPTD.Location = new System.Drawing.Point(297, 69);
-            this.chkBxEditPTD.Name = "chkBxEditPTD";
-            this.chkBxEditPTD.Size = new System.Drawing.Size(50, 20);
-            this.chkBxEditPTD.TabIndex = 40;
-            this.chkBxEditPTD.Text = "Edit";
-            this.chkBxEditPTD.UseVisualStyleBackColor = true;
-            this.chkBxEditPTD.CheckedChanged += new System.EventHandler(this.ChkBxEditPTD_CheckedChanged);
-            // 
-            // txtPTC
-            // 
-            this.txtPTC.Location = new System.Drawing.Point(212, 19);
-            this.txtPTC.Name = "txtPTC";
-            this.txtPTC.Size = new System.Drawing.Size(100, 22);
-            this.txtPTC.TabIndex = 38;
-            // 
-            // chkBxEditSupp
-            // 
-            this.chkBxEditSupp.AutoSize = true;
-            this.chkBxEditSupp.Location = new System.Drawing.Point(297, 257);
-            this.chkBxEditSupp.Name = "chkBxEditSupp";
-            this.chkBxEditSupp.Size = new System.Drawing.Size(50, 20);
-            this.chkBxEditSupp.TabIndex = 41;
-            this.chkBxEditSupp.Text = "Edit";
-            this.chkBxEditSupp.UseVisualStyleBackColor = true;
-            this.chkBxEditSupp.CheckedChanged += new System.EventHandler(this.ChkBxEditSupp_CheckedChanged);
             // 
             // errP
             // 
