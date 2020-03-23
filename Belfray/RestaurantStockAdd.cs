@@ -309,7 +309,7 @@ namespace Belfray
             txtCostPrice.Clear();
             txtQTY.Clear();
             txtReOrder.Clear();
-            cbSuppID.SelectedIndex = -1;
+            cbSuppID.SelectedIndex = 1;
             cbTypeCode.SelectedIndex = -1;
         }
         //clear supplier panel

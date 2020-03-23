@@ -443,11 +443,11 @@ namespace Belfray
                 case 3: //Table Booking
                     break;
                 case 4: //Restaurant Stock NEEDS WORK
-                    if (ProdNoSelected.prdNoSelected == 0)
-                    {
-                        MessageBox.Show("Error: No Product Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
+                    //if (ProdNoSelected.prdNoSelected == 0)
+                    //{
+                    //    MessageBox.Show("Error: No Product Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
+                    //else
                     {
                         RestaurantStockEdit frm4 = new RestaurantStockEdit();
                         frm4.TopLevel = false;

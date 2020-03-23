@@ -18,6 +18,7 @@ namespace Belfray
         SqlDataAdapter daProduct;
         DataSet dsBelfray = new DataSet();
         String connStr, sqlProduct;
+        string prdSel = "";
 
         public RestaurantStockDisplay()
         {
@@ -27,7 +28,7 @@ namespace Belfray
 
         //private void DgvRestStock_SelectionChanged(object sender, EventArgs e)
         //{
-        //    if (Globals.prdNoSel == null)
+        //    if (dgvRestStock.SelectedRows.Count == 0)
         //    {
 
         //        MessageBox.Show("Error: No Product Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
