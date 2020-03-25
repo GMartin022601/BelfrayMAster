@@ -60,6 +60,7 @@
             this.lblProdTypeCode2 = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.gbProdDetails = new System.Windows.Forms.GroupBox();
+            this.btnCancProdDet = new System.Windows.Forms.PictureBox();
             this.chkBxEditSupp = new System.Windows.Forms.CheckBox();
             this.chkBxEditPTD = new System.Windows.Forms.CheckBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -92,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSaveADDPTD)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.gbProdDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancProdDet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
@@ -400,6 +402,7 @@
             // 
             // gbProdDetails
             // 
+            this.gbProdDetails.Controls.Add(this.btnCancProdDet);
             this.gbProdDetails.Controls.Add(this.chkBxEditSupp);
             this.gbProdDetails.Controls.Add(this.chkBxEditPTD);
             this.gbProdDetails.Controls.Add(this.pictureBox4);
@@ -426,6 +429,17 @@
             this.gbProdDetails.TabIndex = 9;
             this.gbProdDetails.TabStop = false;
             this.gbProdDetails.Text = "Product Details";
+            // 
+            // btnCancProdDet
+            // 
+            this.btnCancProdDet.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.btnCancProdDet.Location = new System.Drawing.Point(311, 291);
+            this.btnCancProdDet.Name = "btnCancProdDet";
+            this.btnCancProdDet.Size = new System.Drawing.Size(36, 26);
+            this.btnCancProdDet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCancProdDet.TabIndex = 42;
+            this.btnCancProdDet.TabStop = false;
+            this.btnCancProdDet.Click += new System.EventHandler(this.BtnCancProdDet_Click);
             // 
             // chkBxEditSupp
             // 
@@ -466,6 +480,7 @@
             this.cbSuppID.Name = "cbSuppID";
             this.cbSuppID.Size = new System.Drawing.Size(121, 24);
             this.cbSuppID.TabIndex = 16;
+            this.cbSuppID.SelectedIndexChanged += new System.EventHandler(this.CbSuppID_SelectedIndexChanged);
             // 
             // cbTypeCode
             // 
@@ -474,6 +489,7 @@
             this.cbTypeCode.Name = "cbTypeCode";
             this.cbTypeCode.Size = new System.Drawing.Size(121, 24);
             this.cbTypeCode.TabIndex = 15;
+            this.cbTypeCode.SelectedIndexChanged += new System.EventHandler(this.CbTypeCode_SelectedIndexChanged);
             // 
             // lblSuppID
             // 
@@ -635,6 +651,7 @@
             this.pnlDetails.ResumeLayout(false);
             this.gbProdDetails.ResumeLayout(false);
             this.gbProdDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancProdDet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.ResumeLayout(false);
@@ -695,5 +712,6 @@
         private System.Windows.Forms.CheckBox chkBxEditSupp;
         private System.Windows.Forms.CheckBox chkBxEditPTD;
         private System.Windows.Forms.ErrorProvider errP;
+        private System.Windows.Forms.PictureBox btnCancProdDet;
     }
 }
