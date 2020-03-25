@@ -10,17 +10,5 @@ namespace Belfray
     {
         public static string prdNoSel = "";
 
-        public static string ProdNumber
-        {
-            get
-            {
-                return prdNoSel;
-            }
-            set
-            {
-                prdNoSel = value;
-            }
-        }
-
     }
 }

@@ -42,7 +42,7 @@
             this.dgvRestStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRestStock.Size = new System.Drawing.Size(1211, 342);
             this.dgvRestStock.TabIndex = 1;
-            //this.dgvRestStock.SelectionChanged += new System.EventHandler(this.DgvRestStock_SelectionChanged);
+            this.dgvRestStock.Click += new System.EventHandler(this.DgvRestStock_Click);
             // 
             // RestaurantStockDisplay
             // 

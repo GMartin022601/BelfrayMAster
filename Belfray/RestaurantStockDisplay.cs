@@ -26,8 +26,37 @@ namespace Belfray
             InitializeComponent();
 
         }
-        
-        void ValidateSelected(object Sender, CancelEventArgs e)
+
+        //void ValidateSelected(object Sender, CancelEventArgs e)
+        //{
+        //    if (dgvRestStock.SelectedRows.Count == 0)
+        //    {
+        //        prdSelected = false;
+        //        prdSel = null;
+        //    }
+        //    else if (dgvRestStock.SelectedRows.Count == 1)
+        //    {
+        //        prdSelected = true;
+        //        prdSel = dgvRestStock.SelectedRows[0].Cells[0].Value.ToString();
+        //        prdSel = Globals.prdNoSel;
+        //    }
+        //}
+        //private void DgvRestStock_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    if (dgvRestStock.SelectedRows.Count == 0)
+        //    {
+        //        prdSelected = false;
+        //        prdSel = null;
+        //    }
+        //    else if (dgvRestStock.SelectedRows.Count == 1)
+        //    {
+        //        prdSelected = true;
+        //        prdSel = dgvRestStock.SelectedRows[0].Cells[0].Value.ToString();
+        //        prdSel = Globals.prdNoSel;
+        //    }
+        //}
+
+        private void DgvRestStock_Click(object sender, EventArgs e)
         {
             if (dgvRestStock.SelectedRows.Count == 0)
             {
@@ -37,29 +66,12 @@ namespace Belfray
             else if (dgvRestStock.SelectedRows.Count == 1)
             {
                 prdSelected = true;
-                prdSel = dgvRestStock.SelectedRows[0].Cells[0].Value.ToString();
-                prdSel = Globals.prdNoSel;
+                Globals.prdNoSel = dgvRestStock.SelectedRows[0].Cells[0].Value.ToString();
+                //prdSel = Globals.prdNoSel;
             }
         }
-        private void DgvRestStock_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvRestStock.SelectedRows.Count == 0)
-            {
-                prdSelected = false;
-                prdSel = null;
-            }
-            else if (dgvRestStock.SelectedRows.Count == 1)
-            {
-                prdSelected = true;
-                prdSel = dgvRestStock.SelectedRows[0].Cells[0].Value.ToString();
-                prdSel = Globals.prdNoSel;
-            }
 
-        }
-
-
-
-private void RestaurantStockDisplay_Load(object sender, EventArgs e)
+        private void RestaurantStockDisplay_Load(object sender, EventArgs e)
         {
 
             //DB Connection
