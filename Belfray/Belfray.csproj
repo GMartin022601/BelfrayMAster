@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountPage.Designer.cs">
+      <DependentUpon>AccountPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddBookingTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     <Compile Include="Template.Designer.cs">
       <DependentUpon>Template.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountPage.resx">
+      <DependentUpon>AccountPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddBookingTest.resx">
       <DependentUpon>AddBookingTest.cs</DependentUpon>
     </EmbeddedResource>
