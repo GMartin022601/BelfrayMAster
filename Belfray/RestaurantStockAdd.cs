@@ -23,8 +23,11 @@ namespace Belfray
 
         private void picCancellAddProd_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Cancel the edit of Product Number: " + lblProductNumberDisplay.Text + "?", "Edit Product", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                clearAddPanel();
+            if (MessageBox.Show("Cancel adding Product Number: " + lblProductNumberDisplay.Text + "?", "Add Product", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            clearAddPanel();
+            clearSuppPanel();
+            txtProdTypeCode.Text = "";
+            txtProdDesc2.Text = "";
             errP.Clear();
             //pnlDetails.Enabled = false;
             //pnlProdType.Enabled = false;
@@ -315,8 +318,8 @@ namespace Belfray
             txtCostPrice.Clear();
             txtQTY.Clear();
             txtReOrder.Clear();
-            cbSuppID.SelectedIndex = 0;
-            cbTypeCode.SelectedIndex = 0;
+            cbSuppID.SelectedIndex = -1;
+            cbTypeCode.SelectedIndex = -1;
         }
         //clear supplier panel
         void clearSuppPanel()

@@ -19,6 +19,47 @@ namespace Belfray
         SqlCommandBuilder cmdBProduct, cmdBProductType, cmdBSupplier;
         DataRow drProduct, drProductType, drSupplier;
         String connStr, sqlProduct, sqlProductType, sqlSupplier;
+        bool formLoad = true;
+
+        private void CbTypeCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!formLoad)
+            {
+                DataRow drMethod = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue);
+                txtPTC.Text = drMethod["productTypeCode"].ToString();
+                txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
+            }
+        }
+
+        private void CbSuppID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!formLoad)
+            {
+                DataRow drSuppCombo = dsBelfray.Tables["Supplier"].Rows.Find(cbSuppID.SelectedValue);
+                //lblESupplierID.Text = drSuppCombo["supplierID"].ToString();
+                txtSuppName.Text = drSuppCombo["supplierName"].ToString();
+                txtSuppAddress.Text = drSuppCombo["supplierAddress"].ToString();
+                txtSuppCounty.Text = drSuppCombo["supplierCounty"].ToString();
+                txtSuppTown.Text = drSuppCombo["supplierTown"].ToString();
+                txtSuppPC.Text = drSuppCombo["supplierPostCode"].ToString();
+                txtSuppEmail.Text = drSuppCombo["supplierEmail"].ToString();
+                txtSuppTel.Text = drSuppCombo["supplierTelNo"].ToString();
+
+            }
+        }
+
+        private void BtnCancProdDet_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the edit of Product: " + lblProductNumberDisplay.Text + "?", "Edit Product", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                //clearSuppPanel();
+                //pnlSuppDetails.Enabled = false;
+                //pnlDetails.Enabled = true;
+                //pnlRestStockEdit.Visible = false;
+                errP.Clear();
+                MessageBox.Show("Press display to show Products.");
+            }
+        }
 
         //get prod num
         private void getProdNum(int noRows)
@@ -162,13 +203,13 @@ namespace Belfray
             cbSuppID.DataSource = dsBelfray.Tables["Supplier"];
             cbSuppID.ValueMember = "supplierID";
             cbSuppID.DisplayMember = "supplierName";
-            cbSuppID.SelectedIndex = 0;
+            cbSuppID.SelectedIndex = -1;
 
             //cb ProductType
             cbTypeCode.DataSource = dsBelfray.Tables["ProductType"];
             cbTypeCode.ValueMember = "productTypeCode";
             cbTypeCode.DisplayMember = "productTypeDesc";
-            cbTypeCode.SelectedIndex = 0;
+            cbTypeCode.SelectedIndex = -1;
 
             //Panels
             pnlDetails.Visible = true;
@@ -178,16 +219,33 @@ namespace Belfray
 
             //Fill Form
             lblProductNumberDisplay.Text = Globals.prdNoSel.ToString();
-            //"100021";
-            //Globals.prdNoSel.ToString();
 
             drProduct = dsBelfray.Tables["Product"].Rows.Find(lblProductNumberDisplay.Text);
+            //drProduct = dsBelfray.Tables["Product"].Rows.Find(cbTypeCode.SelectedValue);
 
+            cbTypeCode.SelectedValue = drProduct["productTypeCode"].ToString();
             txtProdDesc.Text = drProduct["productDesc"].ToString();
             txtCostPrice.Text = drProduct["costPrice"].ToString();
             txtQTY.Text = drProduct["qtyInStock"].ToString();
             txtPackSize.Text = drProduct["packSize"].ToString();
             txtReOrder.Text = drProduct["reorderLvl"].ToString();
+            cbSuppID.SelectedValue = drProduct["supplierID"].ToString();
+            //ProductTypeCode
+            DataRow drPTC = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue);
+            txtPTC.Text = drPTC["productTypeCode"].ToString();
+            txtProdDesc2.Text = drPTC["productTypeDesc"].ToString();
+            //Supplier
+            DataRow drSuppCombo = dsBelfray.Tables["Supplier"].Rows.Find(cbSuppID.SelectedValue);
+            lblESupplierID.Text = drSuppCombo["supplierID"].ToString();
+            txtSuppName.Text = drSuppCombo["supplierName"].ToString();
+            txtSuppAddress.Text = drSuppCombo["supplierAddress"].ToString();
+            txtSuppCounty.Text = drSuppCombo["supplierCounty"].ToString();
+            txtSuppTown.Text = drSuppCombo["supplierTown"].ToString();
+            txtSuppPC.Text = drSuppCombo["supplierPostCode"].ToString();
+            txtSuppEmail.Text = drSuppCombo["supplierEmail"].ToString();
+            txtSuppTel.Text = drSuppCombo["supplierTelNo"].ToString();
+
+            formLoad = false;
 
         }
     }
