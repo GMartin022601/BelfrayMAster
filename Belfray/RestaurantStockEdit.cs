@@ -44,7 +44,6 @@ namespace Belfray
                 txtSuppPC.Text = drSuppCombo["supplierPostCode"].ToString();
                 txtSuppEmail.Text = drSuppCombo["supplierEmail"].ToString();
                 txtSuppTel.Text = drSuppCombo["supplierTelNo"].ToString();
-
             }
         }
 
@@ -201,13 +200,11 @@ namespace Belfray
                     drProductType["productTypeDesc"] = myProdType.ProdTypeDesc;
                     drProductType.EndEdit();
                     daProductType.Update(dsBelfray, "ProductType");
-
-                    MessageBox.Show("Product Type Edited");
-
                     pnlProdType.Enabled = false;
                     txtPTC.Enabled = false;
                     txtProdDesc2.Enabled = false;
 
+                    MessageBox.Show("Product Type Edited");
                 }
             }
             catch (Exception ex)
