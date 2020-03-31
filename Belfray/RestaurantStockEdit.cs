@@ -36,7 +36,7 @@ namespace Belfray
             if (!formLoad)
             {
                 DataRow drSuppCombo = dsBelfray.Tables["Supplier"].Rows.Find(cbSuppID.SelectedValue);
-                //lblESupplierID.Text = drSuppCombo["supplierID"].ToString();
+                lblESupplierID.Text = drSuppCombo["supplierID"].ToString();
                 txtSuppName.Text = drSuppCombo["supplierName"].ToString();
                 txtSuppAddress.Text = drSuppCombo["supplierAddress"].ToString();
                 txtSuppCounty.Text = drSuppCombo["supplierCounty"].ToString();
@@ -165,6 +165,161 @@ namespace Belfray
                 MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
             }
         }
+
+        //THIS DOESNT WORK
+        private void PicSaveADDPTD_Click(object sender, EventArgs e)
+        {
+            MyProdTypeCode myProdType = new MyProdTypeCode();
+            bool ok = true;
+            errP.Clear();
+
+            try
+            {
+                myProdType.ProdTypeCode = txtPTC.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtPTC, MyEx.toString());
+            }
+            try
+            {
+                myProdType.ProdTypeDesc = txtProdDesc2.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtProdDesc2, MyEx.toString());
+            }
+            //Try Adding
+            try
+            {
+                if (ok)
+                {
+                    drProductType.BeginEdit();
+                    drProductType["productTypeCode"] = myProdType.ProdTypeCode;
+                    drProductType["productTypeDesc"] = myProdType.ProdTypeDesc;
+                    drProductType.EndEdit();
+                    daProductType.Update(dsBelfray, "ProductType");
+
+                    MessageBox.Show("Product Type Edited");
+
+                    pnlProdType.Enabled = false;
+                    txtPTC.Enabled = false;
+                    txtProdDesc2.Enabled = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PicSaveSupplier_Click(object sender, EventArgs e)
+        {
+            MySupplier mySupp = new MySupplier();
+            bool ok = true;
+            errP.Clear();
+
+            try
+            {
+                mySupp.SupplierID = Convert.ToInt32(lblESupplierID.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(lblESupplierID, MyEx.toString());
+            }
+            try
+            {
+                mySupp.SupplierName = txtSuppName.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppName, MyEx.toString());
+            }
+            try
+            {
+                mySupp.SupplierAddress = txtSuppAddress.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppAddress, MyEx.toString());
+            }
+            try
+            {
+                mySupp.SupplierTown = txtSuppTown.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppTown, MyEx.toString());
+            }
+            try
+            {
+                mySupp.SupplierCounty = txtSuppCounty.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppCounty, MyEx.toString());
+            }
+            try
+            {
+                mySupp.SupplierPostCode = txtSuppPC.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppPC, MyEx.toString());
+            }
+            try
+            {
+                mySupp.SupplierEmail = txtSuppEmail.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppEmail, MyEx.toString());
+            }
+            try
+            {
+                mySupp.SupplierTelNo = txtSuppTel.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSuppTel, MyEx.toString());
+            }
+
+            //Try Adding
+            try
+            {
+                if (ok)
+                {
+                    drSupplier.BeginEdit();
+                    drSupplier["supplierID"] = mySupp.SupplierID;
+                    drSupplier["supplierName"] = mySupp.SupplierName;
+                    drSupplier["supplierAddress"] = mySupp.SupplierAddress;
+                    drSupplier["supplierTown"] = mySupp.SupplierTown;
+                    drSupplier["supplierCounty"] = mySupp.SupplierCounty;
+                    drSupplier["supplierPostCode"] = mySupp.SupplierPostCode;
+                    drSupplier["supplierEmail"] = mySupp.SupplierEmail;
+                    drSupplier["supplierTelNo"] = mySupp.SupplierTelNo;
+                    drSupplier.EndEdit();
+                    daSupplier.Update(dsBelfray, "Supplier");
+                    MessageBox.Show("Supplier Updated");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+        }
+
         //get prod num
         private void getProdNum(int noRows)
         {

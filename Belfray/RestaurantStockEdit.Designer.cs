@@ -185,6 +185,7 @@
             this.picSaveSupplier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSaveSupplier.TabIndex = 38;
             this.picSaveSupplier.TabStop = false;
+            this.picSaveSupplier.Click += new System.EventHandler(this.PicSaveSupplier_Click);
             // 
             // lblESupplierID
             // 
@@ -362,6 +363,7 @@
             this.picSaveADDPTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSaveADDPTD.TabIndex = 36;
             this.picSaveADDPTD.TabStop = false;
+            this.picSaveADDPTD.Click += new System.EventHandler(this.PicSaveADDPTD_Click);
             // 
             // txtProdDesc2
             // 
