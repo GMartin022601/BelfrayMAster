@@ -36,10 +36,11 @@ namespace Belfray
         public string ProductTypeCode
         {
             get { return productTypeCode; }
-            set { if (value.ToUpper() != "A" && value.ToUpper() != "L" && value.ToUpper() != "AF" && value.ToUpper() != "F" && value.ToUpper() != "F" && value.ToUpper() != "RE")
-                    throw new MyException("Product Code should be one of the following: A, AF, L, F, RE");
-                else
-                    productTypeCode = MyValidation.EachLetterToUpper(value); }
+            set { productTypeCode = value; }
+            //set { if (value.ToUpper() != "A" && value.ToUpper() != "L" && value.ToUpper() != "AF" && value.ToUpper() != "F" && value.ToUpper() != "F" && value.ToUpper() != "RE")
+            //        throw new MyException("Product Code should be one of the following: A, AF, L, F, RE");
+            //    else
+            //        productTypeCode = MyValidation.EachLetterToUpper(value); }
         }
         //ProductDesc
         public string ProductDesc

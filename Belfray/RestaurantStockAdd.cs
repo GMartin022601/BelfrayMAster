@@ -415,16 +415,6 @@ namespace Belfray
                 errP.SetError(cbSuppID, MyEx.toString());
             }
 
-
-            //lblSupplierID.Text = drSupplier["supplierID"].ToString();
-            //txtSuppAddress.Text = drSupplier["supplierAddress"].ToString();
-            //txtSuppCounty.Text = drSupplier["supplierCounty"].ToString();
-            //txtSuppEmail.Text = drSupplier["supplierEmail"].ToString();
-            //txtSuppName.Text = drSupplier["supplierName"].ToString();
-            //txtSuppPC.Text = drSupplier["supplierPostCode"].ToString();
-            //txtSuppTel.Text = drSupplier["supplierTelNo"].ToString();
-            //txtSuppTown.Text = drSupplier["supplierTown"].ToString();
-
             //Try Adding
             try
             {
@@ -439,9 +429,6 @@ namespace Belfray
                     drProduct["packSize"] = myProduct.PackSize;
                     drProduct["reorderLvl"] = myProduct.ReOrderLvl;
                     drProduct["supplierID"] = myProduct.SupplierID;
-
-                    //txtProdTypeCode.Text = drProduct["productTypeCode"].ToString();
-                    //txtProdDesc2.Text = drProduct["productDesc"].ToString();
 
                     dsBelfray.Tables["Product"].Rows.Add(drProduct);
                     daProduct.Update(dsBelfray, "Product");

@@ -35,7 +35,7 @@
             this.txtSuppPC = new System.Windows.Forms.TextBox();
             this.lblSuppPC = new System.Windows.Forms.Label();
             this.btnCancelEditSupp = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picSaveSupplier = new System.Windows.Forms.PictureBox();
             this.lblESupplierID = new System.Windows.Forms.Label();
             this.txtSuppTel = new System.Windows.Forms.TextBox();
             this.txtSuppEmail = new System.Windows.Forms.TextBox();
@@ -63,7 +63,7 @@
             this.btnCancProdDet = new System.Windows.Forms.PictureBox();
             this.chkBxEditSupp = new System.Windows.Forms.CheckBox();
             this.chkBxEditPTD = new System.Windows.Forms.CheckBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picSaveProductEdit = new System.Windows.Forms.PictureBox();
             this.cbSuppID = new System.Windows.Forms.ComboBox();
             this.cbTypeCode = new System.Windows.Forms.ComboBox();
             this.lblSuppID = new System.Windows.Forms.Label();
@@ -86,7 +86,7 @@
             this.pnlSuppDetails.SuspendLayout();
             this.gbSupplierDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelEditSupp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveSupplier)).BeginInit();
             this.pnlProdType.SuspendLayout();
             this.gbProdType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelEditPTD)).BeginInit();
@@ -94,7 +94,7 @@
             this.pnlDetails.SuspendLayout();
             this.gbProdDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancProdDet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveProductEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,7 +125,7 @@
             this.gbSupplierDetails.Controls.Add(this.txtSuppPC);
             this.gbSupplierDetails.Controls.Add(this.lblSuppPC);
             this.gbSupplierDetails.Controls.Add(this.btnCancelEditSupp);
-            this.gbSupplierDetails.Controls.Add(this.pictureBox3);
+            this.gbSupplierDetails.Controls.Add(this.picSaveSupplier);
             this.gbSupplierDetails.Controls.Add(this.lblESupplierID);
             this.gbSupplierDetails.Controls.Add(this.txtSuppTel);
             this.gbSupplierDetails.Controls.Add(this.txtSuppEmail);
@@ -176,15 +176,15 @@
             this.btnCancelEditSupp.TabStop = false;
             this.btnCancelEditSupp.Click += new System.EventHandler(this.BtnCancelEditSupp_Click);
             // 
-            // pictureBox3
+            // picSaveSupplier
             // 
-            this.pictureBox3.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.pictureBox3.Location = new System.Drawing.Point(429, 175);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 38;
-            this.pictureBox3.TabStop = false;
+            this.picSaveSupplier.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSaveSupplier.Location = new System.Drawing.Point(429, 175);
+            this.picSaveSupplier.Name = "picSaveSupplier";
+            this.picSaveSupplier.Size = new System.Drawing.Size(50, 50);
+            this.picSaveSupplier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSaveSupplier.TabIndex = 38;
+            this.picSaveSupplier.TabStop = false;
             // 
             // lblESupplierID
             // 
@@ -405,7 +405,7 @@
             this.gbProdDetails.Controls.Add(this.btnCancProdDet);
             this.gbProdDetails.Controls.Add(this.chkBxEditSupp);
             this.gbProdDetails.Controls.Add(this.chkBxEditPTD);
-            this.gbProdDetails.Controls.Add(this.pictureBox4);
+            this.gbProdDetails.Controls.Add(this.picSaveProductEdit);
             this.gbProdDetails.Controls.Add(this.cbSuppID);
             this.gbProdDetails.Controls.Add(this.cbTypeCode);
             this.gbProdDetails.Controls.Add(this.lblSuppID);
@@ -463,15 +463,16 @@
             this.chkBxEditPTD.UseVisualStyleBackColor = true;
             this.chkBxEditPTD.CheckedChanged += new System.EventHandler(this.ChkBxEditPTD_CheckedChanged);
             // 
-            // pictureBox4
+            // picSaveProductEdit
             // 
-            this.pictureBox4.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.pictureBox4.Location = new System.Drawing.Point(350, 267);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 39;
-            this.pictureBox4.TabStop = false;
+            this.picSaveProductEdit.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSaveProductEdit.Location = new System.Drawing.Point(350, 267);
+            this.picSaveProductEdit.Name = "picSaveProductEdit";
+            this.picSaveProductEdit.Size = new System.Drawing.Size(50, 50);
+            this.picSaveProductEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSaveProductEdit.TabIndex = 39;
+            this.picSaveProductEdit.TabStop = false;
+            this.picSaveProductEdit.Click += new System.EventHandler(this.PicSaveProductEdit_Click);
             // 
             // cbSuppID
             // 
@@ -642,7 +643,7 @@
             this.gbSupplierDetails.ResumeLayout(false);
             this.gbSupplierDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelEditSupp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveSupplier)).EndInit();
             this.pnlProdType.ResumeLayout(false);
             this.gbProdType.ResumeLayout(false);
             this.gbProdType.PerformLayout();
@@ -652,7 +653,7 @@
             this.gbProdDetails.ResumeLayout(false);
             this.gbProdDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancProdDet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveProductEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.ResumeLayout(false);
 
@@ -702,12 +703,12 @@
         private System.Windows.Forms.Panel pnlImage;
         private System.Windows.Forms.Label lblESupplierID;
         private System.Windows.Forms.PictureBox btnCancelEditSupp;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picSaveSupplier;
         private System.Windows.Forms.PictureBox btnCancelEditPTD;
         private System.Windows.Forms.PictureBox picSaveADDPTD;
         private System.Windows.Forms.TextBox txtSuppPC;
         private System.Windows.Forms.Label lblSuppPC;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox picSaveProductEdit;
         private System.Windows.Forms.TextBox txtPTC;
         private System.Windows.Forms.CheckBox chkBxEditSupp;
         private System.Windows.Forms.CheckBox chkBxEditPTD;

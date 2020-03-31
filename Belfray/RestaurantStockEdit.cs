@@ -57,10 +57,114 @@ namespace Belfray
                 //pnlDetails.Enabled = true;
                 //pnlRestStockEdit.Visible = false;
                 errP.Clear();
-                MessageBox.Show("Press display to show Products.");
+                this.Close();
+                //MessageBox.Show("Press display to show Products.");
             }
         }
 
+        private void PicSaveProductEdit_Click(object sender, EventArgs e)
+        {
+            MyProduct myProduct = new MyProduct();
+            bool ok = true;
+            errP.Clear();
+
+            try
+            {
+                myProduct.ProductNo = lblProductNumberDisplay.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(lblProductNumberDisplay, MyEx.toString());
+            }
+            try
+            {
+                myProduct.ProductTypeCode = cbTypeCode.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(cbTypeCode, MyEx.toString());
+            }
+            try
+            {
+                myProduct.ProductDesc = txtProdDesc.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtProdDesc, MyEx.toString());
+            }
+            try
+            {
+                myProduct.CostPrice = Convert.ToDouble(txtCostPrice.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtCostPrice, MyEx.toString());
+            }
+            try
+            {
+                myProduct.QtyInStock = Convert.ToInt32(txtQTY.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtQTY, MyEx.toString());
+            }
+            try
+            {
+                myProduct.PackSize = Convert.ToInt32(txtPackSize.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtPackSize, MyEx.toString());
+            }
+            try
+            {
+                myProduct.ReOrderLvl = Convert.ToInt32(txtReOrder.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtReOrder, MyEx.toString());
+            }
+            try
+            {
+                myProduct.SupplierID = Convert.ToInt32(cbSuppID.SelectedValue.ToString());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(cbSuppID, MyEx.toString());
+            }
+            //try edit
+            try
+            {
+                if (ok)
+                {
+                    drProduct.BeginEdit();
+                    drProduct["productNumber"] = myProduct.ProductNo;
+                    drProduct["productTypeCode"] = myProduct.ProductTypeCode;
+                    drProduct["productDesc"] = myProduct.ProductDesc;
+                    drProduct["costPrice"] = myProduct.CostPrice;
+                    drProduct["qtyInStock"] = myProduct.QtyInStock;
+                    drProduct["packSize"] = myProduct.PackSize;
+                    drProduct["reorderLvl"] = myProduct.ReOrderLvl;
+                    drProduct["supplierID"] = myProduct.SupplierID;
+                    drProduct.EndEdit();
+                    daProduct.Update(dsBelfray, "Product");
+                    MessageBox.Show("Product Details Edited");
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+        }
         //get prod num
         private void getProdNum(int noRows)
         {
@@ -202,13 +306,13 @@ namespace Belfray
             //CB Details Supplier
             cbSuppID.DataSource = dsBelfray.Tables["Supplier"];
             cbSuppID.ValueMember = "supplierID";
-            cbSuppID.DisplayMember = "supplierName";
+            cbSuppID.DisplayMember = "supplierID";
             cbSuppID.SelectedIndex = -1;
 
             //cb ProductType
             cbTypeCode.DataSource = dsBelfray.Tables["ProductType"];
             cbTypeCode.ValueMember = "productTypeCode";
-            cbTypeCode.DisplayMember = "productTypeDesc";
+            cbTypeCode.DisplayMember = "productTypeCode";
             cbTypeCode.SelectedIndex = -1;
 
             //Panels
