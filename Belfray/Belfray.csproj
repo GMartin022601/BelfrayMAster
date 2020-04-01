@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="MySupplier.cs" />
+    <Compile Include="RestaurantStockDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestaurantStockDelete.Designer.cs">
+      <DependentUpon>RestaurantStockDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoomBookingAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppDisplay.resx">
       <DependentUpon>AppDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantStockDelete.resx">
+      <DependentUpon>RestaurantStockDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoomBookingAdd.resx">
       <DependentUpon>RoomBookingAdd.cs</DependentUpon>

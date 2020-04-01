@@ -52,7 +52,6 @@
             this.lblSuppID2 = new System.Windows.Forms.Label();
             this.pnlProdType = new System.Windows.Forms.Panel();
             this.gbProdType = new System.Windows.Forms.GroupBox();
-            this.txtPTC = new System.Windows.Forms.TextBox();
             this.btnCancelEditPTD = new System.Windows.Forms.PictureBox();
             this.picSaveADDPTD = new System.Windows.Forms.PictureBox();
             this.txtProdDesc2 = new System.Windows.Forms.TextBox();
@@ -82,6 +81,7 @@
             this.lblProdDesc = new System.Windows.Forms.Label();
             this.pnlImage = new System.Windows.Forms.Panel();
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblPTC = new System.Windows.Forms.Label();
             this.pnlRestStockEdit.SuspendLayout();
             this.pnlSuppDetails.SuspendLayout();
             this.gbSupplierDetails.SuspendLayout();
@@ -322,7 +322,7 @@
             // 
             // gbProdType
             // 
-            this.gbProdType.Controls.Add(this.txtPTC);
+            this.gbProdType.Controls.Add(this.lblPTC);
             this.gbProdType.Controls.Add(this.btnCancelEditPTD);
             this.gbProdType.Controls.Add(this.picSaveADDPTD);
             this.gbProdType.Controls.Add(this.txtProdDesc2);
@@ -335,13 +335,6 @@
             this.gbProdType.TabIndex = 0;
             this.gbProdType.TabStop = false;
             this.gbProdType.Text = "Product Type Details";
-            // 
-            // txtPTC
-            // 
-            this.txtPTC.Location = new System.Drawing.Point(212, 19);
-            this.txtPTC.Name = "txtPTC";
-            this.txtPTC.Size = new System.Drawing.Size(100, 22);
-            this.txtPTC.TabIndex = 38;
             // 
             // btnCancelEditPTD
             // 
@@ -630,6 +623,16 @@
             // 
             this.errP.ContainerControl = this;
             // 
+            // lblPTC
+            // 
+            this.lblPTC.AutoSize = true;
+            this.lblPTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTC.Location = new System.Drawing.Point(209, 25);
+            this.lblPTC.Name = "lblPTC";
+            this.lblPTC.Size = new System.Drawing.Size(44, 16);
+            this.lblPTC.TabIndex = 42;
+            this.lblPTC.Text = "xxxxxx";
+            // 
             // RestaurantStockEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -711,10 +714,10 @@
         private System.Windows.Forms.TextBox txtSuppPC;
         private System.Windows.Forms.Label lblSuppPC;
         private System.Windows.Forms.PictureBox picSaveProductEdit;
-        private System.Windows.Forms.TextBox txtPTC;
         private System.Windows.Forms.CheckBox chkBxEditSupp;
         private System.Windows.Forms.CheckBox chkBxEditPTD;
         private System.Windows.Forms.ErrorProvider errP;
         private System.Windows.Forms.PictureBox btnCancProdDet;
+        private System.Windows.Forms.Label lblPTC;
     }
 }

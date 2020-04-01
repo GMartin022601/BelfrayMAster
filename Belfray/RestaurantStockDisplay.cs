@@ -18,7 +18,7 @@ namespace Belfray
         SqlDataAdapter daProduct;
         DataSet dsBelfray = new DataSet();
         String connStr, sqlProduct;
-        string prdSel = "";
+        //string prdSel = "";
         bool prdSelected;
 
         public RestaurantStockDisplay()
@@ -61,7 +61,8 @@ namespace Belfray
             if (dgvRestStock.SelectedRows.Count == 0)
             {
                 prdSelected = false;
-                prdSel = null;
+                Globals.prdNoSel = null;
+                //prdSel = null;
             }
             else if (dgvRestStock.SelectedRows.Count == 1)
             {

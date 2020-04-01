@@ -172,10 +172,10 @@ namespace Belfray
                         clearAddPanel();
 
                         //cb ProductType
-                        cbSuppID.DataSource = dsBelfray.Tables["Supplier"];
-                        cbSuppID.ValueMember = "supplierID";
-                        cbSuppID.DisplayMember = "supplierName";
-                        cbSuppID.SelectedIndex = -1;
+                        //cbSuppID.DataSource = dsBelfray.Tables["Supplier"];
+                        //cbSuppID.ValueMember = "supplierID";
+                        //cbSuppID.DisplayMember = "supplierName";
+                        //cbSuppID.SelectedIndex = -1;
                     }
                 }
             }
