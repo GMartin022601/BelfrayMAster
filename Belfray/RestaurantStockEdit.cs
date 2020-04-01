@@ -168,6 +168,9 @@ namespace Belfray
         //THIS DOESNT WORK
         private void PicSaveADDPTD_Click(object sender, EventArgs e)
         {
+            //ProductTypeCode
+            drProductType = dsBelfray.Tables["ProductType"].Rows.Find(lblPTC.Text);
+          
             MyProdTypeCode myProdType = new MyProdTypeCode();
             bool ok = true;
             errP.Clear();
@@ -190,7 +193,7 @@ namespace Belfray
                 ok = false;
                 errP.SetError(txtProdDesc2, MyEx.toString());
             }
-            //Try Adding
+            //Try
             try
             {
                 if (ok)
@@ -204,6 +207,7 @@ namespace Belfray
                     lblPTC.Enabled = false;
                     txtProdDesc2.Enabled = false;
                     chkBxEditPTD.Checked = false;
+                    this.Update();
 
                     MessageBox.Show("Product Type Edited");
                 }
@@ -216,6 +220,8 @@ namespace Belfray
 
         private void PicSaveSupplier_Click(object sender, EventArgs e)
         {
+            drSupplier = dsBelfray.Tables["Supplier"].Rows.Find(lblESupplierID.Text);
+
             MySupplier mySupp = new MySupplier();
             bool ok = true;
             errP.Clear();
@@ -311,6 +317,7 @@ namespace Belfray
                     daSupplier.Update(dsBelfray, "Supplier");
                     MessageBox.Show("Supplier Updated");
                     chkBxEditSupp.Checked = false;
+                    this.Update();
                 }
             }
             catch (Exception ex)

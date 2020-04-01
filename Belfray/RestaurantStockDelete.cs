@@ -28,6 +28,7 @@ namespace Belfray
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             string temp = "";
+
             if (dgvOptions.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select an option from the list.", "Select Option");
@@ -38,8 +39,8 @@ namespace Belfray
                 {
                     case 1:
                         drProduct = dsBelfray.Tables["Product"].Rows.Find(dgvOptions.SelectedRows[0].Cells[0].Value);
-
                         temp = drProduct["productDesc"].ToString();
+
                         if (MessageBox.Show("Are you sure you want to delete " + temp + " ?", "Delete Product", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                         {
                             drProduct.Delete();
@@ -50,6 +51,7 @@ namespace Belfray
                     case 2:
                         drProductType = dsBelfray.Tables["ProductType"].Rows.Find(dgvOptions.SelectedRows[0].Cells[0].Value);
                         temp = drProductType["productTypeDesc"].ToString();
+
                         if (MessageBox.Show("Are you sure you want to delete product type: " + temp + " ?", "Delete Product Type", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                         {
                             drProductType.Delete();
@@ -60,6 +62,7 @@ namespace Belfray
                     case 3:
                         drSupplier = dsBelfray.Tables["Supplier"].Rows.Find(dgvOptions.SelectedRows[0].Cells[0].Value);
                         temp = drSupplier["supplierName"].ToString();
+
                         if (MessageBox.Show("Are you sure you want to delete supplier: " + temp + " ?", "Delete Supplier", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                         {
                             drSupplier.Delete();

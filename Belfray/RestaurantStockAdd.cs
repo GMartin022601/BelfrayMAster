@@ -277,10 +277,10 @@ namespace Belfray
                         clearAddPanel();
 
                         //cb ProductType
-                        cbTypeCode.DataSource = dsBelfray.Tables["ProductType"];
-                        cbTypeCode.ValueMember = "productTypeCode";
-                        //cbTypeCode.DisplayMember = "productTypeDesc";
-                        cbTypeCode.SelectedIndex = -1;
+                       //cbTypeCode.DataSource = dsBelfray.Tables["ProductType"];
+                       //cbTypeCode.ValueMember = "productTypeCode";
+                       //cbTypeCode.DisplayMember = "productTypeDesc";
+                       //cbTypeCode.SelectedIndex = -1;
                     }
                 }
             }
