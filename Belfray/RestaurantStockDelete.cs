@@ -64,7 +64,7 @@ namespace Belfray
                         {
                             drSupplier.Delete();
                             daSupplier.Update(dsBelfray, "Supplier");
-                            MessageBox.Show("Supplier: " + temp + " Successfully Deleted!");
+                            MessageBox.Show("Supplier " + temp + ": Successfully Deleted!");
                         }
                         break;
                 }
