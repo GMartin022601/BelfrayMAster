@@ -143,6 +143,26 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Booth4 {
+            get {
+                object obj = ResourceManager.GetObject("Booth4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap booth4_v2 {
+            get {
+                object obj = ResourceManager.GetObject("booth4-v2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel2 {
             get {
                 object obj = ResourceManager.GetObject("Cancel2", resourceCulture);
@@ -543,6 +563,26 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Table2test {
+            get {
+                object obj = ResourceManager.GetObject("Table2test", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Table4test {
+            get {
+                object obj = ResourceManager.GetObject("Table4test", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TableBooking {
             get {
                 object obj = ResourceManager.GetObject("TableBooking", resourceCulture);
@@ -566,6 +606,26 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap TableBookingTest {
             get {
                 object obj = ResourceManager.GetObject("TableBookingTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TableOf2 {
+            get {
+                object obj = ResourceManager.GetObject("TableOf2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tableof4 {
+            get {
+                object obj = ResourceManager.GetObject("Tableof4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

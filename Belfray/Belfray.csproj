@@ -145,6 +145,12 @@
     <Compile Include="RoomSelect.Designer.cs">
       <DependentUpon>RoomSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableSelect.Designer.cs">
+      <DependentUpon>TableSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Template.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomSelect.resx">
       <DependentUpon>RoomSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableSelect.resx">
+      <DependentUpon>TableSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Template.resx">
       <DependentUpon>Template.cs</DependentUpon>
@@ -398,6 +407,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cancel3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableOf2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table2test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tableof4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table4test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Booth4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booth4-v2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
