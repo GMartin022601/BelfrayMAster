@@ -203,11 +203,23 @@ namespace Belfray
             TabVisible();
         }
 
+        //needs edited to be in the panel as full screen
         private void picTableBooking_Click(object sender, EventArgs e)
         {
             //Set menu option select to Table Booking
             menuSelected = 3;
+            //change
+            //pnlRoomSelect.BringToFront();
+            //pnlRoomSelect.Visible = true;
 
+            TableSelect frm = new TableSelect();
+            //frm.TopLevel = false;
+            //frm.FormBorderStyle = FormBorderStyle.None;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.FormClosed += TableSelect_Closed;
+            //pnlRoomSelect.Controls.Add(frm);
+            frm.Show();
+            //end change
             TabVisible();
         }
 
