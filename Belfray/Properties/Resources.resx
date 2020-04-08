@@ -130,8 +130,14 @@
   <data name="AddButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Table-2-TP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table-2-TP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LogOutLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogOutLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Green Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Green Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DeleteButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeleteButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,6 +181,9 @@
   <data name="RestStockButt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RestStockButt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Table-4-TP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table-4-TP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AddNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddNew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -183,9 +192,6 @@
   </data>
   <data name="Twin Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Twin Room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HoneyMoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HoneyMoon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Double Room Rotate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Double Room Rotate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +208,8 @@
   <data name="SearchButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SearchButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Green Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Green Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HoneyMoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HoneyMoon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DisplayButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DisplayButton11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,6 +238,12 @@
   <data name="TableBookingTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TableBookingTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Booth-4-TP-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Booth-4-TP-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="booth4-v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\booth4-v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RoomBooking (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RoomBooking (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -250,8 +262,8 @@
   <data name="RoomStock (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RoomStock (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tableof4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tableof4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Double Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Double Room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DisplayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DisplayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,8 +283,8 @@
   <data name="UserProfile2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UserProfile2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Double Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Double Room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tableof4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tableof4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,7 +310,7 @@
   <data name="SaveButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SaveButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="booth4-v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\booth4-v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Booth-4-TP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Booth-4-TP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -51,6 +51,9 @@
             this.lbltbl4 = new System.Windows.Forms.Label();
             this.lbltbl3 = new System.Windows.Forms.Label();
             this.lbltbl2 = new System.Windows.Forms.Label();
+            this.lbltbl7 = new System.Windows.Forms.Label();
+            this.lblTbl1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbl23 = new System.Windows.Forms.PictureBox();
             this.tbl22 = new System.Windows.Forms.PictureBox();
             this.tbl21 = new System.Windows.Forms.PictureBox();
@@ -58,7 +61,6 @@
             this.tbl19 = new System.Windows.Forms.PictureBox();
             this.tbl18 = new System.Windows.Forms.PictureBox();
             this.tbl17 = new System.Windows.Forms.PictureBox();
-            this.lbltbl7 = new System.Windows.Forms.Label();
             this.tbl16 = new System.Windows.Forms.PictureBox();
             this.tbl12 = new System.Windows.Forms.PictureBox();
             this.tbl15 = new System.Windows.Forms.PictureBox();
@@ -67,7 +69,6 @@
             this.tbl11 = new System.Windows.Forms.PictureBox();
             this.tbl10 = new System.Windows.Forms.PictureBox();
             this.tbl9 = new System.Windows.Forms.PictureBox();
-            this.lblTbl1 = new System.Windows.Forms.Label();
             this.tbl8 = new System.Windows.Forms.PictureBox();
             this.tbl5 = new System.Windows.Forms.PictureBox();
             this.tbl6 = new System.Windows.Forms.PictureBox();
@@ -76,7 +77,10 @@
             this.tbl3 = new System.Windows.Forms.PictureBox();
             this.tbl4 = new System.Windows.Forms.PictureBox();
             this.tbl1 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbltbl166 = new System.Windows.Forms.Label();
+            this.lbltbl176 = new System.Windows.Forms.Label();
             this.pnlTableSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl22)).BeginInit();
@@ -101,10 +105,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTableSelect
             // 
+            this.pnlTableSelect.Controls.Add(this.lbltbl176);
+            this.pnlTableSelect.Controls.Add(this.lbltbl166);
+            this.pnlTableSelect.Controls.Add(this.pictureBox2);
+            this.pnlTableSelect.Controls.Add(this.pictureBox1);
             this.pnlTableSelect.Controls.Add(this.lbltbl23);
             this.pnlTableSelect.Controls.Add(this.lbltbl22);
             this.pnlTableSelect.Controls.Add(this.lbltbl21);
@@ -387,76 +397,6 @@
             this.lbltbl2.TabIndex = 28;
             this.lbltbl2.Text = "T2";
             // 
-            // tbl23
-            // 
-            this.tbl23.Image = global::Belfray.Properties.Resources.booth4_v2;
-            this.tbl23.Location = new System.Drawing.Point(108, 283);
-            this.tbl23.Name = "tbl23";
-            this.tbl23.Size = new System.Drawing.Size(89, 91);
-            this.tbl23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl23.TabIndex = 27;
-            this.tbl23.TabStop = false;
-            // 
-            // tbl22
-            // 
-            this.tbl22.Image = global::Belfray.Properties.Resources.booth4_v2;
-            this.tbl22.Location = new System.Drawing.Point(197, 283);
-            this.tbl22.Name = "tbl22";
-            this.tbl22.Size = new System.Drawing.Size(89, 91);
-            this.tbl22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl22.TabIndex = 26;
-            this.tbl22.TabStop = false;
-            // 
-            // tbl21
-            // 
-            this.tbl21.Image = global::Belfray.Properties.Resources.booth4_v2;
-            this.tbl21.Location = new System.Drawing.Point(286, 283);
-            this.tbl21.Name = "tbl21";
-            this.tbl21.Size = new System.Drawing.Size(89, 91);
-            this.tbl21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl21.TabIndex = 25;
-            this.tbl21.TabStop = false;
-            // 
-            // tbl20
-            // 
-            this.tbl20.Image = global::Belfray.Properties.Resources.booth4_v2;
-            this.tbl20.Location = new System.Drawing.Point(375, 283);
-            this.tbl20.Name = "tbl20";
-            this.tbl20.Size = new System.Drawing.Size(89, 91);
-            this.tbl20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl20.TabIndex = 24;
-            this.tbl20.TabStop = false;
-            // 
-            // tbl19
-            // 
-            this.tbl19.Image = global::Belfray.Properties.Resources.booth4_v2;
-            this.tbl19.Location = new System.Drawing.Point(464, 283);
-            this.tbl19.Name = "tbl19";
-            this.tbl19.Size = new System.Drawing.Size(89, 91);
-            this.tbl19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl19.TabIndex = 23;
-            this.tbl19.TabStop = false;
-            // 
-            // tbl18
-            // 
-            this.tbl18.Image = global::Belfray.Properties.Resources.booth4_v2;
-            this.tbl18.Location = new System.Drawing.Point(553, 283);
-            this.tbl18.Name = "tbl18";
-            this.tbl18.Size = new System.Drawing.Size(89, 91);
-            this.tbl18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl18.TabIndex = 22;
-            this.tbl18.TabStop = false;
-            // 
-            // tbl17
-            // 
-            this.tbl17.Image = global::Belfray.Properties.Resources.Booth4;
-            this.tbl17.Location = new System.Drawing.Point(553, 192);
-            this.tbl17.Name = "tbl17";
-            this.tbl17.Size = new System.Drawing.Size(89, 91);
-            this.tbl17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl17.TabIndex = 21;
-            this.tbl17.TabStop = false;
-            // 
             // lbltbl7
             // 
             this.lbltbl7.AutoSize = true;
@@ -467,86 +407,6 @@
             this.lbltbl7.Size = new System.Drawing.Size(23, 18);
             this.lbltbl7.TabIndex = 20;
             this.lbltbl7.Text = "T7";
-            // 
-            // tbl16
-            // 
-            this.tbl16.Image = global::Belfray.Properties.Resources.Booth4;
-            this.tbl16.Location = new System.Drawing.Point(553, 101);
-            this.tbl16.Name = "tbl16";
-            this.tbl16.Size = new System.Drawing.Size(89, 91);
-            this.tbl16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl16.TabIndex = 19;
-            this.tbl16.TabStop = false;
-            // 
-            // tbl12
-            // 
-            this.tbl12.Image = global::Belfray.Properties.Resources.Table4test;
-            this.tbl12.Location = new System.Drawing.Point(109, 192);
-            this.tbl12.Name = "tbl12";
-            this.tbl12.Size = new System.Drawing.Size(89, 91);
-            this.tbl12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl12.TabIndex = 18;
-            this.tbl12.TabStop = false;
-            // 
-            // tbl15
-            // 
-            this.tbl15.Image = global::Belfray.Properties.Resources.Table4test;
-            this.tbl15.Location = new System.Drawing.Point(376, 192);
-            this.tbl15.Name = "tbl15";
-            this.tbl15.Size = new System.Drawing.Size(89, 91);
-            this.tbl15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl15.TabIndex = 17;
-            this.tbl15.TabStop = false;
-            // 
-            // tbl14
-            // 
-            this.tbl14.Image = global::Belfray.Properties.Resources.Table4test;
-            this.tbl14.Location = new System.Drawing.Point(287, 192);
-            this.tbl14.Name = "tbl14";
-            this.tbl14.Size = new System.Drawing.Size(89, 91);
-            this.tbl14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl14.TabIndex = 16;
-            this.tbl14.TabStop = false;
-            // 
-            // tbl13
-            // 
-            this.tbl13.Image = global::Belfray.Properties.Resources.Table4test;
-            this.tbl13.Location = new System.Drawing.Point(198, 192);
-            this.tbl13.Name = "tbl13";
-            this.tbl13.Size = new System.Drawing.Size(89, 91);
-            this.tbl13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl13.TabIndex = 15;
-            this.tbl13.TabStop = false;
-            // 
-            // tbl11
-            // 
-            this.tbl11.Image = global::Belfray.Properties.Resources.Table4test;
-            this.tbl11.Location = new System.Drawing.Point(376, 101);
-            this.tbl11.Name = "tbl11";
-            this.tbl11.Size = new System.Drawing.Size(89, 91);
-            this.tbl11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl11.TabIndex = 14;
-            this.tbl11.TabStop = false;
-            // 
-            // tbl10
-            // 
-            this.tbl10.Image = global::Belfray.Properties.Resources.Table4test;
-            this.tbl10.Location = new System.Drawing.Point(287, 101);
-            this.tbl10.Name = "tbl10";
-            this.tbl10.Size = new System.Drawing.Size(89, 91);
-            this.tbl10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl10.TabIndex = 13;
-            this.tbl10.TabStop = false;
-            // 
-            // tbl9
-            // 
-            this.tbl9.Image = global::Belfray.Properties.Resources.Table4test;
-            this.tbl9.Location = new System.Drawing.Point(198, 101);
-            this.tbl9.Name = "tbl9";
-            this.tbl9.Size = new System.Drawing.Size(89, 91);
-            this.tbl9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl9.TabIndex = 12;
-            this.tbl9.TabStop = false;
             // 
             // lblTbl1
             // 
@@ -559,9 +419,165 @@
             this.lblTbl1.TabIndex = 11;
             this.lblTbl1.Text = "T1";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Table Information";
+            // 
+            // tbl23
+            // 
+            this.tbl23.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl23.Location = new System.Drawing.Point(108, 283);
+            this.tbl23.Name = "tbl23";
+            this.tbl23.Size = new System.Drawing.Size(89, 91);
+            this.tbl23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl23.TabIndex = 27;
+            this.tbl23.TabStop = false;
+            // 
+            // tbl22
+            // 
+            this.tbl22.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl22.Location = new System.Drawing.Point(197, 283);
+            this.tbl22.Name = "tbl22";
+            this.tbl22.Size = new System.Drawing.Size(89, 91);
+            this.tbl22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl22.TabIndex = 26;
+            this.tbl22.TabStop = false;
+            // 
+            // tbl21
+            // 
+            this.tbl21.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl21.Location = new System.Drawing.Point(286, 283);
+            this.tbl21.Name = "tbl21";
+            this.tbl21.Size = new System.Drawing.Size(89, 91);
+            this.tbl21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl21.TabIndex = 25;
+            this.tbl21.TabStop = false;
+            // 
+            // tbl20
+            // 
+            this.tbl20.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl20.Location = new System.Drawing.Point(375, 283);
+            this.tbl20.Name = "tbl20";
+            this.tbl20.Size = new System.Drawing.Size(89, 91);
+            this.tbl20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl20.TabIndex = 24;
+            this.tbl20.TabStop = false;
+            // 
+            // tbl19
+            // 
+            this.tbl19.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl19.Location = new System.Drawing.Point(464, 283);
+            this.tbl19.Name = "tbl19";
+            this.tbl19.Size = new System.Drawing.Size(89, 91);
+            this.tbl19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl19.TabIndex = 23;
+            this.tbl19.TabStop = false;
+            // 
+            // tbl18
+            // 
+            this.tbl18.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl18.Location = new System.Drawing.Point(553, 283);
+            this.tbl18.Name = "tbl18";
+            this.tbl18.Size = new System.Drawing.Size(89, 91);
+            this.tbl18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl18.TabIndex = 22;
+            this.tbl18.TabStop = false;
+            // 
+            // tbl17
+            // 
+            this.tbl17.Image = global::Belfray.Properties.Resources.Booth_4_TP_2;
+            this.tbl17.Location = new System.Drawing.Point(553, 192);
+            this.tbl17.Name = "tbl17";
+            this.tbl17.Size = new System.Drawing.Size(89, 91);
+            this.tbl17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl17.TabIndex = 21;
+            this.tbl17.TabStop = false;
+            // 
+            // tbl16
+            // 
+            this.tbl16.Image = global::Belfray.Properties.Resources.Booth_4_TP_2;
+            this.tbl16.Location = new System.Drawing.Point(553, 101);
+            this.tbl16.Name = "tbl16";
+            this.tbl16.Size = new System.Drawing.Size(89, 91);
+            this.tbl16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl16.TabIndex = 19;
+            this.tbl16.TabStop = false;
+            // 
+            // tbl12
+            // 
+            this.tbl12.Image = global::Belfray.Properties.Resources.Table_4_TP;
+            this.tbl12.Location = new System.Drawing.Point(109, 192);
+            this.tbl12.Name = "tbl12";
+            this.tbl12.Size = new System.Drawing.Size(89, 91);
+            this.tbl12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl12.TabIndex = 18;
+            this.tbl12.TabStop = false;
+            // 
+            // tbl15
+            // 
+            this.tbl15.Image = global::Belfray.Properties.Resources.Table_4_TP;
+            this.tbl15.Location = new System.Drawing.Point(376, 192);
+            this.tbl15.Name = "tbl15";
+            this.tbl15.Size = new System.Drawing.Size(89, 91);
+            this.tbl15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl15.TabIndex = 17;
+            this.tbl15.TabStop = false;
+            // 
+            // tbl14
+            // 
+            this.tbl14.Image = global::Belfray.Properties.Resources.Table_4_TP;
+            this.tbl14.Location = new System.Drawing.Point(287, 192);
+            this.tbl14.Name = "tbl14";
+            this.tbl14.Size = new System.Drawing.Size(89, 91);
+            this.tbl14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl14.TabIndex = 16;
+            this.tbl14.TabStop = false;
+            // 
+            // tbl13
+            // 
+            this.tbl13.Image = global::Belfray.Properties.Resources.Table_4_TP;
+            this.tbl13.Location = new System.Drawing.Point(198, 192);
+            this.tbl13.Name = "tbl13";
+            this.tbl13.Size = new System.Drawing.Size(89, 91);
+            this.tbl13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl13.TabIndex = 15;
+            this.tbl13.TabStop = false;
+            // 
+            // tbl11
+            // 
+            this.tbl11.Image = global::Belfray.Properties.Resources.Table_4_TP;
+            this.tbl11.Location = new System.Drawing.Point(376, 101);
+            this.tbl11.Name = "tbl11";
+            this.tbl11.Size = new System.Drawing.Size(89, 91);
+            this.tbl11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl11.TabIndex = 14;
+            this.tbl11.TabStop = false;
+            // 
+            // tbl10
+            // 
+            this.tbl10.Image = global::Belfray.Properties.Resources.Table_4_TP;
+            this.tbl10.Location = new System.Drawing.Point(287, 101);
+            this.tbl10.Name = "tbl10";
+            this.tbl10.Size = new System.Drawing.Size(89, 91);
+            this.tbl10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl10.TabIndex = 13;
+            this.tbl10.TabStop = false;
+            // 
+            // tbl9
+            // 
+            this.tbl9.Image = global::Belfray.Properties.Resources.Table_4_TP;
+            this.tbl9.Location = new System.Drawing.Point(198, 101);
+            this.tbl9.Name = "tbl9";
+            this.tbl9.Size = new System.Drawing.Size(89, 91);
+            this.tbl9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl9.TabIndex = 12;
+            this.tbl9.TabStop = false;
+            // 
             // tbl8
             // 
-            this.tbl8.Image = global::Belfray.Properties.Resources.Table4test;
+            this.tbl8.Image = global::Belfray.Properties.Resources.Table_4_TP;
             this.tbl8.Location = new System.Drawing.Point(109, 101);
             this.tbl8.Name = "tbl8";
             this.tbl8.Size = new System.Drawing.Size(89, 91);
@@ -571,7 +587,7 @@
             // 
             // tbl5
             // 
-            this.tbl5.Image = global::Belfray.Properties.Resources.Table2test;
+            this.tbl5.Image = global::Belfray.Properties.Resources.Table_2_TP;
             this.tbl5.Location = new System.Drawing.Point(375, 10);
             this.tbl5.Name = "tbl5";
             this.tbl5.Size = new System.Drawing.Size(89, 91);
@@ -581,7 +597,7 @@
             // 
             // tbl6
             // 
-            this.tbl6.Image = global::Belfray.Properties.Resources.Table2test;
+            this.tbl6.Image = global::Belfray.Properties.Resources.Table_2_TP;
             this.tbl6.Location = new System.Drawing.Point(464, 10);
             this.tbl6.Name = "tbl6";
             this.tbl6.Size = new System.Drawing.Size(89, 91);
@@ -591,7 +607,7 @@
             // 
             // tbl7
             // 
-            this.tbl7.Image = global::Belfray.Properties.Resources.Table2test;
+            this.tbl7.Image = global::Belfray.Properties.Resources.Table_2_TP;
             this.tbl7.Location = new System.Drawing.Point(553, 10);
             this.tbl7.Name = "tbl7";
             this.tbl7.Size = new System.Drawing.Size(89, 91);
@@ -601,7 +617,7 @@
             // 
             // tbl2
             // 
-            this.tbl2.Image = global::Belfray.Properties.Resources.Table2test;
+            this.tbl2.Image = global::Belfray.Properties.Resources.Table_2_TP;
             this.tbl2.Location = new System.Drawing.Point(108, 10);
             this.tbl2.Name = "tbl2";
             this.tbl2.Size = new System.Drawing.Size(89, 91);
@@ -613,7 +629,7 @@
             // 
             // tbl3
             // 
-            this.tbl3.Image = global::Belfray.Properties.Resources.Table2test;
+            this.tbl3.Image = global::Belfray.Properties.Resources.Table_2_TP;
             this.tbl3.Location = new System.Drawing.Point(197, 10);
             this.tbl3.Name = "tbl3";
             this.tbl3.Size = new System.Drawing.Size(89, 91);
@@ -623,7 +639,7 @@
             // 
             // tbl4
             // 
-            this.tbl4.Image = global::Belfray.Properties.Resources.Table2test;
+            this.tbl4.Image = global::Belfray.Properties.Resources.Table_2_TP;
             this.tbl4.Location = new System.Drawing.Point(286, 10);
             this.tbl4.Name = "tbl4";
             this.tbl4.Size = new System.Drawing.Size(89, 91);
@@ -633,7 +649,7 @@
             // 
             // tbl1
             // 
-            this.tbl1.Image = global::Belfray.Properties.Resources.Table2test;
+            this.tbl1.Image = global::Belfray.Properties.Resources.Table_2_TP;
             this.tbl1.Location = new System.Drawing.Point(19, 10);
             this.tbl1.Name = "tbl1";
             this.tbl1.Size = new System.Drawing.Size(89, 91);
@@ -643,11 +659,47 @@
             this.tbl1.MouseEnter += new System.EventHandler(this.tbl1_MouseHover);
             this.tbl1.MouseHover += new System.EventHandler(this.tbl1_MouseHover);
             // 
-            // toolTip1
+            // pictureBox1
             // 
-            this.toolTip1.ShowAlways = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Table Information";
+            this.pictureBox1.Image = global::Belfray.Properties.Resources.Table_2_TP;
+            this.pictureBox1.Location = new System.Drawing.Point(464, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(89, 91);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Belfray.Properties.Resources.Table_2_TP;
+            this.pictureBox2.Location = new System.Drawing.Point(465, 192);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(89, 91);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lbltbl166
+            // 
+            this.lbltbl166.AutoSize = true;
+            this.lbltbl166.BackColor = System.Drawing.Color.White;
+            this.lbltbl166.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltbl166.Location = new System.Drawing.Point(493, 136);
+            this.lbltbl166.Name = "lbltbl166";
+            this.lbltbl166.Size = new System.Drawing.Size(30, 18);
+            this.lbltbl166.TabIndex = 51;
+            this.lbltbl166.Text = "T16";
+            // 
+            // lbltbl176
+            // 
+            this.lbltbl176.AutoSize = true;
+            this.lbltbl176.BackColor = System.Drawing.Color.White;
+            this.lbltbl176.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltbl176.Location = new System.Drawing.Point(497, 229);
+            this.lbltbl176.Name = "lbltbl176";
+            this.lbltbl176.Size = new System.Drawing.Size(30, 18);
+            this.lbltbl176.TabIndex = 52;
+            this.lbltbl176.Text = "T17";
             // 
             // TableSelect
             // 
@@ -684,6 +736,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -738,5 +792,9 @@
         private System.Windows.Forms.Label lbltbl23;
         private System.Windows.Forms.Label lbltbl22;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lbltbl176;
+        private System.Windows.Forms.Label lbltbl166;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

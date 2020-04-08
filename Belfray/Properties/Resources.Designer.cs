@@ -143,6 +143,26 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Booth_4_TP {
+            get {
+                object obj = ResourceManager.GetObject("Booth-4-TP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Booth_4_TP_2 {
+            get {
+                object obj = ResourceManager.GetObject("Booth-4-TP-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Booth4 {
             get {
                 object obj = ResourceManager.GetObject("Booth4", resourceCulture);
@@ -556,6 +576,26 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap Single_Room {
             get {
                 object obj = ResourceManager.GetObject("Single Room", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Table_2_TP {
+            get {
+                object obj = ResourceManager.GetObject("Table-2-TP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Table_4_TP {
+            get {
+                object obj = ResourceManager.GetObject("Table-4-TP", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
