@@ -30,6 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlTableSelect = new System.Windows.Forms.Panel();
+            this.pnlRed = new System.Windows.Forms.Panel();
+            this.lblRedCapacityValue = new System.Windows.Forms.Label();
+            this.lblRedCapacity = new System.Windows.Forms.Label();
+            this.lblRedNo = new System.Windows.Forms.Label();
+            this.lblRedAvailability = new System.Windows.Forms.Label();
+            this.lblRedRoom = new System.Windows.Forms.Label();
+            this.pnlGreen = new System.Windows.Forms.Panel();
+            this.lblGreenCapacityValue = new System.Windows.Forms.Label();
+            this.lblGreenCapacity = new System.Windows.Forms.Label();
+            this.lblGreenNo = new System.Windows.Forms.Label();
+            this.lblGreenAvailability = new System.Windows.Forms.Label();
+            this.lblGreenRoom = new System.Windows.Forms.Label();
+            this.pnlCalendar = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.pnlCustomerDetails = new System.Windows.Forms.Panel();
+            this.pnlTableDetails = new System.Windows.Forms.Panel();
             this.lbltbl176 = new System.Windows.Forms.Label();
             this.lbltbl166 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -80,24 +96,12 @@
             this.tbl3 = new System.Windows.Forms.PictureBox();
             this.tbl4 = new System.Windows.Forms.PictureBox();
             this.tbl1 = new System.Windows.Forms.PictureBox();
+            this.pnlFloorPlan = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pnlGreen = new System.Windows.Forms.Panel();
-            this.lblGreenCapacityValue = new System.Windows.Forms.Label();
-            this.lblGreenCapacity = new System.Windows.Forms.Label();
-            this.lblGreenRoomType = new System.Windows.Forms.Label();
-            this.lblGreenNo = new System.Windows.Forms.Label();
-            this.lblGreenAvailability = new System.Windows.Forms.Label();
-            this.lblGreenType = new System.Windows.Forms.Label();
-            this.lblGreenRoom = new System.Windows.Forms.Label();
-            this.pnlRed = new System.Windows.Forms.Panel();
-            this.lblRedCapacityValue = new System.Windows.Forms.Label();
-            this.lblRedCapacity = new System.Windows.Forms.Label();
-            this.lblRedRoomType = new System.Windows.Forms.Label();
-            this.lblRedNo = new System.Windows.Forms.Label();
-            this.lblRedAvailability = new System.Windows.Forms.Label();
-            this.lblRedType = new System.Windows.Forms.Label();
-            this.lblRedRoom = new System.Windows.Forms.Label();
             this.pnlTableSelect.SuspendLayout();
+            this.pnlRed.SuspendLayout();
+            this.pnlGreen.SuspendLayout();
+            this.pnlCalendar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl23)).BeginInit();
@@ -123,14 +127,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl1)).BeginInit();
-            this.pnlGreen.SuspendLayout();
-            this.pnlRed.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTableSelect
             // 
-            this.pnlTableSelect.Controls.Add(this.pnlRed);
             this.pnlTableSelect.Controls.Add(this.pnlGreen);
+            this.pnlTableSelect.Controls.Add(this.pnlRed);
+            this.pnlTableSelect.Controls.Add(this.pnlCalendar);
+            this.pnlTableSelect.Controls.Add(this.pnlCustomerDetails);
+            this.pnlTableSelect.Controls.Add(this.pnlTableDetails);
             this.pnlTableSelect.Controls.Add(this.lbltbl176);
             this.pnlTableSelect.Controls.Add(this.lbltbl166);
             this.pnlTableSelect.Controls.Add(this.pictureBox2);
@@ -181,10 +186,174 @@
             this.pnlTableSelect.Controls.Add(this.tbl3);
             this.pnlTableSelect.Controls.Add(this.tbl4);
             this.pnlTableSelect.Controls.Add(this.tbl1);
+            this.pnlTableSelect.Controls.Add(this.pnlFloorPlan);
             this.pnlTableSelect.Location = new System.Drawing.Point(2, 2);
             this.pnlTableSelect.Name = "pnlTableSelect";
             this.pnlTableSelect.Size = new System.Drawing.Size(1196, 596);
             this.pnlTableSelect.TabIndex = 0;
+            // 
+            // pnlRed
+            // 
+            this.pnlRed.BackColor = System.Drawing.Color.Transparent;
+            this.pnlRed.BackgroundImage = global::Belfray.Properties.Resources.Red;
+            this.pnlRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlRed.Controls.Add(this.lblRedCapacityValue);
+            this.pnlRed.Controls.Add(this.lblRedCapacity);
+            this.pnlRed.Controls.Add(this.lblRedNo);
+            this.pnlRed.Controls.Add(this.lblRedAvailability);
+            this.pnlRed.Controls.Add(this.lblRedRoom);
+            this.pnlRed.Location = new System.Drawing.Point(58, 592);
+            this.pnlRed.Name = "pnlRed";
+            this.pnlRed.Size = new System.Drawing.Size(200, 120);
+            this.pnlRed.TabIndex = 55;
+            this.pnlRed.Visible = false;
+            // 
+            // lblRedCapacityValue
+            // 
+            this.lblRedCapacityValue.AutoSize = true;
+            this.lblRedCapacityValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedCapacityValue.Location = new System.Drawing.Point(101, 48);
+            this.lblRedCapacityValue.Name = "lblRedCapacityValue";
+            this.lblRedCapacityValue.Size = new System.Drawing.Size(12, 16);
+            this.lblRedCapacityValue.TabIndex = 53;
+            this.lblRedCapacityValue.Text = "-";
+            // 
+            // lblRedCapacity
+            // 
+            this.lblRedCapacity.AutoSize = true;
+            this.lblRedCapacity.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedCapacity.Location = new System.Drawing.Point(9, 48);
+            this.lblRedCapacity.Name = "lblRedCapacity";
+            this.lblRedCapacity.Size = new System.Drawing.Size(38, 18);
+            this.lblRedCapacity.TabIndex = 52;
+            this.lblRedCapacity.Text = "SIZE:";
+            // 
+            // lblRedNo
+            // 
+            this.lblRedNo.AutoSize = true;
+            this.lblRedNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedNo.Location = new System.Drawing.Point(98, 10);
+            this.lblRedNo.Name = "lblRedNo";
+            this.lblRedNo.Size = new System.Drawing.Size(12, 16);
+            this.lblRedNo.TabIndex = 50;
+            this.lblRedNo.Text = "-";
+            // 
+            // lblRedAvailability
+            // 
+            this.lblRedAvailability.AutoSize = true;
+            this.lblRedAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedAvailability.Location = new System.Drawing.Point(54, 94);
+            this.lblRedAvailability.Name = "lblRedAvailability";
+            this.lblRedAvailability.Size = new System.Drawing.Size(99, 16);
+            this.lblRedAvailability.TabIndex = 49;
+            this.lblRedAvailability.Text = "UNAVAILABLE";
+            // 
+            // lblRedRoom
+            // 
+            this.lblRedRoom.AutoSize = true;
+            this.lblRedRoom.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedRoom.Location = new System.Drawing.Point(9, 10);
+            this.lblRedRoom.Name = "lblRedRoom";
+            this.lblRedRoom.Size = new System.Drawing.Size(77, 18);
+            this.lblRedRoom.TabIndex = 47;
+            this.lblRedRoom.Text = "ROOM NO:";
+            // 
+            // pnlGreen
+            // 
+            this.pnlGreen.BackColor = System.Drawing.Color.Transparent;
+            this.pnlGreen.BackgroundImage = global::Belfray.Properties.Resources.Green;
+            this.pnlGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGreen.Controls.Add(this.lblGreenCapacityValue);
+            this.pnlGreen.Controls.Add(this.lblGreenCapacity);
+            this.pnlGreen.Controls.Add(this.lblGreenNo);
+            this.pnlGreen.Controls.Add(this.lblGreenAvailability);
+            this.pnlGreen.Controls.Add(this.lblGreenRoom);
+            this.pnlGreen.Location = new System.Drawing.Point(265, 592);
+            this.pnlGreen.Name = "pnlGreen";
+            this.pnlGreen.Size = new System.Drawing.Size(200, 120);
+            this.pnlGreen.TabIndex = 53;
+            this.pnlGreen.Visible = false;
+            // 
+            // lblGreenCapacityValue
+            // 
+            this.lblGreenCapacityValue.AutoSize = true;
+            this.lblGreenCapacityValue.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenCapacityValue.Location = new System.Drawing.Point(101, 49);
+            this.lblGreenCapacityValue.Name = "lblGreenCapacityValue";
+            this.lblGreenCapacityValue.Size = new System.Drawing.Size(12, 18);
+            this.lblGreenCapacityValue.TabIndex = 53;
+            this.lblGreenCapacityValue.Text = "-";
+            // 
+            // lblGreenCapacity
+            // 
+            this.lblGreenCapacity.AutoSize = true;
+            this.lblGreenCapacity.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenCapacity.Location = new System.Drawing.Point(9, 49);
+            this.lblGreenCapacity.Name = "lblGreenCapacity";
+            this.lblGreenCapacity.Size = new System.Drawing.Size(74, 18);
+            this.lblGreenCapacity.TabIndex = 52;
+            this.lblGreenCapacity.Text = "CAPACITY:";
+            // 
+            // lblGreenNo
+            // 
+            this.lblGreenNo.AutoSize = true;
+            this.lblGreenNo.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenNo.Location = new System.Drawing.Point(98, 10);
+            this.lblGreenNo.Name = "lblGreenNo";
+            this.lblGreenNo.Size = new System.Drawing.Size(12, 18);
+            this.lblGreenNo.TabIndex = 50;
+            this.lblGreenNo.Text = "-";
+            // 
+            // lblGreenAvailability
+            // 
+            this.lblGreenAvailability.AutoSize = true;
+            this.lblGreenAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenAvailability.Location = new System.Drawing.Point(60, 94);
+            this.lblGreenAvailability.Name = "lblGreenAvailability";
+            this.lblGreenAvailability.Size = new System.Drawing.Size(79, 16);
+            this.lblGreenAvailability.TabIndex = 49;
+            this.lblGreenAvailability.Text = "AVAILABLE";
+            // 
+            // lblGreenRoom
+            // 
+            this.lblGreenRoom.AutoSize = true;
+            this.lblGreenRoom.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenRoom.Location = new System.Drawing.Point(9, 10);
+            this.lblGreenRoom.Name = "lblGreenRoom";
+            this.lblGreenRoom.Size = new System.Drawing.Size(76, 18);
+            this.lblGreenRoom.TabIndex = 47;
+            this.lblGreenRoom.Text = "TABLE NO:";
+            // 
+            // pnlCalendar
+            // 
+            this.pnlCalendar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCalendar.Controls.Add(this.monthCalendar1);
+            this.pnlCalendar.Location = new System.Drawing.Point(649, 381);
+            this.pnlCalendar.Name = "pnlCalendar";
+            this.pnlCalendar.Size = new System.Drawing.Size(544, 205);
+            this.pnlCalendar.TabIndex = 58;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(4, 4);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            // 
+            // pnlCustomerDetails
+            // 
+            this.pnlCustomerDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCustomerDetails.Location = new System.Drawing.Point(648, 10);
+            this.pnlCustomerDetails.Name = "pnlCustomerDetails";
+            this.pnlCustomerDetails.Size = new System.Drawing.Size(545, 364);
+            this.pnlCustomerDetails.TabIndex = 57;
+            // 
+            // pnlTableDetails
+            // 
+            this.pnlTableDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTableDetails.Location = new System.Drawing.Point(19, 381);
+            this.pnlTableDetails.Name = "pnlTableDetails";
+            this.pnlTableDetails.Size = new System.Drawing.Size(623, 205);
+            this.pnlTableDetails.TabIndex = 56;
             // 
             // lbltbl176
             // 
@@ -196,6 +365,7 @@
             this.lbltbl176.Size = new System.Drawing.Size(30, 18);
             this.lbltbl176.TabIndex = 52;
             this.lbltbl176.Text = "T17";
+            this.lbltbl176.Visible = false;
             // 
             // lbltbl166
             // 
@@ -207,6 +377,7 @@
             this.lbltbl166.Size = new System.Drawing.Size(30, 18);
             this.lbltbl166.TabIndex = 51;
             this.lbltbl166.Text = "T16";
+            this.lbltbl166.Visible = false;
             // 
             // pictureBox2
             // 
@@ -217,6 +388,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 50;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // pictureBox1
             // 
@@ -227,6 +399,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // lbltbl23
             // 
@@ -468,6 +641,8 @@
             this.tbl23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl23.TabIndex = 27;
             this.tbl23.TabStop = false;
+            this.tbl23.MouseEnter += new System.EventHandler(this.tbl23_MouseEnter);
+            this.tbl23.MouseLeave += new System.EventHandler(this.tbl23_MouseLeave);
             // 
             // tbl22
             // 
@@ -478,6 +653,8 @@
             this.tbl22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl22.TabIndex = 26;
             this.tbl22.TabStop = false;
+            this.tbl22.MouseEnter += new System.EventHandler(this.tbl22_MouseEnter);
+            this.tbl22.MouseLeave += new System.EventHandler(this.tbl22_MouseLeave);
             // 
             // tbl21
             // 
@@ -488,6 +665,8 @@
             this.tbl21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl21.TabIndex = 25;
             this.tbl21.TabStop = false;
+            this.tbl21.MouseEnter += new System.EventHandler(this.tbl21_MouseEnter);
+            this.tbl21.MouseLeave += new System.EventHandler(this.tbl21_MouseLeave);
             // 
             // tbl20
             // 
@@ -498,6 +677,8 @@
             this.tbl20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl20.TabIndex = 24;
             this.tbl20.TabStop = false;
+            this.tbl20.MouseEnter += new System.EventHandler(this.tbl20_MouseEnter);
+            this.tbl20.MouseLeave += new System.EventHandler(this.tbl20_MouseLeave);
             // 
             // tbl19
             // 
@@ -508,6 +689,8 @@
             this.tbl19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl19.TabIndex = 23;
             this.tbl19.TabStop = false;
+            this.tbl19.MouseEnter += new System.EventHandler(this.tbl19_MouseEnter);
+            this.tbl19.MouseLeave += new System.EventHandler(this.tbl19_MouseLeave);
             // 
             // tbl18
             // 
@@ -518,6 +701,8 @@
             this.tbl18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl18.TabIndex = 22;
             this.tbl18.TabStop = false;
+            this.tbl18.MouseEnter += new System.EventHandler(this.tbl18_MouseEnter);
+            this.tbl18.MouseLeave += new System.EventHandler(this.tbl18_MouseLeave);
             // 
             // tbl17
             // 
@@ -528,6 +713,8 @@
             this.tbl17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl17.TabIndex = 21;
             this.tbl17.TabStop = false;
+            this.tbl17.MouseEnter += new System.EventHandler(this.tbl17_MouseEnter);
+            this.tbl17.MouseLeave += new System.EventHandler(this.tbl17_MouseLeave);
             // 
             // lbltbl7
             // 
@@ -549,6 +736,8 @@
             this.tbl16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl16.TabIndex = 19;
             this.tbl16.TabStop = false;
+            this.tbl16.MouseEnter += new System.EventHandler(this.tbl16_MouseEnter);
+            this.tbl16.MouseLeave += new System.EventHandler(this.tbl16_MouseLeave);
             // 
             // tbl12
             // 
@@ -559,6 +748,8 @@
             this.tbl12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl12.TabIndex = 18;
             this.tbl12.TabStop = false;
+            this.tbl12.MouseEnter += new System.EventHandler(this.tbl12_MouseEnter);
+            this.tbl12.MouseLeave += new System.EventHandler(this.tbl12_MouseLeave);
             // 
             // tbl15
             // 
@@ -569,6 +760,8 @@
             this.tbl15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl15.TabIndex = 17;
             this.tbl15.TabStop = false;
+            this.tbl15.MouseEnter += new System.EventHandler(this.tbl15_MouseEnter);
+            this.tbl15.MouseLeave += new System.EventHandler(this.tbl15_MouseLeave);
             // 
             // tbl14
             // 
@@ -579,6 +772,8 @@
             this.tbl14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl14.TabIndex = 16;
             this.tbl14.TabStop = false;
+            this.tbl14.MouseEnter += new System.EventHandler(this.tbl14_MouseEnter);
+            this.tbl14.MouseLeave += new System.EventHandler(this.tbl14_MouseLeave);
             // 
             // tbl13
             // 
@@ -589,6 +784,8 @@
             this.tbl13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl13.TabIndex = 15;
             this.tbl13.TabStop = false;
+            this.tbl13.MouseEnter += new System.EventHandler(this.tbl13_MouseEnter);
+            this.tbl13.MouseLeave += new System.EventHandler(this.tbl13_MouseLeave);
             // 
             // tbl11
             // 
@@ -599,6 +796,8 @@
             this.tbl11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl11.TabIndex = 14;
             this.tbl11.TabStop = false;
+            this.tbl11.MouseEnter += new System.EventHandler(this.tbl11_MouseEnter);
+            this.tbl11.MouseLeave += new System.EventHandler(this.tbl11_MouseLeave);
             // 
             // tbl10
             // 
@@ -609,6 +808,8 @@
             this.tbl10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl10.TabIndex = 13;
             this.tbl10.TabStop = false;
+            this.tbl10.MouseEnter += new System.EventHandler(this.tbl10_MouseEnter);
+            this.tbl10.MouseLeave += new System.EventHandler(this.tbl10_MouseLeave);
             // 
             // tbl9
             // 
@@ -619,6 +820,8 @@
             this.tbl9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl9.TabIndex = 12;
             this.tbl9.TabStop = false;
+            this.tbl9.MouseEnter += new System.EventHandler(this.tbl9_MouseEnter);
+            this.tbl9.MouseLeave += new System.EventHandler(this.tbl9_MouseLeave);
             // 
             // lblTbl1
             // 
@@ -640,6 +843,8 @@
             this.tbl8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl8.TabIndex = 10;
             this.tbl8.TabStop = false;
+            this.tbl8.MouseEnter += new System.EventHandler(this.tbl8_MouseEnter);
+            this.tbl8.MouseLeave += new System.EventHandler(this.tbl8_MouseLeave);
             // 
             // tbl5
             // 
@@ -650,6 +855,8 @@
             this.tbl5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl5.TabIndex = 9;
             this.tbl5.TabStop = false;
+            this.tbl5.MouseEnter += new System.EventHandler(this.tbl5_MouseEnter);
+            this.tbl5.MouseLeave += new System.EventHandler(this.tbl5_MouseLeave);
             // 
             // tbl6
             // 
@@ -660,6 +867,8 @@
             this.tbl6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl6.TabIndex = 8;
             this.tbl6.TabStop = false;
+            this.tbl6.MouseEnter += new System.EventHandler(this.tbl6_MouseEnter);
+            this.tbl6.MouseLeave += new System.EventHandler(this.tbl6_MouseLeave);
             // 
             // tbl7
             // 
@@ -670,6 +879,8 @@
             this.tbl7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl7.TabIndex = 7;
             this.tbl7.TabStop = false;
+            this.tbl7.MouseEnter += new System.EventHandler(this.tbl7_MouseEnter);
+            this.tbl7.MouseLeave += new System.EventHandler(this.tbl7_MouseLeave);
             // 
             // tbl2
             // 
@@ -681,7 +892,7 @@
             this.tbl2.TabIndex = 6;
             this.tbl2.TabStop = false;
             this.tbl2.MouseEnter += new System.EventHandler(this.tbl2_MouseEnter);
-            this.tbl2.MouseHover += new System.EventHandler(this.tbl2_MouseEnter);
+            this.tbl2.MouseLeave += new System.EventHandler(this.tbl2_MouseLeave);
             // 
             // tbl3
             // 
@@ -692,6 +903,8 @@
             this.tbl3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl3.TabIndex = 5;
             this.tbl3.TabStop = false;
+            this.tbl3.MouseEnter += new System.EventHandler(this.tbl3_MouseEnter);
+            this.tbl3.MouseLeave += new System.EventHandler(this.tbl3_MouseLeave);
             // 
             // tbl4
             // 
@@ -702,6 +915,8 @@
             this.tbl4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl4.TabIndex = 4;
             this.tbl4.TabStop = false;
+            this.tbl4.MouseEnter += new System.EventHandler(this.tbl4_MouseEnter);
+            this.tbl4.MouseLeave += new System.EventHandler(this.tbl4_MouseLeave);
             // 
             // tbl1
             // 
@@ -713,189 +928,20 @@
             this.tbl1.TabIndex = 0;
             this.tbl1.TabStop = false;
             this.tbl1.MouseEnter += new System.EventHandler(this.tbl1_MouseHover);
-            this.tbl1.MouseHover += new System.EventHandler(this.tbl1_MouseHover);
+            this.tbl1.MouseLeave += new System.EventHandler(this.tbl1_MouseLeave);
+            // 
+            // pnlFloorPlan
+            // 
+            this.pnlFloorPlan.Location = new System.Drawing.Point(4, 6);
+            this.pnlFloorPlan.Name = "pnlFloorPlan";
+            this.pnlFloorPlan.Size = new System.Drawing.Size(638, 369);
+            this.pnlFloorPlan.TabIndex = 59;
             // 
             // toolTip1
             // 
             this.toolTip1.ShowAlways = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Table Information";
-            // 
-            // pnlGreen
-            // 
-            this.pnlGreen.BackColor = System.Drawing.Color.Transparent;
-            this.pnlGreen.BackgroundImage = global::Belfray.Properties.Resources.Green;
-            this.pnlGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlGreen.Controls.Add(this.lblGreenCapacityValue);
-            this.pnlGreen.Controls.Add(this.lblGreenCapacity);
-            this.pnlGreen.Controls.Add(this.lblGreenRoomType);
-            this.pnlGreen.Controls.Add(this.lblGreenNo);
-            this.pnlGreen.Controls.Add(this.lblGreenAvailability);
-            this.pnlGreen.Controls.Add(this.lblGreenType);
-            this.pnlGreen.Controls.Add(this.lblGreenRoom);
-            this.pnlGreen.Location = new System.Drawing.Point(308, 590);
-            this.pnlGreen.Name = "pnlGreen";
-            this.pnlGreen.Size = new System.Drawing.Size(200, 120);
-            this.pnlGreen.TabIndex = 53;
-            this.pnlGreen.Visible = false;
-            // 
-            // lblGreenCapacityValue
-            // 
-            this.lblGreenCapacityValue.AutoSize = true;
-            this.lblGreenCapacityValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenCapacityValue.Location = new System.Drawing.Point(101, 70);
-            this.lblGreenCapacityValue.Name = "lblGreenCapacityValue";
-            this.lblGreenCapacityValue.Size = new System.Drawing.Size(12, 16);
-            this.lblGreenCapacityValue.TabIndex = 53;
-            this.lblGreenCapacityValue.Text = "-";
-            // 
-            // lblGreenCapacity
-            // 
-            this.lblGreenCapacity.AutoSize = true;
-            this.lblGreenCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenCapacity.Location = new System.Drawing.Point(9, 70);
-            this.lblGreenCapacity.Name = "lblGreenCapacity";
-            this.lblGreenCapacity.Size = new System.Drawing.Size(86, 16);
-            this.lblGreenCapacity.TabIndex = 52;
-            this.lblGreenCapacity.Text = "CAPACITY:";
-            // 
-            // lblGreenRoomType
-            // 
-            this.lblGreenRoomType.AutoSize = true;
-            this.lblGreenRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenRoomType.Location = new System.Drawing.Point(116, 40);
-            this.lblGreenRoomType.Name = "lblGreenRoomType";
-            this.lblGreenRoomType.Size = new System.Drawing.Size(12, 16);
-            this.lblGreenRoomType.TabIndex = 51;
-            this.lblGreenRoomType.Text = "-";
-            // 
-            // lblGreenNo
-            // 
-            this.lblGreenNo.AutoSize = true;
-            this.lblGreenNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenNo.Location = new System.Drawing.Point(98, 10);
-            this.lblGreenNo.Name = "lblGreenNo";
-            this.lblGreenNo.Size = new System.Drawing.Size(12, 16);
-            this.lblGreenNo.TabIndex = 50;
-            this.lblGreenNo.Text = "-";
-            // 
-            // lblGreenAvailability
-            // 
-            this.lblGreenAvailability.AutoSize = true;
-            this.lblGreenAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenAvailability.Location = new System.Drawing.Point(60, 94);
-            this.lblGreenAvailability.Name = "lblGreenAvailability";
-            this.lblGreenAvailability.Size = new System.Drawing.Size(79, 16);
-            this.lblGreenAvailability.TabIndex = 49;
-            this.lblGreenAvailability.Text = "AVAILABLE";
-            // 
-            // lblGreenType
-            // 
-            this.lblGreenType.AutoSize = true;
-            this.lblGreenType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenType.Location = new System.Drawing.Point(9, 40);
-            this.lblGreenType.Name = "lblGreenType";
-            this.lblGreenType.Size = new System.Drawing.Size(101, 16);
-            this.lblGreenType.TabIndex = 48;
-            this.lblGreenType.Text = "ROOM TYPE:";
-            // 
-            // lblGreenRoom
-            // 
-            this.lblGreenRoom.AutoSize = true;
-            this.lblGreenRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenRoom.Location = new System.Drawing.Point(9, 10);
-            this.lblGreenRoom.Name = "lblGreenRoom";
-            this.lblGreenRoom.Size = new System.Drawing.Size(83, 16);
-            this.lblGreenRoom.TabIndex = 47;
-            this.lblGreenRoom.Text = "ROOM NO:";
-            // 
-            // pnlRed
-            // 
-            this.pnlRed.BackColor = System.Drawing.Color.Transparent;
-            this.pnlRed.BackgroundImage = global::Belfray.Properties.Resources.Red;
-            this.pnlRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlRed.Controls.Add(this.lblRedCapacityValue);
-            this.pnlRed.Controls.Add(this.lblRedCapacity);
-            this.pnlRed.Controls.Add(this.lblRedRoomType);
-            this.pnlRed.Controls.Add(this.lblRedNo);
-            this.pnlRed.Controls.Add(this.lblRedAvailability);
-            this.pnlRed.Controls.Add(this.lblRedType);
-            this.pnlRed.Controls.Add(this.lblRedRoom);
-            this.pnlRed.Location = new System.Drawing.Point(102, 590);
-            this.pnlRed.Name = "pnlRed";
-            this.pnlRed.Size = new System.Drawing.Size(200, 120);
-            this.pnlRed.TabIndex = 55;
-            this.pnlRed.Visible = false;
-            // 
-            // lblRedCapacityValue
-            // 
-            this.lblRedCapacityValue.AutoSize = true;
-            this.lblRedCapacityValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedCapacityValue.Location = new System.Drawing.Point(101, 70);
-            this.lblRedCapacityValue.Name = "lblRedCapacityValue";
-            this.lblRedCapacityValue.Size = new System.Drawing.Size(12, 16);
-            this.lblRedCapacityValue.TabIndex = 53;
-            this.lblRedCapacityValue.Text = "-";
-            // 
-            // lblRedCapacity
-            // 
-            this.lblRedCapacity.AutoSize = true;
-            this.lblRedCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedCapacity.Location = new System.Drawing.Point(9, 70);
-            this.lblRedCapacity.Name = "lblRedCapacity";
-            this.lblRedCapacity.Size = new System.Drawing.Size(86, 16);
-            this.lblRedCapacity.TabIndex = 52;
-            this.lblRedCapacity.Text = "CAPACITY:";
-            // 
-            // lblRedRoomType
-            // 
-            this.lblRedRoomType.AutoSize = true;
-            this.lblRedRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedRoomType.Location = new System.Drawing.Point(116, 40);
-            this.lblRedRoomType.Name = "lblRedRoomType";
-            this.lblRedRoomType.Size = new System.Drawing.Size(12, 16);
-            this.lblRedRoomType.TabIndex = 51;
-            this.lblRedRoomType.Text = "-";
-            // 
-            // lblRedNo
-            // 
-            this.lblRedNo.AutoSize = true;
-            this.lblRedNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedNo.Location = new System.Drawing.Point(98, 10);
-            this.lblRedNo.Name = "lblRedNo";
-            this.lblRedNo.Size = new System.Drawing.Size(12, 16);
-            this.lblRedNo.TabIndex = 50;
-            this.lblRedNo.Text = "-";
-            // 
-            // lblRedAvailability
-            // 
-            this.lblRedAvailability.AutoSize = true;
-            this.lblRedAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedAvailability.Location = new System.Drawing.Point(54, 94);
-            this.lblRedAvailability.Name = "lblRedAvailability";
-            this.lblRedAvailability.Size = new System.Drawing.Size(99, 16);
-            this.lblRedAvailability.TabIndex = 49;
-            this.lblRedAvailability.Text = "UNAVAILABLE";
-            // 
-            // lblRedType
-            // 
-            this.lblRedType.AutoSize = true;
-            this.lblRedType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedType.Location = new System.Drawing.Point(9, 40);
-            this.lblRedType.Name = "lblRedType";
-            this.lblRedType.Size = new System.Drawing.Size(101, 16);
-            this.lblRedType.TabIndex = 48;
-            this.lblRedType.Text = "ROOM TYPE:";
-            // 
-            // lblRedRoom
-            // 
-            this.lblRedRoom.AutoSize = true;
-            this.lblRedRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedRoom.Location = new System.Drawing.Point(9, 10);
-            this.lblRedRoom.Name = "lblRedRoom";
-            this.lblRedRoom.Size = new System.Drawing.Size(83, 16);
-            this.lblRedRoom.TabIndex = 47;
-            this.lblRedRoom.Text = "ROOM NO:";
             // 
             // TableSelect
             // 
@@ -909,6 +955,11 @@
             this.Text = "TableSelect";
             this.pnlTableSelect.ResumeLayout(false);
             this.pnlTableSelect.PerformLayout();
+            this.pnlRed.ResumeLayout(false);
+            this.pnlRed.PerformLayout();
+            this.pnlGreen.ResumeLayout(false);
+            this.pnlGreen.PerformLayout();
+            this.pnlCalendar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl23)).EndInit();
@@ -934,10 +985,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl1)).EndInit();
-            this.pnlGreen.ResumeLayout(false);
-            this.pnlGreen.PerformLayout();
-            this.pnlRed.ResumeLayout(false);
-            this.pnlRed.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -999,18 +1046,19 @@
         private System.Windows.Forms.Panel pnlGreen;
         private System.Windows.Forms.Label lblGreenCapacityValue;
         private System.Windows.Forms.Label lblGreenCapacity;
-        private System.Windows.Forms.Label lblGreenRoomType;
         private System.Windows.Forms.Label lblGreenNo;
         private System.Windows.Forms.Label lblGreenAvailability;
-        private System.Windows.Forms.Label lblGreenType;
         private System.Windows.Forms.Label lblGreenRoom;
         private System.Windows.Forms.Panel pnlRed;
         private System.Windows.Forms.Label lblRedCapacityValue;
-        private System.Windows.Forms.Label lblRedCapacity;
-        private System.Windows.Forms.Label lblRedRoomType;
         private System.Windows.Forms.Label lblRedNo;
         private System.Windows.Forms.Label lblRedAvailability;
-        private System.Windows.Forms.Label lblRedType;
+        private System.Windows.Forms.Panel pnlCalendar;
+        private System.Windows.Forms.Panel pnlCustomerDetails;
+        private System.Windows.Forms.Panel pnlTableDetails;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Panel pnlFloorPlan;
+        private System.Windows.Forms.Label lblRedCapacity;
         private System.Windows.Forms.Label lblRedRoom;
     }
 }
