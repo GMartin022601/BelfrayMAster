@@ -145,6 +145,18 @@
     <Compile Include="RoomSelect.Designer.cs">
       <DependentUpon>RoomSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableBookingAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableBookingAdd.Designer.cs">
+      <DependentUpon>TableBookingAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableBookingDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableBookingDisplay.Designer.cs">
+      <DependentUpon>TableBookingDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="TableSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomSelect.resx">
       <DependentUpon>RoomSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableBookingDisplay.resx">
+      <DependentUpon>TableBookingDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableSelect.resx">
       <DependentUpon>TableSelect.cs</DependentUpon>

@@ -47,6 +47,7 @@
             this.pnlMainBody = new System.Windows.Forms.Panel();
             this.picHeader = new System.Windows.Forms.PictureBox();
             this.pnlRoomSelect = new System.Windows.Forms.Panel();
+            this.pnlTableSelect = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
@@ -62,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
+            this.pnlRoomSelect.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -298,10 +300,19 @@
             // 
             // pnlRoomSelect
             // 
+            this.pnlRoomSelect.Controls.Add(this.pnlTableSelect);
             this.pnlRoomSelect.Location = new System.Drawing.Point(0, 0);
             this.pnlRoomSelect.Name = "pnlRoomSelect";
             this.pnlRoomSelect.Size = new System.Drawing.Size(1220, 606);
             this.pnlRoomSelect.TabIndex = 0;
+            // 
+            // pnlTableSelect
+            // 
+            this.pnlTableSelect.Location = new System.Drawing.Point(2, 2);
+            this.pnlTableSelect.Name = "pnlTableSelect";
+            this.pnlTableSelect.Size = new System.Drawing.Size(1220, 606);
+            this.pnlTableSelect.TabIndex = 0;
+            this.pnlTableSelect.Visible = false;
             // 
             // MainWindow
             // 
@@ -335,6 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
+            this.pnlRoomSelect.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -360,5 +372,6 @@
         private System.Windows.Forms.PictureBox picLogOut;
         private System.Windows.Forms.Panel pnlMainBody;
         private System.Windows.Forms.Panel pnlRoomSelect;
+        private System.Windows.Forms.Panel pnlTableSelect;
     }
 }

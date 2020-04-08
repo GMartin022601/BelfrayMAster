@@ -17,7 +17,6 @@ namespace Belfray
         //Determines which menu option has been selected 
         //(Room Booking = 1, Cleaning Stock = 2, Table Booking = 3, Restaurant Stock = 4, User Profile = 5, Administraion = 6)
         public int menuSelected = 0;
-        //String prodNumSel = "";
 
         //SQL links
         SqlDataAdapter daLogin, daBooking, daProduct, daProductType, daSupplier;
@@ -208,18 +207,13 @@ namespace Belfray
         {
             //Set menu option select to Table Booking
             menuSelected = 3;
-            //change
-            //pnlRoomSelect.BringToFront();
-            //pnlRoomSelect.Visible = true;
 
-            TableSelect frm = new TableSelect();
-            //frm.TopLevel = false;
-            //frm.FormBorderStyle = FormBorderStyle.None;
-            //frm.WindowState = FormWindowState.Maximized;
-            //frm.FormClosed += TableSelect_Closed;
-            //pnlRoomSelect.Controls.Add(frm);
-            frm.Show();
-            //end change
+            TableBookingDisplay frm3 = new TableBookingDisplay();
+            frm3.TopLevel = false;
+            frm3.FormBorderStyle = FormBorderStyle.None;
+            frm3.WindowState = FormWindowState.Maximized;
+            pnlMainBody.Controls.Add(frm3);
+            frm3.Show();
             TabVisible();
         }
 
@@ -425,6 +419,16 @@ namespace Belfray
                 case 2: //Room Stock
                     break;
                 case 3: //Table Booking
+                    pnlTableSelect.BringToFront();
+                    pnlTableSelect.Visible = true;
+
+                    TableSelect form = new TableSelect();
+                    form.TopLevel = false;
+                    form.FormBorderStyle = FormBorderStyle.None;
+                    form.WindowState = FormWindowState.Maximized;
+                    form.FormClosed += TableSelect_Closed;
+                    pnlTableSelect.Controls.Add(form);
+                    form.Show();
                     break;
                 case 4: //Restaurant Stock
                     RestaurantStockAdd frm4 = new RestaurantStockAdd();
@@ -527,6 +531,18 @@ namespace Belfray
             frm.WindowState = FormWindowState.Maximized;
             pnlMainBody.Controls.Add(frm);
             frm.Show();
+        }
+
+        private void TableSelect_Closed(object sender, FormClosedEventArgs e)
+        {
+            pnlTableSelect.Visible = false;
+
+            TableBookingAdd frm1 = new TableBookingAdd();
+            frm1.TopLevel = false;
+            frm1.FormBorderStyle = FormBorderStyle.None;
+            frm1.WindowState = FormWindowState.Maximized;
+            pnlMainBody.Controls.Add(frm1);
+            frm1.Show();
         }
     }
 }

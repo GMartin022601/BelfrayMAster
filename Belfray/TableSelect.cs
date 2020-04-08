@@ -15,8 +15,6 @@ namespace Belfray
         public TableSelect()
         {
             InitializeComponent();
-
-
         }
 
         private void tbl1_MouseHover(object sender, EventArgs e)
