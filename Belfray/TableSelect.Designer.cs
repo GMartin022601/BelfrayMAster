@@ -388,9 +388,9 @@
             // 
             this.pnlTableDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTableDetails.Controls.Add(this.label1);
-            this.pnlTableDetails.Location = new System.Drawing.Point(19, 381);
+            this.pnlTableDetails.Location = new System.Drawing.Point(4, 381);
             this.pnlTableDetails.Name = "pnlTableDetails";
-            this.pnlTableDetails.Size = new System.Drawing.Size(623, 166);
+            this.pnlTableDetails.Size = new System.Drawing.Size(638, 166);
             this.pnlTableDetails.TabIndex = 56;
             // 
             // lbltbl176
