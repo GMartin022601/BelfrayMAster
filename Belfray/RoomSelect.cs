@@ -7,12 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Belfray
 {
     public partial class RoomSelect : Form
     {
         public bool arrowCreated = false;
+
+        //SQL Links
+        SqlDataAdapter daItem;
+        DataSet dsBelfray = new DataSet();
+        SqlCommandBuilder cmdBItem;
+        DataRow drITem;
+        String connStr, sqlItem;
 
         public RoomSelect()
         {
@@ -107,10 +115,27 @@ namespace Belfray
 
         private void picRoom101_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "101";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                string room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000001"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split('- ').Last();
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "££" + drItem["itemPrice"].ToString();
+
+                    break;
+                }
+            }
             //lblPPDay.Text = "£" + ;
             //lblTotalPrice.Text = "£" + ;
         }
@@ -1290,7 +1315,21 @@ namespace Belfray
 
         private void RoomSelect_Load(object sender, EventArgs e)
         {
+            //Sets Date Time Picker to today for check in and 1 day later for check out
             dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
+
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //****Code for Seans Laptop*****
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //Connection for Tech Machine***
+            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+
+            sqlItem = @"select * from Item";
+            daItem = new SqlDataAdapter(sqlItem, connStr);
+            cmdBItem = new SqlCommandBuilder(daItem);
+
+            daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
+            daItem.Fill(dsBelfray, "Item");
         }
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
