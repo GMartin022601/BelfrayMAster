@@ -132,7 +132,8 @@ namespace Belfray
             }
             try
             {
-                myProduct.SupplierID = Convert.ToInt32(cbSuppID.SelectedValue.ToString());
+                myProduct.SupplierID = cbSuppID.Text.Trim();
+                //Convert.ToInt32(cbSuppID.SelectedValue.ToString());
             }
             catch (MyException MyEx)
             {
@@ -228,7 +229,8 @@ namespace Belfray
 
             try
             {
-                mySupp.SupplierID = Convert.ToInt32(lblESupplierID.Text.Trim());
+                mySupp.SupplierID = lblESupplierID.Text.Trim();
+                    //Convert.ToInt32(lblESupplierID.Text.Trim());
             }
             catch (MyException MyEx)
             {
@@ -439,9 +441,9 @@ namespace Belfray
             //lblUser.Text = LoginPage.currUser;
 
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 

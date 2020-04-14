@@ -8,18 +8,18 @@ namespace Belfray
 {
     class MyProduct
     {
-        private int qtyInStock, packSize, reorderLvl, supplierID;
+        private int qtyInStock, packSize, reorderLvl; // supplierID;
         private double costPrice;
-        private string productNo, productTypeCode, productDesc;
+        private string productNo, productTypeCode, productDesc, supplierID;
 
         public MyProduct()
         {
             this.productNo = ""; this.productTypeCode = ""; this.productDesc = "";
-            this.qtyInStock = 0; this.packSize = 0; this.reorderLvl = 0; this.supplierID = 0;
+            this.qtyInStock = 0; this.packSize = 0; this.reorderLvl = 0; this.supplierID = "";
             this.costPrice = 0.0;
         }
 
-        public MyProduct(int qtyInStock, int packSize, int reorderLvl, int supplierID, double costPrice, string productNo, string productTypeCode, string productDesc)
+        public MyProduct(int qtyInStock, int packSize, int reorderLvl, string supplierID, double costPrice, string productNo, string productTypeCode, string productDesc)
         {
             this.productNo = productNo; this.productTypeCode = productTypeCode; this.productDesc = productDesc;
             this.qtyInStock = qtyInStock; this.packSize = packSize; this.reorderLvl = reorderLvl; this.supplierID = supplierID;
@@ -72,7 +72,7 @@ namespace Belfray
             set { reorderLvl = value; }
         }
         //SupplierID
-        public int SupplierID
+        public string SupplierID
         {
             get { return supplierID; }
             set { supplierID = value; }

@@ -52,7 +52,7 @@ namespace Belfray
 
             if (noRows == 0)
             {
-                lblSupplierID.Text = "101";
+                lblSupplierID.Text = "10001";
             }
             else
             {
@@ -71,7 +71,8 @@ namespace Belfray
 
             try
             {
-                mySupp.SupplierID = Convert.ToInt32(lblSupplierID.Text.Trim());
+                mySupp.SupplierID = lblSupplierID.Text.Trim();
+                //Convert.ToInt32(lblSupplierID.Text.Trim());
             }
             catch (MyException MyEx)
             {
@@ -407,7 +408,8 @@ namespace Belfray
             }
             try
             {
-                myProduct.SupplierID = Convert.ToInt32(cbSuppID.SelectedValue.ToString());
+                myProduct.SupplierID = cbSuppID.Text.Trim();
+                //Convert.ToInt32(cbSuppID.SelectedValue.ToString());
             }
             catch (MyException MyEx)
             {
@@ -494,9 +496,9 @@ namespace Belfray
             //lblUser.Text = LoginPage.currUser;
 
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -550,14 +552,14 @@ namespace Belfray
 
             if (noRows == 0)
             {
-                lblProductNumberDisplay.Text = "1101";
+                lblProductNumberDisplay.Text = "PRD100000";
             }
             else
             {
                 getProdNum(noRows);
             }
 
-            lblProductNumberDisplay.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
+            lblProductNumberDisplay.Text = (drProduct["productNumber"].ToString() + 1).ToString();
         }
     }
 }
