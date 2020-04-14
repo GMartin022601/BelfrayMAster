@@ -8,23 +8,23 @@ namespace Belfray
 {
     class MySupplier
     {
-        private int supplierID = 0;
-        private string supplierName, supplierAddress, supplierTown, supplierCounty, supplierPostCode, supplierEmail, supplierTelNo;
+        //private int supplierID = 0;
+        private string supplierName, supplierAddress, supplierTown, supplierCounty, supplierPostCode, supplierEmail, supplierTelNo, supplierID;
 
         public MySupplier()
         {
-            this.supplierID = 0;
+            this.supplierID = "";
             this.supplierName = ""; this.supplierAddress = ""; this.supplierTown = ""; this.supplierCounty = "";
             this.supplierPostCode = ""; this.supplierEmail = ""; this.supplierTelNo = "";
         }
 
-        public MySupplier(int supplierID, string supplierName, string supplierAddress, string supplierTown, string supplierCounty, string supplierPostCode, string supplierEmail, string supplierTelNo)
+        public MySupplier(string supplierID, string supplierName, string supplierAddress, string supplierTown, string supplierCounty, string supplierPostCode, string supplierEmail, string supplierTelNo)
         {
             this.supplierID = supplierID;
             this.supplierName = supplierName; this.supplierAddress = supplierAddress; this.supplierTown = supplierTown; this.supplierCounty = supplierCounty;
             this.supplierPostCode = supplierPostCode; this.supplierEmail = supplierEmail; this.supplierTelNo = supplierTelNo;
         }
-        public int SupplierID
+        public string SupplierID
         {
             get { return supplierID; }
             set

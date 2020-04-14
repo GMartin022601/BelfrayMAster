@@ -44,7 +44,45 @@
             this.lblRedRoom = new System.Windows.Forms.Label();
             this.pnlCalendar = new System.Windows.Forms.Panel();
             this.pnlCustomerDetails = new System.Windows.Forms.Panel();
+            this.gbBookingDetails = new System.Windows.Forms.GroupBox();
+            this.btnAvailability = new System.Windows.Forms.Button();
+            this.cbPaymentTyp = new System.Windows.Forms.ComboBox();
+            this.dateTime = new System.Windows.Forms.DateTimePicker();
+            this.lblPaymenType = new System.Windows.Forms.Label();
+            this.numPartySize = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.cbTime = new System.Windows.Forms.ComboBox();
+            this.chkNewBooking = new System.Windows.Forms.CheckBox();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblBNoTag = new System.Windows.Forms.Label();
+            this.lblBookingType = new System.Windows.Forms.Label();
+            this.cbBookingType = new System.Windows.Forms.ComboBox();
+            this.lblPartySize = new System.Windows.Forms.Label();
+            this.gbCustomerDetails = new System.Windows.Forms.GroupBox();
+            this.txtTelNo = new System.Windows.Forms.TextBox();
+            this.lblTelNo = new System.Windows.Forms.Label();
+            this.txtPC = new System.Windows.Forms.TextBox();
+            this.lblPC = new System.Windows.Forms.Label();
+            this.txtCounty = new System.Windows.Forms.TextBox();
+            this.lbCounty = new System.Windows.Forms.Label();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.txtStreet = new System.Windows.Forms.TextBox();
+            this.lblStreet = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblLname = new System.Windows.Forms.Label();
+            this.txtFname = new System.Windows.Forms.TextBox();
+            this.lblFName = new System.Windows.Forms.Label();
+            this.cbTitle = new System.Windows.Forms.ComboBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnGetInfo = new System.Windows.Forms.Button();
+            this.txtCustID = new System.Windows.Forms.TextBox();
+            this.lblCustID = new System.Windows.Forms.Label();
+            this.chkNewCustomer = new System.Windows.Forms.CheckBox();
             this.pnlTableDetails = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbltbl176 = new System.Windows.Forms.Label();
             this.lbltbl166 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -97,48 +135,15 @@
             this.tbl1 = new System.Windows.Forms.PictureBox();
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.chkNewCustomer = new System.Windows.Forms.CheckBox();
-            this.gbCustomerDetails = new System.Windows.Forms.GroupBox();
-            this.lblCustID = new System.Windows.Forms.Label();
-            this.txtCustID = new System.Windows.Forms.TextBox();
-            this.btnGetInfo = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.cbTitle = new System.Windows.Forms.ComboBox();
-            this.lblFName = new System.Windows.Forms.Label();
-            this.txtFname = new System.Windows.Forms.TextBox();
-            this.lblLname = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblStreet = new System.Windows.Forms.Label();
-            this.txtStreet = new System.Windows.Forms.TextBox();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.lbCounty = new System.Windows.Forms.Label();
-            this.txtCounty = new System.Windows.Forms.TextBox();
-            this.lblPC = new System.Windows.Forms.Label();
-            this.txtPC = new System.Windows.Forms.TextBox();
-            this.lblTelNo = new System.Windows.Forms.Label();
-            this.txtTelNo = new System.Windows.Forms.TextBox();
-            this.numPartySize = new System.Windows.Forms.NumericUpDown();
-            this.dateTime = new System.Windows.Forms.DateTimePicker();
-            this.lblBNoTag = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblPartySize = new System.Windows.Forms.Label();
-            this.lblBookingType = new System.Windows.Forms.Label();
-            this.cbBookingType = new System.Windows.Forms.ComboBox();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.cbTime = new System.Windows.Forms.ComboBox();
-            this.lblPaymenType = new System.Windows.Forms.Label();
-            this.cbPaymentTyp = new System.Windows.Forms.ComboBox();
-            this.chkNewBooking = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.gbBookingDetails = new System.Windows.Forms.GroupBox();
-            this.btnAvailability = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlTableSelect.SuspendLayout();
             this.pnlGreen.SuspendLayout();
             this.pnlRed.SuspendLayout();
+            this.pnlCalendar.SuspendLayout();
             this.pnlCustomerDetails.SuspendLayout();
+            this.gbBookingDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
+            this.gbCustomerDetails.SuspendLayout();
             this.pnlTableDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -165,9 +170,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl1)).BeginInit();
-            this.gbCustomerDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
-            this.gbBookingDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTableSelect
@@ -368,6 +370,7 @@
             // pnlCalendar
             // 
             this.pnlCalendar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCalendar.Controls.Add(this.label2);
             this.pnlCalendar.Location = new System.Drawing.Point(649, 381);
             this.pnlCalendar.Name = "pnlCalendar";
             this.pnlCalendar.Size = new System.Drawing.Size(544, 166);
@@ -384,6 +387,374 @@
             this.pnlCustomerDetails.Size = new System.Drawing.Size(545, 364);
             this.pnlCustomerDetails.TabIndex = 57;
             // 
+            // gbBookingDetails
+            // 
+            this.gbBookingDetails.Controls.Add(this.btnAvailability);
+            this.gbBookingDetails.Controls.Add(this.cbPaymentTyp);
+            this.gbBookingDetails.Controls.Add(this.dateTime);
+            this.gbBookingDetails.Controls.Add(this.lblPaymenType);
+            this.gbBookingDetails.Controls.Add(this.numPartySize);
+            this.gbBookingDetails.Controls.Add(this.button1);
+            this.gbBookingDetails.Controls.Add(this.textBox2);
+            this.gbBookingDetails.Controls.Add(this.lblDate);
+            this.gbBookingDetails.Controls.Add(this.cbTime);
+            this.gbBookingDetails.Controls.Add(this.chkNewBooking);
+            this.gbBookingDetails.Controls.Add(this.lblTime);
+            this.gbBookingDetails.Controls.Add(this.lblBNoTag);
+            this.gbBookingDetails.Controls.Add(this.lblBookingType);
+            this.gbBookingDetails.Controls.Add(this.cbBookingType);
+            this.gbBookingDetails.Controls.Add(this.lblPartySize);
+            this.gbBookingDetails.Location = new System.Drawing.Point(5, 218);
+            this.gbBookingDetails.Name = "gbBookingDetails";
+            this.gbBookingDetails.Size = new System.Drawing.Size(532, 141);
+            this.gbBookingDetails.TabIndex = 0;
+            this.gbBookingDetails.TabStop = false;
+            this.gbBookingDetails.Text = "Booking Details";
+            // 
+            // btnAvailability
+            // 
+            this.btnAvailability.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvailability.Location = new System.Drawing.Point(323, 107);
+            this.btnAvailability.Name = "btnAvailability";
+            this.btnAvailability.Size = new System.Drawing.Size(126, 29);
+            this.btnAvailability.TabIndex = 35;
+            this.btnAvailability.Text = "Check Availability?";
+            this.btnAvailability.UseVisualStyleBackColor = true;
+            // 
+            // cbPaymentTyp
+            // 
+            this.cbPaymentTyp.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPaymentTyp.FormattingEnabled = true;
+            this.cbPaymentTyp.Location = new System.Drawing.Point(92, 109);
+            this.cbPaymentTyp.Name = "cbPaymentTyp";
+            this.cbPaymentTyp.Size = new System.Drawing.Size(121, 26);
+            this.cbPaymentTyp.TabIndex = 31;
+            // 
+            // dateTime
+            // 
+            this.dateTime.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTime.Location = new System.Drawing.Point(51, 78);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(200, 25);
+            this.dateTime.TabIndex = 21;
+            // 
+            // lblPaymenType
+            // 
+            this.lblPaymenType.AutoSize = true;
+            this.lblPaymenType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymenType.Location = new System.Drawing.Point(6, 115);
+            this.lblPaymenType.Name = "lblPaymenType";
+            this.lblPaymenType.Size = new System.Drawing.Size(82, 18);
+            this.lblPaymenType.TabIndex = 30;
+            this.lblPaymenType.Text = "Paying With:";
+            // 
+            // numPartySize
+            // 
+            this.numPartySize.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numPartySize.Location = new System.Drawing.Point(254, 46);
+            this.numPartySize.Name = "numPartySize";
+            this.numPartySize.Size = new System.Drawing.Size(120, 25);
+            this.numPartySize.TabIndex = 20;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(323, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Get Info";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(206, 18);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 33;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(6, 83);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(39, 18);
+            this.lblDate.TabIndex = 24;
+            this.lblDate.Text = "Date:";
+            // 
+            // cbTime
+            // 
+            this.cbTime.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTime.FormattingEnabled = true;
+            this.cbTime.Location = new System.Drawing.Point(303, 77);
+            this.cbTime.Name = "cbTime";
+            this.cbTime.Size = new System.Drawing.Size(121, 26);
+            this.cbTime.TabIndex = 29;
+            // 
+            // chkNewBooking
+            // 
+            this.chkNewBooking.AutoSize = true;
+            this.chkNewBooking.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkNewBooking.Location = new System.Drawing.Point(5, 19);
+            this.chkNewBooking.Name = "chkNewBooking";
+            this.chkNewBooking.Size = new System.Drawing.Size(106, 22);
+            this.chkNewBooking.TabIndex = 32;
+            this.chkNewBooking.Text = "New Booking";
+            this.chkNewBooking.UseVisualStyleBackColor = true;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(257, 83);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(40, 18);
+            this.lblTime.TabIndex = 28;
+            this.lblTime.Text = "Time:";
+            // 
+            // lblBNoTag
+            // 
+            this.lblBNoTag.AutoSize = true;
+            this.lblBNoTag.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBNoTag.Location = new System.Drawing.Point(119, 20);
+            this.lblBNoTag.Name = "lblBNoTag";
+            this.lblBNoTag.Size = new System.Drawing.Size(81, 18);
+            this.lblBNoTag.TabIndex = 22;
+            this.lblBNoTag.Text = "Booking No:";
+            // 
+            // lblBookingType
+            // 
+            this.lblBookingType.AutoSize = true;
+            this.lblBookingType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingType.Location = new System.Drawing.Point(6, 51);
+            this.lblBookingType.Name = "lblBookingType";
+            this.lblBookingType.Size = new System.Drawing.Size(40, 18);
+            this.lblBookingType.TabIndex = 26;
+            this.lblBookingType.Text = "Type:";
+            // 
+            // cbBookingType
+            // 
+            this.cbBookingType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBookingType.FormattingEnabled = true;
+            this.cbBookingType.Location = new System.Drawing.Point(52, 46);
+            this.cbBookingType.Name = "cbBookingType";
+            this.cbBookingType.Size = new System.Drawing.Size(121, 26);
+            this.cbBookingType.TabIndex = 27;
+            // 
+            // lblPartySize
+            // 
+            this.lblPartySize.AutoSize = true;
+            this.lblPartySize.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPartySize.Location = new System.Drawing.Point(179, 51);
+            this.lblPartySize.Name = "lblPartySize";
+            this.lblPartySize.Size = new System.Drawing.Size(69, 18);
+            this.lblPartySize.TabIndex = 25;
+            this.lblPartySize.Text = "Party Size:";
+            // 
+            // gbCustomerDetails
+            // 
+            this.gbCustomerDetails.Controls.Add(this.txtTelNo);
+            this.gbCustomerDetails.Controls.Add(this.lblTelNo);
+            this.gbCustomerDetails.Controls.Add(this.txtPC);
+            this.gbCustomerDetails.Controls.Add(this.lblPC);
+            this.gbCustomerDetails.Controls.Add(this.txtCounty);
+            this.gbCustomerDetails.Controls.Add(this.lbCounty);
+            this.gbCustomerDetails.Controls.Add(this.txtCity);
+            this.gbCustomerDetails.Controls.Add(this.lblCity);
+            this.gbCustomerDetails.Controls.Add(this.txtStreet);
+            this.gbCustomerDetails.Controls.Add(this.lblStreet);
+            this.gbCustomerDetails.Controls.Add(this.textBox1);
+            this.gbCustomerDetails.Controls.Add(this.lblLname);
+            this.gbCustomerDetails.Controls.Add(this.txtFname);
+            this.gbCustomerDetails.Controls.Add(this.lblFName);
+            this.gbCustomerDetails.Controls.Add(this.cbTitle);
+            this.gbCustomerDetails.Controls.Add(this.lblTitle);
+            this.gbCustomerDetails.Controls.Add(this.btnGetInfo);
+            this.gbCustomerDetails.Controls.Add(this.txtCustID);
+            this.gbCustomerDetails.Controls.Add(this.lblCustID);
+            this.gbCustomerDetails.Controls.Add(this.chkNewCustomer);
+            this.gbCustomerDetails.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCustomerDetails.Location = new System.Drawing.Point(4, 4);
+            this.gbCustomerDetails.Name = "gbCustomerDetails";
+            this.gbCustomerDetails.Size = new System.Drawing.Size(536, 210);
+            this.gbCustomerDetails.TabIndex = 1;
+            this.gbCustomerDetails.TabStop = false;
+            this.gbCustomerDetails.Text = "Customer Details";
+            // 
+            // txtTelNo
+            // 
+            this.txtTelNo.Location = new System.Drawing.Point(241, 156);
+            this.txtTelNo.Name = "txtTelNo";
+            this.txtTelNo.Size = new System.Drawing.Size(100, 25);
+            this.txtTelNo.TabIndex = 19;
+            // 
+            // lblTelNo
+            // 
+            this.lblTelNo.AutoSize = true;
+            this.lblTelNo.Location = new System.Drawing.Point(186, 159);
+            this.lblTelNo.Name = "lblTelNo";
+            this.lblTelNo.Size = new System.Drawing.Size(49, 18);
+            this.lblTelNo.TabIndex = 18;
+            this.lblTelNo.Text = "Tel No:";
+            // 
+            // txtPC
+            // 
+            this.txtPC.Location = new System.Drawing.Point(80, 156);
+            this.txtPC.Name = "txtPC";
+            this.txtPC.Size = new System.Drawing.Size(100, 25);
+            this.txtPC.TabIndex = 17;
+            // 
+            // lblPC
+            // 
+            this.lblPC.AutoSize = true;
+            this.lblPC.Location = new System.Drawing.Point(7, 159);
+            this.lblPC.Name = "lblPC";
+            this.lblPC.Size = new System.Drawing.Size(67, 18);
+            this.lblPC.TabIndex = 16;
+            this.lblPC.Text = "Postcode:";
+            // 
+            // txtCounty
+            // 
+            this.txtCounty.Location = new System.Drawing.Point(377, 115);
+            this.txtCounty.Name = "txtCounty";
+            this.txtCounty.Size = new System.Drawing.Size(100, 25);
+            this.txtCounty.TabIndex = 15;
+            // 
+            // lbCounty
+            // 
+            this.lbCounty.AutoSize = true;
+            this.lbCounty.Location = new System.Drawing.Point(316, 122);
+            this.lbCounty.Name = "lbCounty";
+            this.lbCounty.Size = new System.Drawing.Size(55, 18);
+            this.lbCounty.TabIndex = 14;
+            this.lbCounty.Text = "County:";
+            // 
+            // txtCity
+            // 
+            this.txtCity.Location = new System.Drawing.Point(207, 115);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(100, 25);
+            this.txtCity.TabIndex = 13;
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(167, 121);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(34, 18);
+            this.lblCity.TabIndex = 12;
+            this.lblCity.Text = "City:";
+            // 
+            // txtStreet
+            // 
+            this.txtStreet.Location = new System.Drawing.Point(60, 115);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Size = new System.Drawing.Size(100, 25);
+            this.txtStreet.TabIndex = 11;
+            // 
+            // lblStreet
+            // 
+            this.lblStreet.AutoSize = true;
+            this.lblStreet.Location = new System.Drawing.Point(7, 121);
+            this.lblStreet.Name = "lblStreet";
+            this.lblStreet.Size = new System.Drawing.Size(47, 18);
+            this.lblStreet.TabIndex = 10;
+            this.lblStreet.Text = "Street:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(397, 69);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 25);
+            this.textBox1.TabIndex = 9;
+            // 
+            // lblLname
+            // 
+            this.lblLname.AutoSize = true;
+            this.lblLname.Location = new System.Drawing.Point(316, 72);
+            this.lblLname.Name = "lblLname";
+            this.lblLname.Size = new System.Drawing.Size(75, 18);
+            this.lblLname.TabIndex = 8;
+            this.lblLname.Text = "Last Name:";
+            // 
+            // txtFname
+            // 
+            this.txtFname.Location = new System.Drawing.Point(210, 69);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(100, 25);
+            this.txtFname.TabIndex = 7;
+            // 
+            // lblFName
+            // 
+            this.lblFName.AutoSize = true;
+            this.lblFName.Location = new System.Drawing.Point(128, 72);
+            this.lblFName.Name = "lblFName";
+            this.lblFName.Size = new System.Drawing.Size(76, 18);
+            this.lblFName.TabIndex = 6;
+            this.lblFName.Text = "First Name:";
+            // 
+            // cbTitle
+            // 
+            this.cbTitle.AutoCompleteCustomSource.AddRange(new string[] {
+            "Mr",
+            "Ms",
+            "Miss",
+            "Mrs"});
+            this.cbTitle.FormattingEnabled = true;
+            this.cbTitle.Location = new System.Drawing.Point(50, 68);
+            this.cbTitle.Name = "cbTitle";
+            this.cbTitle.Size = new System.Drawing.Size(72, 26);
+            this.cbTitle.TabIndex = 5;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(7, 72);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(36, 18);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "Title:";
+            // 
+            // btnGetInfo
+            // 
+            this.btnGetInfo.Location = new System.Drawing.Point(327, 26);
+            this.btnGetInfo.Name = "btnGetInfo";
+            this.btnGetInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnGetInfo.TabIndex = 3;
+            this.btnGetInfo.Text = "Get Info";
+            this.btnGetInfo.UseVisualStyleBackColor = true;
+            // 
+            // txtCustID
+            // 
+            this.txtCustID.Enabled = false;
+            this.txtCustID.Location = new System.Drawing.Point(221, 24);
+            this.txtCustID.Name = "txtCustID";
+            this.txtCustID.Size = new System.Drawing.Size(100, 25);
+            this.txtCustID.TabIndex = 2;
+            // 
+            // lblCustID
+            // 
+            this.lblCustID.AutoSize = true;
+            this.lblCustID.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustID.Location = new System.Drawing.Point(128, 24);
+            this.lblCustID.Name = "lblCustID";
+            this.lblCustID.Size = new System.Drawing.Size(86, 18);
+            this.lblCustID.TabIndex = 1;
+            this.lblCustID.Text = "Customer ID:";
+            // 
+            // chkNewCustomer
+            // 
+            this.chkNewCustomer.AutoSize = true;
+            this.chkNewCustomer.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkNewCustomer.Location = new System.Drawing.Point(6, 24);
+            this.chkNewCustomer.Name = "chkNewCustomer";
+            this.chkNewCustomer.Size = new System.Drawing.Size(116, 22);
+            this.chkNewCustomer.TabIndex = 0;
+            this.chkNewCustomer.Text = "New Customer";
+            this.chkNewCustomer.UseVisualStyleBackColor = true;
+            // 
             // pnlTableDetails
             // 
             this.pnlTableDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -392,6 +763,15 @@
             this.pnlTableDetails.Name = "pnlTableDetails";
             this.pnlTableDetails.Size = new System.Drawing.Size(638, 166);
             this.pnlTableDetails.TabIndex = 56;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(377, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "DGV to show bookings on whatever table is selected from the floor plan above";
             // 
             // lbltbl176
             // 
@@ -981,382 +1361,14 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Table Information";
             // 
-            // chkNewCustomer
-            // 
-            this.chkNewCustomer.AutoSize = true;
-            this.chkNewCustomer.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkNewCustomer.Location = new System.Drawing.Point(6, 24);
-            this.chkNewCustomer.Name = "chkNewCustomer";
-            this.chkNewCustomer.Size = new System.Drawing.Size(116, 22);
-            this.chkNewCustomer.TabIndex = 0;
-            this.chkNewCustomer.Text = "New Customer";
-            this.chkNewCustomer.UseVisualStyleBackColor = true;
-            // 
-            // gbCustomerDetails
-            // 
-            this.gbCustomerDetails.Controls.Add(this.txtTelNo);
-            this.gbCustomerDetails.Controls.Add(this.lblTelNo);
-            this.gbCustomerDetails.Controls.Add(this.txtPC);
-            this.gbCustomerDetails.Controls.Add(this.lblPC);
-            this.gbCustomerDetails.Controls.Add(this.txtCounty);
-            this.gbCustomerDetails.Controls.Add(this.lbCounty);
-            this.gbCustomerDetails.Controls.Add(this.txtCity);
-            this.gbCustomerDetails.Controls.Add(this.lblCity);
-            this.gbCustomerDetails.Controls.Add(this.txtStreet);
-            this.gbCustomerDetails.Controls.Add(this.lblStreet);
-            this.gbCustomerDetails.Controls.Add(this.textBox1);
-            this.gbCustomerDetails.Controls.Add(this.lblLname);
-            this.gbCustomerDetails.Controls.Add(this.txtFname);
-            this.gbCustomerDetails.Controls.Add(this.lblFName);
-            this.gbCustomerDetails.Controls.Add(this.cbTitle);
-            this.gbCustomerDetails.Controls.Add(this.lblTitle);
-            this.gbCustomerDetails.Controls.Add(this.btnGetInfo);
-            this.gbCustomerDetails.Controls.Add(this.txtCustID);
-            this.gbCustomerDetails.Controls.Add(this.lblCustID);
-            this.gbCustomerDetails.Controls.Add(this.chkNewCustomer);
-            this.gbCustomerDetails.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCustomerDetails.Location = new System.Drawing.Point(4, 4);
-            this.gbCustomerDetails.Name = "gbCustomerDetails";
-            this.gbCustomerDetails.Size = new System.Drawing.Size(536, 210);
-            this.gbCustomerDetails.TabIndex = 1;
-            this.gbCustomerDetails.TabStop = false;
-            this.gbCustomerDetails.Text = "Customer Details";
-            // 
-            // lblCustID
-            // 
-            this.lblCustID.AutoSize = true;
-            this.lblCustID.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustID.Location = new System.Drawing.Point(128, 24);
-            this.lblCustID.Name = "lblCustID";
-            this.lblCustID.Size = new System.Drawing.Size(86, 18);
-            this.lblCustID.TabIndex = 1;
-            this.lblCustID.Text = "Customer ID:";
-            // 
-            // txtCustID
-            // 
-            this.txtCustID.Enabled = false;
-            this.txtCustID.Location = new System.Drawing.Point(221, 24);
-            this.txtCustID.Name = "txtCustID";
-            this.txtCustID.Size = new System.Drawing.Size(100, 25);
-            this.txtCustID.TabIndex = 2;
-            // 
-            // btnGetInfo
-            // 
-            this.btnGetInfo.Location = new System.Drawing.Point(327, 26);
-            this.btnGetInfo.Name = "btnGetInfo";
-            this.btnGetInfo.Size = new System.Drawing.Size(75, 23);
-            this.btnGetInfo.TabIndex = 3;
-            this.btnGetInfo.Text = "Get Info";
-            this.btnGetInfo.UseVisualStyleBackColor = true;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(7, 72);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(36, 18);
-            this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Title:";
-            // 
-            // cbTitle
-            // 
-            this.cbTitle.AutoCompleteCustomSource.AddRange(new string[] {
-            "Mr",
-            "Ms",
-            "Miss",
-            "Mrs"});
-            this.cbTitle.FormattingEnabled = true;
-            this.cbTitle.Location = new System.Drawing.Point(50, 68);
-            this.cbTitle.Name = "cbTitle";
-            this.cbTitle.Size = new System.Drawing.Size(72, 26);
-            this.cbTitle.TabIndex = 5;
-            // 
-            // lblFName
-            // 
-            this.lblFName.AutoSize = true;
-            this.lblFName.Location = new System.Drawing.Point(128, 72);
-            this.lblFName.Name = "lblFName";
-            this.lblFName.Size = new System.Drawing.Size(76, 18);
-            this.lblFName.TabIndex = 6;
-            this.lblFName.Text = "First Name:";
-            // 
-            // txtFname
-            // 
-            this.txtFname.Location = new System.Drawing.Point(210, 69);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(100, 25);
-            this.txtFname.TabIndex = 7;
-            // 
-            // lblLname
-            // 
-            this.lblLname.AutoSize = true;
-            this.lblLname.Location = new System.Drawing.Point(316, 72);
-            this.lblLname.Name = "lblLname";
-            this.lblLname.Size = new System.Drawing.Size(75, 18);
-            this.lblLname.TabIndex = 8;
-            this.lblLname.Text = "Last Name:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(397, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 9;
-            // 
-            // lblStreet
-            // 
-            this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(7, 121);
-            this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(47, 18);
-            this.lblStreet.TabIndex = 10;
-            this.lblStreet.Text = "Street:";
-            // 
-            // txtStreet
-            // 
-            this.txtStreet.Location = new System.Drawing.Point(60, 115);
-            this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(100, 25);
-            this.txtStreet.TabIndex = 11;
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(167, 121);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(34, 18);
-            this.lblCity.TabIndex = 12;
-            this.lblCity.Text = "City:";
-            // 
-            // txtCity
-            // 
-            this.txtCity.Location = new System.Drawing.Point(207, 115);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(100, 25);
-            this.txtCity.TabIndex = 13;
-            // 
-            // lbCounty
-            // 
-            this.lbCounty.AutoSize = true;
-            this.lbCounty.Location = new System.Drawing.Point(316, 122);
-            this.lbCounty.Name = "lbCounty";
-            this.lbCounty.Size = new System.Drawing.Size(55, 18);
-            this.lbCounty.TabIndex = 14;
-            this.lbCounty.Text = "County:";
-            // 
-            // txtCounty
-            // 
-            this.txtCounty.Location = new System.Drawing.Point(377, 115);
-            this.txtCounty.Name = "txtCounty";
-            this.txtCounty.Size = new System.Drawing.Size(100, 25);
-            this.txtCounty.TabIndex = 15;
-            // 
-            // lblPC
-            // 
-            this.lblPC.AutoSize = true;
-            this.lblPC.Location = new System.Drawing.Point(7, 159);
-            this.lblPC.Name = "lblPC";
-            this.lblPC.Size = new System.Drawing.Size(67, 18);
-            this.lblPC.TabIndex = 16;
-            this.lblPC.Text = "Postcode:";
-            // 
-            // txtPC
-            // 
-            this.txtPC.Location = new System.Drawing.Point(80, 156);
-            this.txtPC.Name = "txtPC";
-            this.txtPC.Size = new System.Drawing.Size(100, 25);
-            this.txtPC.TabIndex = 17;
-            // 
-            // lblTelNo
-            // 
-            this.lblTelNo.AutoSize = true;
-            this.lblTelNo.Location = new System.Drawing.Point(186, 159);
-            this.lblTelNo.Name = "lblTelNo";
-            this.lblTelNo.Size = new System.Drawing.Size(49, 18);
-            this.lblTelNo.TabIndex = 18;
-            this.lblTelNo.Text = "Tel No:";
-            // 
-            // txtTelNo
-            // 
-            this.txtTelNo.Location = new System.Drawing.Point(241, 156);
-            this.txtTelNo.Name = "txtTelNo";
-            this.txtTelNo.Size = new System.Drawing.Size(100, 25);
-            this.txtTelNo.TabIndex = 19;
-            // 
-            // numPartySize
-            // 
-            this.numPartySize.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPartySize.Location = new System.Drawing.Point(254, 46);
-            this.numPartySize.Name = "numPartySize";
-            this.numPartySize.Size = new System.Drawing.Size(120, 25);
-            this.numPartySize.TabIndex = 20;
-            // 
-            // dateTime
-            // 
-            this.dateTime.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTime.Location = new System.Drawing.Point(51, 78);
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(200, 25);
-            this.dateTime.TabIndex = 21;
-            // 
-            // lblBNoTag
-            // 
-            this.lblBNoTag.AutoSize = true;
-            this.lblBNoTag.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBNoTag.Location = new System.Drawing.Point(119, 20);
-            this.lblBNoTag.Name = "lblBNoTag";
-            this.lblBNoTag.Size = new System.Drawing.Size(81, 18);
-            this.lblBNoTag.TabIndex = 22;
-            this.lblBNoTag.Text = "Booking No:";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(6, 83);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(39, 18);
-            this.lblDate.TabIndex = 24;
-            this.lblDate.Text = "Date:";
-            // 
-            // lblPartySize
-            // 
-            this.lblPartySize.AutoSize = true;
-            this.lblPartySize.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPartySize.Location = new System.Drawing.Point(179, 51);
-            this.lblPartySize.Name = "lblPartySize";
-            this.lblPartySize.Size = new System.Drawing.Size(69, 18);
-            this.lblPartySize.TabIndex = 25;
-            this.lblPartySize.Text = "Party Size:";
-            // 
-            // lblBookingType
-            // 
-            this.lblBookingType.AutoSize = true;
-            this.lblBookingType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingType.Location = new System.Drawing.Point(6, 51);
-            this.lblBookingType.Name = "lblBookingType";
-            this.lblBookingType.Size = new System.Drawing.Size(40, 18);
-            this.lblBookingType.TabIndex = 26;
-            this.lblBookingType.Text = "Type:";
-            // 
-            // cbBookingType
-            // 
-            this.cbBookingType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBookingType.FormattingEnabled = true;
-            this.cbBookingType.Location = new System.Drawing.Point(52, 46);
-            this.cbBookingType.Name = "cbBookingType";
-            this.cbBookingType.Size = new System.Drawing.Size(121, 26);
-            this.cbBookingType.TabIndex = 27;
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(257, 83);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(40, 18);
-            this.lblTime.TabIndex = 28;
-            this.lblTime.Text = "Time:";
-            // 
-            // cbTime
-            // 
-            this.cbTime.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTime.FormattingEnabled = true;
-            this.cbTime.Location = new System.Drawing.Point(303, 77);
-            this.cbTime.Name = "cbTime";
-            this.cbTime.Size = new System.Drawing.Size(121, 26);
-            this.cbTime.TabIndex = 29;
-            // 
-            // lblPaymenType
-            // 
-            this.lblPaymenType.AutoSize = true;
-            this.lblPaymenType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymenType.Location = new System.Drawing.Point(6, 115);
-            this.lblPaymenType.Name = "lblPaymenType";
-            this.lblPaymenType.Size = new System.Drawing.Size(82, 18);
-            this.lblPaymenType.TabIndex = 30;
-            this.lblPaymenType.Text = "Paying With:";
-            // 
-            // cbPaymentTyp
-            // 
-            this.cbPaymentTyp.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPaymentTyp.FormattingEnabled = true;
-            this.cbPaymentTyp.Location = new System.Drawing.Point(92, 109);
-            this.cbPaymentTyp.Name = "cbPaymentTyp";
-            this.cbPaymentTyp.Size = new System.Drawing.Size(121, 26);
-            this.cbPaymentTyp.TabIndex = 31;
-            // 
-            // chkNewBooking
-            // 
-            this.chkNewBooking.AutoSize = true;
-            this.chkNewBooking.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkNewBooking.Location = new System.Drawing.Point(5, 19);
-            this.chkNewBooking.Name = "chkNewBooking";
-            this.chkNewBooking.Size = new System.Drawing.Size(106, 22);
-            this.chkNewBooking.TabIndex = 32;
-            this.chkNewBooking.Text = "New Booking";
-            this.chkNewBooking.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(206, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 33;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(323, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Get Info";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // gbBookingDetails
-            // 
-            this.gbBookingDetails.Controls.Add(this.btnAvailability);
-            this.gbBookingDetails.Controls.Add(this.cbPaymentTyp);
-            this.gbBookingDetails.Controls.Add(this.dateTime);
-            this.gbBookingDetails.Controls.Add(this.lblPaymenType);
-            this.gbBookingDetails.Controls.Add(this.numPartySize);
-            this.gbBookingDetails.Controls.Add(this.button1);
-            this.gbBookingDetails.Controls.Add(this.textBox2);
-            this.gbBookingDetails.Controls.Add(this.lblDate);
-            this.gbBookingDetails.Controls.Add(this.cbTime);
-            this.gbBookingDetails.Controls.Add(this.chkNewBooking);
-            this.gbBookingDetails.Controls.Add(this.lblTime);
-            this.gbBookingDetails.Controls.Add(this.lblBNoTag);
-            this.gbBookingDetails.Controls.Add(this.lblBookingType);
-            this.gbBookingDetails.Controls.Add(this.cbBookingType);
-            this.gbBookingDetails.Controls.Add(this.lblPartySize);
-            this.gbBookingDetails.Location = new System.Drawing.Point(5, 218);
-            this.gbBookingDetails.Name = "gbBookingDetails";
-            this.gbBookingDetails.Size = new System.Drawing.Size(532, 141);
-            this.gbBookingDetails.TabIndex = 0;
-            this.gbBookingDetails.TabStop = false;
-            this.gbBookingDetails.Text = "Booking Details";
-            // 
-            // btnAvailability
-            // 
-            this.btnAvailability.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAvailability.Location = new System.Drawing.Point(323, 107);
-            this.btnAvailability.Name = "btnAvailability";
-            this.btnAvailability.Size = new System.Drawing.Size(126, 29);
-            this.btnAvailability.TabIndex = 35;
-            this.btnAvailability.Text = "Check Availability?";
-            this.btnAvailability.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DGV to show bookings on whatever table is selected from the floor plan above";
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Calendar? hourly table plan?";
             // 
             // TableSelect
             // 
@@ -1374,7 +1386,14 @@
             this.pnlGreen.PerformLayout();
             this.pnlRed.ResumeLayout(false);
             this.pnlRed.PerformLayout();
+            this.pnlCalendar.ResumeLayout(false);
+            this.pnlCalendar.PerformLayout();
             this.pnlCustomerDetails.ResumeLayout(false);
+            this.gbBookingDetails.ResumeLayout(false);
+            this.gbBookingDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).EndInit();
+            this.gbCustomerDetails.ResumeLayout(false);
+            this.gbCustomerDetails.PerformLayout();
             this.pnlTableDetails.ResumeLayout(false);
             this.pnlTableDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1402,11 +1421,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl1)).EndInit();
-            this.gbCustomerDetails.ResumeLayout(false);
-            this.gbCustomerDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).EndInit();
-            this.gbBookingDetails.ResumeLayout(false);
-            this.gbBookingDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1519,5 +1533,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.CheckBox chkNewBooking;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
