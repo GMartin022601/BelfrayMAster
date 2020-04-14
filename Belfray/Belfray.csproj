@@ -453,5 +453,8 @@
   <ItemGroup>
     <None Include="Resources\Booth-4-TP.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FinalDeleteButton.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

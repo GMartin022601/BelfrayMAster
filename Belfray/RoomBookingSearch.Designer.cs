@@ -69,6 +69,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RoomBookingSearch";
             this.Text = "BookingSearch";
+            this.Load += new System.EventHandler(this.RoomBookingSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookingSearch)).EndInit();
             this.ResumeLayout(false);
 

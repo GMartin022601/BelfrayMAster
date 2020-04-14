@@ -17,10 +17,5 @@ namespace Belfray
         {
             InitializeComponent();
         }
-
-        private void btnRoomSelect_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

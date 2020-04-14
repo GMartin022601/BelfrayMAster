@@ -107,7 +107,12 @@ namespace Belfray
 
         private void picRoom101_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "101";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom101_MouseLeave(object sender, EventArgs e)
@@ -166,7 +171,12 @@ namespace Belfray
 
         private void picRoom102_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "102";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom102_MouseLeave(object sender, EventArgs e)
@@ -225,7 +235,12 @@ namespace Belfray
 
         private void picRoom103_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "103";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom103_MouseLeave(object sender, EventArgs e)
@@ -284,7 +299,12 @@ namespace Belfray
 
         private void picRoom104_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "104";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom104_MouseLeave(object sender, EventArgs e)
@@ -343,7 +363,12 @@ namespace Belfray
 
         private void picRoom105_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "105";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom105_MouseLeave(object sender, EventArgs e)
@@ -402,7 +427,12 @@ namespace Belfray
 
         private void picRoom106_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "106";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom106_MouseLeave(object sender, EventArgs e)
@@ -461,7 +491,12 @@ namespace Belfray
 
         private void picRoom107_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "107";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom107_MouseLeave(object sender, EventArgs e)
@@ -520,7 +555,12 @@ namespace Belfray
 
         private void picRoom108_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "108";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom108_MouseLeave(object sender, EventArgs e)
@@ -579,7 +619,12 @@ namespace Belfray
 
         private void picRoom109_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "109";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom109_MouseLeave(object sender, EventArgs e)
@@ -638,7 +683,12 @@ namespace Belfray
 
         private void picRoom110_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "110";
+            lblRoomType.Text = "Double";
+            lblRoomCapacity.Text = "2";
+            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom110_MouseLeave(object sender, EventArgs e)
@@ -697,7 +747,12 @@ namespace Belfray
 
         private void picRoom111_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "111";
+            lblRoomType.Text = "Single";
+            lblRoomCapacity.Text = "1";
+            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom111_MouseLeave(object sender, EventArgs e)
@@ -756,7 +811,12 @@ namespace Belfray
 
         private void picRoom112_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "112";
+            lblRoomType.Text = "Single";
+            lblRoomCapacity.Text = "1";
+            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom112_MouseLeave(object sender, EventArgs e)
@@ -815,7 +875,12 @@ namespace Belfray
 
         private void picRoom113_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "113";
+            lblRoomType.Text = "Family";
+            lblRoomCapacity.Text = "4";
+            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom113_MouseLeave(object sender, EventArgs e)
@@ -874,7 +939,12 @@ namespace Belfray
 
         private void picRoom114_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "114";
+            lblRoomType.Text = "Family";
+            lblRoomCapacity.Text = "4";
+            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom114_MouseLeave(object sender, EventArgs e)
@@ -933,7 +1003,12 @@ namespace Belfray
 
         private void picRoom115_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "115";
+            lblRoomType.Text = "Family";
+            lblRoomCapacity.Text = "4";
+            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom115_MouseLeave(object sender, EventArgs e)
@@ -992,7 +1067,12 @@ namespace Belfray
 
         private void picRoom116_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "116";
+            lblRoomType.Text = "Family";
+            lblRoomCapacity.Text = "4";
+            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom116_MouseLeave(object sender, EventArgs e)
@@ -1051,7 +1131,12 @@ namespace Belfray
 
         private void picRoom117_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "117";
+            lblRoomType.Text = "Twin";
+            lblRoomCapacity.Text = "2";
+            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom117_MouseLeave(object sender, EventArgs e)
@@ -1110,7 +1195,12 @@ namespace Belfray
 
         private void picRoom118_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "118";
+            lblRoomType.Text = "Twin";
+            lblRoomCapacity.Text = "2";
+            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom118_MouseLeave(object sender, EventArgs e)
@@ -1169,7 +1259,12 @@ namespace Belfray
 
         private void picRoom119_Click(object sender, EventArgs e)
         {
-
+            lblRoomNo.Text = "119";
+            lblRoomType.Text = "Honeymoon";
+            lblRoomCapacity.Text = "2";
+            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+            //lblPPDay.Text = "£" + ;
+            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom119_MouseLeave(object sender, EventArgs e)
@@ -1191,6 +1286,16 @@ namespace Belfray
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void RoomSelect_Load(object sender, EventArgs e)
+        {
+            dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
+        }
+
+        private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpCheckOutDate.Value = dtpCheckInDate.Value.AddDays(1);
         }
     }
 }

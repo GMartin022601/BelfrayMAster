@@ -242,7 +242,7 @@ namespace Belfray
             frm.WindowState = FormWindowState.Maximized;
             pnlMainBody.Controls.Add(frm);
             frm.Show();
-            //TabVisible();
+            TabReset();
         }
 
         private void picAdmin_Click(object sender, EventArgs e)
@@ -263,8 +263,24 @@ namespace Belfray
         {               
             //Current User
             lblUser.Text = LoginPage.currUser;
-            
-            switch(LoginPage.accType)
+            int AccType = 0;
+
+            //Links the accType on DB to values 1, 2 and 3 so the switch statement works (Sean comment this out if you are using an old version of the DB)
+            if(LoginPage.accType.ToString().Equals("ADM"))
+            {
+                AccType = 1;
+            }
+            else if (LoginPage.accType.ToString().Equals("HTL"))
+            {
+                AccType = 2;
+            }
+            else if(LoginPage.accType.ToString().Equals("RES"))
+            {
+                AccType = 3;
+            }
+
+            //Determines account type and what menu they will get upon entry
+            switch (AccType)
             {
                 case 1: //Admin            
                     break;
@@ -289,9 +305,9 @@ namespace Belfray
             }
 
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 

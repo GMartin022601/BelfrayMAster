@@ -163,9 +163,9 @@
             // picCancelAddSupp
             // 
             this.picCancelAddSupp.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picCancelAddSupp.Location = new System.Drawing.Point(367, 193);
+            this.picCancelAddSupp.Location = new System.Drawing.Point(432, 188);
             this.picCancelAddSupp.Name = "picCancelAddSupp";
-            this.picCancelAddSupp.Size = new System.Drawing.Size(36, 26);
+            this.picCancelAddSupp.Size = new System.Drawing.Size(40, 40);
             this.picCancelAddSupp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCancelAddSupp.TabIndex = 36;
             this.picCancelAddSupp.TabStop = false;
@@ -174,9 +174,9 @@
             // picSaveADDSupp
             // 
             this.picSaveADDSupp.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveADDSupp.Location = new System.Drawing.Point(409, 169);
+            this.picSaveADDSupp.Location = new System.Drawing.Point(478, 188);
             this.picSaveADDSupp.Name = "picSaveADDSupp";
-            this.picSaveADDSupp.Size = new System.Drawing.Size(50, 50);
+            this.picSaveADDSupp.Size = new System.Drawing.Size(40, 40);
             this.picSaveADDSupp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSaveADDSupp.TabIndex = 34;
             this.picSaveADDSupp.TabStop = false;
@@ -341,9 +341,9 @@
             // picCancelADDPTD
             // 
             this.picCancelADDPTD.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picCancelADDPTD.Location = new System.Drawing.Point(367, 47);
+            this.picCancelADDPTD.Location = new System.Drawing.Point(432, 26);
             this.picCancelADDPTD.Name = "picCancelADDPTD";
-            this.picCancelADDPTD.Size = new System.Drawing.Size(36, 26);
+            this.picCancelADDPTD.Size = new System.Drawing.Size(40, 40);
             this.picCancelADDPTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCancelADDPTD.TabIndex = 35;
             this.picCancelADDPTD.TabStop = false;
@@ -359,9 +359,9 @@
             // picSaveADDPTD
             // 
             this.picSaveADDPTD.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveADDPTD.Location = new System.Drawing.Point(409, 23);
+            this.picSaveADDPTD.Location = new System.Drawing.Point(478, 26);
             this.picSaveADDPTD.Name = "picSaveADDPTD";
-            this.picSaveADDPTD.Size = new System.Drawing.Size(50, 50);
+            this.picSaveADDPTD.Size = new System.Drawing.Size(40, 40);
             this.picSaveADDPTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSaveADDPTD.TabIndex = 33;
             this.picSaveADDPTD.TabStop = false;
@@ -437,9 +437,9 @@
             // picCancellAddProd
             // 
             this.picCancellAddProd.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picCancellAddProd.Location = new System.Drawing.Point(308, 285);
+            this.picCancellAddProd.Location = new System.Drawing.Point(163, 280);
             this.picCancellAddProd.Name = "picCancellAddProd";
-            this.picCancellAddProd.Size = new System.Drawing.Size(36, 26);
+            this.picCancellAddProd.Size = new System.Drawing.Size(40, 40);
             this.picCancellAddProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCancellAddProd.TabIndex = 37;
             this.picCancellAddProd.TabStop = false;
@@ -450,7 +450,7 @@
             this.picAddNewSupp.Image = global::Belfray.Properties.Resources.AddNew3;
             this.picAddNewSupp.Location = new System.Drawing.Point(297, 253);
             this.picAddNewSupp.Name = "picAddNewSupp";
-            this.picAddNewSupp.Size = new System.Drawing.Size(36, 26);
+            this.picAddNewSupp.Size = new System.Drawing.Size(24, 24);
             this.picAddNewSupp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAddNewSupp.TabIndex = 20;
             this.picAddNewSupp.TabStop = false;
@@ -461,7 +461,7 @@
             this.picAddNewPT.Image = global::Belfray.Properties.Resources.AddNew;
             this.picAddNewPT.Location = new System.Drawing.Point(298, 65);
             this.picAddNewPT.Name = "picAddNewPT";
-            this.picAddNewPT.Size = new System.Drawing.Size(36, 26);
+            this.picAddNewPT.Size = new System.Drawing.Size(24, 24);
             this.picAddNewPT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAddNewPT.TabIndex = 19;
             this.picAddNewPT.TabStop = false;
@@ -470,9 +470,9 @@
             // picSaveAddProdDet
             // 
             this.picSaveAddProdDet.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveAddProdDet.Location = new System.Drawing.Point(350, 261);
+            this.picSaveAddProdDet.Location = new System.Drawing.Point(206, 280);
             this.picSaveAddProdDet.Name = "picSaveAddProdDet";
-            this.picSaveAddProdDet.Size = new System.Drawing.Size(50, 50);
+            this.picSaveAddProdDet.Size = new System.Drawing.Size(40, 40);
             this.picSaveAddProdDet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSaveAddProdDet.TabIndex = 18;
             this.picSaveAddProdDet.TabStop = false;

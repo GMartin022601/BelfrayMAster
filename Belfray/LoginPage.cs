@@ -24,7 +24,7 @@ namespace Belfray
         public static string currUser = "";
 
         //Global User Permissions
-        public static int accType = 0;
+        public static string accType = "";
 
         //Login status
         //public static bool loginStatus = false;
@@ -56,7 +56,7 @@ namespace Belfray
                     {
                         passFound = true;
                         currUser = drUser["staffFName"].ToString() + " " + drUser["staffLName"].ToString();
-                        accType = Convert.ToInt32(drUser["accTypeID"].ToString());
+                        accType = drUser["accTypeID"].ToString();
                     }
 
                     break;
@@ -103,9 +103,9 @@ namespace Belfray
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 

@@ -333,6 +333,16 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FinalDeleteButton {
+            get {
+                object obj = ResourceManager.GetObject("FinalDeleteButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap floorplan_layout {
             get {
                 object obj = ResourceManager.GetObject("floorplan layout", resourceCulture);

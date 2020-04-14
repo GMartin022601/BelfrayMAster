@@ -52,6 +52,7 @@
             this.lblSuppID2 = new System.Windows.Forms.Label();
             this.pnlProdType = new System.Windows.Forms.Panel();
             this.gbProdType = new System.Windows.Forms.GroupBox();
+            this.lblPTC = new System.Windows.Forms.Label();
             this.btnCancelEditPTD = new System.Windows.Forms.PictureBox();
             this.picSaveADDPTD = new System.Windows.Forms.PictureBox();
             this.txtProdDesc2 = new System.Windows.Forms.TextBox();
@@ -81,7 +82,6 @@
             this.lblProdDesc = new System.Windows.Forms.Label();
             this.pnlImage = new System.Windows.Forms.Panel();
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblPTC = new System.Windows.Forms.Label();
             this.pnlRestStockEdit.SuspendLayout();
             this.pnlSuppDetails.SuspendLayout();
             this.gbSupplierDetails.SuspendLayout();
@@ -168,9 +168,9 @@
             // btnCancelEditSupp
             // 
             this.btnCancelEditSupp.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.btnCancelEditSupp.Location = new System.Drawing.Point(387, 199);
+            this.btnCancelEditSupp.Location = new System.Drawing.Point(432, 188);
             this.btnCancelEditSupp.Name = "btnCancelEditSupp";
-            this.btnCancelEditSupp.Size = new System.Drawing.Size(36, 26);
+            this.btnCancelEditSupp.Size = new System.Drawing.Size(40, 40);
             this.btnCancelEditSupp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCancelEditSupp.TabIndex = 39;
             this.btnCancelEditSupp.TabStop = false;
@@ -179,9 +179,9 @@
             // picSaveSupplier
             // 
             this.picSaveSupplier.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveSupplier.Location = new System.Drawing.Point(429, 175);
+            this.picSaveSupplier.Location = new System.Drawing.Point(478, 188);
             this.picSaveSupplier.Name = "picSaveSupplier";
-            this.picSaveSupplier.Size = new System.Drawing.Size(50, 50);
+            this.picSaveSupplier.Size = new System.Drawing.Size(40, 40);
             this.picSaveSupplier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSaveSupplier.TabIndex = 38;
             this.picSaveSupplier.TabStop = false;
@@ -336,12 +336,22 @@
             this.gbProdType.TabStop = false;
             this.gbProdType.Text = "Product Type Details";
             // 
+            // lblPTC
+            // 
+            this.lblPTC.AutoSize = true;
+            this.lblPTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTC.Location = new System.Drawing.Point(209, 25);
+            this.lblPTC.Name = "lblPTC";
+            this.lblPTC.Size = new System.Drawing.Size(44, 16);
+            this.lblPTC.TabIndex = 42;
+            this.lblPTC.Text = "xxxxxx";
+            // 
             // btnCancelEditPTD
             // 
             this.btnCancelEditPTD.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.btnCancelEditPTD.Location = new System.Drawing.Point(387, 44);
+            this.btnCancelEditPTD.Location = new System.Drawing.Point(432, 26);
             this.btnCancelEditPTD.Name = "btnCancelEditPTD";
-            this.btnCancelEditPTD.Size = new System.Drawing.Size(36, 26);
+            this.btnCancelEditPTD.Size = new System.Drawing.Size(40, 40);
             this.btnCancelEditPTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCancelEditPTD.TabIndex = 37;
             this.btnCancelEditPTD.TabStop = false;
@@ -350,9 +360,9 @@
             // picSaveADDPTD
             // 
             this.picSaveADDPTD.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveADDPTD.Location = new System.Drawing.Point(429, 20);
+            this.picSaveADDPTD.Location = new System.Drawing.Point(478, 26);
             this.picSaveADDPTD.Name = "picSaveADDPTD";
-            this.picSaveADDPTD.Size = new System.Drawing.Size(50, 50);
+            this.picSaveADDPTD.Size = new System.Drawing.Size(40, 40);
             this.picSaveADDPTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSaveADDPTD.TabIndex = 36;
             this.picSaveADDPTD.TabStop = false;
@@ -428,9 +438,9 @@
             // btnCancProdDet
             // 
             this.btnCancProdDet.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.btnCancProdDet.Location = new System.Drawing.Point(311, 291);
+            this.btnCancProdDet.Location = new System.Drawing.Point(163, 280);
             this.btnCancProdDet.Name = "btnCancProdDet";
-            this.btnCancProdDet.Size = new System.Drawing.Size(36, 26);
+            this.btnCancProdDet.Size = new System.Drawing.Size(40, 40);
             this.btnCancProdDet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCancProdDet.TabIndex = 42;
             this.btnCancProdDet.TabStop = false;
@@ -461,9 +471,9 @@
             // picSaveProductEdit
             // 
             this.picSaveProductEdit.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveProductEdit.Location = new System.Drawing.Point(350, 267);
+            this.picSaveProductEdit.Location = new System.Drawing.Point(206, 280);
             this.picSaveProductEdit.Name = "picSaveProductEdit";
-            this.picSaveProductEdit.Size = new System.Drawing.Size(50, 50);
+            this.picSaveProductEdit.Size = new System.Drawing.Size(40, 40);
             this.picSaveProductEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSaveProductEdit.TabIndex = 39;
             this.picSaveProductEdit.TabStop = false;
@@ -622,16 +632,6 @@
             // errP
             // 
             this.errP.ContainerControl = this;
-            // 
-            // lblPTC
-            // 
-            this.lblPTC.AutoSize = true;
-            this.lblPTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPTC.Location = new System.Drawing.Point(209, 25);
-            this.lblPTC.Name = "lblPTC";
-            this.lblPTC.Size = new System.Drawing.Size(44, 16);
-            this.lblPTC.TabIndex = 42;
-            this.lblPTC.Text = "xxxxxx";
             // 
             // RestaurantStockEdit
             // 
