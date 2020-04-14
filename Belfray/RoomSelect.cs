@@ -20,7 +20,8 @@ namespace Belfray
         DataSet dsBelfray = new DataSet();
         SqlCommandBuilder cmdBItem;
         DataRow drITem;
-        String connStr, sqlItem;
+        String connStr, sqlItem, room;
+        bool userChange = false;
 
         public RoomSelect()
         {
@@ -119,25 +120,28 @@ namespace Belfray
 
             foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
             {
-                string room = drItem["itemNo"].ToString();
+                room = drItem["itemNo"].ToString();
 
                 if (room.Equals("ITM1000001"))
                 {
                     string info = drItem["itemDesc"].ToString();
                     string roomNo = info.Split(' ').First();
-                    string roomType = info.Split('- ').Last();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
 
                     lblRoomNo.Text = roomNo;
                     lblRoomType.Text = roomType;
                     lblRoomCapacity.Text = "2";
                     lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-                    lblPPDay.Text = "££" + drItem["itemPrice"].ToString();
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
                     break;
                 }
             }
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
         }
 
         private void picRoom101_MouseLeave(object sender, EventArgs e)
@@ -196,12 +200,32 @@ namespace Belfray
 
         private void picRoom102_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "102";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000002"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom102_MouseLeave(object sender, EventArgs e)
@@ -260,12 +284,32 @@ namespace Belfray
 
         private void picRoom103_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "103";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000003"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom103_MouseLeave(object sender, EventArgs e)
@@ -324,12 +368,32 @@ namespace Belfray
 
         private void picRoom104_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "104";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000004"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom104_MouseLeave(object sender, EventArgs e)
@@ -388,12 +452,32 @@ namespace Belfray
 
         private void picRoom105_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "105";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000005"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom105_MouseLeave(object sender, EventArgs e)
@@ -452,12 +536,32 @@ namespace Belfray
 
         private void picRoom106_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "106";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000006"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom106_MouseLeave(object sender, EventArgs e)
@@ -516,12 +620,32 @@ namespace Belfray
 
         private void picRoom107_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "107";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000007"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom107_MouseLeave(object sender, EventArgs e)
@@ -580,12 +704,32 @@ namespace Belfray
 
         private void picRoom108_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "108";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000008"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom108_MouseLeave(object sender, EventArgs e)
@@ -644,12 +788,32 @@ namespace Belfray
 
         private void picRoom109_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "109";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000009"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom109_MouseLeave(object sender, EventArgs e)
@@ -708,12 +872,32 @@ namespace Belfray
 
         private void picRoom110_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "110";
-            lblRoomType.Text = "Double";
-            lblRoomCapacity.Text = "2";
-            lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000010"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom110_MouseLeave(object sender, EventArgs e)
@@ -772,12 +956,32 @@ namespace Belfray
 
         private void picRoom111_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "111";
-            lblRoomType.Text = "Single";
-            lblRoomCapacity.Text = "1";
-            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000011"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "1";
+                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom111_MouseLeave(object sender, EventArgs e)
@@ -836,12 +1040,32 @@ namespace Belfray
 
         private void picRoom112_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "112";
-            lblRoomType.Text = "Single";
-            lblRoomCapacity.Text = "1";
-            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000012"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "1";
+                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom112_MouseLeave(object sender, EventArgs e)
@@ -900,12 +1124,32 @@ namespace Belfray
 
         private void picRoom113_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "113";
-            lblRoomType.Text = "Family";
-            lblRoomCapacity.Text = "4";
-            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000013"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "4";
+                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom113_MouseLeave(object sender, EventArgs e)
@@ -964,12 +1208,32 @@ namespace Belfray
 
         private void picRoom114_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "114";
-            lblRoomType.Text = "Family";
-            lblRoomCapacity.Text = "4";
-            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000014"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "4";
+                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom114_MouseLeave(object sender, EventArgs e)
@@ -1028,12 +1292,32 @@ namespace Belfray
 
         private void picRoom115_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "115";
-            lblRoomType.Text = "Family";
-            lblRoomCapacity.Text = "4";
-            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000015"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "4";
+                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom115_MouseLeave(object sender, EventArgs e)
@@ -1092,12 +1376,32 @@ namespace Belfray
 
         private void picRoom116_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "116";
-            lblRoomType.Text = "Family";
-            lblRoomCapacity.Text = "4";
-            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000016"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "4";
+                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom116_MouseLeave(object sender, EventArgs e)
@@ -1156,12 +1460,32 @@ namespace Belfray
 
         private void picRoom117_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "117";
-            lblRoomType.Text = "Twin";
-            lblRoomCapacity.Text = "2";
-            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000017"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom117_MouseLeave(object sender, EventArgs e)
@@ -1220,12 +1544,32 @@ namespace Belfray
 
         private void picRoom118_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "118";
-            lblRoomType.Text = "Twin";
-            lblRoomCapacity.Text = "2";
-            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000018"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom118_MouseLeave(object sender, EventArgs e)
@@ -1284,12 +1628,32 @@ namespace Belfray
 
         private void picRoom119_Click(object sender, EventArgs e)
         {
-            lblRoomNo.Text = "119";
-            lblRoomType.Text = "Honeymoon";
-            lblRoomCapacity.Text = "2";
-            //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
-            //lblPPDay.Text = "£" + ;
-            //lblTotalPrice.Text = "£" + ;
+            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+
+            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            {
+                room = drItem["itemNo"].ToString();
+
+                if (room.Equals("ITM1000019"))
+                {
+                    string info = drItem["itemDesc"].ToString();
+                    string roomNo = info.Split(' ').First();
+                    string roomType = info.Split(' ').Last();
+                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                    int days = ts.Days + 1;
+                    decimal total = price * days;
+
+                    lblRoomNo.Text = roomNo;
+                    lblRoomType.Text = roomType;
+                    lblRoomCapacity.Text = "2";
+                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblPPDay.Text = "£" + decimal.Round(price, 2);
+                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                    break;
+                }
+            }
         }
 
         private void picRoom119_MouseLeave(object sender, EventArgs e)
@@ -1308,16 +1672,8 @@ namespace Belfray
             arrowControlDown(colour, arrowCreated, 1064, 174);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void RoomSelect_Load(object sender, EventArgs e)
         {
-            //Sets Date Time Picker to today for check in and 1 day later for check out
-            dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
-
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
             //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
@@ -1330,11 +1686,41 @@ namespace Belfray
 
             daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
             daItem.Fill(dsBelfray, "Item");
+
+            //Sets Date Time Picker to today for check in and 1 day later for check out
+            dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
+            userChange = true;
         }
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
         {
             dtpCheckOutDate.Value = dtpCheckInDate.Value.AddDays(1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (userChange)
+            {
+                foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+                {
+                    string newRoom = drItem["itemNo"].ToString();
+
+                    if (newRoom.Equals(room))
+                    {
+                        decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
+
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                    }
+                }
+            }            
         }
     }
 }

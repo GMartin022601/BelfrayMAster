@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
+            this.picCancellAddProd = new System.Windows.Forms.PictureBox();
+            this.picSaveAddProdDet = new System.Windows.Forms.PictureBox();
             this.gbRoomDets = new System.Windows.Forms.GroupBox();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
@@ -82,9 +84,9 @@
             this.picRoom103 = new System.Windows.Forms.PictureBox();
             this.picRoom102 = new System.Windows.Forms.PictureBox();
             this.picRoom101 = new System.Windows.Forms.PictureBox();
-            this.picCancellAddProd = new System.Windows.Forms.PictureBox();
-            this.picSaveAddProdDet = new System.Windows.Forms.PictureBox();
             this.pnlFloorPlan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancellAddProd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).BeginInit();
             this.gbRoomDets.SuspendLayout();
             this.pnlRed.SuspendLayout();
             this.pnlGreen.SuspendLayout();
@@ -107,8 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoom103)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom102)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom101)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCancellAddProd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlFloorPlan
@@ -116,7 +116,6 @@
             this.pnlFloorPlan.BackgroundImage = global::Belfray.Properties.Resources.floorplan_layout;
             this.pnlFloorPlan.Controls.Add(this.picCancellAddProd);
             this.pnlFloorPlan.Controls.Add(this.picSaveAddProdDet);
-            this.pnlFloorPlan.Controls.Add(this.gbRoomDets);
             this.pnlFloorPlan.Controls.Add(this.button1);
             this.pnlFloorPlan.Controls.Add(this.pnlRed);
             this.pnlFloorPlan.Controls.Add(this.pnlGreen);
@@ -139,10 +138,31 @@
             this.pnlFloorPlan.Controls.Add(this.picRoom103);
             this.pnlFloorPlan.Controls.Add(this.picRoom102);
             this.pnlFloorPlan.Controls.Add(this.picRoom101);
+            this.pnlFloorPlan.Controls.Add(this.gbRoomDets);
             this.pnlFloorPlan.Location = new System.Drawing.Point(0, 0);
             this.pnlFloorPlan.Name = "pnlFloorPlan";
             this.pnlFloorPlan.Size = new System.Drawing.Size(1200, 600);
             this.pnlFloorPlan.TabIndex = 22;
+            // 
+            // picCancellAddProd
+            // 
+            this.picCancellAddProd.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picCancellAddProd.Location = new System.Drawing.Point(734, 557);
+            this.picCancellAddProd.Name = "picCancellAddProd";
+            this.picCancellAddProd.Size = new System.Drawing.Size(40, 40);
+            this.picCancellAddProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCancellAddProd.TabIndex = 64;
+            this.picCancellAddProd.TabStop = false;
+            // 
+            // picSaveAddProdDet
+            // 
+            this.picSaveAddProdDet.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSaveAddProdDet.Location = new System.Drawing.Point(777, 557);
+            this.picSaveAddProdDet.Name = "picSaveAddProdDet";
+            this.picSaveAddProdDet.Size = new System.Drawing.Size(40, 40);
+            this.picSaveAddProdDet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSaveAddProdDet.TabIndex = 63;
+            this.picSaveAddProdDet.TabStop = false;
             // 
             // gbRoomDets
             // 
@@ -163,9 +183,9 @@
             this.gbRoomDets.Controls.Add(this.dtpCheckOutDate);
             this.gbRoomDets.Controls.Add(this.dtpCheckInDate);
             this.gbRoomDets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbRoomDets.Location = new System.Drawing.Point(394, 320);
+            this.gbRoomDets.Location = new System.Drawing.Point(410, 320);
             this.gbRoomDets.Name = "gbRoomDets";
-            this.gbRoomDets.Size = new System.Drawing.Size(763, 232);
+            this.gbRoomDets.Size = new System.Drawing.Size(747, 232);
             this.gbRoomDets.TabIndex = 58;
             this.gbRoomDets.TabStop = false;
             this.gbRoomDets.Text = "Room Details";
@@ -174,7 +194,7 @@
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(541, 202);
+            this.lblTotalPrice.Location = new System.Drawing.Point(526, 202);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(11, 15);
             this.lblTotalPrice.TabIndex = 69;
@@ -184,7 +204,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(410, 202);
+            this.lblPrice.Location = new System.Drawing.Point(395, 202);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(86, 15);
             this.lblPrice.TabIndex = 67;
@@ -214,7 +234,7 @@
             // 
             this.lblRoomCapacity.AutoSize = true;
             this.lblRoomCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomCapacity.Location = new System.Drawing.Point(541, 73);
+            this.lblRoomCapacity.Location = new System.Drawing.Point(526, 73);
             this.lblRoomCapacity.Name = "lblRoomCapacity";
             this.lblRoomCapacity.Size = new System.Drawing.Size(11, 15);
             this.lblRoomCapacity.TabIndex = 64;
@@ -224,7 +244,7 @@
             // 
             this.lblCapacity.AutoSize = true;
             this.lblCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapacity.Location = new System.Drawing.Point(410, 73);
+            this.lblCapacity.Location = new System.Drawing.Point(395, 73);
             this.lblCapacity.Name = "lblCapacity";
             this.lblCapacity.Size = new System.Drawing.Size(65, 15);
             this.lblCapacity.TabIndex = 63;
@@ -294,7 +314,7 @@
             // 
             this.lblCheckOutDate.AutoSize = true;
             this.lblCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckOutDate.Location = new System.Drawing.Point(410, 35);
+            this.lblCheckOutDate.Location = new System.Drawing.Point(395, 35);
             this.lblCheckOutDate.Name = "lblCheckOutDate";
             this.lblCheckOutDate.Size = new System.Drawing.Size(113, 15);
             this.lblCheckOutDate.TabIndex = 55;
@@ -313,10 +333,11 @@
             // dtpCheckOutDate
             // 
             this.dtpCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckOutDate.Location = new System.Drawing.Point(544, 30);
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(529, 30);
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
             this.dtpCheckOutDate.Size = new System.Drawing.Size(200, 21);
             this.dtpCheckOutDate.TabIndex = 56;
+            this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
             // 
             // dtpCheckInDate
             // 
@@ -763,26 +784,6 @@
             this.picRoom101.MouseEnter += new System.EventHandler(this.picRoom101_MouseEnter);
             this.picRoom101.MouseLeave += new System.EventHandler(this.picRoom101_MouseLeave);
             // 
-            // picCancellAddProd
-            // 
-            this.picCancellAddProd.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picCancellAddProd.Location = new System.Drawing.Point(734, 557);
-            this.picCancellAddProd.Name = "picCancellAddProd";
-            this.picCancellAddProd.Size = new System.Drawing.Size(40, 40);
-            this.picCancellAddProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCancellAddProd.TabIndex = 64;
-            this.picCancellAddProd.TabStop = false;
-            // 
-            // picSaveAddProdDet
-            // 
-            this.picSaveAddProdDet.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveAddProdDet.Location = new System.Drawing.Point(777, 557);
-            this.picSaveAddProdDet.Name = "picSaveAddProdDet";
-            this.picSaveAddProdDet.Size = new System.Drawing.Size(40, 40);
-            this.picSaveAddProdDet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSaveAddProdDet.TabIndex = 63;
-            this.picSaveAddProdDet.TabStop = false;
-            // 
             // RoomSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -795,6 +796,8 @@
             this.Text = "RoomSelect";
             this.Load += new System.EventHandler(this.RoomSelect_Load);
             this.pnlFloorPlan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCancellAddProd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).EndInit();
             this.gbRoomDets.ResumeLayout(false);
             this.gbRoomDets.PerformLayout();
             this.pnlRed.ResumeLayout(false);
@@ -820,8 +823,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoom103)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom102)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom101)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCancellAddProd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).EndInit();
             this.ResumeLayout(false);
 
         }
