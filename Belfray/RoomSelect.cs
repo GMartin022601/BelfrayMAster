@@ -19,7 +19,7 @@ namespace Belfray
         SqlDataAdapter daItem;
         DataSet dsBelfray = new DataSet();
         SqlCommandBuilder cmdBItem;
-        DataRow drITem;
+        DataRow drItem;
         String connStr, sqlItem, room;
         bool userChange = false;
 
