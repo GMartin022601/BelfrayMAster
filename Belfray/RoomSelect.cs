@@ -27,10 +27,10 @@ namespace Belfray
         public static string roomSelceted = "";
 
         //Check In Date
-        public static DateTime checkInDate = "";
+        public static DateTime checkInDate = new DateTime();
 
         //Check Out Date
-        public static DateTime checkOutDate = "";
+        public static DateTime checkOutDate = new DateTime();
 
         public RoomSelect()
         {
