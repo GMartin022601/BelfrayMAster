@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Belfray
 {
     public partial class TableSelect : Form
     {
+        //SQL links
+        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV;// daSupplier;
+        DataSet dsBelfray = new DataSet();
+        SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType;
+        DataRow drCustomer, drBooking, drBookingType, drPaymentType;
+        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV;
+        bool formLoad = true;
         public bool arrowCreated = false;
 
         public TableSelect()
@@ -1183,6 +1191,16 @@ namespace Belfray
             lblRedCapacityValue.Text = "4";
         }
 
+        //private void cbBookingType_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (!formLoad)
+        //    {
+        //        DataRow drMethod = dsBelfray.Tables["BType"].Rows.Find(cbBookingType.SelectedValue.ToString());
+        //        //txtProdTypeCode.Text = drMethod["productTypeCode"].ToString();
+        //        //txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
+        //    }
+        //}
+
         private void tbl20_MouseLeave(object sender, EventArgs e)
         {
             arrowCreated = true;
@@ -1312,6 +1330,18 @@ namespace Belfray
             if (MessageBox.Show("Would you like to place a booking for Table 1?" , "Add Booking", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
                 pnlCustomerDetails.Enabled = true;
+                numPartySize.Value = 2;
+                ////Data Grid View
+                //sqlBookingDGV = @"select * from Booking WHERE tableNo = '1'";
+                //daBookingDGV = new SqlDataAdapter(sqlBooking, connStr);
+
+                //daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
+                //daBookingDGV.Fill(dsBelfray, "Booking");
+
+                //dgvBooking.Visible = true;
+                //dgvBooking.DataSource = dsBelfray.Tables["Booking"];
+                ////Resize
+                //dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
         }
 
@@ -1361,6 +1391,70 @@ namespace Belfray
                 cbTime.Enabled = false;
                 cbPaymentTyp.Enabled = false;
             }
+        }
+
+        private void TableSelect_Load(object sender, EventArgs e)
+        {
+            //DB Connection
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //****Code for Seans Laptop*****
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //Connection for Tech Machine***
+            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+
+            formLoad = false;
+
+            //SQL For Booking
+            sqlBooking = @"select * from Booking";
+            daBooking = new SqlDataAdapter(sqlBooking, connStr);
+            cmdBBooking = new SqlCommandBuilder(daBooking);
+            daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
+            daBooking.Fill(dsBelfray, "Booking");
+
+            //SQL For Customer
+            sqlCustomer = @"select * from Customer";
+            daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
+            cmdBCustomer = new SqlCommandBuilder(daCustomer);
+            daCustomer.FillSchema(dsBelfray, SchemaType.Source, "Customr");
+            daCustomer.Fill(dsBelfray, "Customer");
+
+            //SQL for booking Type
+            sqlBookingType = @"select * from BType";
+            daBookingType = new SqlDataAdapter(sqlBookingType, connStr);
+            cmdBBookingType = new SqlCommandBuilder(daBookingType);
+            daBookingType.FillSchema(dsBelfray, SchemaType.Source, "BType");
+            daBookingType.Fill(dsBelfray, "BType");
+
+            //SQL for booking Type
+            sqlPaymentType = @"select * from Payment";
+            daPaymentType = new SqlDataAdapter(sqlPaymentType, connStr);
+            cmdBPaymentType = new SqlCommandBuilder(daPaymentType);
+            daPaymentType.FillSchema(dsBelfray, SchemaType.Source, "Payment");
+            daPaymentType.Fill(dsBelfray, "Payment");
+
+            //SQL for Booking DGV - TO BE EDITED TO SHOW TABLE BOOKINGS
+            //sqlBookingDGV = @"select * from Booking WHERE typeID = 'TYP10002' OR typeID ='TYP10003' OR typeID ='TYP10004' OR typeID ='TYP10005' OR typeID ='TYP10006' OR typeID ='TYP10007'";
+            //daBookingDGV = new SqlDataAdapter(sqlBooking, connStr);
+
+            //daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
+            //daBookingDGV.Fill(dsBelfray, "Booking");
+
+            //dgvBooking.Visible = true;
+            //dgvBooking.DataSource = dsBelfray.Tables["Booking"];
+            ////Resize
+            //dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            //cb BookingType
+            cbBookingType.DataSource = dsBelfray.Tables["BType"];
+            cbBookingType.ValueMember = "typeID";
+            cbBookingType.DisplayMember = "typeDesc";
+            cbBookingType.SelectedIndex = -1;
+
+            //cb ayment type
+            cbPaymentTyp.DataSource = dsBelfray.Tables["Payment"];
+            cbPaymentTyp.ValueMember = "paymentTypeID";
+            cbPaymentTyp.DisplayMember = "paymentTypeDesc";
+            cbPaymentTyp.SelectedIndex = -1;
         }
 
 

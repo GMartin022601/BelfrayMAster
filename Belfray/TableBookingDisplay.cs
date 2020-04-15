@@ -31,7 +31,7 @@ namespace Belfray
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
-            //SQL for Product
+            //SQL for Booking
             sqlBooking = @"select * from Booking WHERE typeID = 'TYP10002' OR typeID ='TYP10003' OR typeID ='TYP10004' OR typeID ='TYP10005' OR typeID ='TYP10006' OR typeID ='TYP10007'";
             daBooking = new SqlDataAdapter(sqlBooking, connStr);
 

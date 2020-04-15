@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlTableSelect = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlCalendar = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlGreen = new System.Windows.Forms.Panel();
             this.lblGreenCapacityValue = new System.Windows.Forms.Label();
             this.lblGreenCapacity = new System.Windows.Forms.Label();
@@ -42,8 +46,6 @@
             this.lblRedNo = new System.Windows.Forms.Label();
             this.lblRedAvailability = new System.Windows.Forms.Label();
             this.lblRedRoom = new System.Windows.Forms.Label();
-            this.pnlCalendar = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlCustomerDetails = new System.Windows.Forms.Panel();
             this.gbBookingDetails = new System.Windows.Forms.GroupBox();
             this.btnAvailability = new System.Windows.Forms.Button();
@@ -83,7 +85,7 @@
             this.lblCustID = new System.Windows.Forms.Label();
             this.chkNewCustomer = new System.Windows.Forms.CheckBox();
             this.pnlTableDetails = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dgvBooking = new System.Windows.Forms.DataGridView();
             this.lbltbl176 = new System.Windows.Forms.Label();
             this.lbltbl166 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -136,16 +138,16 @@
             this.tbl1 = new System.Windows.Forms.PictureBox();
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlTableSelect.SuspendLayout();
+            this.pnlCalendar.SuspendLayout();
             this.pnlGreen.SuspendLayout();
             this.pnlRed.SuspendLayout();
-            this.pnlCalendar.SuspendLayout();
             this.pnlCustomerDetails.SuspendLayout();
             this.gbBookingDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
             this.gbCustomerDetails.SuspendLayout();
             this.pnlTableDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl23)).BeginInit();
@@ -175,6 +177,8 @@
             // 
             // pnlTableSelect
             // 
+            this.pnlTableSelect.Controls.Add(this.label3);
+            this.pnlTableSelect.Controls.Add(this.label1);
             this.pnlTableSelect.Controls.Add(this.pnlCalendar);
             this.pnlTableSelect.Controls.Add(this.pnlGreen);
             this.pnlTableSelect.Controls.Add(this.pnlRed);
@@ -235,6 +239,43 @@
             this.pnlTableSelect.Name = "pnlTableSelect";
             this.pnlTableSelect.Size = new System.Drawing.Size(1196, 596);
             this.pnlTableSelect.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 567);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(420, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = " above with whatever selected from the dgv able to be edited in the details panel" +
+    " above";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 554);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(344, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "DGV to show bookings on whatever table is selected from the floor plan";
+            // 
+            // pnlCalendar
+            // 
+            this.pnlCalendar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCalendar.Controls.Add(this.label2);
+            this.pnlCalendar.Location = new System.Drawing.Point(649, 381);
+            this.pnlCalendar.Name = "pnlCalendar";
+            this.pnlCalendar.Size = new System.Drawing.Size(544, 166);
+            this.pnlCalendar.TabIndex = 58;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Calendar? hourly table plan?";
             // 
             // pnlGreen
             // 
@@ -367,24 +408,6 @@
             this.lblRedRoom.Size = new System.Drawing.Size(77, 18);
             this.lblRedRoom.TabIndex = 47;
             this.lblRedRoom.Text = "ROOM NO:";
-            // 
-            // pnlCalendar
-            // 
-            this.pnlCalendar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCalendar.Controls.Add(this.label2);
-            this.pnlCalendar.Location = new System.Drawing.Point(649, 381);
-            this.pnlCalendar.Name = "pnlCalendar";
-            this.pnlCalendar.Size = new System.Drawing.Size(544, 166);
-            this.pnlCalendar.TabIndex = 58;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Calendar? hourly table plan?";
             // 
             // pnlCustomerDetails
             // 
@@ -781,21 +804,19 @@
             // pnlTableDetails
             // 
             this.pnlTableDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlTableDetails.Controls.Add(this.label3);
-            this.pnlTableDetails.Controls.Add(this.label1);
+            this.pnlTableDetails.Controls.Add(this.dgvBooking);
             this.pnlTableDetails.Location = new System.Drawing.Point(4, 381);
             this.pnlTableDetails.Name = "pnlTableDetails";
             this.pnlTableDetails.Size = new System.Drawing.Size(638, 166);
             this.pnlTableDetails.TabIndex = 56;
             // 
-            // label1
+            // dgvBooking
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DGV to show bookings on whatever table is selected from the floor plan";
+            this.dgvBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooking.Location = new System.Drawing.Point(3, 3);
+            this.dgvBooking.Name = "dgvBooking";
+            this.dgvBooking.Size = new System.Drawing.Size(630, 133);
+            this.dgvBooking.TabIndex = 0;
             // 
             // lbltbl176
             // 
@@ -1386,16 +1407,6 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Table Information";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(420, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = " above with whatever selected from the dgv able to be edited in the details panel" +
-    " above";
-            // 
             // TableSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1406,14 +1417,15 @@
             this.Name = "TableSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TableSelect";
+            this.Load += new System.EventHandler(this.TableSelect_Load);
             this.pnlTableSelect.ResumeLayout(false);
             this.pnlTableSelect.PerformLayout();
+            this.pnlCalendar.ResumeLayout(false);
+            this.pnlCalendar.PerformLayout();
             this.pnlGreen.ResumeLayout(false);
             this.pnlGreen.PerformLayout();
             this.pnlRed.ResumeLayout(false);
             this.pnlRed.PerformLayout();
-            this.pnlCalendar.ResumeLayout(false);
-            this.pnlCalendar.PerformLayout();
             this.pnlCustomerDetails.ResumeLayout(false);
             this.gbBookingDetails.ResumeLayout(false);
             this.gbBookingDetails.PerformLayout();
@@ -1421,7 +1433,7 @@
             this.gbCustomerDetails.ResumeLayout(false);
             this.gbCustomerDetails.PerformLayout();
             this.pnlTableDetails.ResumeLayout(false);
-            this.pnlTableDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl23)).EndInit();
@@ -1561,5 +1573,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgvBooking;
     }
 }
