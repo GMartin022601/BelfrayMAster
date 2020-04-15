@@ -568,7 +568,7 @@ namespace Belfray
             string s = drProduct["productNumber"].ToString();
             string s1 = "PRD" + (Convert.ToInt32(s.Replace("PRD", "")) + 1).ToString().PadLeft(5, '0');
             lblProductNumberDisplay.Text = s1;
-                //(drProduct["productNumber"].ToString() + 1).ToString();
+            //(drProduct["productNumber"].ToString() + 1).ToString();
         }
     }
 }

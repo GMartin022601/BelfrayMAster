@@ -537,6 +537,8 @@ namespace Belfray
                     break;
             }
         }
+
+        //Room Select Close
         private void RoomSelect_Closed(object sender, FormClosedEventArgs e)
         {
             pnlRoomSelect.Visible = false;
@@ -549,6 +551,7 @@ namespace Belfray
             frm.Show();
         }
 
+        //Table Select Close
         private void TableSelect_Closed(object sender, FormClosedEventArgs e)
         {
             pnlTableSelect.Visible = false;
@@ -557,8 +560,22 @@ namespace Belfray
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.WindowState = FormWindowState.Maximized;
+            frm.FormClosed += RoomBookingAdd_Closed;
             pnlMainBody.Controls.Add(frm);
             frm.Show();
         }
+
+        //Room Booking Add Close
+        private void RoomBookingAdd_Closed(object sender, FormClosedEventArgs e)
+        {
+            pnlTableSelect.Visible = false;
+
+            RoomBookingDisplay frm = new RoomBookingDisplay();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.WindowState = FormWindowState.Maximized;
+            pnlMainBody.Controls.Add(frm);
+            frm.Show();
+        }        
     }
 }

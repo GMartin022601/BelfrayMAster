@@ -186,6 +186,12 @@
             // cmbTitle
             // 
             this.cmbTitle.FormattingEnabled = true;
+            this.cmbTitle.Items.AddRange(new object[] {
+            "MR",
+            "MISS",
+            "MRS",
+            "MS",
+            "DR"});
             this.cmbTitle.Location = new System.Drawing.Point(115, 66);
             this.cmbTitle.Name = "cmbTitle";
             this.cmbTitle.Size = new System.Drawing.Size(104, 23);
@@ -260,6 +266,10 @@
             this.picCustomerCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCustomerCancel.TabIndex = 62;
             this.picCustomerCancel.TabStop = false;
+            this.picCustomerCancel.Visible = false;
+            this.picCustomerCancel.Click += new System.EventHandler(this.picCustomerCancel_Click);
+            this.picCustomerCancel.MouseEnter += new System.EventHandler(this.picCustomerCancel_MouseEnter);
+            this.picCustomerCancel.MouseLeave += new System.EventHandler(this.picCustomerCancel_MouseLeave);
             // 
             // picCustomerSave
             // 
@@ -270,6 +280,10 @@
             this.picCustomerSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCustomerSave.TabIndex = 61;
             this.picCustomerSave.TabStop = false;
+            this.picCustomerSave.Visible = false;
+            this.picCustomerSave.Click += new System.EventHandler(this.picCustomerSave_Click);
+            this.picCustomerSave.MouseEnter += new System.EventHandler(this.picCustomerSave_MouseEnter);
+            this.picCustomerSave.MouseLeave += new System.EventHandler(this.picCustomerSave_MouseLeave);
             // 
             // lblTitle
             // 
@@ -375,6 +389,9 @@
             this.picAddNewCust.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAddNewCust.TabIndex = 74;
             this.picAddNewCust.TabStop = false;
+            this.picAddNewCust.Click += new System.EventHandler(this.picAddNewCust_Click);
+            this.picAddNewCust.MouseEnter += new System.EventHandler(this.picAddNewCust_MouseEnter);
+            this.picAddNewCust.MouseLeave += new System.EventHandler(this.picAddNewCust_MouseLeave);
             // 
             // cmbCustomerNo
             // 
@@ -421,9 +438,9 @@
             this.lblCustomerNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerNo.Location = new System.Drawing.Point(6, 200);
             this.lblCustomerNo.Name = "lblCustomerNo";
-            this.lblCustomerNo.Size = new System.Drawing.Size(79, 15);
+            this.lblCustomerNo.Size = new System.Drawing.Size(100, 15);
             this.lblCustomerNo.TabIndex = 69;
-            this.lblCustomerNo.Text = "CUSTOMER:";
+            this.lblCustomerNo.Text = "CUSTOMER NO:";
             // 
             // lblArrivalTime
             // 
@@ -494,6 +511,9 @@
             this.picBookingCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBookingCancel.TabIndex = 62;
             this.picBookingCancel.TabStop = false;
+            this.picBookingCancel.Click += new System.EventHandler(this.picBookingCancel_Click);
+            this.picBookingCancel.MouseEnter += new System.EventHandler(this.picBookingCancel_MouseEnter);
+            this.picBookingCancel.MouseLeave += new System.EventHandler(this.picBookingCancel_MouseLeave);
             // 
             // picBookingSave
             // 
@@ -504,6 +524,9 @@
             this.picBookingSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBookingSave.TabIndex = 61;
             this.picBookingSave.TabStop = false;
+            this.picBookingSave.Click += new System.EventHandler(this.picBookingSave_Click);
+            this.picBookingSave.MouseEnter += new System.EventHandler(this.picBookingSave_MouseEnter);
+            this.picBookingSave.MouseLeave += new System.EventHandler(this.picBookingSave_MouseLeave);
             // 
             // lblCheckInDate
             // 

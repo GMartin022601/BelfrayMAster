@@ -1797,7 +1797,7 @@ namespace Belfray
                 DateTime checkIn = Convert.ToDateTime(drBooking["checkInDate"]);
                 DateTime checkOut = Convert.ToDateTime(drBooking["checkOutDate"]);
 
-                if (drBooking["roomNo"].ToString().Equals("roomNum"))
+                if (drBooking["roomNo"].ToString().Equals(roomNum))
                 {
                     if (dtpCheckInDate.Value.Year.CompareTo(checkIn.Year) == 0 || dtpCheckInDate.Value.Year.CompareTo(checkOut.Year) == 0 || dtpCheckOutDate.Value.Year.CompareTo(checkIn.Year) == 0 || dtpCheckOutDate.Value.Year.CompareTo(checkOut.Year) == 0)
                     {
@@ -1807,7 +1807,11 @@ namespace Belfray
                             int max = checkOut.Day;
                             int arrive = dtpCheckInDate.Value.Day;
                             int leave = dtpCheckOutDate.Value.Day;
-                            if (arrive >= min && arrive < max && leave > min && leave <= max)
+                            if (arrive <= min && leave >= max)
+                            {
+                                available = false;
+                            }
+                            else if (arrive >= min && arrive < max && leave > min && leave <= max)
                             {
                                 available = false;
                                 break;

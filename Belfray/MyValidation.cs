@@ -114,6 +114,28 @@ namespace Belfray
             }
             return ok;
         }
+        //Valid Surname
+        public static bool validSurname(string txt)
+        {
+            bool ok = true;
+
+            if (txt.Trim().Length == 0)
+            {
+                ok = false;
+            }
+            else
+            {
+                for (int x = 0; x < txt.Length; x++)
+                {
+                    if (!(char.IsLetter(txt[x])) && !(char.IsWhiteSpace(txt[x])) && !(txt[x].Equals('-')))
+                    {
+                        ok = false;
+                    }
+                }
+            }
+
+            return ok;
+        }
         //Valid Desc **NEEDS TO BE EDITED**
         public static bool validDesc(string txt) //allows aphatbetic, dash and whitespace
         {
@@ -177,7 +199,7 @@ namespace Belfray
             return ok;
         }
         //First Letter to Uppercase
-        public static String firstLetterEachWordToUpper(String word) // not? working??
+        public static string firstLetterEachWordToUpper(string word) // not? working??
         {
             Char[] array = word.ToCharArray();
 
@@ -198,10 +220,10 @@ namespace Belfray
                 else
                     array[x] = Char.ToLower(array[x]);
             }
-            return new String(array);
+            return new string(array);
         }
         //Each Letter to upper case
-        public static String EachLetterToUpper(String word)
+        public static string EachLetterToUpper(string word)
         {
             Char[] array = word.ToCharArray();
 
