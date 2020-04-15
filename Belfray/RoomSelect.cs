@@ -24,7 +24,10 @@ namespace Belfray
         bool userChange = false;
 
         //Room Selected
-        public static string roomSelceted = "";
+        public static string roomSelected = "";
+
+        //Room Selected
+        public static bool cancelled = false;
 
         //Check In Date
         public static DateTime checkInDate = new DateTime();
@@ -1741,9 +1744,10 @@ namespace Belfray
 
         private void picSaveRoomSelect_Click(object sender, EventArgs e)
         {
-            roomSelceted = lblRoomNo.Text;
+            roomSelected = lblRoomNo.Text;
             checkInDate = dtpCheckInDate.Value;
             checkOutDate = dtpCheckOutDate.Value;
+            cancelled = false;
             this.Close();
         }
 
@@ -1760,7 +1764,8 @@ namespace Belfray
 
         private void picCancellRoomSelect_Click(object sender, EventArgs e)
         {
-            
+            cancelled = true;
+            this.Close();
         }
 
         private void picCancellRoomSelect_MouseLeave(object sender, EventArgs e)

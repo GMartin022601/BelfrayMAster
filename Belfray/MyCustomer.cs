@@ -103,17 +103,17 @@ namespace Belfray
                 }
                 else
                 {
-                    throw new MyException("Street must be between 2-18 letters");
+                    throw new MyException("City must be between 2-18 letters");
                 }
             }
         }
 
-        public String County
+        public string County
         {
             get { return cusCounty; }
             set
             {
-                if (MyValidation.validLength(value, 5, 18) && MyValidation.validLetter(value))
+                if (MyValidation.validLength(value, 5, 18) && MyValidation.validDesc(value))
                 {
                     cusCounty = MyValidation.firstLetterEachWordToUpper(value);
                 }

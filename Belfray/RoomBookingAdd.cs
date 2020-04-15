@@ -19,7 +19,9 @@ namespace Belfray
         DataRow drBooking, drCustomer;
         String connStr, sqlBooking, sqlCustomer;
         
-        private bool userActivated = false; 
+        private bool userActivated = false;
+        private bool custEnabled = false;
+        private bool bookEnabled = true;
 
         private void cmbCustomerNo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -137,7 +139,7 @@ namespace Belfray
 
             lblBookingNo.Text = bookingNo;
 
-            lblRoomNo.Text = RoomSelect.roomSelceted;
+            lblRoomNo.Text = RoomSelect.roomSelected;
             dtpBookingCheckIn.Value = RoomSelect.checkInDate;
             dtpBookingCheckOut.Value = RoomSelect.checkOutDate;
 
@@ -155,7 +157,61 @@ namespace Belfray
         {
             picAddNewCust.BackColor = Color.FromArgb(57, 181, 74);
         }
-        
+
+        //Enabling and Disabling Customer
+        private void custPanelCont()
+        {
+            if (custEnabled)
+            {
+                //Disable Customer
+                gbCustomerDets.Enabled = false;
+
+                //Customer Buttons Invisble
+                picCustomerSave.Visible = false;
+                picCustomerCancel.Visible = false;
+
+                custEnabled = false;
+            }
+            else
+            {
+                //Enable Customer
+                gbCustomerDets.Enabled = true;
+
+                //Customer Buttons Visble
+                picCustomerSave.Visible = true;
+                picCustomerCancel.Visible = true;
+
+                custEnabled = true;
+            }
+        }
+
+        //Enabling and Disabling Booking
+        private void bookPanelCont()
+        {
+            if (bookEnabled)
+            {
+                //Disable Booking
+                gbBookingDetails.Enabled = false;
+
+                //Booking Buttons Invisble
+                picBookingSave.Visible = false;
+                picBookingCancel.Visible = false;
+
+                bookEnabled = false;
+            }
+            else
+            {
+                //Enable Booking
+                gbBookingDetails.Enabled = true;
+
+                //Booking Buttons Visble
+                picBookingSave.Visible = true;
+                picBookingCancel.Visible = true;
+
+                bookEnabled = true;
+            }
+        }
+
         private void picAddNewCust_Click(object sender, EventArgs e)
         {
             int noRows = dsBelfray.Tables["Customer"].Rows.Count;
@@ -169,32 +225,17 @@ namespace Belfray
                 getRowNum(noRows);
             }
 
+            clearCustomerPanel();
+
             string s = drCustomer["customerNo"].ToString();
             string s1 = "CUS" + (Convert.ToInt32(s.Replace("CUS", "")) + 1).ToString().PadLeft(5, '0');
 
             lblCustNo.Text = s1;
 
-            cmbTitle.SelectedIndex = -1;           
+            cmbCustomerNo.SelectedIndex = -1;
 
-            txtForename.Text = "";
-            txtSurname.Text = "";
-            txtStreet.Text = "";
-            txtCity.Text = "";
-            txtCounty.Text = "";
-            txtPostcode.Text = "";
-            txtPhoneNo.Text = "";
-
-            //Disable Booking and Enable Customer
-            gbBookingDetails.Enabled = false;
-            gbCustomerDets.Enabled = true;
-
-            //Customer Buttons Visble
-            picCustomerSave.Visible = true;
-            picCustomerCancel.Visible = true;
-
-            //Booking Buttons Invisble
-            picBookingSave.Visible = false;
-            picBookingCancel.Visible = false;
+            custPanelCont();
+            bookPanelCont();
         }
 
         private void picAddNewCust_MouseLeave(object sender, EventArgs e)
@@ -245,8 +286,148 @@ namespace Belfray
 
         private void picCustomerSave_Click(object sender, EventArgs e)
         {
+            MyCustomer myCust = new MyCustomer();
+            bool ok = true;
+            errP.Clear();
 
-        }
+            //Customer Number
+            try
+            {
+                myCust.CustomerNumber = lblCustNo.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(lblCustNo, MyEx.toString());
+            }
+
+            //Customer Title
+            try
+            {
+                myCust.Title = cmbTitle.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(cmbTitle, MyEx.toString());
+            }
+
+            //Customer Forename
+            try
+            {
+                myCust.Forename = txtForename.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtForename, MyEx.toString());
+            }
+
+            //Customer Surname
+            try
+            {
+                myCust.Surname = txtSurname.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtSurname, MyEx.toString());
+            }
+
+            //Customer Street
+            try
+            {
+                myCust.Street = txtStreet.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtStreet, MyEx.toString());
+            }
+
+            //Customer City
+            try
+            {
+                myCust.City = txtCity.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtCity, MyEx.toString());
+            }
+
+            //Customer County
+            try
+            {
+                myCust.County = txtCounty.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtCounty, MyEx.toString());
+            }
+
+            //Customer PostCode
+            try
+            {
+                myCust.Postcode = txtPostcode.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtPostcode, MyEx.toString());
+            }
+
+            //Customer TelNo
+            try
+            {
+                myCust.TelNo = txtPhoneNo.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtPhoneNo, MyEx.toString());
+            }
+
+            //Try Adding
+            try
+            {
+                if (ok)
+                {
+                    drCustomer = dsBelfray.Tables["Customer"].NewRow();
+                    drCustomer["customerNo"] = myCust.CustomerNumber;
+                    drCustomer["customerTitle"] = myCust.Title;
+                    drCustomer["customerForename"] = myCust.Forename;
+                    drCustomer["customerSurname"] = myCust.Surname;
+                    drCustomer["customerStreet"] = myCust.Street;
+                    drCustomer["customerCity"] = myCust.City;
+                    drCustomer["customerCounty"] = myCust.County;
+                    drCustomer["customerPostcode"] = myCust.Postcode;
+                    drCustomer["customerTel"] = myCust.TelNo;
+                    dsBelfray.Tables["Customer"].Rows.Add(drCustomer);
+                    daCustomer.Update(dsBelfray, "Customer");
+
+                    MessageBox.Show("Customer Added");
+
+                    clearCustomerPanel();
+
+                    custPanelCont();
+                    bookPanelCont();                    
+
+                    int noRows = dsBelfray.Tables["Customer"].Rows.Count;                    
+
+                    //cb ProductType
+                    cmbCustomerNo.DataSource = dsBelfray.Tables["Customer"];
+                    cmbCustomerNo.ValueMember = "customerNo";
+                    cmbCustomerNo.DisplayMember = "customerNo";
+                    cmbCustomerNo.SelectedIndex = noRows - 1;                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+        }    
 
         private void picCustomerSave_MouseLeave(object sender, EventArgs e)
         {
@@ -263,29 +444,10 @@ namespace Belfray
         {
             if (MessageBox.Show("Cancel the Addition of Customer Number: " + lblCustNo.Text + "?", "Add a Customer", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                lblCustNo.Text = "";
+                clearCustomerPanel();
 
-                cmbTitle.SelectedIndex = -1;
-
-                txtForename.Text = "";
-                txtSurname.Text = "";
-                txtStreet.Text = "";
-                txtCity.Text = "";
-                txtCounty.Text = "";
-                txtPostcode.Text = "";
-                txtPhoneNo.Text = "";
-
-                //Disable Customer and Enable Booking
-                gbBookingDetails.Enabled = true;
-                gbCustomerDets.Enabled = false;
-
-                //Customer Buttons Invisble
-                picCustomerSave.Visible = false;
-                picCustomerCancel.Visible = false;
-
-                //Booking Buttons Visble
-                picBookingSave.Visible = true;
-                picBookingCancel.Visible = true;
+                custPanelCont();
+                bookPanelCont();
             }
         }
 
@@ -294,5 +456,19 @@ namespace Belfray
             picCustomerCancel.BackColor = Color.Transparent;
         }
 
+        private void clearCustomerPanel()
+        {
+            lblCustNo.Text = "-";
+
+            cmbTitle.SelectedIndex = -1;
+
+            txtForename.Text = "";
+            txtSurname.Text = "";
+            txtStreet.Text = "";
+            txtCity.Text = "";
+            txtCounty.Text = "";
+            txtPostcode.Text = "";
+            txtPhoneNo.Text = "";
+        }
     }
 }

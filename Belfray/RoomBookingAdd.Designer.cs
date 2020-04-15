@@ -1,4 +1,6 @@
-﻿namespace Belfray
+﻿using System;
+
+namespace Belfray
 {
     partial class RoomBookingAdd
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlCustomer = new System.Windows.Forms.Panel();
             this.gbCustomerDets = new System.Windows.Forms.GroupBox();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
@@ -73,6 +76,7 @@
             this.lblBookingNo = new System.Windows.Forms.Label();
             this.lblBookingNum = new System.Windows.Forms.Label();
             this.pnlRoomPics = new System.Windows.Forms.Panel();
+            this.errP = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlCustomer.SuspendLayout();
             this.gbCustomerDets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomerCancel)).BeginInit();
@@ -82,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAddNewCust)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBookingCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBookingSave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCustomer
@@ -566,6 +571,10 @@
             this.pnlRoomPics.Size = new System.Drawing.Size(330, 347);
             this.pnlRoomPics.TabIndex = 5;
             // 
+            // errP
+            // 
+            this.errP.ContainerControl = this;
+            // 
             // RoomBookingAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,9 +598,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAddNewCust)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBookingCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBookingSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.ResumeLayout(false);
 
         }
+        
 
         #endregion
 
@@ -640,5 +651,6 @@
         private System.Windows.Forms.TextBox txtPhoneNo;
         private System.Windows.Forms.Label lblPhoneNo;
         private System.Windows.Forms.Label lblRoomNo;
+        private System.Windows.Forms.ErrorProvider errP;
     }
 }
