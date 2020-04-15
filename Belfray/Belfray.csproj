@@ -65,6 +65,8 @@
       <DependentUpon>AppDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="MyBooking.cs" />
+    <Compile Include="MyCustomer.cs" />
     <Compile Include="MySupplier.cs" />
     <Compile Include="RestaurantStockDelete.cs">
       <SubType>Form</SubType>

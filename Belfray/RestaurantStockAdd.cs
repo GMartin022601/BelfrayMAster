@@ -29,6 +29,7 @@ namespace Belfray
             txtProdTypeCode.Text = "";
             txtProdDesc2.Text = "";
             errP.Clear();
+            formLoad = false;
             //pnlDetails.Enabled = false;
             //pnlProdType.Enabled = false;
             //pnlSuppDetails.Enabled = false;
@@ -59,7 +60,11 @@ namespace Belfray
                 getProdNum(noRows);
             }
 
-            lblSupplierID.Text = (int.Parse(drProduct["supplierID"].ToString()) + 1).ToString();
+            string s = drProduct["supplierID"].ToString();
+            string s1 = "SUP" + (Convert.ToInt32(s.Replace("SUP", "")) + 1).ToString().PadLeft(5, '0');
+
+            lblSupplierID.Text = s1;
+                //(int.Parse(drProduct["supplierID"].ToString()) + 1).ToString();
 
         }
 
@@ -191,7 +196,7 @@ namespace Belfray
 
             if (!formLoad)
             {
-                DataRow drMethod = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue);
+                DataRow drMethod = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue.ToString());
                 txtProdTypeCode.Text = drMethod["productTypeCode"].ToString();
                 txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
             }
@@ -201,7 +206,7 @@ namespace Belfray
         {
             if (!formLoad)
             {
-                DataRow drSuppCombo = dsBelfray.Tables["Supplier"].Rows.Find(cbSuppID.SelectedValue);
+                DataRow drSuppCombo = dsBelfray.Tables["Supplier"].Rows.Find(cbSuppID.SelectedValue.ToString());
                 lblSupplierID.Text = drSuppCombo["supplierID"].ToString();
                 txtSuppName.Text = drSuppCombo["supplierName"].ToString();
                 txtSuppAddress.Text = drSuppCombo["supplierAddress"].ToString();
@@ -267,6 +272,7 @@ namespace Belfray
                         //clearAddPanel();
                         txtProdTypeCode.Text = "";
                         txtProdDesc2.Text = "";
+                        formLoad = false;
                         //getProdNum(dsBelfray.Tables["ProductTy"].Rows.Count);
                     }
                     else
@@ -354,7 +360,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.ProductTypeCode = cbTypeCode.Text.Trim();
+                myProduct.ProductTypeCode = cbTypeCode.SelectedValue.ToString();
             }
             catch (MyException MyEx)
             {
@@ -408,7 +414,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.SupplierID = cbSuppID.Text.Trim();
+                myProduct.SupplierID = cbSuppID.SelectedValue.ToString();
                 //Convert.ToInt32(cbSuppID.SelectedValue.ToString());
             }
             catch (MyException MyEx)
@@ -559,7 +565,10 @@ namespace Belfray
                 getProdNum(noRows);
             }
 
-            lblProductNumberDisplay.Text = (drProduct["productNumber"].ToString() + 1).ToString();
+            string s = drProduct["productNumber"].ToString();
+            string s1 = "PRD" + (Convert.ToInt32(s.Replace("PRD", "")) + 1).ToString().PadLeft(5, '0');
+            lblProductNumberDisplay.Text = s1;
+                //(drProduct["productNumber"].ToString() + 1).ToString();
         }
     }
 }

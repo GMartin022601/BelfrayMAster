@@ -43,11 +43,12 @@
             this.lblRedAvailability = new System.Windows.Forms.Label();
             this.lblRedRoom = new System.Windows.Forms.Label();
             this.pnlCalendar = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlCustomerDetails = new System.Windows.Forms.Panel();
             this.gbBookingDetails = new System.Windows.Forms.GroupBox();
             this.btnAvailability = new System.Windows.Forms.Button();
             this.cbPaymentTyp = new System.Windows.Forms.ComboBox();
-            this.dateTime = new System.Windows.Forms.DateTimePicker();
+            this.dateBooking = new System.Windows.Forms.DateTimePicker();
             this.lblPaymenType = new System.Windows.Forms.Label();
             this.numPartySize = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
@@ -71,7 +72,7 @@
             this.lblCity = new System.Windows.Forms.Label();
             this.txtStreet = new System.Windows.Forms.TextBox();
             this.lblStreet = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLName = new System.Windows.Forms.TextBox();
             this.lblLname = new System.Windows.Forms.Label();
             this.txtFname = new System.Windows.Forms.TextBox();
             this.lblFName = new System.Windows.Forms.Label();
@@ -135,7 +136,7 @@
             this.tbl1 = new System.Windows.Forms.PictureBox();
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlTableSelect.SuspendLayout();
             this.pnlGreen.SuspendLayout();
             this.pnlRed.SuspendLayout();
@@ -174,9 +175,9 @@
             // 
             // pnlTableSelect
             // 
+            this.pnlTableSelect.Controls.Add(this.pnlCalendar);
             this.pnlTableSelect.Controls.Add(this.pnlGreen);
             this.pnlTableSelect.Controls.Add(this.pnlRed);
-            this.pnlTableSelect.Controls.Add(this.pnlCalendar);
             this.pnlTableSelect.Controls.Add(this.pnlCustomerDetails);
             this.pnlTableSelect.Controls.Add(this.pnlTableDetails);
             this.pnlTableSelect.Controls.Add(this.lbltbl176);
@@ -376,6 +377,15 @@
             this.pnlCalendar.Size = new System.Drawing.Size(544, 166);
             this.pnlCalendar.TabIndex = 58;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Calendar? hourly table plan?";
+            // 
             // pnlCustomerDetails
             // 
             this.pnlCustomerDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -391,7 +401,7 @@
             // 
             this.gbBookingDetails.Controls.Add(this.btnAvailability);
             this.gbBookingDetails.Controls.Add(this.cbPaymentTyp);
-            this.gbBookingDetails.Controls.Add(this.dateTime);
+            this.gbBookingDetails.Controls.Add(this.dateBooking);
             this.gbBookingDetails.Controls.Add(this.lblPaymenType);
             this.gbBookingDetails.Controls.Add(this.numPartySize);
             this.gbBookingDetails.Controls.Add(this.button1);
@@ -423,6 +433,7 @@
             // 
             // cbPaymentTyp
             // 
+            this.cbPaymentTyp.Enabled = false;
             this.cbPaymentTyp.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPaymentTyp.FormattingEnabled = true;
             this.cbPaymentTyp.Location = new System.Drawing.Point(92, 109);
@@ -430,13 +441,14 @@
             this.cbPaymentTyp.Size = new System.Drawing.Size(121, 26);
             this.cbPaymentTyp.TabIndex = 31;
             // 
-            // dateTime
+            // dateBooking
             // 
-            this.dateTime.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTime.Location = new System.Drawing.Point(51, 78);
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(200, 25);
-            this.dateTime.TabIndex = 21;
+            this.dateBooking.Enabled = false;
+            this.dateBooking.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateBooking.Location = new System.Drawing.Point(51, 78);
+            this.dateBooking.Name = "dateBooking";
+            this.dateBooking.Size = new System.Drawing.Size(200, 25);
+            this.dateBooking.TabIndex = 21;
             // 
             // lblPaymenType
             // 
@@ -450,6 +462,7 @@
             // 
             // numPartySize
             // 
+            this.numPartySize.Enabled = false;
             this.numPartySize.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numPartySize.Location = new System.Drawing.Point(254, 46);
             this.numPartySize.Name = "numPartySize";
@@ -468,7 +481,6 @@
             // 
             // textBox2
             // 
-            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(206, 18);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -486,6 +498,7 @@
             // 
             // cbTime
             // 
+            this.cbTime.Enabled = false;
             this.cbTime.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTime.FormattingEnabled = true;
             this.cbTime.Location = new System.Drawing.Point(303, 77);
@@ -503,6 +516,7 @@
             this.chkNewBooking.TabIndex = 32;
             this.chkNewBooking.Text = "New Booking";
             this.chkNewBooking.UseVisualStyleBackColor = true;
+            this.chkNewBooking.CheckedChanged += new System.EventHandler(this.chkNewBooking_CheckedChanged);
             // 
             // lblTime
             // 
@@ -536,6 +550,7 @@
             // 
             // cbBookingType
             // 
+            this.cbBookingType.Enabled = false;
             this.cbBookingType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBookingType.FormattingEnabled = true;
             this.cbBookingType.Location = new System.Drawing.Point(52, 46);
@@ -565,7 +580,7 @@
             this.gbCustomerDetails.Controls.Add(this.lblCity);
             this.gbCustomerDetails.Controls.Add(this.txtStreet);
             this.gbCustomerDetails.Controls.Add(this.lblStreet);
-            this.gbCustomerDetails.Controls.Add(this.textBox1);
+            this.gbCustomerDetails.Controls.Add(this.txtLName);
             this.gbCustomerDetails.Controls.Add(this.lblLname);
             this.gbCustomerDetails.Controls.Add(this.txtFname);
             this.gbCustomerDetails.Controls.Add(this.lblFName);
@@ -585,6 +600,7 @@
             // 
             // txtTelNo
             // 
+            this.txtTelNo.Enabled = false;
             this.txtTelNo.Location = new System.Drawing.Point(241, 156);
             this.txtTelNo.Name = "txtTelNo";
             this.txtTelNo.Size = new System.Drawing.Size(100, 25);
@@ -601,6 +617,7 @@
             // 
             // txtPC
             // 
+            this.txtPC.Enabled = false;
             this.txtPC.Location = new System.Drawing.Point(80, 156);
             this.txtPC.Name = "txtPC";
             this.txtPC.Size = new System.Drawing.Size(100, 25);
@@ -617,6 +634,7 @@
             // 
             // txtCounty
             // 
+            this.txtCounty.Enabled = false;
             this.txtCounty.Location = new System.Drawing.Point(377, 115);
             this.txtCounty.Name = "txtCounty";
             this.txtCounty.Size = new System.Drawing.Size(100, 25);
@@ -633,6 +651,7 @@
             // 
             // txtCity
             // 
+            this.txtCity.Enabled = false;
             this.txtCity.Location = new System.Drawing.Point(207, 115);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(100, 25);
@@ -649,6 +668,7 @@
             // 
             // txtStreet
             // 
+            this.txtStreet.Enabled = false;
             this.txtStreet.Location = new System.Drawing.Point(60, 115);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(100, 25);
@@ -663,12 +683,13 @@
             this.lblStreet.TabIndex = 10;
             this.lblStreet.Text = "Street:";
             // 
-            // textBox1
+            // txtLName
             // 
-            this.textBox1.Location = new System.Drawing.Point(397, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 9;
+            this.txtLName.Enabled = false;
+            this.txtLName.Location = new System.Drawing.Point(397, 69);
+            this.txtLName.Name = "txtLName";
+            this.txtLName.Size = new System.Drawing.Size(100, 25);
+            this.txtLName.TabIndex = 9;
             // 
             // lblLname
             // 
@@ -681,6 +702,7 @@
             // 
             // txtFname
             // 
+            this.txtFname.Enabled = false;
             this.txtFname.Location = new System.Drawing.Point(210, 69);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(100, 25);
@@ -702,6 +724,7 @@
             "Ms",
             "Miss",
             "Mrs"});
+            this.cbTitle.Enabled = false;
             this.cbTitle.FormattingEnabled = true;
             this.cbTitle.Location = new System.Drawing.Point(50, 68);
             this.cbTitle.Name = "cbTitle";
@@ -728,7 +751,6 @@
             // 
             // txtCustID
             // 
-            this.txtCustID.Enabled = false;
             this.txtCustID.Location = new System.Drawing.Point(221, 24);
             this.txtCustID.Name = "txtCustID";
             this.txtCustID.Size = new System.Drawing.Size(100, 25);
@@ -754,10 +776,12 @@
             this.chkNewCustomer.TabIndex = 0;
             this.chkNewCustomer.Text = "New Customer";
             this.chkNewCustomer.UseVisualStyleBackColor = true;
+            this.chkNewCustomer.CheckedChanged += new System.EventHandler(this.chkNewCustomer_CheckedChanged);
             // 
             // pnlTableDetails
             // 
             this.pnlTableDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTableDetails.Controls.Add(this.label3);
             this.pnlTableDetails.Controls.Add(this.label1);
             this.pnlTableDetails.Location = new System.Drawing.Point(4, 381);
             this.pnlTableDetails.Name = "pnlTableDetails";
@@ -767,11 +791,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 15);
+            this.label1.Location = new System.Drawing.Point(5, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 13);
+            this.label1.Size = new System.Drawing.Size(344, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "DGV to show bookings on whatever table is selected from the floor plan above";
+            this.label1.Text = "DGV to show bookings on whatever table is selected from the floor plan";
             // 
             // lbltbl176
             // 
@@ -1345,6 +1369,7 @@
             this.tbl1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl1.TabIndex = 0;
             this.tbl1.TabStop = false;
+            this.tbl1.Click += new System.EventHandler(this.tbl1_Click);
             this.tbl1.MouseEnter += new System.EventHandler(this.tbl1_MouseHover);
             this.tbl1.MouseLeave += new System.EventHandler(this.tbl1_MouseLeave);
             // 
@@ -1361,14 +1386,15 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Table Information";
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Calendar? hourly table plan?";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(50, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(420, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = " above with whatever selected from the dgv able to be edited in the details panel" +
+    " above";
             // 
             // TableSelect
             // 
@@ -1504,7 +1530,7 @@
         private System.Windows.Forms.TextBox txtCustID;
         private System.Windows.Forms.Label lblCustID;
         private System.Windows.Forms.CheckBox chkNewCustomer;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLName;
         private System.Windows.Forms.Label lblLname;
         private System.Windows.Forms.ComboBox cbTime;
         private System.Windows.Forms.Label lblTime;
@@ -1513,7 +1539,7 @@
         private System.Windows.Forms.Label lblPartySize;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblBNoTag;
-        private System.Windows.Forms.DateTimePicker dateTime;
+        private System.Windows.Forms.DateTimePicker dateBooking;
         private System.Windows.Forms.NumericUpDown numPartySize;
         private System.Windows.Forms.TextBox txtTelNo;
         private System.Windows.Forms.Label lblTelNo;
@@ -1534,5 +1560,6 @@
         private System.Windows.Forms.CheckBox chkNewBooking;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

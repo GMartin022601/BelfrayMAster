@@ -1307,6 +1307,62 @@ namespace Belfray
             //arrowControlUp(colour, arrowCreated, 103, 165);
         }
 
+        private void tbl1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Would you like to place a booking for Table 1?" , "Add Booking", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                pnlCustomerDetails.Enabled = true;
+            }
+        }
+
+        private void chkNewCustomer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkNewCustomer.Checked)
+            {
+                cbTitle.Enabled = true;
+                txtFname.Enabled = true;
+                txtLName.Enabled = true;
+                txtStreet.Enabled = true;
+                txtCity.Enabled = true;
+                txtCounty.Enabled = true;
+                txtPC.Enabled = true;
+                txtTelNo.Enabled = true;
+            }
+            else if (chkNewCustomer.Checked == false)
+            {
+                cbTitle.Enabled = false;
+                //txtCustID.Enabled = false;
+                txtFname.Enabled = false;
+                txtLName.Enabled = false;
+                txtStreet.Enabled = false;
+                txtCity.Enabled = false;
+                txtCounty.Enabled = false;
+                txtPC.Enabled = false;
+                txtTelNo.Enabled = false;
+            }
+
+        }
+
+        private void chkNewBooking_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkNewBooking.Checked)
+            {
+                cbBookingType.Enabled = true;
+                numPartySize.Enabled = true;
+                dateBooking.Enabled = true;
+                cbTime.Enabled = true;
+                cbPaymentTyp.Enabled = true;
+            }
+            else if (chkNewBooking.Checked == false)
+            {
+                cbBookingType.Enabled = false;
+                numPartySize.Enabled = false;
+                dateBooking.Enabled = false;
+                cbTime.Enabled = false;
+                cbPaymentTyp.Enabled = false;
+            }
+        }
+
 
         //Table2
         //private void tbl2_MouseEnter(object sender, EventArgs e)
