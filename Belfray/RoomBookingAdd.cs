@@ -23,7 +23,7 @@ namespace Belfray
         {
             int noRows = dsBelfray.Tables["Customer"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Customer"].Rows)
+            foreach (DataRow drCustomer in dsBelfray.Tables["Customer"].Rows)
             {
                 string customer = drCustomer["customerNo"].ToString();
 
@@ -72,7 +72,7 @@ namespace Belfray
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
             daBooking.Fill(dsBelfray, "Booking");
 
-            //SQL For ProductType
+            //SQL For Customer
             sqlCustomer = @"select * from Customer";
             daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
             cmdBCustomer = new SqlCommandBuilder(daCustomer);
@@ -104,6 +104,10 @@ namespace Belfray
             }
 
             lblBookingNo.Text = bookingNo;
+
+            lblRoomNo.Text = RoomSelect.roomSelceted;
+            dtpBookingCheckIn.Value = RoomSelect.checkInDate;
+            dtpBookingCheckOut.Value = RoomSelect.checkOutDate;
         }
     }
 }

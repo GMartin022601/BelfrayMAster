@@ -52,6 +52,7 @@
             this.lblCustNum = new System.Windows.Forms.Label();
             this.pnlBookingDets = new System.Windows.Forms.Panel();
             this.gbBookingDetails = new System.Windows.Forms.GroupBox();
+            this.lblRoomNo = new System.Windows.Forms.Label();
             this.txtPartySize = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.picAddNewCust = new System.Windows.Forms.PictureBox();
@@ -62,10 +63,10 @@
             this.lblCustomerNo = new System.Windows.Forms.Label();
             this.lblArrivalTime = new System.Windows.Forms.Label();
             this.lblBookingType = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblRoomNum = new System.Windows.Forms.Label();
+            this.dtpBookingCheckOut = new System.Windows.Forms.DateTimePicker();
             this.lblCheckOutDate = new System.Windows.Forms.Label();
-            this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpBookingCheckIn = new System.Windows.Forms.DateTimePicker();
             this.picBookingCancel = new System.Windows.Forms.PictureBox();
             this.picBookingSave = new System.Windows.Forms.PictureBox();
             this.lblCheckInDate = new System.Windows.Forms.Label();
@@ -311,6 +312,7 @@
             // 
             // gbBookingDetails
             // 
+            this.gbBookingDetails.Controls.Add(this.lblRoomNo);
             this.gbBookingDetails.Controls.Add(this.txtPartySize);
             this.gbBookingDetails.Controls.Add(this.comboBox1);
             this.gbBookingDetails.Controls.Add(this.picAddNewCust);
@@ -321,10 +323,10 @@
             this.gbBookingDetails.Controls.Add(this.lblCustomerNo);
             this.gbBookingDetails.Controls.Add(this.lblArrivalTime);
             this.gbBookingDetails.Controls.Add(this.lblBookingType);
-            this.gbBookingDetails.Controls.Add(this.lblType);
-            this.gbBookingDetails.Controls.Add(this.dateTimePicker1);
+            this.gbBookingDetails.Controls.Add(this.lblRoomNum);
+            this.gbBookingDetails.Controls.Add(this.dtpBookingCheckOut);
             this.gbBookingDetails.Controls.Add(this.lblCheckOutDate);
-            this.gbBookingDetails.Controls.Add(this.dtpBookingDate);
+            this.gbBookingDetails.Controls.Add(this.dtpBookingCheckIn);
             this.gbBookingDetails.Controls.Add(this.picBookingCancel);
             this.gbBookingDetails.Controls.Add(this.picBookingSave);
             this.gbBookingDetails.Controls.Add(this.lblCheckInDate);
@@ -337,6 +339,17 @@
             this.gbBookingDetails.TabIndex = 0;
             this.gbBookingDetails.TabStop = false;
             this.gbBookingDetails.Text = "Booking Details";
+            // 
+            // lblRoomNo
+            // 
+            this.lblRoomNo.AutoSize = true;
+            this.lblRoomNo.Enabled = false;
+            this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNo.Location = new System.Drawing.Point(134, 134);
+            this.lblRoomNo.Name = "lblRoomNo";
+            this.lblRoomNo.Size = new System.Drawing.Size(11, 15);
+            this.lblRoomNo.TabIndex = 78;
+            this.lblRoomNo.Text = "-";
             // 
             // txtPartySize
             // 
@@ -432,25 +445,26 @@
             this.lblBookingType.Size = new System.Drawing.Size(41, 15);
             this.lblBookingType.TabIndex = 67;
             this.lblBookingType.Text = "Room";
+            this.lblBookingType.Visible = false;
             // 
-            // lblType
+            // lblRoomNum
             // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(6, 134);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(40, 15);
-            this.lblType.TabIndex = 66;
-            this.lblType.Text = "TYPE:";
+            this.lblRoomNum.AutoSize = true;
+            this.lblRoomNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNum.Location = new System.Drawing.Point(6, 134);
+            this.lblRoomNum.Name = "lblRoomNum";
+            this.lblRoomNum.Size = new System.Drawing.Size(105, 15);
+            this.lblRoomNum.TabIndex = 66;
+            this.lblRoomNum.Text = "ROOM NUMBER:";
             // 
-            // dateTimePicker1
+            // dtpBookingCheckOut
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 96);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(161, 21);
-            this.dateTimePicker1.TabIndex = 65;
+            this.dtpBookingCheckOut.Enabled = false;
+            this.dtpBookingCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingCheckOut.Location = new System.Drawing.Point(137, 96);
+            this.dtpBookingCheckOut.Name = "dtpBookingCheckOut";
+            this.dtpBookingCheckOut.Size = new System.Drawing.Size(161, 21);
+            this.dtpBookingCheckOut.TabIndex = 65;
             // 
             // lblCheckOutDate
             // 
@@ -462,14 +476,14 @@
             this.lblCheckOutDate.TabIndex = 64;
             this.lblCheckOutDate.Text = "CHECK OUT DATE:";
             // 
-            // dtpBookingDate
+            // dtpBookingCheckIn
             // 
-            this.dtpBookingDate.Enabled = false;
-            this.dtpBookingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBookingDate.Location = new System.Drawing.Point(137, 64);
-            this.dtpBookingDate.Name = "dtpBookingDate";
-            this.dtpBookingDate.Size = new System.Drawing.Size(161, 21);
-            this.dtpBookingDate.TabIndex = 63;
+            this.dtpBookingCheckIn.Enabled = false;
+            this.dtpBookingCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingCheckIn.Location = new System.Drawing.Point(137, 64);
+            this.dtpBookingCheckIn.Name = "dtpBookingCheckIn";
+            this.dtpBookingCheckIn.Size = new System.Drawing.Size(161, 21);
+            this.dtpBookingCheckIn.TabIndex = 63;
             // 
             // picBookingCancel
             // 
@@ -567,10 +581,10 @@
         private System.Windows.Forms.Label lblBookingNo;
         private System.Windows.Forms.PictureBox picBookingCancel;
         private System.Windows.Forms.PictureBox picBookingSave;
-        private System.Windows.Forms.DateTimePicker dtpBookingDate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpBookingCheckIn;
+        private System.Windows.Forms.DateTimePicker dtpBookingCheckOut;
         private System.Windows.Forms.Label lblCheckOutDate;
-        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblRoomNum;
         private System.Windows.Forms.Label lblCheckInTime;
         private System.Windows.Forms.Label lblPartySize;
         private System.Windows.Forms.Label lblPaymentType;
@@ -602,5 +616,6 @@
         private System.Windows.Forms.ComboBox cmbTitle;
         private System.Windows.Forms.TextBox txtPhoneNo;
         private System.Windows.Forms.Label lblPhoneNo;
+        private System.Windows.Forms.Label lblRoomNo;
     }
 }

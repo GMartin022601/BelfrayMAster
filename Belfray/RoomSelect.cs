@@ -16,12 +16,21 @@ namespace Belfray
         public bool arrowCreated = false;
 
         //SQL Links
-        SqlDataAdapter daItem;
+        SqlDataAdapter daRoom;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBItem;
-        DataRow drItem;
-        String connStr, sqlItem, room;
+        SqlCommandBuilder cmdBRoom;
+        DataRow drRoom;
+        String connStr, sqlRoom, room;
         bool userChange = false;
+
+        //Room Selected
+        public static string roomSelceted = "";
+
+        //Check In Date
+        public static DateTime checkInDate = "";
+
+        //Check Out Date
+        public static DateTime checkOutDate = "";
 
         public RoomSelect()
         {
@@ -116,26 +125,25 @@ namespace Belfray
 
         private void picRoom101_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000001"))
+                if (room.Equals("101"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -200,26 +208,25 @@ namespace Belfray
 
         private void picRoom102_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000002"))
+                if (room.Equals("102"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -284,26 +291,25 @@ namespace Belfray
 
         private void picRoom103_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000003"))
+                if (room.Equals("103"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -368,26 +374,25 @@ namespace Belfray
 
         private void picRoom104_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000004"))
+                if (room.Equals("104"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -452,26 +457,25 @@ namespace Belfray
 
         private void picRoom105_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000005"))
+                if (room.Equals("105"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -536,26 +540,25 @@ namespace Belfray
 
         private void picRoom106_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000006"))
+                if (room.Equals("106"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -620,26 +623,25 @@ namespace Belfray
 
         private void picRoom107_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000007"))
+                if (room.Equals("107"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -704,26 +706,25 @@ namespace Belfray
 
         private void picRoom108_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000008"))
+                if (room.Equals("108"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -788,26 +789,25 @@ namespace Belfray
 
         private void picRoom109_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000009"))
+                if (room.Equals("109"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -872,26 +872,25 @@ namespace Belfray
 
         private void picRoom110_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000010"))
+                if (room.Equals("110"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -956,26 +955,25 @@ namespace Belfray
 
         private void picRoom111_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000011"))
+                if (room.Equals("111"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "1";
-                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -1040,26 +1038,25 @@ namespace Belfray
 
         private void picRoom112_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000012"))
+                if (room.Equals("112"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "1";
-                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -1124,26 +1121,25 @@ namespace Belfray
 
         private void picRoom113_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000013"))
+                if (room.Equals("113"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "4";
-                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -1208,26 +1204,25 @@ namespace Belfray
 
         private void picRoom114_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000014"))
+                if (room.Equals("114"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "4";
-                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -1292,26 +1287,25 @@ namespace Belfray
 
         private void picRoom115_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000015"))
+                if (room.Equals("115"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "4";
-                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -1376,26 +1370,25 @@ namespace Belfray
 
         private void picRoom116_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000016"))
+                if (room.Equals("116"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "4";
-                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -1460,26 +1453,25 @@ namespace Belfray
 
         private void picRoom117_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000017"))
+                if (room.Equals("117"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -1544,26 +1536,25 @@ namespace Belfray
 
         private void picRoom118_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000018"))
+                if (room.Equals("118"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -1628,26 +1619,25 @@ namespace Belfray
 
         private void picRoom119_Click(object sender, EventArgs e)
         {
-            int noRows = dsBelfray.Tables["Item"].Rows.Count;
+            int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
-            foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+            foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
             {
-                room = drItem["itemNo"].ToString();
+                room = drRoom["roomNo"].ToString();
 
-                if (room.Equals("ITM1000019"))
+                if (room.Equals("119"))
                 {
-                    string info = drItem["itemDesc"].ToString();
-                    string roomNo = info.Split(' ').First();
-                    string roomType = info.Split(' ').Last();
-                    decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+
+
+                    decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                     TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                     int days = ts.Days + 1;
                     decimal total = price * days;
 
-                    lblRoomNo.Text = roomNo;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = "2";
-                    //lblRoomDesc.Text = "A very Luxurious room with a homely feel perfect for proffesional and couples a like. This room comes \nfully fitted with a TV, Free Wifi, En-suite, Snacks and Mini Bar.";
+                    lblRoomNo.Text = room;
+                    lblRoomType.Text = drRoom["roomType"].ToString();
+                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                    lblRoomDesc.Text = drRoom["roomDesc"].ToString();
                     lblPPDay.Text = "£" + decimal.Round(price, 2);
                     lblTotalPrice.Text = "£" + decimal.Round(total, 2);
 
@@ -1680,12 +1670,12 @@ namespace Belfray
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
-            sqlItem = @"select * from Item";
-            daItem = new SqlDataAdapter(sqlItem, connStr);
-            cmdBItem = new SqlCommandBuilder(daItem);
+            sqlRoom = @"select * from Rooms";
+            daRoom = new SqlDataAdapter(sqlRoom, connStr);
+            cmdBRoom = new SqlCommandBuilder(daRoom);
 
-            daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
-            daItem.Fill(dsBelfray, "Item");
+            daRoom.FillSchema(dsBelfray, SchemaType.Source, "Rooms");
+            daRoom.Fill(dsBelfray, "Rooms");
 
             //Sets Date Time Picker to today for check in and 1 day later for check out
             dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
@@ -1697,22 +1687,57 @@ namespace Belfray
             dtpCheckOutDate.Value = dtpCheckInDate.Value.AddDays(1);
         }
 
+        //Save Button Code
+        private void picSaveRoomSelect_MouseEnter(object sender, EventArgs e)
+        {
+            picSaveRoomSelect.BackColor = Color.FromArgb(57, 181, 74);
+        }
+
+        private void picSaveRoomSelect_Click(object sender, EventArgs e)
+        {
+            roomSelceted = lblRoomNo.Text;
+            checkInDate = dtpCheckInDate.Value;
+            checkOutDate = dtpCheckOutDate.Value;
+            this.Close();
+        }
+
+        private void picSaveRoomSelect_MouseLeave(object sender, EventArgs e)
+        {
+            picSaveRoomSelect.BackColor = Color.Transparent;
+        }
+
+        //Cancel Button Code
+        private void picCancellRoomSelect_MouseEnter(object sender, EventArgs e)
+        {
+            picCancellRoomSelect.BackColor = Color.FromArgb(205, 36, 36);
+        }
+
+        private void picCancellRoomSelect_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void picCancellRoomSelect_MouseLeave(object sender, EventArgs e)
+        {
+            picCancellRoomSelect.BackColor = Color.Transparent;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
             if (userChange)
             {
-                foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+                foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
                 {
-                    string newRoom = drItem["itemNo"].ToString();
+                    string newRoom = drRoom["roomNo"].ToString();
 
                     if (newRoom.Equals(room))
                     {
-                        decimal price = Convert.ToDecimal(drItem["itemPrice"]);
+                        decimal price = Convert.ToDecimal(drRoom["PricePerDay"]);
                         TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
                         int days = ts.Days + 1;
                         decimal total = price * days;
