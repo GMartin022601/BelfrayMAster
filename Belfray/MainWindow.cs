@@ -553,12 +553,12 @@ namespace Belfray
         {
             pnlTableSelect.Visible = false;
 
-            TableBookingAdd frm1 = new TableBookingAdd();
-            frm1.TopLevel = false;
-            frm1.FormBorderStyle = FormBorderStyle.None;
-            frm1.WindowState = FormWindowState.Maximized;
-            pnlMainBody.Controls.Add(frm1);
-            frm1.Show();
+            TableBookingAdd frm = new TableBookingAdd();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.WindowState = FormWindowState.Maximized;
+            pnlMainBody.Controls.Add(frm);
+            frm.Show();
         }
     }
 }

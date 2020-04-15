@@ -1029,6 +1029,11 @@ namespace Belfray
             lblRedCapacityValue.Text = "4";
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void tbl23_MouseLeave(object sender, EventArgs e)
         {
             arrowCreated = true;

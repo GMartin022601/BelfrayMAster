@@ -63,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
-            this.pnlRoomSelect.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -300,7 +299,6 @@
             // 
             // pnlRoomSelect
             // 
-            this.pnlRoomSelect.Controls.Add(this.pnlTableSelect);
             this.pnlRoomSelect.Location = new System.Drawing.Point(0, 0);
             this.pnlRoomSelect.Name = "pnlRoomSelect";
             this.pnlRoomSelect.Size = new System.Drawing.Size(1220, 606);
@@ -308,11 +306,10 @@
             // 
             // pnlTableSelect
             // 
-            this.pnlTableSelect.Location = new System.Drawing.Point(2, 2);
+            this.pnlTableSelect.Location = new System.Drawing.Point(0, 0);
             this.pnlTableSelect.Name = "pnlTableSelect";
-            this.pnlTableSelect.Size = new System.Drawing.Size(1220, 606);
-            this.pnlTableSelect.TabIndex = 0;
-            this.pnlTableSelect.Visible = false;
+            this.pnlTableSelect.Size = new System.Drawing.Size(1220, 607);
+            this.pnlTableSelect.TabIndex = 6;
             // 
             // MainWindow
             // 
@@ -325,6 +322,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.picHeader);
             this.Controls.Add(this.pnlRoomSelect);
+            this.Controls.Add(this.pnlTableSelect);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -346,7 +344,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
-            this.pnlRoomSelect.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

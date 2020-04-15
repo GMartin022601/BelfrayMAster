@@ -16,11 +16,11 @@ namespace Belfray
         public bool arrowCreated = false;
 
         //SQL Links
-        SqlDataAdapter daRoom;
+        SqlDataAdapter daRoom, daBooking;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBRoom;
-        DataRow drRoom;
-        String connStr, sqlRoom, room;
+        SqlCommandBuilder cmdBRoom, cmdBBooking;
+        DataRow drRoom, drBooking;
+        String connStr, sqlRoom, sqlBooking, room;
         bool userChange = false;
 
         //Room Selected
@@ -88,7 +88,9 @@ namespace Belfray
         //Room 101
         private void picRoom101_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("101");
+            
             Color colour = new Color();
             arrowCreated = false;
 
@@ -171,7 +173,9 @@ namespace Belfray
         //Room 102
         private void picRoom102_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("102");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -254,7 +258,9 @@ namespace Belfray
         //Room 103
         private void picRoom103_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("103");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -337,7 +343,9 @@ namespace Belfray
         //Room 104
         private void picRoom104_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("104");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -420,7 +428,9 @@ namespace Belfray
         //Room 105
         private void picRoom105_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("105");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -503,7 +513,9 @@ namespace Belfray
         //Room 106
         private void picRoom106_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("106");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -586,7 +598,9 @@ namespace Belfray
         //Room 107
         private void picRoom107_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("107");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -669,7 +683,9 @@ namespace Belfray
         //Room 108
         private void picRoom108_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("108");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -752,7 +768,9 @@ namespace Belfray
         //Room 109
         private void picRoom109_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("109");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -835,7 +853,9 @@ namespace Belfray
         //Room 110
         private void picRoom110_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("110");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -918,7 +938,9 @@ namespace Belfray
         //Room 111
         private void picRoom111_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("111");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1001,7 +1023,9 @@ namespace Belfray
         //Room 112
         private void picRoom112_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("112");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1084,7 +1108,9 @@ namespace Belfray
         //Room 113
         private void picRoom113_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("113");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1167,7 +1193,9 @@ namespace Belfray
         //Room 114
         private void picRoom114_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("114");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1250,7 +1278,9 @@ namespace Belfray
         //Room 115
         private void picRoom115_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("115");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1333,7 +1363,9 @@ namespace Belfray
         //Room 116
         private void picRoom116_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("116");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1416,7 +1448,8 @@ namespace Belfray
         //Room 117
         private void picRoom117_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("117");
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1499,7 +1532,9 @@ namespace Belfray
         //Room 118
         private void picRoom118_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("118");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1582,7 +1617,9 @@ namespace Belfray
         //Room 119
         private void picRoom119_MouseEnter(object sender, EventArgs e)
         {
-            bool available = true;
+            //Checks Date
+            bool available = checkDate("119");
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1670,12 +1707,21 @@ namespace Belfray
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
+            //Room Table
             sqlRoom = @"select * from Rooms";
             daRoom = new SqlDataAdapter(sqlRoom, connStr);
             cmdBRoom = new SqlCommandBuilder(daRoom);
 
             daRoom.FillSchema(dsBelfray, SchemaType.Source, "Rooms");
             daRoom.Fill(dsBelfray, "Rooms");
+
+            //Booking Table
+            sqlBooking = @"select * from Booking";
+            daBooking = new SqlDataAdapter(sqlBooking, connStr);
+            cmdBBooking = new SqlCommandBuilder(daBooking);
+
+            daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
+            daBooking.Fill(dsBelfray, "Booking");
 
             //Sets Date Time Picker to today for check in and 1 day later for check out
             dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
@@ -1721,12 +1767,7 @@ namespace Belfray
         {
             picCancellRoomSelect.BackColor = Color.Transparent;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
             if (userChange)
@@ -1746,6 +1787,48 @@ namespace Belfray
                     }
                 }
             }            
+        }
+
+        private bool checkDate(string roomNum)
+        {
+            bool available = true;
+            foreach (DataRow drBooking in dsBelfray.Tables["Booking"].Rows)
+            {
+                DateTime checkIn = Convert.ToDateTime(drBooking["checkInDate"]);
+                DateTime checkOut = Convert.ToDateTime(drBooking["checkOutDate"]);
+
+                if (drBooking["roomNo"].ToString().Equals("roomNum"))
+                {
+                    if (dtpCheckInDate.Value.Year.CompareTo(checkIn.Year) == 0 || dtpCheckInDate.Value.Year.CompareTo(checkOut.Year) == 0 || dtpCheckOutDate.Value.Year.CompareTo(checkIn.Year) == 0 || dtpCheckOutDate.Value.Year.CompareTo(checkOut.Year) == 0)
+                    {
+                        if (dtpCheckInDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckInDate.Value.Year.CompareTo(checkOut.Year) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkOut.Month) == 0)
+                        {
+                            int min = checkIn.Day;
+                            int max = checkOut.Day;
+                            int arrive = dtpCheckInDate.Value.Day;
+                            int leave = dtpCheckOutDate.Value.Day;
+                            if (arrive >= min && arrive < max && leave > min && leave <= max)
+                            {
+                                available = false;
+                                break;
+                            }
+                            else
+                            {
+                                available = true;
+                            }
+                        }
+                        else
+                        {
+                            available = true;
+                        }
+                    }
+                    else
+                    {
+                        available = true;
+                    }
+                }
+            }
+            return available;
         }
     }
 }

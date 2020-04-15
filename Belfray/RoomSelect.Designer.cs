@@ -31,7 +31,6 @@
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
             this.picCancellRoomSelect = new System.Windows.Forms.PictureBox();
             this.picSaveRoomSelect = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlRed = new System.Windows.Forms.Panel();
             this.lblRedCapacityValue = new System.Windows.Forms.Label();
             this.lblRedCapacity = new System.Windows.Forms.Label();
@@ -116,7 +115,6 @@
             this.pnlFloorPlan.BackgroundImage = global::Belfray.Properties.Resources.floorplan_layout;
             this.pnlFloorPlan.Controls.Add(this.picCancellRoomSelect);
             this.pnlFloorPlan.Controls.Add(this.picSaveRoomSelect);
-            this.pnlFloorPlan.Controls.Add(this.button1);
             this.pnlFloorPlan.Controls.Add(this.pnlRed);
             this.pnlFloorPlan.Controls.Add(this.pnlGreen);
             this.pnlFloorPlan.Controls.Add(this.picRoom119);
@@ -169,16 +167,6 @@
             this.picSaveRoomSelect.Click += new System.EventHandler(this.picSaveRoomSelect_Click);
             this.picSaveRoomSelect.MouseEnter += new System.EventHandler(this.picSaveRoomSelect_MouseEnter);
             this.picSaveRoomSelect.MouseLeave += new System.EventHandler(this.picSaveRoomSelect_MouseLeave);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1082, 565);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 57;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlRed
             // 
@@ -875,7 +863,6 @@
         private System.Windows.Forms.Label lblRedRoom;
         private System.Windows.Forms.DateTimePicker dtpCheckOutDate;
         private System.Windows.Forms.Label lblCheckOutDate;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox gbRoomDets;
         private System.Windows.Forms.Label lblRoomNum;
         private System.Windows.Forms.Label lblType;
