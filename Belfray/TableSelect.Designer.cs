@@ -766,6 +766,12 @@
             "Mrs"});
             this.cbTitle.Enabled = false;
             this.cbTitle.FormattingEnabled = true;
+            this.cbTitle.Items.AddRange(new object[] {
+            "MR",
+            "MISS",
+            "MRS",
+            "MS",
+            "DR"});
             this.cbTitle.Location = new System.Drawing.Point(50, 68);
             this.cbTitle.Name = "cbTitle";
             this.cbTitle.Size = new System.Drawing.Size(72, 26);

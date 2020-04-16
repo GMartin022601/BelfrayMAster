@@ -956,6 +956,27 @@ namespace Belfray
             bool ok = true;
             errP.Clear();
 
+            if (drCustomer["customerTitle"].ToString() == "MR")
+            {
+                cbTitle.SelectedIndex = 0;
+            }
+            if (drCustomer["customerTitle"].ToString() == "MISS")
+            {
+                cbTitle.SelectedIndex = 1;
+            }
+            if (drCustomer["customerTitle"].ToString() == "MRS")
+            {
+                cbTitle.SelectedIndex = 2;
+            }
+            if (drCustomer["customerTitle"].ToString() == "MS")
+            {
+                cbTitle.SelectedIndex = 3;
+            }
+            if (drCustomer["customerTitle"].ToString() == "DR")
+            {
+                cbTitle.SelectedIndex = 4;
+            }
+
             try
             {
 
@@ -1540,6 +1561,11 @@ namespace Belfray
             cbPaymentTyp.DisplayMember = "paymentTypeDesc";
             cbPaymentTyp.SelectedIndex = -1;
 
+            //cb Title
+            //cbTitle.DataSource = dsBelfray.Tables["Customer"];
+            //cbTitle.ValueMember = "customerTitle";
+            //cbTitle.DisplayMember = "customerTitle";
+            cbTitle.SelectedIndex = -1;
 
         }
 
