@@ -28,6 +28,9 @@ namespace Belfray
         //Room Select Cancelled?
         private bool cancelled = false;
 
+        //Max Room Capacity
+        public static int maxCap = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -189,12 +192,7 @@ namespace Belfray
             Reset();
             TabVisible();
 
-            RoomBookingDisplay frm = new RoomBookingDisplay();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.WindowState = FormWindowState.Maximized;
-            pnlMainBody.Controls.Add(frm);
-            frm.Show();
+            picTabDisplay_Click(sender, e);
         }
 
         private void picRoomStock_Click(object sender, EventArgs e)
@@ -203,6 +201,8 @@ namespace Belfray
             menuSelected = 2;
 
             TabVisible();
+
+            picTabDisplay_Click(sender, e);
         }
 
         //needs edited to be in the panel as full screen
@@ -211,13 +211,7 @@ namespace Belfray
             //Set menu option select to Table Booking
             menuSelected = 3;
 
-            TableBookingDisplay frm3 = new TableBookingDisplay();
-            frm3.TopLevel = false;
-            frm3.FormBorderStyle = FormBorderStyle.None;
-            frm3.WindowState = FormWindowState.Maximized;
-            pnlMainBody.Controls.Add(frm3);
-            frm3.Show();
-            TabVisible();
+            picTabDisplay_Click(sender, e);
         }
 
         private void picRestaurantStock_Click(object sender, EventArgs e)
@@ -225,13 +219,7 @@ namespace Belfray
             //Set menu option select to Table Booking
             menuSelected = 4;
 
-            RestaurantStockDisplay frm = new RestaurantStockDisplay();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.WindowState = FormWindowState.Maximized;
-            pnlMainBody.Controls.Add(frm);
-            frm.Show();
-            TabVisible();
+            picTabDisplay_Click(sender, e);
         }
 
         private void picAccount_Click(object sender, EventArgs e)
@@ -577,7 +565,7 @@ namespace Belfray
                     break;
             }
 
-            //Diable Selected Tab
+            //Disable Selected Tab
             picTabDelete.Enabled = false;
 
             //Enable All Other Tabs
@@ -598,14 +586,9 @@ namespace Belfray
         {
             if(cancelled)
             {
-                pnlRoomSelect.Visible = false;
+                pnlRoomSelect.Visible = false;                
 
-                RoomBookingDisplay frm = new RoomBookingDisplay();
-                frm.TopLevel = false;
-                frm.FormBorderStyle = FormBorderStyle.None;
-                frm.WindowState = FormWindowState.Maximized;
-                pnlMainBody.Controls.Add(frm);
-                frm.Show();
+                picTabDisplay_Click(sender, e);
             }
             else
             {
@@ -615,6 +598,7 @@ namespace Belfray
                 frm.TopLevel = false;
                 frm.FormBorderStyle = FormBorderStyle.None;
                 frm.WindowState = FormWindowState.Maximized;
+                frm.FormClosed += RoomBookingAdd_Closed;
                 pnlMainBody.Controls.Add(frm);
                 frm.Show();
             }           
@@ -629,7 +613,6 @@ namespace Belfray
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.WindowState = FormWindowState.Maximized;
-            frm.FormClosed += RoomBookingAdd_Closed;
             pnlMainBody.Controls.Add(frm);
             frm.Show();
         }

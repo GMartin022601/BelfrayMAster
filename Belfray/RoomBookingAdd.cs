@@ -13,11 +13,11 @@ namespace Belfray
 {
     public partial class RoomBookingAdd : Form
     {
-        SqlDataAdapter daBooking, daCustomer;
+        SqlDataAdapter daBooking, daCustomer, daPayType;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBBooking, cmdBCustomer;
-        DataRow drBooking, drCustomer;
-        String connStr, sqlBooking, sqlCustomer;
+        SqlCommandBuilder cmdBBooking, cmdBCustomer, cmdBPayType;
+        DataRow drBooking, drCustomer, drPayType;
+        String connStr, sqlBooking, sqlCustomer, sqlPayType;
         
         private bool userActivated = false;
         private bool custEnabled = false;
@@ -106,9 +106,16 @@ namespace Belfray
             daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
             cmdBCustomer = new SqlCommandBuilder(daCustomer);
             daCustomer.FillSchema(dsBelfray, SchemaType.Source, "Customer");
-            daCustomer.Fill(dsBelfray, "Customer");            
+            daCustomer.Fill(dsBelfray, "Customer");
 
-            //CB Details Supplier
+            //SQL For Payment Type
+            sqlPayType = @"select * from Payment";
+            daPayType = new SqlDataAdapter(sqlPayType, connStr);
+            cmdBPayType = new SqlCommandBuilder(daPayType);
+            daPayType.FillSchema(dsBelfray, SchemaType.Source, "Payment");
+            daPayType.Fill(dsBelfray, "Payment");
+
+            //CB Details Customer
             cmbCustomerNo.DataSource = dsBelfray.Tables["Customer"];
             cmbCustomerNo.ValueMember = "customerNo";
             cmbCustomerNo.DisplayMember = "customerNo";
@@ -118,6 +125,12 @@ namespace Belfray
             cmbTitle.ValueMember = "customerTitle";
             cmbTitle.DisplayMember = "customerTitle";
             cmbTitle.SelectedIndex = -1;
+
+            //CB Details Payment type
+            cmbPayType.DataSource = dsBelfray.Tables["Payment"];
+            cmbPayType.ValueMember = "paymentTypeID";
+            cmbPayType.DisplayMember = "paymentTypeDesc";
+            cmbPayType.SelectedIndex = -1;
 
             int noRows = dsBelfray.Tables["Booking"].Rows.Count;
 
@@ -251,7 +264,169 @@ namespace Belfray
 
         private void picBookingSave_Click(object sender, EventArgs e)
         {
+            MyBooking myBook = new MyBooking();
+            bool ok = true;
+            errP.Clear();
 
+            //Booking Number
+            try
+            {
+                myBook.BookingNumber = lblBookingNo.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(lblBookingNo, MyEx.toString());
+            }
+
+            //Booking Type
+            try
+            {
+                myBook.TypeID = "TYP100001";
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(lblBookingType, MyEx.toString());
+            }
+
+            //Check In Date
+            try
+            {
+                myBook.CheckInDate = dtpBookingCheckIn.Value;
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(dtpBookingCheckIn, MyEx.toString());
+            }
+
+            //Check Out Date
+            try
+            {
+                myBook.CheckOutDate = dtpBookingCheckOut.Value;
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(dtpBookingCheckOut, MyEx.toString());
+            }
+
+            //Room Number
+            try
+            {
+                myBook.RoomNo = int.Parse(lblRoomNo.Text.Trim());
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(lblRoomNo, MyEx.toString());
+            }
+
+            //Table Number set to 0
+            try
+            {
+                myBook.TableNo = 0;
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(lblRoomNum, MyEx.toString());
+            }
+
+            //Check In Time
+            try
+            {
+                myBook.BookingTime = "13:00:00";
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(lblCheckInTime, MyEx.toString());
+            }
+
+            //Customer Number
+            try
+            {
+                myBook.CustomerNumber = cmbCustomerNo.SelectedValue.ToString();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(cmbCustomerNo, MyEx.toString());
+            }
+
+            //Payment Type
+            try
+            {
+                myBook.PaymentTypeID = cmbPayType.SelectedValue.ToString();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(cmbPayType, MyEx.toString());
+            }
+
+            //Party Size
+            try
+            {
+                if(int.Parse(txtPartySize.Text.Trim()) <=  MainWindow.maxCap && int.Parse(txtPartySize.Text.Trim()) > 0)
+                {
+                    myBook.PartySize = int.Parse(txtPartySize.Text.Trim());
+                }
+                else
+                {
+                    ok = false;
+                    errP.SetError(txtPartySize, "Party size must not exceed the capacity of the room, please enter a value less than " + MainWindow.maxCap + " or cancel and select a larger room.");
+                }
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtPartySize, MyEx.toString());
+            }
+
+            //Try Adding
+            try
+            {
+                if (ok)
+                {
+                    drBooking = dsBelfray.Tables["Booking"].NewRow();
+                    drBooking["bookingNo"] = myBook.BookingNumber;
+                    drBooking["checkInDate"] = myBook.CheckInDate;
+                    drBooking["checkOutDate"] = myBook.CheckOutDate;
+                    drBooking["bookingTime"] = myBook.BookingTime;
+                    drBooking["typeID"] = myBook.TypeID;
+                    drBooking["paymentTypeID"] = myBook.PaymentTypeID;
+                    drBooking["roomNo"] = myBook.RoomNo;
+                    drBooking["tableNo"] = myBook.TableNo;
+                    drBooking["partySize"] = myBook.PartySize;
+                    drBooking["customerNo"] = myBook.CustomerNumber;
+                    dsBelfray.Tables["Booking"].Rows.Add(drBooking);
+                    daBooking.Update(dsBelfray, "Booking");
+
+                    MessageBox.Show("Booking Added");
+
+                    clearCustomerPanel();
+
+                    custPanelCont();
+                    bookPanelCont();
+
+                    int noRows = dsBelfray.Tables["Customer"].Rows.Count;
+
+                    //cb ProductType
+                    cmbCustomerNo.DataSource = dsBelfray.Tables["Customer"];
+                    cmbCustomerNo.ValueMember = "customerNo";
+                    cmbCustomerNo.DisplayMember = "customerNo";
+                    cmbCustomerNo.SelectedIndex = noRows - 1;
+
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }            
         }
 
         private void picBookingSave_MouseLeave(object sender, EventArgs e)

@@ -29,6 +29,9 @@ namespace Belfray
         //Room Selected
         public static bool cancelled = false;
 
+        //Save active
+        private static bool saveActive = false;
+
         //Check In Date
         public static DateTime checkInDate = new DateTime();
 
@@ -93,7 +96,8 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("101");
-            
+            saveActive = available;
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -130,6 +134,15 @@ namespace Belfray
 
         private void picRoom101_Click(object sender, EventArgs e)
         {
+            if(saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -178,6 +191,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("102");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -215,6 +229,15 @@ namespace Belfray
 
         private void picRoom102_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -263,6 +286,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("103");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -300,6 +324,15 @@ namespace Belfray
 
         private void picRoom103_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -348,6 +381,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("104");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -385,6 +419,15 @@ namespace Belfray
 
         private void picRoom104_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -433,6 +476,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("105");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -470,6 +514,15 @@ namespace Belfray
 
         private void picRoom105_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -518,6 +571,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("106");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -555,6 +609,15 @@ namespace Belfray
 
         private void picRoom106_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -603,6 +666,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("107");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -640,6 +704,15 @@ namespace Belfray
 
         private void picRoom107_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -688,6 +761,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("108");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -725,6 +799,15 @@ namespace Belfray
 
         private void picRoom108_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -773,6 +856,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("109");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -810,6 +894,15 @@ namespace Belfray
 
         private void picRoom109_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -858,6 +951,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("110");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -895,6 +989,15 @@ namespace Belfray
 
         private void picRoom110_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -943,6 +1046,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("111");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -980,6 +1084,15 @@ namespace Belfray
 
         private void picRoom111_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -1028,6 +1141,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("112");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -1065,6 +1179,15 @@ namespace Belfray
 
         private void picRoom112_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -1113,6 +1236,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("113");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -1150,6 +1274,15 @@ namespace Belfray
 
         private void picRoom113_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -1198,6 +1331,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("114");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -1235,6 +1369,15 @@ namespace Belfray
 
         private void picRoom114_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -1283,6 +1426,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("115");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -1320,6 +1464,15 @@ namespace Belfray
 
         private void picRoom115_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -1368,6 +1521,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("116");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -1405,6 +1559,15 @@ namespace Belfray
 
         private void picRoom116_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -1453,6 +1616,8 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("117");
+            saveActive = available;
+
             Color colour = new Color();
             arrowCreated = false;
 
@@ -1489,6 +1654,15 @@ namespace Belfray
 
         private void picRoom117_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -1537,6 +1711,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("118");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -1574,6 +1749,15 @@ namespace Belfray
 
         private void picRoom118_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -1622,6 +1806,7 @@ namespace Belfray
         {
             //Checks Date
             bool available = checkDate("119");
+            saveActive = available;
 
             Color colour = new Color();
             arrowCreated = false;
@@ -1659,6 +1844,15 @@ namespace Belfray
 
         private void picRoom119_Click(object sender, EventArgs e)
         {
+            if (saveActive)
+            {
+                picSaveRoomSelect.Visible = true;
+            }
+            else
+            {
+                picSaveRoomSelect.Visible = false;
+            }
+
             int noRows = dsBelfray.Tables["Rooms"].Rows.Count;
 
             foreach (DataRow drRoom in dsBelfray.Tables["Rooms"].Rows)
@@ -1748,6 +1942,7 @@ namespace Belfray
             checkInDate = dtpCheckInDate.Value;
             checkOutDate = dtpCheckOutDate.Value;
             cancelled = false;
+            MainWindow.maxCap = int.Parse(lblRoomCapacity.Text);
             this.Close();
         }
 
@@ -1816,10 +2011,9 @@ namespace Belfray
                             {
                                 available = false;
                             }
-                            else if (arrive >= min && arrive < max && leave > min && leave <= max)
+                            else if (arrive >= min && arrive < max || leave > min && leave <= max)
                             {
                                 available = false;
-                                break;
                             }
                             else
                             {
@@ -1835,6 +2029,11 @@ namespace Belfray
                     {
                         available = true;
                     }
+                }
+
+                if(!available)
+                {
+                    break;
                 }
             }
             return available;

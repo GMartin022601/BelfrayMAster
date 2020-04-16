@@ -57,7 +57,7 @@ namespace Belfray
             this.gbBookingDetails = new System.Windows.Forms.GroupBox();
             this.lblRoomNo = new System.Windows.Forms.Label();
             this.txtPartySize = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPayType = new System.Windows.Forms.ComboBox();
             this.picAddNewCust = new System.Windows.Forms.PictureBox();
             this.cmbCustomerNo = new System.Windows.Forms.ComboBox();
             this.lblCheckInTime = new System.Windows.Forms.Label();
@@ -333,7 +333,7 @@ namespace Belfray
             // 
             this.gbBookingDetails.Controls.Add(this.lblRoomNo);
             this.gbBookingDetails.Controls.Add(this.txtPartySize);
-            this.gbBookingDetails.Controls.Add(this.comboBox1);
+            this.gbBookingDetails.Controls.Add(this.cmbPayType);
             this.gbBookingDetails.Controls.Add(this.picAddNewCust);
             this.gbBookingDetails.Controls.Add(this.cmbCustomerNo);
             this.gbBookingDetails.Controls.Add(this.lblCheckInTime);
@@ -377,13 +377,13 @@ namespace Belfray
             this.txtPartySize.Size = new System.Drawing.Size(133, 21);
             this.txtPartySize.TabIndex = 77;
             // 
-            // comboBox1
+            // cmbPayType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 230);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(133, 23);
-            this.comboBox1.TabIndex = 75;
+            this.cmbPayType.FormattingEnabled = true;
+            this.cmbPayType.Location = new System.Drawing.Point(137, 230);
+            this.cmbPayType.Name = "cmbPayType";
+            this.cmbPayType.Size = new System.Drawing.Size(133, 23);
+            this.cmbPayType.TabIndex = 75;
             // 
             // picAddNewCust
             // 
@@ -627,7 +627,7 @@ namespace Belfray
         private System.Windows.Forms.Label lblBookingType;
         private System.Windows.Forms.PictureBox picAddNewCust;
         private System.Windows.Forms.ComboBox cmbCustomerNo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPayType;
         private System.Windows.Forms.TextBox txtPartySize;
         private System.Windows.Forms.GroupBox gbCustomerDets;
         private System.Windows.Forms.Label lblPostcode;
