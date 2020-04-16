@@ -1331,17 +1331,17 @@ namespace Belfray
             {
                 pnlCustomerDetails.Enabled = true;
                 numPartySize.Value = 2;
-                ////Data Grid View
-                //sqlBookingDGV = @"select * from Booking WHERE tableNo = '1'";
-                //daBookingDGV = new SqlDataAdapter(sqlBooking, connStr);
+                //Data Grid View
+                sqlBookingDGV = @"select bookingNo, checkInDate, typeID, bookingTime, customerNo, paymentTypeID, partySize, tableNo from Booking WHERE tableNo = '1'"; //Join RestTables on tableNo = Booking.tableNo" RestTables.allocated;
+                daBookingDGV = new SqlDataAdapter(sqlBookingDGV, connStr);
 
-                //daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
-                //daBookingDGV.Fill(dsBelfray, "Booking");
+                daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
+                daBookingDGV.Fill(dsBelfray, "Booking");
 
-                //dgvBooking.Visible = true;
-                //dgvBooking.DataSource = dsBelfray.Tables["Booking"];
-                ////Resize
-                //dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvBooking.Visible = true;
+                dgvBooking.DataSource = dsBelfray.Tables["Booking"];
+                //Resize
+                dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
         }
 
