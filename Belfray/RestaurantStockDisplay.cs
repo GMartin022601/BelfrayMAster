@@ -27,35 +27,6 @@ namespace Belfray
 
         }
 
-        //void ValidateSelected(object Sender, CancelEventArgs e)
-        //{
-        //    if (dgvRestStock.SelectedRows.Count == 0)
-        //    {
-        //        prdSelected = false;
-        //        prdSel = null;
-        //    }
-        //    else if (dgvRestStock.SelectedRows.Count == 1)
-        //    {
-        //        prdSelected = true;
-        //        prdSel = dgvRestStock.SelectedRows[0].Cells[0].Value.ToString();
-        //        prdSel = Globals.prdNoSel;
-        //    }
-        //}
-        //private void DgvRestStock_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    if (dgvRestStock.SelectedRows.Count == 0)
-        //    {
-        //        prdSelected = false;
-        //        prdSel = null;
-        //    }
-        //    else if (dgvRestStock.SelectedRows.Count == 1)
-        //    {
-        //        prdSelected = true;
-        //        prdSel = dgvRestStock.SelectedRows[0].Cells[0].Value.ToString();
-        //        prdSel = Globals.prdNoSel;
-        //    }
-        //}
-
         private void DgvRestStock_Click(object sender, EventArgs e)
         {
             if (dgvRestStock.SelectedRows.Count == 0)
