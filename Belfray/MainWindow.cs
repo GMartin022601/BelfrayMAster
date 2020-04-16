@@ -622,12 +622,7 @@ namespace Belfray
         {
             pnlTableSelect.Visible = false;
 
-            RoomBookingDisplay frm = new RoomBookingDisplay();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.WindowState = FormWindowState.Maximized;
-            pnlMainBody.Controls.Add(frm);
-            frm.Show();
+            picTabDisplay_Click(sender, e);
         }        
     }
 }

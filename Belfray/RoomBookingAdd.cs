@@ -377,7 +377,7 @@ namespace Belfray
                 else
                 {
                     ok = false;
-                    errP.SetError(txtPartySize, "Party size must not exceed the capacity of the room, please enter a value less than " + MainWindow.maxCap + " or cancel and select a larger room.");
+                    errP.SetError(txtPartySize, "Party size must not exceed the capacity of the room, please enter a value of " + (MainWindow.maxCap) + " or less. Alternatively cancel and select a larger room.");
                 }
             }
             catch (MyException MyEx)
