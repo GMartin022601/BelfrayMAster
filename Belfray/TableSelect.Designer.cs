@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlTableSelect = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlCalendar = new System.Windows.Forms.Panel();
@@ -54,7 +55,7 @@
             this.lblPaymenType = new System.Windows.Forms.Label();
             this.numPartySize = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBookingNo = new System.Windows.Forms.TextBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.cbTime = new System.Windows.Forms.ComboBox();
             this.chkNewBooking = new System.Windows.Forms.CheckBox();
@@ -138,7 +139,7 @@
             this.tbl1 = new System.Windows.Forms.PictureBox();
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.errP = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlTableSelect.SuspendLayout();
             this.pnlCalendar.SuspendLayout();
             this.pnlGreen.SuspendLayout();
@@ -174,6 +175,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTableSelect
@@ -241,6 +243,17 @@
             this.pnlTableSelect.Name = "pnlTableSelect";
             this.pnlTableSelect.Size = new System.Drawing.Size(1196, 596);
             this.pnlTableSelect.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1075, 563);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 60;
+            this.button2.Text = "Close";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -430,7 +443,7 @@
             this.gbBookingDetails.Controls.Add(this.lblPaymenType);
             this.gbBookingDetails.Controls.Add(this.numPartySize);
             this.gbBookingDetails.Controls.Add(this.button1);
-            this.gbBookingDetails.Controls.Add(this.textBox2);
+            this.gbBookingDetails.Controls.Add(this.txtBookingNo);
             this.gbBookingDetails.Controls.Add(this.lblDate);
             this.gbBookingDetails.Controls.Add(this.cbTime);
             this.gbBookingDetails.Controls.Add(this.chkNewBooking);
@@ -439,6 +452,7 @@
             this.gbBookingDetails.Controls.Add(this.lblBookingType);
             this.gbBookingDetails.Controls.Add(this.cbBookingType);
             this.gbBookingDetails.Controls.Add(this.lblPartySize);
+            this.gbBookingDetails.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBookingDetails.Location = new System.Drawing.Point(5, 218);
             this.gbBookingDetails.Name = "gbBookingDetails";
             this.gbBookingDetails.Size = new System.Drawing.Size(532, 141);
@@ -448,13 +462,14 @@
             // 
             // btnAvailability
             // 
-            this.btnAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvailability.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAvailability.Location = new System.Drawing.Point(323, 107);
             this.btnAvailability.Name = "btnAvailability";
             this.btnAvailability.Size = new System.Drawing.Size(126, 29);
             this.btnAvailability.TabIndex = 35;
             this.btnAvailability.Text = "Check Availability?";
             this.btnAvailability.UseVisualStyleBackColor = true;
+            this.btnAvailability.Click += new System.EventHandler(this.btnAvailability_Click);
             // 
             // cbPaymentTyp
             // 
@@ -478,10 +493,10 @@
             // lblPaymenType
             // 
             this.lblPaymenType.AutoSize = true;
-            this.lblPaymenType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymenType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaymenType.Location = new System.Drawing.Point(6, 115);
             this.lblPaymenType.Name = "lblPaymenType";
-            this.lblPaymenType.Size = new System.Drawing.Size(82, 16);
+            this.lblPaymenType.Size = new System.Drawing.Size(82, 18);
             this.lblPaymenType.TabIndex = 30;
             this.lblPaymenType.Text = "Paying With:";
             // 
@@ -496,7 +511,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(323, 16);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -504,20 +519,20 @@
             this.button1.Text = "Get Info";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtBookingNo
             // 
-            this.textBox2.Location = new System.Drawing.Point(206, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 33;
+            this.txtBookingNo.Location = new System.Drawing.Point(206, 18);
+            this.txtBookingNo.Name = "txtBookingNo";
+            this.txtBookingNo.Size = new System.Drawing.Size(100, 25);
+            this.txtBookingNo.TabIndex = 33;
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(6, 83);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(40, 16);
+            this.lblDate.Size = new System.Drawing.Size(39, 18);
             this.lblDate.TabIndex = 24;
             this.lblDate.Text = "Date:";
             // 
@@ -534,10 +549,10 @@
             // chkNewBooking
             // 
             this.chkNewBooking.AutoSize = true;
-            this.chkNewBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkNewBooking.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkNewBooking.Location = new System.Drawing.Point(5, 19);
             this.chkNewBooking.Name = "chkNewBooking";
-            this.chkNewBooking.Size = new System.Drawing.Size(107, 20);
+            this.chkNewBooking.Size = new System.Drawing.Size(106, 22);
             this.chkNewBooking.TabIndex = 32;
             this.chkNewBooking.Text = "New Booking";
             this.chkNewBooking.UseVisualStyleBackColor = true;
@@ -546,30 +561,30 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.Location = new System.Drawing.Point(257, 83);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(42, 16);
+            this.lblTime.Size = new System.Drawing.Size(40, 18);
             this.lblTime.TabIndex = 28;
             this.lblTime.Text = "Time:";
             // 
             // lblBNoTag
             // 
             this.lblBNoTag.AutoSize = true;
-            this.lblBNoTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBNoTag.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBNoTag.Location = new System.Drawing.Point(119, 20);
             this.lblBNoTag.Name = "lblBNoTag";
-            this.lblBNoTag.Size = new System.Drawing.Size(82, 16);
+            this.lblBNoTag.Size = new System.Drawing.Size(81, 18);
             this.lblBNoTag.TabIndex = 22;
             this.lblBNoTag.Text = "Booking No:";
             // 
             // lblBookingType
             // 
             this.lblBookingType.AutoSize = true;
-            this.lblBookingType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingType.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBookingType.Location = new System.Drawing.Point(6, 51);
             this.lblBookingType.Name = "lblBookingType";
-            this.lblBookingType.Size = new System.Drawing.Size(43, 16);
+            this.lblBookingType.Size = new System.Drawing.Size(40, 18);
             this.lblBookingType.TabIndex = 26;
             this.lblBookingType.Text = "Type:";
             // 
@@ -586,10 +601,10 @@
             // lblPartySize
             // 
             this.lblPartySize.AutoSize = true;
-            this.lblPartySize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPartySize.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPartySize.Location = new System.Drawing.Point(179, 51);
             this.lblPartySize.Name = "lblPartySize";
-            this.lblPartySize.Size = new System.Drawing.Size(71, 16);
+            this.lblPartySize.Size = new System.Drawing.Size(69, 18);
             this.lblPartySize.TabIndex = 25;
             this.lblPartySize.Text = "Party Size:";
             // 
@@ -615,7 +630,7 @@
             this.gbCustomerDetails.Controls.Add(this.txtCustID);
             this.gbCustomerDetails.Controls.Add(this.lblCustID);
             this.gbCustomerDetails.Controls.Add(this.chkNewCustomer);
-            this.gbCustomerDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCustomerDetails.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbCustomerDetails.Location = new System.Drawing.Point(4, 4);
             this.gbCustomerDetails.Name = "gbCustomerDetails";
             this.gbCustomerDetails.Size = new System.Drawing.Size(536, 210);
@@ -628,7 +643,7 @@
             this.txtTelNo.Enabled = false;
             this.txtTelNo.Location = new System.Drawing.Point(241, 156);
             this.txtTelNo.Name = "txtTelNo";
-            this.txtTelNo.Size = new System.Drawing.Size(100, 22);
+            this.txtTelNo.Size = new System.Drawing.Size(100, 25);
             this.txtTelNo.TabIndex = 19;
             // 
             // lblTelNo
@@ -636,7 +651,7 @@
             this.lblTelNo.AutoSize = true;
             this.lblTelNo.Location = new System.Drawing.Point(186, 159);
             this.lblTelNo.Name = "lblTelNo";
-            this.lblTelNo.Size = new System.Drawing.Size(52, 16);
+            this.lblTelNo.Size = new System.Drawing.Size(49, 18);
             this.lblTelNo.TabIndex = 18;
             this.lblTelNo.Text = "Tel No:";
             // 
@@ -645,7 +660,7 @@
             this.txtPC.Enabled = false;
             this.txtPC.Location = new System.Drawing.Point(80, 156);
             this.txtPC.Name = "txtPC";
-            this.txtPC.Size = new System.Drawing.Size(100, 22);
+            this.txtPC.Size = new System.Drawing.Size(100, 25);
             this.txtPC.TabIndex = 17;
             // 
             // lblPC
@@ -653,7 +668,7 @@
             this.lblPC.AutoSize = true;
             this.lblPC.Location = new System.Drawing.Point(7, 159);
             this.lblPC.Name = "lblPC";
-            this.lblPC.Size = new System.Drawing.Size(69, 16);
+            this.lblPC.Size = new System.Drawing.Size(67, 18);
             this.lblPC.TabIndex = 16;
             this.lblPC.Text = "Postcode:";
             // 
@@ -662,7 +677,7 @@
             this.txtCounty.Enabled = false;
             this.txtCounty.Location = new System.Drawing.Point(377, 115);
             this.txtCounty.Name = "txtCounty";
-            this.txtCounty.Size = new System.Drawing.Size(100, 22);
+            this.txtCounty.Size = new System.Drawing.Size(100, 25);
             this.txtCounty.TabIndex = 15;
             // 
             // lbCounty
@@ -670,7 +685,7 @@
             this.lbCounty.AutoSize = true;
             this.lbCounty.Location = new System.Drawing.Point(316, 122);
             this.lbCounty.Name = "lbCounty";
-            this.lbCounty.Size = new System.Drawing.Size(52, 16);
+            this.lbCounty.Size = new System.Drawing.Size(55, 18);
             this.lbCounty.TabIndex = 14;
             this.lbCounty.Text = "County:";
             // 
@@ -679,7 +694,7 @@
             this.txtCity.Enabled = false;
             this.txtCity.Location = new System.Drawing.Point(207, 115);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(100, 22);
+            this.txtCity.Size = new System.Drawing.Size(100, 25);
             this.txtCity.TabIndex = 13;
             // 
             // lblCity
@@ -687,7 +702,7 @@
             this.lblCity.AutoSize = true;
             this.lblCity.Location = new System.Drawing.Point(167, 121);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(33, 16);
+            this.lblCity.Size = new System.Drawing.Size(34, 18);
             this.lblCity.TabIndex = 12;
             this.lblCity.Text = "City:";
             // 
@@ -696,7 +711,7 @@
             this.txtStreet.Enabled = false;
             this.txtStreet.Location = new System.Drawing.Point(60, 115);
             this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(100, 22);
+            this.txtStreet.Size = new System.Drawing.Size(100, 25);
             this.txtStreet.TabIndex = 11;
             // 
             // lblStreet
@@ -704,7 +719,7 @@
             this.lblStreet.AutoSize = true;
             this.lblStreet.Location = new System.Drawing.Point(7, 121);
             this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(46, 16);
+            this.lblStreet.Size = new System.Drawing.Size(47, 18);
             this.lblStreet.TabIndex = 10;
             this.lblStreet.Text = "Street:";
             // 
@@ -713,7 +728,7 @@
             this.txtLName.Enabled = false;
             this.txtLName.Location = new System.Drawing.Point(397, 69);
             this.txtLName.Name = "txtLName";
-            this.txtLName.Size = new System.Drawing.Size(100, 22);
+            this.txtLName.Size = new System.Drawing.Size(100, 25);
             this.txtLName.TabIndex = 9;
             // 
             // lblLname
@@ -721,7 +736,7 @@
             this.lblLname.AutoSize = true;
             this.lblLname.Location = new System.Drawing.Point(316, 72);
             this.lblLname.Name = "lblLname";
-            this.lblLname.Size = new System.Drawing.Size(76, 16);
+            this.lblLname.Size = new System.Drawing.Size(75, 18);
             this.lblLname.TabIndex = 8;
             this.lblLname.Text = "Last Name:";
             // 
@@ -730,7 +745,7 @@
             this.txtFname.Enabled = false;
             this.txtFname.Location = new System.Drawing.Point(210, 69);
             this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(100, 22);
+            this.txtFname.Size = new System.Drawing.Size(100, 25);
             this.txtFname.TabIndex = 7;
             // 
             // lblFName
@@ -738,7 +753,7 @@
             this.lblFName.AutoSize = true;
             this.lblFName.Location = new System.Drawing.Point(128, 72);
             this.lblFName.Name = "lblFName";
-            this.lblFName.Size = new System.Drawing.Size(76, 16);
+            this.lblFName.Size = new System.Drawing.Size(76, 18);
             this.lblFName.TabIndex = 6;
             this.lblFName.Text = "First Name:";
             // 
@@ -751,9 +766,15 @@
             "Mrs"});
             this.cbTitle.Enabled = false;
             this.cbTitle.FormattingEnabled = true;
+            this.cbTitle.Items.AddRange(new object[] {
+            "MR",
+            "MISS",
+            "MRS",
+            "MS",
+            "DR"});
             this.cbTitle.Location = new System.Drawing.Point(50, 68);
             this.cbTitle.Name = "cbTitle";
-            this.cbTitle.Size = new System.Drawing.Size(72, 24);
+            this.cbTitle.Size = new System.Drawing.Size(72, 26);
             this.cbTitle.TabIndex = 5;
             // 
             // lblTitle
@@ -761,7 +782,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Location = new System.Drawing.Point(7, 72);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(37, 16);
+            this.lblTitle.Size = new System.Drawing.Size(36, 18);
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Title:";
             // 
@@ -778,26 +799,26 @@
             // 
             this.txtCustID.Location = new System.Drawing.Point(221, 24);
             this.txtCustID.Name = "txtCustID";
-            this.txtCustID.Size = new System.Drawing.Size(100, 22);
+            this.txtCustID.Size = new System.Drawing.Size(100, 25);
             this.txtCustID.TabIndex = 2;
             // 
             // lblCustID
             // 
             this.lblCustID.AutoSize = true;
-            this.lblCustID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustID.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustID.Location = new System.Drawing.Point(128, 24);
             this.lblCustID.Name = "lblCustID";
-            this.lblCustID.Size = new System.Drawing.Size(84, 16);
+            this.lblCustID.Size = new System.Drawing.Size(86, 18);
             this.lblCustID.TabIndex = 1;
             this.lblCustID.Text = "Customer ID:";
             // 
             // chkNewCustomer
             // 
             this.chkNewCustomer.AutoSize = true;
-            this.chkNewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkNewCustomer.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkNewCustomer.Location = new System.Drawing.Point(6, 24);
             this.chkNewCustomer.Name = "chkNewCustomer";
-            this.chkNewCustomer.Size = new System.Drawing.Size(114, 20);
+            this.chkNewCustomer.Size = new System.Drawing.Size(116, 22);
             this.chkNewCustomer.TabIndex = 0;
             this.chkNewCustomer.Text = "New Customer";
             this.chkNewCustomer.UseVisualStyleBackColor = true;
@@ -1409,15 +1430,9 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Table Information";
             // 
-            // button2
+            // errP
             // 
-            this.button2.Location = new System.Drawing.Point(1075, 563);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 60;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.errP.ContainerControl = this;
             // 
             // TableSelect
             // 
@@ -1471,6 +1486,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1580,12 +1596,13 @@
         private System.Windows.Forms.GroupBox gbBookingDetails;
         private System.Windows.Forms.Button btnAvailability;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBookingNo;
         private System.Windows.Forms.CheckBox chkNewBooking;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvBooking;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider errP;
     }
 }

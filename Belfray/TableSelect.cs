@@ -14,17 +14,28 @@ namespace Belfray
     public partial class TableSelect : Form
     {
         //SQL links
-        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV;// daSupplier;
+        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daTables;// daSupplier;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType;
-        DataRow drCustomer, drBooking, drBookingType, drPaymentType;
-        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV;
+        SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBTables;
+        DataRow drCustomer, drBooking, drBookingType, drPaymentType, drTables;
+        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlTables;
         bool formLoad = true;
         public bool arrowCreated = false;
 
         public TableSelect()
         {
             InitializeComponent();
+        }
+
+        //GetProductNumber
+        private void getCustNum(int noRows)
+        {
+            drCustomer = dsBelfray.Tables["Customer"].Rows[noRows - 1];
+            
+        }
+        private void getBookingNum(int noRows)
+        {
+            drBooking = dsBelfray.Tables["Booking"].Rows[noRows - 1];
         }
 
         //Creates the Up arrow
@@ -937,6 +948,45 @@ namespace Belfray
             //arrowControlUp(colour, arrowCreated, 103, 165);
         }
 
+        //SAVE
+        private void btnAvailability_Click(object sender, EventArgs e)
+        {
+            MyCustomer myCus = new MyCustomer();
+            MyBooking myBook = new MyBooking();
+            bool ok = true;
+            errP.Clear();
+
+            if (drCustomer["customerTitle"].ToString() == "MR")
+            {
+                cbTitle.SelectedIndex = 0;
+            }
+            if (drCustomer["customerTitle"].ToString() == "MISS")
+            {
+                cbTitle.SelectedIndex = 1;
+            }
+            if (drCustomer["customerTitle"].ToString() == "MRS")
+            {
+                cbTitle.SelectedIndex = 2;
+            }
+            if (drCustomer["customerTitle"].ToString() == "MS")
+            {
+                cbTitle.SelectedIndex = 3;
+            }
+            if (drCustomer["customerTitle"].ToString() == "DR")
+            {
+                cbTitle.SelectedIndex = 4;
+            }
+
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+        }
+
         private void tbl17_MouseEnter(object sender, EventArgs e)
         {
             bool available = true;
@@ -1337,16 +1387,26 @@ namespace Belfray
                 pnlCustomerDetails.Enabled = true;
                 numPartySize.Value = 2;
                 //Data Grid View
-                sqlBookingDGV = @"select bookingNo, checkInDate, typeID, bookingTime, customerNo, paymentTypeID, partySize, tableNo from Booking WHERE tableNo = '1'"; //Join RestTables on tableNo = Booking.tableNo" RestTables.allocated;
-                daBookingDGV = new SqlDataAdapter(sqlBookingDGV, connStr);
+                //sqlBookingDGV = @"select bookingNo, checkInDate, typeID, bookingTime, customerNo, paymentTypeID, partySize, tableNo from Booking WHERE tableNo = '1'"; //Join RestTables on tableNo = Booking.tableNo" RestTables.allocated;
+                //sqlBookingDGV = @"SELECT bookingNo AS 'Booking No', checkInDate AS 'Date', BType.typeDesc AS 'Booking Type', CONVERT(char(5), Booking.bookingTime, 108) AS 'Time', 
+                //            Booking.customerNo AS 'Customer No', Customer.customerForename As 'Forename', Customer.customerSurname AS 'Surname', Payment.paymentTypeDesc AS 'Payment', 
+                //            Booking.partySize AS 'Party Size', Booking.tableNo AS 'Table' FROM Booking
+                //            LEFT JOIN BType ON  BType.typeID = Booking.typeID
+                //            LEFT JOIN Customer on Customer.customerNo = Booking.customerNo
+                //            LEFT JOIN Payment on Payment.paymentTypeID = Booking.paymentTypeID
+                //            LEFT JOIN RestTables on RestTables.tableNo = Booking.tableNo
+                //            WHERE Booking.tableNo = '1'";
+                //daBookingDGV = new SqlDataAdapter(sqlBookingDGV, connStr);
+                ////cmdBBookingDGV = new SqlCommandBuilder(daBookingDGV);
 
-                daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
-                daBookingDGV.Fill(dsBelfray, "Booking");
+                //daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
+                //daBookingDGV.Fill(dsBelfray, "Booking");
 
-                dgvBooking.Visible = true;
-                dgvBooking.DataSource = dsBelfray.Tables["Booking"];
-                //Resize
-                dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                //dgvBooking.Visible = true;
+                //dgvBooking.DataSource = dsBelfray.Tables["Booking"];
+                ////Resize
+                //dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
             }
         }
 
@@ -1362,6 +1422,24 @@ namespace Belfray
                 txtCounty.Enabled = true;
                 txtPC.Enabled = true;
                 txtTelNo.Enabled = true;
+
+                //generate cust number
+                int noRows = dsBelfray.Tables["Customer"].Rows.Count;
+
+                if (noRows == 0)
+                {
+                    txtCustID.Text = "CUS100000";
+                }
+                else
+                {
+                    getCustNum(noRows);
+                }
+
+                string s = drCustomer["customerNo"].ToString();
+                string s1 = "CUS" + (Convert.ToInt32(s.Replace("CUS", "")) + 1).ToString().PadLeft(5, '0');
+                txtCustID.Text = s1;
+
+
             }
             else if (chkNewCustomer.Checked == false)
             {
@@ -1374,6 +1452,7 @@ namespace Belfray
                 txtCounty.Enabled = false;
                 txtPC.Enabled = false;
                 txtTelNo.Enabled = false;
+                txtCustID.Text = "";
             }
 
         }
@@ -1387,6 +1466,22 @@ namespace Belfray
                 dateBooking.Enabled = true;
                 cbTime.Enabled = true;
                 cbPaymentTyp.Enabled = true;
+
+                //generate booking number
+                int noRows = dsBelfray.Tables["Booking"].Rows.Count;
+
+                if (noRows == 0)
+                {
+                    txtBookingNo.Text = "BK100000000";
+                }
+                else
+                {
+                    getBookingNum(noRows);
+                }
+
+                string s = drBooking["bookingNo"].ToString();
+                string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
+                txtBookingNo.Text = s1;
             }
             else if (chkNewBooking.Checked == false)
             {
@@ -1395,15 +1490,16 @@ namespace Belfray
                 dateBooking.Enabled = false;
                 cbTime.Enabled = false;
                 cbPaymentTyp.Enabled = false;
+                txtBookingNo.Text = "";
             }
         }
 
         private void TableSelect_Load(object sender, EventArgs e)
         {
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -1415,30 +1511,34 @@ namespace Belfray
             cmdBBooking = new SqlCommandBuilder(daBooking);
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
             daBooking.Fill(dsBelfray, "Booking");
-
             //SQL For Customer
             sqlCustomer = @"select * from Customer";
             daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
             cmdBCustomer = new SqlCommandBuilder(daCustomer);
-            daCustomer.FillSchema(dsBelfray, SchemaType.Source, "Customr");
+            daCustomer.FillSchema(dsBelfray, SchemaType.Source, "Customer");
             daCustomer.Fill(dsBelfray, "Customer");
-
             //SQL for booking Type
             sqlBookingType = @"select * from BType";
             daBookingType = new SqlDataAdapter(sqlBookingType, connStr);
             cmdBBookingType = new SqlCommandBuilder(daBookingType);
             daBookingType.FillSchema(dsBelfray, SchemaType.Source, "BType");
             daBookingType.Fill(dsBelfray, "BType");
-
-            //SQL for booking Type
+            //SQL for Payment Type
             sqlPaymentType = @"select * from Payment";
             daPaymentType = new SqlDataAdapter(sqlPaymentType, connStr);
             cmdBPaymentType = new SqlCommandBuilder(daPaymentType);
             daPaymentType.FillSchema(dsBelfray, SchemaType.Source, "Payment");
             daPaymentType.Fill(dsBelfray, "Payment");
+            //SQL For Tables
+            sqlTables = @"select * from RestTables";
+            daTables = new SqlDataAdapter(sqlTables, connStr);
+            cmdBTables = new SqlCommandBuilder(daTables);
+            daTables.FillSchema(dsBelfray, SchemaType.Source, "RestTables");
+            daTables.Fill(dsBelfray, "RestTables");
 
-            //SQL for Booking DGV - TO BE EDITED TO SHOW TABLE BOOKINGS
-            //sqlBookingDGV = @"select * from Booking WHERE typeID = 'TYP10002' OR typeID ='TYP10003' OR typeID ='TYP10004' OR typeID ='TYP10005' OR typeID ='TYP10006' OR typeID ='TYP10007'";
+            ////SQL for Booking DGV - TO BE EDITED TO SHOW TABLE BOOKINGS
+            //sqlBookingDGV = @"select * from Booking WHERE Booking.tableNo = '2'";
+            ////typeID = 'TYP10002' OR typeID ='TYP10003' OR typeID ='TYP10004' OR typeID ='TYP10005' OR typeID ='TYP10006' OR typeID ='TYP10007'";
             //daBookingDGV = new SqlDataAdapter(sqlBooking, connStr);
 
             //daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
@@ -1460,6 +1560,13 @@ namespace Belfray
             cbPaymentTyp.ValueMember = "paymentTypeID";
             cbPaymentTyp.DisplayMember = "paymentTypeDesc";
             cbPaymentTyp.SelectedIndex = -1;
+
+            //cb Title
+            //cbTitle.DataSource = dsBelfray.Tables["Customer"];
+            //cbTitle.ValueMember = "customerTitle";
+            //cbTitle.DisplayMember = "customerTitle";
+            cbTitle.SelectedIndex = -1;
+
         }
 
 
