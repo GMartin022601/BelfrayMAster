@@ -29,26 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
-            this.picCancellAddProd = new System.Windows.Forms.PictureBox();
-            this.picSaveAddProdDet = new System.Windows.Forms.PictureBox();
-            this.gbRoomDets = new System.Windows.Forms.GroupBox();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblPPDay = new System.Windows.Forms.Label();
-            this.lblDailyRate = new System.Windows.Forms.Label();
-            this.lblRoomCapacity = new System.Windows.Forms.Label();
-            this.lblCapacity = new System.Windows.Forms.Label();
-            this.lblRoomDesc = new System.Windows.Forms.Label();
-            this.lblRoomType = new System.Windows.Forms.Label();
-            this.lblRoomNo = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
-            this.lblRoomNum = new System.Windows.Forms.Label();
-            this.lblCheckOutDate = new System.Windows.Forms.Label();
-            this.lblCheckInDate = new System.Windows.Forms.Label();
-            this.dtpCheckOutDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpCheckInDate = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.picCancellRoomSelect = new System.Windows.Forms.PictureBox();
+            this.picSaveRoomSelect = new System.Windows.Forms.PictureBox();
             this.pnlRed = new System.Windows.Forms.Panel();
             this.lblRedCapacityValue = new System.Windows.Forms.Label();
             this.lblRedCapacity = new System.Windows.Forms.Label();
@@ -84,10 +66,26 @@
             this.picRoom103 = new System.Windows.Forms.PictureBox();
             this.picRoom102 = new System.Windows.Forms.PictureBox();
             this.picRoom101 = new System.Windows.Forms.PictureBox();
+            this.gbRoomDets = new System.Windows.Forms.GroupBox();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblPPDay = new System.Windows.Forms.Label();
+            this.lblDailyRate = new System.Windows.Forms.Label();
+            this.lblRoomCapacity = new System.Windows.Forms.Label();
+            this.lblCapacity = new System.Windows.Forms.Label();
+            this.lblRoomDesc = new System.Windows.Forms.Label();
+            this.lblRoomType = new System.Windows.Forms.Label();
+            this.lblRoomNo = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblRoomNum = new System.Windows.Forms.Label();
+            this.lblCheckOutDate = new System.Windows.Forms.Label();
+            this.lblCheckInDate = new System.Windows.Forms.Label();
+            this.dtpCheckOutDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpCheckInDate = new System.Windows.Forms.DateTimePicker();
             this.pnlFloorPlan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCancellAddProd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).BeginInit();
-            this.gbRoomDets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancellRoomSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveRoomSelect)).BeginInit();
             this.pnlRed.SuspendLayout();
             this.pnlGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom119)).BeginInit();
@@ -109,14 +107,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoom103)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom102)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom101)).BeginInit();
+            this.gbRoomDets.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlFloorPlan
             // 
             this.pnlFloorPlan.BackgroundImage = global::Belfray.Properties.Resources.floorplan_layout;
-            this.pnlFloorPlan.Controls.Add(this.picCancellAddProd);
-            this.pnlFloorPlan.Controls.Add(this.picSaveAddProdDet);
-            this.pnlFloorPlan.Controls.Add(this.button1);
+            this.pnlFloorPlan.Controls.Add(this.picCancellRoomSelect);
+            this.pnlFloorPlan.Controls.Add(this.picSaveRoomSelect);
             this.pnlFloorPlan.Controls.Add(this.pnlRed);
             this.pnlFloorPlan.Controls.Add(this.pnlGreen);
             this.pnlFloorPlan.Controls.Add(this.picRoom119);
@@ -144,219 +142,31 @@
             this.pnlFloorPlan.Size = new System.Drawing.Size(1200, 600);
             this.pnlFloorPlan.TabIndex = 22;
             // 
-            // picCancellAddProd
+            // picCancellRoomSelect
             // 
-            this.picCancellAddProd.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picCancellAddProd.Location = new System.Drawing.Point(734, 557);
-            this.picCancellAddProd.Name = "picCancellAddProd";
-            this.picCancellAddProd.Size = new System.Drawing.Size(40, 40);
-            this.picCancellAddProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCancellAddProd.TabIndex = 64;
-            this.picCancellAddProd.TabStop = false;
+            this.picCancellRoomSelect.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picCancellRoomSelect.Location = new System.Drawing.Point(734, 557);
+            this.picCancellRoomSelect.Name = "picCancellRoomSelect";
+            this.picCancellRoomSelect.Size = new System.Drawing.Size(40, 40);
+            this.picCancellRoomSelect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCancellRoomSelect.TabIndex = 64;
+            this.picCancellRoomSelect.TabStop = false;
+            this.picCancellRoomSelect.Click += new System.EventHandler(this.picCancellRoomSelect_Click);
+            this.picCancellRoomSelect.MouseEnter += new System.EventHandler(this.picCancellRoomSelect_MouseEnter);
+            this.picCancellRoomSelect.MouseLeave += new System.EventHandler(this.picCancellRoomSelect_MouseLeave);
             // 
-            // picSaveAddProdDet
+            // picSaveRoomSelect
             // 
-            this.picSaveAddProdDet.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveAddProdDet.Location = new System.Drawing.Point(777, 557);
-            this.picSaveAddProdDet.Name = "picSaveAddProdDet";
-            this.picSaveAddProdDet.Size = new System.Drawing.Size(40, 40);
-            this.picSaveAddProdDet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSaveAddProdDet.TabIndex = 63;
-            this.picSaveAddProdDet.TabStop = false;
-            // 
-            // gbRoomDets
-            // 
-            this.gbRoomDets.Controls.Add(this.lblTotalPrice);
-            this.gbRoomDets.Controls.Add(this.lblPrice);
-            this.gbRoomDets.Controls.Add(this.lblPPDay);
-            this.gbRoomDets.Controls.Add(this.lblDailyRate);
-            this.gbRoomDets.Controls.Add(this.lblRoomCapacity);
-            this.gbRoomDets.Controls.Add(this.lblCapacity);
-            this.gbRoomDets.Controls.Add(this.lblRoomDesc);
-            this.gbRoomDets.Controls.Add(this.lblRoomType);
-            this.gbRoomDets.Controls.Add(this.lblRoomNo);
-            this.gbRoomDets.Controls.Add(this.lblDescription);
-            this.gbRoomDets.Controls.Add(this.lblType);
-            this.gbRoomDets.Controls.Add(this.lblRoomNum);
-            this.gbRoomDets.Controls.Add(this.lblCheckOutDate);
-            this.gbRoomDets.Controls.Add(this.lblCheckInDate);
-            this.gbRoomDets.Controls.Add(this.dtpCheckOutDate);
-            this.gbRoomDets.Controls.Add(this.dtpCheckInDate);
-            this.gbRoomDets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbRoomDets.Location = new System.Drawing.Point(410, 320);
-            this.gbRoomDets.Name = "gbRoomDets";
-            this.gbRoomDets.Size = new System.Drawing.Size(747, 232);
-            this.gbRoomDets.TabIndex = 58;
-            this.gbRoomDets.TabStop = false;
-            this.gbRoomDets.Text = "Room Details";
-            // 
-            // lblTotalPrice
-            // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(526, 202);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(11, 15);
-            this.lblTotalPrice.TabIndex = 69;
-            this.lblTotalPrice.Text = "-";
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(395, 202);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(86, 15);
-            this.lblPrice.TabIndex = 67;
-            this.lblPrice.Text = "TOTAL PRICE:";
-            // 
-            // lblPPDay
-            // 
-            this.lblPPDay.AutoSize = true;
-            this.lblPPDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPPDay.Location = new System.Drawing.Point(125, 202);
-            this.lblPPDay.Name = "lblPPDay";
-            this.lblPPDay.Size = new System.Drawing.Size(11, 15);
-            this.lblPPDay.TabIndex = 66;
-            this.lblPPDay.Text = "-";
-            // 
-            // lblDailyRate
-            // 
-            this.lblDailyRate.AutoSize = true;
-            this.lblDailyRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDailyRate.Location = new System.Drawing.Point(10, 202);
-            this.lblDailyRate.Name = "lblDailyRate";
-            this.lblDailyRate.Size = new System.Drawing.Size(77, 15);
-            this.lblDailyRate.TabIndex = 65;
-            this.lblDailyRate.Text = "DAILY RATE:";
-            // 
-            // lblRoomCapacity
-            // 
-            this.lblRoomCapacity.AutoSize = true;
-            this.lblRoomCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomCapacity.Location = new System.Drawing.Point(526, 73);
-            this.lblRoomCapacity.Name = "lblRoomCapacity";
-            this.lblRoomCapacity.Size = new System.Drawing.Size(11, 15);
-            this.lblRoomCapacity.TabIndex = 64;
-            this.lblRoomCapacity.Text = "-";
-            // 
-            // lblCapacity
-            // 
-            this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapacity.Location = new System.Drawing.Point(395, 73);
-            this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(65, 15);
-            this.lblCapacity.TabIndex = 63;
-            this.lblCapacity.Text = "CAPACITY:";
-            // 
-            // lblRoomDesc
-            // 
-            this.lblRoomDesc.AutoSize = true;
-            this.lblRoomDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomDesc.Location = new System.Drawing.Point(125, 150);
-            this.lblRoomDesc.Name = "lblRoomDesc";
-            this.lblRoomDesc.Size = new System.Drawing.Size(11, 15);
-            this.lblRoomDesc.TabIndex = 62;
-            this.lblRoomDesc.Text = "-";
-            // 
-            // lblRoomType
-            // 
-            this.lblRoomType.AutoSize = true;
-            this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomType.Location = new System.Drawing.Point(125, 112);
-            this.lblRoomType.Name = "lblRoomType";
-            this.lblRoomType.Size = new System.Drawing.Size(11, 15);
-            this.lblRoomType.TabIndex = 61;
-            this.lblRoomType.Text = "-";
-            // 
-            // lblRoomNo
-            // 
-            this.lblRoomNo.AutoSize = true;
-            this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNo.Location = new System.Drawing.Point(125, 73);
-            this.lblRoomNo.Name = "lblRoomNo";
-            this.lblRoomNo.Size = new System.Drawing.Size(11, 15);
-            this.lblRoomNo.TabIndex = 60;
-            this.lblRoomNo.Text = "-";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(10, 150);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(91, 15);
-            this.lblDescription.TabIndex = 59;
-            this.lblDescription.Text = "DESCRIPTION:";
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(10, 112);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(40, 15);
-            this.lblType.TabIndex = 58;
-            this.lblType.Text = "TYPE:";
-            // 
-            // lblRoomNum
-            // 
-            this.lblRoomNum.AutoSize = true;
-            this.lblRoomNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNum.Location = new System.Drawing.Point(10, 73);
-            this.lblRoomNum.Name = "lblRoomNum";
-            this.lblRoomNum.Size = new System.Drawing.Size(105, 15);
-            this.lblRoomNum.TabIndex = 57;
-            this.lblRoomNum.Text = "ROOM NUMBER:";
-            // 
-            // lblCheckOutDate
-            // 
-            this.lblCheckOutDate.AutoSize = true;
-            this.lblCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckOutDate.Location = new System.Drawing.Point(395, 35);
-            this.lblCheckOutDate.Name = "lblCheckOutDate";
-            this.lblCheckOutDate.Size = new System.Drawing.Size(113, 15);
-            this.lblCheckOutDate.TabIndex = 55;
-            this.lblCheckOutDate.Text = "CHECK OUT DATE:";
-            // 
-            // lblCheckInDate
-            // 
-            this.lblCheckInDate.AutoSize = true;
-            this.lblCheckInDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckInDate.Location = new System.Drawing.Point(10, 35);
-            this.lblCheckInDate.Name = "lblCheckInDate";
-            this.lblCheckInDate.Size = new System.Drawing.Size(100, 15);
-            this.lblCheckInDate.TabIndex = 41;
-            this.lblCheckInDate.Text = "CHECK IN DATE:";
-            // 
-            // dtpCheckOutDate
-            // 
-            this.dtpCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckOutDate.Location = new System.Drawing.Point(529, 30);
-            this.dtpCheckOutDate.Name = "dtpCheckOutDate";
-            this.dtpCheckOutDate.Size = new System.Drawing.Size(200, 21);
-            this.dtpCheckOutDate.TabIndex = 56;
-            this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
-            // 
-            // dtpCheckInDate
-            // 
-            this.dtpCheckInDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckInDate.Location = new System.Drawing.Point(128, 30);
-            this.dtpCheckInDate.Name = "dtpCheckInDate";
-            this.dtpCheckInDate.Size = new System.Drawing.Size(200, 21);
-            this.dtpCheckInDate.TabIndex = 42;
-            this.dtpCheckInDate.ValueChanged += new System.EventHandler(this.dtpCheckInDate_ValueChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1082, 565);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 57;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.picSaveRoomSelect.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSaveRoomSelect.Location = new System.Drawing.Point(777, 557);
+            this.picSaveRoomSelect.Name = "picSaveRoomSelect";
+            this.picSaveRoomSelect.Size = new System.Drawing.Size(40, 40);
+            this.picSaveRoomSelect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSaveRoomSelect.TabIndex = 63;
+            this.picSaveRoomSelect.TabStop = false;
+            this.picSaveRoomSelect.Click += new System.EventHandler(this.picSaveRoomSelect_Click);
+            this.picSaveRoomSelect.MouseEnter += new System.EventHandler(this.picSaveRoomSelect_MouseEnter);
+            this.picSaveRoomSelect.MouseLeave += new System.EventHandler(this.picSaveRoomSelect_MouseLeave);
             // 
             // pnlRed
             // 
@@ -784,6 +594,190 @@
             this.picRoom101.MouseEnter += new System.EventHandler(this.picRoom101_MouseEnter);
             this.picRoom101.MouseLeave += new System.EventHandler(this.picRoom101_MouseLeave);
             // 
+            // gbRoomDets
+            // 
+            this.gbRoomDets.Controls.Add(this.lblTotalPrice);
+            this.gbRoomDets.Controls.Add(this.lblPrice);
+            this.gbRoomDets.Controls.Add(this.lblPPDay);
+            this.gbRoomDets.Controls.Add(this.lblDailyRate);
+            this.gbRoomDets.Controls.Add(this.lblRoomCapacity);
+            this.gbRoomDets.Controls.Add(this.lblCapacity);
+            this.gbRoomDets.Controls.Add(this.lblRoomDesc);
+            this.gbRoomDets.Controls.Add(this.lblRoomType);
+            this.gbRoomDets.Controls.Add(this.lblRoomNo);
+            this.gbRoomDets.Controls.Add(this.lblDescription);
+            this.gbRoomDets.Controls.Add(this.lblType);
+            this.gbRoomDets.Controls.Add(this.lblRoomNum);
+            this.gbRoomDets.Controls.Add(this.lblCheckOutDate);
+            this.gbRoomDets.Controls.Add(this.lblCheckInDate);
+            this.gbRoomDets.Controls.Add(this.dtpCheckOutDate);
+            this.gbRoomDets.Controls.Add(this.dtpCheckInDate);
+            this.gbRoomDets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbRoomDets.Location = new System.Drawing.Point(410, 320);
+            this.gbRoomDets.Name = "gbRoomDets";
+            this.gbRoomDets.Size = new System.Drawing.Size(747, 232);
+            this.gbRoomDets.TabIndex = 58;
+            this.gbRoomDets.TabStop = false;
+            this.gbRoomDets.Text = "Room Details";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(526, 202);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(11, 15);
+            this.lblTotalPrice.TabIndex = 69;
+            this.lblTotalPrice.Text = "-";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(395, 202);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(86, 15);
+            this.lblPrice.TabIndex = 67;
+            this.lblPrice.Text = "TOTAL PRICE:";
+            // 
+            // lblPPDay
+            // 
+            this.lblPPDay.AutoSize = true;
+            this.lblPPDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPPDay.Location = new System.Drawing.Point(125, 202);
+            this.lblPPDay.Name = "lblPPDay";
+            this.lblPPDay.Size = new System.Drawing.Size(11, 15);
+            this.lblPPDay.TabIndex = 66;
+            this.lblPPDay.Text = "-";
+            // 
+            // lblDailyRate
+            // 
+            this.lblDailyRate.AutoSize = true;
+            this.lblDailyRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDailyRate.Location = new System.Drawing.Point(10, 202);
+            this.lblDailyRate.Name = "lblDailyRate";
+            this.lblDailyRate.Size = new System.Drawing.Size(77, 15);
+            this.lblDailyRate.TabIndex = 65;
+            this.lblDailyRate.Text = "DAILY RATE:";
+            // 
+            // lblRoomCapacity
+            // 
+            this.lblRoomCapacity.AutoSize = true;
+            this.lblRoomCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomCapacity.Location = new System.Drawing.Point(526, 73);
+            this.lblRoomCapacity.Name = "lblRoomCapacity";
+            this.lblRoomCapacity.Size = new System.Drawing.Size(11, 15);
+            this.lblRoomCapacity.TabIndex = 64;
+            this.lblRoomCapacity.Text = "-";
+            // 
+            // lblCapacity
+            // 
+            this.lblCapacity.AutoSize = true;
+            this.lblCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCapacity.Location = new System.Drawing.Point(395, 73);
+            this.lblCapacity.Name = "lblCapacity";
+            this.lblCapacity.Size = new System.Drawing.Size(65, 15);
+            this.lblCapacity.TabIndex = 63;
+            this.lblCapacity.Text = "CAPACITY:";
+            // 
+            // lblRoomDesc
+            // 
+            this.lblRoomDesc.AutoSize = true;
+            this.lblRoomDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomDesc.Location = new System.Drawing.Point(125, 150);
+            this.lblRoomDesc.Name = "lblRoomDesc";
+            this.lblRoomDesc.Size = new System.Drawing.Size(11, 15);
+            this.lblRoomDesc.TabIndex = 62;
+            this.lblRoomDesc.Text = "-";
+            // 
+            // lblRoomType
+            // 
+            this.lblRoomType.AutoSize = true;
+            this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomType.Location = new System.Drawing.Point(125, 112);
+            this.lblRoomType.Name = "lblRoomType";
+            this.lblRoomType.Size = new System.Drawing.Size(11, 15);
+            this.lblRoomType.TabIndex = 61;
+            this.lblRoomType.Text = "-";
+            // 
+            // lblRoomNo
+            // 
+            this.lblRoomNo.AutoSize = true;
+            this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNo.Location = new System.Drawing.Point(125, 73);
+            this.lblRoomNo.Name = "lblRoomNo";
+            this.lblRoomNo.Size = new System.Drawing.Size(11, 15);
+            this.lblRoomNo.TabIndex = 60;
+            this.lblRoomNo.Text = "-";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(10, 150);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(91, 15);
+            this.lblDescription.TabIndex = 59;
+            this.lblDescription.Text = "DESCRIPTION:";
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(10, 112);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(40, 15);
+            this.lblType.TabIndex = 58;
+            this.lblType.Text = "TYPE:";
+            // 
+            // lblRoomNum
+            // 
+            this.lblRoomNum.AutoSize = true;
+            this.lblRoomNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNum.Location = new System.Drawing.Point(10, 73);
+            this.lblRoomNum.Name = "lblRoomNum";
+            this.lblRoomNum.Size = new System.Drawing.Size(105, 15);
+            this.lblRoomNum.TabIndex = 57;
+            this.lblRoomNum.Text = "ROOM NUMBER:";
+            // 
+            // lblCheckOutDate
+            // 
+            this.lblCheckOutDate.AutoSize = true;
+            this.lblCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckOutDate.Location = new System.Drawing.Point(395, 35);
+            this.lblCheckOutDate.Name = "lblCheckOutDate";
+            this.lblCheckOutDate.Size = new System.Drawing.Size(113, 15);
+            this.lblCheckOutDate.TabIndex = 55;
+            this.lblCheckOutDate.Text = "CHECK OUT DATE:";
+            // 
+            // lblCheckInDate
+            // 
+            this.lblCheckInDate.AutoSize = true;
+            this.lblCheckInDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckInDate.Location = new System.Drawing.Point(10, 35);
+            this.lblCheckInDate.Name = "lblCheckInDate";
+            this.lblCheckInDate.Size = new System.Drawing.Size(100, 15);
+            this.lblCheckInDate.TabIndex = 41;
+            this.lblCheckInDate.Text = "CHECK IN DATE:";
+            // 
+            // dtpCheckOutDate
+            // 
+            this.dtpCheckOutDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(529, 30);
+            this.dtpCheckOutDate.Name = "dtpCheckOutDate";
+            this.dtpCheckOutDate.Size = new System.Drawing.Size(200, 21);
+            this.dtpCheckOutDate.TabIndex = 56;
+            this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
+            // 
+            // dtpCheckInDate
+            // 
+            this.dtpCheckInDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCheckInDate.Location = new System.Drawing.Point(128, 30);
+            this.dtpCheckInDate.Name = "dtpCheckInDate";
+            this.dtpCheckInDate.Size = new System.Drawing.Size(200, 21);
+            this.dtpCheckInDate.TabIndex = 42;
+            this.dtpCheckInDate.ValueChanged += new System.EventHandler(this.dtpCheckInDate_ValueChanged);
+            // 
             // RoomSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -796,10 +790,8 @@
             this.Text = "RoomSelect";
             this.Load += new System.EventHandler(this.RoomSelect_Load);
             this.pnlFloorPlan.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picCancellAddProd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).EndInit();
-            this.gbRoomDets.ResumeLayout(false);
-            this.gbRoomDets.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancellRoomSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveRoomSelect)).EndInit();
             this.pnlRed.ResumeLayout(false);
             this.pnlRed.PerformLayout();
             this.pnlGreen.ResumeLayout(false);
@@ -823,6 +815,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoom103)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom102)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom101)).EndInit();
+            this.gbRoomDets.ResumeLayout(false);
+            this.gbRoomDets.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -869,7 +863,6 @@
         private System.Windows.Forms.Label lblRedRoom;
         private System.Windows.Forms.DateTimePicker dtpCheckOutDate;
         private System.Windows.Forms.Label lblCheckOutDate;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox gbRoomDets;
         private System.Windows.Forms.Label lblRoomNum;
         private System.Windows.Forms.Label lblType;
@@ -883,7 +876,7 @@
         private System.Windows.Forms.Label lblPPDay;
         private System.Windows.Forms.Label lblDailyRate;
         private System.Windows.Forms.Label lblTotalPrice;
-        private System.Windows.Forms.PictureBox picCancellAddProd;
-        private System.Windows.Forms.PictureBox picSaveAddProdDet;
+        private System.Windows.Forms.PictureBox picCancellRoomSelect;
+        private System.Windows.Forms.PictureBox picSaveRoomSelect;
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,52 +28,133 @@ namespace Belfray
             set { customerNo = value; }
         }
 
-        public string CustomerTitle
+        public string Title
         {
             get { return cusTitle; }
-            set { cusTitle = value; }
+            set
+            {
+                if (value.ToUpper() != "MR" && value.ToUpper() != "MISS" && value.ToUpper() != "MRS" && value.ToUpper() != "MS" && value.ToUpper() != "DR")
+                {
+                    throw new MyException("Title must be MR, MISS, MRS, MS or DR");
+                }
+                else
+                {
+                    cusTitle = MyValidation.EachLetterToUpper(value);
+                }
+            }
         }
 
-        public string CustomerSurname
+        public string Surname
         {
             get { return cusSurname; }
-            set { cusSurname = value; }
+            set
+            {
+                if (MyValidation.validLength(value, 2, 16) && MyValidation.validSurname(value))
+                {
+                    cusSurname = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                {
+                    throw new MyException("Surname must be between 2-16 letters");
+                }
+            }
         }
 
-        public string CustomerForename
+        public string Forename
         {
             get { return cusFname; }
-            set { cusFname = value; }
+            set
+            {
+                if (MyValidation.validLength(value, 2, 16) && MyValidation.validForename(value))
+                {
+                    cusFname = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                {
+                    throw new MyException("Forename must be between 2-16 letters");
+                }
+            }
         }
 
-        public string CustomerStreet
+        public string Street
         {
             get { return cusStreet; }
-            set { cusStreet = value; }
+            set
+            {
+                if (MyValidation.validLength(value, 5, 30) && MyValidation.validLetterNumberWhiteSpace(value))
+                {
+                    cusStreet = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                {
+                    throw new MyException("Street must be between 5-30 letters");
+                }
+            }
         }
 
-        public string CustomerCity
+        public string City
         {
             get { return cusCity; }
-            set { cusCity = value; }
+            set
+            {
+                if (MyValidation.validLength(value, 2, 18) && MyValidation.validLetterWhiteSpace(value))
+                {
+                    cusCity = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                {
+                    throw new MyException("City must be between 2-18 letters");
+                }
+            }
         }
 
-        public string CustomerCounty
+        public string County
         {
             get { return cusCounty; }
-            set { cusCounty = value; }
+            set
+            {
+                if (MyValidation.validLength(value, 5, 18) && MyValidation.validDesc(value))
+                {
+                    cusCounty = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                {
+                    throw new MyException("County must be between 5-18 letters");
+                }
+            }
         }
 
-        public string CustomerPC
+        public string Postcode
         {
             get { return cusPC; }
-            set { cusPC = value; }
+            set
+            {
+                if (MyValidation.validLength(value, 7, 8) && MyValidation.validLetterNumberWhiteSpace(value))
+                {
+                    cusPC = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                {
+                    throw new MyException("Postcode must be between 7-8 characters and alphanumeric only");
+                }
+            }
+
         }
 
-        public string CustomerTelNo
+        public string TelNo
         {
             get { return cusTel; }
-            set { CustomerTelNo = value; }
+            set
+            {
+                if (MyValidation.validLength(value, 11, 15) && MyValidation.validNumber(value))
+                {
+                    cusTel = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                {
+                    throw new MyException("Telephone must be between 11-15 digits");
+                }
+            }
         }
     }
 }

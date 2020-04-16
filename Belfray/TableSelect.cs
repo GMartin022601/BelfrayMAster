@@ -1029,6 +1029,11 @@ namespace Belfray
             lblRedCapacityValue.Text = "4";
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void tbl23_MouseLeave(object sender, EventArgs e)
         {
             arrowCreated = true;
@@ -1396,9 +1401,9 @@ namespace Belfray
         private void TableSelect_Load(object sender, EventArgs e)
         {
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 

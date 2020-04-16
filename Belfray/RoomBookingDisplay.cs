@@ -32,7 +32,14 @@ namespace Belfray
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Product
-            sqlBooking = @"select * from Booking WHERE typeID = 'TYP100001'";
+            sqlBooking = @"SELECT bookingNo AS 'Booking No', checkInDate AS 'Check In Date', checkOutDate AS 'Check Out Date', BType.typeDesc AS 'Booking Type', CONVERT(char(5), Booking.bookingTime, 108) AS 'Arrival', 
+                            Booking.customerNo AS 'Customer No', Customer.customerForename As 'Forename', Customer.customerSurname AS 'Surname', Payment.paymentTypeDesc AS 'Payment', 
+                            Booking.partySize AS 'Party Size', Booking.roomNo AS 'Room', Rooms.roomtype AS 'Room Type', Rooms.pricePerDay AS 'Price Per Day' FROM Booking
+                            LEFT JOIN BType ON  BType.typeID = Booking.typeID
+                            LEFT JOIN Customer on Customer.customerNo = Booking.customerNo
+                            LEFT JOIN Payment on Payment.paymentTypeID = Booking.paymentTypeID
+                            LEFT JOIN Rooms on Rooms.roomNo = Booking.roomNo
+                            WHERE Booking.typeID = 'TYP100001'";
             daBooking = new SqlDataAdapter(sqlBooking, connStr);
 
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
