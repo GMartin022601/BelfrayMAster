@@ -458,5 +458,11 @@
   <ItemGroup>
     <None Include="Resources\FinalDeleteButton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditTab_EditButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditTab_EditButton1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

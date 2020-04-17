@@ -18,6 +18,10 @@ namespace Belfray
         //(Room Booking = 1, Cleaning Stock = 2, Table Booking = 3, Restaurant Stock = 4, User Profile = 5, Administraion = 6)
         public int menuSelected = 0;
 
+        //Determines which menu option has been selected 
+        //(Display = 1, Search = 2, Add = 3, Edit = 4, Delete = 5)
+        public static int tabSelected = 0;
+
         //SQL links
         SqlDataAdapter daLogin, daBooking, daProduct, daProductType, daSupplier;
         DataSet dsBelfray = new DataSet();
@@ -251,7 +255,7 @@ namespace Belfray
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
-        {               
+        {
             //Current User
             lblUser.Text = LoginPage.currUser;
             int AccType = 0;
@@ -346,6 +350,8 @@ namespace Belfray
 
         private void picTabDisplay_Click(object sender, EventArgs e)
         {
+            tabSelected = 0;
+
             switch(menuSelected)
             {
                 case 0: //Welcome
@@ -389,6 +395,8 @@ namespace Belfray
 
         private void picTabSearch_Click(object sender, EventArgs e)
         {
+            tabSelected = 1;
+
             switch (menuSelected)
             {
                 case 0: //Welcome
@@ -425,6 +433,8 @@ namespace Belfray
 
         private void picTabAdd_Click(object sender, EventArgs e)
         {
+            tabSelected = 2;
+
             switch (menuSelected)
             {
                 case 0: //Welcome
@@ -483,6 +493,8 @@ namespace Belfray
 
         private void picTabEdit_Click(object sender, EventArgs e)
         {
+            tabSelected = 3;
+
             switch (menuSelected)
             {
                 case 0: //Welcome
@@ -492,8 +504,10 @@ namespace Belfray
                     frm.TopLevel = false;
                     frm.FormBorderStyle = FormBorderStyle.None;
                     frm.WindowState = FormWindowState.Maximized;
+                    frm.FormClosed += RoomBookingEdit_Closed;
+                    frm.FormClosing += RoomBookingEdit_Closing;
                     pnlMainBody.Controls.Add(frm);
-                    frm.Show();
+                    frm.Show();                    
                     break;
                 case 2: //Room Stock
                     break;
@@ -522,7 +536,7 @@ namespace Belfray
                     break;
             }
 
-            //Diable Selected Tab
+            //Disable Selected Tab
             picTabEdit.Enabled = false;
 
             //Enable All Other Tabs
@@ -534,6 +548,8 @@ namespace Belfray
 
         private void picTabDelete_Click(object sender, EventArgs e)
         {
+            tabSelected = 4;
+
             switch (menuSelected)
             {
                 case 0: //Welcome
@@ -584,24 +600,53 @@ namespace Belfray
         //Room Select Close
         private void RoomSelect_Closed(object sender, FormClosedEventArgs e)
         {
-            if(cancelled)
+            if (tabSelected == 2)
             {
-                pnlRoomSelect.Visible = false;                
+                if (cancelled)
+                {
+                    pnlRoomSelect.Visible = false;
 
-                picTabDisplay_Click(sender, e);
+                    picTabDisplay_Click(sender, e);
+                }
+                else
+                {
+                    pnlRoomSelect.Visible = false;
+
+                    RoomBookingAdd frm = new RoomBookingAdd();
+                    frm.TopLevel = false;
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.FormClosed += RoomBookingAdd_Closed;
+                    pnlMainBody.Controls.Add(frm);
+                    frm.Show();
+                }
             }
-            else
+            else if (tabSelected == 3)
             {
-                pnlRoomSelect.Visible = false;
+                if (cancelled)
+                {
+                    pnlRoomSelect.Visible = false;
 
-                RoomBookingAdd frm = new RoomBookingAdd();
-                frm.TopLevel = false;
-                frm.FormBorderStyle = FormBorderStyle.None;
-                frm.WindowState = FormWindowState.Maximized;
-                frm.FormClosed += RoomBookingAdd_Closed;
-                pnlMainBody.Controls.Add(frm);
-                frm.Show();
-            }           
+                    Globals.firstLoad = true;
+
+                    picTabEdit_Click(sender, e);
+                }
+                else
+                {
+                    pnlRoomSelect.Visible = false;
+
+                    Globals.firstLoad = false;
+
+                    RoomBookingEdit frm = new RoomBookingEdit();
+                    frm.TopLevel = false;
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.FormClosed += RoomBookingEdit_Closed;
+                    frm.FormClosing += RoomBookingEdit_Closing;
+                    pnlMainBody.Controls.Add(frm);
+                    frm.Show();
+                }
+            }
         }
 
         //Table Select Close
@@ -620,9 +665,40 @@ namespace Belfray
         //Room Booking Add Close
         private void RoomBookingAdd_Closed(object sender, FormClosedEventArgs e)
         {
-            pnlTableSelect.Visible = false;
-
             picTabDisplay_Click(sender, e);
-        }        
+        }
+
+        //Room Booking Edit Closing
+        private void RoomBookingEdit_Closing(object sender, FormClosingEventArgs e)
+        {
+            cancelled = RoomBookingEdit.cancelled;
+        }
+
+        //Room Booking Edit Close
+        private void RoomBookingEdit_Closed(object sender, FormClosedEventArgs e)
+        {
+            if (cancelled)
+            {
+                pnlRoomSelect.Visible = false;
+
+                Globals.firstLoad = true;
+
+                picTabDisplay_Click(sender, e);
+            }
+            else
+            {
+                pnlRoomSelect.Visible = true;
+                pnlRoomSelect.BringToFront();
+
+                RoomSelect frm = new RoomSelect();
+                frm.TopLevel = false;
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.FormClosing += RoomSelect_Closing;
+                frm.FormClosed += RoomSelect_Closed;
+                pnlRoomSelect.Controls.Add(frm);
+                frm.Show();
+            }
+        }
     }
 }

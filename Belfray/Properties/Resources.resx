@@ -217,8 +217,8 @@
   <data name="Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Red1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Single Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Single Room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FinalDeleteButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FinalDeleteButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AdminButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AdminButton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -228,6 +228,9 @@
   </data>
   <data name="SaveButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SaveButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Single Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Single Room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,14 +244,14 @@
   <data name="Green Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Green Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SaveButtonTest2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveButtonTest21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SearchButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SearchButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Table-2-TP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Table-2-TP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RestStockButt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RestStockButt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HeaderImageTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HeaderImageTemplate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,8 +292,8 @@
   <data name="SaveTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SaveTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SaveButtonTest2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SaveButtonTest21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RestStockButt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestStockButt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="animal-chihuahua-cute-39317" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\animal-chihuahua-cute-39317.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,10 +313,13 @@
   <data name="RestaurantStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RestaurantStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EditTab_EditButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditTab_EditButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HoneyMoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HoneyMoon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FinalDeleteButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FinalDeleteButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditTab_EditButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditTab_EditButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

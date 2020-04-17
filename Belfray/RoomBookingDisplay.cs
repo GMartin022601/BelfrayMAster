@@ -16,10 +16,28 @@ namespace Belfray
         SqlDataAdapter daBooking;
         DataSet dsBelfray = new DataSet();
         String connStr, sqlBooking;
+
+        bool bookSelected;
                 
         public RoomBookingDisplay()
         {
             InitializeComponent();
+        }
+
+        private void dgvBookings_Click(object sender, EventArgs e)
+        {
+            if (dgvBookings.SelectedRows.Count == 0)
+            {
+                bookSelected = false;
+                Globals.bookNoSel = null;
+                //prdSel = null;
+            }
+            else if (dgvBookings.SelectedRows.Count == 1)
+            {
+                bookSelected = true;
+                Globals.bookNoSel = dgvBookings.SelectedRows[0].Cells[0].Value.ToString();
+                //prdSel = Globals.prdNoSel;
+            }
         }
 
         private void RoomBookingDisplay_Load(object sender, EventArgs e)

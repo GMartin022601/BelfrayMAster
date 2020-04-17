@@ -83,6 +83,8 @@
             this.lblCheckInDate = new System.Windows.Forms.Label();
             this.dtpCheckOutDate = new System.Windows.Forms.DateTimePicker();
             this.dtpCheckInDate = new System.Windows.Forms.DateTimePicker();
+            this.picEditCancel = new System.Windows.Forms.PictureBox();
+            this.picEditSave = new System.Windows.Forms.PictureBox();
             this.pnlFloorPlan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancellRoomSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveRoomSelect)).BeginInit();
@@ -108,6 +110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoom102)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom101)).BeginInit();
             this.gbRoomDets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditSave)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlFloorPlan
@@ -115,6 +119,8 @@
             this.pnlFloorPlan.BackgroundImage = global::Belfray.Properties.Resources.floorplan_layout;
             this.pnlFloorPlan.Controls.Add(this.picCancellRoomSelect);
             this.pnlFloorPlan.Controls.Add(this.picSaveRoomSelect);
+            this.pnlFloorPlan.Controls.Add(this.picEditCancel);
+            this.pnlFloorPlan.Controls.Add(this.picEditSave);
             this.pnlFloorPlan.Controls.Add(this.pnlRed);
             this.pnlFloorPlan.Controls.Add(this.pnlGreen);
             this.pnlFloorPlan.Controls.Add(this.picRoom119);
@@ -778,6 +784,34 @@
             this.dtpCheckInDate.TabIndex = 42;
             this.dtpCheckInDate.ValueChanged += new System.EventHandler(this.dtpCheckInDate_ValueChanged);
             // 
+            // picEditCancel
+            // 
+            this.picEditCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picEditCancel.Location = new System.Drawing.Point(734, 557);
+            this.picEditCancel.Name = "picEditCancel";
+            this.picEditCancel.Size = new System.Drawing.Size(40, 40);
+            this.picEditCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEditCancel.TabIndex = 66;
+            this.picEditCancel.TabStop = false;
+            this.picEditCancel.Visible = false;
+            this.picEditCancel.Click += new System.EventHandler(this.picEditCancel_Click);
+            this.picEditCancel.MouseEnter += new System.EventHandler(this.picEditCancel_MouseEnter);
+            this.picEditCancel.MouseLeave += new System.EventHandler(this.picEditCancel_MouseLeave);
+            // 
+            // picEditSave
+            // 
+            this.picEditSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picEditSave.Location = new System.Drawing.Point(777, 557);
+            this.picEditSave.Name = "picEditSave";
+            this.picEditSave.Size = new System.Drawing.Size(40, 40);
+            this.picEditSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEditSave.TabIndex = 65;
+            this.picEditSave.TabStop = false;
+            this.picEditSave.Visible = false;
+            this.picEditSave.Click += new System.EventHandler(this.picEditSave_Click);
+            this.picEditSave.MouseEnter += new System.EventHandler(this.picEditSave_MouseEnter);
+            this.picEditSave.MouseLeave += new System.EventHandler(this.picEditSave_MouseLeave);
+            // 
             // RoomSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -817,6 +851,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoom101)).EndInit();
             this.gbRoomDets.ResumeLayout(false);
             this.gbRoomDets.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditSave)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -878,5 +914,7 @@
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.PictureBox picCancellRoomSelect;
         private System.Windows.Forms.PictureBox picSaveRoomSelect;
+        private System.Windows.Forms.PictureBox picEditCancel;
+        private System.Windows.Forms.PictureBox picEditSave;
     }
 }

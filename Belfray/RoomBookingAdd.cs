@@ -414,7 +414,7 @@ namespace Belfray
 
                     int noRows = dsBelfray.Tables["Customer"].Rows.Count;
 
-                    //cb ProductType
+                    //cmb Customer
                     cmbCustomerNo.DataSource = dsBelfray.Tables["Customer"];
                     cmbCustomerNo.ValueMember = "customerNo";
                     cmbCustomerNo.DisplayMember = "customerNo";

@@ -26,7 +26,7 @@ namespace Belfray
         //Room Selected
         public static string roomSelected = "";
 
-        //Room Selected
+        //Select Cancelled
         public static bool cancelled = false;
 
         //Save active
@@ -1898,6 +1898,8 @@ namespace Belfray
 
         private void RoomSelect_Load(object sender, EventArgs e)
         {
+            
+
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
             //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
@@ -1923,6 +1925,16 @@ namespace Belfray
             //Sets Date Time Picker to today for check in and 1 day later for check out
             dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
             userChange = true;
+
+            if(MainWindow.tabSelected == 3)
+            {
+                picSaveRoomSelect.Visible = false;
+                picCancellRoomSelect.Visible = false;
+
+                picEditSave.Visible = true;
+                picEditCancel.Visible = true;
+            }
+            
         }
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
@@ -2037,6 +2049,44 @@ namespace Belfray
                 }
             }
             return available;
+        }
+
+        //Edit save Functions
+        private void picEditSave_MouseEnter(object sender, EventArgs e)
+        {
+            picEditSave.BackColor = Color.FromArgb(57, 181, 74);
+        }
+
+        private void picEditSave_Click(object sender, EventArgs e)
+        {
+            roomSelected = lblRoomNo.Text;
+            checkInDate = dtpCheckInDate.Value;
+            checkOutDate = dtpCheckOutDate.Value;
+            cancelled = false;
+            MainWindow.maxCap = int.Parse(lblRoomCapacity.Text);
+            this.Close();
+        }
+
+        private void picEditSave_MouseLeave(object sender, EventArgs e)
+        {
+            picEditSave.BackColor = Color.Transparent;
+        }
+
+        //Edit Cancel Functions
+        private void picEditCancel_MouseEnter(object sender, EventArgs e)
+        {
+            picEditCancel.BackColor = Color.FromArgb(205, 36, 36);
+        }
+
+        private void picEditCancel_Click(object sender, EventArgs e)
+        {
+            cancelled = true;
+            this.Close();
+        }
+
+        private void picEditCancel_MouseLeave(object sender, EventArgs e)
+        {
+            picEditCancel.BackColor = Color.Transparent;
         }
     }
 }

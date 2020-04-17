@@ -313,6 +313,26 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EditTab_EditButton {
+            get {
+                object obj = ResourceManager.GetObject("EditTab_EditButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditTab_EditButton1 {
+            get {
+                object obj = ResourceManager.GetObject("EditTab_EditButton1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Family_Alt {
             get {
                 object obj = ResourceManager.GetObject("Family Alt", resourceCulture);
