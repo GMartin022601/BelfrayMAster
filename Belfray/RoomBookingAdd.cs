@@ -95,7 +95,7 @@ namespace Belfray
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Booking
-            sqlBooking = @"select * from Booking";
+            sqlBooking = @"SELECT * FROM Booking";
             daBooking = new SqlDataAdapter(sqlBooking, connStr);
             cmdBBooking = new SqlCommandBuilder(daBooking);
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
@@ -279,17 +279,6 @@ namespace Belfray
                 errP.SetError(lblBookingNo, MyEx.toString());
             }
 
-            //Booking Type
-            try
-            {
-                myBook.TypeID = "TYP100001";
-            }
-            catch (MyException MyEx)
-            {
-                ok = false;
-                errP.SetError(lblBookingType, MyEx.toString());
-            }
-
             //Check In Date
             try
             {
@@ -337,7 +326,7 @@ namespace Belfray
             //Check In Time
             try
             {
-                myBook.BookingTime = "13:00:00";
+                myBook.BookingTime = "13:00";
             }
             catch (MyException MyEx)
             {
@@ -396,10 +385,7 @@ namespace Belfray
                     drBooking["checkInDate"] = myBook.CheckInDate;
                     drBooking["checkOutDate"] = myBook.CheckOutDate;
                     drBooking["bookingTime"] = myBook.BookingTime;
-                    drBooking["typeID"] = myBook.TypeID;
                     drBooking["paymentTypeID"] = myBook.PaymentTypeID;
-                    drBooking["roomNo"] = myBook.RoomNo;
-                    drBooking["tableNo"] = myBook.TableNo;
                     drBooking["partySize"] = myBook.PartySize;
                     drBooking["customerNo"] = myBook.CustomerNumber;
                     dsBelfray.Tables["Booking"].Rows.Add(drBooking);

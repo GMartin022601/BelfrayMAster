@@ -49,12 +49,14 @@ namespace Belfray
             daCustomer.FillSchema(dsBelfray, SchemaType.Source, "Customer");
             daCustomer.Fill(dsBelfray, "Customer");
 
-            //SQL For Payment Type
-            sqlPayType = @"select * from Payment";
-            daPayType = new SqlDataAdapter(sqlPayType, connStr);
-            cmdBPayType = new SqlCommandBuilder(daPayType);
-            daPayType.FillSchema(dsBelfray, SchemaType.Source, "Payment");
-            daPayType.Fill(dsBelfray, "Payment");
+            ////SQL For Payment Type
+            //sqlPayType = @"select * from Payment";
+            //daPayType = new SqlDataAdapter(sqlPayType, connStr);
+            //cmdBPayType = new SqlCommandBuilder(daPayType);
+            //daPayType.FillSchema(dsBelfray, SchemaType.Source, "Payment");
+            //daPayType.Fill(dsBelfray, "Payment");
+
+            formLoad = false;
         }
 
         public RoomBookingDelete()
@@ -112,11 +114,37 @@ namespace Belfray
             }
         }
 
+        //Determines what has been choosen in Combobox
+        private void cmbSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!formLoad)
+            {
+                if (cmbSelect.Text == "Booking")
+                {
+                    pnlBooking.Visible = false;
+                    pnlCustomer.Visible = false;
+                    dgvDisplay.Visible = true;
+                    dgvDisplay.DataSource = dsBelfray.Tables["Product"];
+                    //Resize
+                    dgvDisplay.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                }
+                else if (cmbSelect.Text == "Customer")
+                {
+                    pnlBooking.Visible = false;
+                    pnlCustomer.Visible = false;
+                    dgvDisplay.Visible = true;
+                    dgvDisplay.DataSource = dsBelfray.Tables["ProductType"];
+                    //Resize
+                    dgvDisplay.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                }
+            }
+        }
+
         //Cancel Functions
         private void btnCancelDel_MouseEnter(object sender, EventArgs e)
         {
 
-        }        
+        }       
 
         private void btnCancelDel_Click(object sender, EventArgs e)
         {

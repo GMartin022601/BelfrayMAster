@@ -63,13 +63,6 @@ namespace Belfray
             daPayType.FillSchema(dsBelfray, SchemaType.Source, "Payment");
             daPayType.Fill(dsBelfray, "Payment");
 
-            //SQL For Rooms
-            sqlRoom = @"select * from Rooms";
-            daRoom = new SqlDataAdapter(sqlRoom, connStr);
-            cmdBRoom = new SqlCommandBuilder(daRoom);
-            daRoom.FillSchema(dsBelfray, SchemaType.Source, "Rooms");
-            daRoom.Fill(dsBelfray, "Rooms");
-
             //CB Details Customer
             cmbCustomerNo.DataSource = dsBelfray.Tables["Customer"];
             cmbCustomerNo.ValueMember = "customerNo";
