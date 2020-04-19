@@ -464,5 +464,8 @@
   <ItemGroup>
     <None Include="Resources\EditTab_EditButton1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

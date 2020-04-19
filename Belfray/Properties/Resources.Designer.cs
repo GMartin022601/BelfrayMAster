@@ -443,6 +443,16 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Remove__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Remove (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RestaurantButton {
             get {
                 object obj = ResourceManager.GetObject("RestaurantButton", resourceCulture);

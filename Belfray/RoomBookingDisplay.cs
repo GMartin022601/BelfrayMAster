@@ -71,6 +71,18 @@ namespace Belfray
             dgvBookings.DataSource = dsBelfray.Tables["Booking"];
             //Resize
             dgvBookings.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            //Globals.rooms Reset
+            for(int x = 0; x < 19; x++)
+            {
+                Globals.rooms[x] = " ";
+            }
+
+            //Globals.capacity Reset
+            for (int x = 0; x < 19; x++)
+            {
+                Globals.capacity[x] = 0;
+            }
         }
     }
 }

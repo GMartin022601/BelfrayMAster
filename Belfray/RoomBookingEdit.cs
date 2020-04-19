@@ -316,28 +316,6 @@ namespace Belfray
                 errP.SetError(dtpBookingCheckOut, MyEx.toString());
             }
 
-            //Room Number
-            try
-            {
-                myBook.RoomNo = int.Parse(lblRoomNo.Text.Trim());
-            }
-            catch (MyException MyEx)
-            {
-                ok = false;
-                errP.SetError(lblRoomNo, MyEx.toString());
-            }
-
-            //Table Number set to 0
-            try
-            {
-                myBook.TableNo = 0;
-            }
-            catch (MyException MyEx)
-            {
-                ok = false;
-                errP.SetError(lblRoomNum, MyEx.toString());
-            }
-
             //Check In Time
             try
             {

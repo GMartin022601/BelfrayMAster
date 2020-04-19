@@ -2090,11 +2090,33 @@ namespace Belfray
 
         private void picSaveRoomSelect_Click(object sender, EventArgs e)
         {
-            roomSelected = lblRoomNo.Text;
+            int pos = 0;
+            for (int x = 0; x < 19; x++)
+            {
+                if (Globals.rooms[x].Contains(" "))
+                {
+                    pos = x;
+                    break;
+                }
+            }
+            
+            Globals.rooms[pos] = lblRoomNo.Text;
+
+            int posX = 0;
+            for (int x = 0; x < 19; x++)
+            {
+                if (Globals.capacity[x].CompareTo(0) == 0)
+                {
+                    posX = x;
+                    break;
+                }
+            }
+
+            Globals.capacity[posX] = int.Parse(lblRoomCapacity.Text);
+
             checkInDate = dtpCheckInDate.Value;
             checkOutDate = dtpCheckOutDate.Value;
             cancelled = false;
-            MainWindow.maxCap = int.Parse(lblRoomCapacity.Text);
             this.Close();
         }
 
@@ -2181,7 +2203,18 @@ namespace Belfray
                             }
                             else
                             {
-                                available = true;
+                                for(int x = 0; x < 19; x++)
+                                {
+                                    if (Globals.rooms[x].Contains(roomNum))
+                                    {
+                                        available = false;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        available = true;
+                                    }
+                                }
                             }
                         }
                         else
@@ -2192,6 +2225,21 @@ namespace Belfray
                     else
                     {
                         available = true;
+                    }
+                }
+                else
+                {
+                    for (int x = 0; x < 19; x++)
+                    {
+                        if (Globals.rooms[x].Contains(roomNum))
+                        {
+                            available = false;
+                            break;
+                        }
+                        else
+                        {
+                            available = true;
+                        }
                     }
                 }
 

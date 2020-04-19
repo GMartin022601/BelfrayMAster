@@ -616,6 +616,7 @@ namespace Belfray
                     frm.TopLevel = false;
                     frm.FormBorderStyle = FormBorderStyle.None;
                     frm.WindowState = FormWindowState.Maximized;
+                    frm.FormClosing += RoomBookingAdd_Closing;
                     frm.FormClosed += RoomBookingAdd_Closed;
                     pnlMainBody.Controls.Add(frm);
                     frm.Show();
@@ -641,8 +642,8 @@ namespace Belfray
                     frm.TopLevel = false;
                     frm.FormBorderStyle = FormBorderStyle.None;
                     frm.WindowState = FormWindowState.Maximized;
-                    frm.FormClosed += RoomBookingEdit_Closed;
                     frm.FormClosing += RoomBookingEdit_Closing;
+                    frm.FormClosed += RoomBookingEdit_Closed;
                     pnlMainBody.Controls.Add(frm);
                     frm.Show();
                 }
@@ -662,10 +663,37 @@ namespace Belfray
             frm.Show();
         }
 
+        //Room Booking Add Closing
+        private void RoomBookingAdd_Closing(object sender, FormClosingEventArgs e)
+        {
+            cancelled = RoomBookingAdd.cancelled;
+        }
+
         //Room Booking Add Close
         private void RoomBookingAdd_Closed(object sender, FormClosedEventArgs e)
         {
-            picTabDisplay_Click(sender, e);
+            if (cancelled)
+            {
+                pnlRoomSelect.Visible = false;
+
+                Globals.firstLoad = true;
+
+                picTabDisplay_Click(sender, e);
+            }
+            else
+            {
+                pnlRoomSelect.Visible = true;
+                pnlRoomSelect.BringToFront();
+
+                RoomSelect frm = new RoomSelect();
+                frm.TopLevel = false;
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.FormClosing += RoomSelect_Closing;
+                frm.FormClosed += RoomSelect_Closed;
+                pnlRoomSelect.Controls.Add(frm);
+                frm.Show();
+            }
         }
 
         //Room Booking Edit Closing
