@@ -467,5 +467,8 @@
   <ItemGroup>
     <None Include="Resources\Remove %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoomService_Sample.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
