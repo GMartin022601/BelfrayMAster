@@ -1388,24 +1388,24 @@ namespace Belfray
                 numPartySize.Value = 2;
                 //Data Grid View
                 //sqlBookingDGV = @"select bookingNo, checkInDate, typeID, bookingTime, customerNo, paymentTypeID, partySize, tableNo from Booking WHERE tableNo = '1'"; //Join RestTables on tableNo = Booking.tableNo" RestTables.allocated;
-                //sqlBookingDGV = @"SELECT bookingNo AS 'Booking No', checkInDate AS 'Date', BType.typeDesc AS 'Booking Type', CONVERT(char(5), Booking.bookingTime, 108) AS 'Time', 
-                //            Booking.customerNo AS 'Customer No', Customer.customerForename As 'Forename', Customer.customerSurname AS 'Surname', Payment.paymentTypeDesc AS 'Payment', 
-                //            Booking.partySize AS 'Party Size', Booking.tableNo AS 'Table' FROM Booking
-                //            LEFT JOIN BType ON  BType.typeID = Booking.typeID
-                //            LEFT JOIN Customer on Customer.customerNo = Booking.customerNo
-                //            LEFT JOIN Payment on Payment.paymentTypeID = Booking.paymentTypeID
-                //            LEFT JOIN RestTables on RestTables.tableNo = Booking.tableNo
-                //            WHERE Booking.tableNo = '1'";
-                //daBookingDGV = new SqlDataAdapter(sqlBookingDGV, connStr);
-                ////cmdBBookingDGV = new SqlCommandBuilder(daBookingDGV);
+                sqlBookingDGV = @"SELECT bookingNo AS 'Booking No', checkInDate AS 'Date', BType.typeDesc AS 'Booking Type', CONVERT(char(5), Booking.bookingTime, 108) AS 'Time', 
+                            Booking.customerNo AS 'Customer No', Customer.customerForename As 'Forename', Customer.customerSurname AS 'Surname', Payment.paymentTypeDesc AS 'Payment', 
+                            Booking.partySize AS 'Party Size', Booking.tableNo AS 'Table' FROM Booking
+                            LEFT JOIN BType ON  BType.typeID = Booking.typeID
+                            LEFT JOIN Customer on Customer.customerNo = Booking.customerNo
+                            LEFT JOIN Payment on Payment.paymentTypeID = Booking.paymentTypeID
+                            LEFT JOIN RestTables on RestTables.tableNo = Booking.tableNo
+                            WHERE Booking.tableNo = '1'";
+                daBookingDGV = new SqlDataAdapter(sqlBookingDGV, connStr);
+                //cmdBBookingDGV = new SqlCommandBuilder(daBookingDGV);
 
-                //daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
-                //daBookingDGV.Fill(dsBelfray, "Booking");
+                daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
+                daBookingDGV.Fill(dsBelfray, "Booking");
 
-                //dgvBooking.Visible = true;
-                //dgvBooking.DataSource = dsBelfray.Tables["Booking"];
-                ////Resize
-                //dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvBooking.Visible = true;
+                dgvBooking.DataSource = dsBelfray.Tables["Booking"];
+                //Resize
+                dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
             }
         }
