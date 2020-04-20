@@ -34,7 +34,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlCalendar = new System.Windows.Forms.Panel();
+            this.dtpBookingTime = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbTime = new System.Windows.Forms.ComboBox();
             this.pnlGreen = new System.Windows.Forms.Panel();
             this.lblGreenCapacityValue = new System.Windows.Forms.Label();
             this.lblGreenCapacity = new System.Windows.Forms.Label();
@@ -49,15 +51,15 @@
             this.lblRedRoom = new System.Windows.Forms.Label();
             this.pnlCustomerDetails = new System.Windows.Forms.Panel();
             this.gbBookingDetails = new System.Windows.Forms.GroupBox();
-            this.btnAvailability = new System.Windows.Forms.Button();
+            this.txtTime = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.cbPaymentTyp = new System.Windows.Forms.ComboBox();
             this.dateBooking = new System.Windows.Forms.DateTimePicker();
             this.lblPaymenType = new System.Windows.Forms.Label();
             this.numPartySize = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGetBookingInfo = new System.Windows.Forms.Button();
             this.txtBookingNo = new System.Windows.Forms.TextBox();
             this.lblDate = new System.Windows.Forms.Label();
-            this.cbTime = new System.Windows.Forms.ComboBox();
             this.chkNewBooking = new System.Windows.Forms.CheckBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblBNoTag = new System.Windows.Forms.Label();
@@ -277,20 +279,40 @@
             // pnlCalendar
             // 
             this.pnlCalendar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCalendar.Controls.Add(this.dtpBookingTime);
             this.pnlCalendar.Controls.Add(this.label2);
+            this.pnlCalendar.Controls.Add(this.cbTime);
             this.pnlCalendar.Location = new System.Drawing.Point(649, 381);
             this.pnlCalendar.Name = "pnlCalendar";
             this.pnlCalendar.Size = new System.Drawing.Size(544, 166);
             this.pnlCalendar.TabIndex = 58;
+            // 
+            // dtpBookingTime
+            // 
+            this.dtpBookingTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBookingTime.Location = new System.Drawing.Point(161, 49);
+            this.dtpBookingTime.Name = "dtpBookingTime";
+            this.dtpBookingTime.Size = new System.Drawing.Size(200, 20);
+            this.dtpBookingTime.TabIndex = 36;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 13);
+            this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Calendar? hourly table plan?";
+            this.label2.Text = "Menu / Add items";
+            // 
+            // cbTime
+            // 
+            this.cbTime.Enabled = false;
+            this.cbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTime.FormattingEnabled = true;
+            this.cbTime.Location = new System.Drawing.Point(13, 49);
+            this.cbTime.Name = "cbTime";
+            this.cbTime.Size = new System.Drawing.Size(121, 24);
+            this.cbTime.TabIndex = 29;
             // 
             // pnlGreen
             // 
@@ -437,15 +459,15 @@
             // 
             // gbBookingDetails
             // 
-            this.gbBookingDetails.Controls.Add(this.btnAvailability);
+            this.gbBookingDetails.Controls.Add(this.txtTime);
+            this.gbBookingDetails.Controls.Add(this.btnAdd);
             this.gbBookingDetails.Controls.Add(this.cbPaymentTyp);
             this.gbBookingDetails.Controls.Add(this.dateBooking);
             this.gbBookingDetails.Controls.Add(this.lblPaymenType);
             this.gbBookingDetails.Controls.Add(this.numPartySize);
-            this.gbBookingDetails.Controls.Add(this.button1);
+            this.gbBookingDetails.Controls.Add(this.btnGetBookingInfo);
             this.gbBookingDetails.Controls.Add(this.txtBookingNo);
             this.gbBookingDetails.Controls.Add(this.lblDate);
-            this.gbBookingDetails.Controls.Add(this.cbTime);
             this.gbBookingDetails.Controls.Add(this.chkNewBooking);
             this.gbBookingDetails.Controls.Add(this.lblTime);
             this.gbBookingDetails.Controls.Add(this.lblBNoTag);
@@ -460,16 +482,23 @@
             this.gbBookingDetails.TabStop = false;
             this.gbBookingDetails.Text = "Booking Details";
             // 
-            // btnAvailability
+            // txtTime
             // 
-            this.btnAvailability.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAvailability.Location = new System.Drawing.Point(323, 107);
-            this.btnAvailability.Name = "btnAvailability";
-            this.btnAvailability.Size = new System.Drawing.Size(126, 29);
-            this.btnAvailability.TabIndex = 35;
-            this.btnAvailability.Text = "Check Availability?";
-            this.btnAvailability.UseVisualStyleBackColor = true;
-            this.btnAvailability.Click += new System.EventHandler(this.btnAvailability_Click);
+            this.txtTime.Location = new System.Drawing.Point(298, 76);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(100, 25);
+            this.txtTime.TabIndex = 36;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(323, 107);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(126, 29);
+            this.btnAdd.TabIndex = 35;
+            this.btnAdd.Text = "Make Booking";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbPaymentTyp
             // 
@@ -509,15 +538,16 @@
             this.numPartySize.Size = new System.Drawing.Size(120, 22);
             this.numPartySize.TabIndex = 20;
             // 
-            // button1
+            // btnGetBookingInfo
             // 
-            this.button1.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(323, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Get Info";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGetBookingInfo.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetBookingInfo.Location = new System.Drawing.Point(323, 16);
+            this.btnGetBookingInfo.Name = "btnGetBookingInfo";
+            this.btnGetBookingInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnGetBookingInfo.TabIndex = 34;
+            this.btnGetBookingInfo.Text = "Get Info";
+            this.btnGetBookingInfo.UseVisualStyleBackColor = true;
+            this.btnGetBookingInfo.Click += new System.EventHandler(this.btnGetBookingInfo_Click);
             // 
             // txtBookingNo
             // 
@@ -535,16 +565,6 @@
             this.lblDate.Size = new System.Drawing.Size(39, 18);
             this.lblDate.TabIndex = 24;
             this.lblDate.Text = "Date:";
-            // 
-            // cbTime
-            // 
-            this.cbTime.Enabled = false;
-            this.cbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTime.FormattingEnabled = true;
-            this.cbTime.Location = new System.Drawing.Point(303, 77);
-            this.cbTime.Name = "cbTime";
-            this.cbTime.Size = new System.Drawing.Size(121, 24);
-            this.cbTime.TabIndex = 29;
             // 
             // chkNewBooking
             // 
@@ -794,6 +814,8 @@
             this.btnGetInfo.TabIndex = 3;
             this.btnGetInfo.Text = "Get Info";
             this.btnGetInfo.UseVisualStyleBackColor = true;
+            this.btnGetInfo.Visible = false;
+            this.btnGetInfo.Click += new System.EventHandler(this.btnGetInfo_Click);
             // 
             // txtCustID
             // 
@@ -1594,8 +1616,8 @@
         private System.Windows.Forms.ComboBox cbPaymentTyp;
         private System.Windows.Forms.Label lblPaymenType;
         private System.Windows.Forms.GroupBox gbBookingDetails;
-        private System.Windows.Forms.Button btnAvailability;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnGetBookingInfo;
         private System.Windows.Forms.TextBox txtBookingNo;
         private System.Windows.Forms.CheckBox chkNewBooking;
         private System.Windows.Forms.Label label1;
@@ -1604,5 +1626,7 @@
         private System.Windows.Forms.DataGridView dgvBooking;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ErrorProvider errP;
+        private System.Windows.Forms.DateTimePicker dtpBookingTime;
+        private System.Windows.Forms.TextBox txtTime;
     }
 }
