@@ -16,10 +16,28 @@ namespace Belfray
         SqlDataAdapter daBooking;
         DataSet dsBelfray = new DataSet();
         String connStr, sqlBooking;
+
+        bool bookSelected;
                 
         public RoomBookingDisplay()
         {
             InitializeComponent();
+        }
+
+        private void dgvBookings_Click(object sender, EventArgs e)
+        {
+            if (dgvBookings.SelectedRows.Count == 0)
+            {
+                bookSelected = false;
+                Globals.bookNoSel = null;
+                //prdSel = null;
+            }
+            else if (dgvBookings.SelectedRows.Count == 1)
+            {
+                bookSelected = true;
+                Globals.bookNoSel = dgvBookings.SelectedRows[0].Cells[0].Value.ToString();
+                //prdSel = Globals.prdNoSel;
+            }
         }
 
         private void RoomBookingDisplay_Load(object sender, EventArgs e)
@@ -31,17 +49,21 @@ namespace Belfray
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
-            //SQL for Product
-            sqlBooking = @"SELECT bookingNo AS 'Booking No', checkInDate AS 'Check In Date', checkOutDate AS 'Check Out Date', BType.typeDesc AS 'Booking Type', CONVERT(char(5), Booking.bookingTime, 108) AS 'Arrival', 
+            //SQL for Booking
+            sqlBooking = @"SELECT Booking.bookingNo AS 'Booking No', Booking.checkInDate AS 'Check In Date', Booking.checkOutDate AS 'Check Out Date', BType.typeDesc AS 'Booking Type', CONVERT(char(5), Booking.bookingTime, 108) AS 'Arrival', 
                             Booking.customerNo AS 'Customer No', Customer.customerForename As 'Forename', Customer.customerSurname AS 'Surname', Payment.paymentTypeDesc AS 'Payment', 
-                            Booking.partySize AS 'Party Size', Booking.roomNo AS 'Room', Rooms.roomtype AS 'Room Type', Rooms.pricePerDay AS 'Price Per Day' FROM Booking
-                            LEFT JOIN BType ON  BType.typeID = Booking.typeID
+                            Booking.partySize AS 'Party Size', Count(BookingItem.itemNo) AS 'Rooms Booked' FROM Booking                            
                             LEFT JOIN Customer on Customer.customerNo = Booking.customerNo
                             LEFT JOIN Payment on Payment.paymentTypeID = Booking.paymentTypeID
-                            LEFT JOIN Rooms on Rooms.roomNo = Booking.roomNo
-                            WHERE Booking.typeID = 'TYP100001'";
-            daBooking = new SqlDataAdapter(sqlBooking, connStr);
+                            LEFT JOIN BookingItem on BookingItem.bookingNo = Booking.bookingNo
+                            LEFT JOIN Item ON  Item.itemNo = BookingItem.itemNo
+                            LEFT JOIN BType ON  BType.typeID = Item.typeID
+                            WHERE BType.typeID = 'TYP100001'
+                            GROUP BY Booking.bookingNo, Booking.checkInDate, Booking.checkOutDate,  BType.typeDesc, 
+							Booking.bookingTime, Booking.customerNo, Customer.customerForename, Customer.customerSurname,
+							Payment.paymentTypeDesc, Booking.partySize";
 
+            daBooking = new SqlDataAdapter(sqlBooking, connStr);
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
             daBooking.Fill(dsBelfray, "Booking");
 
@@ -49,6 +71,18 @@ namespace Belfray
             dgvBookings.DataSource = dsBelfray.Tables["Booking"];
             //Resize
             dgvBookings.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            //Globals.rooms Reset
+            for(int x = 0; x < 19; x++)
+            {
+                Globals.rooms[x] = " ";
+            }
+
+            //Globals.capacity Reset
+            for (int x = 0; x < 19; x++)
+            {
+                Globals.capacity[x] = 0;
+            }
         }
     }
 }

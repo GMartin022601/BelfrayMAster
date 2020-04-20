@@ -35,20 +35,20 @@
             // dgvBookings
             // 
             this.dgvBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBookings.Location = new System.Drawing.Point(3, 2);
-            this.dgvBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvBookings.Location = new System.Drawing.Point(2, 1);
             this.dgvBookings.Name = "dgvBookings";
-            this.dgvBookings.Size = new System.Drawing.Size(1824, 534);
+            this.dgvBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBookings.Size = new System.Drawing.Size(1216, 347);
             this.dgvBookings.TabIndex = 0;
+            this.dgvBookings.Click += new System.EventHandler(this.dgvBookings_Click);
             // 
             // RoomBookingDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1830, 537);
+            this.ClientSize = new System.Drawing.Size(1220, 349);
             this.Controls.Add(this.dgvBookings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "RoomBookingDisplay";
             this.Text = "BookingDisplay";
             this.Load += new System.EventHandler(this.RoomBookingDisplay_Load);
