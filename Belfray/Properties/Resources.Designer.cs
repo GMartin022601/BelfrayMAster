@@ -523,6 +523,16 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RoomService_Sample {
+            get {
+                object obj = ResourceManager.GetObject("RoomService_Sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RoomStock {
             get {
                 object obj = ResourceManager.GetObject("RoomStock", resourceCulture);
