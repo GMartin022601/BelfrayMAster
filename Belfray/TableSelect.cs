@@ -1238,7 +1238,15 @@ namespace Belfray
             string s = drBooking["bookingNo"].ToString();
             string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
             lblBookingNo.Text = s1;
-            dgvBooking.Rows.Add(lblBookingNo.Text, lblTableNo.Text);
+            dgvBooking.Rows.Add(lblBookingNo.Text, lblTableNo.Text, lblTableCapacity.Text);
+
+            //Sum of party size
+            int sum = 0;
+            for (int i = 0; i < dgvBooking.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(dgvBooking.Rows[i].Cells[2].Value);
+            }
+            numPartySize.Value = sum;
         }
 
         private void picAddRoom_Click(object sender, EventArgs e)

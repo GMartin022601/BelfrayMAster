@@ -48,8 +48,6 @@
             this.gbDGV = new System.Windows.Forms.GroupBox();
             this.picRemoveTable = new System.Windows.Forms.PictureBox();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
-            this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TableNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCustomerDetails = new System.Windows.Forms.GroupBox();
             this.picSaveBooking = new System.Windows.Forms.PictureBox();
             this.cbCustNo = new System.Windows.Forms.ComboBox();
@@ -146,6 +144,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TableNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TableSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTableSelect.SuspendLayout();
             this.pnlGreen.SuspendLayout();
             this.pnlRed.SuspendLayout();
@@ -446,25 +447,14 @@
             this.dgvBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BookingNumber,
-            this.TableNumber});
+            this.TableNumber,
+            this.TableSize});
             this.dgvBooking.Location = new System.Drawing.Point(6, 19);
             this.dgvBooking.Name = "dgvBooking";
             this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooking.Size = new System.Drawing.Size(523, 115);
             this.dgvBooking.TabIndex = 2;
             this.dgvBooking.Click += new System.EventHandler(this.dgvBooking_Click);
-            // 
-            // BookingNumber
-            // 
-            this.BookingNumber.HeaderText = "Booking Number";
-            this.BookingNumber.Name = "BookingNumber";
-            this.BookingNumber.Width = 250;
-            // 
-            // TableNumber
-            // 
-            this.TableNumber.HeaderText = "Table Number(s)";
-            this.TableNumber.Name = "TableNumber";
-            this.TableNumber.Width = 230;
             // 
             // gbCustomerDetails
             // 
@@ -1529,6 +1519,23 @@
             // 
             this.errP.ContainerControl = this;
             // 
+            // BookingNumber
+            // 
+            this.BookingNumber.HeaderText = "Booking Number";
+            this.BookingNumber.Name = "BookingNumber";
+            this.BookingNumber.Width = 190;
+            // 
+            // TableNumber
+            // 
+            this.TableNumber.HeaderText = "Table Number(s)";
+            this.TableNumber.Name = "TableNumber";
+            this.TableNumber.Width = 190;
+            // 
+            // TableSize
+            // 
+            this.TableSize.HeaderText = "Seats";
+            this.TableSize.Name = "TableSize";
+            // 
             // TableSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1706,9 +1713,10 @@
         private System.Windows.Forms.GroupBox gbDGV;
         private System.Windows.Forms.DataGridView dgvBooking;
         private System.Windows.Forms.PictureBox picRemoveTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TableNumber;
         private System.Windows.Forms.PictureBox picAddTable;
         private System.Windows.Forms.PictureBox picSaveBooking;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TableNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TableSize;
     }
 }
