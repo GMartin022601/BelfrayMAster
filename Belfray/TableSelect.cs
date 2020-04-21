@@ -21,7 +21,7 @@ namespace Belfray
         String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem;
         bool formLoad = true;
         bool getInfo, bookingInfo;
-        bool newCustomer, newBooking;
+        bool newCustomer, newBooking, tableSelected;
         public bool arrowCreated = false;
         int tableNoSelected, partySize;
 
@@ -967,7 +967,7 @@ namespace Belfray
         {
             numPartySize.Value = 2;
             tableNoSelected = 2;
-            lblTableNo.Text = "2";
+            lblTableNo.Text = "002";
             lblTableNumDisplay.Text = "2";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
@@ -1183,6 +1183,37 @@ namespace Belfray
             lblTableCapacity.Text = "4";
         }
 
+        private void dgvBooking_Click(object sender, EventArgs e)
+        {
+            if (dgvBooking.SelectedRows.Count == 0)
+            {
+                tableSelected = false;
+                tableNoSelected = 0;
+                //prdSel = null;
+            }
+            else if (dgvBooking.SelectedRows.Count == 1)
+            {
+                tableSelected = true;
+                lblTableNo.Text = dgvBooking.SelectedRows[0].Cells[1].Value.ToString();
+                tableNoSelected = dgvBooking.SelectedRows[0].Index;
+                //prdSel = Globals.prdNoSel;
+            }
+        }
+
+        private void picRemoveTable_Click(object sender, EventArgs e)
+        {
+            if (!tableSelected)
+            {
+                MessageBox.Show("Please select a table to remove it from the booking", "Remove a Table", MessageBoxButtons.OK);
+            }
+            else
+            {
+                dgvBooking.Rows.Remove(dgvBooking.Rows[tableNoSelected]);
+                lblTableNo.Text = "-";
+                dgvBooking.ClearSelection();
+            }
+        }
+
         private void picAddTable_Click(object sender, EventArgs e)
         {
             pnlCustomerDetails.Enabled = true;
@@ -1278,53 +1309,6 @@ namespace Belfray
                 }
             }
         }
-
-        //private void btnGetInfo_Click(object sender, EventArgs e)
-        //{
-        //    //int noRows = dsBelfray.Tables["Customer"].Rows.Count;
-        //    getInfo = true;
-
-        //    foreach (DataRow drCustomer in dsBelfray.Tables["Customer"].Rows)
-        //    {
-        //        string customer = drCustomer["customerNo"].ToString();
-
-        //        if (customer.Equals(txtCustID.Text))
-        //        {
-
-        //            if (drCustomer["customerTitle"].ToString() == "MR")
-        //            {
-        //                cbTitle.SelectedIndex = 0;
-        //            }
-        //            if (drCustomer["customerTitle"].ToString() == "MISS")
-        //            {
-        //                cbTitle.SelectedIndex = 1;
-        //            }
-        //            if (drCustomer["customerTitle"].ToString() == "MRS")
-        //            {
-        //                cbTitle.SelectedIndex = 2;
-        //            }
-        //            if (drCustomer["customerTitle"].ToString() == "MS")
-        //            {
-        //                cbTitle.SelectedIndex = 3;
-        //            }
-        //            if (drCustomer["customerTitle"].ToString() == "DR")
-        //            {
-        //                cbTitle.SelectedIndex = 4;
-        //            }
-
-        //            txtFname.Text = drCustomer["customerForename"].ToString();
-        //            txtLName.Text = drCustomer["customerSurname"].ToString();
-        //            txtStreet.Text = drCustomer["customerStreet"].ToString();
-        //            txtCity.Text = drCustomer["customerCity"].ToString();
-        //            txtCounty.Text = drCustomer["customerCounty"].ToString();
-        //            txtPC.Text = drCustomer["customerPostcode"].ToString();
-        //            txtTelNo.Text = drCustomer["customerTel"].ToString();
-        //            break;
-        //        }
-        //    }
-        //}
-
-
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -2036,7 +2020,7 @@ namespace Belfray
             //pnlCustomerDetails.Enabled = true;
             numPartySize.Value = 2;
             tableNoSelected = 1;
-            lblTableNo.Text = "1";
+            lblTableNo.Text = "001";
             lblTableNumDisplay.Text = "1";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
