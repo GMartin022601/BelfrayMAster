@@ -14,16 +14,16 @@ namespace Belfray
     public partial class TableSelect : Form
     {
         //SQL links
-        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daTables;// daSupplier;
+        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem;// daSupplier;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBTables;
-        DataRow drCustomer, drBooking, drBookingType, drPaymentType, drTables;
-        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlTables;
+        SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBBookingItem;
+        DataRow drCustomer, drBooking, drBookingType, drPaymentType, drBookingItem;
+        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem;
         bool formLoad = true;
         bool getInfo, bookingInfo;
         bool newCustomer, newBooking;
         public bool arrowCreated = false;
-        int tableNoSelected;
+        int tableNoSelected, partySize;
 
         public TableSelect()
         {
@@ -935,6 +935,259 @@ namespace Belfray
             lblRedCapacityValue.Text = s;
         }
 
+        private void picSaveRoomSelect_Click(object sender, EventArgs e)
+        {
+            pnlCustomerDetails.Enabled = true;
+            numPartySize.Enabled = true;
+            dateBooking.Enabled = true;
+            txtTime.Enabled = true;
+            cbPaymentTyp.Enabled = true;
+            newBooking = true;
+            
+            //generate booking number
+            int noRows = dsBelfray.Tables["Booking"].Rows.Count;
+
+            if (noRows == 0)
+            {
+                lblBookingNo.Text = "BK100000000";
+            }
+            else
+            {
+                getBookingNum(noRows);
+            }
+
+            string s = drBooking["bookingNo"].ToString();
+            string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
+            lblBookingNo.Text = s1;
+            dgvBooking.Rows.Add(lblBookingNo.Text, lblTableNo.Text);
+
+        }
+
+        private void tbl2_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 2;
+            tableNoSelected = 2;
+            lblTableNo.Text = "2";
+            lblTableNumDisplay.Text = "2";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "2";
+        }
+
+        private void tbl3_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 2;
+            tableNoSelected = 3;
+            lblTableNo.Text = "3";
+            lblTableNumDisplay.Text = "3";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "2";
+        }
+
+        private void tbl4_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 2;
+            tableNoSelected = 4;
+            lblTableNo.Text = "4";
+            lblTableNumDisplay.Text = "4";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "2";
+        }
+
+        private void tbl5_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 2;
+            tableNoSelected = 5;
+            lblTableNo.Text = "5";
+            lblTableNumDisplay.Text = "5";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "2";
+        }
+
+        private void tbl6_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 2;
+            tableNoSelected = 6;
+            lblTableNo.Text = "6";
+            lblTableNumDisplay.Text = "6";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "2";
+        }
+
+        private void tbl7_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 2;
+            tableNoSelected = 7;
+            lblTableNo.Text = "7";
+            lblTableNumDisplay.Text = "7";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "2";
+        }
+
+        private void tbl8_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 8;
+            lblTableNo.Text = "8";
+            lblTableNumDisplay.Text = "8";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl9_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 9;
+            lblTableNo.Text = "9";
+            lblTableNumDisplay.Text = "9";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl10_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 10;
+            lblTableNo.Text = "10";
+            lblTableNumDisplay.Text = "10";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl11_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 11;
+            lblTableNo.Text = "11";
+            lblTableNumDisplay.Text = "11";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl12_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 12;
+            lblTableNo.Text = "12";
+            lblTableNumDisplay.Text = "12";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl13_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 13;
+            lblTableNo.Text = "13";
+            lblTableNumDisplay.Text = "13";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl14_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 14;
+            lblTableNo.Text = "14";
+            lblTableNumDisplay.Text = "14";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl15_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 15;
+            lblTableNo.Text = "15";
+            lblTableNumDisplay.Text = "15";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl16_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 16;
+            lblTableNo.Text = "16";
+            lblTableNumDisplay.Text = "16";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl17_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 17;
+            lblTableNo.Text = "17";
+            lblTableNumDisplay.Text = "17";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl18_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 18;
+            lblTableNo.Text = "18";
+            lblTableNumDisplay.Text = "18";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl19_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 19;
+            lblTableNo.Text = "19";
+            lblTableNumDisplay.Text = "19";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl20_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 20;
+            lblTableNo.Text = "20";
+            lblTableNumDisplay.Text = "20";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl21_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 21;
+            lblTableNo.Text = "21";
+            lblTableNumDisplay.Text = "21";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl22_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 22;
+            lblTableNo.Text = "22";
+            lblTableNumDisplay.Text = "22";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void tbl23_Click(object sender, EventArgs e)
+        {
+            numPartySize.Value = 4;
+            tableNoSelected = 23;
+            lblTableNo.Text = "23";
+            lblTableNumDisplay.Text = "23";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "4";
+        }
+
+        private void picAddRoom_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void tbl16_MouseLeave(object sender, EventArgs e)
         {
             arrowCreated = true;
@@ -951,122 +1204,100 @@ namespace Belfray
             //arrowControlUp(colour, arrowCreated, 103, 165);
         }
 
-
-
-        private void btnGetInfo_Click(object sender, EventArgs e)
+        private void cbCustNo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //int noRows = dsBelfray.Tables["Customer"].Rows.Count;
-            getInfo = true;
-
-            foreach (DataRow drCustomer in dsBelfray.Tables["Customer"].Rows)
+            if (!formLoad)
             {
-                string customer = drCustomer["customerNo"].ToString();
+                //int noRows = dsBelfray.Tables["Customer"].Rows.Count;
+                getInfo = true;
 
-                if (customer.Equals(txtCustID.Text))
+                foreach (DataRow drCustomer in dsBelfray.Tables["Customer"].Rows)
                 {
+                    string customer = drCustomer["customerNo"].ToString();
 
-                    if (drCustomer["customerTitle"].ToString() == "MR")
+                    if (customer.Equals(cbCustNo.Text))
                     {
-                        cbTitle.SelectedIndex = 0;
-                    }
-                    if (drCustomer["customerTitle"].ToString() == "MISS")
-                    {
-                        cbTitle.SelectedIndex = 1;
-                    }
-                    if (drCustomer["customerTitle"].ToString() == "MRS")
-                    {
-                        cbTitle.SelectedIndex = 2;
-                    }
-                    if (drCustomer["customerTitle"].ToString() == "MS")
-                    {
-                        cbTitle.SelectedIndex = 3;
-                    }
-                    if (drCustomer["customerTitle"].ToString() == "DR")
-                    {
-                        cbTitle.SelectedIndex = 4;
-                    }
 
-                    txtFname.Text = drCustomer["customerForename"].ToString();
-                    txtLName.Text = drCustomer["customerSurname"].ToString();
-                    txtStreet.Text = drCustomer["customerStreet"].ToString();
-                    txtCity.Text = drCustomer["customerCity"].ToString();
-                    txtCounty.Text = drCustomer["customerCounty"].ToString();
-                    txtPC.Text = drCustomer["customerPostcode"].ToString();
-                    txtTelNo.Text = drCustomer["customerTel"].ToString();
-                    break;
+                        if (drCustomer["customerTitle"].ToString() == "MR")
+                        {
+                            cbTitle.SelectedIndex = 0;
+                        }
+                        if (drCustomer["customerTitle"].ToString() == "MISS")
+                        {
+                            cbTitle.SelectedIndex = 1;
+                        }
+                        if (drCustomer["customerTitle"].ToString() == "MRS")
+                        {
+                            cbTitle.SelectedIndex = 2;
+                        }
+                        if (drCustomer["customerTitle"].ToString() == "MS")
+                        {
+                            cbTitle.SelectedIndex = 3;
+                        }
+                        if (drCustomer["customerTitle"].ToString() == "DR")
+                        {
+                            cbTitle.SelectedIndex = 4;
+                        }
+
+                        txtFname.Text = drCustomer["customerForename"].ToString();
+                        txtLName.Text = drCustomer["customerSurname"].ToString();
+                        txtStreet.Text = drCustomer["customerStreet"].ToString();
+                        txtCity.Text = drCustomer["customerCity"].ToString();
+                        txtCounty.Text = drCustomer["customerCounty"].ToString();
+                        txtPC.Text = drCustomer["customerPostcode"].ToString();
+                        txtTelNo.Text = drCustomer["customerTel"].ToString();
+                        break;
+                    }
                 }
             }
         }
 
-        private void btnGetBookingInfo_Click(object sender, EventArgs e)
-        {
-            bookingInfo = true;
+        //private void btnGetInfo_Click(object sender, EventArgs e)
+        //{
+        //    //int noRows = dsBelfray.Tables["Customer"].Rows.Count;
+        //    getInfo = true;
 
-            foreach (DataRow drBooking in dsBelfray.Tables["Booking"].Rows)
-            {
-                foreach (DataRow drBookingType in dsBelfray.Tables["BType"].Rows)
-                {
-                    foreach (DataRow drPaymentType in dsBelfray.Tables["Payment"].Rows)
-                    {
-                        string booking = drBooking["bookingNo"].ToString();
-                        string btype = drBookingType["typeID"].ToString();
-                        //int partySize = Convert.ToInt32(drBooking["partySize"].ToString());
-                        //Convert.ToInt32(drBooking["partySize"].ToString());
+        //    foreach (DataRow drCustomer in dsBelfray.Tables["Customer"].Rows)
+        //    {
+        //        string customer = drCustomer["customerNo"].ToString();
 
-                        if (booking.Equals(txtBookingNo.Text))
-                        {
-                            // string btype = drBookingType["typeID"].ToString();
-                            int partySize = Convert.ToInt32(drBooking["partySize"].ToString());
-                            string bDate = drBooking["checkInDate"].ToString();
-                            string bTime = drBooking["bookingTime"].ToString();
+        //        if (customer.Equals(txtCustID.Text))
+        //        {
+
+        //            if (drCustomer["customerTitle"].ToString() == "MR")
+        //            {
+        //                cbTitle.SelectedIndex = 0;
+        //            }
+        //            if (drCustomer["customerTitle"].ToString() == "MISS")
+        //            {
+        //                cbTitle.SelectedIndex = 1;
+        //            }
+        //            if (drCustomer["customerTitle"].ToString() == "MRS")
+        //            {
+        //                cbTitle.SelectedIndex = 2;
+        //            }
+        //            if (drCustomer["customerTitle"].ToString() == "MS")
+        //            {
+        //                cbTitle.SelectedIndex = 3;
+        //            }
+        //            if (drCustomer["customerTitle"].ToString() == "DR")
+        //            {
+        //                cbTitle.SelectedIndex = 4;
+        //            }
+
+        //            txtFname.Text = drCustomer["customerForename"].ToString();
+        //            txtLName.Text = drCustomer["customerSurname"].ToString();
+        //            txtStreet.Text = drCustomer["customerStreet"].ToString();
+        //            txtCity.Text = drCustomer["customerCity"].ToString();
+        //            txtCounty.Text = drCustomer["customerCounty"].ToString();
+        //            txtPC.Text = drCustomer["customerPostcode"].ToString();
+        //            txtTelNo.Text = drCustomer["customerTel"].ToString();
+        //            break;
+        //        }
+        //    }
+        //}
 
 
-                            if (drBookingType["typeID"].ToString() == "TYP100002")
-                            {
-                                cbBookingType.SelectedValue = drBookingType["typeDesc"].ToString();
-                            }
-                            if (drBookingType["typeID"].ToString() == "TYP100003")
-                            {
-                                cbBookingType.SelectedValue = drBookingType["typeDesc"].ToString();
-                            }
-                            if (drBookingType["typeID"].ToString() == "TYP100004")
-                            {
-                                cbBookingType.SelectedValue = drBookingType["typeDesc"].ToString();
-                            }
-                            if (drBookingType["typeID"].ToString() == "TYP100005")
-                            {
-                                cbBookingType.SelectedValue = drBookingType["typeDesc"].ToString();
-                            }
-                            if (drBookingType["typeID"].ToString() == "TYP100006")
-                            {
-                                cbBookingType.SelectedValue = drBookingType["typeDesc"].ToString();
-                            }
-
-                            numPartySize.Value = partySize;
-                            dateBooking.Value = Convert.ToDateTime(bDate);
-                            dtpBookingTime.Value = Convert.ToDateTime(bTime);
-
-                            if (drBooking["paymentTypeID"].ToString() == "PAY101")
-                            {
-                                cbPaymentTyp.SelectedValue = drPaymentType["paymentTypeDesc"].ToString();
-                            }
-                            if (drBooking["paymentTypeID"].ToString() == "PAY102")
-                            {
-                                cbPaymentTyp.SelectedValue = drPaymentType["paymentTypeDesc"].ToString();
-                            }
-                            if (drBooking["paymentTypeID"].ToString() == "PAY103")
-                            {
-                                cbPaymentTyp.SelectedValue = drPaymentType["paymentTypeDesc"].ToString();
-                            }
-                            if (drBooking["paymentTypeID"].ToString() == "PAY104")
-                            {
-                                cbPaymentTyp.SelectedValue = drPaymentType["paymentTypeDesc"].ToString();
-                            }
-                        }
-                    }
-                }
-            }//after here
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -1080,12 +1311,12 @@ namespace Belfray
                 //Customer Number
                 try
                 {
-                    myCust.CustomerNumber = txtCustID.Text.Trim();
+                    myCust.CustomerNumber = cbCustNo.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errP.SetError(txtCustID, MyEx.toString());
+                    errP.SetError(cbCustNo, MyEx.toString());
                 }
 
                 //Customer Title
@@ -1179,12 +1410,12 @@ namespace Belfray
                 //Try Booking
                 try
                 {
-                    myBook.CustomerNumber = txtBookingNo.Text.Trim();
+                    myBook.BookingNumber = lblBookingNo.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errP.SetError(txtBookingNo, MyEx.toString());
+                    errP.SetError(lblBookingNo, MyEx.toString());
                 }
                 try
                 {
@@ -1240,8 +1471,7 @@ namespace Belfray
                         drCustomer["customerTel"] = myCust.TelNo;
                         dsBelfray.Tables["Customer"].Rows.Add(drCustomer);
                         daCustomer.Update(dsBelfray, "Customer");
-                        dsBelfray.Tables["Customer"].Rows.Add(drCustomer);
-                        daCustomer.Update(dsBelfray, "Customer");
+
                     }
                     if (ok)
                     {
@@ -1254,7 +1484,21 @@ namespace Belfray
                         drBooking["partySize"] = myBook.PartySize;
                         dsBelfray.Tables["Booking"].Rows.Add(drBooking);
                         daBooking.Update(dsBelfray, "Booking");
+                    }
+                    if (ok)
+                    {
+                        int tableRows = dgvBooking.RowCount - 1;
 
+                        for (int x = 0; x < tableRows; x++)
+                        {
+                            drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
+                            drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
+                            drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+                            drBookingItem["itemQty"] = DBNull.Value;
+                            dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
+                        }
+
+                        daBookingItem.Update(dsBelfray, "BookingItem");
                     }
                     MessageBox.Show("Booking Added");
                 }
@@ -1273,22 +1517,22 @@ namespace Belfray
                 //Customer Number
                 try
                 {
-                    myCust.CustomerNumber = txtCustID.Text.Trim();
+                    myCust.CustomerNumber = cbCustNo.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errP.SetError(txtCustID, MyEx.toString());
+                    errP.SetError(cbCustNo, MyEx.toString());
                 }
                 //Try Booking
                 try
                 {
-                    myBook.BookingNumber = txtBookingNo.Text.Trim();
+                    myBook.BookingNumber = lblBookingNo.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errP.SetError(txtBookingNo, MyEx.toString());
+                    errP.SetError(lblBookingNo, MyEx.toString());
                 }
                 try
                 {
@@ -1340,10 +1584,25 @@ namespace Belfray
                         drBooking["partySize"] = myBook.PartySize;
                         dsBelfray.Tables["Booking"].Rows.Add(drBooking);
                         daBooking.Update(dsBelfray, "Booking");
+                    }
+                    if (ok)
+                    {
+                        int tableRows = dgvBooking.RowCount - 1;
 
+                        for (int x = 0; x < tableRows; x++)
+                        {
+                            drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
+                            drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
+                            drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+                            drBookingItem["itemQty"] = DBNull.Value;
+                            dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
+                        }
+
+                        daBookingItem.Update(dsBelfray, "BookingItem");
                     }
                     MessageBox.Show("Booking Added");
                 }
+
                 catch (Exception ex)
                 {
                     MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
@@ -1747,12 +2006,13 @@ namespace Belfray
 
         private void tbl1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Would you like to place a booking for Table 1?", "Add Booking", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-            {
-                pnlCustomerDetails.Enabled = true;
-                numPartySize.Value = 2;
-                tableNoSelected = 1;
-            }
+            //pnlCustomerDetails.Enabled = true;
+            numPartySize.Value = 2;
+            tableNoSelected = 1;
+            lblTableNo.Text = "1";
+            lblTableNumDisplay.Text = "1";
+            lblSeatsAvail.Text = "Yes/No";
+            lblTableCapacity.Text = "2";
         }
 
         private void chkNewCustomer_CheckedChanged(object sender, EventArgs e)
@@ -1774,7 +2034,7 @@ namespace Belfray
 
                 if (noRows == 0)
                 {
-                    txtCustID.Text = "CUS100000";
+                    cbCustNo.SelectedIndex = -1;// "CUS100000";
                 }
                 else
                 {
@@ -1783,14 +2043,13 @@ namespace Belfray
 
                 string s = drCustomer["customerNo"].ToString();
                 string s1 = "CUS" + (Convert.ToInt32(s.Replace("CUS", "")) + 1).ToString().PadLeft(5, '0');
-                txtCustID.Text = s1;
+                cbCustNo.Text = s1;
 
 
             }
             else if (chkNewCustomer.Checked == false)
             {
                 cbTitle.Enabled = false;
-                //txtCustID.Enabled = false;
                 txtFname.Enabled = false;
                 txtLName.Enabled = false;
                 txtStreet.Enabled = false;
@@ -1798,50 +2057,48 @@ namespace Belfray
                 txtCounty.Enabled = false;
                 txtPC.Enabled = false;
                 txtTelNo.Enabled = false;
-                txtCustID.Text = "";
+                cbCustNo.SelectedIndex = -1;
                 newCustomer = false;
             }
 
         }
 
-        private void chkNewBooking_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkNewBooking.Checked)
-            {
-                cbBookingType.Enabled = true;
-                numPartySize.Enabled = true;
-                dateBooking.Enabled = true;
-                cbTime.Enabled = true;
-                cbPaymentTyp.Enabled = true;
-                newBooking = true;
+        //private void chkNewBooking_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (chkNewBooking.Checked)
+        //    {
+        //        numPartySize.Enabled = true;
+        //        dateBooking.Enabled = true;
+        //        txtTime.Enabled = true;
+        //        cbPaymentTyp.Enabled = true;
+        //        newBooking = true;
 
-                //generate booking number
-                int noRows = dsBelfray.Tables["Booking"].Rows.Count;
+        //        //generate booking number
+        //        int noRows = dsBelfray.Tables["Booking"].Rows.Count;
 
-                if (noRows == 0)
-                {
-                    txtBookingNo.Text = "BK100000000";
-                }
-                else
-                {
-                    getBookingNum(noRows);
-                }
+        //        if (noRows == 0)
+        //        {
+        //            lblBookingNo.Text = "BK100000000";
+        //        }
+        //        else
+        //        {
+        //            getBookingNum(noRows);
+        //        }
 
-                string s = drBooking["bookingNo"].ToString();
-                string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
-                txtBookingNo.Text = s1;
-            }
-            else if (chkNewBooking.Checked == false)
-            {
-                cbBookingType.Enabled = false;
-                numPartySize.Enabled = false;
-                dateBooking.Enabled = false;
-                cbTime.Enabled = false;
-                cbPaymentTyp.Enabled = false;
-                txtBookingNo.Text = "";
-                newBooking = false;
-            }
-        }
+        //        string s = drBooking["bookingNo"].ToString();
+        //        string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
+        //        lblBookingNo.Text = s1;
+        //    }
+        //    else if (chkNewBooking.Checked == false)
+        //    {
+        //        numPartySize.Enabled = false;
+        //        dateBooking.Enabled = false;
+        //        txtTime.Enabled = false;
+        //        cbPaymentTyp.Enabled = false;
+        //        lblBookingNo.Text = "";
+        //        newBooking = false;
+        //    }
+        //}
 
         private void TableSelect_Load(object sender, EventArgs e)
         {
@@ -1878,65 +2135,48 @@ namespace Belfray
             cmdBPaymentType = new SqlCommandBuilder(daPaymentType);
             daPaymentType.FillSchema(dsBelfray, SchemaType.Source, "Payment");
             daPaymentType.Fill(dsBelfray, "Payment");
-            //SQL For Tables
-            //sqlTables = @"select * from RestTables";
-            //daTables = new SqlDataAdapter(sqlTables, connStr);
-            //cmdBTables = new SqlCommandBuilder(daTables);
-            //daTables.FillSchema(dsBelfray, SchemaType.Source, "RestTables");
-            //daTables.Fill(dsBelfray, "RestTables");
-
-            ////SQL for Booking DGV - TO BE EDITED TO SHOW TABLE BOOKINGS
-            //sqlBookingDGV = @"select * from Booking WHERE Booking.tableNo = '2'";
-            ////typeID = 'TYP10002' OR typeID ='TYP10003' OR typeID ='TYP10004' OR typeID ='TYP10005' OR typeID ='TYP10006' OR typeID ='TYP10007'";
-            //daBookingDGV = new SqlDataAdapter(sqlBooking, connStr);
-
-            //daBookingDGV.FillSchema(dsBelfray, SchemaType.Source, "Booking");
-            //daBookingDGV.Fill(dsBelfray, "Booking");
-
-            //dgvBooking.Visible = true;
-            //dgvBooking.DataSource = dsBelfray.Tables["Booking"];
-            ////Resize
-            //dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-            //cb BookingType
-            cbBookingType.DataSource = dsBelfray.Tables["BType"];
-            cbBookingType.ValueMember = "typeID";
-            cbBookingType.DisplayMember = "typeDesc";
-            cbBookingType.SelectedIndex = -1;
-
-            //cb ayment type
+            //SQL for bookingItem Type
+            sqlBookingItem = @"select * from BookingItem";
+            daBookingItem = new SqlDataAdapter(sqlBookingItem, connStr);
+            cmdBBookingItem = new SqlCommandBuilder(daBookingItem);
+            daBookingItem.FillSchema(dsBelfray, SchemaType.Source, "BookingItem");
+            daBookingItem.Fill(dsBelfray, "BookingItem");
+            //cbPayment type
             cbPaymentTyp.DataSource = dsBelfray.Tables["Payment"];
             cbPaymentTyp.ValueMember = "paymentTypeID";
             cbPaymentTyp.DisplayMember = "paymentTypeDesc";
             cbPaymentTyp.SelectedIndex = -1;
 
             //cb Title
-            //cbTitle.DataSource = dsBelfray.Tables["Customer"];
-            //cbTitle.ValueMember = "customerTitle";
-            //cbTitle.DisplayMember = "customerTitle";
-            //cbTitle.SelectedIndex = -1;
+            cbCustNo.DataSource = dsBelfray.Tables["Customer"];
+            cbCustNo.ValueMember = "customerNo";
+            cbCustNo.DisplayMember = "customerNo";
+            cbCustNo.SelectedIndex = -1;
 
-            //dtpBookingTime = new DateTimePicker();
-            dtpBookingTime.Format = DateTimePickerFormat.Custom;
-            dtpBookingTime.CustomFormat = "HH:mm"; // Only use hours and minutes
-            dtpBookingTime.ShowUpDown = true;
+            //Test
+            cbTitle.SelectedIndex = -1;
+            txtFname.Text = "";
+            txtLName.Text = "";
+            txtStreet.Text = "";
+            txtCity.Text = "";
+            txtCounty.Text = "";
+            txtPC.Text = "";
+            txtTelNo.Text = "";
 
+            //int noRows = dsBelfray.Tables["Booking"].Rows.Count;
+
+            //if (noRows == 0)
+            //{
+            //    lblBookingNo.Text = "BK10000001";
+            //}
+            //else
+            //{
+            //    getBookingNum(noRows);
+
+            //}
+            //string s = drBooking["bookingNo"].ToString();
+            //string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
+            //lblBookingNo.Text = s1;
         }
-
-
-        //Table2
-        //private void tbl2_MouseEnter(object sender, EventArgs e)
-        //{
-        //    string s1 = "Table Number: 2\n";
-        //    string s2 = "Party Size: 2\n";
-        //    string s3 = "Increase Size: Yes";
-        //    ToolTip tpTable2 = new ToolTip();
-        //    tpTable2.ShowAlways = true;
-        //    tpTable2.ToolTipTitle = "Table Information";
-        //    tpTable2.ToolTipIcon = ToolTipIcon.Info;
-        //    tpTable2.SetToolTip(tbl2, s1  + s2 + s3);
-        //}
-
-
     }
 }
