@@ -1183,6 +1183,33 @@ namespace Belfray
             lblTableCapacity.Text = "4";
         }
 
+        private void picAddTable_Click(object sender, EventArgs e)
+        {
+            pnlCustomerDetails.Enabled = true;
+            numPartySize.Enabled = true;
+            dateBooking.Enabled = true;
+            txtTime.Enabled = true;
+            cbPaymentTyp.Enabled = true;
+            newBooking = true;
+
+            //generate booking number
+            int noRows = dsBelfray.Tables["Booking"].Rows.Count;
+
+            if (noRows == 0)
+            {
+                lblBookingNo.Text = "BK100000000";
+            }
+            else
+            {
+                getBookingNum(noRows);
+            }
+
+            string s = drBooking["bookingNo"].ToString();
+            string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
+            lblBookingNo.Text = s1;
+            dgvBooking.Rows.Add(lblBookingNo.Text, lblTableNo.Text);
+        }
+
         private void picAddRoom_Click(object sender, EventArgs e)
         {
 

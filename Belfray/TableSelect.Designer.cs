@@ -146,11 +146,10 @@
             this.lblTableNumDisplay = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picCancellRoomSelect = new System.Windows.Forms.PictureBox();
-            this.picSaveRoomSelect = new System.Windows.Forms.PictureBox();
-            this.picEditSave = new System.Windows.Forms.PictureBox();
             this.picEditCancel = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.picAddTable = new System.Windows.Forms.PictureBox();
             this.pnlTableSelect.SuspendLayout();
             this.pnlGreen.SuspendLayout();
             this.pnlRed.SuspendLayout();
@@ -191,10 +190,9 @@
             this.pnlFloorPlan.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancellRoomSelect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveRoomSelect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEditSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddTable)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTableSelect
@@ -1457,10 +1455,9 @@
             // 
             // pnlFloorPlan
             // 
+            this.pnlFloorPlan.Controls.Add(this.picAddTable);
             this.pnlFloorPlan.Controls.Add(this.groupBox1);
             this.pnlFloorPlan.Controls.Add(this.picCancellRoomSelect);
-            this.pnlFloorPlan.Controls.Add(this.picSaveRoomSelect);
-            this.pnlFloorPlan.Controls.Add(this.picEditSave);
             this.pnlFloorPlan.Controls.Add(this.picEditCancel);
             this.pnlFloorPlan.Location = new System.Drawing.Point(4, 6);
             this.pnlFloorPlan.Name = "pnlFloorPlan";
@@ -1547,28 +1544,6 @@
             this.picCancellRoomSelect.TabIndex = 68;
             this.picCancellRoomSelect.TabStop = false;
             // 
-            // picSaveRoomSelect
-            // 
-            this.picSaveRoomSelect.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveRoomSelect.Location = new System.Drawing.Point(592, 370);
-            this.picSaveRoomSelect.Name = "picSaveRoomSelect";
-            this.picSaveRoomSelect.Size = new System.Drawing.Size(40, 40);
-            this.picSaveRoomSelect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSaveRoomSelect.TabIndex = 67;
-            this.picSaveRoomSelect.TabStop = false;
-            this.picSaveRoomSelect.Click += new System.EventHandler(this.picSaveRoomSelect_Click);
-            // 
-            // picEditSave
-            // 
-            this.picEditSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picEditSave.Location = new System.Drawing.Point(592, 370);
-            this.picEditSave.Name = "picEditSave";
-            this.picEditSave.Size = new System.Drawing.Size(40, 40);
-            this.picEditSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picEditSave.TabIndex = 69;
-            this.picEditSave.TabStop = false;
-            this.picEditSave.Visible = false;
-            // 
             // picEditCancel
             // 
             this.picEditCancel.Image = global::Belfray.Properties.Resources.Cancel3;
@@ -1589,6 +1564,17 @@
             // errP
             // 
             this.errP.ContainerControl = this;
+            // 
+            // picAddTable
+            // 
+            this.picAddTable.Image = global::Belfray.Properties.Resources.AddNew;
+            this.picAddTable.Location = new System.Drawing.Point(595, 370);
+            this.picAddTable.Name = "picAddTable";
+            this.picAddTable.Size = new System.Drawing.Size(40, 40);
+            this.picAddTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAddTable.TabIndex = 83;
+            this.picAddTable.TabStop = false;
+            this.picAddTable.Click += new System.EventHandler(this.picAddTable_Click);
             // 
             // TableSelect
             // 
@@ -1647,10 +1633,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancellRoomSelect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveRoomSelect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEditSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1764,8 +1749,6 @@
         private System.Windows.Forms.PictureBox picRemoveRoom;
         private System.Windows.Forms.Label lblBookingNo;
         private System.Windows.Forms.PictureBox picCancellRoomSelect;
-        private System.Windows.Forms.PictureBox picSaveRoomSelect;
-        private System.Windows.Forms.PictureBox picEditSave;
         private System.Windows.Forms.PictureBox picEditCancel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblSeatsAvail;
@@ -1779,5 +1762,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn TableNumber;
+        private System.Windows.Forms.PictureBox picAddTable;
     }
 }
