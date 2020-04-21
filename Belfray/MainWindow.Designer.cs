@@ -132,7 +132,7 @@
             // 
             // picRoomStock
             // 
-            this.picRoomStock.Image = global::Belfray.Properties.Resources.RoomService_Sample;
+            this.picRoomStock.Image = global::Belfray.Properties.Resources.RoomService_Sample3;
             this.picRoomStock.Location = new System.Drawing.Point(259, 10);
             this.picRoomStock.Name = "picRoomStock";
             this.picRoomStock.Size = new System.Drawing.Size(123, 60);

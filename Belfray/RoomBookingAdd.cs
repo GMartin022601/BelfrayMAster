@@ -22,6 +22,7 @@ namespace Belfray
         private bool userActivated = false;
         private bool custEnabled = false;
         private bool bookEnabled = true;
+        private bool roomSel = false;
 
         //Edit Cancelled
         public static bool cancelled = false;
@@ -445,6 +446,24 @@ namespace Belfray
             picBookingCancel.BackColor = Color.Transparent;
         }
 
+        //Data Grid View Controls
+        private void dgvRooms_Click(object sender, EventArgs e)
+        {
+            if (dgvRooms.SelectedRows.Count == 0)
+            {
+                roomSel = false;
+                Globals.roomNoSel = 0;
+                //prdSel = null;
+            }
+            else if (dgvRooms.SelectedRows.Count == 1)
+            {
+                roomSel = true;
+                lblRoomNo.Text = dgvRooms.SelectedRows[0].Cells[1].Value.ToString();
+                Globals.roomNoSel = dgvRooms.SelectedRows[0].Index;
+                //prdSel = Globals.prdNoSel;
+            }
+        }
+
         //Save Customer Button Functions
         private void picCustomerSave_MouseEnter(object sender, EventArgs e)
         {
@@ -642,6 +661,9 @@ namespace Belfray
         private void picAddRoom_MouseEnter(object sender, EventArgs e)
         {
             picAddRoom.BackColor = Color.FromArgb(57, 181, 74);
+
+            pnlGreen.Visible = true;
+            pnlGreen.Location = new Point(523, 157);
         }
 
         private void picAddRoom_Click(object sender, EventArgs e)
@@ -653,22 +675,56 @@ namespace Belfray
         private void picAddRoom_MouseLeave(object sender, EventArgs e)
         {
             picAddRoom.BackColor = Color.Transparent;
+            pnlGreen.Visible = false;
         }
 
         //Remove Room Button Function
         private void picRemoveRoom_MouseEnter(object sender, EventArgs e)
         {
             picRemoveRoom.BackColor = Color.FromArgb(205, 36, 36);
+
+            pnlRed.Visible = true;
+            pnlRed.Location = new Point(553, 157);
         }
 
         private void picRemoveRoom_Click(object sender, EventArgs e)
         {
+            if (!roomSel)
+            {
+                MessageBox.Show("Please select a room from the table on the right to remove it from the booking", "Remove a room", MessageBoxButtons.OK);
+            }
+            else
+            {
+                for(int x = 0; x < 19; x++)
+                {
+                    if(Globals.rooms[x].Equals(dgvRooms.Rows[Globals.roomNoSel].Cells[1].Value.ToString()))
+                    {
+                        Globals.rooms[x] = " ";
+                        break;
+                    }
+                }
 
+                dgvRooms.Rows.Remove(dgvRooms.Rows[Globals.roomNoSel]);
+                lblRoomNo.Text = "-";
+                dgvRooms.ClearSelection();
+
+                roomSel = false;
+
+                for (int x = 0; x < 18; x++)
+                {
+                    if (Globals.rooms[x].Equals(" ") && !Globals.rooms[x+1].Equals(" "))
+                    {
+                        Globals.rooms[x] = Globals.rooms[x+1];
+                        Globals.rooms[x + 1] = " ";
+                    }
+                }
+            }
         }
 
         private void picRemoveRoom_MouseLeave(object sender, EventArgs e)
         {
             picRemoveRoom.BackColor = Color.Transparent;
+            pnlRed.Visible = false;
         }
     }
 }

@@ -63,6 +63,15 @@ namespace Belfray
             daPayType.FillSchema(dsBelfray, SchemaType.Source, "Payment");
             daPayType.Fill(dsBelfray, "Payment");
 
+            //SQL For Room
+            sqlRoom = @"select * from BookingItem WHERE itemNo LIKE 'RM%'";
+            daRoom = new SqlDataAdapter(sqlRoom, connStr);
+            cmdBRoom = new SqlCommandBuilder(daRoom);
+            daRoom.FillSchema(dsBelfray, SchemaType.Source, "BookingItem");
+            daRoom.Fill(dsBelfray, "BookingItem");
+
+            
+
             //CB Details Customer
             cmbCustomerNo.DataSource = dsBelfray.Tables["Customer"];
             cmbCustomerNo.ValueMember = "customerNo";
@@ -88,17 +97,44 @@ namespace Belfray
 
             if (Globals.firstLoad)
             {
+                foreach (DataRow drRoom in dsBelfray.Tables["BookingItem"].Rows)
+                {
+                    string bookNumber = "";
+                    string itemNumber = "";
+                    if (drRoom["bookingNo"].Equals(lblBookingNo.Text))
+                    {
+                        bookNumber = drRoom["bookingNo"].ToString();
+                        itemNumber = drRoom["itemNo"].ToString();
+                        dgvRooms.ColumnCount = 2;
+                        dgvRooms.Columns[0].Name = "Booking Number";
+                        dgvRooms.Columns[0].Width = 288;
+                        dgvRooms.Columns[1].Name = "Room Number";
+                        dgvRooms.Columns[1].Width = 188;
+                        dgvRooms.Rows.Add(bookNumber, itemNumber);
+                        //dgvRooms.DataSource = dsBelfray.Tables["bookingItem"].Rows;
+                    }
+                }
                 dtpBookingCheckIn.Value = Convert.ToDateTime(drBooking["checkInDate"]);
                 dtpBookingCheckOut.Value = Convert.ToDateTime(drBooking["checkOutDate"]);
-                lblRoomNo.Text = drBooking["roomNo"].ToString();
 
                 Globals.firstLoad = false;
             }
             else
             {
-                lblRoomNo.Text = RoomSelect.roomSelected;
+                drRoom["bookingNo"] = lblBookingNo.Text;
+                drRoom["itemNo"] = "RM" + RoomSelect.roomSelected;
                 dtpBookingCheckIn.Value = RoomSelect.checkInDate;
                 dtpBookingCheckOut.Value = RoomSelect.checkOutDate;
+
+                daRoom.Update(dsBelfray, "BookingItem");
+
+                foreach (DataRow drRoom in dsBelfray.Tables["BookingItem"].Rows)
+                {
+                    if (drRoom["bookingNo"].Equals(lblBookingNo.Text))
+                    {
+                        dgvRooms.DataSource = dsBelfray.Tables["bookingItem"];
+                    }
+                }
 
                 Globals.firstLoad = false;
 
@@ -119,7 +155,7 @@ namespace Belfray
 
             int cusNoRows = dsBelfray.Tables["Customer"].Rows.Count;
 
-            for (int x = 0; x < (cusNoRows - 1); x++)
+            for(int x = 0; x < (cusNoRows - 1); x++)
             {
                 cmbCustomerNo.SelectedIndex = x;
                 if (drBooking["CustomerNo"].Equals(cmbCustomerNo.SelectedValue))
@@ -166,16 +202,28 @@ namespace Belfray
 
             userActivated = true;
 
-            //Capacity
-            drRoom = dsBelfray.Tables["Rooms"].Rows.Find(lblRoomNo.Text);
-            MainWindow.maxCap = Convert.ToInt32(drRoom["capacity"]);
+            //for (int x = 0; x < 19; x++)
+            //{
+            //    if (Globals.rooms[x].Contains(" "))
+            //    {
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        dgvRooms.Rows.Add(lblBookingNo.Text, Globals.rooms[x].ToString());
+            //    }
+            //}
+
+            ////Capacity
+            //drRoom = dsBelfray.Tables["Rooms"].Rows.Find(lblRoomNo.Text);
+            //MainWindow.maxCap = Convert.ToInt32(drRoom["capacity"]);
 
         }
 
         //Enables Booking Fields
         private void enableBookingEdit()
         {
-            chkEditDates.Enabled = true;
+            //chkEditDates.Enabled = true;
             chkEditCustomer.Enabled = true;
             txtPartySize.Enabled = true;
             cmbCustomerNo.Enabled = true;
@@ -185,12 +233,15 @@ namespace Belfray
             picBookingCancel.Visible = false;
             picBookingSave.Visible = true;
             picBookingSaveCancel.Visible = true;
+
+            picAddRoom.Enabled = true;
+            picRemoveRoom.Enabled = true;
         }
 
         //Disables Booking Fields
         private void disableBookingEdit()
         {
-            chkEditDates.Enabled = false;
+            //chkEditDates.Enabled = false;
             chkEditCustomer.Enabled = false;
             txtPartySize.Enabled = false;
             cmbCustomerNo.Enabled = false;
@@ -200,6 +251,9 @@ namespace Belfray
             picBookingCancel.Visible = true;
             picBookingSave.Visible = false;
             picBookingSaveCancel.Visible = false;
+
+            picAddRoom.Enabled = false;
+            picRemoveRoom.Enabled = false;
         }
 
         //Enables Customer Fields
@@ -253,6 +307,7 @@ namespace Belfray
         private void picBookingEdit_Click(object sender, EventArgs e)
         {
             enableBookingEdit();
+            gbRoomsAdded.Enabled = true;
         }
 
         private void picBookingEdit_MouseLeave(object sender, EventArgs e)
@@ -417,7 +472,6 @@ namespace Belfray
             
             dtpBookingCheckIn.Value = Convert.ToDateTime(drBooking["checkInDate"]);
             dtpBookingCheckOut.Value = Convert.ToDateTime(drBooking["checkOutDate"]);
-            lblRoomNo.Text = drBooking["roomNo"].ToString();
             
             int payNoRows = dsBelfray.Tables["Payment"].Rows.Count;
 
@@ -702,6 +756,47 @@ namespace Belfray
         private void picCustomerCancel_MouseLeave(object sender, EventArgs e)
         {
             picCustomerCancel.BackColor = Color.Transparent;
+        }
+
+        //Add Room Button Functions
+        private void picAddRoom_MouseEnter(object sender, EventArgs e)
+        {
+            picAddRoom.BackColor = Color.FromArgb(57, 181, 74);
+
+            pnlGreen.Visible = true;
+            pnlGreen.Location = new Point(523, 157);
+        }
+
+        private void picAddRoom_Click(object sender, EventArgs e)
+        {
+            cancelled = false;
+            this.Close();
+        }
+
+        private void picAddRoom_MouseLeave(object sender, EventArgs e)
+        {
+            picAddRoom.BackColor = Color.Transparent;
+            pnlGreen.Visible = false;
+        }
+
+        //remove Room Button Functions
+        private void picRemoveRoom_MouseEnter(object sender, EventArgs e)
+        {
+            picRemoveRoom.BackColor = Color.FromArgb(205, 36, 36);
+
+            pnlRed.Visible = true;
+            pnlRed.Location = new Point(553, 157);
+        }
+
+        private void picRemoveRoom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picRemoveRoom_MouseLeave(object sender, EventArgs e)
+        {
+            picRemoveRoom.BackColor = Color.Transparent;
+            pnlRed.Visible = false;
         }
     }
 }

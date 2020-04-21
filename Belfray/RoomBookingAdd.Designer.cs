@@ -77,6 +77,10 @@ namespace Belfray
             this.dgvRooms = new System.Windows.Forms.DataGridView();
             this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlRed = new System.Windows.Forms.Panel();
+            this.lblRedRoom = new System.Windows.Forms.Label();
+            this.pnlGreen = new System.Windows.Forms.Panel();
+            this.lblGreenRoom = new System.Windows.Forms.Label();
             this.picRemoveRoom = new System.Windows.Forms.PictureBox();
             this.picAddRoom = new System.Windows.Forms.PictureBox();
             this.picAddNewCust = new System.Windows.Forms.PictureBox();
@@ -92,6 +96,8 @@ namespace Belfray
             this.pnlRooms.SuspendLayout();
             this.gbRoomsAdded.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
+            this.pnlRed.SuspendLayout();
+            this.pnlGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRemoveRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddNewCust)).BeginInit();
@@ -554,6 +560,7 @@ namespace Belfray
             this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRooms.Size = new System.Drawing.Size(539, 67);
             this.dgvRooms.TabIndex = 0;
+            this.dgvRooms.Click += new System.EventHandler(this.dgvRooms_Click);
             // 
             // BookingNumber
             // 
@@ -568,6 +575,50 @@ namespace Belfray
             this.RoomNum.HeaderText = "Room Number";
             this.RoomNum.Name = "RoomNum";
             this.RoomNum.Width = 200;
+            // 
+            // pnlRed
+            // 
+            this.pnlRed.BackColor = System.Drawing.Color.Transparent;
+            this.pnlRed.BackgroundImage = global::Belfray.Properties.Resources.Red;
+            this.pnlRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlRed.Controls.Add(this.lblRedRoom);
+            this.pnlRed.Location = new System.Drawing.Point(335, 336);
+            this.pnlRed.Name = "pnlRed";
+            this.pnlRed.Size = new System.Drawing.Size(212, 24);
+            this.pnlRed.TabIndex = 60;
+            this.pnlRed.Visible = false;
+            // 
+            // lblRedRoom
+            // 
+            this.lblRedRoom.AutoSize = true;
+            this.lblRedRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedRoom.Location = new System.Drawing.Point(7, 5);
+            this.lblRedRoom.Name = "lblRedRoom";
+            this.lblRedRoom.Size = new System.Drawing.Size(198, 13);
+            this.lblRedRoom.TabIndex = 47;
+            this.lblRedRoom.Text = "Remove a room from the booking.";
+            // 
+            // pnlGreen
+            // 
+            this.pnlGreen.BackColor = System.Drawing.Color.Transparent;
+            this.pnlGreen.BackgroundImage = global::Belfray.Properties.Resources.Green;
+            this.pnlGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGreen.Controls.Add(this.lblGreenRoom);
+            this.pnlGreen.Location = new System.Drawing.Point(657, 336);
+            this.pnlGreen.Name = "pnlGreen";
+            this.pnlGreen.Size = new System.Drawing.Size(212, 24);
+            this.pnlGreen.TabIndex = 59;
+            this.pnlGreen.Visible = false;
+            // 
+            // lblGreenRoom
+            // 
+            this.lblGreenRoom.AutoSize = true;
+            this.lblGreenRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenRoom.Location = new System.Drawing.Point(6, 5);
+            this.lblGreenRoom.Name = "lblGreenRoom";
+            this.lblGreenRoom.Size = new System.Drawing.Size(197, 13);
+            this.lblGreenRoom.TabIndex = 47;
+            this.lblGreenRoom.Text = "Add another room to the booking.";
             // 
             // picRemoveRoom
             // 
@@ -667,6 +718,8 @@ namespace Belfray
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 349);
+            this.Controls.Add(this.pnlRed);
+            this.Controls.Add(this.pnlGreen);
             this.Controls.Add(this.pnlRooms);
             this.Controls.Add(this.pnlRoomPics);
             this.Controls.Add(this.pnlBookingDets);
@@ -685,6 +738,10 @@ namespace Belfray
             this.pnlRooms.ResumeLayout(false);
             this.gbRoomsAdded.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).EndInit();
+            this.pnlRed.ResumeLayout(false);
+            this.pnlRed.PerformLayout();
+            this.pnlGreen.ResumeLayout(false);
+            this.pnlGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRemoveRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddNewCust)).EndInit();
@@ -752,5 +809,9 @@ namespace Belfray
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomNum;
         private System.Windows.Forms.PictureBox picRemoveRoom;
+        private System.Windows.Forms.Panel pnlRed;
+        private System.Windows.Forms.Label lblRedRoom;
+        private System.Windows.Forms.Panel pnlGreen;
+        private System.Windows.Forms.Label lblGreenRoom;
     }
 }

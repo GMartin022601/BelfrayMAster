@@ -2037,6 +2037,12 @@ namespace Belfray
                 picEditSave.Visible = true;
                 picEditCancel.Visible = true;
             }
+
+            if(!Globals.rooms[0].Equals(" "))
+            {
+                dtpCheckInDate.Enabled = false;
+                dtpCheckOutDate.Enabled = false;
+            }
             
         }
 
@@ -2259,11 +2265,33 @@ namespace Belfray
 
         private void picEditSave_Click(object sender, EventArgs e)
         {
-            roomSelected = lblRoomNo.Text;
+            int pos = 0;
+            for (int x = 0; x < 19; x++)
+            {
+                if (Globals.rooms[x].Contains(" "))
+                {
+                    pos = x;
+                    break;
+                }
+            }
+
+            Globals.rooms[pos] = lblRoomNo.Text;
+
+            int posX = 0;
+            for (int x = 0; x < 19; x++)
+            {
+                if (Globals.capacity[x].CompareTo(0) == 0)
+                {
+                    posX = x;
+                    break;
+                }
+            }
+
+            Globals.capacity[posX] = int.Parse(lblRoomCapacity.Text);
+
             checkInDate = dtpCheckInDate.Value;
             checkOutDate = dtpCheckOutDate.Value;
             cancelled = false;
-            MainWindow.maxCap = int.Parse(lblRoomCapacity.Text);
             this.Close();
         }
 
