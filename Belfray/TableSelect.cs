@@ -1519,7 +1519,7 @@ namespace Belfray
 
                         daBookingItem.Update(dsBelfray, "BookingItem");
                     }
-                    MessageBox.Show("Booking Added");
+                    MessageBox.Show("Booking Addedc");
                 }
                 catch (Exception ex)
                 {
