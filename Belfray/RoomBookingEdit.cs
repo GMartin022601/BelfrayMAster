@@ -121,18 +121,31 @@ namespace Belfray
             }
             else
             {
+                drRoom = dsBelfray.Tables["BookingItem"].NewRow();
                 drRoom["bookingNo"] = lblBookingNo.Text;
-                drRoom["itemNo"] = "RM" + RoomSelect.roomSelected;
-                dtpBookingCheckIn.Value = RoomSelect.checkInDate;
-                dtpBookingCheckOut.Value = RoomSelect.checkOutDate;
+                drRoom["itemNo"] = "RM" + RoomSelect.roomSelected;                
+                dsBelfray.Tables["BookingItem"].Rows.Add(drRoom);
 
                 daRoom.Update(dsBelfray, "BookingItem");
 
+                dtpBookingCheckIn.Value = RoomSelect.checkInDate;
+                dtpBookingCheckOut.Value = RoomSelect.checkOutDate;
+
                 foreach (DataRow drRoom in dsBelfray.Tables["BookingItem"].Rows)
                 {
+                    string bookNumber = "";
+                    string itemNumber = "";
                     if (drRoom["bookingNo"].Equals(lblBookingNo.Text))
                     {
-                        dgvRooms.DataSource = dsBelfray.Tables["bookingItem"];
+                        bookNumber = drRoom["bookingNo"].ToString();
+                        itemNumber = drRoom["itemNo"].ToString();
+                        dgvRooms.ColumnCount = 2;
+                        dgvRooms.Columns[0].Name = "Booking Number";
+                        dgvRooms.Columns[0].Width = 288;
+                        dgvRooms.Columns[1].Name = "Room Number";
+                        dgvRooms.Columns[1].Width = 188;
+                        dgvRooms.Rows.Add(bookNumber, itemNumber);
+                        //dgvRooms.DataSource = dsBelfray.Tables["bookingItem"].Rows;
                     }
                 }
 
@@ -497,6 +510,27 @@ namespace Belfray
 
             lblCheckInTime.Text = drBooking["bookingTime"].ToString();
             txtPartySize.Text = drBooking["partySize"].ToString();
+
+            for (int x = 0; x < 19; x++)
+            {
+                if (!Globals.rooms[x].Contains(" "))
+                {
+                    foreach (DataRow drRoom in dsBelfray.Tables["BookingItem"].Rows)
+                    {
+                        if (drRoom["bookingNo"].Equals(lblBookingNo.Text) && drRoom["itemNo"].Equals("RM" + Globals.rooms[x]))
+                        {
+                            drRoom.Delete();
+                            daRoom.Update(dsBelfray, "BookingItem");
+                            break;
+                            //dgvRooms.DataSource = dsBelfray.Tables["bookingItem"].Rows;
+                        }
+                    }                    
+                }
+                else
+                {
+                    break;
+                }
+            }
 
             disableBookingEdit();
         }

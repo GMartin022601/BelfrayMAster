@@ -138,11 +138,19 @@ namespace Belfray
         {
             if(saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -238,11 +246,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -338,11 +354,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -438,11 +462,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -538,11 +570,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -638,11 +678,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -738,11 +786,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -838,11 +894,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -938,11 +1002,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1038,11 +1110,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1138,11 +1218,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1238,11 +1326,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1338,11 +1434,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1438,11 +1542,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1538,11 +1650,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1638,11 +1758,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1738,11 +1866,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1838,11 +1974,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -1938,11 +2082,19 @@ namespace Belfray
         {
             if (saveActive)
             {
-                picSaveRoomSelect.Visible = true;
+                if (MainWindow.tabSelected == 2)
+                {
+                    picSaveRoomSelect.Visible = true;
+                }
+                else
+                {
+                    picEditSave.Visible = true;
+                }
             }
             else
             {
                 picSaveRoomSelect.Visible = false;
+                picEditSave.Visible = false;
             }
 
             int noRows = dsBelfray.Tables["Item"].Rows.Count;
@@ -2029,7 +2181,7 @@ namespace Belfray
             dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
             userChange = true;
 
-            if(MainWindow.tabSelected == 3)
+            if (MainWindow.tabSelected == 3)
             {
                 picSaveRoomSelect.Visible = false;
                 picCancellRoomSelect.Visible = false;
@@ -2037,11 +2189,13 @@ namespace Belfray
                 picEditSave.Visible = true;
                 picEditCancel.Visible = true;
             }
-
-            if(!Globals.rooms[0].Equals(" "))
+            else
             {
-                dtpCheckInDate.Enabled = false;
-                dtpCheckOutDate.Enabled = false;
+                if (!Globals.rooms[0].Equals(" "))
+                {
+                    dtpCheckInDate.Enabled = false;
+                    dtpCheckOutDate.Enabled = false;
+                }
             }
             
         }
@@ -2277,18 +2431,19 @@ namespace Belfray
 
             Globals.rooms[pos] = lblRoomNo.Text;
 
-            int posX = 0;
-            for (int x = 0; x < 19; x++)
-            {
-                if (Globals.capacity[x].CompareTo(0) == 0)
-                {
-                    posX = x;
-                    break;
-                }
-            }
+            //int posX = 0;
+            //for (int x = 0; x < 19; x++)
+            //{
+            //    if (Globals.capacity[x].CompareTo(0) == 0)
+            //    {
+            //        posX = x;
+            //        break;
+            //    }
+            //}
 
-            Globals.capacity[posX] = int.Parse(lblRoomCapacity.Text);
+            //Globals.capacity[posX] = int.Parse(lblRoomCapacity.Text);
 
+            roomSelected = lblRoomNo.Text.ToString();
             checkInDate = dtpCheckInDate.Value;
             checkOutDate = dtpCheckOutDate.Value;
             cancelled = false;
