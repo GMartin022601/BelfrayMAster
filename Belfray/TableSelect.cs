@@ -108,7 +108,7 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(8, 100);
+                pnlGreen.Location = new Point(8, 135);
                 pnlGreen.Visible = true;
                 pnlGreen.BringToFront();
             }
@@ -116,7 +116,7 @@ namespace Belfray
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(8, 100);
+                pnlRed.Location = new Point(8, 135);
                 pnlRed.Visible = true;
             }
 
@@ -162,14 +162,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(100, 100);
+                pnlGreen.Location = new Point(100, 135);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(100, 100);
+                pnlRed.Location = new Point(100, 135);
                 pnlRed.Visible = true;
             }
 
@@ -216,14 +216,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(190, 100);
+                pnlGreen.Location = new Point(190, 135);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(190, 100);
+                pnlRed.Location = new Point(190, 135);
                 pnlRed.Visible = true;
             }
 
@@ -270,14 +270,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(280, 100);
+                pnlGreen.Location = new Point(280, 135);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(280, 100);
+                pnlRed.Location = new Point(280, 135);
                 pnlRed.Visible = true;
             }
 
@@ -324,14 +324,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(365, 100);
+                pnlGreen.Location = new Point(365, 135);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(365, 100);
+                pnlRed.Location = new Point(365, 135);
                 pnlRed.Visible = true;
             }
 
@@ -377,14 +377,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(455, 100);
+                pnlGreen.Location = new Point(455, 135);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(455, 100);
+                pnlRed.Location = new Point(455, 135);
                 pnlRed.Visible = true;
             }
 
@@ -430,14 +430,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(470, 100);
+                pnlGreen.Location = new Point(470, 135);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(470, 100);
+                pnlRed.Location = new Point(470, 135);
                 pnlRed.Visible = true;
             }
 
@@ -483,14 +483,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(100, 180);
+                pnlGreen.Location = new Point(100, 225);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(100, 180);
+                pnlRed.Location = new Point(100, 225);
                 pnlRed.Visible = true;
             }
 
@@ -536,14 +536,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(190, 180);
+                pnlGreen.Location = new Point(190, 225);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(190, 180);
+                pnlRed.Location = new Point(190, 225);
                 pnlRed.Visible = true;
             }
 
@@ -589,14 +589,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(280, 180);
+                pnlGreen.Location = new Point(280, 225);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(280, 180);
+                pnlRed.Location = new Point(280, 225);
                 pnlRed.Visible = true;
             }
 
@@ -642,14 +642,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(365, 180);
+                pnlGreen.Location = new Point(365, 225);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(365, 180);
+                pnlRed.Location = new Point(365, 225);
                 pnlRed.Visible = true;
             }
 
@@ -695,14 +695,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(100, 270);
+                pnlGreen.Location = new Point(100, 315);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(100, 270);
+                pnlRed.Location = new Point(100, 315);
                 pnlRed.Visible = true;
             }
 
@@ -748,14 +748,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(190, 270);
+                pnlGreen.Location = new Point(190, 315);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(190, 270);
+                pnlRed.Location = new Point(190, 315);
                 pnlRed.Visible = true;
             }
 
@@ -801,14 +801,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(280, 270);
+                pnlGreen.Location = new Point(280, 315);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(280, 270);
+                pnlRed.Location = new Point(280, 315);
                 pnlRed.Visible = true;
             }
 
@@ -854,14 +854,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(365, 270);
+                pnlGreen.Location = new Point(365, 315);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(365, 270);
+                pnlRed.Location = new Point(365, 315);
                 pnlRed.Visible = true;
             }
 
@@ -908,14 +908,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(442, 190);
+                pnlGreen.Location = new Point(442, 235);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(442, 190);
+                pnlRed.Location = new Point(442, 235);
                 pnlRed.Visible = true;
             }
 
@@ -1200,6 +1200,322 @@ namespace Belfray
             }
         }
 
+        private void picSaveBooking_Click(object sender, EventArgs e)
+        {
+                if (newCustomer == true && newBooking == true)
+                {
+                    MyCustomer myCust = new MyCustomer();
+                    MyBooking myBook = new MyBooking();
+                    bool ok = true;
+                    errP.Clear();
+
+                    //Customer Number
+                    try
+                    {
+                        myCust.CustomerNumber = cbCustNo.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(cbCustNo, MyEx.toString());
+                    }
+
+                    //Customer Title
+                    try
+                    {
+                        myCust.Title = cbTitle.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(cbTitle, MyEx.toString());
+                    }
+
+                    //Customer Forename
+                    try
+                    {
+                        myCust.Forename = txtFname.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(txtFname, MyEx.toString());
+                    }
+
+                    //Customer Surname
+                    try
+                    {
+                        myCust.Surname = txtLName.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(txtLName, MyEx.toString());
+                    }
+
+                    //Customer Street
+                    try
+                    {
+                        myCust.Street = txtStreet.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(txtStreet, MyEx.toString());
+                    }
+
+                    //Customer City
+                    try
+                    {
+                        myCust.City = txtCity.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(txtCity, MyEx.toString());
+                    }
+
+                    //Customer County
+                    try
+                    {
+                        myCust.County = txtCounty.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(txtCounty, MyEx.toString());
+                    }
+
+                    //Customer PostCode
+                    try
+                    {
+                        myCust.Postcode = txtPC.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(txtPC, MyEx.toString());
+                    }
+
+                    //Customer TelNo
+                    try
+                    {
+                        myCust.TelNo = txtTelNo.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(txtTelNo, MyEx.toString());
+                    }
+
+                    //Try Booking
+                    try
+                    {
+                        myBook.BookingNumber = lblBookingNo.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(lblBookingNo, MyEx.toString());
+                    }
+                    try
+                    {
+                        myBook.PartySize = Convert.ToInt32(numPartySize.Value);
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(numPartySize, MyEx.toString());
+                    }
+                    try
+                    {
+                        myBook.CheckInDate = dateBooking.Value;
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(dateBooking, MyEx.toString());
+                    }
+                    try
+                    {
+                        myBook.BookingTime = txtTime.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(txtTime, MyEx.toString());
+                    }
+                    try
+                    {
+                        myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(cbPaymentTyp, MyEx.toString());
+                    }
+
+                    //Try Adding
+                    try
+                    {
+                        if (ok)
+                        {
+                            drCustomer = dsBelfray.Tables["Customer"].NewRow();
+                            drCustomer["customerNo"] = myCust.CustomerNumber;
+                            drCustomer["customerTitle"] = myCust.Title;
+                            drCustomer["customerForename"] = myCust.Forename;
+                            drCustomer["customerSurname"] = myCust.Surname;
+                            drCustomer["customerStreet"] = myCust.Street;
+                            drCustomer["customerCity"] = myCust.City;
+                            drCustomer["customerCounty"] = myCust.County;
+                            drCustomer["customerPostcode"] = myCust.Postcode;
+                            drCustomer["customerTel"] = myCust.TelNo;
+                            dsBelfray.Tables["Customer"].Rows.Add(drCustomer);
+                            daCustomer.Update(dsBelfray, "Customer");
+
+                        }
+                        if (ok)
+                        {
+                            drBooking = dsBelfray.Tables["Booking"].NewRow();
+                            drBooking["bookingNo"] = myBook.BookingNumber;
+                            drBooking["checkInDate"] = myBook.CheckInDate;
+                            drBooking["bookingTime"] = myBook.BookingTime;
+                            drBooking["customerNo"] = myCust.CustomerNumber;
+                            drBooking["paymentTypeID"] = myBook.PaymentTypeID;
+                            drBooking["partySize"] = myBook.PartySize;
+                            dsBelfray.Tables["Booking"].Rows.Add(drBooking);
+                            daBooking.Update(dsBelfray, "Booking");
+                        }
+                        if (ok)
+                        {
+                            int tableRows = dgvBooking.RowCount - 1;
+
+                            for (int x = 0; x < tableRows; x++)
+                            {
+                                drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
+                                drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
+                                drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+                                drBookingItem["itemQty"] = DBNull.Value;
+                                dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
+                            }
+
+                            daBookingItem.Update(dsBelfray, "BookingItem");
+                        }
+                        MessageBox.Show("Booking Addedc");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                    }
+                }
+                if (newCustomer == false)
+                {
+                    MyBooking myBook = new MyBooking();
+                    MyCustomer myCust = new MyCustomer();
+                    bool ok = true;
+                    errP.Clear();
+
+                    //Customer Number
+                    try
+                    {
+                        myCust.CustomerNumber = cbCustNo.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(cbCustNo, MyEx.toString());
+                    }
+                    //Try Booking
+                    try
+                    {
+                        myBook.BookingNumber = lblBookingNo.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(lblBookingNo, MyEx.toString());
+                    }
+                    try
+                    {
+                        myBook.PartySize = Convert.ToInt32(numPartySize.Value);
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(numPartySize, MyEx.toString());
+                    }
+                    try
+                    {
+                        myBook.CheckInDate = dateBooking.Value;
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(dateBooking, MyEx.toString());
+                    }
+                    try
+                    {
+                        myBook.BookingTime = txtTime.Text.Trim();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(txtTime, MyEx.toString());
+                    }
+                    try
+                    {
+                        myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
+                    }
+                    catch (MyException MyEx)
+                    {
+                        ok = false;
+                        errP.SetError(cbPaymentTyp, MyEx.toString());
+                    }
+                    //Try Adding
+                    try
+                    {
+                        if (ok)
+                        {
+                            drBooking = dsBelfray.Tables["Booking"].NewRow();
+                            drBooking["bookingNo"] = myBook.BookingNumber;
+                            drBooking["checkInDate"] = myBook.CheckInDate;
+                            drBooking["bookingTime"] = myBook.BookingTime;
+                            drBooking["customerNo"] = myCust.CustomerNumber;
+                            drBooking["paymentTypeID"] = myBook.PaymentTypeID;
+                            drBooking["partySize"] = myBook.PartySize;
+                            dsBelfray.Tables["Booking"].Rows.Add(drBooking);
+                            daBooking.Update(dsBelfray, "Booking");
+                        }
+                        if (ok)
+                        {
+                            int tableRows = dgvBooking.RowCount - 1;
+
+                            for (int x = 0; x < tableRows; x++)
+                            {
+                                drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
+                                drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
+                                drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+                                drBookingItem["itemQty"] = DBNull.Value;
+                                dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
+                            }
+
+                            daBookingItem.Update(dsBelfray, "BookingItem");
+                        }
+                        MessageBox.Show("Booking Added");
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                    }
+                }   
+        }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void picRemoveTable_Click(object sender, EventArgs e)
         {
             if (!tableSelected)
@@ -1211,6 +1527,13 @@ namespace Belfray
                 dgvBooking.Rows.Remove(dgvBooking.Rows[tableNoSelected]);
                 lblTableNo.Text = "-";
                 dgvBooking.ClearSelection();
+                //Sum of party size
+                int sum = 0;
+                for (int i = 0; i < dgvBooking.Rows.Count; ++i)
+                {
+                    sum += Convert.ToInt32(dgvBooking.Rows[i].Cells[2].Value);
+                }
+                numPartySize.Value = sum;
             }
         }
 
@@ -1318,316 +1641,316 @@ namespace Belfray
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (newCustomer == true && newBooking == true)
-            {
-                MyCustomer myCust = new MyCustomer();
-                MyBooking myBook = new MyBooking();
-                bool ok = true;
-                errP.Clear();
+        //private void btnAdd_Click(object sender, EventArgs e)
+        //{
+        //    if (newCustomer == true && newBooking == true)
+        //    {
+        //        MyCustomer myCust = new MyCustomer();
+        //        MyBooking myBook = new MyBooking();
+        //        bool ok = true;
+        //        errP.Clear();
 
-                //Customer Number
-                try
-                {
-                    myCust.CustomerNumber = cbCustNo.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(cbCustNo, MyEx.toString());
-                }
+        //        //Customer Number
+        //        try
+        //        {
+        //            myCust.CustomerNumber = cbCustNo.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(cbCustNo, MyEx.toString());
+        //        }
 
-                //Customer Title
-                try
-                {
-                    myCust.Title = cbTitle.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(cbTitle, MyEx.toString());
-                }
+        //        //Customer Title
+        //        try
+        //        {
+        //            myCust.Title = cbTitle.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(cbTitle, MyEx.toString());
+        //        }
 
-                //Customer Forename
-                try
-                {
-                    myCust.Forename = txtFname.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(txtFname, MyEx.toString());
-                }
+        //        //Customer Forename
+        //        try
+        //        {
+        //            myCust.Forename = txtFname.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(txtFname, MyEx.toString());
+        //        }
 
-                //Customer Surname
-                try
-                {
-                    myCust.Surname = txtLName.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(txtLName, MyEx.toString());
-                }
+        //        //Customer Surname
+        //        try
+        //        {
+        //            myCust.Surname = txtLName.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(txtLName, MyEx.toString());
+        //        }
 
-                //Customer Street
-                try
-                {
-                    myCust.Street = txtStreet.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(txtStreet, MyEx.toString());
-                }
+        //        //Customer Street
+        //        try
+        //        {
+        //            myCust.Street = txtStreet.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(txtStreet, MyEx.toString());
+        //        }
 
-                //Customer City
-                try
-                {
-                    myCust.City = txtCity.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(txtCity, MyEx.toString());
-                }
+        //        //Customer City
+        //        try
+        //        {
+        //            myCust.City = txtCity.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(txtCity, MyEx.toString());
+        //        }
 
-                //Customer County
-                try
-                {
-                    myCust.County = txtCounty.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(txtCounty, MyEx.toString());
-                }
+        //        //Customer County
+        //        try
+        //        {
+        //            myCust.County = txtCounty.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(txtCounty, MyEx.toString());
+        //        }
 
-                //Customer PostCode
-                try
-                {
-                    myCust.Postcode = txtPC.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(txtPC, MyEx.toString());
-                }
+        //        //Customer PostCode
+        //        try
+        //        {
+        //            myCust.Postcode = txtPC.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(txtPC, MyEx.toString());
+        //        }
 
-                //Customer TelNo
-                try
-                {
-                    myCust.TelNo = txtTelNo.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(txtTelNo, MyEx.toString());
-                }
+        //        //Customer TelNo
+        //        try
+        //        {
+        //            myCust.TelNo = txtTelNo.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(txtTelNo, MyEx.toString());
+        //        }
 
-                //Try Booking
-                try
-                {
-                    myBook.BookingNumber = lblBookingNo.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(lblBookingNo, MyEx.toString());
-                }
-                try
-                {
-                    myBook.PartySize = Convert.ToInt32(numPartySize.Value);
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(numPartySize, MyEx.toString());
-                }
-                try
-                {
-                    myBook.CheckInDate = dateBooking.Value;
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(dateBooking, MyEx.toString());
-                }
-                try
-                {
-                    myBook.BookingTime = txtTime.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(txtTime, MyEx.toString());
-                }
-                try
-                {
-                    myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(cbPaymentTyp, MyEx.toString());
-                }
+        //        //Try Booking
+        //        try
+        //        {
+        //            myBook.BookingNumber = lblBookingNo.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(lblBookingNo, MyEx.toString());
+        //        }
+        //        try
+        //        {
+        //            myBook.PartySize = Convert.ToInt32(numPartySize.Value);
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(numPartySize, MyEx.toString());
+        //        }
+        //        try
+        //        {
+        //            myBook.CheckInDate = dateBooking.Value;
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(dateBooking, MyEx.toString());
+        //        }
+        //        try
+        //        {
+        //            myBook.BookingTime = txtTime.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(txtTime, MyEx.toString());
+        //        }
+        //        try
+        //        {
+        //            myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(cbPaymentTyp, MyEx.toString());
+        //        }
 
-                //Try Adding
-                try
-                {
-                    if (ok)
-                    {
-                        drCustomer = dsBelfray.Tables["Customer"].NewRow();
-                        drCustomer["customerNo"] = myCust.CustomerNumber;
-                        drCustomer["customerTitle"] = myCust.Title;
-                        drCustomer["customerForename"] = myCust.Forename;
-                        drCustomer["customerSurname"] = myCust.Surname;
-                        drCustomer["customerStreet"] = myCust.Street;
-                        drCustomer["customerCity"] = myCust.City;
-                        drCustomer["customerCounty"] = myCust.County;
-                        drCustomer["customerPostcode"] = myCust.Postcode;
-                        drCustomer["customerTel"] = myCust.TelNo;
-                        dsBelfray.Tables["Customer"].Rows.Add(drCustomer);
-                        daCustomer.Update(dsBelfray, "Customer");
+        //        //Try Adding
+        //        try
+        //        {
+        //            if (ok)
+        //            {
+        //                drCustomer = dsBelfray.Tables["Customer"].NewRow();
+        //                drCustomer["customerNo"] = myCust.CustomerNumber;
+        //                drCustomer["customerTitle"] = myCust.Title;
+        //                drCustomer["customerForename"] = myCust.Forename;
+        //                drCustomer["customerSurname"] = myCust.Surname;
+        //                drCustomer["customerStreet"] = myCust.Street;
+        //                drCustomer["customerCity"] = myCust.City;
+        //                drCustomer["customerCounty"] = myCust.County;
+        //                drCustomer["customerPostcode"] = myCust.Postcode;
+        //                drCustomer["customerTel"] = myCust.TelNo;
+        //                dsBelfray.Tables["Customer"].Rows.Add(drCustomer);
+        //                daCustomer.Update(dsBelfray, "Customer");
 
-                    }
-                    if (ok)
-                    {
-                        drBooking = dsBelfray.Tables["Booking"].NewRow();
-                        drBooking["bookingNo"] = myBook.BookingNumber;
-                        drBooking["checkInDate"] = myBook.CheckInDate;
-                        drBooking["bookingTime"] = myBook.BookingTime;
-                        drBooking["customerNo"] = myCust.CustomerNumber;
-                        drBooking["paymentTypeID"] = myBook.PaymentTypeID;
-                        drBooking["partySize"] = myBook.PartySize;
-                        dsBelfray.Tables["Booking"].Rows.Add(drBooking);
-                        daBooking.Update(dsBelfray, "Booking");
-                    }
-                    if (ok)
-                    {
-                        int tableRows = dgvBooking.RowCount - 1;
+        //            }
+        //            if (ok)
+        //            {
+        //                drBooking = dsBelfray.Tables["Booking"].NewRow();
+        //                drBooking["bookingNo"] = myBook.BookingNumber;
+        //                drBooking["checkInDate"] = myBook.CheckInDate;
+        //                drBooking["bookingTime"] = myBook.BookingTime;
+        //                drBooking["customerNo"] = myCust.CustomerNumber;
+        //                drBooking["paymentTypeID"] = myBook.PaymentTypeID;
+        //                drBooking["partySize"] = myBook.PartySize;
+        //                dsBelfray.Tables["Booking"].Rows.Add(drBooking);
+        //                daBooking.Update(dsBelfray, "Booking");
+        //            }
+        //            if (ok)
+        //            {
+        //                int tableRows = dgvBooking.RowCount - 1;
 
-                        for (int x = 0; x < tableRows; x++)
-                        {
-                            drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
-                            drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
-                            drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
-                            drBookingItem["itemQty"] = DBNull.Value;
-                            dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
-                        }
+        //                for (int x = 0; x < tableRows; x++)
+        //                {
+        //                    drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
+        //                    drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
+        //                    drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+        //                    drBookingItem["itemQty"] = DBNull.Value;
+        //                    dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
+        //                }
 
-                        daBookingItem.Update(dsBelfray, "BookingItem");
-                    }
-                    MessageBox.Show("Booking Addedc");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-                }
-            }
-            if (newCustomer == false)
-            {
-                MyBooking myBook = new MyBooking();
-                MyCustomer myCust = new MyCustomer();
-                bool ok = true;
-                errP.Clear();
+        //                daBookingItem.Update(dsBelfray, "BookingItem");
+        //            }
+        //            MessageBox.Show("Booking Addedc");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //    if (newCustomer == false)
+        //    {
+        //        MyBooking myBook = new MyBooking();
+        //        MyCustomer myCust = new MyCustomer();
+        //        bool ok = true;
+        //        errP.Clear();
 
-                //Customer Number
-                try
-                {
-                    myCust.CustomerNumber = cbCustNo.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(cbCustNo, MyEx.toString());
-                }
-                //Try Booking
-                try
-                {
-                    myBook.BookingNumber = lblBookingNo.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(lblBookingNo, MyEx.toString());
-                }
-                try
-                {
-                    myBook.PartySize = Convert.ToInt32(numPartySize.Value);
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(numPartySize, MyEx.toString());
-                }
-                try
-                {
-                    myBook.CheckInDate = dateBooking.Value;
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(dateBooking, MyEx.toString());
-                }
-                try
-                {
-                    myBook.BookingTime = txtTime.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(txtTime, MyEx.toString());
-                }
-                try
-                {
-                    myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errP.SetError(cbPaymentTyp, MyEx.toString());
-                }
-                //Try Adding
-                try
-                {
-                    if (ok)
-                    {
-                        drBooking = dsBelfray.Tables["Booking"].NewRow();
-                        drBooking["bookingNo"] = myBook.BookingNumber;
-                        drBooking["checkInDate"] = myBook.CheckInDate;
-                        drBooking["bookingTime"] = myBook.BookingTime;
-                        drBooking["customerNo"] = myCust.CustomerNumber;
-                        drBooking["paymentTypeID"] = myBook.PaymentTypeID;
-                        drBooking["partySize"] = myBook.PartySize;
-                        dsBelfray.Tables["Booking"].Rows.Add(drBooking);
-                        daBooking.Update(dsBelfray, "Booking");
-                    }
-                    if (ok)
-                    {
-                        int tableRows = dgvBooking.RowCount - 1;
+        //        //Customer Number
+        //        try
+        //        {
+        //            myCust.CustomerNumber = cbCustNo.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(cbCustNo, MyEx.toString());
+        //        }
+        //        //Try Booking
+        //        try
+        //        {
+        //            myBook.BookingNumber = lblBookingNo.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(lblBookingNo, MyEx.toString());
+        //        }
+        //        try
+        //        {
+        //            myBook.PartySize = Convert.ToInt32(numPartySize.Value);
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(numPartySize, MyEx.toString());
+        //        }
+        //        try
+        //        {
+        //            myBook.CheckInDate = dateBooking.Value;
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(dateBooking, MyEx.toString());
+        //        }
+        //        try
+        //        {
+        //            myBook.BookingTime = txtTime.Text.Trim();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(txtTime, MyEx.toString());
+        //        }
+        //        try
+        //        {
+        //            myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
+        //        }
+        //        catch (MyException MyEx)
+        //        {
+        //            ok = false;
+        //            errP.SetError(cbPaymentTyp, MyEx.toString());
+        //        }
+        //        //Try Adding
+        //        try
+        //        {
+        //            if (ok)
+        //            {
+        //                drBooking = dsBelfray.Tables["Booking"].NewRow();
+        //                drBooking["bookingNo"] = myBook.BookingNumber;
+        //                drBooking["checkInDate"] = myBook.CheckInDate;
+        //                drBooking["bookingTime"] = myBook.BookingTime;
+        //                drBooking["customerNo"] = myCust.CustomerNumber;
+        //                drBooking["paymentTypeID"] = myBook.PaymentTypeID;
+        //                drBooking["partySize"] = myBook.PartySize;
+        //                dsBelfray.Tables["Booking"].Rows.Add(drBooking);
+        //                daBooking.Update(dsBelfray, "Booking");
+        //            }
+        //            if (ok)
+        //            {
+        //                int tableRows = dgvBooking.RowCount - 1;
 
-                        for (int x = 0; x < tableRows; x++)
-                        {
-                            drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
-                            drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
-                            drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
-                            drBookingItem["itemQty"] = DBNull.Value;
-                            dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
-                        }
+        //                for (int x = 0; x < tableRows; x++)
+        //                {
+        //                    drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
+        //                    drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
+        //                    drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+        //                    drBookingItem["itemQty"] = DBNull.Value;
+        //                    dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
+        //                }
 
-                        daBookingItem.Update(dsBelfray, "BookingItem");
-                    }
-                    MessageBox.Show("Booking Added");
-                }
+        //                daBookingItem.Update(dsBelfray, "BookingItem");
+        //            }
+        //            MessageBox.Show("Booking Added");
+        //        }
 
-                catch (Exception ex)
-                {
-                    MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-                }
-            }
-        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //}
 
         private void tbl17_MouseEnter(object sender, EventArgs e)
         {
@@ -1640,14 +1963,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(442, 265);
+                pnlGreen.Location = new Point(442, 325);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(442, 265);
+                pnlRed.Location = new Point(442, 325);
                 pnlRed.Visible = true;
             }
 
@@ -1694,14 +2017,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(100, 370);
+                pnlGreen.Location = new Point(100, 405);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(100, 370);
+                pnlRed.Location = new Point(100, 405);
                 pnlRed.Visible = true;
             }
 
@@ -1722,10 +2045,10 @@ namespace Belfray
         }
 
         //Close Button
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
 
         private void tbl23_MouseLeave(object sender, EventArgs e)
         {
@@ -1754,14 +2077,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(190, 370);
+                pnlGreen.Location = new Point(190, 405);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(190, 370);
+                pnlRed.Location = new Point(190, 405);
                 pnlRed.Visible = true;
             }
 
@@ -1808,14 +2131,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(280, 370);
+                pnlGreen.Location = new Point(280, 405);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(280, 370);
+                pnlRed.Location = new Point(280, 405);
                 pnlRed.Visible = true;
             }
 
@@ -1862,14 +2185,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(365, 370);
+                pnlGreen.Location = new Point(365, 405);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(365, 370);
+                pnlRed.Location = new Point(365, 405);
                 pnlRed.Visible = true;
             }
 
@@ -1926,14 +2249,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(455, 370);
+                pnlGreen.Location = new Point(440, 405);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(455, 370);
+                pnlRed.Location = new Point(440, 405);
                 pnlRed.Visible = true;
             }
 
@@ -1980,14 +2303,14 @@ namespace Belfray
             {
                 colour = Color.FromArgb(57, 181, 74);
                 //Location of 101 Green Panel
-                pnlGreen.Location = new Point(530, 370);
+                pnlGreen.Location = new Point(445, 405);
                 pnlGreen.Visible = true;
             }
             else
             {
                 colour = Color.FromArgb(205, 36, 36);
                 //Location of 101 Red Panel
-                pnlRed.Location = new Point(530, 370);
+                pnlRed.Location = new Point(445, 405);
                 pnlRed.Visible = true;
             }
 
@@ -2122,9 +2445,9 @@ namespace Belfray
         private void TableSelect_Load(object sender, EventArgs e)
         {
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
