@@ -38,8 +38,6 @@ namespace Belfray
             //Current User
             string bookingNo = "";
 
-            MainWindow.maxCap = 0;
-
             //DB Connection
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
@@ -239,17 +237,8 @@ namespace Belfray
             //        dgvRooms.Rows.Add(lblBookingNo.Text, Globals.rooms[x].ToString());
             //    }
             //}
-            for (int x = 0; x < (dgvRooms.RowCount-1); x++)
-            {
-                foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
-                {
-                    //Capacity
-                    if (drItem["itemNo"].ToString().Equals(dgvRooms.Rows[x].Cells[1].Value.ToString()))
-                    {
-                        MainWindow.maxCap += int.Parse(drItem["capacity"].ToString());
-                    }
-                }
-            }
+
+            checkMaxCap();
         }
 
         //Enables Booking Fields
@@ -370,16 +359,16 @@ namespace Belfray
                 errP.SetError(lblBookingNo, MyEx.toString());
             }
 
-            //Booking Type
-            try
-            {
-                myBook.TypeID = "TYP100001";
-            }
-            catch (MyException MyEx)
-            {
-                ok = false;
-                errP.SetError(lblBookingType, MyEx.toString());
-            }
+            ////Booking Type
+            //try
+            //{
+            //    myBook.TypeID = "TYP100001";
+            //}
+            //catch (MyException MyEx)
+            //{
+            //    ok = false;
+            //    errP.SetError(lblBookingType, MyEx.toString());
+            //}
 
             //Check In Date
             try
@@ -439,6 +428,8 @@ namespace Belfray
             //Party Size
             try
             {
+                checkMaxCap();
+
                 if (int.Parse(txtPartySize.Text.Trim()) <= MainWindow.maxCap && int.Parse(txtPartySize.Text.Trim()) > 0)
                 {
                     myBook.PartySize = int.Parse(txtPartySize.Text.Trim());
@@ -464,10 +455,10 @@ namespace Belfray
                     drBooking["checkInDate"] = myBook.CheckInDate;
                     drBooking["checkOutDate"] = myBook.CheckOutDate;
                     drBooking["bookingTime"] = myBook.BookingTime;
-                    drBooking["typeID"] = myBook.TypeID;
+                    //drBooking["typeID"] = myBook.TypeID;
                     drBooking["paymentTypeID"] = myBook.PaymentTypeID;
-                    drBooking["roomNo"] = myBook.RoomNo;
-                    drBooking["tableNo"] = myBook.TableNo;
+                    //drBooking["roomNo"] = myBook.RoomNo;
+                    //drBooking["tableNo"] = myBook.TableNo;
                     drBooking["partySize"] = myBook.PartySize;
                     drBooking["customerNo"] = myBook.CustomerNumber;
                     drBooking.EndEdit();
@@ -563,6 +554,7 @@ namespace Belfray
                     drRoom = dsBelfray.Tables["BookingItem"].NewRow();
                     drRoom["bookingNo"] = lblBookingNo.Text;
                     drRoom["itemNo"] = "RM" + itemNumber;
+                    drRoom["itemQty"] = DBNull.Value;
                     dsBelfray.Tables["BookingItem"].Rows.Add(drRoom);
 
                     daRoom.Update(dsBelfray, "BookingItem");
@@ -923,13 +915,30 @@ namespace Belfray
                             }
                         }
 
-                        Globals.delRooms[pos] = lblRoomNo.Text;                        
+                        Globals.delRooms[pos] = lblRoomNo.Text;
+
+                        for (int x = 0; x < 19; x++)
+                        {
+                            if (Globals.rooms[x].Equals(Globals.delRooms[pos]))
+                            {
+                                Globals.rooms[x] = " ";
+                            }
+                        }
 
                         drRoom.Delete();
                         daRoom.Update(dsBelfray, "BookingItem");
                         break;
                         //dgvRooms.DataSource = dsBelfray.Tables["bookingItem"].Rows;
 
+                    }
+                }
+
+                for (int x = 0; x < 18; x++)
+                {
+                    if (Globals.rooms[x].Equals(" ") && !Globals.rooms[x + 1].Equals(" "))
+                    {
+                        Globals.rooms[x] = Globals.rooms[x + 1];
+                        Globals.rooms[x + 1] = " ";
                     }
                 }
 
@@ -959,7 +968,7 @@ namespace Belfray
                         dgvRooms.Columns[1].Name = "Room Number";
                         dgvRooms.Columns[1].Width = 188;
                     }
-                }
+                }                
             }
         }
 
@@ -984,6 +993,23 @@ namespace Belfray
                 string s1 = s.Split('M').Last();
                 lblRoomNo.Text = s1;
                 //prdSel = Globals.prdNoSel;
+            }
+        }
+
+        private void checkMaxCap()
+        {
+            MainWindow.maxCap = 0;
+
+            for (int x = 0; x < (dgvRooms.RowCount - 1); x++)
+            {
+                foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+                {
+                    //Capacity
+                    if (drItem["itemNo"].ToString().Equals(dgvRooms.Rows[x].Cells[1].Value.ToString()))
+                    {
+                        MainWindow.maxCap += int.Parse(drItem["capacity"].ToString());
+                    }
+                }
             }
         }
     }
