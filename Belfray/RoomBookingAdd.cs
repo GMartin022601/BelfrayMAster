@@ -13,11 +13,11 @@ namespace Belfray
 {
     public partial class RoomBookingAdd : Form
     {
-        SqlDataAdapter daBooking, daCustomer, daPayType, daBookingItem;
+        SqlDataAdapter daBooking, daCustomer, daPayType, daBookingItem, daItem;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBBooking, cmdBCustomer, cmdBPayType, cmdBBookingItem;
-        DataRow drBooking, drCustomer, drPayType, drBookingItem;
-        String connStr, sqlBooking, sqlCustomer, sqlPayType, sqlBookingItem;
+        SqlCommandBuilder cmdBBooking, cmdBCustomer, cmdBPayType, cmdBBookingItem, cmdBItem;
+        DataRow drBooking, drCustomer, drPayType, drBookingItem, drItem;
+        String connStr, sqlBooking, sqlCustomer, sqlPayType, sqlBookingItem, sqlItem;
         
         private bool userActivated = false;
         private bool custEnabled = false;
@@ -111,6 +111,13 @@ namespace Belfray
             cmdBBookingItem = new SqlCommandBuilder(daBookingItem);
             daBookingItem.FillSchema(dsBelfray, SchemaType.Source, "BookingItem");
             daBookingItem.Fill(dsBelfray, "BookingItem");
+
+            //SQL for Booking
+            sqlItem = @"SELECT * FROM Item";
+            daItem = new SqlDataAdapter(sqlItem, connStr);
+            cmdBItem = new SqlCommandBuilder(daItem);
+            daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
+            daItem.Fill(dsBelfray, "Item");
 
             //SQL For Customer
             sqlCustomer = @"select * from Customer";
@@ -287,6 +294,7 @@ namespace Belfray
         private void picBookingSave_Click(object sender, EventArgs e)
         {
             MyBooking myBook = new MyBooking();
+            MainWindow.maxCap = 0;
             bool ok = true;
             errP.Clear();
 
@@ -668,6 +676,8 @@ namespace Belfray
 
         private void picAddRoom_Click(object sender, EventArgs e)
         {
+            Globals.checkInDate = dtpBookingCheckIn.Value;
+            Globals.checkOutDate = dtpBookingCheckOut.Value;
             cancelled = false;
             this.Close();
         }
@@ -695,11 +705,12 @@ namespace Belfray
             }
             else
             {
-                for(int x = 0; x < 19; x++)
+                for (int x = 0; x < 19; x++)
                 {
                     if(Globals.rooms[x].Equals(dgvRooms.Rows[Globals.roomNoSel].Cells[1].Value.ToString()))
                     {
                         Globals.rooms[x] = " ";
+                        Globals.capacity[x] = 0;
                         break;
                     }
                 }

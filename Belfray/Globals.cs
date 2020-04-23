@@ -18,12 +18,26 @@ namespace Belfray
 
         public static string rowSel = "";
 
+        //Tracks Rooms Added on the Booking Add Form
         public static string[] rooms = new string[19] { " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "};
+
+        //tracks Rooms Deleted on the Booking Deit Form
+        public static string[] delRooms = new string[19] { " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
+
+        public static string[] removedRooms = new string[19] { " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
 
         public static string[] tables = new string[23] { " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
 
         public static int[] capacity = new int[19] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         public static int[] tableCapac = new int[23] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public static bool dateChange = true;
+
+        public static bool roomLoad = true;
+
+        public static DateTime checkInDate = new DateTime();
+
+        public static DateTime checkOutDate = new DateTime();
     }
 }

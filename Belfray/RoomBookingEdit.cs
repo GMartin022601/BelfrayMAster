@@ -13,17 +13,20 @@ namespace Belfray
 {
     public partial class RoomBookingEdit : Form
     {
-        SqlDataAdapter daBooking, daCustomer, daPayType, daRoom;
+        SqlDataAdapter daBooking, daCustomer, daPayType, daRoom, daItem;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBBooking, cmdBCustomer, cmdBPayType, cmdBRoom;
-        DataRow drBooking, drCustomer, drPayType, drRoom;
-        String connStr, sqlBooking, sqlCustomer, sqlPayType, sqlRoom;
+        SqlCommandBuilder cmdBBooking, cmdBCustomer, cmdBPayType, cmdBRoom, cmdBItem;
+        DataRow drBooking, drCustomer, drPayType, drRoom, drItem;
+        String connStr, sqlBooking, sqlCustomer, sqlPayType, sqlRoom, sqlItem;
 
         //Edit Cancelled
         public static bool cancelled = false;
 
         //Check if user Changes the Combobox
         private bool userActivated = false;
+
+        //Room Selected
+        private bool roomSel = false;
 
         public RoomBookingEdit()
         {
@@ -34,6 +37,8 @@ namespace Belfray
         {
             //Current User
             string bookingNo = "";
+
+            MainWindow.maxCap = 0;
 
             //DB Connection
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
@@ -70,7 +75,12 @@ namespace Belfray
             daRoom.FillSchema(dsBelfray, SchemaType.Source, "BookingItem");
             daRoom.Fill(dsBelfray, "BookingItem");
 
-            
+            //SQL for Booking
+            sqlItem = @"SELECT * FROM Item";
+            daItem = new SqlDataAdapter(sqlItem, connStr);
+            cmdBItem = new SqlCommandBuilder(daItem);
+            daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
+            daItem.Fill(dsBelfray, "Item");
 
             //CB Details Customer
             cmbCustomerNo.DataSource = dsBelfray.Tables["Customer"];
@@ -145,6 +155,9 @@ namespace Belfray
                         dgvRooms.Columns[1].Name = "Room Number";
                         dgvRooms.Columns[1].Width = 188;
                         dgvRooms.Rows.Add(bookNumber, itemNumber);
+
+
+
                         //dgvRooms.DataSource = dsBelfray.Tables["bookingItem"].Rows;
                     }
                 }
@@ -226,11 +239,17 @@ namespace Belfray
             //        dgvRooms.Rows.Add(lblBookingNo.Text, Globals.rooms[x].ToString());
             //    }
             //}
-
-            ////Capacity
-            //drRoom = dsBelfray.Tables["Rooms"].Rows.Find(lblRoomNo.Text);
-            //MainWindow.maxCap = Convert.ToInt32(drRoom["capacity"]);
-
+            for (int x = 0; x < (dgvRooms.RowCount-1); x++)
+            {
+                foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+                {
+                    //Capacity
+                    if (drItem["itemNo"].ToString().Equals(dgvRooms.Rows[x].Cells[1].Value.ToString()))
+                    {
+                        MainWindow.maxCap += int.Parse(drItem["capacity"].ToString());
+                    }
+                }
+            }
         }
 
         //Enables Booking Fields
@@ -529,6 +548,54 @@ namespace Belfray
                 else
                 {
                     break;
+                }                
+            }
+
+            dgvRooms.Rows.Clear();
+
+            for (int x = 0; x < 19; x++)
+            {
+                if (!Globals.delRooms[x].Contains(" "))
+                {
+                    string bookNumber = lblBookingNo.Text;
+                    string itemNumber = Globals.delRooms[x];
+
+                    drRoom = dsBelfray.Tables["BookingItem"].NewRow();
+                    drRoom["bookingNo"] = lblBookingNo.Text;
+                    drRoom["itemNo"] = "RM" + itemNumber;
+                    dsBelfray.Tables["BookingItem"].Rows.Add(drRoom);
+
+                    daRoom.Update(dsBelfray, "BookingItem");
+                }
+                else
+                {
+                    break;
+                }
+            }            
+
+            foreach (DataRow drRoom in dsBelfray.Tables["BookingItem"].Rows)
+            {
+                string bookNumber = "";
+                string itemNumber = "";
+                if (drRoom["bookingNo"].Equals(lblBookingNo.Text))
+                {
+                    bookNumber = drRoom["bookingNo"].ToString();
+                    itemNumber = drRoom["itemNo"].ToString();
+                    dgvRooms.ColumnCount = 2;
+                    dgvRooms.Columns[0].Name = "Booking Number";
+                    dgvRooms.Columns[0].Width = 288;
+                    dgvRooms.Columns[1].Name = "Room Number";
+                    dgvRooms.Columns[1].Width = 188;
+                    dgvRooms.Rows.Add(bookNumber, itemNumber);
+                    //dgvRooms.DataSource = dsBelfray.Tables["bookingItem"].Rows;
+                }
+                else
+                {
+                    dgvRooms.ColumnCount = 2;
+                    dgvRooms.Columns[0].Name = "Booking Number";
+                    dgvRooms.Columns[0].Width = 288;
+                    dgvRooms.Columns[1].Name = "Room Number";
+                    dgvRooms.Columns[1].Width = 188;
                 }
             }
 
@@ -803,6 +870,18 @@ namespace Belfray
 
         private void picAddRoom_Click(object sender, EventArgs e)
         {
+            if(dgvRooms.Rows.Count == 0)
+            {
+                Globals.dateChange = false;
+            }
+            else
+            {
+                Globals.dateChange = true;
+            }
+
+            Globals.checkInDate = dtpBookingCheckIn.Value;
+            Globals.checkOutDate = dtpBookingCheckOut.Value;
+
             cancelled = false;
             this.Close();
         }
@@ -824,13 +903,88 @@ namespace Belfray
 
         private void picRemoveRoom_Click(object sender, EventArgs e)
         {
+            if (!roomSel)
+            {
+                MessageBox.Show("Please select a room from the table on the right to remove it from the booking", "Remove a room", MessageBoxButtons.OK);
+            }
+            else
+            {
+                foreach (DataRow drRoom in dsBelfray.Tables["BookingItem"].Rows)
+                {
+                    if (drRoom["bookingNo"].Equals(lblBookingNo.Text) && drRoom["itemNo"].Equals("RM" + lblRoomNo.Text.ToString()))
+                    {
+                        int pos = 0;
+                        for (int x = 0; x < 19; x++)
+                        {
+                            if (Globals.delRooms[x].Contains(" "))
+                            {
+                                pos = x;
+                                break;
+                            }
+                        }
 
+                        Globals.delRooms[pos] = lblRoomNo.Text;                        
+
+                        drRoom.Delete();
+                        daRoom.Update(dsBelfray, "BookingItem");
+                        break;
+                        //dgvRooms.DataSource = dsBelfray.Tables["bookingItem"].Rows;
+
+                    }
+                }
+
+                dgvRooms.Rows.Clear();
+
+                foreach (DataRow drRoom in dsBelfray.Tables["BookingItem"].Rows)
+                {
+                    string bookNumber = "";
+                    string itemNumber = "";
+                    if (drRoom["bookingNo"].Equals(lblBookingNo.Text))
+                    {
+                        bookNumber = drRoom["bookingNo"].ToString();
+                        itemNumber = drRoom["itemNo"].ToString();
+                        dgvRooms.ColumnCount = 2;
+                        dgvRooms.Columns[0].Name = "Booking Number";
+                        dgvRooms.Columns[0].Width = 288;
+                        dgvRooms.Columns[1].Name = "Room Number";
+                        dgvRooms.Columns[1].Width = 188;
+                        dgvRooms.Rows.Add(bookNumber, itemNumber);
+                        //dgvRooms.DataSource = dsBelfray.Tables["bookingItem"].Rows;
+                    }
+                    else
+                    {
+                        dgvRooms.ColumnCount = 2;
+                        dgvRooms.Columns[0].Name = "Booking Number";
+                        dgvRooms.Columns[0].Width = 288;
+                        dgvRooms.Columns[1].Name = "Room Number";
+                        dgvRooms.Columns[1].Width = 188;
+                    }
+                }
+            }
         }
 
         private void picRemoveRoom_MouseLeave(object sender, EventArgs e)
         {
             picRemoveRoom.BackColor = Color.Transparent;
             pnlRed.Visible = false;
+        }
+
+        //Selecting Row in Rooms Table
+        private void dgvRooms_Click(object sender, EventArgs e)
+        {
+            if (dgvRooms.SelectedRows.Count == 0)
+            {
+                roomSel = false;
+                //prdSel = null;
+            }
+            else if (dgvRooms.SelectedRows.Count == 1)
+            {
+                roomSel = true;
+                string s = dgvRooms.SelectedRows[0].Cells[1].Value.ToString();
+                string s1 = s.Split('M').Last();
+                lblRoomNo.Text = s1;
+                //prdSel = Globals.prdNoSel;
+            }
         }
     }
 }

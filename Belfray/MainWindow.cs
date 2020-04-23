@@ -391,6 +391,8 @@ namespace Belfray
             picTabAdd.Enabled = true;
             picTabEdit.Enabled = true;
             picTabDelete.Enabled = true;
+
+            Globals.roomLoad = true;
         }
 
         private void picTabSearch_Click(object sender, EventArgs e)
