@@ -2179,10 +2179,8 @@ namespace Belfray
 
             if (MainWindow.tabSelected == 3)
             {
-                picSaveRoomSelect.Visible = false;
                 picCancellRoomSelect.Visible = false;
 
-                picEditSave.Visible = true;
                 picEditCancel.Visible = true;
 
                 dtpCheckInDate.Value = Globals.checkInDate;
@@ -2207,6 +2205,10 @@ namespace Belfray
             }
             else
             {
+                picEditCancel.Visible = false;
+                picCancellRoomSelect.Visible = true;
+
+
                 if (Globals.roomLoad)
                 {
                     TimeSpan ts = new TimeSpan(0, 0, 1, 0);
@@ -2326,8 +2328,16 @@ namespace Belfray
 
         private void picCancellRoomSelect_Click(object sender, EventArgs e)
         {
-            cancelled = true;
-            this.Close();
+            if (Globals.rooms[0].Equals(" "))
+            {
+                cancelled = true;
+                this.Close();
+            }
+            else
+            {
+                cancelled = false;
+                this.Close();
+            }
         }
 
         private void picCancellRoomSelect_MouseLeave(object sender, EventArgs e)
@@ -2380,7 +2390,7 @@ namespace Belfray
                 {
                     if (dtpCheckInDate.Value.Year.CompareTo(checkIn.Year) == 0 || dtpCheckInDate.Value.Year.CompareTo(checkOut.Year) == 0 || dtpCheckOutDate.Value.Year.CompareTo(checkIn.Year) == 0 || dtpCheckOutDate.Value.Year.CompareTo(checkOut.Year) == 0)
                     {
-                        if (dtpCheckInDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckInDate.Value.Year.CompareTo(checkOut.Year) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkOut.Month) == 0)
+                        if (dtpCheckInDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckInDate.Value.Month.CompareTo(checkOut.Month) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkOut.Month) == 0)
                         {
                             int min = checkIn.Day;
                             int max = checkOut.Day;

@@ -157,6 +157,7 @@
             this.picCancellRoomSelect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCancellRoomSelect.TabIndex = 64;
             this.picCancellRoomSelect.TabStop = false;
+            this.picCancellRoomSelect.Visible = false;
             this.picCancellRoomSelect.Click += new System.EventHandler(this.picCancellRoomSelect_Click);
             this.picCancellRoomSelect.MouseEnter += new System.EventHandler(this.picCancellRoomSelect_MouseEnter);
             this.picCancellRoomSelect.MouseLeave += new System.EventHandler(this.picCancellRoomSelect_MouseLeave);
@@ -170,6 +171,7 @@
             this.picSaveRoomSelect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSaveRoomSelect.TabIndex = 63;
             this.picSaveRoomSelect.TabStop = false;
+            this.picSaveRoomSelect.Visible = false;
             this.picSaveRoomSelect.Click += new System.EventHandler(this.picSaveRoomSelect_Click);
             this.picSaveRoomSelect.MouseEnter += new System.EventHandler(this.picSaveRoomSelect_MouseEnter);
             this.picSaveRoomSelect.MouseLeave += new System.EventHandler(this.picSaveRoomSelect_MouseLeave);
