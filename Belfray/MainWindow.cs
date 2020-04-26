@@ -163,11 +163,6 @@ namespace Belfray
             picLogOut.BackColor = Color.Transparent;
         }
 
-        public void Reset()
-        {
-            
-        }
-
         public void TabVisible()
         {
             //Makes the Tab controls visible
@@ -193,7 +188,6 @@ namespace Belfray
             //Set menu option select to Room Booking
             menuSelected = 1;
 
-            Reset();
             TabVisible();
 
             picTabDisplay_Click(sender, e);
@@ -282,20 +276,20 @@ namespace Belfray
                 case 2: //Hotel
                     picTableBooking.Visible = false;
                     picRestaurantStock.Visible = false;
+                    picAdmin.Visible = false;
 
-                    picRoomBooking.Location = new Point(259, 10);
-                    picRoomStock.Location = new Point(450, 10);
-                    picAccount.Location = new Point(641, 10);
-                    picAdmin.Location = new Point(832, 10);
+                    picRoomBooking.Location = new Point(358, 10);
+                    picRoomStock.Location = new Point(549, 10);
+                    picAccount.Location = new Point(740, 10);
                     break;
                 case 3: //Restaurant
                     picRoomBooking.Visible = false;
                     picRoomStock.Visible = false;
+                    picAdmin.Visible = false;
 
-                    picTableBooking.Location = new Point(259, 10);
-                    picRestaurantStock.Location = new Point(450, 10);
-                    picAccount.Location = new Point(641, 10);
-                    picAdmin.Location = new Point(832, 10);
+                    picTableBooking.Location = new Point(358, 10);
+                    picRestaurantStock.Location = new Point(549, 10);
+                    picAccount.Location = new Point(740, 10);
                     break;
             }
 
@@ -423,13 +417,13 @@ namespace Belfray
                     break;
             }
 
-            //Diable Selected Tab
+            //Diable Selected Tab and Edit Tab
             picTabSearch.Enabled = false;
+            picTabEdit.Enabled = false;
 
             //Enable All Other Tabs
             picTabDisplay.Enabled = true;
             picTabAdd.Enabled = true;
-            picTabEdit.Enabled = true;
             picTabDelete.Enabled = true;
         }
 
@@ -483,33 +477,42 @@ namespace Belfray
                     break;
             }
 
-            //Diable Selected Tab
+            //Diable Selected Tab and Edit Tab
             picTabAdd.Enabled = false;
+            picTabEdit.Enabled = false;
 
             //Enable All Other Tabs
             picTabDisplay.Enabled = true;
             picTabSearch.Enabled = true;
-            picTabEdit.Enabled = true;
             picTabDelete.Enabled = true;
         }
 
         private void picTabEdit_Click(object sender, EventArgs e)
         {
             tabSelected = 3;
+            bool error = false;
 
             switch (menuSelected)
             {
                 case 0: //Welcome
                     break;
                 case 1: //Room Booking
-                    RoomBookingEdit frm = new RoomBookingEdit();
-                    frm.TopLevel = false;
-                    frm.FormBorderStyle = FormBorderStyle.None;
-                    frm.WindowState = FormWindowState.Maximized;
-                    frm.FormClosed += RoomBookingEdit_Closed;
-                    frm.FormClosing += RoomBookingEdit_Closing;
-                    pnlMainBody.Controls.Add(frm);
-                    frm.Show();                    
+                    if (Globals.bookNoSel == "")
+                    {
+                        MessageBox.Show("Error: No Booking Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        error = true;
+                    }
+                    else
+                    {
+                        RoomBookingEdit frm = new RoomBookingEdit();
+                        frm.TopLevel = false;
+                        frm.FormBorderStyle = FormBorderStyle.None;
+                        frm.WindowState = FormWindowState.Maximized;
+                        frm.FormClosed += RoomBookingEdit_Closed;
+                        frm.FormClosing += RoomBookingEdit_Closing;
+                        pnlMainBody.Controls.Add(frm);
+                        frm.Show();
+                    }
                     break;
                 case 2: //Room Stock
                     break;
@@ -519,6 +522,7 @@ namespace Belfray
                     if (Globals.prdNoSel == null)
                     {
                         MessageBox.Show("Error: No Product Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        error = true;
                     }
                     else
                     {
@@ -538,14 +542,19 @@ namespace Belfray
                     break;
             }
 
-            //Disable Selected Tab
-            picTabEdit.Enabled = false;
+            if (!error)
+            {
+                //Disable Selected Tab
+                picTabEdit.Enabled = false;
 
-            //Enable All Other Tabs
-            picTabDisplay.Enabled = true;
-            picTabSearch.Enabled = true;
-            picTabAdd.Enabled = true;
-            picTabDelete.Enabled = true;
+                //Enable All Other Tabs
+                picTabDisplay.Enabled = true;
+                picTabSearch.Enabled = true;
+                picTabAdd.Enabled = true;
+                picTabDelete.Enabled = true;
+
+                Globals.bookNoSel = "";
+            }
         }
 
         private void picTabDelete_Click(object sender, EventArgs e)
@@ -583,14 +592,14 @@ namespace Belfray
                     break;
             }
 
-            //Disable Selected Tab
+            //Disable Selected Tab and Edit Tab
             picTabDelete.Enabled = false;
+            picTabEdit.Enabled = false;
 
             //Enable All Other Tabs
             picTabDisplay.Enabled = true;
             picTabSearch.Enabled = true;
             picTabAdd.Enabled = true;
-            picTabEdit.Enabled = true;
         }
 
         //Room Select Closing

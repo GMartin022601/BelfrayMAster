@@ -42,6 +42,8 @@ namespace Belfray
 
         private void RoomBookingDisplay_Load(object sender, EventArgs e)
         {
+            dgvBookings.ClearSelection();
+
             //DB Connection
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****

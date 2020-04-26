@@ -395,7 +395,7 @@ namespace Belfray
             //Check In Time
             try
             {
-                myBook.BookingTime = "13:00:00";
+                myBook.BookingTime = "13:00";
             }
             catch (MyException MyEx)
             {
@@ -968,7 +968,9 @@ namespace Belfray
                         dgvRooms.Columns[1].Name = "Room Number";
                         dgvRooms.Columns[1].Width = 188;
                     }
-                }                
+                }
+
+                lblRoomNo.Text = "-";
             }
         }
 

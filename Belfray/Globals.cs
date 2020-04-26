@@ -39,5 +39,7 @@ namespace Belfray
         public static DateTime checkInDate = new DateTime();
 
         public static DateTime checkOutDate = new DateTime();
+
+        public static string staffNo = "";
     }
 }
