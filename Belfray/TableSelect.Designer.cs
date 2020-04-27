@@ -30,31 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlTableSelect = new System.Windows.Forms.Panel();
-            this.picExit = new System.Windows.Forms.PictureBox();
-            this.pnlGreen = new System.Windows.Forms.Panel();
-            this.lblGreenCapacityValue = new System.Windows.Forms.Label();
-            this.lblGreenCapacity = new System.Windows.Forms.Label();
-            this.lblGreenNo = new System.Windows.Forms.Label();
-            this.lblGreenAvailability = new System.Windows.Forms.Label();
-            this.lblGreenRoom = new System.Windows.Forms.Label();
-            this.pnlRed = new System.Windows.Forms.Panel();
-            this.lblRedCapacityValue = new System.Windows.Forms.Label();
-            this.lblRedCapacity = new System.Windows.Forms.Label();
-            this.lblRedNo = new System.Windows.Forms.Label();
-            this.lblRedAvailability = new System.Windows.Forms.Label();
-            this.lblRedRoom = new System.Windows.Forms.Label();
             this.pnlCustomerDetails = new System.Windows.Forms.Panel();
             this.gbDGV = new System.Windows.Forms.GroupBox();
-            this.picRemoveTable = new System.Windows.Forms.PictureBox();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
             this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCustomerDetails = new System.Windows.Forms.GroupBox();
-            this.picSaveBooking = new System.Windows.Forms.PictureBox();
             this.cbCustNo = new System.Windows.Forms.ComboBox();
             this.txtTelNo = new System.Windows.Forms.TextBox();
-            this.picCancelBooking = new System.Windows.Forms.PictureBox();
             this.lblTelNo = new System.Windows.Forms.Label();
             this.txtPC = new System.Windows.Forms.TextBox();
             this.lblPC = new System.Windows.Forms.Label();
@@ -88,7 +72,6 @@
             this.pnlFloorPlan = new System.Windows.Forms.Panel();
             this.dtpCurrentDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.picAddTable = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblSeatsAvail = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -98,8 +81,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbltbl176 = new System.Windows.Forms.Label();
             this.lbltbl166 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbltbl23 = new System.Windows.Forms.Label();
             this.lbltbl22 = new System.Windows.Forms.Label();
             this.lbltbl21 = new System.Windows.Forms.Label();
@@ -110,27 +91,48 @@
             this.lbltbl17 = new System.Windows.Forms.Label();
             this.lbltbl16 = new System.Windows.Forms.Label();
             this.lbltbl15 = new System.Windows.Forms.Label();
-            this.tbl15 = new System.Windows.Forms.PictureBox();
             this.lbltbl14 = new System.Windows.Forms.Label();
             this.lbltbl13 = new System.Windows.Forms.Label();
-            this.tbl16 = new System.Windows.Forms.PictureBox();
             this.lbltbl12 = new System.Windows.Forms.Label();
             this.lbltbl7 = new System.Windows.Forms.Label();
             this.lbltbl11 = new System.Windows.Forms.Label();
-            this.tbl17 = new System.Windows.Forms.PictureBox();
             this.lbltbl10 = new System.Windows.Forms.Label();
-            this.tbl18 = new System.Windows.Forms.PictureBox();
             this.lbltbl9 = new System.Windows.Forms.Label();
-            this.tbl19 = new System.Windows.Forms.PictureBox();
             this.lbltbl8 = new System.Windows.Forms.Label();
-            this.tbl20 = new System.Windows.Forms.PictureBox();
             this.lbltbl6 = new System.Windows.Forms.Label();
-            this.tbl22 = new System.Windows.Forms.PictureBox();
             this.lbltbl5 = new System.Windows.Forms.Label();
-            this.tbl23 = new System.Windows.Forms.PictureBox();
             this.lbltbl4 = new System.Windows.Forms.Label();
             this.lbltbl2 = new System.Windows.Forms.Label();
             this.lbltbl3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.errP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.picExit = new System.Windows.Forms.PictureBox();
+            this.pnlGreen = new System.Windows.Forms.Panel();
+            this.lblGreenCapacityValue = new System.Windows.Forms.Label();
+            this.lblGreenCapacity = new System.Windows.Forms.Label();
+            this.lblGreenNo = new System.Windows.Forms.Label();
+            this.lblGreenAvailability = new System.Windows.Forms.Label();
+            this.lblGreenRoom = new System.Windows.Forms.Label();
+            this.pnlRed = new System.Windows.Forms.Panel();
+            this.lblRedCapacityValue = new System.Windows.Forms.Label();
+            this.lblRedCapacity = new System.Windows.Forms.Label();
+            this.lblRedNo = new System.Windows.Forms.Label();
+            this.lblRedAvailability = new System.Windows.Forms.Label();
+            this.lblRedRoom = new System.Windows.Forms.Label();
+            this.picRemoveTable = new System.Windows.Forms.PictureBox();
+            this.picSaveBooking = new System.Windows.Forms.PictureBox();
+            this.picCancelBooking = new System.Windows.Forms.PictureBox();
+            this.picAddTable = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbl15 = new System.Windows.Forms.PictureBox();
+            this.tbl16 = new System.Windows.Forms.PictureBox();
+            this.tbl17 = new System.Windows.Forms.PictureBox();
+            this.tbl18 = new System.Windows.Forms.PictureBox();
+            this.tbl19 = new System.Windows.Forms.PictureBox();
+            this.tbl20 = new System.Windows.Forms.PictureBox();
+            this.tbl22 = new System.Windows.Forms.PictureBox();
+            this.tbl23 = new System.Windows.Forms.PictureBox();
             this.tbl1 = new System.Windows.Forms.PictureBox();
             this.tbl4 = new System.Windows.Forms.PictureBox();
             this.tbl3 = new System.Windows.Forms.PictureBox();
@@ -146,24 +148,24 @@
             this.tbl14 = new System.Windows.Forms.PictureBox();
             this.tbl12 = new System.Windows.Forms.PictureBox();
             this.tbl21 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.errP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlTableSelect.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
-            this.pnlGreen.SuspendLayout();
-            this.pnlRed.SuspendLayout();
             this.pnlCustomerDetails.SuspendLayout();
             this.gbDGV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRemoveTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             this.gbCustomerDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveBooking)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCancelBooking)).BeginInit();
             this.gbBookingDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
             this.pnlFloorPlan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddTable)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
+            this.pnlGreen.SuspendLayout();
+            this.pnlRed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemoveTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveBooking)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancelBooking)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl15)).BeginInit();
@@ -189,12 +191,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTableSelect
             // 
             this.pnlTableSelect.Controls.Add(this.picExit);
+            this.pnlTableSelect.Controls.Add(this.button2);
             this.pnlTableSelect.Controls.Add(this.pnlGreen);
             this.pnlTableSelect.Controls.Add(this.pnlRed);
             this.pnlTableSelect.Controls.Add(this.pnlCustomerDetails);
@@ -203,149 +205,6 @@
             this.pnlTableSelect.Name = "pnlTableSelect";
             this.pnlTableSelect.Size = new System.Drawing.Size(1196, 596);
             this.pnlTableSelect.TabIndex = 0;
-            // 
-            // picExit
-            // 
-            this.picExit.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picExit.Location = new System.Drawing.Point(1136, 553);
-            this.picExit.Name = "picExit";
-            this.picExit.Size = new System.Drawing.Size(40, 40);
-            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picExit.TabIndex = 69;
-            this.picExit.TabStop = false;
-            this.picExit.Click += new System.EventHandler(this.picExit_Click);
-            // 
-            // pnlGreen
-            // 
-            this.pnlGreen.BackColor = System.Drawing.Color.Transparent;
-            this.pnlGreen.BackgroundImage = global::Belfray.Properties.Resources.Green;
-            this.pnlGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlGreen.Controls.Add(this.lblGreenCapacityValue);
-            this.pnlGreen.Controls.Add(this.lblGreenCapacity);
-            this.pnlGreen.Controls.Add(this.lblGreenNo);
-            this.pnlGreen.Controls.Add(this.lblGreenAvailability);
-            this.pnlGreen.Controls.Add(this.lblGreenRoom);
-            this.pnlGreen.Location = new System.Drawing.Point(265, 592);
-            this.pnlGreen.Name = "pnlGreen";
-            this.pnlGreen.Size = new System.Drawing.Size(200, 120);
-            this.pnlGreen.TabIndex = 53;
-            this.pnlGreen.Visible = false;
-            // 
-            // lblGreenCapacityValue
-            // 
-            this.lblGreenCapacityValue.AutoSize = true;
-            this.lblGreenCapacityValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenCapacityValue.Location = new System.Drawing.Point(101, 49);
-            this.lblGreenCapacityValue.Name = "lblGreenCapacityValue";
-            this.lblGreenCapacityValue.Size = new System.Drawing.Size(12, 16);
-            this.lblGreenCapacityValue.TabIndex = 53;
-            this.lblGreenCapacityValue.Text = "-";
-            // 
-            // lblGreenCapacity
-            // 
-            this.lblGreenCapacity.AutoSize = true;
-            this.lblGreenCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenCapacity.Location = new System.Drawing.Point(9, 49);
-            this.lblGreenCapacity.Name = "lblGreenCapacity";
-            this.lblGreenCapacity.Size = new System.Drawing.Size(86, 16);
-            this.lblGreenCapacity.TabIndex = 52;
-            this.lblGreenCapacity.Text = "CAPACITY:";
-            // 
-            // lblGreenNo
-            // 
-            this.lblGreenNo.AutoSize = true;
-            this.lblGreenNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenNo.Location = new System.Drawing.Point(98, 10);
-            this.lblGreenNo.Name = "lblGreenNo";
-            this.lblGreenNo.Size = new System.Drawing.Size(12, 16);
-            this.lblGreenNo.TabIndex = 50;
-            this.lblGreenNo.Text = "-";
-            // 
-            // lblGreenAvailability
-            // 
-            this.lblGreenAvailability.AutoSize = true;
-            this.lblGreenAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenAvailability.Location = new System.Drawing.Point(60, 94);
-            this.lblGreenAvailability.Name = "lblGreenAvailability";
-            this.lblGreenAvailability.Size = new System.Drawing.Size(79, 16);
-            this.lblGreenAvailability.TabIndex = 49;
-            this.lblGreenAvailability.Text = "AVAILABLE";
-            // 
-            // lblGreenRoom
-            // 
-            this.lblGreenRoom.AutoSize = true;
-            this.lblGreenRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreenRoom.Location = new System.Drawing.Point(9, 10);
-            this.lblGreenRoom.Name = "lblGreenRoom";
-            this.lblGreenRoom.Size = new System.Drawing.Size(86, 16);
-            this.lblGreenRoom.TabIndex = 47;
-            this.lblGreenRoom.Text = "TABLE NO:";
-            // 
-            // pnlRed
-            // 
-            this.pnlRed.BackColor = System.Drawing.Color.Transparent;
-            this.pnlRed.BackgroundImage = global::Belfray.Properties.Resources.Red;
-            this.pnlRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlRed.Controls.Add(this.lblRedCapacityValue);
-            this.pnlRed.Controls.Add(this.lblRedCapacity);
-            this.pnlRed.Controls.Add(this.lblRedNo);
-            this.pnlRed.Controls.Add(this.lblRedAvailability);
-            this.pnlRed.Controls.Add(this.lblRedRoom);
-            this.pnlRed.Location = new System.Drawing.Point(58, 592);
-            this.pnlRed.Name = "pnlRed";
-            this.pnlRed.Size = new System.Drawing.Size(200, 120);
-            this.pnlRed.TabIndex = 55;
-            this.pnlRed.Visible = false;
-            // 
-            // lblRedCapacityValue
-            // 
-            this.lblRedCapacityValue.AutoSize = true;
-            this.lblRedCapacityValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedCapacityValue.Location = new System.Drawing.Point(101, 48);
-            this.lblRedCapacityValue.Name = "lblRedCapacityValue";
-            this.lblRedCapacityValue.Size = new System.Drawing.Size(12, 16);
-            this.lblRedCapacityValue.TabIndex = 53;
-            this.lblRedCapacityValue.Text = "-";
-            // 
-            // lblRedCapacity
-            // 
-            this.lblRedCapacity.AutoSize = true;
-            this.lblRedCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedCapacity.Location = new System.Drawing.Point(9, 48);
-            this.lblRedCapacity.Name = "lblRedCapacity";
-            this.lblRedCapacity.Size = new System.Drawing.Size(45, 16);
-            this.lblRedCapacity.TabIndex = 52;
-            this.lblRedCapacity.Text = "SIZE:";
-            // 
-            // lblRedNo
-            // 
-            this.lblRedNo.AutoSize = true;
-            this.lblRedNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedNo.Location = new System.Drawing.Point(98, 10);
-            this.lblRedNo.Name = "lblRedNo";
-            this.lblRedNo.Size = new System.Drawing.Size(12, 16);
-            this.lblRedNo.TabIndex = 50;
-            this.lblRedNo.Text = "-";
-            // 
-            // lblRedAvailability
-            // 
-            this.lblRedAvailability.AutoSize = true;
-            this.lblRedAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedAvailability.Location = new System.Drawing.Point(54, 94);
-            this.lblRedAvailability.Name = "lblRedAvailability";
-            this.lblRedAvailability.Size = new System.Drawing.Size(99, 16);
-            this.lblRedAvailability.TabIndex = 49;
-            this.lblRedAvailability.Text = "UNAVAILABLE";
-            // 
-            // lblRedRoom
-            // 
-            this.lblRedRoom.AutoSize = true;
-            this.lblRedRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedRoom.Location = new System.Drawing.Point(9, 10);
-            this.lblRedRoom.Name = "lblRedRoom";
-            this.lblRedRoom.Size = new System.Drawing.Size(83, 16);
-            this.lblRedRoom.TabIndex = 47;
-            this.lblRedRoom.Text = "ROOM NO:";
             // 
             // pnlCustomerDetails
             // 
@@ -370,17 +229,6 @@
             this.gbDGV.TabIndex = 2;
             this.gbDGV.TabStop = false;
             this.gbDGV.Text = "Tables Booked";
-            // 
-            // picRemoveTable
-            // 
-            this.picRemoveTable.Image = global::Belfray.Properties.Resources.Remove__2_;
-            this.picRemoveTable.Location = new System.Drawing.Point(505, 140);
-            this.picRemoveTable.Name = "picRemoveTable";
-            this.picRemoveTable.Size = new System.Drawing.Size(24, 24);
-            this.picRemoveTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRemoveTable.TabIndex = 82;
-            this.picRemoveTable.TabStop = false;
-            this.picRemoveTable.Click += new System.EventHandler(this.picRemoveTable_Click);
             // 
             // dgvBooking
             // 
@@ -444,17 +292,6 @@
             this.gbCustomerDetails.TabStop = false;
             this.gbCustomerDetails.Text = "Customer Details";
             // 
-            // picSaveBooking
-            // 
-            this.picSaveBooking.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSaveBooking.Location = new System.Drawing.Point(483, 164);
-            this.picSaveBooking.Name = "picSaveBooking";
-            this.picSaveBooking.Size = new System.Drawing.Size(40, 40);
-            this.picSaveBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSaveBooking.TabIndex = 62;
-            this.picSaveBooking.TabStop = false;
-            this.picSaveBooking.Click += new System.EventHandler(this.picSaveBooking_Click);
-            // 
             // cbCustNo
             // 
             this.cbCustNo.FormattingEnabled = true;
@@ -471,16 +308,6 @@
             this.txtTelNo.Name = "txtTelNo";
             this.txtTelNo.Size = new System.Drawing.Size(100, 25);
             this.txtTelNo.TabIndex = 19;
-            // 
-            // picCancelBooking
-            // 
-            this.picCancelBooking.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picCancelBooking.Location = new System.Drawing.Point(437, 164);
-            this.picCancelBooking.Name = "picCancelBooking";
-            this.picCancelBooking.Size = new System.Drawing.Size(40, 40);
-            this.picCancelBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCancelBooking.TabIndex = 68;
-            this.picCancelBooking.TabStop = false;
             // 
             // lblTelNo
             // 
@@ -858,17 +685,6 @@
             this.label3.TabIndex = 84;
             this.label3.Text = "Today\'s Date:";
             // 
-            // picAddTable
-            // 
-            this.picAddTable.Image = global::Belfray.Properties.Resources.AddNew;
-            this.picAddTable.Location = new System.Drawing.Point(595, 417);
-            this.picAddTable.Name = "picAddTable";
-            this.picAddTable.Size = new System.Drawing.Size(40, 40);
-            this.picAddTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAddTable.TabIndex = 83;
-            this.picAddTable.TabStop = false;
-            this.picAddTable.Click += new System.EventHandler(this.picAddTable_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblSeatsAvail);
@@ -962,28 +778,6 @@
             this.lbltbl166.TabIndex = 51;
             this.lbltbl166.Text = "T16";
             this.lbltbl166.Visible = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Belfray.Properties.Resources.Table_2_TP;
-            this.pictureBox2.Location = new System.Drawing.Point(455, 232);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(89, 91);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 50;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Belfray.Properties.Resources.Table_2_TP;
-            this.pictureBox1.Location = new System.Drawing.Point(454, 141);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 91);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 49;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
             // 
             // lbltbl23
             // 
@@ -1095,19 +889,6 @@
             this.lbltbl15.TabIndex = 40;
             this.lbltbl15.Text = "T15";
             // 
-            // tbl15
-            // 
-            this.tbl15.Image = global::Belfray.Properties.Resources.Table_4_TP;
-            this.tbl15.Location = new System.Drawing.Point(366, 232);
-            this.tbl15.Name = "tbl15";
-            this.tbl15.Size = new System.Drawing.Size(89, 91);
-            this.tbl15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl15.TabIndex = 17;
-            this.tbl15.TabStop = false;
-            this.tbl15.Click += new System.EventHandler(this.tbl15_Click);
-            this.tbl15.MouseEnter += new System.EventHandler(this.tbl15_MouseEnter);
-            this.tbl15.MouseLeave += new System.EventHandler(this.tbl15_MouseLeave);
-            // 
             // lbltbl14
             // 
             this.lbltbl14.AutoSize = true;
@@ -1129,19 +910,6 @@
             this.lbltbl13.Size = new System.Drawing.Size(34, 16);
             this.lbltbl13.TabIndex = 38;
             this.lbltbl13.Text = "T13";
-            // 
-            // tbl16
-            // 
-            this.tbl16.Image = global::Belfray.Properties.Resources.Booth_4_TP_2;
-            this.tbl16.Location = new System.Drawing.Point(543, 141);
-            this.tbl16.Name = "tbl16";
-            this.tbl16.Size = new System.Drawing.Size(89, 91);
-            this.tbl16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl16.TabIndex = 19;
-            this.tbl16.TabStop = false;
-            this.tbl16.Click += new System.EventHandler(this.tbl16_Click);
-            this.tbl16.MouseEnter += new System.EventHandler(this.tbl16_MouseEnter);
-            this.tbl16.MouseLeave += new System.EventHandler(this.tbl16_MouseLeave);
             // 
             // lbltbl12
             // 
@@ -1176,19 +944,6 @@
             this.lbltbl11.TabIndex = 36;
             this.lbltbl11.Text = "T11";
             // 
-            // tbl17
-            // 
-            this.tbl17.Image = global::Belfray.Properties.Resources.Booth_4_TP_2;
-            this.tbl17.Location = new System.Drawing.Point(543, 232);
-            this.tbl17.Name = "tbl17";
-            this.tbl17.Size = new System.Drawing.Size(89, 91);
-            this.tbl17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl17.TabIndex = 21;
-            this.tbl17.TabStop = false;
-            this.tbl17.Click += new System.EventHandler(this.tbl17_Click);
-            this.tbl17.MouseEnter += new System.EventHandler(this.tbl17_MouseEnter);
-            this.tbl17.MouseLeave += new System.EventHandler(this.tbl17_MouseLeave);
-            // 
             // lbltbl10
             // 
             this.lbltbl10.AutoSize = true;
@@ -1199,19 +954,6 @@
             this.lbltbl10.Size = new System.Drawing.Size(34, 16);
             this.lbltbl10.TabIndex = 35;
             this.lbltbl10.Text = "T10";
-            // 
-            // tbl18
-            // 
-            this.tbl18.Image = global::Belfray.Properties.Resources.Booth_4_TP;
-            this.tbl18.Location = new System.Drawing.Point(543, 323);
-            this.tbl18.Name = "tbl18";
-            this.tbl18.Size = new System.Drawing.Size(89, 91);
-            this.tbl18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl18.TabIndex = 22;
-            this.tbl18.TabStop = false;
-            this.tbl18.Click += new System.EventHandler(this.tbl18_Click);
-            this.tbl18.MouseEnter += new System.EventHandler(this.tbl18_MouseEnter);
-            this.tbl18.MouseLeave += new System.EventHandler(this.tbl18_MouseLeave);
             // 
             // lbltbl9
             // 
@@ -1224,19 +966,6 @@
             this.lbltbl9.TabIndex = 34;
             this.lbltbl9.Text = "T9";
             // 
-            // tbl19
-            // 
-            this.tbl19.Image = global::Belfray.Properties.Resources.Booth_4_TP;
-            this.tbl19.Location = new System.Drawing.Point(454, 323);
-            this.tbl19.Name = "tbl19";
-            this.tbl19.Size = new System.Drawing.Size(89, 91);
-            this.tbl19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl19.TabIndex = 23;
-            this.tbl19.TabStop = false;
-            this.tbl19.Click += new System.EventHandler(this.tbl19_Click);
-            this.tbl19.MouseEnter += new System.EventHandler(this.tbl19_MouseEnter);
-            this.tbl19.MouseLeave += new System.EventHandler(this.tbl19_MouseLeave);
-            // 
             // lbltbl8
             // 
             this.lbltbl8.AutoSize = true;
@@ -1247,19 +976,6 @@
             this.lbltbl8.Size = new System.Drawing.Size(26, 16);
             this.lbltbl8.TabIndex = 33;
             this.lbltbl8.Text = "T8";
-            // 
-            // tbl20
-            // 
-            this.tbl20.Image = global::Belfray.Properties.Resources.Booth_4_TP;
-            this.tbl20.Location = new System.Drawing.Point(365, 323);
-            this.tbl20.Name = "tbl20";
-            this.tbl20.Size = new System.Drawing.Size(89, 91);
-            this.tbl20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl20.TabIndex = 24;
-            this.tbl20.TabStop = false;
-            this.tbl20.Click += new System.EventHandler(this.tbl20_Click);
-            this.tbl20.MouseEnter += new System.EventHandler(this.tbl20_MouseEnter);
-            this.tbl20.MouseLeave += new System.EventHandler(this.tbl20_MouseLeave);
             // 
             // lbltbl6
             // 
@@ -1272,19 +988,6 @@
             this.lbltbl6.TabIndex = 32;
             this.lbltbl6.Text = "T6";
             // 
-            // tbl22
-            // 
-            this.tbl22.Image = global::Belfray.Properties.Resources.Booth_4_TP;
-            this.tbl22.Location = new System.Drawing.Point(187, 323);
-            this.tbl22.Name = "tbl22";
-            this.tbl22.Size = new System.Drawing.Size(89, 91);
-            this.tbl22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl22.TabIndex = 26;
-            this.tbl22.TabStop = false;
-            this.tbl22.Click += new System.EventHandler(this.tbl22_Click);
-            this.tbl22.MouseEnter += new System.EventHandler(this.tbl22_MouseEnter);
-            this.tbl22.MouseLeave += new System.EventHandler(this.tbl22_MouseLeave);
-            // 
             // lbltbl5
             // 
             this.lbltbl5.AutoSize = true;
@@ -1295,19 +998,6 @@
             this.lbltbl5.Size = new System.Drawing.Size(26, 16);
             this.lbltbl5.TabIndex = 31;
             this.lbltbl5.Text = "T5";
-            // 
-            // tbl23
-            // 
-            this.tbl23.Image = global::Belfray.Properties.Resources.Booth_4_TP;
-            this.tbl23.Location = new System.Drawing.Point(98, 323);
-            this.tbl23.Name = "tbl23";
-            this.tbl23.Size = new System.Drawing.Size(89, 91);
-            this.tbl23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tbl23.TabIndex = 27;
-            this.tbl23.TabStop = false;
-            this.tbl23.Click += new System.EventHandler(this.tbl23_Click);
-            this.tbl23.MouseEnter += new System.EventHandler(this.tbl23_MouseEnter);
-            this.tbl23.MouseLeave += new System.EventHandler(this.tbl23_MouseLeave);
             // 
             // lbltbl4
             // 
@@ -1341,6 +1031,328 @@
             this.lbltbl3.Size = new System.Drawing.Size(26, 16);
             this.lbltbl3.TabIndex = 29;
             this.lbltbl3.Text = "T3";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Table Information";
+            // 
+            // errP
+            // 
+            this.errP.ContainerControl = this;
+            // 
+            // picExit
+            // 
+            this.picExit.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picExit.Location = new System.Drawing.Point(1136, 553);
+            this.picExit.Name = "picExit";
+            this.picExit.Size = new System.Drawing.Size(40, 40);
+            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picExit.TabIndex = 69;
+            this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
+            // 
+            // pnlGreen
+            // 
+            this.pnlGreen.BackColor = System.Drawing.Color.Transparent;
+            this.pnlGreen.BackgroundImage = global::Belfray.Properties.Resources.Green;
+            this.pnlGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGreen.Controls.Add(this.lblGreenCapacityValue);
+            this.pnlGreen.Controls.Add(this.lblGreenCapacity);
+            this.pnlGreen.Controls.Add(this.lblGreenNo);
+            this.pnlGreen.Controls.Add(this.lblGreenAvailability);
+            this.pnlGreen.Controls.Add(this.lblGreenRoom);
+            this.pnlGreen.Location = new System.Drawing.Point(265, 592);
+            this.pnlGreen.Name = "pnlGreen";
+            this.pnlGreen.Size = new System.Drawing.Size(200, 120);
+            this.pnlGreen.TabIndex = 53;
+            this.pnlGreen.Visible = false;
+            // 
+            // lblGreenCapacityValue
+            // 
+            this.lblGreenCapacityValue.AutoSize = true;
+            this.lblGreenCapacityValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenCapacityValue.Location = new System.Drawing.Point(101, 49);
+            this.lblGreenCapacityValue.Name = "lblGreenCapacityValue";
+            this.lblGreenCapacityValue.Size = new System.Drawing.Size(12, 16);
+            this.lblGreenCapacityValue.TabIndex = 53;
+            this.lblGreenCapacityValue.Text = "-";
+            // 
+            // lblGreenCapacity
+            // 
+            this.lblGreenCapacity.AutoSize = true;
+            this.lblGreenCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenCapacity.Location = new System.Drawing.Point(9, 49);
+            this.lblGreenCapacity.Name = "lblGreenCapacity";
+            this.lblGreenCapacity.Size = new System.Drawing.Size(86, 16);
+            this.lblGreenCapacity.TabIndex = 52;
+            this.lblGreenCapacity.Text = "CAPACITY:";
+            // 
+            // lblGreenNo
+            // 
+            this.lblGreenNo.AutoSize = true;
+            this.lblGreenNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenNo.Location = new System.Drawing.Point(98, 10);
+            this.lblGreenNo.Name = "lblGreenNo";
+            this.lblGreenNo.Size = new System.Drawing.Size(12, 16);
+            this.lblGreenNo.TabIndex = 50;
+            this.lblGreenNo.Text = "-";
+            // 
+            // lblGreenAvailability
+            // 
+            this.lblGreenAvailability.AutoSize = true;
+            this.lblGreenAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenAvailability.Location = new System.Drawing.Point(60, 94);
+            this.lblGreenAvailability.Name = "lblGreenAvailability";
+            this.lblGreenAvailability.Size = new System.Drawing.Size(79, 16);
+            this.lblGreenAvailability.TabIndex = 49;
+            this.lblGreenAvailability.Text = "AVAILABLE";
+            // 
+            // lblGreenRoom
+            // 
+            this.lblGreenRoom.AutoSize = true;
+            this.lblGreenRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreenRoom.Location = new System.Drawing.Point(9, 10);
+            this.lblGreenRoom.Name = "lblGreenRoom";
+            this.lblGreenRoom.Size = new System.Drawing.Size(86, 16);
+            this.lblGreenRoom.TabIndex = 47;
+            this.lblGreenRoom.Text = "TABLE NO:";
+            // 
+            // pnlRed
+            // 
+            this.pnlRed.BackColor = System.Drawing.Color.Transparent;
+            this.pnlRed.BackgroundImage = global::Belfray.Properties.Resources.Red;
+            this.pnlRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlRed.Controls.Add(this.lblRedCapacityValue);
+            this.pnlRed.Controls.Add(this.lblRedCapacity);
+            this.pnlRed.Controls.Add(this.lblRedNo);
+            this.pnlRed.Controls.Add(this.lblRedAvailability);
+            this.pnlRed.Controls.Add(this.lblRedRoom);
+            this.pnlRed.Location = new System.Drawing.Point(58, 592);
+            this.pnlRed.Name = "pnlRed";
+            this.pnlRed.Size = new System.Drawing.Size(200, 120);
+            this.pnlRed.TabIndex = 55;
+            this.pnlRed.Visible = false;
+            // 
+            // lblRedCapacityValue
+            // 
+            this.lblRedCapacityValue.AutoSize = true;
+            this.lblRedCapacityValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedCapacityValue.Location = new System.Drawing.Point(101, 48);
+            this.lblRedCapacityValue.Name = "lblRedCapacityValue";
+            this.lblRedCapacityValue.Size = new System.Drawing.Size(12, 16);
+            this.lblRedCapacityValue.TabIndex = 53;
+            this.lblRedCapacityValue.Text = "-";
+            // 
+            // lblRedCapacity
+            // 
+            this.lblRedCapacity.AutoSize = true;
+            this.lblRedCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedCapacity.Location = new System.Drawing.Point(9, 48);
+            this.lblRedCapacity.Name = "lblRedCapacity";
+            this.lblRedCapacity.Size = new System.Drawing.Size(45, 16);
+            this.lblRedCapacity.TabIndex = 52;
+            this.lblRedCapacity.Text = "SIZE:";
+            // 
+            // lblRedNo
+            // 
+            this.lblRedNo.AutoSize = true;
+            this.lblRedNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedNo.Location = new System.Drawing.Point(98, 10);
+            this.lblRedNo.Name = "lblRedNo";
+            this.lblRedNo.Size = new System.Drawing.Size(12, 16);
+            this.lblRedNo.TabIndex = 50;
+            this.lblRedNo.Text = "-";
+            // 
+            // lblRedAvailability
+            // 
+            this.lblRedAvailability.AutoSize = true;
+            this.lblRedAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedAvailability.Location = new System.Drawing.Point(54, 94);
+            this.lblRedAvailability.Name = "lblRedAvailability";
+            this.lblRedAvailability.Size = new System.Drawing.Size(99, 16);
+            this.lblRedAvailability.TabIndex = 49;
+            this.lblRedAvailability.Text = "UNAVAILABLE";
+            // 
+            // lblRedRoom
+            // 
+            this.lblRedRoom.AutoSize = true;
+            this.lblRedRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedRoom.Location = new System.Drawing.Point(9, 10);
+            this.lblRedRoom.Name = "lblRedRoom";
+            this.lblRedRoom.Size = new System.Drawing.Size(83, 16);
+            this.lblRedRoom.TabIndex = 47;
+            this.lblRedRoom.Text = "ROOM NO:";
+            // 
+            // picRemoveTable
+            // 
+            this.picRemoveTable.Image = global::Belfray.Properties.Resources.Remove__2_;
+            this.picRemoveTable.Location = new System.Drawing.Point(505, 140);
+            this.picRemoveTable.Name = "picRemoveTable";
+            this.picRemoveTable.Size = new System.Drawing.Size(24, 24);
+            this.picRemoveTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRemoveTable.TabIndex = 82;
+            this.picRemoveTable.TabStop = false;
+            this.picRemoveTable.Click += new System.EventHandler(this.picRemoveTable_Click);
+            // 
+            // picSaveBooking
+            // 
+            this.picSaveBooking.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSaveBooking.Location = new System.Drawing.Point(483, 164);
+            this.picSaveBooking.Name = "picSaveBooking";
+            this.picSaveBooking.Size = new System.Drawing.Size(40, 40);
+            this.picSaveBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSaveBooking.TabIndex = 62;
+            this.picSaveBooking.TabStop = false;
+            this.picSaveBooking.Click += new System.EventHandler(this.picSaveBooking_Click);
+            // 
+            // picCancelBooking
+            // 
+            this.picCancelBooking.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picCancelBooking.Location = new System.Drawing.Point(437, 164);
+            this.picCancelBooking.Name = "picCancelBooking";
+            this.picCancelBooking.Size = new System.Drawing.Size(40, 40);
+            this.picCancelBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCancelBooking.TabIndex = 68;
+            this.picCancelBooking.TabStop = false;
+            // 
+            // picAddTable
+            // 
+            this.picAddTable.Image = global::Belfray.Properties.Resources.AddNew;
+            this.picAddTable.Location = new System.Drawing.Point(595, 417);
+            this.picAddTable.Name = "picAddTable";
+            this.picAddTable.Size = new System.Drawing.Size(40, 40);
+            this.picAddTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAddTable.TabIndex = 83;
+            this.picAddTable.TabStop = false;
+            this.picAddTable.Click += new System.EventHandler(this.picAddTable_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Belfray.Properties.Resources.Table_2_TP;
+            this.pictureBox2.Location = new System.Drawing.Point(455, 232);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(89, 91);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Belfray.Properties.Resources.Table_2_TP;
+            this.pictureBox1.Location = new System.Drawing.Point(454, 141);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(89, 91);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // tbl15
+            // 
+            this.tbl15.Image = global::Belfray.Properties.Resources.Table_4_TP;
+            this.tbl15.Location = new System.Drawing.Point(366, 232);
+            this.tbl15.Name = "tbl15";
+            this.tbl15.Size = new System.Drawing.Size(89, 91);
+            this.tbl15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl15.TabIndex = 17;
+            this.tbl15.TabStop = false;
+            this.tbl15.Click += new System.EventHandler(this.tbl15_Click);
+            this.tbl15.MouseEnter += new System.EventHandler(this.tbl15_MouseEnter);
+            this.tbl15.MouseLeave += new System.EventHandler(this.tbl15_MouseLeave);
+            // 
+            // tbl16
+            // 
+            this.tbl16.Image = global::Belfray.Properties.Resources.Booth_4_TP_2;
+            this.tbl16.Location = new System.Drawing.Point(543, 141);
+            this.tbl16.Name = "tbl16";
+            this.tbl16.Size = new System.Drawing.Size(89, 91);
+            this.tbl16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl16.TabIndex = 19;
+            this.tbl16.TabStop = false;
+            this.tbl16.Click += new System.EventHandler(this.tbl16_Click);
+            this.tbl16.MouseEnter += new System.EventHandler(this.tbl16_MouseEnter);
+            this.tbl16.MouseLeave += new System.EventHandler(this.tbl16_MouseLeave);
+            // 
+            // tbl17
+            // 
+            this.tbl17.Image = global::Belfray.Properties.Resources.Booth_4_TP_2;
+            this.tbl17.Location = new System.Drawing.Point(543, 232);
+            this.tbl17.Name = "tbl17";
+            this.tbl17.Size = new System.Drawing.Size(89, 91);
+            this.tbl17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl17.TabIndex = 21;
+            this.tbl17.TabStop = false;
+            this.tbl17.Click += new System.EventHandler(this.tbl17_Click);
+            this.tbl17.MouseEnter += new System.EventHandler(this.tbl17_MouseEnter);
+            this.tbl17.MouseLeave += new System.EventHandler(this.tbl17_MouseLeave);
+            // 
+            // tbl18
+            // 
+            this.tbl18.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl18.Location = new System.Drawing.Point(543, 323);
+            this.tbl18.Name = "tbl18";
+            this.tbl18.Size = new System.Drawing.Size(89, 91);
+            this.tbl18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl18.TabIndex = 22;
+            this.tbl18.TabStop = false;
+            this.tbl18.Click += new System.EventHandler(this.tbl18_Click);
+            this.tbl18.MouseEnter += new System.EventHandler(this.tbl18_MouseEnter);
+            this.tbl18.MouseLeave += new System.EventHandler(this.tbl18_MouseLeave);
+            // 
+            // tbl19
+            // 
+            this.tbl19.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl19.Location = new System.Drawing.Point(454, 323);
+            this.tbl19.Name = "tbl19";
+            this.tbl19.Size = new System.Drawing.Size(89, 91);
+            this.tbl19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl19.TabIndex = 23;
+            this.tbl19.TabStop = false;
+            this.tbl19.Click += new System.EventHandler(this.tbl19_Click);
+            this.tbl19.MouseEnter += new System.EventHandler(this.tbl19_MouseEnter);
+            this.tbl19.MouseLeave += new System.EventHandler(this.tbl19_MouseLeave);
+            // 
+            // tbl20
+            // 
+            this.tbl20.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl20.Location = new System.Drawing.Point(365, 323);
+            this.tbl20.Name = "tbl20";
+            this.tbl20.Size = new System.Drawing.Size(89, 91);
+            this.tbl20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl20.TabIndex = 24;
+            this.tbl20.TabStop = false;
+            this.tbl20.Click += new System.EventHandler(this.tbl20_Click);
+            this.tbl20.MouseEnter += new System.EventHandler(this.tbl20_MouseEnter);
+            this.tbl20.MouseLeave += new System.EventHandler(this.tbl20_MouseLeave);
+            // 
+            // tbl22
+            // 
+            this.tbl22.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl22.Location = new System.Drawing.Point(187, 323);
+            this.tbl22.Name = "tbl22";
+            this.tbl22.Size = new System.Drawing.Size(89, 91);
+            this.tbl22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl22.TabIndex = 26;
+            this.tbl22.TabStop = false;
+            this.tbl22.Click += new System.EventHandler(this.tbl22_Click);
+            this.tbl22.MouseEnter += new System.EventHandler(this.tbl22_MouseEnter);
+            this.tbl22.MouseLeave += new System.EventHandler(this.tbl22_MouseLeave);
+            // 
+            // tbl23
+            // 
+            this.tbl23.Image = global::Belfray.Properties.Resources.Booth_4_TP;
+            this.tbl23.Location = new System.Drawing.Point(98, 323);
+            this.tbl23.Name = "tbl23";
+            this.tbl23.Size = new System.Drawing.Size(89, 91);
+            this.tbl23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbl23.TabIndex = 27;
+            this.tbl23.TabStop = false;
+            this.tbl23.Click += new System.EventHandler(this.tbl23_Click);
+            this.tbl23.MouseEnter += new System.EventHandler(this.tbl23_MouseEnter);
+            this.tbl23.MouseLeave += new System.EventHandler(this.tbl23_MouseLeave);
             // 
             // tbl1
             // 
@@ -1537,15 +1549,15 @@
             this.tbl21.MouseEnter += new System.EventHandler(this.tbl21_MouseEnter);
             this.tbl21.MouseLeave += new System.EventHandler(this.tbl21_MouseLeave);
             // 
-            // toolTip1
+            // button2
             // 
-            this.toolTip1.ShowAlways = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Table Information";
-            // 
-            // errP
-            // 
-            this.errP.ContainerControl = this;
+            this.button2.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(885, 563);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 60;
+            this.button2.Text = "Close";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // TableSelect
             // 
@@ -1559,27 +1571,28 @@
             this.Text = "TableSelect";
             this.Load += new System.EventHandler(this.TableSelect_Load);
             this.pnlTableSelect.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
-            this.pnlGreen.ResumeLayout(false);
-            this.pnlGreen.PerformLayout();
-            this.pnlRed.ResumeLayout(false);
-            this.pnlRed.PerformLayout();
             this.pnlCustomerDetails.ResumeLayout(false);
             this.gbDGV.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picRemoveTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).EndInit();
             this.gbCustomerDetails.ResumeLayout(false);
             this.gbCustomerDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveBooking)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCancelBooking)).EndInit();
             this.gbBookingDetails.ResumeLayout(false);
             this.gbBookingDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).EndInit();
             this.pnlFloorPlan.ResumeLayout(false);
             this.pnlFloorPlan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddTable)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
+            this.pnlGreen.ResumeLayout(false);
+            this.pnlGreen.PerformLayout();
+            this.pnlRed.ResumeLayout(false);
+            this.pnlRed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemoveTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveBooking)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancelBooking)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl15)).EndInit();
@@ -1605,7 +1618,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbl14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1731,5 +1743,6 @@
         private System.Windows.Forms.DateTimePicker dtpCurrentDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox picExit;
+        private System.Windows.Forms.Button button2;
     }
 }

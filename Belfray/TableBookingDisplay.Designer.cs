@@ -40,6 +40,7 @@
             this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooking.Size = new System.Drawing.Size(1208, 339);
             this.dgvBooking.TabIndex = 0;
+            this.dgvBooking.Click += new System.EventHandler(this.dgvBooking_Click);
             // 
             // TableBookingDisplay
             // 

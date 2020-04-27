@@ -10,6 +10,10 @@ namespace Belfray
     {
         public static string prdNoSel = "";
 
+        public static string bookSel = "";
+
+        public static string tableSel = "";
+
         public static string bookNoSel = "";
 
         public static int roomNoSel = 0;

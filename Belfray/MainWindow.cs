@@ -300,9 +300,9 @@ namespace Belfray
             }
 
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -367,6 +367,13 @@ namespace Belfray
                 case 2: //Room Stock
                     break;
                 case 3: //Table Booking
+                    TableBookingDisplay frm3 = new TableBookingDisplay();
+                    frm3.TopLevel = false;
+                    frm3.FormBorderStyle = FormBorderStyle.None;
+                    frm3.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm3);
+                    frm3.Show();
+                    TabVisible();
                     break;
                 case 4: //Restaurant Stock
                     RestaurantStockDisplay frm4 = new RestaurantStockDisplay();
@@ -512,6 +519,20 @@ namespace Belfray
                 case 2: //Room Stock
                     break;
                 case 3: //Table Booking
+                    if (Globals.bookSel == null)
+                    {
+                        MessageBox.Show("Error: No Booking Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        TableBookingEdit frm3 = new TableBookingEdit();
+                        frm3.TopLevel = false;
+                        frm3.FormBorderStyle = FormBorderStyle.None;
+                        frm3.WindowState = FormWindowState.Maximized;
+                        pnlMainBody.Controls.Add(frm3);
+                        frm3.Show();
+                        TabVisible();
+                    }
                     break;
                 case 4: //Restaurant Stock NEEDS WORK
                     if (Globals.prdNoSel == null)
