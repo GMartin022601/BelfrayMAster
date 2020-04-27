@@ -150,6 +150,7 @@
             this.lbCounty = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.pnlMenuItems = new System.Windows.Forms.Panel();
+            this.pnlDrinks = new System.Windows.Forms.Panel();
             this.gbBookingDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
             this.pnlFloorPlan.SuspendLayout();
@@ -194,6 +195,7 @@
             this.gbCustomerDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCancelBooking)).BeginInit();
+            this.pnlMenuItems.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtStreet
@@ -452,7 +454,7 @@
             this.pnlFloorPlan.Controls.Add(this.pnlMenuItems);
             this.pnlFloorPlan.Location = new System.Drawing.Point(4, 6);
             this.pnlFloorPlan.Name = "pnlFloorPlan";
-            this.pnlFloorPlan.Size = new System.Drawing.Size(638, 545);
+            this.pnlFloorPlan.Size = new System.Drawing.Size(638, 580);
             this.pnlFloorPlan.TabIndex = 59;
             // 
             // dtpCurrentDate
@@ -1316,11 +1318,11 @@
             // 
             // pnlTableSelect
             // 
+            this.pnlTableSelect.Controls.Add(this.pnlFloorPlan);
             this.pnlTableSelect.Controls.Add(this.picExit);
             this.pnlTableSelect.Controls.Add(this.pnlGreen);
             this.pnlTableSelect.Controls.Add(this.pnlRed);
             this.pnlTableSelect.Controls.Add(this.pnlCustomerDetails);
-            this.pnlTableSelect.Controls.Add(this.pnlFloorPlan);
             this.pnlTableSelect.Location = new System.Drawing.Point(2, 2);
             this.pnlTableSelect.Name = "pnlTableSelect";
             this.pnlTableSelect.Size = new System.Drawing.Size(1196, 596);
@@ -1384,7 +1386,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(339, 145);
+            this.pictureBox4.Location = new System.Drawing.Point(344, 145);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1543,11 +1545,24 @@
             // 
             // pnlMenuItems
             // 
+            this.pnlMenuItems.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pnlMenuItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlMenuItems.Location = new System.Drawing.Point(3, 38);
+            this.pnlMenuItems.Controls.Add(this.pnlDrinks);
+            this.pnlMenuItems.Location = new System.Drawing.Point(3, 62);
             this.pnlMenuItems.Name = "pnlMenuItems";
-            this.pnlMenuItems.Size = new System.Drawing.Size(632, 503);
+            this.pnlMenuItems.Size = new System.Drawing.Size(629, 493);
             this.pnlMenuItems.TabIndex = 86;
+            this.pnlMenuItems.Visible = false;
+            // 
+            // pnlDrinks
+            // 
+            this.pnlDrinks.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlDrinks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDrinks.Location = new System.Drawing.Point(-1, 11);
+            this.pnlDrinks.Name = "pnlDrinks";
+            this.pnlDrinks.Size = new System.Drawing.Size(629, 515);
+            this.pnlDrinks.TabIndex = 87;
+            this.pnlDrinks.Visible = false;
             // 
             // TableSelectEdit
             // 
@@ -1610,6 +1625,7 @@
             this.gbCustomerDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveBooking)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCancelBooking)).EndInit();
+            this.pnlMenuItems.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1736,5 +1752,6 @@
         private System.Windows.Forms.Label lblTblNoSelDisplay;
         private System.Windows.Forms.Label lblTableNoSelected;
         private System.Windows.Forms.Panel pnlMenuItems;
+        private System.Windows.Forms.Panel pnlDrinks;
     }
 }

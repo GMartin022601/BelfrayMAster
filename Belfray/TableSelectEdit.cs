@@ -15,10 +15,11 @@ namespace Belfray
     public partial class TableSelectEdit : Form
     {
         String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem, sqlItem;
+        String tableNumber = "", test = "";
         bool formLoad = true;
-        bool getInfo, bookingInfo;
+        bool getInfo, bookingInfo, avail;
         bool newCustomer, newBooking, tableSelected;
-        int tableNoSelected, partySize;
+        int tableNoSelected, partySize, partySize2, tableSize;
         SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem, daItem;// daSupplier;
         DataSet dsBelfray = new DataSet();
         SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBBookingItem, cmdBItem;
@@ -847,12 +848,14 @@ namespace Belfray
                 lblTblNoSelDisplay.Text = "-";
                 dgvBooking.ClearSelection();
                 //Sum of party size
-                int sum = 0;
-                for (int i = 0; i < dgvBooking.Rows.Count; ++i)
+                int currentTableSize = partySize2; //Convert.ToInt32(numPartySize.Value);
+                numPartySize.Value = currentTableSize - tableSize;
+
+                if (numPartySize.Value == 0)
                 {
-                    sum += Convert.ToInt32(dgvBooking.Rows[i].Cells[2].Value);
+                    MessageBox.Show("Unable to remove all tables, Please delete booking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                numPartySize.Value = sum;
+
             }
         }
 
@@ -876,45 +879,63 @@ namespace Belfray
             {
                 tableSelected = false;
                 tableNoSelected = 0;
-                //prdSel = null;
+                MessageBox.Show("Unable to remove all tables, Please delete booking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (dgvBooking.SelectedRows.Count == 1)
             {
                 tableSelected = true;
                 lblTblNoSelDisplay.Text = dgvBooking.SelectedRows[0].Cells[1].Value.ToString();
                 tableNoSelected = dgvBooking.SelectedRows[0].Index;
-                //prdSel = Globals.prdNoSel;
+                lblTableNumDisplay.Text = lblTblNoSelDisplay.Text;
+
+                string search = "TB00";
+                string search2 = "TB01";
+                string search3 = "TB02";
+
+                if (lblTblNoSelDisplay.Text.Contains(search))
+                {
+                    tableSize = 2;
+                }
+                if (lblTblNoSelDisplay.Text.Contains(search2))
+                {
+                    tableSize = 4;
+                }
+                if (lblTblNoSelDisplay.Text.Contains(search3))
+                {
+                    tableSize = 4;
+                }
+                else if (lblTblNoSelDisplay.Text == "TB008" || lblTblNoSelDisplay.Text == "TB009")
+                {
+                    tableSize = 4;
+                }
             }
         }
 
         private void picAddTable_Click(object sender, EventArgs e)
         {
-            //generate booking number
-            //int noRows = dsBelfray.Tables["Booking"].Rows.Count;
+            try
+            {
+                foreach (DataGridViewRow row in dgvBooking.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().Equals(lblTableNumDisplay.Text))
+                    {
+                        MessageBox.Show("This table is already included in this booking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                    else
+                    {
+                        dgvBooking.Rows.Add(lblBookingNo.Text, lblTableNumDisplay.Text);
+                        int currentTableSize = Convert.ToInt32(numPartySize.Value);
+                        numPartySize.Value = currentTableSize + partySize;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
 
-            //if (noRows == 0)
-            //{
-            //    lblBookingNo.Text = "BK100000000";
-            //}
-            //else
-            //{
-            //    getBookingNum(noRows);
-            //}
-
-            //string s = drBooking["bookingNo"].ToString();
-            //string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
-            //lblBookingNo.Text = s1;
-            dgvBooking.Rows.Add(lblBookingNo.Text, lblTableNumDisplay.Text);
-            int currentTableSize = Convert.ToInt32(numPartySize.Value);
-            numPartySize.Value = currentTableSize + partySize;
-
-            //Sum of party size
-            //int sum = 0;
-            //for (int i = 0; i < dgvBooking.Rows.Count; ++i)
-            //{
-            //    sum += Convert.ToInt32(dgvBooking.Rows[i].Cells[2].Value);
-            //}
-            //partySize = sum;
         }
 
         private void tbl18_MouseEnter(object sender, EventArgs e)
@@ -1317,23 +1338,22 @@ namespace Belfray
 
             foreach (DataRow drBooking in dsBelfray.Tables["Booking"].Rows)
             {
-                    foreach (DataRow drBookingType in dsBelfray.Tables["BType"].Rows)
+                foreach (DataRow drBookingType in dsBelfray.Tables["BType"].Rows)
+                {
+                    foreach (DataRow drPaymentType2 in dsBelfray.Tables["Payment"].Rows)
                     {
-                        foreach (DataRow drPaymentType2 in dsBelfray.Tables["Payment"].Rows)
-                        {
-                            string bDate = drBooking["checkInDate"].ToString();
-                            string bTime = drBooking["bookingTime"].ToString();
-                            //string pType = drPaymentType["paymentTypeDesc"].ToString();
-                            int partySize2 = Convert.ToInt32(drBooking["partySize"].ToString());
+                        string bDate = drBooking["checkInDate"].ToString();
+                        string bTime = drBooking["bookingTime"].ToString();
+                        partySize2 = Convert.ToInt32(drBooking["partySize"].ToString());
 
-                            dateBooking.Value = Convert.ToDateTime(bDate);
-                            txtTime.Text = bTime;
-                            numPartySize.Value = partySize2;
-                            lblCustNo.Text = drBooking["customerNo"].ToString();
-                            cbPaymentTyp.SelectedValue = drPaymentType2["paymentTypeDesc"].ToString();
-                            //txtPaymentType.Text = drPaymentType2["paymentTypeDesc"].ToString();
-                        }
+                        dateBooking.Value = Convert.ToDateTime(bDate);
+                        txtTime.Text = bTime;
+                        numPartySize.Value = partySize2;
+                        lblCustNo.Text = drBooking["customerNo"].ToString();
+                        cbPaymentTyp.SelectedValue = drPaymentType2["paymentTypeDesc"].ToString();
+
                     }
+                }
             }
             //DGV Populate
             foreach (DataRow drTable in dsBelfray.Tables["BookingItem"].Rows)
@@ -1374,6 +1394,13 @@ namespace Belfray
             bool available = true;
             Color colour = new Color();
 
+            //foreach (DataGridViewRow row in dgvBooking.Rows)
+            //{
+            //    if (row.Cells[1].Value.ToString().Equals(tableNumber.ToString()))
+            //    {
+            //        avail = false;
+            //    }
+            //}
             if (available == true)
             {
                 colour = Color.FromArgb(57, 181, 74);
@@ -1417,6 +1444,8 @@ namespace Belfray
         {
             partySize = 2;
             tableNoSelected = 1;
+            tableNumber = "TB001";
+            test = tableNumber;
             lblTableNumDisplay.Text = "TB001";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
