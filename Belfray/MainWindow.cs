@@ -530,13 +530,17 @@ namespace Belfray
                     }
                     else
                     {
-                        TableBookingEdit frm3 = new TableBookingEdit();
-                        frm3.TopLevel = false;
-                        frm3.FormBorderStyle = FormBorderStyle.None;
-                        frm3.WindowState = FormWindowState.Maximized;
-                        pnlMainBody.Controls.Add(frm3);
-                        frm3.Show();
-                        TabVisible();
+                        pnlTableSelect.BringToFront();
+                        pnlTableSelect.Visible = true;
+
+                        TableSelectEdit form = new TableSelectEdit();
+                        form.TopLevel = false;
+                        form.FormBorderStyle = FormBorderStyle.None;
+                        form.WindowState = FormWindowState.Maximized;
+                        form.FormClosed += TableSelect_Closed;
+                        pnlTableSelect.Controls.Add(form);
+                        form.Show();
+                        break;
                     }
                     break;
                 case 4: //Restaurant Stock NEEDS WORK
@@ -685,14 +689,14 @@ namespace Belfray
         //Table Select Close
         private void TableSelect_Closed(object sender, FormClosedEventArgs e)
         {
-            pnlTableSelect.Visible = false;
+            //pnlTableSelect.Visible = false;
 
-            TableBookingAdd frm = new TableBookingAdd();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.WindowState = FormWindowState.Maximized;
-            pnlMainBody.Controls.Add(frm);
-            frm.Show();
+            //TableBookingAdd frm = new TableBookingAdd();
+            //frm.TopLevel = false;
+            //frm.FormBorderStyle = FormBorderStyle.None;
+            //frm.WindowState = FormWindowState.Maximized;
+            //pnlMainBody.Controls.Add(frm);
+            //frm.Show();
         }
 
         //Room Booking Add Closing
