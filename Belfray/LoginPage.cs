@@ -55,6 +55,7 @@ namespace Belfray
                     if(txtPassword.Text.ToString().Equals(password))
                     {
                         passFound = true;
+                        Globals.staffNo = drUser["staffID"].ToString();
                         currUser = drUser["staffFName"].ToString() + " " + drUser["staffLName"].ToString();
                         accType = drUser["accTypeID"].ToString();
                     }

@@ -251,5 +251,61 @@ namespace Belfray
 
             return ok;
         }
+
+        //Valid Login
+        public static bool validLogin(string txt) //allows aphatbetic
+        {
+            bool ok = true;
+
+            if (txt.Trim().Length == 0)
+            {
+                ok = false;
+            }
+            else
+            {
+                for (int x = 0; x < txt.Length; x++)
+                {
+                    if (!(char.IsLetter(txt[x])))
+                    {
+                        ok = false;
+                    }
+                }
+            }
+            return ok;
+        }
+
+        //First and Last Letter to Uppercase
+        public static string firstLastLetterEachWordToUpper(string word)
+        {
+            Char[] array = word.ToCharArray();
+
+            array[0] = Char.ToUpper(array[0]);
+
+            array[array.Length] = Char.ToUpper(array[array.Length]);
+            
+            return new string(array);
+        }
+
+        //Valid Password
+        public static bool validPW(string txt) //allows aphatbetic, dash and Special Characters
+        {
+            bool ok = true;
+
+            if (txt.Trim().Length == 0)
+            {
+                ok = false;
+            }
+            else
+            {
+                for (int x = 0; x < txt.Length; x++)
+                {
+                    if (!(char.IsLetter(txt[x])) && !(char.IsNumber(txt[x])) && !(txt[x].Equals('@')) && !(txt[x].Equals('-')) && !(txt[x].Equals('_')) && !(txt[x].Equals('.')) && !(txt[x].Equals('!')) && !(txt[x].Equals('?')) && !(txt[x].Equals('$')) && !(txt[x].Equals('*')))
+                    {
+                        ok = false;
+                    }
+                }
+            }
+            return ok;
+        }
     }
 }

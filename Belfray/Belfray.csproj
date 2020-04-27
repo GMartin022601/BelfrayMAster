@@ -67,6 +67,7 @@
     <Compile Include="Globals.cs" />
     <Compile Include="MyBooking.cs" />
     <Compile Include="MyCustomer.cs" />
+    <Compile Include="MyStaff.cs" />
     <Compile Include="MySupplier.cs" />
     <Compile Include="RestaurantStockDelete.cs">
       <SubType>Form</SubType>
@@ -147,29 +148,29 @@
     <Compile Include="RoomSelect.Designer.cs">
       <DependentUpon>RoomSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="TableBookingAdd.cs">
+    <Compile Include="RoomServiceDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TableBookingAdd.Designer.cs">
-      <DependentUpon>TableBookingAdd.cs</DependentUpon>
+    <Compile Include="RoomServiceDelete.Designer.cs">
+      <DependentUpon>RoomServiceDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomServiceDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomServiceDisplay.Designer.cs">
+      <DependentUpon>RoomServiceDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomServiceSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomServiceSearch.Designer.cs">
+      <DependentUpon>RoomServiceSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="TableBookingDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TableBookingDisplay.Designer.cs">
       <DependentUpon>TableBookingDisplay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TableBookingEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TableBookingEdit.Designer.cs">
-      <DependentUpon>TableBookingEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TableDelete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TableDelete.Designer.cs">
-      <DependentUpon>TableDelete.cs</DependentUpon>
     </Compile>
     <Compile Include="TableSelect.cs">
       <SubType>Form</SubType>
@@ -238,17 +239,17 @@
     <EmbeddedResource Include="RoomSelect.resx">
       <DependentUpon>RoomSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TableBookingAdd.resx">
-      <DependentUpon>TableBookingAdd.cs</DependentUpon>
+    <EmbeddedResource Include="RoomServiceDelete.resx">
+      <DependentUpon>RoomServiceDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomServiceDisplay.resx">
+      <DependentUpon>RoomServiceDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomServiceSearch.resx">
+      <DependentUpon>RoomServiceSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableBookingDisplay.resx">
       <DependentUpon>TableBookingDisplay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TableBookingEdit.resx">
-      <DependentUpon>TableBookingEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TableDelete.resx">
-      <DependentUpon>TableDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableSelect.resx">
       <DependentUpon>TableSelect.cs</DependentUpon>
@@ -496,6 +497,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RoomService_Sample3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reports_sample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RevealPW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

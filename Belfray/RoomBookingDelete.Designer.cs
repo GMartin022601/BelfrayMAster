@@ -30,12 +30,9 @@
         {
             this.pnlDelete = new System.Windows.Forms.Panel();
             this.gbDetails = new System.Windows.Forms.GroupBox();
-            this.btnCancelDel = new System.Windows.Forms.PictureBox();
-            this.btnDelete = new System.Windows.Forms.PictureBox();
-            this.pnlCustomer = new System.Windows.Forms.Panel();
             this.pnlBooking = new System.Windows.Forms.Panel();
-            this.lblRoomNo = new System.Windows.Forms.Label();
-            this.lblRoomNum = new System.Windows.Forms.Label();
+            this.lblRooms = new System.Windows.Forms.Label();
+            this.lblRoom = new System.Windows.Forms.Label();
             this.lblBookingPartySize = new System.Windows.Forms.Label();
             this.lblBookingPayment = new System.Windows.Forms.Label();
             this.lblBookingCustomer = new System.Windows.Forms.Label();
@@ -52,6 +49,8 @@
             this.lblArrive = new System.Windows.Forms.Label();
             this.lblBookingNo = new System.Windows.Forms.Label();
             this.lblBookingNum = new System.Windows.Forms.Label();
+            this.picDelete = new System.Windows.Forms.PictureBox();
+            this.pnlCustomer = new System.Windows.Forms.Panel();
             this.lblCustPostcode = new System.Windows.Forms.Label();
             this.lblCustPhone = new System.Windows.Forms.Label();
             this.lblCustCounty = new System.Windows.Forms.Label();
@@ -75,10 +74,9 @@
             this.cmbSelect = new System.Windows.Forms.ComboBox();
             this.pnlDelete.SuspendLayout();
             this.gbDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCancelDel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
-            this.pnlCustomer.SuspendLayout();
             this.pnlBooking.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
+            this.pnlCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,73 +93,20 @@
             // 
             // gbDetails
             // 
-            this.gbDetails.Controls.Add(this.btnCancelDel);
-            this.gbDetails.Controls.Add(this.btnDelete);
+            this.gbDetails.Controls.Add(this.pnlBooking);
+            this.gbDetails.Controls.Add(this.picDelete);
             this.gbDetails.Controls.Add(this.pnlCustomer);
-            this.gbDetails.Location = new System.Drawing.Point(697, 38);
+            this.gbDetails.Location = new System.Drawing.Point(809, 38);
             this.gbDetails.Name = "gbDetails";
-            this.gbDetails.Size = new System.Drawing.Size(516, 300);
+            this.gbDetails.Size = new System.Drawing.Size(395, 300);
             this.gbDetails.TabIndex = 42;
             this.gbDetails.TabStop = false;
             this.gbDetails.Text = "Details";
             // 
-            // btnCancelDel
-            // 
-            this.btnCancelDel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.btnCancelDel.Location = new System.Drawing.Point(450, 234);
-            this.btnCancelDel.Name = "btnCancelDel";
-            this.btnCancelDel.Size = new System.Drawing.Size(60, 60);
-            this.btnCancelDel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCancelDel.TabIndex = 54;
-            this.btnCancelDel.TabStop = false;
-            this.btnCancelDel.Click += new System.EventHandler(this.btnCancelDel_Click);
-            this.btnCancelDel.MouseEnter += new System.EventHandler(this.btnCancelDel_MouseEnter);
-            this.btnCancelDel.MouseLeave += new System.EventHandler(this.btnCancelDel_MouseLeave);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::Belfray.Properties.Resources.FinalDeleteButton;
-            this.btnDelete.Location = new System.Drawing.Point(384, 233);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(60, 60);
-            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnDelete.TabIndex = 55;
-            this.btnDelete.TabStop = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.btnDelete.MouseEnter += new System.EventHandler(this.btnDelete_MouseEnter);
-            this.btnDelete.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
-            // 
-            // pnlCustomer
-            // 
-            this.pnlCustomer.Controls.Add(this.pnlBooking);
-            this.pnlCustomer.Controls.Add(this.lblCustPostcode);
-            this.pnlCustomer.Controls.Add(this.lblCustPhone);
-            this.pnlCustomer.Controls.Add(this.lblCustCounty);
-            this.pnlCustomer.Controls.Add(this.lblCustCity);
-            this.pnlCustomer.Controls.Add(this.lblCustStreet);
-            this.pnlCustomer.Controls.Add(this.lblCustSurname);
-            this.pnlCustomer.Controls.Add(this.lblCustForename);
-            this.pnlCustomer.Controls.Add(this.lblCustTitle);
-            this.pnlCustomer.Controls.Add(this.lblPhoneNo);
-            this.pnlCustomer.Controls.Add(this.lblPostcode);
-            this.pnlCustomer.Controls.Add(this.lblCounty);
-            this.pnlCustomer.Controls.Add(this.lblCity);
-            this.pnlCustomer.Controls.Add(this.lblStreet);
-            this.pnlCustomer.Controls.Add(this.lblSurname);
-            this.pnlCustomer.Controls.Add(this.lblForename);
-            this.pnlCustomer.Controls.Add(this.lblTitle);
-            this.pnlCustomer.Controls.Add(this.lblCustNo);
-            this.pnlCustomer.Controls.Add(this.lblCustNum);
-            this.pnlCustomer.Location = new System.Drawing.Point(6, 16);
-            this.pnlCustomer.Name = "pnlCustomer";
-            this.pnlCustomer.Size = new System.Drawing.Size(372, 279);
-            this.pnlCustomer.TabIndex = 56;
-            this.pnlCustomer.Visible = false;
-            // 
             // pnlBooking
             // 
-            this.pnlBooking.Controls.Add(this.lblRoomNo);
-            this.pnlBooking.Controls.Add(this.lblRoomNum);
+            this.pnlBooking.Controls.Add(this.lblRooms);
+            this.pnlBooking.Controls.Add(this.lblRoom);
             this.pnlBooking.Controls.Add(this.lblBookingPartySize);
             this.pnlBooking.Controls.Add(this.lblBookingPayment);
             this.pnlBooking.Controls.Add(this.lblBookingCustomer);
@@ -178,31 +123,31 @@
             this.pnlBooking.Controls.Add(this.lblArrive);
             this.pnlBooking.Controls.Add(this.lblBookingNo);
             this.pnlBooking.Controls.Add(this.lblBookingNum);
-            this.pnlBooking.Location = new System.Drawing.Point(0, 0);
+            this.pnlBooking.Location = new System.Drawing.Point(6, 16);
             this.pnlBooking.Name = "pnlBooking";
-            this.pnlBooking.Size = new System.Drawing.Size(372, 279);
+            this.pnlBooking.Size = new System.Drawing.Size(309, 279);
             this.pnlBooking.TabIndex = 111;
             this.pnlBooking.Visible = false;
             // 
-            // lblRoomNo
+            // lblRooms
             // 
-            this.lblRoomNo.AutoSize = true;
-            this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNo.Location = new System.Drawing.Point(128, 125);
-            this.lblRoomNo.Name = "lblRoomNo";
-            this.lblRoomNo.Size = new System.Drawing.Size(15, 15);
-            this.lblRoomNo.TabIndex = 111;
-            this.lblRoomNo.Text = "X";
+            this.lblRooms.AutoSize = true;
+            this.lblRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRooms.Location = new System.Drawing.Point(128, 125);
+            this.lblRooms.Name = "lblRooms";
+            this.lblRooms.Size = new System.Drawing.Size(15, 15);
+            this.lblRooms.TabIndex = 111;
+            this.lblRooms.Text = "X";
             // 
-            // lblRoomNum
+            // lblRoom
             // 
-            this.lblRoomNum.AutoSize = true;
-            this.lblRoomNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNum.Location = new System.Drawing.Point(10, 125);
-            this.lblRoomNum.Name = "lblRoomNum";
-            this.lblRoomNum.Size = new System.Drawing.Size(105, 15);
-            this.lblRoomNum.TabIndex = 110;
-            this.lblRoomNum.Text = "ROOM NUMBER:";
+            this.lblRoom.AutoSize = true;
+            this.lblRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom.Location = new System.Drawing.Point(10, 125);
+            this.lblRoom.Name = "lblRoom";
+            this.lblRoom.Size = new System.Drawing.Size(93, 15);
+            this.lblRoom.TabIndex = 110;
+            this.lblRoom.Text = "ROOM COUNT:";
             // 
             // lblBookingPartySize
             // 
@@ -363,6 +308,46 @@
             this.lblBookingNum.Size = new System.Drawing.Size(86, 15);
             this.lblBookingNum.TabIndex = 86;
             this.lblBookingNum.Text = "BOOKING NO:";
+            // 
+            // picDelete
+            // 
+            this.picDelete.Image = global::Belfray.Properties.Resources.FinalDeleteButton;
+            this.picDelete.Location = new System.Drawing.Point(329, 235);
+            this.picDelete.Name = "picDelete";
+            this.picDelete.Size = new System.Drawing.Size(60, 60);
+            this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDelete.TabIndex = 55;
+            this.picDelete.TabStop = false;
+            this.picDelete.Visible = false;
+            this.picDelete.Click += new System.EventHandler(this.picDelete_Click);
+            this.picDelete.MouseEnter += new System.EventHandler(this.picDelete_MouseEnter);
+            this.picDelete.MouseLeave += new System.EventHandler(this.picDelete_MouseLeave);
+            // 
+            // pnlCustomer
+            // 
+            this.pnlCustomer.Controls.Add(this.lblCustPostcode);
+            this.pnlCustomer.Controls.Add(this.lblCustPhone);
+            this.pnlCustomer.Controls.Add(this.lblCustCounty);
+            this.pnlCustomer.Controls.Add(this.lblCustCity);
+            this.pnlCustomer.Controls.Add(this.lblCustStreet);
+            this.pnlCustomer.Controls.Add(this.lblCustSurname);
+            this.pnlCustomer.Controls.Add(this.lblCustForename);
+            this.pnlCustomer.Controls.Add(this.lblCustTitle);
+            this.pnlCustomer.Controls.Add(this.lblPhoneNo);
+            this.pnlCustomer.Controls.Add(this.lblPostcode);
+            this.pnlCustomer.Controls.Add(this.lblCounty);
+            this.pnlCustomer.Controls.Add(this.lblCity);
+            this.pnlCustomer.Controls.Add(this.lblStreet);
+            this.pnlCustomer.Controls.Add(this.lblSurname);
+            this.pnlCustomer.Controls.Add(this.lblForename);
+            this.pnlCustomer.Controls.Add(this.lblTitle);
+            this.pnlCustomer.Controls.Add(this.lblCustNo);
+            this.pnlCustomer.Controls.Add(this.lblCustNum);
+            this.pnlCustomer.Location = new System.Drawing.Point(6, 16);
+            this.pnlCustomer.Name = "pnlCustomer";
+            this.pnlCustomer.Size = new System.Drawing.Size(309, 279);
+            this.pnlCustomer.TabIndex = 56;
+            this.pnlCustomer.Visible = false;
             // 
             // lblCustPostcode
             // 
@@ -560,7 +545,7 @@
             this.dgvDisplay.Location = new System.Drawing.Point(10, 38);
             this.dgvDisplay.Name = "dgvDisplay";
             this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisplay.Size = new System.Drawing.Size(682, 300);
+            this.dgvDisplay.Size = new System.Drawing.Size(793, 300);
             this.dgvDisplay.TabIndex = 1;
             this.dgvDisplay.Click += new System.EventHandler(this.dgvDisplay_Click);
             // 
@@ -589,12 +574,11 @@
             this.pnlDelete.ResumeLayout(false);
             this.pnlDelete.PerformLayout();
             this.gbDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCancelDel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
-            this.pnlCustomer.ResumeLayout(false);
-            this.pnlCustomer.PerformLayout();
             this.pnlBooking.ResumeLayout(false);
             this.pnlBooking.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
+            this.pnlCustomer.ResumeLayout(false);
+            this.pnlCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
             this.ResumeLayout(false);
 
@@ -604,8 +588,7 @@
 
         private System.Windows.Forms.Panel pnlDelete;
         private System.Windows.Forms.GroupBox gbDetails;
-        private System.Windows.Forms.PictureBox btnCancelDel;
-        private System.Windows.Forms.PictureBox btnDelete;
+        private System.Windows.Forms.PictureBox picDelete;
         private System.Windows.Forms.Panel pnlCustomer;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.DataGridView dgvDisplay;
@@ -645,7 +628,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblCustNo;
         private System.Windows.Forms.Label lblCustNum;
-        private System.Windows.Forms.Label lblRoomNo;
-        private System.Windows.Forms.Label lblRoomNum;
+        private System.Windows.Forms.Label lblRooms;
+        private System.Windows.Forms.Label lblRoom;
     }
 }

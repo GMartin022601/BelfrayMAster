@@ -2175,29 +2175,64 @@ namespace Belfray
             cmdBBooking = new SqlCommandBuilder(daBooking);
 
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
-            daBooking.Fill(dsBelfray, "Booking");
-
-            //Sets Date Time Picker to today for check in and 1 day later for check out
-            dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
-            userChange = true;
+            daBooking.Fill(dsBelfray, "Booking");            
 
             if (MainWindow.tabSelected == 3)
             {
-                picSaveRoomSelect.Visible = false;
                 picCancellRoomSelect.Visible = false;
 
-                picEditSave.Visible = true;
                 picEditCancel.Visible = true;
-            }
-            else
-            {
+
+                dtpCheckInDate.Value = Globals.checkInDate;
+                dtpCheckOutDate.Value = Globals.checkOutDate;
+
                 if (!Globals.rooms[0].Equals(" "))
                 {
                     dtpCheckInDate.Enabled = false;
                     dtpCheckOutDate.Enabled = false;
                 }
+
+                if (Globals.dateChange)
+                {
+                    dtpCheckInDate.Enabled = false;
+                    dtpCheckOutDate.Enabled = false;
+                }
+                else
+                {
+                    dtpCheckInDate.Enabled = true;
+                    dtpCheckOutDate.Enabled = true;
+                }
             }
-            
+            else
+            {
+                picEditCancel.Visible = false;
+                picCancellRoomSelect.Visible = true;
+
+
+                if (Globals.roomLoad)
+                {
+                    TimeSpan ts = new TimeSpan(0, 0, 1, 0);
+                    DateTime now = DateTime.Now + ts;
+                    //Sets Date Time Picker to today for check in and 1 day later for check out
+                    dtpCheckInDate.Value = now;
+                    dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
+
+                    Globals.roomLoad = false;
+                }
+                else
+                {
+                    dtpCheckInDate.Value = Globals.checkInDate;
+                    dtpCheckOutDate.Value = Globals.checkOutDate;
+                }
+
+                if (!Globals.rooms[0].Equals(" "))
+                {
+                    dtpCheckInDate.Enabled = false;
+                    dtpCheckOutDate.Enabled = false;
+                }                
+            }
+
+            userChange = true;
         }
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
@@ -2293,8 +2328,16 @@ namespace Belfray
 
         private void picCancellRoomSelect_Click(object sender, EventArgs e)
         {
-            cancelled = true;
-            this.Close();
+            if (Globals.rooms[0].Equals(" "))
+            {
+                cancelled = true;
+                this.Close();
+            }
+            else
+            {
+                cancelled = false;
+                this.Close();
+            }
         }
 
         private void picCancellRoomSelect_MouseLeave(object sender, EventArgs e)
@@ -2347,7 +2390,7 @@ namespace Belfray
                 {
                     if (dtpCheckInDate.Value.Year.CompareTo(checkIn.Year) == 0 || dtpCheckInDate.Value.Year.CompareTo(checkOut.Year) == 0 || dtpCheckOutDate.Value.Year.CompareTo(checkIn.Year) == 0 || dtpCheckOutDate.Value.Year.CompareTo(checkOut.Year) == 0)
                     {
-                        if (dtpCheckInDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckInDate.Value.Year.CompareTo(checkOut.Year) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkOut.Month) == 0)
+                        if (dtpCheckInDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckInDate.Value.Month.CompareTo(checkOut.Month) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkIn.Month) == 0 || dtpCheckOutDate.Value.Month.CompareTo(checkOut.Month) == 0)
                         {
                             int min = checkIn.Day;
                             int max = checkOut.Day;
@@ -2430,18 +2473,6 @@ namespace Belfray
             }
 
             Globals.rooms[pos] = lblRoomNo.Text;
-
-            //int posX = 0;
-            //for (int x = 0; x < 19; x++)
-            //{
-            //    if (Globals.capacity[x].CompareTo(0) == 0)
-            //    {
-            //        posX = x;
-            //        break;
-            //    }
-            //}
-
-            //Globals.capacity[posX] = int.Parse(lblRoomCapacity.Text);
 
             roomSelected = lblRoomNo.Text.ToString();
             checkInDate = dtpCheckInDate.Value;

@@ -453,6 +453,16 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Reports_sample {
+            get {
+                object obj = ResourceManager.GetObject("Reports_sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RestaurantButton {
             get {
                 object obj = ResourceManager.GetObject("RestaurantButton", resourceCulture);
@@ -476,6 +486,16 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap RestStockButt {
             get {
                 object obj = ResourceManager.GetObject("RestStockButt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RevealPW {
+            get {
+                object obj = ResourceManager.GetObject("RevealPW", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
