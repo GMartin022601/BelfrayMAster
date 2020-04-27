@@ -178,6 +178,12 @@
     <Compile Include="TableSelect.Designer.cs">
       <DependentUpon>TableSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableSelectEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableSelectEdit.Designer.cs">
+      <DependentUpon>TableSelectEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Template.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TableSelect.resx">
       <DependentUpon>TableSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableSelectEdit.resx">
+      <DependentUpon>TableSelectEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Template.resx">
       <DependentUpon>Template.cs</DependentUpon>
