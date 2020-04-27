@@ -37,7 +37,6 @@
             this.cbTitle = new System.Windows.Forms.ComboBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblCustID = new System.Windows.Forms.Label();
-            this.chkNewCustomer = new System.Windows.Forms.CheckBox();
             this.gbBookingDetails = new System.Windows.Forms.GroupBox();
             this.lblBookingNo = new System.Windows.Forms.Label();
             this.lblTableNo = new System.Windows.Forms.Label();
@@ -268,22 +267,11 @@
             // 
             this.lblCustID.AutoSize = true;
             this.lblCustID.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustID.Location = new System.Drawing.Point(128, 24);
+            this.lblCustID.Location = new System.Drawing.Point(7, 27);
             this.lblCustID.Name = "lblCustID";
             this.lblCustID.Size = new System.Drawing.Size(86, 18);
             this.lblCustID.TabIndex = 1;
             this.lblCustID.Text = "Customer ID:";
-            // 
-            // chkNewCustomer
-            // 
-            this.chkNewCustomer.AutoSize = true;
-            this.chkNewCustomer.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkNewCustomer.Location = new System.Drawing.Point(6, 24);
-            this.chkNewCustomer.Name = "chkNewCustomer";
-            this.chkNewCustomer.Size = new System.Drawing.Size(116, 22);
-            this.chkNewCustomer.TabIndex = 0;
-            this.chkNewCustomer.Text = "New Customer";
-            this.chkNewCustomer.UseVisualStyleBackColor = true;
             // 
             // gbBookingDetails
             // 
@@ -1387,7 +1375,6 @@
             this.gbCustomerDetails.Controls.Add(this.cbTitle);
             this.gbCustomerDetails.Controls.Add(this.lblTitle);
             this.gbCustomerDetails.Controls.Add(this.lblCustID);
-            this.gbCustomerDetails.Controls.Add(this.chkNewCustomer);
             this.gbCustomerDetails.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbCustomerDetails.Location = new System.Drawing.Point(4, 330);
             this.gbCustomerDetails.Name = "gbCustomerDetails";
@@ -1409,7 +1396,7 @@
             // cbCustNo
             // 
             this.cbCustNo.FormattingEnabled = true;
-            this.cbCustNo.Location = new System.Drawing.Point(220, 20);
+            this.cbCustNo.Location = new System.Drawing.Point(96, 23);
             this.cbCustNo.Name = "cbCustNo";
             this.cbCustNo.Size = new System.Drawing.Size(121, 26);
             this.cbCustNo.TabIndex = 20;
@@ -1554,7 +1541,6 @@
         private System.Windows.Forms.ComboBox cbTitle;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblCustID;
-        private System.Windows.Forms.CheckBox chkNewCustomer;
         private System.Windows.Forms.GroupBox gbBookingDetails;
         private System.Windows.Forms.Label lblBookingNo;
         private System.Windows.Forms.Label lblTableNo;
