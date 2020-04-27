@@ -129,6 +129,8 @@
             this.pnlTableSelect = new System.Windows.Forms.Panel();
             this.pnlCustomerDetails = new System.Windows.Forms.Panel();
             this.gbDGV = new System.Windows.Forms.GroupBox();
+            this.lblTblNoSelDisplay = new System.Windows.Forms.Label();
+            this.lblTableNoSelected = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.picRemoveTable = new System.Windows.Forms.PictureBox();
@@ -136,6 +138,7 @@
             this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCustomerDetails = new System.Windows.Forms.GroupBox();
+            this.lblCustNo = new System.Windows.Forms.Label();
             this.picSaveBooking = new System.Windows.Forms.PictureBox();
             this.txtTelNo = new System.Windows.Forms.TextBox();
             this.picCancelBooking = new System.Windows.Forms.PictureBox();
@@ -145,7 +148,7 @@
             this.txtCounty = new System.Windows.Forms.TextBox();
             this.lbCounty = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
-            this.lblCustNo = new System.Windows.Forms.Label();
+            this.pnlMenuItems = new System.Windows.Forms.Panel();
             this.gbBookingDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
             this.pnlFloorPlan.SuspendLayout();
@@ -445,6 +448,7 @@
             this.pnlFloorPlan.Controls.Add(this.tbl14);
             this.pnlFloorPlan.Controls.Add(this.tbl12);
             this.pnlFloorPlan.Controls.Add(this.tbl21);
+            this.pnlFloorPlan.Controls.Add(this.pnlMenuItems);
             this.pnlFloorPlan.Location = new System.Drawing.Point(4, 6);
             this.pnlFloorPlan.Name = "pnlFloorPlan";
             this.pnlFloorPlan.Size = new System.Drawing.Size(638, 545);
@@ -477,6 +481,7 @@
             this.picAddTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAddTable.TabIndex = 83;
             this.picAddTable.TabStop = false;
+            this.picAddTable.Click += new System.EventHandler(this.picAddTable_Click);
             // 
             // groupBox1
             // 
@@ -713,6 +718,9 @@
             this.tbl15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl15.TabIndex = 17;
             this.tbl15.TabStop = false;
+            this.tbl15.Click += new System.EventHandler(this.tbl15_Click);
+            this.tbl15.MouseEnter += new System.EventHandler(this.tbl15_MouseEnter);
+            this.tbl15.MouseLeave += new System.EventHandler(this.tbl15_MouseLeave);
             // 
             // lbltbl14
             // 
@@ -745,6 +753,9 @@
             this.tbl16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl16.TabIndex = 19;
             this.tbl16.TabStop = false;
+            this.tbl16.Click += new System.EventHandler(this.tbl16_Click);
+            this.tbl16.MouseEnter += new System.EventHandler(this.tbl16_MouseEnter);
+            this.tbl16.MouseLeave += new System.EventHandler(this.tbl16_MouseLeave);
             // 
             // lbltbl12
             // 
@@ -788,6 +799,9 @@
             this.tbl17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl17.TabIndex = 21;
             this.tbl17.TabStop = false;
+            this.tbl17.Click += new System.EventHandler(this.tbl17_Click);
+            this.tbl17.MouseEnter += new System.EventHandler(this.tbl17_MouseEnter);
+            this.tbl17.MouseLeave += new System.EventHandler(this.tbl17_MouseLeave);
             // 
             // lbltbl10
             // 
@@ -809,6 +823,9 @@
             this.tbl18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl18.TabIndex = 22;
             this.tbl18.TabStop = false;
+            this.tbl18.Click += new System.EventHandler(this.tbl18_Click);
+            this.tbl18.MouseEnter += new System.EventHandler(this.tbl18_MouseEnter);
+            this.tbl18.MouseLeave += new System.EventHandler(this.tbl18_MouseLeave);
             // 
             // lbltbl9
             // 
@@ -830,6 +847,9 @@
             this.tbl19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl19.TabIndex = 23;
             this.tbl19.TabStop = false;
+            this.tbl19.Click += new System.EventHandler(this.tbl19_Click);
+            this.tbl19.MouseEnter += new System.EventHandler(this.tbl19_MouseEnter);
+            this.tbl19.MouseLeave += new System.EventHandler(this.tbl19_MouseLeave);
             // 
             // lbltbl8
             // 
@@ -851,6 +871,9 @@
             this.tbl20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl20.TabIndex = 24;
             this.tbl20.TabStop = false;
+            this.tbl20.Click += new System.EventHandler(this.tbl20_Click);
+            this.tbl20.MouseEnter += new System.EventHandler(this.tbl20_MouseEnter);
+            this.tbl20.MouseLeave += new System.EventHandler(this.tbl20_MouseLeave);
             // 
             // lbltbl6
             // 
@@ -872,6 +895,9 @@
             this.tbl22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl22.TabIndex = 26;
             this.tbl22.TabStop = false;
+            this.tbl22.Click += new System.EventHandler(this.tbl22_Click);
+            this.tbl22.MouseEnter += new System.EventHandler(this.tbl22_MouseEnter);
+            this.tbl22.MouseLeave += new System.EventHandler(this.tbl22_MouseLeave);
             // 
             // lbltbl5
             // 
@@ -893,6 +919,9 @@
             this.tbl23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl23.TabIndex = 27;
             this.tbl23.TabStop = false;
+            this.tbl23.Click += new System.EventHandler(this.tbl23_Click);
+            this.tbl23.MouseEnter += new System.EventHandler(this.tbl23_MouseEnter);
+            this.tbl23.MouseLeave += new System.EventHandler(this.tbl23_MouseLeave);
             // 
             // lbltbl4
             // 
@@ -936,6 +965,9 @@
             this.tbl1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl1.TabIndex = 0;
             this.tbl1.TabStop = false;
+            this.tbl1.Click += new System.EventHandler(this.tbl1_Click);
+            this.tbl1.MouseEnter += new System.EventHandler(this.tbl1_MouseEnter);
+            this.tbl1.MouseLeave += new System.EventHandler(this.tbl1_MouseLeave);
             // 
             // tbl4
             // 
@@ -946,6 +978,9 @@
             this.tbl4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl4.TabIndex = 4;
             this.tbl4.TabStop = false;
+            this.tbl4.Click += new System.EventHandler(this.tbl4_Click);
+            this.tbl4.MouseEnter += new System.EventHandler(this.tbl4_MouseEnter);
+            this.tbl4.MouseLeave += new System.EventHandler(this.tbl4_MouseLeave);
             // 
             // tbl3
             // 
@@ -956,6 +991,9 @@
             this.tbl3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl3.TabIndex = 5;
             this.tbl3.TabStop = false;
+            this.tbl3.Click += new System.EventHandler(this.tbl3_Click);
+            this.tbl3.MouseEnter += new System.EventHandler(this.tbl3_MouseEnter);
+            this.tbl3.MouseLeave += new System.EventHandler(this.tbl3_MouseLeave);
             // 
             // tbl2
             // 
@@ -966,6 +1004,9 @@
             this.tbl2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl2.TabIndex = 6;
             this.tbl2.TabStop = false;
+            this.tbl2.Click += new System.EventHandler(this.tbl2_Click);
+            this.tbl2.MouseEnter += new System.EventHandler(this.tbl2_MouseEnter);
+            this.tbl2.MouseLeave += new System.EventHandler(this.tbl2_MouseLeave);
             // 
             // tbl7
             // 
@@ -976,6 +1017,9 @@
             this.tbl7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl7.TabIndex = 7;
             this.tbl7.TabStop = false;
+            this.tbl7.Click += new System.EventHandler(this.tbl7_Click);
+            this.tbl7.MouseEnter += new System.EventHandler(this.tbl7_MouseEnter);
+            this.tbl7.MouseLeave += new System.EventHandler(this.tbl7_MouseLeave);
             // 
             // tbl6
             // 
@@ -986,6 +1030,9 @@
             this.tbl6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl6.TabIndex = 8;
             this.tbl6.TabStop = false;
+            this.tbl6.Click += new System.EventHandler(this.tbl6_Click);
+            this.tbl6.MouseEnter += new System.EventHandler(this.tbl6_MouseEnter);
+            this.tbl6.MouseLeave += new System.EventHandler(this.tbl6_MouseLeave);
             // 
             // tbl5
             // 
@@ -996,6 +1043,9 @@
             this.tbl5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl5.TabIndex = 9;
             this.tbl5.TabStop = false;
+            this.tbl5.Click += new System.EventHandler(this.tbl5_Click);
+            this.tbl5.MouseEnter += new System.EventHandler(this.tbl5_MouseEnter);
+            this.tbl5.MouseLeave += new System.EventHandler(this.tbl5_MouseLeave);
             // 
             // tbl8
             // 
@@ -1006,6 +1056,9 @@
             this.tbl8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl8.TabIndex = 10;
             this.tbl8.TabStop = false;
+            this.tbl8.Click += new System.EventHandler(this.tbl8_Click);
+            this.tbl8.MouseEnter += new System.EventHandler(this.tbl8_MouseEnter);
+            this.tbl8.MouseLeave += new System.EventHandler(this.tbl8_MouseLeave);
             // 
             // tbl9
             // 
@@ -1016,6 +1069,9 @@
             this.tbl9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl9.TabIndex = 12;
             this.tbl9.TabStop = false;
+            this.tbl9.Click += new System.EventHandler(this.tbl9_Click);
+            this.tbl9.MouseEnter += new System.EventHandler(this.tbl9_MouseEnter);
+            this.tbl9.MouseLeave += new System.EventHandler(this.tbl9_MouseLeave);
             // 
             // tbl10
             // 
@@ -1026,6 +1082,9 @@
             this.tbl10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl10.TabIndex = 13;
             this.tbl10.TabStop = false;
+            this.tbl10.Click += new System.EventHandler(this.tbl10_Click);
+            this.tbl10.MouseEnter += new System.EventHandler(this.tbl10_MouseEnter);
+            this.tbl10.MouseLeave += new System.EventHandler(this.tbl10_MouseLeave);
             // 
             // tbl11
             // 
@@ -1036,6 +1095,9 @@
             this.tbl11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl11.TabIndex = 14;
             this.tbl11.TabStop = false;
+            this.tbl11.Click += new System.EventHandler(this.tbl11_Click);
+            this.tbl11.MouseEnter += new System.EventHandler(this.tbl11_MouseEnter);
+            this.tbl11.MouseLeave += new System.EventHandler(this.tbl11_MouseLeave);
             // 
             // tbl13
             // 
@@ -1046,6 +1108,9 @@
             this.tbl13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl13.TabIndex = 15;
             this.tbl13.TabStop = false;
+            this.tbl13.Click += new System.EventHandler(this.tbl13_Click);
+            this.tbl13.MouseEnter += new System.EventHandler(this.tbl13_MouseEnter);
+            this.tbl13.MouseLeave += new System.EventHandler(this.tbl13_MouseLeave);
             // 
             // tbl14
             // 
@@ -1056,6 +1121,9 @@
             this.tbl14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl14.TabIndex = 16;
             this.tbl14.TabStop = false;
+            this.tbl14.Click += new System.EventHandler(this.tbl14_Click);
+            this.tbl14.MouseEnter += new System.EventHandler(this.tbl14_MouseEnter);
+            this.tbl14.MouseLeave += new System.EventHandler(this.tbl14_MouseLeave);
             // 
             // tbl12
             // 
@@ -1066,6 +1134,9 @@
             this.tbl12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl12.TabIndex = 18;
             this.tbl12.TabStop = false;
+            this.tbl12.Click += new System.EventHandler(this.tbl12_Click);
+            this.tbl12.MouseEnter += new System.EventHandler(this.tbl12_MouseEnter);
+            this.tbl12.MouseLeave += new System.EventHandler(this.tbl12_MouseLeave);
             // 
             // tbl21
             // 
@@ -1076,6 +1147,9 @@
             this.tbl21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.tbl21.TabIndex = 25;
             this.tbl21.TabStop = false;
+            this.tbl21.Click += new System.EventHandler(this.tbl21_Click);
+            this.tbl21.MouseEnter += new System.EventHandler(this.tbl21_MouseEnter);
+            this.tbl21.MouseLeave += new System.EventHandler(this.tbl21_MouseLeave);
             // 
             // toolTip1
             // 
@@ -1156,6 +1230,7 @@
             this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picExit.TabIndex = 69;
             this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
             // pnlGreen
             // 
@@ -1263,6 +1338,8 @@
             // 
             // gbDGV
             // 
+            this.gbDGV.Controls.Add(this.lblTblNoSelDisplay);
+            this.gbDGV.Controls.Add(this.lblTableNoSelected);
             this.gbDGV.Controls.Add(this.pictureBox3);
             this.gbDGV.Controls.Add(this.pictureBox4);
             this.gbDGV.Controls.Add(this.picRemoveTable);
@@ -1275,10 +1352,28 @@
             this.gbDGV.TabStop = false;
             this.gbDGV.Text = "Tables Booked";
             // 
+            // lblTblNoSelDisplay
+            // 
+            this.lblTblNoSelDisplay.AutoSize = true;
+            this.lblTblNoSelDisplay.Location = new System.Drawing.Point(133, 148);
+            this.lblTblNoSelDisplay.Name = "lblTblNoSelDisplay";
+            this.lblTblNoSelDisplay.Size = new System.Drawing.Size(16, 18);
+            this.lblTblNoSelDisplay.TabIndex = 41;
+            this.lblTblNoSelDisplay.Text = "--";
+            // 
+            // lblTableNoSelected
+            // 
+            this.lblTableNoSelected.AutoSize = true;
+            this.lblTableNoSelected.Location = new System.Drawing.Point(10, 148);
+            this.lblTableNoSelected.Name = "lblTableNoSelected";
+            this.lblTableNoSelected.Size = new System.Drawing.Size(117, 18);
+            this.lblTableNoSelected.TabIndex = 85;
+            this.lblTableNoSelected.Text = "Table No Selected:";
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.pictureBox3.Location = new System.Drawing.Point(460, 148);
+            this.pictureBox3.Location = new System.Drawing.Point(385, 145);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1288,7 +1383,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.pictureBox4.Location = new System.Drawing.Point(414, 148);
+            this.pictureBox4.Location = new System.Drawing.Point(339, 145);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1298,12 +1393,13 @@
             // picRemoveTable
             // 
             this.picRemoveTable.Image = global::Belfray.Properties.Resources.Remove__2_;
-            this.picRemoveTable.Location = new System.Drawing.Point(505, 164);
+            this.picRemoveTable.Location = new System.Drawing.Point(505, 142);
             this.picRemoveTable.Name = "picRemoveTable";
             this.picRemoveTable.Size = new System.Drawing.Size(24, 24);
             this.picRemoveTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRemoveTable.TabIndex = 82;
             this.picRemoveTable.TabStop = false;
+            this.picRemoveTable.Click += new System.EventHandler(this.picRemoveTable_Click);
             // 
             // dgvBooking
             // 
@@ -1316,6 +1412,7 @@
             this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooking.Size = new System.Drawing.Size(523, 115);
             this.dgvBooking.TabIndex = 2;
+            this.dgvBooking.Click += new System.EventHandler(this.dgvBooking_Click);
             // 
             // BookingNumber
             // 
@@ -1358,6 +1455,15 @@
             this.gbCustomerDetails.TabIndex = 1;
             this.gbCustomerDetails.TabStop = false;
             this.gbCustomerDetails.Text = "Customer Details";
+            // 
+            // lblCustNo
+            // 
+            this.lblCustNo.AutoSize = true;
+            this.lblCustNo.Location = new System.Drawing.Point(99, 28);
+            this.lblCustNo.Name = "lblCustNo";
+            this.lblCustNo.Size = new System.Drawing.Size(16, 18);
+            this.lblCustNo.TabIndex = 41;
+            this.lblCustNo.Text = "--";
             // 
             // picSaveBooking
             // 
@@ -1434,14 +1540,13 @@
             this.txtCity.Size = new System.Drawing.Size(100, 25);
             this.txtCity.TabIndex = 13;
             // 
-            // lblCustNo
+            // pnlMenuItems
             // 
-            this.lblCustNo.AutoSize = true;
-            this.lblCustNo.Location = new System.Drawing.Point(99, 28);
-            this.lblCustNo.Name = "lblCustNo";
-            this.lblCustNo.Size = new System.Drawing.Size(16, 18);
-            this.lblCustNo.TabIndex = 41;
-            this.lblCustNo.Text = "--";
+            this.pnlMenuItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMenuItems.Location = new System.Drawing.Point(3, 38);
+            this.pnlMenuItems.Name = "pnlMenuItems";
+            this.pnlMenuItems.Size = new System.Drawing.Size(632, 503);
+            this.pnlMenuItems.TabIndex = 86;
             // 
             // TableSelectEdit
             // 
@@ -1495,6 +1600,7 @@
             this.pnlTableSelect.ResumeLayout(false);
             this.pnlCustomerDetails.ResumeLayout(false);
             this.gbDGV.ResumeLayout(false);
+            this.gbDGV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRemoveTable)).EndInit();
@@ -1626,5 +1732,8 @@
         private System.Windows.Forms.PictureBox picCancelBooking;
         private System.Windows.Forms.Label lblBookingNo;
         private System.Windows.Forms.Label lblCustNo;
+        private System.Windows.Forms.Label lblTblNoSelDisplay;
+        private System.Windows.Forms.Label lblTableNoSelected;
+        private System.Windows.Forms.Panel pnlMenuItems;
     }
 }
