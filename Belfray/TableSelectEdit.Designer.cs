@@ -159,6 +159,10 @@
             this.dgvTableItems = new System.Windows.Forms.DataGridView();
             this.cbMenuSelect = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblItemSelected = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblPriceSelItem = new System.Windows.Forms.Label();
             this.gbBookingDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
             this.pnlFloorPlan.SuspendLayout();
@@ -1576,6 +1580,10 @@
             // 
             // gbMenu
             // 
+            this.gbMenu.Controls.Add(this.lblPriceSelItem);
+            this.gbMenu.Controls.Add(this.label7);
+            this.gbMenu.Controls.Add(this.lblItemSelected);
+            this.gbMenu.Controls.Add(this.label5);
             this.gbMenu.Controls.Add(this.picAddtoTable);
             this.gbMenu.Controls.Add(this.dgvMenuItems);
             this.gbMenu.Location = new System.Drawing.Point(12, 59);
@@ -1602,8 +1610,9 @@
             this.dgvMenuItems.Location = new System.Drawing.Point(6, 24);
             this.dgvMenuItems.Name = "dgvMenuItems";
             this.dgvMenuItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMenuItems.Size = new System.Drawing.Size(594, 140);
+            this.dgvMenuItems.Size = new System.Drawing.Size(594, 122);
             this.dgvMenuItems.TabIndex = 4;
+            this.dgvMenuItems.Click += new System.EventHandler(this.dgvMenuItems_Click);
             // 
             // gbItems
             // 
@@ -1652,9 +1661,11 @@
             this.cbMenuSelect.Items.AddRange(new object[] {
             "Breakfast",
             "Lunch",
-            "Dinner",
-            "Kids Meals",
-            "Drinks"});
+            "Start",
+            "Main",
+            "Desert",
+            "Drinks",
+            "Kids Meals"});
             this.cbMenuSelect.Location = new System.Drawing.Point(272, 16);
             this.cbMenuSelect.Name = "cbMenuSelect";
             this.cbMenuSelect.Size = new System.Drawing.Size(121, 26);
@@ -1669,6 +1680,44 @@
             this.label2.Size = new System.Drawing.Size(263, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "Please use the drop down to choose items:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 153);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 18);
+            this.label5.TabIndex = 87;
+            this.label5.Text = "Item:";
+            // 
+            // lblItemSelected
+            // 
+            this.lblItemSelected.AutoSize = true;
+            this.lblItemSelected.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemSelected.Location = new System.Drawing.Point(51, 155);
+            this.lblItemSelected.Name = "lblItemSelected";
+            this.lblItemSelected.Size = new System.Drawing.Size(38, 15);
+            this.lblItemSelected.TabIndex = 88;
+            this.lblItemSelected.Text = "label7";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 173);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 18);
+            this.label7.TabIndex = 89;
+            this.label7.Text = "Price:";
+            // 
+            // lblPriceSelItem
+            // 
+            this.lblPriceSelItem.AutoSize = true;
+            this.lblPriceSelItem.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPriceSelItem.Location = new System.Drawing.Point(51, 176);
+            this.lblPriceSelItem.Name = "lblPriceSelItem";
+            this.lblPriceSelItem.Size = new System.Drawing.Size(38, 15);
+            this.lblPriceSelItem.TabIndex = 90;
+            this.lblPriceSelItem.Text = "label7";
             // 
             // TableSelectEdit
             // 
@@ -1734,6 +1783,7 @@
             this.pnlMenuItems.ResumeLayout(false);
             this.pnlMenuItems.PerformLayout();
             this.gbMenu.ResumeLayout(false);
+            this.gbMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddtoTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenuItems)).EndInit();
             this.gbItems.ResumeLayout(false);
@@ -1875,5 +1925,9 @@
         private System.Windows.Forms.DataGridView dgvTableItems;
         private System.Windows.Forms.ComboBox cbMenuSelect;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblItemSelected;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPriceSelItem;
+        private System.Windows.Forms.Label label7;
     }
 }

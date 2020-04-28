@@ -801,6 +801,21 @@ namespace Belfray
             LoadMenu();
         }
 
+        private void dgvMenuItems_Click(object sender, EventArgs e)
+        {
+            if (dgvMenuItems.SelectedRows.Count == 0)
+            {
+                Globals.itemSel = null;
+            }
+            else if (dgvBooking.SelectedRows.Count == 1)
+            {
+                Globals.itemSel = dgvMenuItems.SelectedRows[0].Cells[0].Value.ToString();
+                lblItemSelected.Text = dgvMenuItems.SelectedRows[0].Cells[1].Value.ToString();
+                lblPriceSelItem.Text = "£" + dgvMenuItems.SelectedRows[0].Cells[2].Value.ToString();
+                //prdSel = Globals.prdNoSel;
+            }
+        }
+
         private void picDrinks_Click(object sender, EventArgs e)
         {
             pnlTableSelect.SendToBack();
@@ -815,42 +830,111 @@ namespace Belfray
         {
             if (cbMenuSelect.SelectedIndex == 0)
             {
-                string type = "TYP100003";
                 //Load Menu DGV
-                //sqlItem = @"select * FROM Item where itemNo LIKE 'B_%'";
-                sqlItem = @"SELECT Item.itemNo, Item.itemDesc FROM Item
-                LEFT JOIN BType ON BType.typeID = Item.typeID
-                WHERE Item.typeID = 'TYP100003'";
+                sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100003'";
+                //sqlItem = @"SELECT Item.itemNo, Item.itemDesc, Item.typeID FROM Item
+                //LEFT JOIN BType ON BType.typeID = Item.typeID
+                //WHERE Item.typeID = 'TYP100003'";
                 daItem = new SqlDataAdapter(sqlItem, connStr);
                 //@"SELECT Item.itemNo AS 'Item No', Item.itemDesc AS 'Item Description', Item.itemPrice AS 'Price', BType.typeID AS 'Type ID' FROM Item
 
-                daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
-                daItem.Fill(dsBelfray, "Item");
+                daItem.FillSchema(dsBelfray, SchemaType.Source, "Breakfast");
+                daItem.Fill(dsBelfray, "Breakfast");
 
                 dgvMenuItems.Visible = true;
-                dgvMenuItems.DataSource = dsBelfray.Tables["Item"];
+                dgvMenuItems.DataSource = dsBelfray.Tables["Breakfast"];
                 //Resize
                 dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvMenuItems.Columns[0].Width = 175;
+                dgvMenuItems.Columns[1].Width = 175;
+                dgvMenuItems.Columns[2].Width = 175;
             }
             if (cbMenuSelect.SelectedIndex == 1)
             {
                 //Load Menu DGV
-                //Load Menu DGV
-                sqlItem = @"SELECT Item.itemNo AS 'Item No', Item.itemDesc AS 'Item Description', Item.itemPrice AS 'Price', BType.typeID AS 'Type ID' FROM Item
-                JOIN BType ON BType.typeID = Item.typeID
-                WHERE Item.typeID = 'TYP100004'";
+                sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100004'";
                 daItem = new SqlDataAdapter(sqlItem, connStr);
 
-                daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
-                daItem.Fill(dsBelfray, "Item");
+                daItem.FillSchema(dsBelfray, SchemaType.Source, "Lunch");
+                daItem.Fill(dsBelfray, "Lunch");
 
                 dgvMenuItems.Visible = true;
-                dgvMenuItems.DataSource = dsBelfray.Tables["Item"];
+                dgvMenuItems.DataSource = dsBelfray.Tables["Lunch"];
+                //Resize
+                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            if (cbMenuSelect.SelectedIndex == 2)
+            {
+                //Load Menu DGV
+                sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100005'";
+                daItem = new SqlDataAdapter(sqlItem, connStr);
+
+                daItem.FillSchema(dsBelfray, SchemaType.Source, "Starter");
+                daItem.Fill(dsBelfray, "Starter");
+
+                dgvMenuItems.Visible = true;
+                dgvMenuItems.DataSource = dsBelfray.Tables["Starter"];
+                //Resize
+                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            if (cbMenuSelect.SelectedIndex == 3)
+            {
+                //Load Menu DGV
+                sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100006'";
+                daItem = new SqlDataAdapter(sqlItem, connStr);
+
+                daItem.FillSchema(dsBelfray, SchemaType.Source, "Main");
+                daItem.Fill(dsBelfray, "Main");
+
+                dgvMenuItems.Visible = true;
+                dgvMenuItems.DataSource = dsBelfray.Tables["Main"];
+                //Resize
+                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            if (cbMenuSelect.SelectedIndex == 4)
+            {
+                //Load Menu DGV
+                sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100007'";
+                daItem = new SqlDataAdapter(sqlItem, connStr);
+
+                daItem.FillSchema(dsBelfray, SchemaType.Source, "Desert");
+                daItem.Fill(dsBelfray, "Desert");
+
+                dgvMenuItems.Visible = true;
+                dgvMenuItems.DataSource = dsBelfray.Tables["Desert"];
+                //Resize
+                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            if (cbMenuSelect.SelectedIndex == 5)
+            {
+                //Load Menu DGV
+                sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100008'";
+                daItem = new SqlDataAdapter(sqlItem, connStr);
+
+                daItem.FillSchema(dsBelfray, SchemaType.Source, "Drinks");
+                daItem.Fill(dsBelfray, "Drinks");
+
+                dgvMenuItems.Visible = true;
+                dgvMenuItems.DataSource = dsBelfray.Tables["Drinks"];
+                //Resize
+                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            if (cbMenuSelect.SelectedIndex == 6)
+            {
+                //Load Menu DGV
+                sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100010'";
+                daItem = new SqlDataAdapter(sqlItem, connStr);
+
+                daItem.FillSchema(dsBelfray, SchemaType.Source, "Kids");
+                daItem.Fill(dsBelfray, "Kids");
+
+                dgvMenuItems.Visible = true;
+                dgvMenuItems.DataSource = dsBelfray.Tables["Kids"];
                 //Resize
                 dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
 
-            }
+        }
 
             private void tbl17_Click(object sender, EventArgs e)
         {
