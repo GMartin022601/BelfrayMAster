@@ -132,8 +132,8 @@
             this.gbDGV = new System.Windows.Forms.GroupBox();
             this.lblTblNoSelDisplay = new System.Windows.Forms.Label();
             this.lblTableNoSelected = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picDrinks = new System.Windows.Forms.PictureBox();
+            this.picFood = new System.Windows.Forms.PictureBox();
             this.picRemoveTable = new System.Windows.Forms.PictureBox();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
             this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,7 +150,15 @@
             this.lbCounty = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.pnlMenuItems = new System.Windows.Forms.Panel();
-            this.pnlDrinks = new System.Windows.Forms.Panel();
+            this.gbMenu = new System.Windows.Forms.GroupBox();
+            this.picAddtoTable = new System.Windows.Forms.PictureBox();
+            this.dgvMenuItems = new System.Windows.Forms.DataGridView();
+            this.gbItems = new System.Windows.Forms.GroupBox();
+            this.picAddToBill = new System.Windows.Forms.PictureBox();
+            this.picRemoveItem = new System.Windows.Forms.PictureBox();
+            this.dgvTableItems = new System.Windows.Forms.DataGridView();
+            this.cbMenuSelect = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbBookingDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
             this.pnlFloorPlan.SuspendLayout();
@@ -188,14 +196,21 @@
             this.pnlTableSelect.SuspendLayout();
             this.pnlCustomerDetails.SuspendLayout();
             this.gbDGV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDrinks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRemoveTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             this.gbCustomerDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCancelBooking)).BeginInit();
             this.pnlMenuItems.SuspendLayout();
+            this.gbMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddtoTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenuItems)).BeginInit();
+            this.gbItems.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddToBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemoveItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTableItems)).BeginInit();
             this.SuspendLayout();
             // 
             // txtStreet
@@ -451,7 +466,6 @@
             this.pnlFloorPlan.Controls.Add(this.tbl14);
             this.pnlFloorPlan.Controls.Add(this.tbl12);
             this.pnlFloorPlan.Controls.Add(this.tbl21);
-            this.pnlFloorPlan.Controls.Add(this.pnlMenuItems);
             this.pnlFloorPlan.Location = new System.Drawing.Point(4, 6);
             this.pnlFloorPlan.Name = "pnlFloorPlan";
             this.pnlFloorPlan.Size = new System.Drawing.Size(638, 580);
@@ -1318,11 +1332,12 @@
             // 
             // pnlTableSelect
             // 
-            this.pnlTableSelect.Controls.Add(this.pnlFloorPlan);
+            this.pnlTableSelect.Controls.Add(this.pnlMenuItems);
             this.pnlTableSelect.Controls.Add(this.picExit);
             this.pnlTableSelect.Controls.Add(this.pnlGreen);
             this.pnlTableSelect.Controls.Add(this.pnlRed);
             this.pnlTableSelect.Controls.Add(this.pnlCustomerDetails);
+            this.pnlTableSelect.Controls.Add(this.pnlFloorPlan);
             this.pnlTableSelect.Location = new System.Drawing.Point(2, 2);
             this.pnlTableSelect.Name = "pnlTableSelect";
             this.pnlTableSelect.Size = new System.Drawing.Size(1196, 596);
@@ -1343,8 +1358,8 @@
             // 
             this.gbDGV.Controls.Add(this.lblTblNoSelDisplay);
             this.gbDGV.Controls.Add(this.lblTableNoSelected);
-            this.gbDGV.Controls.Add(this.pictureBox3);
-            this.gbDGV.Controls.Add(this.pictureBox4);
+            this.gbDGV.Controls.Add(this.picDrinks);
+            this.gbDGV.Controls.Add(this.picFood);
             this.gbDGV.Controls.Add(this.picRemoveTable);
             this.gbDGV.Controls.Add(this.dgvBooking);
             this.gbDGV.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1373,25 +1388,27 @@
             this.lblTableNoSelected.TabIndex = 85;
             this.lblTableNoSelected.Text = "Table No Selected:";
             // 
-            // pictureBox3
+            // picDrinks
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(385, 145);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 83;
-            this.pictureBox3.TabStop = false;
+            this.picDrinks.Image = ((System.Drawing.Image)(resources.GetObject("picDrinks.Image")));
+            this.picDrinks.Location = new System.Drawing.Point(385, 145);
+            this.picDrinks.Name = "picDrinks";
+            this.picDrinks.Size = new System.Drawing.Size(40, 40);
+            this.picDrinks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDrinks.TabIndex = 83;
+            this.picDrinks.TabStop = false;
+            this.picDrinks.Click += new System.EventHandler(this.picDrinks_Click);
             // 
-            // pictureBox4
+            // picFood
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(344, 145);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 84;
-            this.pictureBox4.TabStop = false;
+            this.picFood.Image = ((System.Drawing.Image)(resources.GetObject("picFood.Image")));
+            this.picFood.Location = new System.Drawing.Point(344, 145);
+            this.picFood.Name = "picFood";
+            this.picFood.Size = new System.Drawing.Size(40, 40);
+            this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFood.TabIndex = 84;
+            this.picFood.TabStop = false;
+            this.picFood.Click += new System.EventHandler(this.picFood_Click);
             // 
             // picRemoveTable
             // 
@@ -1545,24 +1562,113 @@
             // 
             // pnlMenuItems
             // 
-            this.pnlMenuItems.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pnlMenuItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlMenuItems.Controls.Add(this.pnlDrinks);
-            this.pnlMenuItems.Location = new System.Drawing.Point(3, 62);
+            this.pnlMenuItems.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlMenuItems.Controls.Add(this.gbItems);
+            this.pnlMenuItems.Controls.Add(this.gbMenu);
+            this.pnlMenuItems.Controls.Add(this.cbMenuSelect);
+            this.pnlMenuItems.Controls.Add(this.label2);
+            this.pnlMenuItems.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlMenuItems.Location = new System.Drawing.Point(4, 6);
             this.pnlMenuItems.Name = "pnlMenuItems";
-            this.pnlMenuItems.Size = new System.Drawing.Size(629, 493);
-            this.pnlMenuItems.TabIndex = 86;
+            this.pnlMenuItems.Size = new System.Drawing.Size(638, 580);
+            this.pnlMenuItems.TabIndex = 88;
             this.pnlMenuItems.Visible = false;
             // 
-            // pnlDrinks
+            // gbMenu
             // 
-            this.pnlDrinks.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnlDrinks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDrinks.Location = new System.Drawing.Point(-1, 11);
-            this.pnlDrinks.Name = "pnlDrinks";
-            this.pnlDrinks.Size = new System.Drawing.Size(629, 515);
-            this.pnlDrinks.TabIndex = 87;
-            this.pnlDrinks.Visible = false;
+            this.gbMenu.Controls.Add(this.picAddtoTable);
+            this.gbMenu.Controls.Add(this.dgvMenuItems);
+            this.gbMenu.Location = new System.Drawing.Point(12, 59);
+            this.gbMenu.Name = "gbMenu";
+            this.gbMenu.Size = new System.Drawing.Size(606, 197);
+            this.gbMenu.TabIndex = 5;
+            this.gbMenu.TabStop = false;
+            this.gbMenu.Text = "Menu";
+            // 
+            // picAddtoTable
+            // 
+            this.picAddtoTable.Enabled = false;
+            this.picAddtoTable.Image = global::Belfray.Properties.Resources.AddNew;
+            this.picAddtoTable.Location = new System.Drawing.Point(576, 167);
+            this.picAddtoTable.Name = "picAddtoTable";
+            this.picAddtoTable.Size = new System.Drawing.Size(24, 24);
+            this.picAddtoTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAddtoTable.TabIndex = 86;
+            this.picAddtoTable.TabStop = false;
+            // 
+            // dgvMenuItems
+            // 
+            this.dgvMenuItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMenuItems.Location = new System.Drawing.Point(6, 24);
+            this.dgvMenuItems.Name = "dgvMenuItems";
+            this.dgvMenuItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMenuItems.Size = new System.Drawing.Size(594, 140);
+            this.dgvMenuItems.TabIndex = 4;
+            // 
+            // gbItems
+            // 
+            this.gbItems.Controls.Add(this.picAddToBill);
+            this.gbItems.Controls.Add(this.picRemoveItem);
+            this.gbItems.Controls.Add(this.dgvTableItems);
+            this.gbItems.Location = new System.Drawing.Point(12, 262);
+            this.gbItems.Name = "gbItems";
+            this.gbItems.Size = new System.Drawing.Size(606, 190);
+            this.gbItems.TabIndex = 3;
+            this.gbItems.TabStop = false;
+            this.gbItems.Text = "Items Added";
+            // 
+            // picAddToBill
+            // 
+            this.picAddToBill.Enabled = false;
+            this.picAddToBill.Image = global::Belfray.Properties.Resources.AddNew;
+            this.picAddToBill.Location = new System.Drawing.Point(576, 160);
+            this.picAddToBill.Name = "picAddToBill";
+            this.picAddToBill.Size = new System.Drawing.Size(24, 24);
+            this.picAddToBill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAddToBill.TabIndex = 84;
+            this.picAddToBill.TabStop = false;
+            // 
+            // picRemoveItem
+            // 
+            this.picRemoveItem.Image = global::Belfray.Properties.Resources.Remove__2_;
+            this.picRemoveItem.Location = new System.Drawing.Point(546, 160);
+            this.picRemoveItem.Name = "picRemoveItem";
+            this.picRemoveItem.Size = new System.Drawing.Size(24, 24);
+            this.picRemoveItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRemoveItem.TabIndex = 83;
+            this.picRemoveItem.TabStop = false;
+            // 
+            // dgvTableItems
+            // 
+            this.dgvTableItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTableItems.Location = new System.Drawing.Point(6, 24);
+            this.dgvTableItems.Name = "dgvTableItems";
+            this.dgvTableItems.Size = new System.Drawing.Size(594, 130);
+            this.dgvTableItems.TabIndex = 2;
+            // 
+            // cbMenuSelect
+            // 
+            this.cbMenuSelect.FormattingEnabled = true;
+            this.cbMenuSelect.Items.AddRange(new object[] {
+            "Breakfast",
+            "Lunch",
+            "Dinner",
+            "Kids Meals",
+            "Drinks"});
+            this.cbMenuSelect.Location = new System.Drawing.Point(272, 16);
+            this.cbMenuSelect.Name = "cbMenuSelect";
+            this.cbMenuSelect.Size = new System.Drawing.Size(121, 26);
+            this.cbMenuSelect.TabIndex = 1;
+            this.cbMenuSelect.SelectedIndexChanged += new System.EventHandler(this.cbMenuSelect_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(263, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Please use the drop down to choose items:";
             // 
             // TableSelectEdit
             // 
@@ -1617,8 +1723,8 @@
             this.pnlCustomerDetails.ResumeLayout(false);
             this.gbDGV.ResumeLayout(false);
             this.gbDGV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDrinks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRemoveTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).EndInit();
             this.gbCustomerDetails.ResumeLayout(false);
@@ -1626,6 +1732,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSaveBooking)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCancelBooking)).EndInit();
             this.pnlMenuItems.ResumeLayout(false);
+            this.pnlMenuItems.PerformLayout();
+            this.gbMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAddtoTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenuItems)).EndInit();
+            this.gbItems.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAddToBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemoveItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTableItems)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1743,8 +1857,8 @@
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn TableNumber;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox picDrinks;
+        private System.Windows.Forms.PictureBox picFood;
         private System.Windows.Forms.PictureBox picSaveBooking;
         private System.Windows.Forms.PictureBox picCancelBooking;
         private System.Windows.Forms.Label lblBookingNo;
@@ -1752,6 +1866,14 @@
         private System.Windows.Forms.Label lblTblNoSelDisplay;
         private System.Windows.Forms.Label lblTableNoSelected;
         private System.Windows.Forms.Panel pnlMenuItems;
-        private System.Windows.Forms.Panel pnlDrinks;
+        private System.Windows.Forms.GroupBox gbMenu;
+        private System.Windows.Forms.PictureBox picAddtoTable;
+        private System.Windows.Forms.DataGridView dgvMenuItems;
+        private System.Windows.Forms.GroupBox gbItems;
+        private System.Windows.Forms.PictureBox picAddToBill;
+        private System.Windows.Forms.PictureBox picRemoveItem;
+        private System.Windows.Forms.DataGridView dgvTableItems;
+        private System.Windows.Forms.ComboBox cbMenuSelect;
+        private System.Windows.Forms.Label label2;
     }
 }

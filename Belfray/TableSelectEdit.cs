@@ -14,13 +14,13 @@ namespace Belfray
 {
     public partial class TableSelectEdit : Form
     {
-        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem, sqlItem;
+        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem, sqlItem, sqlBreakfast;
         String tableNumber = "", test = "";
         bool formLoad = true;
         bool getInfo, bookingInfo, avail;
         bool newCustomer, newBooking, tableSelected;
         int tableNoSelected, partySize, partySize2, tableSize;
-        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem, daItem;// daSupplier;
+        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem, daItem, daBreakfast;// daSupplier;
         DataSet dsBelfray = new DataSet();
         SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBBookingItem, cmdBItem;
         DataRow drCustomer, drBooking, drBookingType, drPaymentType, drBookingItem, drItem;
@@ -783,7 +783,76 @@ namespace Belfray
             tbl16.BackColor = colour;
         }
 
-        private void tbl17_Click(object sender, EventArgs e)
+        public void LoadMenu()
+        {
+            gbMenu.Visible = true;
+            gbItems.Visible = true;
+            cbMenuSelect.Visible = true;
+            label2.Visible = true;
+        }
+
+        private void picFood_Click(object sender, EventArgs e)
+        {
+            pnlTableSelect.SendToBack();
+            pnlFloorPlan.Visible = false;
+            pnlFloorPlan.SendToBack();
+            pnlMenuItems.Visible = true;
+            pnlMenuItems.BringToFront();
+            LoadMenu();
+        }
+
+        private void picDrinks_Click(object sender, EventArgs e)
+        {
+            pnlTableSelect.SendToBack();
+            pnlFloorPlan.Visible = false;
+            pnlFloorPlan.SendToBack();
+            pnlMenuItems.Visible = true;
+            pnlMenuItems.BringToFront();
+            LoadMenu();
+        }
+
+        private void cbMenuSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbMenuSelect.SelectedIndex == 0)
+            {
+                string type = "TYP100003";
+                //Load Menu DGV
+                //sqlItem = @"select * FROM Item where itemNo LIKE 'B_%'";
+                sqlItem = @"SELECT Item.itemNo, Item.itemDesc FROM Item
+                LEFT JOIN BType ON BType.typeID = Item.typeID
+                WHERE Item.typeID = 'TYP100003'";
+                daItem = new SqlDataAdapter(sqlItem, connStr);
+                //@"SELECT Item.itemNo AS 'Item No', Item.itemDesc AS 'Item Description', Item.itemPrice AS 'Price', BType.typeID AS 'Type ID' FROM Item
+
+                daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
+                daItem.Fill(dsBelfray, "Item");
+
+                dgvMenuItems.Visible = true;
+                dgvMenuItems.DataSource = dsBelfray.Tables["Item"];
+                //Resize
+                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            if (cbMenuSelect.SelectedIndex == 1)
+            {
+                //Load Menu DGV
+                //Load Menu DGV
+                sqlItem = @"SELECT Item.itemNo AS 'Item No', Item.itemDesc AS 'Item Description', Item.itemPrice AS 'Price', BType.typeID AS 'Type ID' FROM Item
+                JOIN BType ON BType.typeID = Item.typeID
+                WHERE Item.typeID = 'TYP100004'";
+                daItem = new SqlDataAdapter(sqlItem, connStr);
+
+                daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
+                daItem.Fill(dsBelfray, "Item");
+
+                dgvMenuItems.Visible = true;
+                dgvMenuItems.DataSource = dsBelfray.Tables["Item"];
+                //Resize
+                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+
+            }
+
+            private void tbl17_Click(object sender, EventArgs e)
         {
             partySize = 4;
             tableNoSelected = 17;
@@ -870,7 +939,7 @@ namespace Belfray
 
         private void picExit_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void dgvBooking_Click(object sender, EventArgs e)
@@ -1360,7 +1429,7 @@ namespace Belfray
             {
                 string bookingNo = "";
                 string itemNo = "";
-                string tableSize = "";
+                //string tableSize = "";
 
                 if (drTable["bookingNo"].Equals(lblBookingNo.Text))
                 {
@@ -1387,6 +1456,7 @@ namespace Belfray
             txtPC.Text = drCustomer["customerPostcode"].ToString();
             txtTelNo.Text = drCustomer["customerTel"].ToString();
             cbTitle.SelectedValue = drCustomer["customerTitle"].ToString();
+
         }
 
         private void tbl1_MouseEnter(object sender, EventArgs e)
