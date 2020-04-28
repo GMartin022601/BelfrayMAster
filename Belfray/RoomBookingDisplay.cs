@@ -72,10 +72,20 @@ namespace Belfray
             dgvBookings.Visible = true;
             dgvBookings.DataSource = dsBelfray.Tables["Booking"];
             //Resize
-            dgvBookings.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvBookings.Columns[0].Width = 110;
+            dgvBookings.Columns[1].Width = 110;
+            dgvBookings.Columns[2].Width = 110;
+            dgvBookings.Columns[3].Width = 110;
+            dgvBookings.Columns[4].Width = 110;
+            dgvBookings.Columns[5].Width = 110;
+            dgvBookings.Columns[6].Width = 110;
+            dgvBookings.Columns[7].Width = 102;
+            dgvBookings.Columns[8].Width = 100;
+            dgvBookings.Columns[9].Width = 100;
+            dgvBookings.Columns[10].Width = 100;
 
             //Globals.rooms Reset
-            for(int x = 0; x < 19; x++)
+            for (int x = 0; x < 19; x++)
             {
                 Globals.rooms[x] = " ";
             }

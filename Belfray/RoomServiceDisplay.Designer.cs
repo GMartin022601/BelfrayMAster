@@ -35,7 +35,7 @@
             // dgvRooms
             // 
             this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRooms.Location = new System.Drawing.Point(-2, -2);
+            this.dgvRooms.Location = new System.Drawing.Point(2, 1);
             this.dgvRooms.Name = "dgvRooms";
             this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRooms.Size = new System.Drawing.Size(1216, 347);
@@ -45,11 +45,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 343);
+            this.ClientSize = new System.Drawing.Size(1220, 349);
             this.Controls.Add(this.dgvRooms);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RoomServiceDisplay";
             this.Text = "RoomServiceDisplay";
+            this.Load += new System.EventHandler(this.RoomServiceDisplay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).EndInit();
             this.ResumeLayout(false);
 

@@ -294,9 +294,9 @@ namespace Belfray
             }
 
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -359,6 +359,12 @@ namespace Belfray
                     frm.Show();
                     break;
                 case 2: //Room Stock
+                    RoomServiceDisplay frm2 = new RoomServiceDisplay();
+                    frm2.TopLevel = false;
+                    frm2.FormBorderStyle = FormBorderStyle.None;
+                    frm2.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm2);
+                    frm2.Show();
                     break;
                 case 3: //Table Booking
                     TableBookingDisplay frm3 = new TableBookingDisplay();
@@ -413,6 +419,12 @@ namespace Belfray
                     frm.Show();
                     break;
                 case 2: //Room Stock
+                    RoomServiceSearch frm2 = new RoomServiceSearch();
+                    frm2.TopLevel = false;
+                    frm2.FormBorderStyle = FormBorderStyle.None;
+                    frm2.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm2);
+                    frm2.Show();
                     break;
                 case 3: //Table Booking
                     break;

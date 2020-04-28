@@ -63,7 +63,7 @@ namespace Belfray
             sqlBookingItem = @"select * from BookingItem";
             daBookingItem = new SqlDataAdapter(sqlBookingItem, connStr);
             cmdBBookingItem = new SqlCommandBuilder(daBookingItem);
-            daBookingItem.FillSchema(dsBelfray, SchemaType.Source, "BookiBookingItemng");
+            daBookingItem.FillSchema(dsBelfray, SchemaType.Source, "BookingItem");
             daBookingItem.Fill(dsBelfray, "BookingItem");
 
             //SQL For Payment Type

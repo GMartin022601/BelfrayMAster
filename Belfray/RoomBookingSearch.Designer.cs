@@ -37,6 +37,9 @@
             this.lblSearchCustomerName = new System.Windows.Forms.Label();
             this.txtSearchBookingNo = new System.Windows.Forms.TextBox();
             this.lblSearchBookingNo = new System.Windows.Forms.Label();
+            this.picSearch = new System.Windows.Forms.PictureBox();
+            this.lblSearchCustomerNo = new System.Windows.Forms.Label();
+            this.txtSearchCustomerNo = new System.Windows.Forms.TextBox();
             this.pnlBooking = new System.Windows.Forms.Panel();
             this.lblRooms = new System.Windows.Forms.Label();
             this.lblRoom = new System.Windows.Forms.Label();
@@ -75,16 +78,13 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblCustNo = new System.Windows.Forms.Label();
             this.lblCustNum = new System.Windows.Forms.Label();
-            this.picSearch = new System.Windows.Forms.PictureBox();
-            this.lblSearchCustomerNo = new System.Windows.Forms.Label();
-            this.txtSearchCustomerNo = new System.Windows.Forms.TextBox();
             this.dgvCustomerSearch = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookingSearch)).BeginInit();
             this.pnlSearchMethod.SuspendLayout();
             this.pnlSearchDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.pnlBooking.SuspendLayout();
             this.pnlCustomer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerSearch)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,7 +141,6 @@
             this.pnlSearchDetails.Controls.Add(this.picSearch);
             this.pnlSearchDetails.Controls.Add(this.lblSearchCustomerNo);
             this.pnlSearchDetails.Controls.Add(this.txtSearchCustomerNo);
-            this.pnlSearchDetails.Controls.Add(this.pnlBooking);
             this.pnlSearchDetails.Controls.Add(this.pnlCustomer);
             this.pnlSearchDetails.Location = new System.Drawing.Point(763, 70);
             this.pnlSearchDetails.Name = "pnlSearchDetails";
@@ -188,6 +187,41 @@
             this.lblSearchBookingNo.Text = "SEARCH BOOKING NO:";
             this.lblSearchBookingNo.Visible = false;
             // 
+            // picSearch
+            // 
+            this.picSearch.Enabled = false;
+            this.picSearch.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSearch.Location = new System.Drawing.Point(349, 234);
+            this.picSearch.Name = "picSearch";
+            this.picSearch.Size = new System.Drawing.Size(40, 40);
+            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSearch.TabIndex = 63;
+            this.picSearch.TabStop = false;
+            this.picSearch.Visible = false;
+            this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
+            this.picSearch.MouseEnter += new System.EventHandler(this.picSearch_MouseEnter);
+            this.picSearch.MouseLeave += new System.EventHandler(this.picSearch_MouseLeave);
+            // 
+            // lblSearchCustomerNo
+            // 
+            this.lblSearchCustomerNo.AutoSize = true;
+            this.lblSearchCustomerNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchCustomerNo.Location = new System.Drawing.Point(279, 8);
+            this.lblSearchCustomerNo.Name = "lblSearchCustomerNo";
+            this.lblSearchCustomerNo.Size = new System.Drawing.Size(152, 15);
+            this.lblSearchCustomerNo.TabIndex = 116;
+            this.lblSearchCustomerNo.Text = "SEARCH CUSTOMER NO:";
+            this.lblSearchCustomerNo.Visible = false;
+            // 
+            // txtSearchCustomerNo
+            // 
+            this.txtSearchCustomerNo.Location = new System.Drawing.Point(282, 26);
+            this.txtSearchCustomerNo.Name = "txtSearchCustomerNo";
+            this.txtSearchCustomerNo.Size = new System.Drawing.Size(166, 20);
+            this.txtSearchCustomerNo.TabIndex = 117;
+            this.txtSearchCustomerNo.Visible = false;
+            this.txtSearchCustomerNo.TextChanged += new System.EventHandler(this.txtSearchCustomerNo_TextChanged);
+            // 
             // pnlBooking
             // 
             this.pnlBooking.Controls.Add(this.lblRooms);
@@ -208,7 +242,7 @@
             this.pnlBooking.Controls.Add(this.lblArrive);
             this.pnlBooking.Controls.Add(this.lblBookingNo);
             this.pnlBooking.Controls.Add(this.lblBookingNum);
-            this.pnlBooking.Location = new System.Drawing.Point(3, 3);
+            this.pnlBooking.Location = new System.Drawing.Point(0, 0);
             this.pnlBooking.Name = "pnlBooking";
             this.pnlBooking.Size = new System.Drawing.Size(270, 272);
             this.pnlBooking.TabIndex = 112;
@@ -403,6 +437,7 @@
             this.pnlCustomer.Controls.Add(this.lblCustStreet);
             this.pnlCustomer.Controls.Add(this.lblCustSurname);
             this.pnlCustomer.Controls.Add(this.lblCustForename);
+            this.pnlCustomer.Controls.Add(this.pnlBooking);
             this.pnlCustomer.Controls.Add(this.lblCustTitle);
             this.pnlCustomer.Controls.Add(this.lblPhoneNo);
             this.pnlCustomer.Controls.Add(this.lblPostcode);
@@ -600,41 +635,6 @@
             this.lblCustNum.TabIndex = 86;
             this.lblCustNum.Text = "CUSTOMER NO:";
             // 
-            // picSearch
-            // 
-            this.picSearch.Enabled = false;
-            this.picSearch.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSearch.Location = new System.Drawing.Point(349, 234);
-            this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(40, 40);
-            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSearch.TabIndex = 63;
-            this.picSearch.TabStop = false;
-            this.picSearch.Visible = false;
-            this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
-            this.picSearch.MouseEnter += new System.EventHandler(this.picSearch_MouseEnter);
-            this.picSearch.MouseLeave += new System.EventHandler(this.picSearch_MouseLeave);
-            // 
-            // lblSearchCustomerNo
-            // 
-            this.lblSearchCustomerNo.AutoSize = true;
-            this.lblSearchCustomerNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchCustomerNo.Location = new System.Drawing.Point(279, 8);
-            this.lblSearchCustomerNo.Name = "lblSearchCustomerNo";
-            this.lblSearchCustomerNo.Size = new System.Drawing.Size(152, 15);
-            this.lblSearchCustomerNo.TabIndex = 116;
-            this.lblSearchCustomerNo.Text = "SEARCH CUSTOMER NO:";
-            this.lblSearchCustomerNo.Visible = false;
-            // 
-            // txtSearchCustomerNo
-            // 
-            this.txtSearchCustomerNo.Location = new System.Drawing.Point(282, 26);
-            this.txtSearchCustomerNo.Name = "txtSearchCustomerNo";
-            this.txtSearchCustomerNo.Size = new System.Drawing.Size(166, 20);
-            this.txtSearchCustomerNo.TabIndex = 117;
-            this.txtSearchCustomerNo.Visible = false;
-            this.txtSearchCustomerNo.TextChanged += new System.EventHandler(this.txtSearchCustomerNo_TextChanged);
-            // 
             // dgvCustomerSearch
             // 
             this.dgvCustomerSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -663,11 +663,11 @@
             this.pnlSearchMethod.ResumeLayout(false);
             this.pnlSearchDetails.ResumeLayout(false);
             this.pnlSearchDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             this.pnlBooking.ResumeLayout(false);
             this.pnlBooking.PerformLayout();
             this.pnlCustomer.ResumeLayout(false);
             this.pnlCustomer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerSearch)).EndInit();
             this.ResumeLayout(false);
 

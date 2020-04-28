@@ -157,30 +157,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("101"))
+                if (drRoom["itemNo"].ToString().Substring(0,2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("101"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -265,30 +268,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("102"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("102"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -373,30 +379,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("103"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("103"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -481,30 +490,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("104"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("104"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -589,30 +601,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("105"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("105"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -697,30 +712,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("106"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("106"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -805,30 +823,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("107"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("107"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -913,30 +934,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("108"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("108"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1021,30 +1045,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("109"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("109"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1129,30 +1156,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("110"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("110"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1237,30 +1267,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("111"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 114);
-                    string roomDescLine2 = roomDesc.Substring(114, roomDesc.Length - 114);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("111"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 114);
+                        string roomDescLine2 = roomDesc.Substring(114, roomDesc.Length - 114);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1345,30 +1378,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("112"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 114);
-                    string roomDescLine2 = roomDesc.Substring(114, roomDesc.Length - 114);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("112"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 114);
+                        string roomDescLine2 = roomDesc.Substring(114, roomDesc.Length - 114);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1453,30 +1489,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("113"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("113"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1561,30 +1600,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("114"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("114"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1669,30 +1711,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("115"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("115"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1777,30 +1822,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("116"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 113);
-                    string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("116"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 113);
+                        string roomDescLine2 = roomDesc.Substring(113, roomDesc.Length - 113);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1885,30 +1933,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("117"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 109);
-                    string roomDescLine2 = roomDesc.Substring(109, roomDesc.Length - 109);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("117"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 109);
+                        string roomDescLine2 = roomDesc.Substring(109, roomDesc.Length - 109);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -1993,30 +2044,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("118"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 109);
-                    string roomDescLine2 = roomDesc.Substring(109, roomDesc.Length - 109);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("118"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 109);
+                        string roomDescLine2 = roomDesc.Substring(109, roomDesc.Length - 109);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -2101,30 +2155,33 @@ namespace Belfray
 
             foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
             {
-                room = drRoom["itemNo"].ToString().Substring(2);
-
-                if (room.Equals("119"))
+                if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                 {
-                    int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
-                    int last = drRoom["itemDesc"].ToString().Length - indexDash;
-                    string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
-                    string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
-                    string roomDescLine1 = roomDesc.Substring(0, 112);
-                    string roomDescLine2 = roomDesc.Substring(112, roomDesc.Length - 112);
+                    room = drRoom["itemNo"].ToString().Substring(2);
 
-                    decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                    TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                    int days = ts.Days + 1;
-                    decimal total = price * days;
+                    if (room.Equals("119"))
+                    {
+                        int indexDash = drRoom["itemDesc"].ToString().IndexOf("-") + 1;
+                        int last = drRoom["itemDesc"].ToString().Length - indexDash;
+                        string roomType = drRoom["itemDesc"].ToString().Substring(0, drRoom["itemDesc"].ToString().IndexOf(" "));
+                        string roomDesc = drRoom["itemDesc"].ToString().Substring(indexDash, last);
+                        string roomDescLine1 = roomDesc.Substring(0, 112);
+                        string roomDescLine2 = roomDesc.Substring(112, roomDesc.Length - 112);
 
-                    lblRoomNo.Text = room;
-                    lblRoomType.Text = roomType;
-                    lblRoomCapacity.Text = drRoom["capacity"].ToString();
-                    lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
-                    lblPPDay.Text = "£" + decimal.Round(price, 2);
-                    lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                        decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                        TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                        int days = ts.Days + 1;
+                        decimal total = price * days;
 
-                    break;
+                        lblRoomNo.Text = room;
+                        lblRoomType.Text = roomType;
+                        lblRoomCapacity.Text = drRoom["capacity"].ToString();
+                        lblRoomDesc.Text = roomDescLine1 + "\n" + roomDescLine2; ;
+                        lblPPDay.Text = "£" + decimal.Round(price, 2);
+                        lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+
+                        break;
+                    }
                 }
             }
         }
@@ -2215,7 +2272,7 @@ namespace Belfray
                     DateTime now = DateTime.Now + ts;
                     //Sets Date Time Picker to today for check in and 1 day later for check out
                     dtpCheckInDate.Value = now;
-                    dtpCheckOutDate.Value = dtpCheckOutDate.Value.AddDays(1);
+                    dtpCheckOutDate.Value = dtpCheckInDate.Value.AddDays(1);
 
                     Globals.roomLoad = false;
                 }
@@ -2359,17 +2416,20 @@ namespace Belfray
                 {
                     foreach (DataRow drRoom in dsBelfray.Tables["Item"].Rows)
                     {
-                        string newRoom = drRoom["itemNo"].ToString().Substring(2);
-
-                        if (newRoom.Equals(room))
+                        if (drRoom["itemNo"].ToString().Substring(0, 2).Equals("RM"))
                         {
-                            decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
-                            TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
-                            TimeSpan add = new TimeSpan(0,0,0,1);
-                            int days = ts.Add(add).Days;
-                            decimal total = price * days;
+                            string newRoom = drRoom["itemNo"].ToString().Substring(2);
 
-                            lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                            if (newRoom.Equals(room))
+                            {
+                                decimal price = Convert.ToDecimal(drRoom["itemPrice"]);
+                                TimeSpan ts = dtpCheckOutDate.Value - dtpCheckInDate.Value;
+                                TimeSpan add = new TimeSpan(0, 0, 0, 1);
+                                int days = ts.Add(add).Days;
+                                decimal total = price * days;
+
+                                lblTotalPrice.Text = "£" + decimal.Round(total, 2);
+                            }
                         }
                     }
                 }
