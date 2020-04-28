@@ -148,6 +148,12 @@
     <Compile Include="RoomSelect.Designer.cs">
       <DependentUpon>RoomSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoomServiceAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomServiceAdd.Designer.cs">
+      <DependentUpon>RoomServiceAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoomServiceDelete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomSelect.resx">
       <DependentUpon>RoomSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomServiceAdd.resx">
+      <DependentUpon>RoomServiceAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoomServiceDelete.resx">
       <DependentUpon>RoomServiceDelete.cs</DependentUpon>
