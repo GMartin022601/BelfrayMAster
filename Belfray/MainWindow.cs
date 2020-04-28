@@ -468,6 +468,12 @@ namespace Belfray
                     frm.Show();
                     break;
                 case 2: //Room Stock
+                    RoomServiceAdd frm2 = new RoomServiceAdd();
+                    frm2.TopLevel = false;
+                    frm2.FormBorderStyle = FormBorderStyle.None;
+                    frm2.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm2);
+                    frm2.Show();
                     break;
                 case 3: //Table Booking
                     pnlTableSelect.BringToFront();
