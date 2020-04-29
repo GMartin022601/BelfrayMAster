@@ -294,9 +294,9 @@ namespace Belfray
             }
 
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -467,11 +467,12 @@ namespace Belfray
                     pnlRoomSelect.Controls.Add(frm);
                     frm.Show();
                     break;
-                case 2: //Room Stock
+                case 2: //Room Service
                     RoomServiceAdd frm2 = new RoomServiceAdd();
                     frm2.TopLevel = false;
                     frm2.FormBorderStyle = FormBorderStyle.None;
                     frm2.WindowState = FormWindowState.Maximized;
+                    frm2.FormClosed += RoomServiceAdd_Closed;
                     pnlMainBody.Controls.Add(frm2);
                     frm2.Show();
                     break;
@@ -539,7 +540,14 @@ namespace Belfray
                         frm.Show();
                     }
                     break;
-                case 2: //Room Stock
+                case 2: //Room Service
+                    RoomServiceEdit frm2 = new RoomServiceEdit();
+                    frm2.TopLevel = false;
+                    frm2.FormBorderStyle = FormBorderStyle.None;
+                    frm2.WindowState = FormWindowState.Maximized;
+                    frm2.FormClosed += RoomServiceEdit_Closed;
+                    pnlMainBody.Controls.Add(frm2);
+                    frm2.Show();
                     break;
                 case 3: //Table Booking
                     if (Globals.bookSel == null)
@@ -616,7 +624,14 @@ namespace Belfray
                     pnlMainBody.Controls.Add(frm);
                     frm.Show();
                     break;
-                case 2: //Room Stock
+                case 2: //Room Service
+                    RoomServiceDelete frm2 = new RoomServiceDelete();
+                    frm2.TopLevel = false;
+                    frm2.FormBorderStyle = FormBorderStyle.None;
+                    frm2.WindowState = FormWindowState.Maximized;
+                    frm2.FormClosed += RoomServiceDel_Closed;
+                    pnlMainBody.Controls.Add(frm2);
+                    frm2.Show();
                     break;
                 case 3: //Table Booking
                     break;
@@ -781,6 +796,24 @@ namespace Belfray
                 pnlRoomSelect.Controls.Add(frm);
                 frm.Show();
             }
+        }
+
+        //Room Booking Edit Close
+        private void RoomServiceAdd_Closed(object sender, FormClosedEventArgs e)
+        {
+            picTabDisplay_Click(sender, e);
+        }
+
+        //Room Booking Edit Close
+        private void RoomServiceEdit_Closed(object sender, FormClosedEventArgs e)
+        {
+            picTabDisplay_Click(sender, e);
+        }
+
+        //Room Booking Delete Close
+        private void RoomServiceDel_Closed(object sender, FormClosedEventArgs e)
+        {
+            picTabDisplay_Click(sender, e);
         }
     }
 }
