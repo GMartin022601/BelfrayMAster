@@ -1301,37 +1301,34 @@ namespace Belfray
                     string key2 = lblTblNoSelDisplay.Text;
 
                     drBookingItem = dsBelfray.Tables["BookingItem"].Rows.Find(new object[] { key1, key2 });
-                    //drBookingItem = dsBelfray.Tables["BookingItem"].Rows.Find(key2);
 
-
-                    //Globals.tableSel.ToString());
-
-                    //foreach (DataRow drBookingItem in dsBelfray.Tables["BookingItem"].Rows)
-                    //{
                     if (drBookingItem["bookingNo"].Equals(key1) && drBookingItem["itemNo"].Equals(key2));
                                                                                                                //((Globals.tableSel.ToString())))
                         {
                             drBookingItem.Delete();
-                            //Sum of party size
-                            int currentTableSize = partySize2; //Convert.ToInt32(numPartySize.Value);
-                            numPartySize.Value = currentTableSize - tableSize;
-                            MessageBox.Show("Table has been removed from this booking.");
                         }
-                   // }
-                    
-                        daBookingItem.Update(dsBelfray, "BookingItem");
+                    MessageBox.Show("Table has been removed from this booking.");
+                    daBookingItem.Update(dsBelfray, "BookingItem");
 
-                        //drBookingItem.Delete();
-                        //daBooking.Update(dsBelfray, "Booking");
-                        //drBookingItem.Delete();
-                        //daBookingItem.Update(dsBelfray, "BookingItem");
-                        //MessageBox.Show("Table: " + temp + " Successfully removed from Booking!");
                     dgvBooking.Rows.Remove(dgvBooking.Rows[tableNoSelected]);
                     lblTblNoSelDisplay.Text = "-";
                     dgvBooking.ClearSelection();
+
                     //Sum of party size
-                    //int currentTableSize = partySize2; //Convert.ToInt32(numPartySize.Value);
-                   //numPartySize.Value = currentTableSize - tableSize;
+                    int currentTableSize = Convert.ToInt32(numPartySize.Value);
+                    string search = "TB00";
+                    string search2 = "TB01";
+                    string search3 = "TB02";
+
+                    if (lblTblNoSelDisplay.Text.Contains(search) )
+                    {
+                        tableSize = 2;
+                    }
+                    if (lblTblNoSelDisplay.Text.Contains(search2) || lblTblNoSelDisplay.Text.Contains(search3) || lblTblNoSelDisplay.Text == "TB008" || lblTblNoSelDisplay.Text == "TB009")
+                    {
+                        tableSize = 4;
+                    }
+                    numPartySize.Value = currentTableSize - tableSize;
 
                     if (numPartySize.Value == 0)
                     {
