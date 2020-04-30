@@ -967,8 +967,8 @@ namespace Belfray
         {
             numPartySize.Value = 2;
             tableNoSelected = 2;
-            lblTableNo.Text = "002";
-            lblTableNumDisplay.Text = "2";
+            lblTableNo.Text = "TB002";
+            lblTableNumDisplay.Text = "TB002";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
         }
@@ -977,8 +977,8 @@ namespace Belfray
         {
             numPartySize.Value = 2;
             tableNoSelected = 3;
-            lblTableNo.Text = "3";
-            lblTableNumDisplay.Text = "3";
+            lblTableNo.Text = "TB003";
+            lblTableNumDisplay.Text = "TB003";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
         }
@@ -987,8 +987,8 @@ namespace Belfray
         {
             numPartySize.Value = 2;
             tableNoSelected = 4;
-            lblTableNo.Text = "4";
-            lblTableNumDisplay.Text = "4";
+            lblTableNo.Text = "TB004";
+            lblTableNumDisplay.Text = "TB004";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
         }
@@ -997,8 +997,8 @@ namespace Belfray
         {
             numPartySize.Value = 2;
             tableNoSelected = 5;
-            lblTableNo.Text = "5";
-            lblTableNumDisplay.Text = "5";
+            lblTableNo.Text = "TB005";
+            lblTableNumDisplay.Text = "TB005";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
         }
@@ -1007,8 +1007,8 @@ namespace Belfray
         {
             numPartySize.Value = 2;
             tableNoSelected = 6;
-            lblTableNo.Text = "6";
-            lblTableNumDisplay.Text = "6";
+            lblTableNo.Text = "TB006";
+            lblTableNumDisplay.Text = "TB006";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
         }
@@ -1017,8 +1017,8 @@ namespace Belfray
         {
             numPartySize.Value = 2;
             tableNoSelected = 7;
-            lblTableNo.Text = "7";
-            lblTableNumDisplay.Text = "7";
+            lblTableNo.Text = "TB007";
+            lblTableNumDisplay.Text = "TB007";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
         }
@@ -1027,8 +1027,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 8;
-            lblTableNo.Text = "8";
-            lblTableNumDisplay.Text = "8";
+            lblTableNo.Text = "TB008";
+            lblTableNumDisplay.Text = "TB008";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1037,8 +1037,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 9;
-            lblTableNo.Text = "9";
-            lblTableNumDisplay.Text = "9";
+            lblTableNo.Text = "TB009";
+            lblTableNumDisplay.Text = "TB009";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1047,8 +1047,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 10;
-            lblTableNo.Text = "10";
-            lblTableNumDisplay.Text = "10";
+            lblTableNo.Text = "TB010";
+            lblTableNumDisplay.Text = "TB010";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1057,8 +1057,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 11;
-            lblTableNo.Text = "11";
-            lblTableNumDisplay.Text = "11";
+            lblTableNo.Text = "TB011";
+            lblTableNumDisplay.Text = "TB011";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1067,8 +1067,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 12;
-            lblTableNo.Text = "12";
-            lblTableNumDisplay.Text = "12";
+            lblTableNo.Text = "TB012";
+            lblTableNumDisplay.Text = "TB012";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1077,8 +1077,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 13;
-            lblTableNo.Text = "13";
-            lblTableNumDisplay.Text = "13";
+            lblTableNo.Text = "TB013";
+            lblTableNumDisplay.Text = "TB013";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1087,8 +1087,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 14;
-            lblTableNo.Text = "14";
-            lblTableNumDisplay.Text = "14";
+            lblTableNo.Text = "TB014";
+            lblTableNumDisplay.Text = "TB014";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1097,8 +1097,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 15;
-            lblTableNo.Text = "15";
-            lblTableNumDisplay.Text = "15";
+            lblTableNo.Text = "TB015";
+            lblTableNumDisplay.Text = "TB015";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1107,8 +1107,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 16;
-            lblTableNo.Text = "16";
-            lblTableNumDisplay.Text = "16";
+            lblTableNo.Text = "TB016";
+            lblTableNumDisplay.Text = "TB016";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1117,8 +1117,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 17;
-            lblTableNo.Text = "17";
-            lblTableNumDisplay.Text = "17";
+            lblTableNo.Text = "TB017";
+            lblTableNumDisplay.Text = "TB017";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1127,8 +1127,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 18;
-            lblTableNo.Text = "18";
-            lblTableNumDisplay.Text = "18";
+            lblTableNo.Text = "TB018";
+            lblTableNumDisplay.Text = "TB018";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1137,8 +1137,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 19;
-            lblTableNo.Text = "19";
-            lblTableNumDisplay.Text = "19";
+            lblTableNo.Text = "TB019";
+            lblTableNumDisplay.Text = "TB019";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1147,8 +1147,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 20;
-            lblTableNo.Text = "20";
-            lblTableNumDisplay.Text = "20";
+            lblTableNo.Text = "TB020";
+            lblTableNumDisplay.Text = "TB020";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1157,8 +1157,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 21;
-            lblTableNo.Text = "21";
-            lblTableNumDisplay.Text = "21";
+            lblTableNo.Text = "TB021";
+            lblTableNumDisplay.Text = "TB021";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1167,8 +1167,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 22;
-            lblTableNo.Text = "22";
-            lblTableNumDisplay.Text = "22";
+            lblTableNo.Text = "TB022";
+            lblTableNumDisplay.Text = "TB022";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1177,8 +1177,8 @@ namespace Belfray
         {
             numPartySize.Value = 4;
             tableNoSelected = 23;
-            lblTableNo.Text = "23";
-            lblTableNumDisplay.Text = "23";
+            lblTableNo.Text = "TB023";
+            lblTableNumDisplay.Text = "TB023";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "4";
         }
@@ -1394,14 +1394,15 @@ namespace Belfray
                             {
                                 drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
                                 drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
-                                drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
-                                drBookingItem["itemQty"] = DBNull.Value;
+                                drBookingItem["itemNo"] = dgvBooking.Rows[x].Cells[1].Value.ToString();
+                            //"TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+                            drBookingItem["itemQty"] = DBNull.Value;
                                 dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
                             }
 
                             daBookingItem.Update(dsBelfray, "BookingItem");
                         }
-                        MessageBox.Show("Booking Addedc");
+                        MessageBox.Show("Booking Added");
                     }
                     catch (Exception ex)
                     {
@@ -1494,8 +1495,9 @@ namespace Belfray
                             {
                                 drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
                                 drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
-                                drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
-                                drBookingItem["itemQty"] = DBNull.Value;
+                                drBookingItem["itemNo"] = dgvBooking.Rows[x].Cells[1].Value.ToString();
+                            //"TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+                            drBookingItem["itemQty"] = DBNull.Value;
                                 dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
                             }
 
@@ -2351,8 +2353,8 @@ namespace Belfray
             //pnlCustomerDetails.Enabled = true;
             numPartySize.Value = 2;
             tableNoSelected = 1;
-            lblTableNo.Text = "001";
-            lblTableNumDisplay.Text = "1";
+            lblTableNo.Text = "TB001";
+            lblTableNumDisplay.Text = "TB001";
             lblSeatsAvail.Text = "Yes/No";
             lblTableCapacity.Text = "2";
         }
