@@ -14,16 +14,16 @@ namespace Belfray
 {
     public partial class TableSelectEdit : Form
     {
-        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem, sqlItem, sqlBreakfast;
+        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem, sqlItem, sqlBreakfast, sqlBookingDetails;
         String tableNumber = "", test = "";
         bool formLoad = true;
         bool getInfo, bookingInfo, avail, itemSelected;
         bool newCustomer, newBooking, tableSelected;
         int tableNoSelected, partySize, partySize2, tableSize, itemNoSelected;
-        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem, daItem, daBreakfast;// daSupplier;
+        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem, daItem, daBreakfast, daBDetails;// daSupplier;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBBookingItem, cmdBItem;
-        DataRow drCustomer, drBooking, drBookingType, drPaymentType, drBookingItem, drItem;
+        SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBBookingItem, cmdBItem, cmdBBDetails;
+        DataRow drCustomer, drBooking, drBookingType, drPaymentType, drBookingItem, drItem, drBookingDetails;
 
         //GetProductNumber
         private void getCustNum(int noRows)
@@ -793,12 +793,19 @@ namespace Belfray
 
         private void picFood_Click(object sender, EventArgs e)
         {
-            pnlTableSelect.SendToBack();
-            pnlFloorPlan.Visible = false;
-            pnlFloorPlan.SendToBack();
-            pnlMenuItems.Visible = true;
-            pnlMenuItems.BringToFront();
-            LoadMenu();
+            if (tableSelected == false)
+            {
+                MessageBox.Show("Please select a table.");
+            }
+            else
+            {
+                pnlTableSelect.SendToBack();
+                pnlFloorPlan.Visible = false;
+                pnlFloorPlan.SendToBack();
+                pnlMenuItems.Visible = true;
+                pnlMenuItems.BringToFront();
+                LoadMenu();
+            }
         }
 
         private void dgvMenuItems_Click(object sender, EventArgs e)
@@ -817,17 +824,18 @@ namespace Belfray
             }
         }
 
+        public void ClearLabels()
+        {
+            lblItemSelected.Text = "";
+            lblPriceSelItem.Text = "";
+            lblItemNoDIsplay.Text = "";
+
+        }
         private void picAddtoTable_Click(object sender, EventArgs e)
         {
-            dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, lblPriceSelItem.Text);
-
-            ////Sum Bill
-            //double sum = 0.00;
-            //for (int i = 0; i < dgvTableItems.Rows.Count; ++i)
-            //{
-            //    sum += Convert.ToDouble(dgvTableItems.Rows[i].Cells[2].Value);
-            //}
-            //lblCurrentBillDisplay.Text = sum.ToString();
+            dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
+            numQTY.Value = 0;
+            ClearLabels();
         }
 
         private void picSaveBooking_Click(object sender, EventArgs e)
@@ -1048,6 +1056,31 @@ namespace Belfray
 
         private void picAddToBill_Click(object sender, EventArgs e)
         {
+            //Try Adding
+            try
+            {
+                int rowCount = dgvTableItems.RowCount;
+
+                for (int x = 0; x < rowCount - 1; x++)
+                {
+                    drBookingDetails = dsBelfray.Tables["BookingDetails"].NewRow();
+                    drBookingDetails["bookingNo"] = lblBookingNo.Text;
+                    drBookingDetails["itemNo"] = lblTableSelected.Text;    
+                    drBookingDetails["bookingItemNo"] = dgvTableItems.Rows[x].Cells[0].Value.ToString();
+                    drBookingDetails["bookingItemQty"] = Convert.ToInt32(dgvTableItems.Rows[x].Cells[2].Value.ToString());
+                    dsBelfray.Tables["BookingDetails"].Rows.Add(drBookingDetails);
+                }
+
+                daBDetails.Update(dsBelfray, "BookingDetails");
+
+                MessageBox.Show("Items added to table.");
+                dgvTableItems.Rows.Clear();
+                dgvTableItems.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
             //int tableRows = dgvTableItems.RowCount - 1;
 
             //for (int x = 0; x < tableRows; x++)
@@ -1071,6 +1104,24 @@ namespace Belfray
 
             //daBookingItem.Update(dsBelfray, "BookingItem");
             //MessageBox.Show("Booking Added");
+        }
+
+        private void dgvTableItems_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                e.CellStyle.Format = "N2";
+            }
+        }
+
+        private void picTables_Click(object sender, EventArgs e)
+        {
+            pnlTableSelect.BringToFront();
+            pnlFloorPlan.Visible = true;
+            pnlFloorPlan.BringToFront();
+            pnlMenuItems.Visible = false;
+            pnlMenuItems.SendToBack();
+            LoadMenu();
         }
 
         private void picRemoveItem_Click(object sender, EventArgs e)
@@ -1115,12 +1166,19 @@ namespace Belfray
 
         private void picDrinks_Click(object sender, EventArgs e)
         {
-            pnlTableSelect.SendToBack();
-            pnlFloorPlan.Visible = false;
-            pnlFloorPlan.SendToBack();
-            pnlMenuItems.Visible = true;
-            pnlMenuItems.BringToFront();
-            LoadMenu();
+            if (tableSelected == false)
+            {
+                MessageBox.Show("Please select a table.");
+            }
+            else
+            {
+                pnlTableSelect.SendToBack();
+                pnlFloorPlan.Visible = false;
+                pnlFloorPlan.SendToBack();
+                pnlMenuItems.Visible = true;
+                pnlMenuItems.BringToFront();
+                LoadMenu();
+            }
         }
 
         private void cbMenuSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -1311,7 +1369,8 @@ namespace Belfray
                     daBookingItem.Update(dsBelfray, "BookingItem");
 
                     dgvBooking.Rows.Remove(dgvBooking.Rows[tableNoSelected]);
-                    lblTblNoSelDisplay.Text = "-";
+                    lblTblNoSelDisplay.Text = "";
+                    lblTableNumDisplay.Text = "";
                     dgvBooking.ClearSelection();
 
                     //Sum of party size
@@ -1328,6 +1387,7 @@ namespace Belfray
                     {
                         tableSize = 4;
                     }
+                    //Update Numparty Size
                     numPartySize.Value = currentTableSize - tableSize;
 
                     if (numPartySize.Value == 0)
@@ -1802,6 +1862,12 @@ namespace Belfray
             cmdBItem = new SqlCommandBuilder(daItem);
             daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
             daItem.Fill(dsBelfray, "Item");
+            //SQL for BookingDetails
+            sqlBookingDetails = @"select * from BookingDetails";
+            daBDetails = new SqlDataAdapter(sqlBookingDetails, connStr);
+            cmdBBDetails = new SqlCommandBuilder(daBDetails);
+            daBDetails.FillSchema(dsBelfray, SchemaType.Source, "BookingDetails");
+            daBDetails.Fill(dsBelfray, "BookingDetails");
             //cbPayment type
             cbPaymentTyp.DataSource = dsBelfray.Tables["Payment"];
             cbPaymentTyp.ValueMember = "paymentTypeID";
