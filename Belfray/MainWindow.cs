@@ -479,7 +479,6 @@ namespace Belfray
                 case 3: //Table Booking
                     pnlTableSelect.BringToFront();
                     pnlTableSelect.Visible = true;
-
                     TableSelect form = new TableSelect();
                     form.TopLevel = false;
                     form.FormBorderStyle = FormBorderStyle.None;
@@ -563,7 +562,7 @@ namespace Belfray
                         form.TopLevel = false;
                         form.FormBorderStyle = FormBorderStyle.None;
                         form.WindowState = FormWindowState.Maximized;
-                        form.FormClosed += TableSelect_Closed;
+                        form.FormClosed += TableSelectEdit_Closed;
                         pnlTableSelect.Controls.Add(form);
                         form.Show();
                         break;
@@ -722,14 +721,27 @@ namespace Belfray
         //Table Select Close
         private void TableSelect_Closed(object sender, FormClosedEventArgs e)
         {
-            //pnlTableSelect.Visible = false;
+            pnlTableSelect.Visible = false;
 
-            //TableBookingAdd frm = new TableBookingAdd();
-            //frm.TopLevel = false;
-            //frm.FormBorderStyle = FormBorderStyle.None;
-            //frm.WindowState = FormWindowState.Maximized;
-            //pnlMainBody.Controls.Add(frm);
-            //frm.Show();
+            TableBookingDisplay frm = new TableBookingDisplay();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.WindowState = FormWindowState.Maximized;
+            pnlMainBody.Controls.Add(frm);
+            frm.Show();
+            TabVisible();
+        }
+        private void TableSelectEdit_Closed(object sender, FormClosedEventArgs e)
+        {
+            pnlTableSelect.Visible = false;
+
+            TableBookingDisplay frm = new TableBookingDisplay();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.WindowState = FormWindowState.Maximized;
+            pnlMainBody.Controls.Add(frm);
+            frm.Show();
+            TabVisible();
         }
 
         //Room Booking Add Closing
