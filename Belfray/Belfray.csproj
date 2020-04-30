@@ -166,6 +166,12 @@
     <Compile Include="RoomServiceDisplay.Designer.cs">
       <DependentUpon>RoomServiceDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoomServiceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomServiceEdit.Designer.cs">
+      <DependentUpon>RoomServiceEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoomServiceSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomServiceDisplay.resx">
       <DependentUpon>RoomServiceDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomServiceEdit.resx">
+      <DependentUpon>RoomServiceEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoomServiceSearch.resx">
       <DependentUpon>RoomServiceSearch.cs</DependentUpon>
@@ -521,6 +530,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RevealPW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,7 +32,26 @@
             this.lblSearchRoomNo = new System.Windows.Forms.Label();
             this.txtSearchRoomNo = new System.Windows.Forms.TextBox();
             this.pnlSearchDetails = new System.Windows.Forms.Panel();
+            this.pnlItem = new System.Windows.Forms.Panel();
+            this.lblItemTypeDescription = new System.Windows.Forms.Label();
+            this.lblItemTypeDesc = new System.Windows.Forms.Label();
+            this.lblQty = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblItemNo = new System.Windows.Forms.Label();
+            this.lblItemBookNo = new System.Windows.Forms.Label();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.lblCost = new System.Windows.Forms.Label();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.lblItemNum = new System.Windows.Forms.Label();
+            this.lblItemBookNum = new System.Windows.Forms.Label();
+            this.lblRoomNo = new System.Windows.Forms.Label();
+            this.lblRoomNum = new System.Windows.Forms.Label();
             this.pnlRoom = new System.Windows.Forms.Panel();
+            this.lblCusSurname = new System.Windows.Forms.Label();
+            this.lblCusForename = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.lblForename = new System.Windows.Forms.Label();
             this.lblRooms = new System.Windows.Forms.Label();
             this.lblRoom = new System.Windows.Forms.Label();
             this.lblBookingPartySize = new System.Windows.Forms.Label();
@@ -57,31 +76,12 @@
             this.picSearch = new System.Windows.Forms.PictureBox();
             this.dgvRoomSearch = new System.Windows.Forms.DataGridView();
             this.dgvItemSearch = new System.Windows.Forms.DataGridView();
-            this.lblCusSurname = new System.Windows.Forms.Label();
-            this.lblCusForename = new System.Windows.Forms.Label();
-            this.lblSurname = new System.Windows.Forms.Label();
-            this.lblForename = new System.Windows.Forms.Label();
-            this.pnlItem = new System.Windows.Forms.Panel();
-            this.lblItemTypeDescription = new System.Windows.Forms.Label();
-            this.lblItemTypeDesc = new System.Windows.Forms.Label();
-            this.lblQty = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.lblItemNo = new System.Windows.Forms.Label();
-            this.lblItemBookNo = new System.Windows.Forms.Label();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.lblCost = new System.Windows.Forms.Label();
-            this.lblDesc = new System.Windows.Forms.Label();
-            this.lblItemNum = new System.Windows.Forms.Label();
-            this.lblItemBookNum = new System.Windows.Forms.Label();
-            this.lblRoomNo = new System.Windows.Forms.Label();
-            this.lblRoomNum = new System.Windows.Forms.Label();
             this.pnlSearchDetails.SuspendLayout();
+            this.pnlItem.SuspendLayout();
             this.pnlRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemSearch)).BeginInit();
-            this.pnlItem.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSearchCustomerName
@@ -129,6 +129,168 @@
             this.pnlSearchDetails.Size = new System.Drawing.Size(455, 347);
             this.pnlSearchDetails.TabIndex = 6;
             // 
+            // pnlItem
+            // 
+            this.pnlItem.Controls.Add(this.lblItemTypeDescription);
+            this.pnlItem.Controls.Add(this.lblItemTypeDesc);
+            this.pnlItem.Controls.Add(this.lblQty);
+            this.pnlItem.Controls.Add(this.lblPrice);
+            this.pnlItem.Controls.Add(this.lblDescription);
+            this.pnlItem.Controls.Add(this.lblItemNo);
+            this.pnlItem.Controls.Add(this.lblItemBookNo);
+            this.pnlItem.Controls.Add(this.lblQuantity);
+            this.pnlItem.Controls.Add(this.lblCost);
+            this.pnlItem.Controls.Add(this.lblDesc);
+            this.pnlItem.Controls.Add(this.lblItemNum);
+            this.pnlItem.Controls.Add(this.lblItemBookNum);
+            this.pnlItem.Controls.Add(this.lblRoomNo);
+            this.pnlItem.Controls.Add(this.lblRoomNum);
+            this.pnlItem.Location = new System.Drawing.Point(6, 3);
+            this.pnlItem.Name = "pnlItem";
+            this.pnlItem.Size = new System.Drawing.Size(270, 341);
+            this.pnlItem.TabIndex = 123;
+            this.pnlItem.Visible = false;
+            // 
+            // lblItemTypeDescription
+            // 
+            this.lblItemTypeDescription.AutoSize = true;
+            this.lblItemTypeDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemTypeDescription.Location = new System.Drawing.Point(128, 154);
+            this.lblItemTypeDescription.Name = "lblItemTypeDescription";
+            this.lblItemTypeDescription.Size = new System.Drawing.Size(15, 15);
+            this.lblItemTypeDescription.TabIndex = 111;
+            this.lblItemTypeDescription.Text = "X";
+            // 
+            // lblItemTypeDesc
+            // 
+            this.lblItemTypeDesc.AutoSize = true;
+            this.lblItemTypeDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemTypeDesc.Location = new System.Drawing.Point(10, 154);
+            this.lblItemTypeDesc.Name = "lblItemTypeDesc";
+            this.lblItemTypeDesc.Size = new System.Drawing.Size(40, 15);
+            this.lblItemTypeDesc.TabIndex = 110;
+            this.lblItemTypeDesc.Text = "TYPE:";
+            // 
+            // lblQty
+            // 
+            this.lblQty.AutoSize = true;
+            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQty.Location = new System.Drawing.Point(128, 214);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(15, 15);
+            this.lblQty.TabIndex = 107;
+            this.lblQty.Text = "X";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(128, 184);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(15, 15);
+            this.lblPrice.TabIndex = 106;
+            this.lblPrice.Text = "X";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(128, 95);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(15, 15);
+            this.lblDescription.TabIndex = 105;
+            this.lblDescription.Text = "X";
+            // 
+            // lblItemNo
+            // 
+            this.lblItemNo.AutoSize = true;
+            this.lblItemNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemNo.Location = new System.Drawing.Point(128, 65);
+            this.lblItemNo.Name = "lblItemNo";
+            this.lblItemNo.Size = new System.Drawing.Size(15, 15);
+            this.lblItemNo.TabIndex = 104;
+            this.lblItemNo.Text = "X";
+            // 
+            // lblItemBookNo
+            // 
+            this.lblItemBookNo.AutoSize = true;
+            this.lblItemBookNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemBookNo.Location = new System.Drawing.Point(128, 35);
+            this.lblItemBookNo.Name = "lblItemBookNo";
+            this.lblItemBookNo.Size = new System.Drawing.Size(15, 15);
+            this.lblItemBookNo.TabIndex = 103;
+            this.lblItemBookNo.Text = "X";
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(10, 214);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(68, 15);
+            this.lblQuantity.TabIndex = 92;
+            this.lblQuantity.Text = "QUANTITY:";
+            // 
+            // lblCost
+            // 
+            this.lblCost.AutoSize = true;
+            this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCost.Location = new System.Drawing.Point(10, 184);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(46, 15);
+            this.lblCost.TabIndex = 91;
+            this.lblCost.Text = "PRICE:";
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.Location = new System.Drawing.Point(10, 95);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(91, 15);
+            this.lblDesc.TabIndex = 90;
+            this.lblDesc.Text = "DESCRIPTION:";
+            // 
+            // lblItemNum
+            // 
+            this.lblItemNum.AutoSize = true;
+            this.lblItemNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemNum.Location = new System.Drawing.Point(10, 65);
+            this.lblItemNum.Name = "lblItemNum";
+            this.lblItemNum.Size = new System.Drawing.Size(96, 15);
+            this.lblItemNum.TabIndex = 89;
+            this.lblItemNum.Text = "ITEM NUMBER:";
+            // 
+            // lblItemBookNum
+            // 
+            this.lblItemBookNum.AutoSize = true;
+            this.lblItemBookNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemBookNum.Location = new System.Drawing.Point(10, 35);
+            this.lblItemBookNum.Name = "lblItemBookNum";
+            this.lblItemBookNum.Size = new System.Drawing.Size(86, 15);
+            this.lblItemBookNum.TabIndex = 88;
+            this.lblItemBookNum.Text = "BOOKING NO:";
+            // 
+            // lblRoomNo
+            // 
+            this.lblRoomNo.AutoSize = true;
+            this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNo.Location = new System.Drawing.Point(128, 7);
+            this.lblRoomNo.Name = "lblRoomNo";
+            this.lblRoomNo.Size = new System.Drawing.Size(15, 15);
+            this.lblRoomNo.TabIndex = 87;
+            this.lblRoomNo.Text = "X";
+            // 
+            // lblRoomNum
+            // 
+            this.lblRoomNum.AutoSize = true;
+            this.lblRoomNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNum.Location = new System.Drawing.Point(10, 5);
+            this.lblRoomNum.Name = "lblRoomNum";
+            this.lblRoomNum.Size = new System.Drawing.Size(69, 15);
+            this.lblRoomNum.TabIndex = 86;
+            this.lblRoomNum.Text = "ROOM NO:";
+            // 
             // pnlRoom
             // 
             this.pnlRoom.Controls.Add(this.lblCusSurname);
@@ -158,6 +320,46 @@
             this.pnlRoom.Size = new System.Drawing.Size(270, 341);
             this.pnlRoom.TabIndex = 122;
             this.pnlRoom.Visible = false;
+            // 
+            // lblCusSurname
+            // 
+            this.lblCusSurname.AutoSize = true;
+            this.lblCusSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusSurname.Location = new System.Drawing.Point(128, 244);
+            this.lblCusSurname.Name = "lblCusSurname";
+            this.lblCusSurname.Size = new System.Drawing.Size(15, 15);
+            this.lblCusSurname.TabIndex = 115;
+            this.lblCusSurname.Text = "X";
+            // 
+            // lblCusForename
+            // 
+            this.lblCusForename.AutoSize = true;
+            this.lblCusForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusForename.Location = new System.Drawing.Point(128, 214);
+            this.lblCusForename.Name = "lblCusForename";
+            this.lblCusForename.Size = new System.Drawing.Size(15, 15);
+            this.lblCusForename.TabIndex = 114;
+            this.lblCusForename.Text = "X";
+            // 
+            // lblSurname
+            // 
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSurname.Location = new System.Drawing.Point(10, 244);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(71, 15);
+            this.lblSurname.TabIndex = 113;
+            this.lblSurname.Text = "SURNAME:";
+            // 
+            // lblForename
+            // 
+            this.lblForename.AutoSize = true;
+            this.lblForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForename.Location = new System.Drawing.Point(10, 214);
+            this.lblForename.Name = "lblForename";
+            this.lblForename.Size = new System.Drawing.Size(78, 15);
+            this.lblForename.TabIndex = 112;
+            this.lblForename.Text = "FORENAME:";
             // 
             // lblRooms
             // 
@@ -398,209 +600,8 @@
             this.dgvItemSearch.Size = new System.Drawing.Size(755, 347);
             this.dgvItemSearch.TabIndex = 8;
             this.dgvItemSearch.Visible = false;
+            this.dgvItemSearch.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvItemSearch_CellFormatting);
             this.dgvItemSearch.Click += new System.EventHandler(this.dgvItemSearch_Click);
-            // 
-            // lblCusSurname
-            // 
-            this.lblCusSurname.AutoSize = true;
-            this.lblCusSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusSurname.Location = new System.Drawing.Point(128, 244);
-            this.lblCusSurname.Name = "lblCusSurname";
-            this.lblCusSurname.Size = new System.Drawing.Size(15, 15);
-            this.lblCusSurname.TabIndex = 115;
-            this.lblCusSurname.Text = "X";
-            // 
-            // lblCusForename
-            // 
-            this.lblCusForename.AutoSize = true;
-            this.lblCusForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusForename.Location = new System.Drawing.Point(128, 214);
-            this.lblCusForename.Name = "lblCusForename";
-            this.lblCusForename.Size = new System.Drawing.Size(15, 15);
-            this.lblCusForename.TabIndex = 114;
-            this.lblCusForename.Text = "X";
-            // 
-            // lblSurname
-            // 
-            this.lblSurname.AutoSize = true;
-            this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname.Location = new System.Drawing.Point(10, 244);
-            this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(71, 15);
-            this.lblSurname.TabIndex = 113;
-            this.lblSurname.Text = "SURNAME:";
-            // 
-            // lblForename
-            // 
-            this.lblForename.AutoSize = true;
-            this.lblForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForename.Location = new System.Drawing.Point(10, 214);
-            this.lblForename.Name = "lblForename";
-            this.lblForename.Size = new System.Drawing.Size(78, 15);
-            this.lblForename.TabIndex = 112;
-            this.lblForename.Text = "FORENAME:";
-            // 
-            // pnlItem
-            // 
-            this.pnlItem.Controls.Add(this.lblItemTypeDescription);
-            this.pnlItem.Controls.Add(this.lblItemTypeDesc);
-            this.pnlItem.Controls.Add(this.lblQty);
-            this.pnlItem.Controls.Add(this.lblPrice);
-            this.pnlItem.Controls.Add(this.lblDescription);
-            this.pnlItem.Controls.Add(this.lblItemNo);
-            this.pnlItem.Controls.Add(this.lblItemBookNo);
-            this.pnlItem.Controls.Add(this.lblQuantity);
-            this.pnlItem.Controls.Add(this.lblCost);
-            this.pnlItem.Controls.Add(this.lblDesc);
-            this.pnlItem.Controls.Add(this.lblItemNum);
-            this.pnlItem.Controls.Add(this.lblItemBookNum);
-            this.pnlItem.Controls.Add(this.lblRoomNo);
-            this.pnlItem.Controls.Add(this.lblRoomNum);
-            this.pnlItem.Location = new System.Drawing.Point(6, 3);
-            this.pnlItem.Name = "pnlItem";
-            this.pnlItem.Size = new System.Drawing.Size(270, 341);
-            this.pnlItem.TabIndex = 123;
-            this.pnlItem.Visible = false;
-            // 
-            // lblItemTypeDescription
-            // 
-            this.lblItemTypeDescription.AutoSize = true;
-            this.lblItemTypeDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemTypeDescription.Location = new System.Drawing.Point(128, 154);
-            this.lblItemTypeDescription.Name = "lblItemTypeDescription";
-            this.lblItemTypeDescription.Size = new System.Drawing.Size(15, 15);
-            this.lblItemTypeDescription.TabIndex = 111;
-            this.lblItemTypeDescription.Text = "X";
-            // 
-            // lblItemTypeDesc
-            // 
-            this.lblItemTypeDesc.AutoSize = true;
-            this.lblItemTypeDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemTypeDesc.Location = new System.Drawing.Point(10, 154);
-            this.lblItemTypeDesc.Name = "lblItemTypeDesc";
-            this.lblItemTypeDesc.Size = new System.Drawing.Size(40, 15);
-            this.lblItemTypeDesc.TabIndex = 110;
-            this.lblItemTypeDesc.Text = "TYPE:";
-            // 
-            // lblQty
-            // 
-            this.lblQty.AutoSize = true;
-            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQty.Location = new System.Drawing.Point(128, 214);
-            this.lblQty.Name = "lblQty";
-            this.lblQty.Size = new System.Drawing.Size(15, 15);
-            this.lblQty.TabIndex = 107;
-            this.lblQty.Text = "X";
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(128, 184);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(15, 15);
-            this.lblPrice.TabIndex = 106;
-            this.lblPrice.Text = "X";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(128, 95);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(15, 15);
-            this.lblDescription.TabIndex = 105;
-            this.lblDescription.Text = "X";
-            // 
-            // lblItemNo
-            // 
-            this.lblItemNo.AutoSize = true;
-            this.lblItemNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemNo.Location = new System.Drawing.Point(128, 65);
-            this.lblItemNo.Name = "lblItemNo";
-            this.lblItemNo.Size = new System.Drawing.Size(15, 15);
-            this.lblItemNo.TabIndex = 104;
-            this.lblItemNo.Text = "X";
-            // 
-            // lblItemBookNo
-            // 
-            this.lblItemBookNo.AutoSize = true;
-            this.lblItemBookNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemBookNo.Location = new System.Drawing.Point(128, 35);
-            this.lblItemBookNo.Name = "lblItemBookNo";
-            this.lblItemBookNo.Size = new System.Drawing.Size(15, 15);
-            this.lblItemBookNo.TabIndex = 103;
-            this.lblItemBookNo.Text = "X";
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(10, 214);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(68, 15);
-            this.lblQuantity.TabIndex = 92;
-            this.lblQuantity.Text = "QUANTITY:";
-            // 
-            // lblCost
-            // 
-            this.lblCost.AutoSize = true;
-            this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCost.Location = new System.Drawing.Point(10, 184);
-            this.lblCost.Name = "lblCost";
-            this.lblCost.Size = new System.Drawing.Size(46, 15);
-            this.lblCost.TabIndex = 91;
-            this.lblCost.Text = "PRICE:";
-            // 
-            // lblDesc
-            // 
-            this.lblDesc.AutoSize = true;
-            this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesc.Location = new System.Drawing.Point(10, 95);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(91, 15);
-            this.lblDesc.TabIndex = 90;
-            this.lblDesc.Text = "DESCRIPTION:";
-            // 
-            // lblItemNum
-            // 
-            this.lblItemNum.AutoSize = true;
-            this.lblItemNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemNum.Location = new System.Drawing.Point(10, 65);
-            this.lblItemNum.Name = "lblItemNum";
-            this.lblItemNum.Size = new System.Drawing.Size(96, 15);
-            this.lblItemNum.TabIndex = 89;
-            this.lblItemNum.Text = "ITEM NUMBER:";
-            // 
-            // lblItemBookNum
-            // 
-            this.lblItemBookNum.AutoSize = true;
-            this.lblItemBookNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemBookNum.Location = new System.Drawing.Point(10, 35);
-            this.lblItemBookNum.Name = "lblItemBookNum";
-            this.lblItemBookNum.Size = new System.Drawing.Size(86, 15);
-            this.lblItemBookNum.TabIndex = 88;
-            this.lblItemBookNum.Text = "BOOKING NO:";
-            // 
-            // lblRoomNo
-            // 
-            this.lblRoomNo.AutoSize = true;
-            this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNo.Location = new System.Drawing.Point(128, 7);
-            this.lblRoomNo.Name = "lblRoomNo";
-            this.lblRoomNo.Size = new System.Drawing.Size(15, 15);
-            this.lblRoomNo.TabIndex = 87;
-            this.lblRoomNo.Text = "X";
-            // 
-            // lblRoomNum
-            // 
-            this.lblRoomNum.AutoSize = true;
-            this.lblRoomNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNum.Location = new System.Drawing.Point(10, 5);
-            this.lblRoomNum.Name = "lblRoomNum";
-            this.lblRoomNum.Size = new System.Drawing.Size(69, 15);
-            this.lblRoomNum.TabIndex = 86;
-            this.lblRoomNum.Text = "ROOM NO:";
             // 
             // RoomServiceSearch
             // 
@@ -616,13 +617,13 @@
             this.Load += new System.EventHandler(this.RoomServiceSearch_Load);
             this.pnlSearchDetails.ResumeLayout(false);
             this.pnlSearchDetails.PerformLayout();
+            this.pnlItem.ResumeLayout(false);
+            this.pnlItem.PerformLayout();
             this.pnlRoom.ResumeLayout(false);
             this.pnlRoom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemSearch)).EndInit();
-            this.pnlItem.ResumeLayout(false);
-            this.pnlItem.PerformLayout();
             this.ResumeLayout(false);
 
         }

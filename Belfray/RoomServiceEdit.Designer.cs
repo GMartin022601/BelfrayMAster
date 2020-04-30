@@ -1,6 +1,6 @@
 ﻿namespace Belfray
 {
-    partial class RoomServiceAdd
+    partial class RoomServiceEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgvRooms = new System.Windows.Forms.DataGridView();
+            this.dgvCurrentOrder = new System.Windows.Forms.DataGridView();
+            this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSearchDetails = new System.Windows.Forms.Panel();
             this.gbBookingInfo = new System.Windows.Forms.GroupBox();
             this.lblBookingNo = new System.Windows.Forms.Label();
@@ -39,6 +44,10 @@
             this.lblRoomNo = new System.Windows.Forms.Label();
             this.lblRoomNum = new System.Windows.Forms.Label();
             this.gbItemInfo = new System.Windows.Forms.GroupBox();
+            this.picAdd = new System.Windows.Forms.PictureBox();
+            this.picRemove = new System.Windows.Forms.PictureBox();
+            this.picCancel = new System.Windows.Forms.PictureBox();
+            this.picSave = new System.Windows.Forms.PictureBox();
             this.lblItemTotal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
@@ -58,41 +67,67 @@
             this.lblCustomerTitle = new System.Windows.Forms.Label();
             this.lblCustomerNo = new System.Windows.Forms.Label();
             this.lblCustomerNum = new System.Windows.Forms.Label();
-            this.dgvCurrentOrder = new System.Windows.Forms.DataGridView();
+            this.dgvRooms = new System.Windows.Forms.DataGridView();
             this.dgvItemList = new System.Windows.Forms.DataGridView();
-            this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.picAdd = new System.Windows.Forms.PictureBox();
-            this.picRemove = new System.Windows.Forms.PictureBox();
-            this.picCancel = new System.Windows.Forms.PictureBox();
-            this.picSave = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentOrder)).BeginInit();
             this.pnlSearchDetails.SuspendLayout();
             this.gbBookingInfo.SuspendLayout();
             this.gbItemInfo.SuspendLayout();
-            this.gbCustomerDets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItemList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSave)).BeginInit();
+            this.gbCustomerDets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvRooms
+            // dgvCurrentOrder
             // 
-            this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRooms.Location = new System.Drawing.Point(1, 1);
-            this.dgvRooms.Name = "dgvRooms";
-            this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRooms.Size = new System.Drawing.Size(596, 347);
-            this.dgvRooms.TabIndex = 9;
-            this.dgvRooms.Click += new System.EventHandler(this.dgvRooms_Click);
+            this.dgvCurrentOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCurrentOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BookingNumber,
+            this.RoomNumber,
+            this.ItemNumber,
+            this.Price,
+            this.Qty});
+            this.dgvCurrentOrder.Location = new System.Drawing.Point(604, 223);
+            this.dgvCurrentOrder.Name = "dgvCurrentOrder";
+            this.dgvCurrentOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCurrentOrder.Size = new System.Drawing.Size(615, 125);
+            this.dgvCurrentOrder.TabIndex = 15;
+            this.dgvCurrentOrder.Click += new System.EventHandler(this.dgvCurrentOrder_Click);
+            // 
+            // BookingNumber
+            // 
+            this.BookingNumber.HeaderText = "Booking Number";
+            this.BookingNumber.Name = "BookingNumber";
+            this.BookingNumber.Width = 120;
+            // 
+            // RoomNumber
+            // 
+            this.RoomNumber.HeaderText = "Room";
+            this.RoomNumber.Name = "RoomNumber";
+            this.RoomNumber.Width = 120;
+            // 
+            // ItemNumber
+            // 
+            this.ItemNumber.HeaderText = "Item";
+            this.ItemNumber.Name = "ItemNumber";
+            this.ItemNumber.Width = 120;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.Width = 110;
+            // 
+            // Qty
+            // 
+            this.Qty.HeaderText = "Quantity";
+            this.Qty.Name = "Qty";
             // 
             // pnlSearchDetails
             // 
@@ -100,10 +135,10 @@
             this.pnlSearchDetails.Controls.Add(this.gbBookingInfo);
             this.pnlSearchDetails.Controls.Add(this.gbItemInfo);
             this.pnlSearchDetails.Controls.Add(this.gbCustomerDets);
-            this.pnlSearchDetails.Location = new System.Drawing.Point(603, 1);
+            this.pnlSearchDetails.Location = new System.Drawing.Point(604, 1);
             this.pnlSearchDetails.Name = "pnlSearchDetails";
             this.pnlSearchDetails.Size = new System.Drawing.Size(615, 219);
-            this.pnlSearchDetails.TabIndex = 10;
+            this.pnlSearchDetails.TabIndex = 14;
             // 
             // gbBookingInfo
             // 
@@ -196,13 +231,67 @@
             this.gbItemInfo.Controls.Add(this.lblItemDesc);
             this.gbItemInfo.Controls.Add(this.lblItemNo);
             this.gbItemInfo.Controls.Add(this.lblItemNum);
-            this.gbItemInfo.Enabled = false;
             this.gbItemInfo.Location = new System.Drawing.Point(341, 3);
             this.gbItemInfo.Name = "gbItemInfo";
             this.gbItemInfo.Size = new System.Drawing.Size(271, 213);
             this.gbItemInfo.TabIndex = 1;
             this.gbItemInfo.TabStop = false;
             this.gbItemInfo.Text = "Item Info";
+            // 
+            // picAdd
+            // 
+            this.picAdd.Image = global::Belfray.Properties.Resources.Add;
+            this.picAdd.Location = new System.Drawing.Point(44, 177);
+            this.picAdd.Name = "picAdd";
+            this.picAdd.Size = new System.Drawing.Size(30, 30);
+            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAdd.TabIndex = 100;
+            this.picAdd.TabStop = false;
+            this.picAdd.Visible = false;
+            this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
+            this.picAdd.MouseEnter += new System.EventHandler(this.picAdd_MouseEnter);
+            this.picAdd.MouseLeave += new System.EventHandler(this.picAdd_MouseLeave);
+            // 
+            // picRemove
+            // 
+            this.picRemove.Image = global::Belfray.Properties.Resources.Remove;
+            this.picRemove.Location = new System.Drawing.Point(6, 177);
+            this.picRemove.Name = "picRemove";
+            this.picRemove.Size = new System.Drawing.Size(30, 30);
+            this.picRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRemove.TabIndex = 99;
+            this.picRemove.TabStop = false;
+            this.picRemove.Visible = false;
+            this.picRemove.Click += new System.EventHandler(this.picRemove_Click);
+            this.picRemove.MouseEnter += new System.EventHandler(this.picRemove_MouseEnter);
+            this.picRemove.MouseLeave += new System.EventHandler(this.picRemove_MouseLeave);
+            // 
+            // picCancel
+            // 
+            this.picCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picCancel.Location = new System.Drawing.Point(235, 177);
+            this.picCancel.Name = "picCancel";
+            this.picCancel.Size = new System.Drawing.Size(30, 30);
+            this.picCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCancel.TabIndex = 98;
+            this.picCancel.TabStop = false;
+            this.picCancel.Click += new System.EventHandler(this.picCancel_Click);
+            this.picCancel.MouseEnter += new System.EventHandler(this.picCancel_MouseEnter);
+            this.picCancel.MouseLeave += new System.EventHandler(this.picCancel_MouseLeave);
+            // 
+            // picSave
+            // 
+            this.picSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSave.Location = new System.Drawing.Point(199, 177);
+            this.picSave.Name = "picSave";
+            this.picSave.Size = new System.Drawing.Size(30, 30);
+            this.picSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSave.TabIndex = 97;
+            this.picSave.TabStop = false;
+            this.picSave.Visible = false;
+            this.picSave.Click += new System.EventHandler(this.picSave_Click);
+            this.picSave.MouseEnter += new System.EventHandler(this.picSave_MouseEnter);
+            this.picSave.MouseLeave += new System.EventHandler(this.picSave_MouseLeave);
             // 
             // lblItemTotal
             // 
@@ -405,123 +494,32 @@
             this.lblCustomerNum.TabIndex = 85;
             this.lblCustomerNum.Text = "CUSTOMER NO:";
             // 
-            // dgvCurrentOrder
+            // dgvRooms
             // 
-            this.dgvCurrentOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCurrentOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BookingNumber,
-            this.RoomNumber,
-            this.ItemNumber,
-            this.Price,
-            this.Qty});
-            this.dgvCurrentOrder.Location = new System.Drawing.Point(603, 223);
-            this.dgvCurrentOrder.Name = "dgvCurrentOrder";
-            this.dgvCurrentOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCurrentOrder.Size = new System.Drawing.Size(615, 125);
-            this.dgvCurrentOrder.TabIndex = 11;
-            this.dgvCurrentOrder.Click += new System.EventHandler(this.dgvCurrentOrder_Click);
+            this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRooms.Location = new System.Drawing.Point(2, 1);
+            this.dgvRooms.Name = "dgvRooms";
+            this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRooms.Size = new System.Drawing.Size(596, 347);
+            this.dgvRooms.TabIndex = 13;
+            this.dgvRooms.Click += new System.EventHandler(this.dgvRooms_Click);
             // 
             // dgvItemList
             // 
             this.dgvItemList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItemList.Location = new System.Drawing.Point(1, 1);
+            this.dgvItemList.Location = new System.Drawing.Point(2, 1);
             this.dgvItemList.Name = "dgvItemList";
             this.dgvItemList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItemList.Size = new System.Drawing.Size(596, 347);
-            this.dgvItemList.TabIndex = 12;
+            this.dgvItemList.TabIndex = 16;
             this.dgvItemList.Visible = false;
-            this.dgvItemList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvItemList_CellFormatting);
             this.dgvItemList.Click += new System.EventHandler(this.dgvItemList_Click);
-            // 
-            // BookingNumber
-            // 
-            this.BookingNumber.HeaderText = "Booking Number";
-            this.BookingNumber.Name = "BookingNumber";
-            this.BookingNumber.Width = 120;
-            // 
-            // RoomNumber
-            // 
-            this.RoomNumber.HeaderText = "Room";
-            this.RoomNumber.Name = "RoomNumber";
-            this.RoomNumber.Width = 120;
-            // 
-            // ItemNumber
-            // 
-            this.ItemNumber.HeaderText = "Item";
-            this.ItemNumber.Name = "ItemNumber";
-            this.ItemNumber.Width = 120;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.Width = 110;
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Quantity";
-            this.Qty.Name = "Qty";
             // 
             // errP
             // 
             this.errP.ContainerControl = this;
             // 
-            // picAdd
-            // 
-            this.picAdd.Image = global::Belfray.Properties.Resources.Add;
-            this.picAdd.Location = new System.Drawing.Point(44, 177);
-            this.picAdd.Name = "picAdd";
-            this.picAdd.Size = new System.Drawing.Size(30, 30);
-            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAdd.TabIndex = 100;
-            this.picAdd.TabStop = false;
-            this.picAdd.Visible = false;
-            this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
-            this.picAdd.MouseEnter += new System.EventHandler(this.picAdd_MouseEnter);
-            this.picAdd.MouseLeave += new System.EventHandler(this.picAdd_MouseLeave);
-            // 
-            // picRemove
-            // 
-            this.picRemove.Image = global::Belfray.Properties.Resources.Remove;
-            this.picRemove.Location = new System.Drawing.Point(6, 177);
-            this.picRemove.Name = "picRemove";
-            this.picRemove.Size = new System.Drawing.Size(30, 30);
-            this.picRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRemove.TabIndex = 99;
-            this.picRemove.TabStop = false;
-            this.picRemove.Visible = false;
-            this.picRemove.Click += new System.EventHandler(this.picRemove_Click);
-            this.picRemove.MouseEnter += new System.EventHandler(this.picRemove_MouseEnter);
-            this.picRemove.MouseLeave += new System.EventHandler(this.picRemove_MouseLeave);
-            // 
-            // picCancel
-            // 
-            this.picCancel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picCancel.Location = new System.Drawing.Point(235, 177);
-            this.picCancel.Name = "picCancel";
-            this.picCancel.Size = new System.Drawing.Size(30, 30);
-            this.picCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCancel.TabIndex = 98;
-            this.picCancel.TabStop = false;
-            this.picCancel.Click += new System.EventHandler(this.picCancel_Click);
-            this.picCancel.MouseEnter += new System.EventHandler(this.picCancel_MouseEnter);
-            this.picCancel.MouseLeave += new System.EventHandler(this.picCancel_MouseLeave);
-            // 
-            // picSave
-            // 
-            this.picSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSave.Location = new System.Drawing.Point(199, 177);
-            this.picSave.Name = "picSave";
-            this.picSave.Size = new System.Drawing.Size(30, 30);
-            this.picSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSave.TabIndex = 97;
-            this.picSave.TabStop = false;
-            this.picSave.Visible = false;
-            this.picSave.Click += new System.EventHandler(this.picSave_Click);
-            this.picSave.MouseEnter += new System.EventHandler(this.picSave_MouseEnter);
-            this.picSave.MouseLeave += new System.EventHandler(this.picSave_MouseLeave);
-            // 
-            // RoomServiceAdd
+            // RoomServiceEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -531,43 +529,52 @@
             this.Controls.Add(this.dgvRooms);
             this.Controls.Add(this.dgvItemList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RoomServiceAdd";
-            this.Text = "RoomServiceAdd";
-            this.Load += new System.EventHandler(this.RoomServiceAdd_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).EndInit();
+            this.Name = "RoomServiceEdit";
+            this.Text = "RoomServiceEdit";
+            this.Load += new System.EventHandler(this.RoomServiceEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentOrder)).EndInit();
             this.pnlSearchDetails.ResumeLayout(false);
             this.gbBookingInfo.ResumeLayout(false);
             this.gbBookingInfo.PerformLayout();
             this.gbItemInfo.ResumeLayout(false);
             this.gbItemInfo.PerformLayout();
-            this.gbCustomerDets.ResumeLayout(false);
-            this.gbCustomerDets.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItemList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSave)).EndInit();
+            this.gbCustomerDets.ResumeLayout(false);
+            this.gbCustomerDets.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvRooms;
+        private System.Windows.Forms.DataGridView dgvCurrentOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.Panel pnlSearchDetails;
         private System.Windows.Forms.GroupBox gbBookingInfo;
-        private System.Windows.Forms.GroupBox gbItemInfo;
-        private System.Windows.Forms.GroupBox gbCustomerDets;
-        private System.Windows.Forms.DataGridView dgvCurrentOrder;
-        private System.Windows.Forms.DataGridView dgvItemList;
-        private System.Windows.Forms.Label lblRoomNo;
-        private System.Windows.Forms.Label lblRoomNum;
         private System.Windows.Forms.Label lblBookingNo;
         private System.Windows.Forms.Label lblBookingNum;
         private System.Windows.Forms.ComboBox cmbItemType;
         private System.Windows.Forms.Label lblItemType;
+        private System.Windows.Forms.Label lblRoomNo;
+        private System.Windows.Forms.Label lblRoomNum;
+        private System.Windows.Forms.GroupBox gbItemInfo;
+        private System.Windows.Forms.PictureBox picAdd;
+        private System.Windows.Forms.PictureBox picRemove;
+        private System.Windows.Forms.PictureBox picCancel;
+        private System.Windows.Forms.PictureBox picSave;
+        private System.Windows.Forms.Label lblItemTotal;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label lblQty;
         private System.Windows.Forms.Label lblItemPrice;
         private System.Windows.Forms.Label lblPrice;
@@ -575,6 +582,7 @@
         private System.Windows.Forms.Label lblItemDesc;
         private System.Windows.Forms.Label lblItemNo;
         private System.Windows.Forms.Label lblItemNum;
+        private System.Windows.Forms.GroupBox gbCustomerDets;
         private System.Windows.Forms.Label lblCustSurname;
         private System.Windows.Forms.Label lblCustForename;
         private System.Windows.Forms.Label lblCustTitle;
@@ -583,18 +591,8 @@
         private System.Windows.Forms.Label lblCustomerTitle;
         private System.Windows.Forms.Label lblCustomerNo;
         private System.Windows.Forms.Label lblCustomerNum;
-        private System.Windows.Forms.Label lblItemTotal;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox txtQty;
-        private System.Windows.Forms.PictureBox picAdd;
-        private System.Windows.Forms.PictureBox picRemove;
-        private System.Windows.Forms.PictureBox picCancel;
-        private System.Windows.Forms.PictureBox picSave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
+        private System.Windows.Forms.DataGridView dgvRooms;
+        private System.Windows.Forms.DataGridView dgvItemList;
         private System.Windows.Forms.ErrorProvider errP;
     }
 }

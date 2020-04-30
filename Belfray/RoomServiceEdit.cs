@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Belfray
 {
-    public partial class RoomServiceDelete : Form
+    public partial class RoomServiceEdit : Form
     {
         SqlDataAdapter daCustomer, daBookingDets, daItem, daItemType, daDets, daItems, daDetails;
         DataSet dsBelfray = new DataSet();
@@ -31,12 +31,12 @@ namespace Belfray
         //User cancel
         private bool userCancel = false;
 
-        public RoomServiceDelete()
+        public RoomServiceEdit()
         {
             InitializeComponent();
         }
 
-        private void RoomServiceDelete_Load(object sender, EventArgs e)
+        private void RoomServiceEdit_Load(object sender, EventArgs e)
         {
             //DB Connection
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
@@ -105,6 +105,7 @@ namespace Belfray
             cmbItemType.SelectedIndex = -1;
 
             displayRooms();
+            userChange = true;
             userCancel = true;
         }
 
@@ -133,6 +134,14 @@ namespace Belfray
             dgvRooms.Columns[6].Width = 73;
         }
 
+        private void dgvItemList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                e.CellStyle.Format = "N2";
+            }
+        }
+
         //Current Order Click
         private void dgvCurrentOrder_Click(object sender, EventArgs e)
         {
@@ -145,6 +154,8 @@ namespace Belfray
                 else if (dgvCurrentOrder.SelectedRows.Count == 1)
                 {
                     itemSel = true;
+                    gbItemInfo.Enabled = true;
+                    picAdd.Visible = false;
 
                     DataRow cust = dsBelfray.Tables["Item"].Rows.Find(dgvCurrentOrder.SelectedRows[0].Cells[2].Value.ToString());
 
@@ -243,6 +254,7 @@ namespace Belfray
                     txtQty.Text = dgvCurrentOrder.SelectedRows[0].Cells[4].Value.ToString();
                     lblItemTotal.Text = Convert.ToString((Convert.ToDouble(txtQty.Text.ToString())) * (Convert.ToDouble(lblItemPrice.Text.ToString())));
 
+                    picRemove.Visible = true;
                     one = false;
                     two = false;
                     three = false;
@@ -250,9 +262,22 @@ namespace Belfray
             }
             else
             {
-                picDel.Visible = false;
+                picSave.Visible = false;
             }
-        }        
+        }
+
+        //Display Rooms
+        public void displayItems()
+        {
+            dgvItemList.DataSource = dsBelfray.Tables["Items"];
+
+            dgvItemList.Columns[3].HeaderText = "Type ID";
+
+            dgvItemList.Columns[0].Width = 91;
+            dgvItemList.Columns[1].Width = 280;
+            dgvItemList.Columns[2].Width = 91;
+            dgvItemList.Columns[3].Width = 91;
+        }
 
         //Clicke Event for dgvRooms
         private void dgvRooms_Click(object sender, EventArgs e)
@@ -264,8 +289,11 @@ namespace Belfray
             else if (dgvRooms.SelectedRows.Count == 1)
             {
                 roomSel = true;
-                picDel.Visible = true;
-                
+                cmbItemType.Enabled = true;
+                dgvRooms.Visible = false;
+                dgvItemList.Visible = true;
+                displayItems();
+                gbCustomerDets.Enabled = true;
                 lblRoomNo.Text = dgvRooms.SelectedRows[0].Cells[0].Value.ToString();
                 lblBookingNo.Text = dgvRooms.SelectedRows[0].Cells[1].Value.ToString();
                 lblCustomerNo.Text = dgvRooms.SelectedRows[0].Cells[4].Value.ToString();
@@ -275,24 +303,304 @@ namespace Belfray
                 lblCustForename.Text = cust["customerForename"].ToString();
                 lblCustSurname.Text = cust["customerSurname"].ToString();
 
-                foreach (DataRow drDetails in dsBelfray.Tables["Details"].Rows)
+                foreach(DataRow drDetails in dsBelfray.Tables["Details"].Rows)
                 {
-                    if (drDetails["bookingNo"].ToString().Equals(lblBookingNo.Text) && drDetails["itemNo"].ToString().Equals(lblRoomNo.Text))
+                    if(drDetails["bookingNo"].ToString().Equals(lblBookingNo.Text) && drDetails["itemNo"].ToString().Equals(lblRoomNo.Text))
                     {
                         DataRow item = dsBelfray.Tables["Item"].Rows.Find(drDetails["bookingItemNo"].ToString());
                         dgvCurrentOrder.Rows.Add(drDetails["bookingNo"].ToString(), drDetails["itemNo"].ToString(), drDetails["bookingItemNo"].ToString(), item["itemPrice"].ToString(), drDetails["bookingItemQty"].ToString());
                     }
                 }
             }
-        }        
-
-        //Save Button functions
-        private void picDel_MouseEnter(object sender, EventArgs e)
-        {
-            picDel.BackColor = Color.FromArgb(205, 36, 36);
         }
 
-        private void picDel_Click(object sender, EventArgs e)
+        //ComboBox Changed
+        private void cmbItemType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (userChange)
+            {
+                DataView filtered = new DataView(dsBelfray.Tables["Items"], "typeID = '" + cmbItemType.SelectedValue.ToString() + "'", "typeID", DataViewRowState.CurrentRows);
+                dgvItemList.DataSource = filtered;
+            }
+        }
+
+        //Item Selected
+        private void dgvItemList_Click(object sender, EventArgs e)
+        {
+            if (dgvItemList.SelectedRows.Count == 0)
+            {
+                itemSel = false;
+            }
+            else if (dgvItemList.SelectedRows.Count == 1)
+            {
+                itemSel = true;
+                gbItemInfo.Enabled = true;
+                picRemove.Visible = false;
+
+                //Reset Item Detals
+                lblItemNo.Enabled = true;
+                lblItemDescription.Enabled = true;
+                lblItemPrice.Enabled = true;
+                txtQty.Enabled = true;
+                lblItemTotal.Enabled = true;
+
+                lblItemNo.Text = dgvItemList.SelectedRows[0].Cells[0].Value.ToString();
+
+                string desc = dgvItemList.SelectedRows[0].Cells[1].Value.ToString();
+                bool one = false, two = false, three = false;
+                int break1 = 0;
+                int break2 = 0;
+                int break3 = 0;
+                int max = 0;
+                if (desc.Length > 17 && desc.Length <= 37)
+                {
+                    if (desc.Length > 24)
+                    {
+                        one = true;
+                        break1 = desc.IndexOf(" ", 17);
+                    }
+                    max = desc.Length;
+                }
+                else if (desc.Length > 37 && desc.Length <= 57)
+                {
+                    if (desc.Length > 44)
+                    {
+                        two = true;
+                        break1 = desc.IndexOf(" ", 17);
+                        break2 = desc.IndexOf(" ", 37);
+                    }
+                    else
+                    {
+                        one = true;
+                        break1 = desc.IndexOf(" ", 17);
+                    }
+                    max = desc.Length;
+                }
+                else if (desc.Length > 57)
+                {
+                    if (desc.Length > 74)
+                    {
+                        three = true;
+                        break1 = desc.IndexOf(" ", 17);
+                        break2 = desc.IndexOf(" ", 37);
+                        break3 = desc.IndexOf(" ", 57);
+                        max = 74;
+                    }
+                    else if (desc.Length > 64)
+                    {
+                        three = true;
+                        break1 = desc.IndexOf(" ", 17);
+                        break2 = desc.IndexOf(" ", 37);
+                        break3 = desc.IndexOf(" ", 57);
+                        max = desc.Length;
+                    }
+                    else
+                    {
+                        two = true;
+                        max = desc.Length;
+                        break1 = desc.IndexOf(" ", 17);
+                        break2 = desc.IndexOf(" ", 37);
+                    }
+                }
+
+                string s1 = "";
+                string s2 = "";
+                string s3 = "";
+                string s4 = "";
+
+                if (one == true)
+                {
+                    s1 = desc.Substring(0, break1);
+                    s2 = desc.Substring(break1 + 1, (max - (break1 + 1)));
+                    lblItemDescription.Text = s1 + "\n" + s2;
+                }
+                else if (two)
+                {
+                    s1 = desc.Substring(0, break1);
+                    s2 = desc.Substring(break1 + 1, (break2 - (break1 + 1)));
+                    s3 = desc.Substring(break2 + 1, (max - (break2 + 1)));
+                    lblItemDescription.Text = s1 + "\n" + s2 + "\n" + s3;
+                }
+                else if (three)
+                {
+                    s1 = desc.Substring(0, break1);
+                    s2 = desc.Substring(break1 + 1, (break2 - (break1 + 1)));
+                    s3 = desc.Substring(break2 + 1, (break3 - (break2 + 1)));
+                    s4 = desc.Substring(break3 + 1, (max - (break3 + 1)));
+                    lblItemDescription.Text = s1 + "\n" + s2 + "\n" + s3 + "\n" + s4;
+                }
+                else
+                {
+                    lblItemDescription.Text = desc;
+                }
+
+                decimal price = Math.Round(Convert.ToDecimal(dgvItemList.SelectedRows[0].Cells[2].Value.ToString()), 2);
+                lblItemPrice.Text = price.ToString();
+                txtQty.Text = "0";
+                lblItemTotal.Text = Convert.ToString((Convert.ToDouble(txtQty.Text.ToString())) * (Convert.ToDouble(lblItemPrice.Text.ToString())));
+
+                picAdd.Visible = true;
+                one = false;
+                two = false;
+                three = false;
+            }
+        }
+
+        //Quantity Text Changed
+        private void txtQty_TextChanged(object sender, EventArgs e)
+        {
+            if (userCancel)
+            {
+                if (txtQty.Text.Length > 0 && !txtQty.Text.ToString().Equals("0"))
+                {
+                    lblItemTotal.Text = Convert.ToString((Convert.ToDouble(txtQty.Text.ToString())) * (Convert.ToDouble(lblItemPrice.Text.ToString())));
+                }
+                else if (txtQty.Text.ToString().Equals("") || txtQty.Text.ToString().Equals("0"))
+                {
+                    lblItemTotal.Text = "-";
+                }
+            }
+        }
+
+        //Remove Button functions
+        private void picRemove_MouseEnter(object sender, EventArgs e)
+        {
+            picRemove.BackColor = Color.FromArgb(205, 36, 36);
+        }
+
+        private void picRemove_Click(object sender, EventArgs e)
+        {
+            picSave.Visible = true;
+
+            //Reset Item Detals
+            lblItemNo.Text = "-";
+            lblItemNo.Enabled = false;
+            lblItemDescription.Text = "-";
+            lblItemDescription.Enabled = false;
+            lblItemPrice.Text = "-";
+            lblItemPrice.Enabled = false;
+            txtQty.Text = "0";
+            txtQty.Enabled = false;
+            lblItemTotal.Text = "-";
+            lblItemTotal.Enabled = false;
+
+            int rowIndex = dgvCurrentOrder.CurrentRow.Index;
+            dgvCurrentOrder.Rows.RemoveAt(rowIndex);
+            dgvRooms.ClearSelection();
+
+            int rowCount = dgvCurrentOrder.RowCount;
+
+            if (rowCount <= 1)
+            {
+                picSave.Visible = false;
+            }
+
+            picRemove.Visible = false;
+        }
+
+        private void picRemove_MouseLeave(object sender, EventArgs e)
+        {
+            picRemove.BackColor = Color.Transparent;
+        }
+
+        //Add Button functions
+        private void picAdd_MouseEnter(object sender, EventArgs e)
+        {
+            picAdd.BackColor = Color.FromArgb(57, 181, 74);
+        }
+
+        private void picAdd_Click(object sender, EventArgs e)
+        {
+            bool ok = true;
+            errP.Clear();
+
+            int rows = dgvCurrentOrder.RowCount;
+            bool newItem = false;
+            int qty = 0;
+
+            if (rows > 1)
+            {
+                for (int x = 0; x < rows - 1; x++)
+                {
+                    if (!lblItemNo.Text.ToString().Equals(dgvCurrentOrder.Rows[x].Cells[2].Value.ToString()))
+                    {
+                        newItem = true;
+                    }
+                }
+            }
+            else
+            {
+                newItem = true;
+            }
+
+            if (newItem)
+            {
+                try
+                {
+                    if (MyValidation.validNumber(txtQty.Text.Trim()) && MyValidation.validLength((txtQty.Text.Trim()), 1, 1) && !txtQty.Text.ToString().Equals("0"))
+                    {
+                        qty = Convert.ToInt32(txtQty.Text.Trim());
+                    }
+                    else
+                    {
+                        throw new MyException("Quantity must be a number between 1 and 9.");
+                    }
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtQty, MyEx.toString());
+                }
+
+                //Try Adding
+                try
+                {
+                    if (ok)
+                    {
+                        dgvCurrentOrder.Rows.Add(lblBookingNo.Text, lblRoomNo.Text, lblItemNo.Text, lblItemPrice.Text, txtQty.Text);
+
+
+                        picAdd.Visible = false;
+                        picSave.Visible = true;
+
+                        //Reset Item Detals
+                        lblItemNo.Text = "-";
+                        lblItemNo.Enabled = false;
+                        lblItemDescription.Text = "-";
+                        lblItemDescription.Enabled = false;
+                        lblItemPrice.Text = "-";
+                        lblItemPrice.Enabled = false;
+                        txtQty.Text = "0";
+                        txtQty.Enabled = false;
+                        lblItemTotal.Text = "-";
+                        lblItemTotal.Enabled = false;
+
+                        dgvItemList.ClearSelection();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("This Item has already been ordered by this room, you must remove the item from the current order list and add it agin with the correct information.", "Add an Item", MessageBoxButtons.OK);
+            }
+        }
+
+        private void picAdd_MouseLeave(object sender, EventArgs e)
+        {
+            picAdd.BackColor = Color.Transparent;
+        }
+
+        //Save Button functions
+        private void picSave_MouseEnter(object sender, EventArgs e)
+        {
+            picSave.BackColor = Color.FromArgb(57, 181, 74);
+        }
+
+        private void picSave_Click(object sender, EventArgs e)
         {
             //Try Adding
             try
@@ -305,9 +613,23 @@ namespace Belfray
                     }
                 }
 
-                daDetails.Update(dsBelfray, "Details");                
+                daDetails.Update(dsBelfray, "Details");
 
-                MessageBox.Show("Room Service Deleted");
+                int rowCount = dgvCurrentOrder.RowCount;
+
+                for (int x = 0; x < rowCount - 1; x++)
+                {
+                    drDetails = dsBelfray.Tables["Details"].NewRow();
+                    drDetails["bookingNo"] = dgvCurrentOrder.Rows[x].Cells[0].Value.ToString();
+                    drDetails["itemNo"] = dgvCurrentOrder.Rows[x].Cells[1].Value.ToString();
+                    drDetails["bookingItemNo"] = dgvCurrentOrder.Rows[x].Cells[2].Value.ToString();
+                    drDetails["bookingItemQty"] = Convert.ToInt32(dgvCurrentOrder.Rows[x].Cells[4].Value.ToString());
+                    dsBelfray.Tables["Details"].Rows.Add(drDetails);
+                }
+
+                daDetails.Update(dsBelfray, "Details");
+
+                MessageBox.Show("Room Service Order Edited");
 
                 this.Close();
             }
@@ -317,9 +639,9 @@ namespace Belfray
             }
         }
 
-        private void picDel_MouseLeave(object sender, EventArgs e)
+        private void picSave_MouseLeave(object sender, EventArgs e)
         {
-            picDel.BackColor = Color.Transparent;
+            picSave.BackColor = Color.Transparent;
         }
 
         //Cancel Button functions
@@ -332,7 +654,9 @@ namespace Belfray
         {
             displayRooms();
 
-            picDel.Visible = false;
+            picRemove.Visible = false;
+            picAdd.Visible = false;
+            picSave.Visible = false;
 
             //Rest Customer Dets
             gbCustomerDets.Enabled = false;
@@ -345,6 +669,11 @@ namespace Belfray
             userCancel = false;
 
             //Reset Item Detals
+            lblItemNo.Enabled = false;
+            lblItemDescription.Enabled = false;
+            lblItemPrice.Enabled = false;
+            txtQty.Enabled = false;
+            lblItemTotal.Enabled = false;
             lblItemNo.Text = "-";
             lblItemDescription.Text = "-";
             lblItemPrice.Text = "-";
@@ -359,10 +688,14 @@ namespace Belfray
 
             dgvCurrentOrder.Rows.Clear();
 
+            dgvItemList.ClearSelection();
+            dgvItemList.Visible = false;
             dgvRooms.ClearSelection();
             dgvRooms.Visible = true;
 
+
             userCancel = true;
+            userChange = true;
         }
 
         private void picCancel_MouseLeave(object sender, EventArgs e)
@@ -371,5 +704,4 @@ namespace Belfray
         }
     }
 }
-
 

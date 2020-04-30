@@ -299,23 +299,56 @@ namespace Belfray
                 int break1 = 0;
                 int break2 = 0;
                 int break3 = 0;
+                int max = 0;
                 if (desc.Length > 17 && desc.Length <= 37)
                 {
-                    one = true;
-                    break1 = desc.IndexOf(" ", 17);
+                    if (desc.Length > 24)
+                    {
+                        one = true;
+                        break1 = desc.IndexOf(" ", 17);
+                    }
+                    max = desc.Length;
                 }
                 else if (desc.Length > 37 && desc.Length <= 57)
                 {
-                    two = true;
-                    break1 = desc.IndexOf(" ", 17);
-                    break2 = desc.IndexOf(" ", 37);
+                    if (desc.Length > 44)
+                    {
+                        two = true;
+                        break1 = desc.IndexOf(" ", 17);
+                        break2 = desc.IndexOf(" ", 37);
+                    }
+                    else
+                    {
+                        one = true;
+                        break1 = desc.IndexOf(" ", 17);
+                    }
+                    max = desc.Length;
                 }
                 else if (desc.Length > 57)
                 {
-                    three = true;
-                    break1 = desc.IndexOf(" ", 17);
-                    break2 = desc.IndexOf(" ", 37);
-                    break3 = desc.IndexOf(" ", 57);
+                    if (desc.Length > 74)
+                    {
+                        three = true;
+                        break1 = desc.IndexOf(" ", 17);
+                        break2 = desc.IndexOf(" ", 37);
+                        break3 = desc.IndexOf(" ", 57);
+                        max = 74;
+                    }
+                    else if (desc.Length > 64)
+                    {
+                        three = true;
+                        break1 = desc.IndexOf(" ", 17);
+                        break2 = desc.IndexOf(" ", 37);
+                        break3 = desc.IndexOf(" ", 57);
+                        max = desc.Length;
+                    }
+                    else
+                    {
+                        two = true;
+                        max = desc.Length;
+                        break1 = desc.IndexOf(" ", 17);
+                        break2 = desc.IndexOf(" ", 37);
+                    }
                 }
 
                 string s1 = "";
@@ -326,31 +359,32 @@ namespace Belfray
                 if (one == true)
                 {
                     s1 = desc.Substring(0, break1);
-                    s2 = desc.Substring(break1 + 1, (desc.Length - (break1+1)));
+                    s2 = desc.Substring(break1 + 1, (max - (break1 + 1)));
                     lblDescription.Text = s1 + "\n" + s2;
                 }
                 else if (two)
                 {
                     s1 = desc.Substring(0, break1);
-                    s2 = desc.Substring(break1 + 1, (break2- (break1 + 1)));
-                    s3 = desc.Substring(break2 + 1, (desc.Length - (break2 + 1)));
+                    s2 = desc.Substring(break1 + 1, (break2 - (break1 + 1)));
+                    s3 = desc.Substring(break2 + 1, (max - (break2 + 1)));
                     lblDescription.Text = s1 + "\n" + s2 + "\n" + s3;
                 }
                 else if (three)
                 {
                     s1 = desc.Substring(0, break1);
-                    s2 = desc.Substring(break1+1, (break2 - (break1 + 1)));
-                    s3 = desc.Substring(break2+1, (break3 - (break2 + 1)));
-                    s4 = desc.Substring(break3+1, (desc.Length - (break3 + 1)));
+                    s2 = desc.Substring(break1 + 1, (break2 - (break1 + 1)));
+                    s3 = desc.Substring(break2 + 1, (break3 - (break2 + 1)));
+                    s4 = desc.Substring(break3 + 1, (max - (break3 + 1)));
                     lblDescription.Text = s1 + "\n" + s2 + "\n" + s3 + "\n" + s4;
                 }
                 else
                 {
                     lblDescription.Text = desc;
                 }
- 
+                                
                 lblItemTypeDescription.Text = dgvItemSearch.SelectedRows[0].Cells[4].Value.ToString();
-                lblPrice.Text = dgvItemSearch.SelectedRows[0].Cells[5].Value.ToString();
+                decimal price = Math.Round(Convert.ToDecimal(dgvItemSearch.SelectedRows[0].Cells[5].Value.ToString()), 2);
+                lblPrice.Text = price.ToString();
                 lblQty.Text = dgvItemSearch.SelectedRows[0].Cells[6].Value.ToString();
             }
         }
@@ -446,6 +480,15 @@ namespace Belfray
             dgvItemSearch.Columns[4].Width = 72;
             dgvItemSearch.Columns[5].Width = 62;
             dgvItemSearch.Columns[6].Width = 42;
+        }
+
+        //Table Price Formatting
+        private void dgvItemSearch_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                e.CellStyle.Format = "N2";
+            }
         }
     }
 }
