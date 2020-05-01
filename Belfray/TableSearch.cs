@@ -18,17 +18,50 @@ namespace Belfray
         String connStr, sqlBookingDetails, sqlCustomer, sqlBookingItem, sqlPaymentType, sqlBooking;
         SqlDataAdapter daBookingDetails, daCustomer, daBookingItem, daPaymentType, daBooking;
 
-        private void TableSearch_TextChanged(object sender, EventArgs e)
+        private void picClear_Click(object sender, EventArgs e)
         {
-            AAAA
+            dgvSearch.DataSource = dsBelfray.Tables["Booking"];
+            txtSurname.Text = "";
+            txtBookingNumber.Text = "";
         }
 
         DataSet dsBelfray = new DataSet();
         SqlCommandBuilder cmdBBookingDetails, cmdBCustomer, cmdBBookingItem, cmdBPaymentType, cmdBBooking;
         private int searchOption = 0;
         private string selected = "";
-       
-        
+        string bDate = "";
+
+        private void TableSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSurname.Text.Length < 3)// || txtSurname.Text.Length > 16)
+            {
+                txtSurname.BackColor = Color.LightCoral;
+                //MessageBox.Show("Booking number must be 10 characters beginnin BK.", "Search error", MessageBoxButtons.OK);
+
+            }
+            if (txtSurname.Text.Length > 16)
+            {
+                txtSurname.BackColor = Color.LightCoral;
+                MessageBox.Show("Surname must not exceed 16 characters.", "Search error", MessageBoxButtons.OK);
+
+            }
+            if (txtSurname.Text.Length >= 3 || txtSurname.Text.Length == 16)
+            {
+                searchOption = 2;
+                txtSurname.BackColor = Color.LightGreen;
+            }
+            if (txtSurname.Text.Length == 0)
+            {
+                txtSurname.BackColor = Color.White;
+            }
+        }
+
+        private void dtpSearch_ValueChanged(object sender, EventArgs e)
+        {
+            searchOption = 3;
+            //dtpSearch.Value = Convert.ToDateTime(bDate);
+        }
+
         private void dgvSearch_Click(object sender, EventArgs e)
         {
             if (dgvSearch.SelectedRows.Count == 0)
@@ -84,8 +117,48 @@ namespace Belfray
                     MessageBox.Show("Please us the options below to search.", "Search error", MessageBoxButtons.OK);
                     break;
                 case 1:
-                    DataView roomSearch = new DataView(dsBelfray.Tables["Booking"], "bookingNo = '" + txtBookingNumber.Text.ToString() + "'", "bookingNo", DataViewRowState.CurrentRows);
-                    dgvSearch.DataSource = roomSearch;
+                        DataView bookingSearch = new DataView(dsBelfray.Tables["Booking"], "bookingNo = '" + txtBookingNumber.Text.ToString() + "'", "bookingNo", DataViewRowState.CurrentRows);
+                        dgvSearch.DataSource = bookingSearch;
+
+                        dgvSearch.Columns[0].HeaderText = "Booking Number";
+                        dgvSearch.Columns[1].HeaderText = "Booking Date";
+                        dgvSearch.Columns[6].HeaderText = "Surname";
+
+                        dgvSearch.Columns[0].Width = 115;
+                        dgvSearch.Columns[1].Width = 100;
+                        dgvSearch.Columns[2].Width = 81;
+                        dgvSearch.Columns[3].Width = 81;
+                        dgvSearch.Columns[4].Width = 100;
+                        dgvSearch.Columns[5].Width = 100;
+                        dgvSearch.Columns[6].Width = 100;
+                        dgvSearch.Columns[7].Width = 71;
+                        dgvSearch.Columns[8].Width = 61;
+                        dgvSearch.Columns[9].Width = 61;
+                    break;
+                case 2:
+                    DataView surnameSearch = new DataView(dsBelfray.Tables["Booking"], "customerSurname = '" + txtSurname.Text.ToString() + "'", "customerSurname", DataViewRowState.CurrentRows);
+                    dgvSearch.DataSource = surnameSearch;
+
+                    dgvSearch.Columns[0].HeaderText = "Booking Number";
+                    dgvSearch.Columns[1].HeaderText = "Booking Date";
+                    dgvSearch.Columns[6].HeaderText = "Surname";
+
+                    dgvSearch.Columns[0].Width = 115;
+                    dgvSearch.Columns[1].Width = 100;
+                    dgvSearch.Columns[2].Width = 81;
+                    dgvSearch.Columns[3].Width = 81;
+                    dgvSearch.Columns[4].Width = 100;
+                    dgvSearch.Columns[5].Width = 100;
+                    dgvSearch.Columns[6].Width = 100;
+                    dgvSearch.Columns[7].Width = 71;
+                    dgvSearch.Columns[8].Width = 61;
+                    dgvSearch.Columns[9].Width = 61;
+                    break;
+                case 3:
+                    bDate = dtpSearch.Value.ToShortDateString();
+
+                    DataView dateSearch = new DataView(dsBelfray.Tables["Booking"], "checkInDate = '" + Convert.ToDateTime(bDate) + "'", "checkInDate", DataViewRowState.CurrentRows);
+                    dgvSearch.DataSource = dateSearch;
 
                     dgvSearch.Columns[0].HeaderText = "Booking Number";
                     dgvSearch.Columns[1].HeaderText = "Booking Date";
@@ -118,6 +191,14 @@ namespace Belfray
             connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+
+            //SQL For Customer
+            sqlCustomer = @"select * from Customer";
+            daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
+            cmdBCustomer = new SqlCommandBuilder(daCustomer);
+            daCustomer.FillSchema(dsBelfray, SchemaType.Source, "Customer");
+            daCustomer.Fill(dsBelfray, "Customer");
+
 
             //SQL for Booking
             sqlBooking = @"SELECT Booking.bookingNo, Booking.checkInDate, BType.typeDesc AS 'Booking Type', CONVERT(char(5), Booking.bookingTime, 108) AS 'Arrival', 

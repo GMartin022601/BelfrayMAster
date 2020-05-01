@@ -54,10 +54,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBookingNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.picClear = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picClear)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSearch
@@ -245,6 +247,7 @@
             // 
             // pnlSearch
             // 
+            this.pnlSearch.Controls.Add(this.picClear);
             this.pnlSearch.Controls.Add(this.picSearch);
             this.pnlSearch.Controls.Add(this.txtSurname);
             this.pnlSearch.Controls.Add(this.label3);
@@ -254,13 +257,13 @@
             this.pnlSearch.Controls.Add(this.label1);
             this.pnlSearch.Location = new System.Drawing.Point(2, 192);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(423, 147);
+            this.pnlSearch.Size = new System.Drawing.Size(423, 153);
             this.pnlSearch.TabIndex = 2;
             // 
             // picSearch
             // 
             this.picSearch.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSearch.Location = new System.Drawing.Point(378, 104);
+            this.picSearch.Location = new System.Drawing.Point(378, 107);
             this.picSearch.Name = "picSearch";
             this.picSearch.Size = new System.Drawing.Size(40, 40);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -287,12 +290,12 @@
             // 
             // dtpSearch
             // 
-            this.dtpSearch.Enabled = false;
             this.dtpSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpSearch.Location = new System.Drawing.Point(201, 45);
             this.dtpSearch.Name = "dtpSearch";
             this.dtpSearch.Size = new System.Drawing.Size(153, 22);
             this.dtpSearch.TabIndex = 43;
+            this.dtpSearch.ValueChanged += new System.EventHandler(this.dtpSearch_ValueChanged);
             // 
             // label2
             // 
@@ -320,6 +323,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by Booking Number:";
             // 
+            // picClear
+            // 
+            this.picClear.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picClear.Location = new System.Drawing.Point(332, 107);
+            this.picClear.Name = "picClear";
+            this.picClear.Size = new System.Drawing.Size(40, 40);
+            this.picClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picClear.TabIndex = 70;
+            this.picClear.TabStop = false;
+            this.picClear.Click += new System.EventHandler(this.picClear_Click);
+            // 
             // TableSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
@@ -341,6 +355,7 @@
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picClear)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,5 +388,6 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox picClear;
     }
 }
