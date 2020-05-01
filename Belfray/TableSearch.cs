@@ -17,14 +17,6 @@ namespace Belfray
         DataRow drBookingDetails, drCustomer, drBookingItem, drPaymentType, drBooking;
         String connStr, sqlBookingDetails, sqlCustomer, sqlBookingItem, sqlPaymentType, sqlBooking;
         SqlDataAdapter daBookingDetails, daCustomer, daBookingItem, daPaymentType, daBooking;
-
-        private void picClear_Click(object sender, EventArgs e)
-        {
-            dgvSearch.DataSource = dsBelfray.Tables["Booking"];
-            txtSurname.Text = "";
-            txtBookingNumber.Text = "";
-        }
-
         DataSet dsBelfray = new DataSet();
         SqlCommandBuilder cmdBBookingDetails, cmdBCustomer, cmdBBookingItem, cmdBPaymentType, cmdBBooking;
         private int searchOption = 0;
@@ -36,22 +28,26 @@ namespace Belfray
             if (txtSurname.Text.Length < 3)// || txtSurname.Text.Length > 16)
             {
                 txtSurname.BackColor = Color.LightCoral;
+                txtBookingNumber.Text = "";
                 //MessageBox.Show("Booking number must be 10 characters beginnin BK.", "Search error", MessageBoxButtons.OK);
 
             }
             if (txtSurname.Text.Length > 16)
             {
                 txtSurname.BackColor = Color.LightCoral;
+                txtBookingNumber.Text = "";
                 MessageBox.Show("Surname must not exceed 16 characters.", "Search error", MessageBoxButtons.OK);
 
             }
             if (txtSurname.Text.Length >= 3 || txtSurname.Text.Length == 16)
             {
+                txtBookingNumber.Text = "";
                 searchOption = 2;
                 txtSurname.BackColor = Color.LightGreen;
             }
             if (txtSurname.Text.Length == 0)
             {
+                txtBookingNumber.Text = "";
                 txtSurname.BackColor = Color.White;
             }
         }
@@ -59,7 +55,15 @@ namespace Belfray
         private void dtpSearch_ValueChanged(object sender, EventArgs e)
         {
             searchOption = 3;
+            txtSurname.Text = "";
+            txtBookingNumber.Text = "";
             //dtpSearch.Value = Convert.ToDateTime(bDate);
+        }
+        private void picClear_Click(object sender, EventArgs e)
+        {
+            dgvSearch.DataSource = dsBelfray.Tables["Booking"];
+            txtSurname.Text = "";
+            txtBookingNumber.Text = "";
         }
 
         private void dgvSearch_Click(object sender, EventArgs e)
@@ -87,12 +91,14 @@ namespace Belfray
         {
             if (txtBookingNumber.Text.Length < 10)
             {
+                txtSurname.Text = "";
                 txtBookingNumber.BackColor = Color.LightCoral;
                 //MessageBox.Show("Booking number must be 10 characters beginnin BK.", "Search error", MessageBoxButtons.OK);
 
             }
             if (txtBookingNumber.Text.Length > 10)
             {
+                txtSurname.Text = "";
                 MessageBox.Show("Booking number must be 10 characters beginnin BK.", "Search error", MessageBoxButtons.OK);
 
             }
@@ -100,12 +106,14 @@ namespace Belfray
             {
                 searchOption = 1;
                 txtBookingNumber.BackColor = Color.LightGreen;
+                txtSurname.Text = "";
                 //txtSearchItemName.BackColor = Color.White;
                 //picSearch.Enabled = true;
             }
             if (txtBookingNumber.Text.Length == 0)
             {
                 txtBookingNumber.BackColor = Color.White;
+                txtSurname.Text = "";
             }
         }
 
