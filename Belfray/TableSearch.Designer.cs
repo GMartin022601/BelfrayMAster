@@ -30,7 +30,14 @@
         {
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.pnlDetails = new System.Windows.Forms.Panel();
-            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblCustNo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPaymentType = new System.Windows.Forms.TextBox();
+            this.txtPartySize = new System.Windows.Forms.TextBox();
             this.lblBookingNo = new System.Windows.Forms.Label();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.dateBooking = new System.Windows.Forms.DateTimePicker();
@@ -39,21 +46,14 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblBNoTag = new System.Windows.Forms.Label();
             this.lblPartySize = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBookingNumber = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpSearch = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.pnlSearch = new System.Windows.Forms.Panel();
             this.picSearch = new System.Windows.Forms.PictureBox();
-            this.txtPartySize = new System.Windows.Forms.TextBox();
-            this.txtPaymentType = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblCustNo = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpSearch = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBookingNumber = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.pnlSearch.SuspendLayout();
@@ -94,19 +94,77 @@
             this.pnlDetails.Size = new System.Drawing.Size(285, 343);
             this.pnlDetails.TabIndex = 1;
             // 
-            // pnlSearch
+            // txtLastName
             // 
-            this.pnlSearch.Controls.Add(this.picSearch);
-            this.pnlSearch.Controls.Add(this.txtSurname);
-            this.pnlSearch.Controls.Add(this.label3);
-            this.pnlSearch.Controls.Add(this.dtpSearch);
-            this.pnlSearch.Controls.Add(this.label2);
-            this.pnlSearch.Controls.Add(this.txtBookingNumber);
-            this.pnlSearch.Controls.Add(this.label1);
-            this.pnlSearch.Location = new System.Drawing.Point(2, 192);
-            this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(423, 147);
-            this.pnlSearch.TabIndex = 2;
+            this.txtLastName.Enabled = false;
+            this.txtLastName.Location = new System.Drawing.Point(107, 299);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(100, 25);
+            this.txtLastName.TabIndex = 59;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Enabled = false;
+            this.txtFirstName.Location = new System.Drawing.Point(107, 266);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(100, 25);
+            this.txtFirstName.TabIndex = 58;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 302);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 18);
+            this.label7.TabIndex = 57;
+            this.label7.Text = "Last Name:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 269);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 18);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "First Name:";
+            // 
+            // lblCustNo
+            // 
+            this.lblCustNo.AutoSize = true;
+            this.lblCustNo.Enabled = false;
+            this.lblCustNo.Location = new System.Drawing.Point(104, 238);
+            this.lblCustNo.Name = "lblCustNo";
+            this.lblCustNo.Size = new System.Drawing.Size(16, 18);
+            this.lblCustNo.TabIndex = 55;
+            this.lblCustNo.Text = "--";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 238);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 18);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "Customer No:";
+            // 
+            // txtPaymentType
+            // 
+            this.txtPaymentType.Enabled = false;
+            this.txtPaymentType.Location = new System.Drawing.Point(107, 163);
+            this.txtPaymentType.Name = "txtPaymentType";
+            this.txtPaymentType.Size = new System.Drawing.Size(100, 25);
+            this.txtPaymentType.TabIndex = 53;
+            // 
+            // txtPartySize
+            // 
+            this.txtPartySize.Enabled = false;
+            this.txtPartySize.Location = new System.Drawing.Point(107, 122);
+            this.txtPartySize.Name = "txtPartySize";
+            this.txtPartySize.Size = new System.Drawing.Size(100, 25);
+            this.txtPartySize.TabIndex = 51;
             // 
             // lblBookingNo
             // 
@@ -185,56 +243,19 @@
             this.lblPartySize.TabIndex = 45;
             this.lblPartySize.Text = "Party Size:";
             // 
-            // label1
+            // pnlSearch
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Search by Booking Number:";
-            // 
-            // txtBookingNumber
-            // 
-            this.txtBookingNumber.Location = new System.Drawing.Point(201, 7);
-            this.txtBookingNumber.Name = "txtBookingNumber";
-            this.txtBookingNumber.Size = new System.Drawing.Size(171, 25);
-            this.txtBookingNumber.TabIndex = 1;
-            this.txtBookingNumber.TextChanged += new System.EventHandler(this.txtBookingNumber_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Search by Date:";
-            // 
-            // dtpSearch
-            // 
-            this.dtpSearch.Enabled = false;
-            this.dtpSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpSearch.Location = new System.Drawing.Point(201, 45);
-            this.dtpSearch.Name = "dtpSearch";
-            this.dtpSearch.Size = new System.Drawing.Size(153, 22);
-            this.dtpSearch.TabIndex = 43;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(188, 18);
-            this.label3.TabIndex = 44;
-            this.label3.Text = "Search by Customer Surname:";
-            // 
-            // txtSurname
-            // 
-            this.txtSurname.Location = new System.Drawing.Point(201, 80);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(171, 25);
-            this.txtSurname.TabIndex = 45;
+            this.pnlSearch.Controls.Add(this.picSearch);
+            this.pnlSearch.Controls.Add(this.txtSurname);
+            this.pnlSearch.Controls.Add(this.label3);
+            this.pnlSearch.Controls.Add(this.dtpSearch);
+            this.pnlSearch.Controls.Add(this.label2);
+            this.pnlSearch.Controls.Add(this.txtBookingNumber);
+            this.pnlSearch.Controls.Add(this.label1);
+            this.pnlSearch.Location = new System.Drawing.Point(2, 192);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(423, 147);
+            this.pnlSearch.TabIndex = 2;
             // 
             // picSearch
             // 
@@ -247,77 +268,57 @@
             this.picSearch.TabStop = false;
             this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
             // 
-            // txtPartySize
+            // txtSurname
             // 
-            this.txtPartySize.Enabled = false;
-            this.txtPartySize.Location = new System.Drawing.Point(107, 122);
-            this.txtPartySize.Name = "txtPartySize";
-            this.txtPartySize.Size = new System.Drawing.Size(100, 25);
-            this.txtPartySize.TabIndex = 51;
+            this.txtSurname.Location = new System.Drawing.Point(201, 80);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(171, 25);
+            this.txtSurname.TabIndex = 45;
+            this.txtSurname.TextChanged += new System.EventHandler(this.TableSearch_TextChanged);
             // 
-            // txtPaymentType
+            // label3
             // 
-            this.txtPaymentType.Enabled = false;
-            this.txtPaymentType.Location = new System.Drawing.Point(107, 163);
-            this.txtPaymentType.Name = "txtPaymentType";
-            this.txtPaymentType.Size = new System.Drawing.Size(100, 25);
-            this.txtPaymentType.TabIndex = 53;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(188, 18);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Search by Customer Surname:";
             // 
-            // label4
+            // dtpSearch
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 238);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 18);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "Customer No:";
+            this.dtpSearch.Enabled = false;
+            this.dtpSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpSearch.Location = new System.Drawing.Point(201, 45);
+            this.dtpSearch.Name = "dtpSearch";
+            this.dtpSearch.Size = new System.Drawing.Size(153, 22);
+            this.dtpSearch.TabIndex = 43;
             // 
-            // lblCustNo
+            // label2
             // 
-            this.lblCustNo.AutoSize = true;
-            this.lblCustNo.Enabled = false;
-            this.lblCustNo.Location = new System.Drawing.Point(104, 238);
-            this.lblCustNo.Name = "lblCustNo";
-            this.lblCustNo.Size = new System.Drawing.Size(16, 18);
-            this.lblCustNo.TabIndex = 55;
-            this.lblCustNo.Text = "--";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Search by Date:";
             // 
-            // label6
+            // txtBookingNumber
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 269);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 18);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "First Name:";
+            this.txtBookingNumber.Location = new System.Drawing.Point(201, 7);
+            this.txtBookingNumber.Name = "txtBookingNumber";
+            this.txtBookingNumber.Size = new System.Drawing.Size(171, 25);
+            this.txtBookingNumber.TabIndex = 1;
+            this.txtBookingNumber.TextChanged += new System.EventHandler(this.txtBookingNumber_TextChanged);
             // 
-            // label7
+            // label1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 302);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 18);
-            this.label7.TabIndex = 57;
-            this.label7.Text = "Last Name:";
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Enabled = false;
-            this.txtFirstName.Location = new System.Drawing.Point(107, 266);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 25);
-            this.txtFirstName.TabIndex = 58;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Enabled = false;
-            this.txtLastName.Location = new System.Drawing.Point(107, 299);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 25);
-            this.txtLastName.TabIndex = 59;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Search by Booking Number:";
             // 
             // TableSearch
             // 
@@ -333,6 +334,7 @@
             this.Name = "TableSearch";
             this.Text = "TableSearch";
             this.Load += new System.EventHandler(this.TableSearch_Load);
+            this.TextChanged += new System.EventHandler(this.TableSearch_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();

@@ -17,6 +17,12 @@ namespace Belfray
         DataRow drBookingDetails, drCustomer, drBookingItem, drPaymentType, drBooking;
         String connStr, sqlBookingDetails, sqlCustomer, sqlBookingItem, sqlPaymentType, sqlBooking;
         SqlDataAdapter daBookingDetails, daCustomer, daBookingItem, daPaymentType, daBooking;
+
+        private void TableSearch_TextChanged(object sender, EventArgs e)
+        {
+            AAAA
+        }
+
         DataSet dsBelfray = new DataSet();
         SqlCommandBuilder cmdBBookingDetails, cmdBCustomer, cmdBBookingItem, cmdBPaymentType, cmdBBooking;
         private int searchOption = 0;
@@ -57,11 +63,16 @@ namespace Belfray
                 MessageBox.Show("Booking number must be 10 characters beginnin BK.", "Search error", MessageBoxButtons.OK);
 
             }
-            else
+            if (txtBookingNumber.Text.Length == 10)
             {
                 searchOption = 1;
+                txtBookingNumber.BackColor = Color.LightGreen;
                 //txtSearchItemName.BackColor = Color.White;
                 //picSearch.Enabled = true;
+            }
+            if (txtBookingNumber.Text.Length == 0)
+            {
+                txtBookingNumber.BackColor = Color.White;
             }
         }
 
@@ -73,23 +84,23 @@ namespace Belfray
                     MessageBox.Show("Please us the options below to search.", "Search error", MessageBoxButtons.OK);
                     break;
                 case 1:
-                    selected = dgvSearch.SelectedRows[0].Cells[0].Value.ToString();
+                    DataView roomSearch = new DataView(dsBelfray.Tables["Booking"], "bookingNo = '" + txtBookingNumber.Text.ToString() + "'", "bookingNo", DataViewRowState.CurrentRows);
+                    dgvSearch.DataSource = roomSearch;
 
-                    
-                    
-                    dgvSearch.DataSource = bookingSearch;
-                    dgvSearch.Columns[0].HeaderText = "Booking No";
+                    dgvSearch.Columns[0].HeaderText = "Booking Number";
+                    dgvSearch.Columns[1].HeaderText = "Booking Date";
+                    dgvSearch.Columns[6].HeaderText = "Surname";
 
-                    dgvSearch.Columns[0].Width = 82;
-                    dgvSearch.Columns[1].Width = 82;
+                    dgvSearch.Columns[0].Width = 115;
+                    dgvSearch.Columns[1].Width = 100;
                     dgvSearch.Columns[2].Width = 81;
                     dgvSearch.Columns[3].Width = 81;
-                    dgvSearch.Columns[4].Width = 71;
-                    dgvSearch.Columns[5].Width = 51;
-                    dgvSearch.Columns[6].Width = 71;
+                    dgvSearch.Columns[4].Width = 100;
+                    dgvSearch.Columns[5].Width = 100;
+                    dgvSearch.Columns[6].Width = 100;
                     dgvSearch.Columns[7].Width = 71;
                     dgvSearch.Columns[8].Width = 61;
-                    dgvSearch.Columns[9].Width = 40;
+                    dgvSearch.Columns[9].Width = 61;
                     break;
             }
         }
@@ -109,8 +120,8 @@ namespace Belfray
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Booking
-            sqlBooking = @"SELECT Booking.bookingNo AS 'Booking No', Booking.checkInDate AS 'Check In Date', BType.typeDesc AS 'Booking Type', CONVERT(char(5), Booking.bookingTime, 108) AS 'Arrival', 
-                            Booking.customerNo AS 'Customer No', Customer.customerForename As 'Forename', Customer.customerSurname AS 'Surname', Payment.paymentTypeDesc AS 'Payment', 
+            sqlBooking = @"SELECT Booking.bookingNo, Booking.checkInDate, BType.typeDesc AS 'Booking Type', CONVERT(char(5), Booking.bookingTime, 108) AS 'Arrival', 
+                            Booking.customerNo AS 'Customer No', Customer.customerForename As 'Forename', Customer.customerSurname, Payment.paymentTypeDesc AS 'Payment', 
                             Booking.partySize AS 'Party Size', Count(BookingItem.itemNo) AS 'Tables Booked' FROM Booking                            
                             LEFT JOIN Customer on Customer.customerNo = Booking.customerNo
                             LEFT JOIN Payment on Payment.paymentTypeID = Booking.paymentTypeID

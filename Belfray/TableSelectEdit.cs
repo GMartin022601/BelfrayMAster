@@ -1081,29 +1081,6 @@ namespace Belfray
             {
                 MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
             }
-            //int tableRows = dgvTableItems.RowCount - 1;
-
-            //for (int x = 0; x < tableRows; x++)
-            //{
-            //    foreach (DataGridViewRow row in dgvTableItems.Rows)
-            //    {
-            //        if (row.IsNewRow) break;
-            //        int total = 0;
-            //        for (int i = 0; i < row.Cells.Count - 1; i++)
-            //        {
-            //            if (row.Cells[i].Value.ToString() == "P") total++;
-            //        }
-            //        row.Cells[row.Cells.Count - 1].Value = total;
-            //    }
-            //    drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
-            //    drBookingItem["bookingNo"] = lblBookingNo.Text;
-            //    drBookingItem["itemNo"] = lblTblNoSelDisplay.Text;
-            //    drBookingItem["itemQty"] = DBNull.Value;
-            //    dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
-            //}
-
-            //daBookingItem.Update(dsBelfray, "BookingItem");
-            //MessageBox.Show("Booking Added");
         }
 
         private void dgvTableItems_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -1360,8 +1337,7 @@ namespace Belfray
 
                     drBookingItem = dsBelfray.Tables["BookingItem"].Rows.Find(new object[] { key1, key2 });
 
-                    if (drBookingItem["bookingNo"].Equals(key1) && drBookingItem["itemNo"].Equals(key2));
-                                                                                                               //((Globals.tableSel.ToString())))
+                    if (drBookingItem["bookingNo"].Equals(key1) && drBookingItem["itemNo"].Equals(key2));                                                                                                            
                         {
                             drBookingItem.Delete();
                         }
@@ -1456,21 +1432,9 @@ namespace Belfray
         {
             try
             {
-                //foreach (DataGridViewRow row in dgvAddNewTables.Rows)
-                ///{
-                //    if (row.Cells[1].Value.ToString().Equals(lblTableNumDisplay.Text))
-                //    {
-                //        MessageBox.Show("This table is already included in this booking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //        break;
-               //     }
-                //    else
-                //    {
                         dgvAddNewTables.Rows.Add(lblBookingNo.Text, lblTableNumDisplay.Text);
                         int currentTableSize = Convert.ToInt32(numPartySize.Value);
                         numPartySize.Value = currentTableSize + partySize;
-                       // break;
-                //    }
-               // }
             }
             catch (Exception exc)
             {
