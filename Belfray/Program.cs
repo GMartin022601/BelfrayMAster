@@ -16,7 +16,7 @@ namespace Belfray
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AppDisplay());
+            Application.Run(new TableSearch());
         }
     }
 }

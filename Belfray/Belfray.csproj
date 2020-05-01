@@ -184,6 +184,12 @@
     <Compile Include="TableBookingDisplay.Designer.cs">
       <DependentUpon>TableBookingDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableSearch.Designer.cs">
+      <DependentUpon>TableSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="TableSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TableBookingDisplay.resx">
       <DependentUpon>TableBookingDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableSearch.resx">
+      <DependentUpon>TableSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableSelect.resx">
       <DependentUpon>TableSelect.cs</DependentUpon>
