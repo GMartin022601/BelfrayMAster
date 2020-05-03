@@ -30,6 +30,7 @@ namespace Belfray
             txtProdDesc2.Text = "";
             errP.Clear();
             formLoad = false;
+            this.Close();
             //pnlDetails.Enabled = false;
             //pnlProdType.Enabled = false;
             //pnlSuppDetails.Enabled = false;
@@ -199,6 +200,13 @@ namespace Belfray
                 DataRow drMethod = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue.ToString());
                 txtProdTypeCode.Text = drMethod["productTypeCode"].ToString();
                 txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
+                
+                if (cbTypeCode.SelectedValue.ToString() == "Alcohol")
+                {
+                    pnlImage.SendToBack();
+                    picAlcohol.Visible = true;
+                    picAlcohol.BringToFront();
+                }
             }
         }
 
