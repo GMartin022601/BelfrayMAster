@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestaurantStockAdd));
             this.pnlRestStockAdd = new System.Windows.Forms.Panel();
             this.pnlSuppDetails = new System.Windows.Forms.Panel();
             this.gbSupplierDetails = new System.Windows.Forms.GroupBox();
@@ -82,6 +83,11 @@
             this.lblProdDesc = new System.Windows.Forms.Label();
             this.pnlImage = new System.Windows.Forms.Panel();
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.picAlcohol = new System.Windows.Forms.PictureBox();
+            this.picAF = new System.Windows.Forms.PictureBox();
+            this.picFood = new System.Windows.Forms.PictureBox();
+            this.picRE = new System.Windows.Forms.PictureBox();
+            this.picLinen = new System.Windows.Forms.PictureBox();
             this.pnlRestStockAdd.SuspendLayout();
             this.pnlSuppDetails.SuspendLayout();
             this.gbSupplierDetails.SuspendLayout();
@@ -97,7 +103,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAddNewSupp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddNewPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).BeginInit();
+            this.pnlImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAlcohol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLinen)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlRestStockAdd
@@ -623,6 +635,11 @@
             // 
             // pnlImage
             // 
+            this.pnlImage.Controls.Add(this.picLinen);
+            this.pnlImage.Controls.Add(this.picRE);
+            this.pnlImage.Controls.Add(this.picFood);
+            this.pnlImage.Controls.Add(this.picAF);
+            this.pnlImage.Controls.Add(this.picAlcohol);
             this.pnlImage.Location = new System.Drawing.Point(12, 8);
             this.pnlImage.Name = "pnlImage";
             this.pnlImage.Size = new System.Drawing.Size(232, 329);
@@ -631,6 +648,56 @@
             // errP
             // 
             this.errP.ContainerControl = this;
+            // 
+            // picAlcohol
+            // 
+            this.picAlcohol.Image = ((System.Drawing.Image)(resources.GetObject("picAlcohol.Image")));
+            this.picAlcohol.Location = new System.Drawing.Point(3, 4);
+            this.picAlcohol.Name = "picAlcohol";
+            this.picAlcohol.Size = new System.Drawing.Size(226, 322);
+            this.picAlcohol.TabIndex = 0;
+            this.picAlcohol.TabStop = false;
+            this.picAlcohol.Visible = false;
+            // 
+            // picAF
+            // 
+            this.picAF.Image = ((System.Drawing.Image)(resources.GetObject("picAF.Image")));
+            this.picAF.Location = new System.Drawing.Point(3, 4);
+            this.picAF.Name = "picAF";
+            this.picAF.Size = new System.Drawing.Size(226, 322);
+            this.picAF.TabIndex = 1;
+            this.picAF.TabStop = false;
+            this.picAF.Visible = false;
+            // 
+            // picFood
+            // 
+            this.picFood.Image = ((System.Drawing.Image)(resources.GetObject("picFood.Image")));
+            this.picFood.Location = new System.Drawing.Point(3, 4);
+            this.picFood.Name = "picFood";
+            this.picFood.Size = new System.Drawing.Size(226, 322);
+            this.picFood.TabIndex = 2;
+            this.picFood.TabStop = false;
+            this.picFood.Visible = false;
+            // 
+            // picRE
+            // 
+            this.picRE.Image = ((System.Drawing.Image)(resources.GetObject("picRE.Image")));
+            this.picRE.Location = new System.Drawing.Point(3, 4);
+            this.picRE.Name = "picRE";
+            this.picRE.Size = new System.Drawing.Size(226, 322);
+            this.picRE.TabIndex = 3;
+            this.picRE.TabStop = false;
+            this.picRE.Visible = false;
+            // 
+            // picLinen
+            // 
+            this.picLinen.Image = ((System.Drawing.Image)(resources.GetObject("picLinen.Image")));
+            this.picLinen.Location = new System.Drawing.Point(3, 4);
+            this.picLinen.Name = "picLinen";
+            this.picLinen.Size = new System.Drawing.Size(226, 322);
+            this.picLinen.TabIndex = 4;
+            this.picLinen.TabStop = false;
+            this.picLinen.Visible = false;
             // 
             // RestaurantStockAdd
             // 
@@ -660,7 +727,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAddNewSupp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddNewPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveAddProdDet)).EndInit();
+            this.pnlImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAlcohol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLinen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -720,5 +793,10 @@
         private System.Windows.Forms.PictureBox picCancelAddSupp;
         private System.Windows.Forms.PictureBox picCancellAddProd;
         private System.Windows.Forms.Label lblSupplierID;
+        private System.Windows.Forms.PictureBox picLinen;
+        private System.Windows.Forms.PictureBox picRE;
+        private System.Windows.Forms.PictureBox picFood;
+        private System.Windows.Forms.PictureBox picAF;
+        private System.Windows.Forms.PictureBox picAlcohol;
     }
 }

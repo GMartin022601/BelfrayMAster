@@ -471,13 +471,13 @@ namespace Belfray
             //CB Details Supplier
             cbSuppID.DataSource = dsBelfray.Tables["Supplier"];
             cbSuppID.ValueMember = "supplierID";
-            cbSuppID.DisplayMember = "supplierID";
+            cbSuppID.DisplayMember = "supplierName";
             cbSuppID.SelectedIndex = -1;
 
             //cb ProductType
             cbTypeCode.DataSource = dsBelfray.Tables["ProductType"];
             cbTypeCode.ValueMember = "productTypeCode";
-            cbTypeCode.DisplayMember = "productTypeCode";
+            cbTypeCode.DisplayMember = "productTypeDesc";
             cbTypeCode.SelectedIndex = -1;
 
             //Panels

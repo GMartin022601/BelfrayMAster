@@ -15,7 +15,7 @@ namespace Belfray
     public partial class TableSelectEdit : Form
     {
         String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem, sqlItem, sqlBreakfast, sqlBookingDetails;
-        String tableNumber = "", test = "";
+        String tableNumber = "", test = "", addTable = "";
         bool formLoad = true;
         bool getInfo, bookingInfo, avail, itemSelected;
         bool newCustomer, newBooking, tableSelected;
@@ -838,6 +838,47 @@ namespace Belfray
             ClearLabels();
         }
 
+        private void dgvAddNewTables_Click(object sender, EventArgs e)
+        {
+            if (dgvAddNewTables.SelectedRows.Count == 0)
+            {
+                itemSelected = false;
+                itemNoSelected = 0;
+                //prdSel = null;
+            }
+            else if (dgvAddNewTables.SelectedRows.Count == 1)
+            {
+                itemSelected = true;
+                lblItemNoSel.Text = dgvAddNewTables.SelectedRows[0].Cells[0].Value.ToString();
+                itemNoSelected = dgvAddNewTables.SelectedRows[0].Index;
+                addTable = dgvAddNewTables.SelectedRows[0].Cells[1].Value.ToString();
+                //prdSel = Globals.prdNoSel;
+            }
+        }
+
+        private void picRemoveNewTables_Click(object sender, EventArgs e)
+        {
+            if (!itemSelected)
+            {
+                MessageBox.Show("Please select a table to remove it from the booking", "Remove a table", MessageBoxButtons.OK);
+            }
+            else
+            {
+                dgvAddNewTables.Rows.Remove(dgvAddNewTables.Rows[itemNoSelected]);
+                lblItemNoSel.Text = "-";
+                dgvAddNewTables.ClearSelection();
+                //Sum of party size
+                int currentTableSize = partySize2; //Convert.ToInt32(numPartySize.Value);
+                numPartySize.Value = currentTableSize - tableSize;
+
+                if (numPartySize.Value == 0)
+                {
+                    MessageBox.Show("Unable to remove all tables, Please delete booking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
         private void picSaveBooking_Click(object sender, EventArgs e)
         {
             MyCustomer myCust = new MyCustomer();
@@ -1404,6 +1445,7 @@ namespace Belfray
                 tableNoSelected = dgvBooking.SelectedRows[0].Index;
                 lblTableNumDisplay.Text = lblTblNoSelDisplay.Text;
                 lblTableSelected.Text = dgvBooking.SelectedRows[0].Cells[1].Value.ToString();
+                tableNumber = dgvBooking.SelectedRows[0].Cells[1].Value.ToString();
 
                 string search = "TB00";
                 string search2 = "TB01";
@@ -1432,9 +1474,19 @@ namespace Belfray
         {
             try
             {
-                        dgvAddNewTables.Rows.Add(lblBookingNo.Text, lblTableNumDisplay.Text);
-                        int currentTableSize = Convert.ToInt32(numPartySize.Value);
-                        numPartySize.Value = currentTableSize + partySize;
+                //string str1 = dgvBooking.SelectedRows[0].Cells[1].Value.ToString();
+                //string str2 = dgvAddNewTables.SelectedRows[0].Cells[1].Value.ToString();
+
+                //if (lblTableNumDisplay.Text == str1)
+                //{
+                //    MessageBox.Show("This table already exists in the current booking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+                //else
+                //{
+                    dgvAddNewTables.Rows.Add(lblBookingNo.Text, lblTableNumDisplay.Text);
+                    int currentTableSize = Convert.ToInt32(numPartySize.Value);
+                    numPartySize.Value = currentTableSize + partySize;
+               // }
             }
             catch (Exception exc)
             {

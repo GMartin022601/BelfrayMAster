@@ -47,6 +47,7 @@
             this.lblBNoTag = new System.Windows.Forms.Label();
             this.lblPartySize = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
+            this.picClear = new System.Windows.Forms.PictureBox();
             this.picSearch = new System.Windows.Forms.PictureBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,12 +55,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBookingNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.picClear = new System.Windows.Forms.PictureBox();
+            this.picShowBill = new System.Windows.Forms.PictureBox();
+            this.pnlBill = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dgvTableBill = new System.Windows.Forms.DataGridView();
+            this.lblTables = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblTotalItems = new System.Windows.Forms.Label();
+            this.lblTotalCost = new System.Windows.Forms.Label();
+            this.gbBill = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.pnlSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShowBill)).BeginInit();
+            this.pnlBill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTableBill)).BeginInit();
+            this.gbBill.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSearch
@@ -75,9 +93,9 @@
             // pnlDetails
             // 
             this.pnlDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDetails.Controls.Add(this.txtLastName);
             this.pnlDetails.Controls.Add(this.txtFirstName);
             this.pnlDetails.Controls.Add(this.label7);
+            this.pnlDetails.Controls.Add(this.picShowBill);
             this.pnlDetails.Controls.Add(this.label6);
             this.pnlDetails.Controls.Add(this.lblCustNo);
             this.pnlDetails.Controls.Add(this.label4);
@@ -91,6 +109,7 @@
             this.pnlDetails.Controls.Add(this.lblTime);
             this.pnlDetails.Controls.Add(this.lblBNoTag);
             this.pnlDetails.Controls.Add(this.lblPartySize);
+            this.pnlDetails.Controls.Add(this.txtLastName);
             this.pnlDetails.Location = new System.Drawing.Point(932, 2);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(285, 343);
@@ -260,6 +279,17 @@
             this.pnlSearch.Size = new System.Drawing.Size(423, 153);
             this.pnlSearch.TabIndex = 2;
             // 
+            // picClear
+            // 
+            this.picClear.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picClear.Location = new System.Drawing.Point(332, 107);
+            this.picClear.Name = "picClear";
+            this.picClear.Size = new System.Drawing.Size(40, 40);
+            this.picClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picClear.TabIndex = 70;
+            this.picClear.TabStop = false;
+            this.picClear.Click += new System.EventHandler(this.picClear_Click);
+            // 
             // picSearch
             // 
             this.picSearch.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
@@ -323,25 +353,163 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by Booking Number:";
             // 
-            // picClear
+            // picShowBill
             // 
-            this.picClear.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picClear.Location = new System.Drawing.Point(332, 107);
-            this.picClear.Name = "picClear";
-            this.picClear.Size = new System.Drawing.Size(40, 40);
-            this.picClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picClear.TabIndex = 70;
-            this.picClear.TabStop = false;
-            this.picClear.Click += new System.EventHandler(this.picClear_Click);
+            this.picShowBill.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picShowBill.Location = new System.Drawing.Point(235, 284);
+            this.picShowBill.Name = "picShowBill";
+            this.picShowBill.Size = new System.Drawing.Size(40, 40);
+            this.picShowBill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picShowBill.TabIndex = 71;
+            this.picShowBill.TabStop = false;
+            this.picShowBill.Click += new System.EventHandler(this.picShowBill_Click);
+            // 
+            // pnlBill
+            // 
+            this.pnlBill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBill.Controls.Add(this.lblTotalCost);
+            this.pnlBill.Controls.Add(this.lblTotalItems);
+            this.pnlBill.Controls.Add(this.label8);
+            this.pnlBill.Controls.Add(this.label5);
+            this.pnlBill.Controls.Add(this.comboBox1);
+            this.pnlBill.Controls.Add(this.lblTables);
+            this.pnlBill.Controls.Add(this.label9);
+            this.pnlBill.Controls.Add(this.label10);
+            this.pnlBill.Controls.Add(this.label11);
+            this.pnlBill.Controls.Add(this.label15);
+            this.pnlBill.Location = new System.Drawing.Point(932, 2);
+            this.pnlBill.Name = "pnlBill";
+            this.pnlBill.Size = new System.Drawing.Size(285, 343);
+            this.pnlBill.TabIndex = 60;
+            this.pnlBill.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Enabled = false;
+            this.label9.Location = new System.Drawing.Point(104, 48);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 18);
+            this.label9.TabIndex = 55;
+            this.label9.Text = "--";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 48);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 18);
+            this.label10.TabIndex = 54;
+            this.label10.Text = "Customer No:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Enabled = false;
+            this.label11.Location = new System.Drawing.Point(104, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(16, 18);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "--";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 19);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 18);
+            this.label15.TabIndex = 43;
+            this.label15.Text = "Booking No:";
+            // 
+            // dgvTableBill
+            // 
+            this.dgvTableBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTableBill.Location = new System.Drawing.Point(6, 24);
+            this.dgvTableBill.Name = "dgvTableBill";
+            this.dgvTableBill.Size = new System.Drawing.Size(483, 126);
+            this.dgvTableBill.TabIndex = 72;
+            this.dgvTableBill.Visible = false;
+            // 
+            // lblTables
+            // 
+            this.lblTables.AutoSize = true;
+            this.lblTables.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTables.Location = new System.Drawing.Point(7, 86);
+            this.lblTables.Name = "lblTables";
+            this.lblTables.Size = new System.Drawing.Size(57, 18);
+            this.lblTables.TabIndex = 56;
+            this.lblTables.Text = "Table(s):";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(107, 83);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 26);
+            this.comboBox1.TabIndex = 57;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 148);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 18);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "Total Items:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(11, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 18);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "Total Cost:";
+            // 
+            // lblTotalItems
+            // 
+            this.lblTotalItems.AutoSize = true;
+            this.lblTotalItems.Enabled = false;
+            this.lblTotalItems.Location = new System.Drawing.Point(104, 148);
+            this.lblTotalItems.Name = "lblTotalItems";
+            this.lblTotalItems.Size = new System.Drawing.Size(16, 18);
+            this.lblTotalItems.TabIndex = 60;
+            this.lblTotalItems.Text = "--";
+            // 
+            // lblTotalCost
+            // 
+            this.lblTotalCost.AutoSize = true;
+            this.lblTotalCost.Enabled = false;
+            this.lblTotalCost.Location = new System.Drawing.Point(104, 184);
+            this.lblTotalCost.Name = "lblTotalCost";
+            this.lblTotalCost.Size = new System.Drawing.Size(16, 18);
+            this.lblTotalCost.TabIndex = 61;
+            this.lblTotalCost.Text = "--";
+            // 
+            // gbBill
+            // 
+            this.gbBill.Controls.Add(this.dgvTableBill);
+            this.gbBill.Location = new System.Drawing.Point(431, 187);
+            this.gbBill.Name = "gbBill";
+            this.gbBill.Size = new System.Drawing.Size(495, 158);
+            this.gbBill.TabIndex = 73;
+            this.gbBill.TabStop = false;
+            this.gbBill.Text = "Table Items";
             // 
             // TableSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 349);
-            this.Controls.Add(this.pnlDetails);
+            this.Controls.Add(this.gbBill);
+            this.Controls.Add(this.pnlBill);
             this.Controls.Add(this.dgvSearch);
             this.Controls.Add(this.pnlSearch);
+            this.Controls.Add(this.pnlDetails);
             this.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -354,8 +522,13 @@
             this.pnlDetails.PerformLayout();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShowBill)).EndInit();
+            this.pnlBill.ResumeLayout(false);
+            this.pnlBill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTableBill)).EndInit();
+            this.gbBill.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -389,5 +562,19 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox picClear;
+        private System.Windows.Forms.PictureBox picShowBill;
+        private System.Windows.Forms.Panel pnlBill;
+        private System.Windows.Forms.Label lblTotalCost;
+        private System.Windows.Forms.Label lblTotalItems;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblTables;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView dgvTableBill;
+        private System.Windows.Forms.GroupBox gbBill;
     }
 }
