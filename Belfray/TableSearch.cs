@@ -14,11 +14,11 @@ namespace Belfray
     public partial class TableSearch : Form
     {
         //SQL links
-        DataRow drBookingDetails, drCustomer, drBookingItem, drPaymentType, drBooking;
-        String connStr, sqlBookingDetails, sqlCustomer, sqlBookingItem, sqlPaymentType, sqlBooking;
-        SqlDataAdapter daBookingDetails, daCustomer, daBookingItem, daPaymentType, daBooking;
+        DataRow drBookingDetails, drCustomer, drBookingItem, drPaymentType, drBooking, drItem;
+        String connStr, sqlBookingDetails, sqlCustomer, sqlBookingItem, sqlPaymentType, sqlBooking, sqlBill, sqlItem;
+        SqlDataAdapter daBookingDetails, daCustomer, daBookingItem, daPaymentType, daBooking, daBill, daItem;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBBookingDetails, cmdBCustomer, cmdBBookingItem, cmdBPaymentType, cmdBBooking;
+        SqlCommandBuilder cmdBBookingDetails, cmdBCustomer, cmdBBookingItem, cmdBPaymentType, cmdBBooking, cmdBItem;
         private int searchOption = 0;
         private string selected = "";
         string bDate = "";
@@ -74,6 +74,7 @@ namespace Belfray
             }
             else if (dgvSearch.SelectedRows.Count == 1)
             {
+                Globals.bookSel = dgvSearch.SelectedRows[0].Cells[0].Value.ToString();
                 selected = dgvSearch.SelectedRows[0].Cells[0].Value.ToString();
                 lblBookingNo.Text = dgvSearch.SelectedRows[0].Cells[0].Value.ToString();
                 DateTime checkIn = Convert.ToDateTime(dgvSearch.SelectedRows[0].Cells[1].Value);
@@ -87,6 +88,56 @@ namespace Belfray
             }
         }
 
+        public void CreateBill()
+        {
+            //dgvTableBill.DataSource = dsBelfray.Tables["Book"];
+
+            //DGV Populate
+            foreach (DataRow drDetails in dsBelfray.Tables["BookingDetails"].Rows)
+            {
+                foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
+                {
+                    string tableNo = "";
+                    string bookingItemNo = "";
+                    string bookingItemQTY = "";
+                    string itemPrice = "";
+                    string desc = "";
+
+                    if (drDetails["bookingNo"].Equals(lblBookingNo.Text))
+                    {
+                        //if (drItem)
+                        tableNo = drDetails["itemNo"].ToString();
+                        //itemPrice = drItem["itemPrice"].ToString();
+                        bookingItemQTY = drDetails["bookingItemQty"].ToString();
+                        bookingItemNo = drDetails["bookingItemNo"].ToString();
+                        desc = drItem["itemDesc"].ToString();
+
+
+                        dgvTableBill.ColumnCount = 4;
+                        dgvTableBill.Columns[0].Name = "Table Number";
+                        dgvTableBill.Columns[0].Width = 100;
+                        dgvTableBill.Columns[0].Name = "Item Number";
+                        dgvTableBill.Columns[0].Width = 100;
+                        dgvTableBill.Columns[1].Name = "Item Desc";
+                        dgvTableBill.Columns[1].Width = 100;
+                        dgvTableBill.Columns[2].Name = "Qty";
+                        dgvTableBill.Columns[2].Width = 100;
+                        //dgvTableBill.Columns[4].Name = "Price";
+                        //dgvTableBill.Columns[4].Width = 100;
+                    dgvTableBill.Rows.Add(tableNo, bookingItemNo, desc, bookingItemQTY);
+                   // dgvTableBill.Rows.Add(bookingNo, bookingItemNo, desc, bookingItemQTY, itemPrice);
+                    }
+                }
+            }
+        }
+        private void picShowBill_Click(object sender, EventArgs e)
+        {
+            dgvTableBill.Visible = true;
+            pnlBill.Visible = true;
+            pnlBill.BringToFront();
+            CreateBill();
+            //dgvTableBill.DataSource = dsBelfray.Tables["Book"];
+        }
         private void txtBookingNumber_TextChanged(object sender, EventArgs e)
         {
             if (txtBookingNumber.Text.Length < 10)
@@ -191,6 +242,22 @@ namespace Belfray
             InitializeComponent();
         }
 
+        public void FormatDGV()
+        {
+            dgvSearch.Columns[0].HeaderText = "Booking Number";
+            dgvSearch.Columns[1].HeaderText = "Booking Date";
+            dgvSearch.Columns[6].HeaderText = "Surname";
+            dgvSearch.Columns[0].Width = 100;
+            dgvSearch.Columns[1].Width = 100;
+            dgvSearch.Columns[2].Width = 81;
+            dgvSearch.Columns[3].Width = 81;
+            dgvSearch.Columns[4].Width = 100;
+            dgvSearch.Columns[5].Width = 100;
+            dgvSearch.Columns[6].Width = 100;
+            dgvSearch.Columns[7].Width = 71;
+            dgvSearch.Columns[8].Width = 61;
+            dgvSearch.Columns[9].Width = 61;
+        }
         private void TableSearch_Load(object sender, EventArgs e)
         {
             //DB Connection
@@ -206,6 +273,28 @@ namespace Belfray
             cmdBCustomer = new SqlCommandBuilder(daCustomer);
             daCustomer.FillSchema(dsBelfray, SchemaType.Source, "Customer");
             daCustomer.Fill(dsBelfray, "Customer");
+            //SQL For BookingDtails
+            sqlBookingDetails = @"select * from BookingDetails";
+            daBookingDetails = new SqlDataAdapter(sqlBookingDetails, connStr);
+            cmdBBookingDetails = new SqlCommandBuilder(daBookingDetails);
+            daBookingDetails.FillSchema(dsBelfray, SchemaType.Source, "BookingDetails");
+            daBookingDetails.Fill(dsBelfray, "BookingDetails");
+            //SQL for Item
+            sqlItem = @"select * from Item";
+            daItem = new SqlDataAdapter(sqlItem, connStr);
+            cmdBItem = new SqlCommandBuilder(daItem);
+            daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
+            daItem.Fill(dsBelfray, "Item");
+
+            //sql for bookings bill
+            sqlBill = @"SELECT Booking.bookingNo, BookingDetails.bookingItemNo, BookingDetails.bookingItemQty, Item.itemPrice, Item.itemDesc FROM Booking
+                        LEFT JOIN BookingDetails on BookingDetails.bookingNo = Booking.bookingNo
+                        LEFT JOIN Item on Item.itemNo = BookingDetails.itemNo";
+                        //WHERE BookingDetails.itemNo LIKE '%TB%'";
+            daBill = new SqlDataAdapter(sqlBill, connStr);
+            daBill.FillSchema(dsBelfray, SchemaType.Source, "Book");
+            daBill.Fill(dsBelfray, "Book");
+            //dgvTableBill.DataSource = dsBelfray.Tables["Book"];
 
 
             //SQL for Booking
@@ -231,6 +320,7 @@ namespace Belfray
             dgvSearch.DataSource = dsBelfray.Tables["Booking"];
             //Resize
             dgvSearch.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            FormatDGV();
 
         }
     }
