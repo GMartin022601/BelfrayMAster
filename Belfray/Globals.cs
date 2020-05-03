@@ -27,7 +27,7 @@ namespace Belfray
         //Tracks Rooms Added on the Booking Add Form
         public static string[] rooms = new string[19] { " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "};
 
-        //tracks Rooms Deleted on the Booking Deit Form
+        //tracks Rooms Deleted on the Booking edit Form
         public static string[] delRooms = new string[19] { " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
 
         public static string[] removedRooms = new string[19] { " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };

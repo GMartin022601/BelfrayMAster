@@ -294,9 +294,9 @@ namespace Belfray
             }
 
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -609,7 +609,7 @@ namespace Belfray
                 picTabAdd.Enabled = true;
                 picTabDelete.Enabled = true;
 
-                Globals.bookNoSel = "";
+                //Globals.bookNoSel = "";
             }
         }
 
@@ -702,7 +702,7 @@ namespace Belfray
                 {
                     pnlRoomSelect.Visible = false;
 
-                    Globals.firstLoad = true;
+                    //Globals.firstLoad = true;
 
                     picTabEdit_Click(sender, e);
                 }
@@ -804,6 +804,8 @@ namespace Belfray
             {
                 pnlRoomSelect.Visible = true;
                 pnlRoomSelect.BringToFront();
+
+                Globals.firstLoad = false;
 
                 RoomSelect frm = new RoomSelect();
                 frm.TopLevel = false;

@@ -2554,6 +2554,10 @@ namespace Belfray
 
         private void picEditCancel_Click(object sender, EventArgs e)
         {
+            checkInDate = dtpCheckInDate.Value;
+            checkOutDate = dtpCheckOutDate.Value;
+
+            Globals.firstLoad = false;
             cancelled = true;
             this.Close();
         }

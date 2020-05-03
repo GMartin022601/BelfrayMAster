@@ -129,12 +129,15 @@ namespace Belfray
             }
             else
             {
-                drRoom = dsBelfray.Tables["BookingItem"].NewRow();
-                drRoom["bookingNo"] = lblBookingNo.Text;
-                drRoom["itemNo"] = "RM" + RoomSelect.roomSelected;                
-                dsBelfray.Tables["BookingItem"].Rows.Add(drRoom);
+                if (!RoomSelect.cancelled)
+                {
+                    drRoom = dsBelfray.Tables["BookingItem"].NewRow();
+                    drRoom["bookingNo"] = lblBookingNo.Text;
+                    drRoom["itemNo"] = "RM" + RoomSelect.roomSelected;
+                    dsBelfray.Tables["BookingItem"].Rows.Add(drRoom);
 
-                daRoom.Update(dsBelfray, "BookingItem");
+                    daRoom.Update(dsBelfray, "BookingItem");
+                }
 
                 dtpBookingCheckIn.Value = RoomSelect.checkInDate;
                 dtpBookingCheckOut.Value = RoomSelect.checkOutDate;
@@ -873,7 +876,6 @@ namespace Belfray
 
             Globals.checkInDate = dtpBookingCheckIn.Value;
             Globals.checkOutDate = dtpBookingCheckOut.Value;
-
             cancelled = false;
             this.Close();
         }

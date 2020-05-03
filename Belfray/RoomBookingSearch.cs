@@ -39,9 +39,9 @@ namespace Belfray
         private void RoomBookingSearch_Load(object sender, EventArgs e)
         {
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -140,114 +140,37 @@ namespace Belfray
             txtSearchBookingNo.Text = "";
             txtSearchCustomerNo.Text = "";
             txtSearchCustomerName.Text = "";
-        }
-
-        //Search Button Functions
-        private void picSearch_MouseEnter(object sender, EventArgs e)
-        {
-            picSearch.BackColor = Color.FromArgb(57, 181, 74);
-        }
-
-        private void picSearch_Click(object sender, EventArgs e)
-        {
-            switch(searchOption)
-            {
-                case 0:
-                    MessageBox.Show("Please in put your search Text in a Text box above to search.", "Search error", MessageBoxButtons.OK);
-                    break;
-                case 1:
-                    DataView bookSearch = new DataView(dsBelfray.Tables["Booking"], "bookingNo = '" + txtSearchBookingNo.Text.ToString() + "'", "bookingNo", DataViewRowState.CurrentRows);
-                    dgvBookingSearch.DataSource = bookSearch;
-                    break;
-                case 2:
-                    DataView cusSearch = new DataView(dsBelfray.Tables["Customer"], "customerNo = '" + txtSearchCustomerNo.Text.ToString() + "'", "customerNo", DataViewRowState.CurrentRows);
-                    dgvCustomerSearch.DataSource = cusSearch;
-                    break;
-                case 3:
-                    DataView custSearch = new DataView(dsBelfray.Tables["Customer"], "customerSurname = '" + txtSearchCustomerName.Text.ToString() + "'", "customerSurname", DataViewRowState.CurrentRows);
-                    dgvCustomerSearch.DataSource = custSearch;
-                    break;
-            }
-        }
-
-        private void picSearch_MouseLeave(object sender, EventArgs e)
-        {
-            picSearch.BackColor = Color.Transparent;
-        }
+        }        
 
         //Customer Name Text Changed
         private void txtSearchCustomerName_TextChanged(object sender, EventArgs e)
         {
-            if (!butPress)
+            if (txtSearchCustomerName.Text.Length > 0)
             {
-                if (txtSearchCustomerName.Text.Length != 0)
-                {
-                    searchOption = 3;
-                    txtSearchCustomerNo.Text = "";
-                    picSearch.Enabled = true;
-                }
+                txtSearchCustomerNo.Text = "";
             }
 
-            butPress = false;
+            DataView custSearch = new DataView(dsBelfray.Tables["Customer"], "customerSurname LIKE '%" + txtSearchCustomerName.Text.ToString() + "%'", "customerSurname", DataViewRowState.CurrentRows);
+            dgvCustomerSearch.DataSource = custSearch;
         }
 
         //Customer Number Text Changed
         private void txtSearchCustomerNo_TextChanged(object sender, EventArgs e)
         {
-            if (!butPress)
+            if (txtSearchCustomerNo.Text.Length > 0)
             {
-                if (txtSearchCustomerNo.Text.Length == 9)
-                {
-                    searchOption = 2;
-                    txtSearchCustomerNo.BackColor = Color.White;
-                    picSearch.Enabled = true;
-                }
-                else if (txtSearchCustomerNo.Text.Length > 0)
-                {
-                    txtSearchCustomerNo.BackColor = Color.LightCoral;
-                    txtSearchCustomerName.Text = "";
-                    picSearch.Enabled = false;
-                }
-                else if (txtSearchCustomerNo.Text.Length == 0)
-                {
-                    txtSearchCustomerNo.BackColor = Color.LightCoral;
-                    btnCustomers_Click(sender, e);
-                    picSearch.Enabled = false;
-                }
-                else
-                {
-                    txtSearchCustomerNo.BackColor = Color.LightCoral;
-                    picSearch.Enabled = false;
-                }
+               txtSearchCustomerName.Text = "";
             }
 
-            butPress = false;
+            DataView cusSearch = new DataView(dsBelfray.Tables["Customer"], "customerNo LIKE '%" + txtSearchCustomerNo.Text.ToString() + "%'", "customerNo", DataViewRowState.CurrentRows);
+            dgvCustomerSearch.DataSource = cusSearch;
         }
 
         //Booking Number Text Changed
         private void txtSearchBookingNo_TextChanged(object sender, EventArgs e)
         {
-            if (!butPress)
-            {
-                if (txtSearchBookingNo.Text.Length == 10)
-                {
-                    searchOption = 1;
-                    txtSearchBookingNo.BackColor = Color.White;
-                    picSearch.Enabled = true;
-                }
-                else if (txtSearchBookingNo.Text.Length == 0)
-                {
-                    btnBookings_Click(sender, e);
-                    picSearch.Enabled = false;
-                }
-                else
-                {
-                    txtSearchBookingNo.BackColor = Color.LightCoral;
-                    picSearch.Enabled = false;
-                }
-            }
-
-            butPress = false;
+            DataView bookSearch = new DataView(dsBelfray.Tables["Booking"], "bookingNo LIKE '%" + txtSearchBookingNo.Text.ToString() + "%'", "bookingNo", DataViewRowState.CurrentRows);
+            dgvBookingSearch.DataSource = bookSearch;
         }
 
         //Customer Clicked

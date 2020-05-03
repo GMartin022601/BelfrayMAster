@@ -34,191 +34,266 @@ namespace Belfray
             InitializeComponent();
         }
 
-        //Search Button Functions
-        private void picSearch_MouseEnter(object sender, EventArgs e)
-        {
-            picSearch.BackColor = Color.FromArgb(57, 181, 74);
-        }
+        ////Search Button Functions
+        //private void picSearch_MouseEnter(object sender, EventArgs e)
+        //{
+        //    picSearch.BackColor = Color.FromArgb(57, 181, 74);
+        //}
 
-        private void picSearch_Click(object sender, EventArgs e)
-        {
-            switch (searchOption)
-            {
-                case 0:
-                    MessageBox.Show("Please in put your search Text in a Text box above to search.", "Search error", MessageBoxButtons.OK);
-                    break;
-                case 1:
-                    dgvItemSearch.Visible = false;
-                    dgvRoomSearch.Visible = true;                    
+        //private void picSearch_Click(object sender, EventArgs e)
+        //{
+        //    switch (searchOption)
+        //    {
+        //        case 0:
+        //            MessageBox.Show("Please in put your search Text in a Text box above to search.", "Search error", MessageBoxButtons.OK);
+        //            break;
+        //        case 1:
+        //            dgvItemSearch.Visible = false;
+        //            dgvRoomSearch.Visible = true;                    
 
-                    DataView roomSearch = new DataView(dsBelfray.Tables["BookItem"], "itemNo = '" + txtSearchRoomNo.Text.ToString() + "'", "itemNo", DataViewRowState.CurrentRows);
-                    dgvRoomSearch.DataSource = roomSearch;
+        //            DataView roomSearch = new DataView(dsBelfray.Tables["BookItem"], "itemNo = '" + txtSearchRoomNo.Text.ToString() + "'", "itemNo", DataViewRowState.CurrentRows);
+        //            dgvRoomSearch.DataSource = roomSearch;
 
-                    dgvRoomSearch.Columns[0].HeaderText = "Room Number";
+        //            dgvRoomSearch.Columns[0].HeaderText = "Room Number";
 
-                    dgvRoomSearch.Columns[0].Width = 82;
-                    dgvRoomSearch.Columns[1].Width = 82;
-                    dgvRoomSearch.Columns[2].Width = 81;
-                    dgvRoomSearch.Columns[3].Width = 81;
-                    dgvRoomSearch.Columns[4].Width = 71;
-                    dgvRoomSearch.Columns[5].Width = 51;
-                    dgvRoomSearch.Columns[6].Width = 71;
-                    dgvRoomSearch.Columns[7].Width = 71;
-                    dgvRoomSearch.Columns[8].Width = 61;
-                    dgvRoomSearch.Columns[9].Width = 61;
-                    break;
-                case 2:
-                    dgvItemSearch.Visible = true;
-                    dgvRoomSearch.Visible = false;
+        //            dgvRoomSearch.Columns[0].Width = 82;
+        //            dgvRoomSearch.Columns[1].Width = 82;
+        //            dgvRoomSearch.Columns[2].Width = 81;
+        //            dgvRoomSearch.Columns[3].Width = 81;
+        //            dgvRoomSearch.Columns[4].Width = 71;
+        //            dgvRoomSearch.Columns[5].Width = 51;
+        //            dgvRoomSearch.Columns[6].Width = 71;
+        //            dgvRoomSearch.Columns[7].Width = 71;
+        //            dgvRoomSearch.Columns[8].Width = 61;
+        //            dgvRoomSearch.Columns[9].Width = 61;
+        //            break;
+        //        case 2:
+        //            dgvItemSearch.Visible = true;
+        //            dgvRoomSearch.Visible = false;
 
-                    DataView itemSearch = new DataView(dsBelfray.Tables["BookingDets"], "bookingItemNo = '" + txtSearchItemNo.Text.ToString() + "'", "bookingItemNo", DataViewRowState.CurrentRows);
-                    dgvItemSearch.DataSource = itemSearch;
+        //            DataView itemSearch = new DataView(dsBelfray.Tables["BookingDets"], "bookingItemNo = '" + txtSearchItemNo.Text.ToString() + "'", "bookingItemNo", DataViewRowState.CurrentRows);
+        //            dgvItemSearch.DataSource = itemSearch;
 
-                    dgvItemSearch.Columns[0].HeaderText = "Room Number";
-                    dgvItemSearch.Columns[2].HeaderText = "Item Number";
-                    dgvItemSearch.Columns[3].HeaderText = "Item Description";
+        //            dgvItemSearch.Columns[0].HeaderText = "Room Number";
+        //            dgvItemSearch.Columns[2].HeaderText = "Item Number";
+        //            dgvItemSearch.Columns[3].HeaderText = "Item Description";
 
-                    dgvItemSearch.Columns[0].Width = 72;
-                    dgvItemSearch.Columns[1].Width = 90;
-                    dgvItemSearch.Columns[2].Width = 82;
-                    dgvItemSearch.Columns[3].Width = 292;
-                    dgvItemSearch.Columns[4].Width = 72;
-                    dgvItemSearch.Columns[5].Width = 62;
-                    dgvItemSearch.Columns[6].Width = 42;
-                    break;
-                case 3:
-                    dgvItemSearch.Visible = true;
-                    dgvRoomSearch.Visible = false;
+        //            dgvItemSearch.Columns[0].Width = 72;
+        //            dgvItemSearch.Columns[1].Width = 90;
+        //            dgvItemSearch.Columns[2].Width = 82;
+        //            dgvItemSearch.Columns[3].Width = 292;
+        //            dgvItemSearch.Columns[4].Width = 72;
+        //            dgvItemSearch.Columns[5].Width = 62;
+        //            dgvItemSearch.Columns[6].Width = 42;
+        //            break;
+        //        case 3:
+        //            dgvItemSearch.Visible = true;
+        //            dgvRoomSearch.Visible = false;
 
-                    DataView item2Search = new DataView(dsBelfray.Tables["BookingDets"], "itemDesc LIKE '%" + txtSearchItemName.Text.ToString() + "%'", "itemDesc", DataViewRowState.CurrentRows);
-                    dgvItemSearch.DataSource = item2Search;
+        //            DataView item2Search = new DataView(dsBelfray.Tables["BookingDets"], "itemDesc LIKE '%" + txtSearchItemName.Text.ToString() + "%'", "itemDesc", DataViewRowState.CurrentRows);
+        //            dgvItemSearch.DataSource = item2Search;
 
-                    dgvItemSearch.Columns[0].HeaderText = "Room Number";
-                    dgvItemSearch.Columns[2].HeaderText = "Item Number";
-                    dgvItemSearch.Columns[3].HeaderText = "Item Description";
+        //            dgvItemSearch.Columns[0].HeaderText = "Room Number";
+        //            dgvItemSearch.Columns[2].HeaderText = "Item Number";
+        //            dgvItemSearch.Columns[3].HeaderText = "Item Description";
 
-                    dgvItemSearch.Columns[0].Width = 72;
-                    dgvItemSearch.Columns[1].Width = 90;
-                    dgvItemSearch.Columns[2].Width = 82;
-                    dgvItemSearch.Columns[3].Width = 292;
-                    dgvItemSearch.Columns[4].Width = 72;
-                    dgvItemSearch.Columns[5].Width = 62;
-                    dgvItemSearch.Columns[6].Width = 42;
-                    break;
-            }
-        }
+        //            dgvItemSearch.Columns[0].Width = 72;
+        //            dgvItemSearch.Columns[1].Width = 90;
+        //            dgvItemSearch.Columns[2].Width = 82;
+        //            dgvItemSearch.Columns[3].Width = 292;
+        //            dgvItemSearch.Columns[4].Width = 72;
+        //            dgvItemSearch.Columns[5].Width = 62;
+        //            dgvItemSearch.Columns[6].Width = 42;
+        //            break;
+        //    }
+        //}
 
-        private void picSearch_MouseLeave(object sender, EventArgs e)
-        {
+        //private void picSearch_MouseLeave(object sender, EventArgs e)
+        //{
 
-            picSearch.BackColor = Color.Transparent;
-        }
+        //    picSearch.BackColor = Color.Transparent;
+        //}
 
         //Search Item Name Text Changed
         private void txtSearchItemName_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearchItemName.Text.Length > 2)
+            //if (txtSearchItemName.Text.Length > 2)
+            //{
+            //    searchOption = 3;
+            //    txtSearchItemName.BackColor = Color.White;
+            //    picSearch.Enabled = true;
+            //}
+            //else if (txtSearchItemName.Text.Length > 0)
+            //{
+            //    txtSearchItemName.BackColor = Color.LightCoral;
+            //    txtSearchItemNo.Text = "";
+            //    txtSearchRoomNo.Text = "";
+            //    displayItems();
+            //    picSearch.Enabled = false;
+            //}
+            //else if (txtSearchItemName.Text.Length == 0)
+            //{
+            //    if (txtSearchItemNo.Text.Length == 0)
+            //    {
+            //        dgvItemSearch.Visible = false;
+            //        dgvRoomSearch.Visible = true;
+            //        displayRooms();
+            //    }
+            //    else
+            //    {
+            //        displayItems();
+            //    }
+
+            //    picSearch.Enabled = false;
+            //}
+            //else
+            //{
+            //    txtSearchItemName.BackColor = Color.LightCoral;
+            //    picSearch.Enabled = false;
+            //}
+
+            if (txtSearchItemName.Text.Length > 0)
             {
-                searchOption = 3;
-                txtSearchItemName.BackColor = Color.White;
-                picSearch.Enabled = true;
-            }
-            else if (txtSearchItemName.Text.Length > 0)
-            {
-                txtSearchItemName.BackColor = Color.LightCoral;
                 txtSearchItemNo.Text = "";
                 txtSearchRoomNo.Text = "";
-                displayItems();
-                picSearch.Enabled = false;
+                //displayItems();
             }
-            else if (txtSearchItemName.Text.Length == 0)
-            {
-                if (txtSearchItemNo.Text.Length == 0)
-                {
-                    dgvItemSearch.Visible = false;
-                    dgvRoomSearch.Visible = true;
-                    displayRooms();
-                }
-                else
-                {
-                    displayItems();
-                }
 
-                picSearch.Enabled = false;
-            }
-            else
-            {
-                txtSearchItemName.BackColor = Color.LightCoral;
-                picSearch.Enabled = false;
-            }
+            dgvItemSearch.Visible = true;
+            dgvRoomSearch.Visible = false;
+
+            DataView itemSearch = new DataView(dsBelfray.Tables["BookingDets"], "bookingItemNo LIKE '%" + txtSearchItemNo.Text.ToString() + "%'", "bookingItemNo", DataViewRowState.CurrentRows);
+            dgvItemSearch.DataSource = itemSearch;
+
+            dgvItemSearch.Columns[0].HeaderText = "Room Number";
+            dgvItemSearch.Columns[2].HeaderText = "Item Number";
+            dgvItemSearch.Columns[3].HeaderText = "Item Description";
+
+            dgvItemSearch.Columns[0].Width = 72;
+            dgvItemSearch.Columns[1].Width = 90;
+            dgvItemSearch.Columns[2].Width = 82;
+            dgvItemSearch.Columns[3].Width = 292;
+            dgvItemSearch.Columns[4].Width = 72;
+            dgvItemSearch.Columns[5].Width = 62;
+            dgvItemSearch.Columns[6].Width = 42;
         }
 
         //Search Item Number Text Changed
         private void txtSearchItemNo_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearchItemNo.Text.Length == 5)
+            //if (txtSearchItemNo.Text.Length == 5)
+            //{
+            //    searchOption = 2;
+            //    txtSearchItemNo.BackColor = Color.White;
+            //    picSearch.Enabled = true;
+            //}
+            //else if (txtSearchItemNo.Text.Length > 0)
+            //{
+            //    txtSearchItemNo.BackColor = Color.LightCoral;
+            //    txtSearchItemName.Text = "";
+            //    txtSearchRoomNo.Text = "";
+            //    displayItems();
+            //    picSearch.Enabled = false;
+            //}
+            //else if (txtSearchItemNo.Text.Length == 0 )
+            //{
+            //    if(txtSearchItemName.Text.Length == 0)
+            //    {
+            //        dgvItemSearch.Visible = false;
+            //        dgvRoomSearch.Visible = true;
+            //        displayRooms();
+            //    }
+            //    else
+            //    {
+            //        displayItems();
+            //    }
+
+            //    picSearch.Enabled = false;
+            //}
+            //else
+            //{
+            //    txtSearchItemNo.BackColor = Color.LightCoral;
+            //    picSearch.Enabled = false;
+            //}
+
+            if (txtSearchItemNo.Text.Length > 0)
             {
-                searchOption = 2;
-                txtSearchItemNo.BackColor = Color.White;
-                picSearch.Enabled = true;
-            }
-            else if (txtSearchItemNo.Text.Length > 0)
-            {
-                txtSearchItemNo.BackColor = Color.LightCoral;
                 txtSearchItemName.Text = "";
                 txtSearchRoomNo.Text = "";
-                displayItems();
-                picSearch.Enabled = false;
+                //displayItems();
             }
-            else if (txtSearchItemNo.Text.Length == 0 )
-            {
-                if(txtSearchItemName.Text.Length == 0)
-                {
-                    dgvItemSearch.Visible = false;
-                    dgvRoomSearch.Visible = true;
-                    displayRooms();
-                }
-                else
-                {
-                    displayItems();
-                }
 
-                picSearch.Enabled = false;
-            }
-            else
-            {
-                txtSearchItemNo.BackColor = Color.LightCoral;
-                picSearch.Enabled = false;
-            }
+            dgvItemSearch.Visible = true;
+            dgvRoomSearch.Visible = false;
+
+            DataView item2Search = new DataView(dsBelfray.Tables["BookingDets"], "itemDesc LIKE '%" + txtSearchItemName.Text.ToString() + "%'", "itemDesc", DataViewRowState.CurrentRows);
+            dgvItemSearch.DataSource = item2Search;
+
+            dgvItemSearch.Columns[0].HeaderText = "Room Number";
+            dgvItemSearch.Columns[2].HeaderText = "Item Number";
+            dgvItemSearch.Columns[3].HeaderText = "Item Description";
+
+            dgvItemSearch.Columns[0].Width = 72;
+            dgvItemSearch.Columns[1].Width = 90;
+            dgvItemSearch.Columns[2].Width = 82;
+            dgvItemSearch.Columns[3].Width = 292;
+            dgvItemSearch.Columns[4].Width = 72;
+            dgvItemSearch.Columns[5].Width = 62;
+            dgvItemSearch.Columns[6].Width = 42;
         }
 
         //Search Room Number Text Changed
         private void txtSearchRoomNo_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearchRoomNo.Text.Length == 5)
+            //if (txtSearchRoomNo.Text.Length == 5)
+            //{
+            //    searchOption = 1;
+            //    txtSearchRoomNo.BackColor = Color.White;
+            //    picSearch.Enabled = true;
+            //}
+            //else if (txtSearchRoomNo.Text.Length > 0)
+            //{
+            //    txtSearchRoomNo.BackColor = Color.LightCoral;
+            //    txtSearchItemNo.Text = "";
+            //    txtSearchItemName.Text = "";
+            //    picSearch.Enabled = false;
+            //}
+            //else if (txtSearchRoomNo.Text.Length == 0)
+            //{                
+            //    displayRooms();                
+
+            //    picSearch.Enabled = false;
+            //}
+            //else
+            //{
+            //    txtSearchRoomNo.BackColor = Color.LightCoral;
+            //    picSearch.Enabled = false;
+            //}
+
+            if (txtSearchRoomNo.Text.Length > 0)
             {
-                searchOption = 1;
-                txtSearchRoomNo.BackColor = Color.White;
-                picSearch.Enabled = true;
-            }
-            else if (txtSearchRoomNo.Text.Length > 0)
-            {
-                txtSearchRoomNo.BackColor = Color.LightCoral;
                 txtSearchItemNo.Text = "";
                 txtSearchItemName.Text = "";
-                picSearch.Enabled = false;
             }
-            else if (txtSearchRoomNo.Text.Length == 0)
-            {                
-                displayRooms();                
 
-                picSearch.Enabled = false;
-            }
-            else
-            {
-                txtSearchRoomNo.BackColor = Color.LightCoral;
-                picSearch.Enabled = false;
-            }
+            dgvItemSearch.Visible = false;
+            dgvRoomSearch.Visible = true;
+
+            DataView roomSearch = new DataView(dsBelfray.Tables["BookItem"], "itemNo LIKE '%" + txtSearchRoomNo.Text.ToString() + "%'", "itemNo", DataViewRowState.CurrentRows);
+            dgvRoomSearch.DataSource = roomSearch;
+
+            dgvRoomSearch.Columns[0].HeaderText = "Room Number";
+
+            dgvRoomSearch.Columns[0].Width = 82;
+            dgvRoomSearch.Columns[1].Width = 82;
+            dgvRoomSearch.Columns[2].Width = 81;
+            dgvRoomSearch.Columns[3].Width = 81;
+            dgvRoomSearch.Columns[4].Width = 71;
+            dgvRoomSearch.Columns[5].Width = 51;
+            dgvRoomSearch.Columns[6].Width = 71;
+            dgvRoomSearch.Columns[7].Width = 71;
+            dgvRoomSearch.Columns[8].Width = 61;
+            dgvRoomSearch.Columns[9].Width = 61;
         }
 
         //Row Clicked Rooms
