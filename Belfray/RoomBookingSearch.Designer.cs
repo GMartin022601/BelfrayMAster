@@ -139,6 +139,7 @@
             this.pnlSearchDetails.Controls.Add(this.lblSearchCustomerNo);
             this.pnlSearchDetails.Controls.Add(this.txtSearchCustomerNo);
             this.pnlSearchDetails.Controls.Add(this.pnlCustomer);
+            this.pnlSearchDetails.Controls.Add(this.pnlBooking);
             this.pnlSearchDetails.Location = new System.Drawing.Point(763, 70);
             this.pnlSearchDetails.Name = "pnlSearchDetails";
             this.pnlSearchDetails.Size = new System.Drawing.Size(455, 278);
@@ -213,7 +214,6 @@
             this.pnlCustomer.Controls.Add(this.lblCustStreet);
             this.pnlCustomer.Controls.Add(this.lblCustSurname);
             this.pnlCustomer.Controls.Add(this.lblCustForename);
-            this.pnlCustomer.Controls.Add(this.pnlBooking);
             this.pnlCustomer.Controls.Add(this.lblCustTitle);
             this.pnlCustomer.Controls.Add(this.lblPhoneNo);
             this.pnlCustomer.Controls.Add(this.lblPostcode);
@@ -321,7 +321,7 @@
             this.pnlBooking.Controls.Add(this.lblArrive);
             this.pnlBooking.Controls.Add(this.lblBookingNo);
             this.pnlBooking.Controls.Add(this.lblBookingNum);
-            this.pnlBooking.Location = new System.Drawing.Point(0, 0);
+            this.pnlBooking.Location = new System.Drawing.Point(3, 3);
             this.pnlBooking.Name = "pnlBooking";
             this.pnlBooking.Size = new System.Drawing.Size(270, 272);
             this.pnlBooking.TabIndex = 112;

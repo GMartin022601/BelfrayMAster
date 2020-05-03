@@ -442,14 +442,28 @@ namespace Belfray
                     break;
             }
 
-            //Diable Selected Tab and Edit Tab
-            picTabSearch.Enabled = false;
-            picTabEdit.Enabled = false;
+            if (menuSelected != 2)
+            {
+                //Diable Selected Tab and Edit Tab
+                picTabSearch.Enabled = false;
+                picTabEdit.Enabled = false;
 
-            //Enable All Other Tabs
-            picTabDisplay.Enabled = true;
-            picTabAdd.Enabled = true;
-            picTabDelete.Enabled = true;
+                //Enable All Other Tabs
+                picTabDisplay.Enabled = true;
+                picTabAdd.Enabled = true;
+                picTabDelete.Enabled = true;
+            }
+            else
+            {
+                //Diable Selected Tab and Edit Tab
+                picTabSearch.Enabled = false;
+
+                //Enable All Other Tabs
+                picTabDisplay.Enabled = true;
+                picTabAdd.Enabled = true;
+                picTabDelete.Enabled = true;
+                picTabEdit.Enabled = true;
+            }
         }
 
         private void picTabAdd_Click(object sender, EventArgs e)
@@ -508,14 +522,28 @@ namespace Belfray
                     break;
             }
 
-            //Diable Selected Tab and Edit Tab
-            picTabAdd.Enabled = false;
-            picTabEdit.Enabled = false;
+            if (menuSelected != 2)
+            {
+                //Diable Selected Tab and Edit Tab
+                picTabAdd.Enabled = false;
+                picTabEdit.Enabled = false;
 
-            //Enable All Other Tabs
-            picTabDisplay.Enabled = true;
-            picTabSearch.Enabled = true;
-            picTabDelete.Enabled = true;
+                //Enable All Other Tabs
+                picTabDisplay.Enabled = true;
+                picTabSearch.Enabled = true;
+                picTabDelete.Enabled = true;
+            }
+            else
+            {
+                //Diable Selected Tab and Edit Tab
+                picTabAdd.Enabled = false;
+
+                //Enable All Other Tabs
+                picTabDisplay.Enabled = true;
+                picTabSearch.Enabled = true;
+                picTabDelete.Enabled = true;
+                picTabEdit.Enabled = true;
+            }
         }
 
         private void picTabEdit_Click(object sender, EventArgs e)
@@ -655,14 +683,28 @@ namespace Belfray
                     break;
             }
 
-            //Disable Selected Tab and Edit Tab
-            picTabDelete.Enabled = false;
-            picTabEdit.Enabled = false;
+            if (menuSelected != 2)
+            {
+                //Disable Selected Tab and Edit Tab
+                picTabDelete.Enabled = false;
+                picTabEdit.Enabled = false;
 
-            //Enable All Other Tabs
-            picTabDisplay.Enabled = true;
-            picTabSearch.Enabled = true;
-            picTabAdd.Enabled = true;
+                //Enable All Other Tabs
+                picTabDisplay.Enabled = true;
+                picTabSearch.Enabled = true;
+                picTabAdd.Enabled = true;
+            }
+            else
+            {
+                //Disable Selected Tab and Edit Tab
+                picTabDelete.Enabled = false;
+
+                //Enable All Other Tabs
+                picTabDisplay.Enabled = true;
+                picTabSearch.Enabled = true;
+                picTabAdd.Enabled = true;
+                picTabEdit.Enabled = true;
+            }
         }
 
         //Room Select Closing

@@ -242,7 +242,7 @@
             // 
             // picDel
             // 
-            this.picDel.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picDel.Image = global::Belfray.Properties.Resources.FinalDeleteButton;
             this.picDel.Location = new System.Drawing.Point(199, 177);
             this.picDel.Name = "picDel";
             this.picDel.Size = new System.Drawing.Size(30, 30);

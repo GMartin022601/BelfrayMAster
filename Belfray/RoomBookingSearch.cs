@@ -86,10 +86,7 @@ namespace Belfray
             dgvCustomerSearch.Visible = false;
             dgvBookingSearch.Visible = true;
             dgvBookingSearch.DataSource = dsBelfray.Tables["Booking"];
-
-            //Buttons Visible
-            picSearch.Visible = true;
-
+                        
             //Labels and text boxes visible
             lblSearchBookingNo.Visible = true;
             txtSearchBookingNo.Visible = true;
@@ -117,10 +114,7 @@ namespace Belfray
 
             dgvCustomerSearch.Visible = true;
             dgvBookingSearch.Visible = false;
-            dgvCustomerSearch.DataSource = dsBelfray.Tables["Customer"];
-
-            //Buttons Visible
-            picSearch.Visible = true;
+            dgvCustomerSearch.DataSource = dsBelfray.Tables["Customer"];            
 
             //Labels and text boxes visible
             lblSearchCustomerNo.Visible = true;
