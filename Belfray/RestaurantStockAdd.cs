@@ -200,13 +200,15 @@ namespace Belfray
                 DataRow drMethod = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue.ToString());
                 txtProdTypeCode.Text = drMethod["productTypeCode"].ToString();
                 txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
+
+                if (cbTypeCode.SelectedValue.ToString().Equals("Alcohol"))
+                {
+                    pnlImage.SendToBack();
+                    picAlcohol.Visible = true;
+                    picAlcohol.BringToFront();
+                }
             }
-            else if (cbTypeCode.SelectedValue.ToString().Equals("Alcohol"))
-            {
-                pnlImage.SendToBack();
-                picAlcohol.Visible = true;
-                picAlcohol.BringToFront();
-            }
+
         }
 
         private void CbSuppID_SelectedIndexChanged(object sender, EventArgs e)
