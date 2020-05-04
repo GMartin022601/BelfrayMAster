@@ -1472,7 +1472,6 @@
             this.dgvTableItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTableItems.Size = new System.Drawing.Size(594, 160);
             this.dgvTableItems.TabIndex = 2;
-            this.dgvTableItems.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTableItems_CellFormatting);
             this.dgvTableItems.Click += new System.EventHandler(this.dgvTableItems_Click);
             // 
             // itemNo
@@ -1612,7 +1611,7 @@
             // picAddtoTable
             // 
             this.picAddtoTable.Image = global::Belfray.Properties.Resources.AddNew;
-            this.picAddtoTable.Location = new System.Drawing.Point(576, 170);
+            this.picAddtoTable.Location = new System.Drawing.Point(576, 196);
             this.picAddtoTable.Name = "picAddtoTable";
             this.picAddtoTable.Size = new System.Drawing.Size(24, 24);
             this.picAddtoTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

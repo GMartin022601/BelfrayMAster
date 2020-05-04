@@ -23,35 +23,30 @@ namespace Belfray
         private string selected = "";
         string bDate = "";
 
-        private void TableSearch_TextChanged(object sender, EventArgs e)
+        private void txtSurname_TextChanged_1(object sender, EventArgs e)
         {
-            if (txtSurname.Text.Length < 3)// || txtSurname.Text.Length > 16)
-            {
-                txtSurname.BackColor = Color.LightCoral;
-                txtBookingNumber.Text = "";
-                //MessageBox.Show("Booking number must be 10 characters beginnin BK.", "Search error", MessageBoxButtons.OK);
-
-            }
             if (txtSurname.Text.Length > 16)
             {
-                txtSurname.BackColor = Color.LightCoral;
-                txtBookingNumber.Text = "";
                 MessageBox.Show("Surname must not exceed 16 characters.", "Search error", MessageBoxButtons.OK);
+                txtSurname.Text = "";
+            }
+            txtBookingNumber.Enabled = false;
+            txtBookingNumber.BackColor = Color.LightCoral;
+            dtpSearch.Enabled = false;
 
-            }
-            if (txtSurname.Text.Length >= 3 || txtSurname.Text.Length == 16)
-            {
-                txtBookingNumber.Text = "";
-                searchOption = 2;
-                txtSurname.BackColor = Color.LightGreen;
-            }
+            DataView surnameSearch = new DataView(dsBelfray.Tables["Booking"], "customerSurname LIKE '%" + txtSurname.Text.ToString() + "%'", "customerSurname", DataViewRowState.CurrentRows);
+            dgvSearch.DataSource = surnameSearch;
+
             if (txtSurname.Text.Length == 0)
             {
-                txtBookingNumber.Text = "";
-                txtSurname.BackColor = Color.White;
+                txtSurname.Text = "";
             }
-        }
+            txtBookingNumber.Enabled = true;
+            txtBookingNumber.BackColor = Color.White;
+            dtpSearch.Enabled = true;
 
+
+        }
         private void dtpSearch_ValueChanged(object sender, EventArgs e)
         {
             searchOption = 3;
@@ -140,102 +135,93 @@ namespace Belfray
         }
         private void txtBookingNumber_TextChanged(object sender, EventArgs e)
         {
-            if (txtBookingNumber.Text.Length < 10)
-            {
-                txtSurname.Text = "";
-                txtBookingNumber.BackColor = Color.LightCoral;
-                //MessageBox.Show("Booking number must be 10 characters beginnin BK.", "Search error", MessageBoxButtons.OK);
-
-            }
             if (txtBookingNumber.Text.Length > 10)
             {
-                txtSurname.Text = "";
                 MessageBox.Show("Booking number must be 10 characters beginnin BK.", "Search error", MessageBoxButtons.OK);
+                txtBookingNumber.Text = "";
+            }
+            txtSurname.BackColor = Color.LightCoral;
+            txtSurname.Enabled = false;
 
-            }
-            if (txtBookingNumber.Text.Length == 10)
-            {
-                searchOption = 1;
-                txtBookingNumber.BackColor = Color.LightGreen;
-                txtSurname.Text = "";
-                //txtSearchItemName.BackColor = Color.White;
-                //picSearch.Enabled = true;
-            }
+            DataView bkSearch = new DataView(dsBelfray.Tables["Booking"], "bookingNo LIKE '%" + txtBookingNumber.Text.ToString() + "%'", "bookingNo", DataViewRowState.CurrentRows);
+            dgvSearch.DataSource = bkSearch;
+
             if (txtBookingNumber.Text.Length == 0)
             {
-                txtBookingNumber.BackColor = Color.White;
-                txtSurname.Text = "";
+                txtBookingNumber.Text = "";
             }
+            txtSurname.Enabled = true;
+            txtSurname.BackColor = Color.White;
         }
 
-        private void picSearch_Click(object sender, EventArgs e)
-        {
-            switch (searchOption)
-            {
-                case 0:
-                    MessageBox.Show("Please us the options below to search.", "Search error", MessageBoxButtons.OK);
-                    break;
-                case 1:
-                        DataView bookingSearch = new DataView(dsBelfray.Tables["Booking"], "bookingNo = '" + txtBookingNumber.Text.ToString() + "'", "bookingNo", DataViewRowState.CurrentRows);
-                        dgvSearch.DataSource = bookingSearch;
+        //private void picSearch_Click(object sender, EventArgs e)
+        //{
+        //    switch (searchOption)
+        //    {
+        //        case 0:
+        //            MessageBox.Show("Please us the options below to search.", "Search error", MessageBoxButtons.OK);
+        //            break;
+        //        case 1:
+        //                DataView bookingSearch = new DataView(dsBelfray.Tables["Booking"], "bookingNo = '" + txtBookingNumber.Text.ToString() + "'", "bookingNo", DataViewRowState.CurrentRows);
+        //                dgvSearch.DataSource = bookingSearch;
 
-                        dgvSearch.Columns[0].HeaderText = "Booking Number";
-                        dgvSearch.Columns[1].HeaderText = "Booking Date";
-                        dgvSearch.Columns[6].HeaderText = "Surname";
+        //                dgvSearch.Columns[0].HeaderText = "Booking Number";
+        //                dgvSearch.Columns[1].HeaderText = "Booking Date";
+        //                dgvSearch.Columns[6].HeaderText = "Surname";
 
-                        dgvSearch.Columns[0].Width = 115;
-                        dgvSearch.Columns[1].Width = 100;
-                        dgvSearch.Columns[2].Width = 81;
-                        dgvSearch.Columns[3].Width = 81;
-                        dgvSearch.Columns[4].Width = 100;
-                        dgvSearch.Columns[5].Width = 100;
-                        dgvSearch.Columns[6].Width = 100;
-                        dgvSearch.Columns[7].Width = 71;
-                        dgvSearch.Columns[8].Width = 61;
-                        dgvSearch.Columns[9].Width = 61;
-                    break;
-                case 2:
-                    DataView surnameSearch = new DataView(dsBelfray.Tables["Booking"], "customerSurname = '" + txtSurname.Text.ToString() + "'", "customerSurname", DataViewRowState.CurrentRows);
-                    dgvSearch.DataSource = surnameSearch;
+        //                dgvSearch.Columns[0].Width = 115;
+        //                dgvSearch.Columns[1].Width = 100;
+        //                dgvSearch.Columns[2].Width = 81;
+        //                dgvSearch.Columns[3].Width = 81;
+        //                dgvSearch.Columns[4].Width = 100;
+        //                dgvSearch.Columns[5].Width = 100;
+        //                dgvSearch.Columns[6].Width = 100;
+        //                dgvSearch.Columns[7].Width = 71;
+        //                dgvSearch.Columns[8].Width = 61;
+        //                dgvSearch.Columns[9].Width = 61;
+        //            break;
+        //        case 2:
+        //            DataView surnameSearch = new DataView(dsBelfray.Tables["Booking"], "customerSurname = '" + txtSurname.Text.ToString() + "'", "customerSurname", DataViewRowState.CurrentRows);
+        //            dgvSearch.DataSource = surnameSearch;
 
-                    dgvSearch.Columns[0].HeaderText = "Booking Number";
-                    dgvSearch.Columns[1].HeaderText = "Booking Date";
-                    dgvSearch.Columns[6].HeaderText = "Surname";
+        //            dgvSearch.Columns[0].HeaderText = "Booking Number";
+        //            dgvSearch.Columns[1].HeaderText = "Booking Date";
+        //            dgvSearch.Columns[6].HeaderText = "Surname";
 
-                    dgvSearch.Columns[0].Width = 115;
-                    dgvSearch.Columns[1].Width = 100;
-                    dgvSearch.Columns[2].Width = 81;
-                    dgvSearch.Columns[3].Width = 81;
-                    dgvSearch.Columns[4].Width = 100;
-                    dgvSearch.Columns[5].Width = 100;
-                    dgvSearch.Columns[6].Width = 100;
-                    dgvSearch.Columns[7].Width = 71;
-                    dgvSearch.Columns[8].Width = 61;
-                    dgvSearch.Columns[9].Width = 61;
-                    break;
-                case 3:
-                    bDate = dtpSearch.Value.ToShortDateString();
+        //            dgvSearch.Columns[0].Width = 115;
+        //            dgvSearch.Columns[1].Width = 100;
+        //            dgvSearch.Columns[2].Width = 81;
+        //            dgvSearch.Columns[3].Width = 81;
+        //            dgvSearch.Columns[4].Width = 100;
+        //            dgvSearch.Columns[5].Width = 100;
+        //            dgvSearch.Columns[6].Width = 100;
+        //            dgvSearch.Columns[7].Width = 71;
+        //            dgvSearch.Columns[8].Width = 61;
+        //            dgvSearch.Columns[9].Width = 61;
+        //            break;
+        //        case 3:
+        //            bDate = dtpSearch.Value.ToShortDateString();
 
-                    DataView dateSearch = new DataView(dsBelfray.Tables["Booking"], "checkInDate = '" + Convert.ToDateTime(bDate) + "'", "checkInDate", DataViewRowState.CurrentRows);
-                    dgvSearch.DataSource = dateSearch;
+        //            DataView dateSearch = new DataView(dsBelfray.Tables["Booking"], "checkInDate = '" + Convert.ToDateTime(bDate) + "'", "checkInDate", DataViewRowState.CurrentRows);
+        //            dgvSearch.DataSource = dateSearch;
 
-                    dgvSearch.Columns[0].HeaderText = "Booking Number";
-                    dgvSearch.Columns[1].HeaderText = "Booking Date";
-                    dgvSearch.Columns[6].HeaderText = "Surname";
+        //            dgvSearch.Columns[0].HeaderText = "Booking Number";
+        //            dgvSearch.Columns[1].HeaderText = "Booking Date";
+        //            dgvSearch.Columns[6].HeaderText = "Surname";
 
-                    dgvSearch.Columns[0].Width = 115;
-                    dgvSearch.Columns[1].Width = 100;
-                    dgvSearch.Columns[2].Width = 81;
-                    dgvSearch.Columns[3].Width = 81;
-                    dgvSearch.Columns[4].Width = 100;
-                    dgvSearch.Columns[5].Width = 100;
-                    dgvSearch.Columns[6].Width = 100;
-                    dgvSearch.Columns[7].Width = 71;
-                    dgvSearch.Columns[8].Width = 61;
-                    dgvSearch.Columns[9].Width = 61;
-                    break;
-            }
-        }
+        //            dgvSearch.Columns[0].Width = 115;
+        //            dgvSearch.Columns[1].Width = 100;
+        //            dgvSearch.Columns[2].Width = 81;
+        //            dgvSearch.Columns[3].Width = 81;
+        //            dgvSearch.Columns[4].Width = 100;
+        //            dgvSearch.Columns[5].Width = 100;
+        //            dgvSearch.Columns[6].Width = 100;
+        //            dgvSearch.Columns[7].Width = 71;
+        //            dgvSearch.Columns[8].Width = 61;
+        //            dgvSearch.Columns[9].Width = 61;
+        //            break;
+        //    }
+        //}
 
         public TableSearch()
         {

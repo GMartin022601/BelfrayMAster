@@ -435,6 +435,12 @@ namespace Belfray
                     frm3.Show();
                     break;
                 case 4: //Restaurant Stock
+                    RestaurantProdSearch frm4 = new RestaurantProdSearch();
+                    frm4.TopLevel = false;
+                    frm4.FormBorderStyle = FormBorderStyle.None;
+                    frm4.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm4);
+                    frm4.Show();
                     break;
                 case 5: //Staff
                     break;

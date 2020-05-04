@@ -200,13 +200,36 @@ namespace Belfray
                 DataRow drMethod = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue.ToString());
                 txtProdTypeCode.Text = drMethod["productTypeCode"].ToString();
                 txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
-
-                if (cbTypeCode.SelectedValue.ToString().Equals("Alcohol"))
-                {
-                    pnlImage.SendToBack();
-                    picAlcohol.Visible = true;
-                    picAlcohol.BringToFront();
-                }
+            }
+            if (txtProdDesc2.Text.Equals("Alcohol"))
+            {
+                //pnlImage.BringToFront();
+                picAlcohol.Visible = true;
+                picAlcohol.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Alcohol Free"))
+            {
+                //pnlImage.BringToFront();
+                picAF.Visible = true;
+                picAF.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Linen"))
+            {
+                //pnlImage.BringToFront();
+                picLinen.Visible = true;
+                picLinen.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Fresh Goods"))
+            {
+                //pnlImage.BringToFront();
+                picFood.Visible = true;
+                picFood.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Room Extras"))
+            {
+                //pnlImage.BringToFront();
+                picRoomService.Visible = true;
+                picRoomService.BringToFront();
             }
 
         }
@@ -224,7 +247,6 @@ namespace Belfray
                 txtSuppPC.Text = drSuppCombo["supplierPostCode"].ToString();
                 txtSuppEmail.Text = drSuppCombo["supplierEmail"].ToString();
                 txtSuppTel.Text = drSuppCombo["supplierTelNo"].ToString();
-
             }
         }
 
@@ -334,8 +356,8 @@ namespace Belfray
             txtCostPrice.Clear();
             txtQTY.Clear();
             txtReOrder.Clear();
-            cbSuppID.SelectedIndex = -1;
-            cbTypeCode.SelectedIndex = -1;
+            cbSuppID.SelectedValue = " ";
+            cbTypeCode.SelectedValue = " ";
         }
         //clear supplier panel
         void clearSuppPanel()
@@ -456,6 +478,10 @@ namespace Belfray
                     {
                         clearAddPanel();
                         getProdNum(dsBelfray.Tables["Product"].Rows.Count);
+                        string s = drProduct["productNumber"].ToString();
+                        string s1 = "PRD" + (Convert.ToInt32(s.Replace("PRD", "")) + 1).ToString().PadLeft(5, '0');
+                        lblProductNumberDisplay.Text = s1;
+                        //formLoad = true;
                     }
                     else
                     {

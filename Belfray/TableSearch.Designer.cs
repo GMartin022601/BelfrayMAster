@@ -143,6 +143,7 @@
             this.picShowBill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picShowBill.TabIndex = 71;
             this.picShowBill.TabStop = false;
+            this.picShowBill.Visible = false;
             this.picShowBill.Click += new System.EventHandler(this.picShowBill_Click);
             // 
             // label6
@@ -311,7 +312,6 @@
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSearch.TabIndex = 64;
             this.picSearch.TabStop = false;
-            this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
             // 
             // txtSurname
             // 
@@ -319,7 +319,7 @@
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(171, 25);
             this.txtSurname.TabIndex = 45;
-            this.txtSurname.TextChanged += new System.EventHandler(this.TableSearch_TextChanged);
+            this.txtSurname.TextChanged += new System.EventHandler(this.txtSurname_TextChanged_1);
             // 
             // label3
             // 
@@ -500,6 +500,7 @@
             this.gbBill.TabIndex = 73;
             this.gbBill.TabStop = false;
             this.gbBill.Text = "Table Items";
+            this.gbBill.Visible = false;
             // 
             // TableSearch
             // 
@@ -507,17 +508,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 349);
             this.Controls.Add(this.gbBill);
-            this.Controls.Add(this.pnlBill);
             this.Controls.Add(this.dgvSearch);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.pnlDetails);
+            this.Controls.Add(this.pnlBill);
             this.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TableSearch";
             this.Text = "TableSearch";
             this.Load += new System.EventHandler(this.TableSearch_Load);
-            this.TextChanged += new System.EventHandler(this.TableSearch_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();

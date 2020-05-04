@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 using System.Data.SqlClient;
 
@@ -65,6 +66,18 @@ namespace Belfray
             dgvRestStock.DataSource = dsBelfray.Tables["Product"];
             //Resize
             dgvRestStock.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            //Rename
+            dgvRestStock.Columns[0].HeaderCell.Value = "Product Number";
+            dgvRestStock.Columns[1].HeaderCell.Value = "Product Type Code";
+            dgvRestStock.Columns[2].HeaderCell.Value = "Product Description";
+            dgvRestStock.Columns[3].HeaderCell.Value = "Cost Price";
+            dgvRestStock.Columns[4].HeaderCell.Value = "Qty in Stock";
+            dgvRestStock.Columns[5].HeaderCell.Value = "Pack Size";
+            dgvRestStock.Columns[6].HeaderCell.Value = "Re-Order Level";
+            dgvRestStock.Columns[7].HeaderCell.Value = "Supplier ID";
+            //Format
+            dgvRestStock.Columns[3].DefaultCellStyle.Format = "c2";
+            dgvRestStock.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
         }
     }
 }
