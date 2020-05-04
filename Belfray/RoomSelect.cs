@@ -2204,9 +2204,9 @@ namespace Belfray
 
         private void RoomSelect_Load(object sender, EventArgs e)
         {     
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -2554,6 +2554,10 @@ namespace Belfray
 
         private void picEditCancel_Click(object sender, EventArgs e)
         {
+            checkInDate = dtpCheckInDate.Value;
+            checkOutDate = dtpCheckOutDate.Value;
+
+            Globals.firstLoad = false;
             cancelled = true;
             this.Close();
         }

@@ -131,7 +131,7 @@ namespace Belfray
             {
                 if (MyValidation.validLength(value, 7, 8) && MyValidation.validLetterNumberWhiteSpace(value))
                 {
-                    cusPC = MyValidation.firstLetterEachWordToUpper(value);
+                    cusPC = MyValidation.EachLetterToUpper(value);
                 }
                 else
                 {

@@ -73,13 +73,11 @@
             this.txtSearchItemNo = new System.Windows.Forms.TextBox();
             this.lblSearchItemNo = new System.Windows.Forms.Label();
             this.txtSearchItemName = new System.Windows.Forms.TextBox();
-            this.picSearch = new System.Windows.Forms.PictureBox();
             this.dgvRoomSearch = new System.Windows.Forms.DataGridView();
             this.dgvItemSearch = new System.Windows.Forms.DataGridView();
             this.pnlSearchDetails.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.pnlRoom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemSearch)).BeginInit();
             this.SuspendLayout();
@@ -121,7 +119,6 @@
             this.pnlSearchDetails.Controls.Add(this.lblSearchItemNo);
             this.pnlSearchDetails.Controls.Add(this.txtSearchItemName);
             this.pnlSearchDetails.Controls.Add(this.lblSearchCustomerName);
-            this.pnlSearchDetails.Controls.Add(this.picSearch);
             this.pnlSearchDetails.Controls.Add(this.lblSearchRoomNo);
             this.pnlSearchDetails.Controls.Add(this.txtSearchRoomNo);
             this.pnlSearchDetails.Location = new System.Drawing.Point(763, 1);
@@ -567,20 +564,6 @@
             this.txtSearchItemName.TabIndex = 119;
             this.txtSearchItemName.TextChanged += new System.EventHandler(this.txtSearchItemName_TextChanged);
             // 
-            // picSearch
-            // 
-            this.picSearch.Enabled = false;
-            this.picSearch.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSearch.Location = new System.Drawing.Point(349, 304);
-            this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(40, 40);
-            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSearch.TabIndex = 63;
-            this.picSearch.TabStop = false;
-            this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
-            this.picSearch.MouseEnter += new System.EventHandler(this.picSearch_MouseEnter);
-            this.picSearch.MouseLeave += new System.EventHandler(this.picSearch_MouseLeave);
-            // 
             // dgvRoomSearch
             // 
             this.dgvRoomSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -621,7 +604,6 @@
             this.pnlItem.PerformLayout();
             this.pnlRoom.ResumeLayout(false);
             this.pnlRoom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemSearch)).EndInit();
             this.ResumeLayout(false);
@@ -634,7 +616,6 @@
         private System.Windows.Forms.TextBox txtSearchRoomNo;
         private System.Windows.Forms.Panel pnlSearchDetails;
         private System.Windows.Forms.TextBox txtSearchItemName;
-        private System.Windows.Forms.PictureBox picSearch;
         private System.Windows.Forms.TextBox txtSearchItemNo;
         private System.Windows.Forms.Label lblSearchItemNo;
         private System.Windows.Forms.DataGridView dgvRoomSearch;

@@ -199,29 +199,31 @@ namespace Belfray
             return ok;
         }
         //First Letter to Uppercase
-        public static string firstLetterEachWordToUpper(string word) // not? working??
+        public static string firstLetterEachWordToUpper(string word)
         {
+            bool newWord = true;
+            char temp;
             Char[] array = word.ToCharArray();
 
-            if (Char.IsLower(array[0]))
+            for (int x = 0; x < array.Length; x++)
             {
-                array[0] = Char.ToUpper(array[0]);
-            }
-            //go through array and check for spaces, make any lowercase letters after a space uppercase
-            for (int x = 1; x < array.Length; x++)
-            {
-                if (array[x - 1] == ' ')
+                temp = array[x];
+
+                if (newWord)
                 {
-                    if (Char.IsLower(array[x]))
-                    {
-                        array[x] = Char.ToUpper(array[x]);
-                    }
+                    array[x] = Char.ToUpper(array[x]);
+                    newWord = false;
                 }
-                else
-                    array[x] = Char.ToLower(array[x]);
+
+                if (temp == ' ')
+                {
+                    newWord = true;
+                }
             }
+
             return new string(array);
         }
+
         //Each Letter to upper case
         public static string EachLetterToUpper(string word)
         {

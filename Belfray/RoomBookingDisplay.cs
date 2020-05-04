@@ -45,9 +45,9 @@ namespace Belfray
             dgvBookings.ClearSelection();
 
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -60,7 +60,7 @@ namespace Belfray
                             LEFT JOIN BookingItem on BookingItem.bookingNo = Booking.bookingNo
                             LEFT JOIN Item ON  Item.itemNo = BookingItem.itemNo
                             LEFT JOIN BType ON  BType.typeID = Item.typeID
-                            WHERE BType.typeID = 'TYP100001'
+                            WHERE BType.typeID = 'TYP100001' AND Booking.checkInDate > GETDATE()
                             GROUP BY Booking.bookingNo, Booking.checkInDate, Booking.checkOutDate,  BType.typeDesc, 
 							Booking.bookingTime, Booking.customerNo, Customer.customerForename, Customer.customerSurname,
 							Payment.paymentTypeDesc, Booking.partySize";

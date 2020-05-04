@@ -36,9 +36,9 @@ namespace Belfray
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Booking
-            sqlBooking = @"select bookingNo AS 'Booking Number', checkInDate AS 'Check In Date', checkOutDate AS 'Check Out Date', 
-                            bookingTime AS 'Booking Time', customerNo AS 'Customer Number', paymentTypeID AS 'Payment Type ID', 
-                            partySize AS 'Party Size' from Booking";
+            sqlBooking = @"select bookingNo, checkInDate, checkOutDate, 
+                            bookingTime, customerNo , paymentTypeID , 
+                            partySize from Booking";
             daBooking = new SqlDataAdapter(sqlBooking, connStr);
             cmdBBooking = new SqlCommandBuilder(daBooking);
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
@@ -52,13 +52,22 @@ namespace Belfray
             daBookingItem.Fill(dsBelfray, "BookingItem");
 
             //SQL For Customer
-            sqlCustomer = @"select customerNo AS 'Customer Number', customerTitle AS 'Title', customerForename AS 'Forename', 
-                            customerSurname AS 'Surname', customerStreet AS 'Street', customerCity AS 'City', 
-                            customerCounty AS 'County', customerPostcode AS 'Postcode', customerTel AS 'Tel. Number' from Customer";
+            sqlCustomer = @"select customerNo, customerTitle, customerForename, 
+                            customerSurname, customerStreet, customerCity, 
+                            customerCounty, customerPostcode , customerTel from Customer";
             daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
             cmdBCustomer = new SqlCommandBuilder(daCustomer);
             daCustomer.FillSchema(dsBelfray, SchemaType.Source, "Customer");
             daCustomer.Fill(dsBelfray, "Customer");
+
+            ////SQL For Customer
+            //sqlCustomerFind = @"select customerNo, customerTitle, customerForename, 
+            //                customerSurname, customerStreet, customerCity, 
+            //                customerCounty, customerPostcode, customerTel from Customer";
+            //daCustomerFind = new SqlDataAdapter(sqlCustomerFind, connStr);
+            //cmdBCustomerFind = new SqlCommandBuilder(daCustomerFind);
+            //daCustomerFind.FillSchema(dsBelfray, SchemaType.Source, "CustomerFind");
+            //daCustomerFind.Fill(dsBelfray, "CustomerFind");
 
             //SQL For Payment Type
             sqlPayType = @"select * from Payment";

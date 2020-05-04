@@ -39,9 +39,9 @@ namespace Belfray
         private void RoomServiceEdit_Load(object sender, EventArgs e)
         {
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -557,8 +557,25 @@ namespace Belfray
                 {
                     if (ok)
                     {
-                        dgvCurrentOrder.Rows.Add(lblBookingNo.Text, lblRoomNo.Text, lblItemNo.Text, lblItemPrice.Text, txtQty.Text);
+                        bool itemExist = false;
 
+                        for (int x = 0; x < dgvCurrentOrder.ColumnCount; x++)
+                        {
+                            if (dgvCurrentOrder.Rows[x].Cells[2].Value.ToString().Equals(lblItemNo.Text))
+                            {
+                                itemExist = true;
+                                break;
+                            }
+                        }
+
+                        if (!itemExist)
+                        {
+                            dgvCurrentOrder.Rows.Add(lblBookingNo.Text, lblRoomNo.Text, lblItemNo.Text, lblItemPrice.Text, txtQty.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Item Number " + lblItemNo.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Edit Room Service", MessageBoxButtons.OK);
+                        }
 
                         picAdd.Visible = false;
                         picSave.Visible = true;
@@ -631,7 +648,7 @@ namespace Belfray
 
                 MessageBox.Show("Room Service Order Edited");
 
-                this.Close();
+                picCancel_Click(sender, e);
             }
             catch (Exception ex)
             {
