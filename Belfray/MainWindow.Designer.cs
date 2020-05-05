@@ -35,12 +35,15 @@
             this.pnlMainBody = new System.Windows.Forms.Panel();
             this.pnlRoomSelect = new System.Windows.Forms.Panel();
             this.pnlTableSelect = new System.Windows.Forms.Panel();
+            this.picStaff = new System.Windows.Forms.PictureBox();
+            this.picPaymentType = new System.Windows.Forms.PictureBox();
             this.picLogOut = new System.Windows.Forms.PictureBox();
             this.picTabDelete = new System.Windows.Forms.PictureBox();
-            this.picTabEdit = new System.Windows.Forms.PictureBox();
             this.picTabDisplay = new System.Windows.Forms.PictureBox();
             this.picTabSearch = new System.Windows.Forms.PictureBox();
             this.picTabAdd = new System.Windows.Forms.PictureBox();
+            this.picReports = new System.Windows.Forms.PictureBox();
+            this.picTabEdit = new System.Windows.Forms.PictureBox();
             this.picAdmin = new System.Windows.Forms.PictureBox();
             this.picAccount = new System.Windows.Forms.PictureBox();
             this.picRestaurantStock = new System.Windows.Forms.PictureBox();
@@ -50,12 +53,15 @@
             this.picHeader = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             this.pnlTabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picStaff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPaymentType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).BeginInit();
@@ -85,10 +91,13 @@
             this.pnlTabControl.Controls.Add(this.lblNameUser);
             this.pnlTabControl.Controls.Add(this.lblUser);
             this.pnlTabControl.Controls.Add(this.picTabDelete);
-            this.pnlTabControl.Controls.Add(this.picTabEdit);
             this.pnlTabControl.Controls.Add(this.picTabDisplay);
             this.pnlTabControl.Controls.Add(this.picTabSearch);
             this.pnlTabControl.Controls.Add(this.picTabAdd);
+            this.pnlTabControl.Controls.Add(this.picTabEdit);
+            this.pnlTabControl.Controls.Add(this.picReports);
+            this.pnlTabControl.Controls.Add(this.picPaymentType);
+            this.pnlTabControl.Controls.Add(this.picStaff);
             this.pnlTabControl.Location = new System.Drawing.Point(0, 533);
             this.pnlTabControl.Name = "pnlTabControl";
             this.pnlTabControl.Size = new System.Drawing.Size(1220, 74);
@@ -140,6 +149,34 @@
             this.pnlTableSelect.Size = new System.Drawing.Size(1220, 607);
             this.pnlTableSelect.TabIndex = 6;
             // 
+            // picStaff
+            // 
+            this.picStaff.Image = global::Belfray.Properties.Resources.Staff3;
+            this.picStaff.Location = new System.Drawing.Point(419, 9);
+            this.picStaff.Name = "picStaff";
+            this.picStaff.Size = new System.Drawing.Size(123, 60);
+            this.picStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStaff.TabIndex = 21;
+            this.picStaff.TabStop = false;
+            this.picStaff.Visible = false;
+            this.picStaff.Click += new System.EventHandler(this.picStaff_Click);
+            this.picStaff.MouseEnter += new System.EventHandler(this.picStaff_MouseEnter);
+            this.picStaff.MouseLeave += new System.EventHandler(this.picStaff_MouseLeave);
+            // 
+            // picPaymentType
+            // 
+            this.picPaymentType.Image = global::Belfray.Properties.Resources.PaymentType_sample1;
+            this.picPaymentType.Location = new System.Drawing.Point(548, 9);
+            this.picPaymentType.Name = "picPaymentType";
+            this.picPaymentType.Size = new System.Drawing.Size(123, 60);
+            this.picPaymentType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPaymentType.TabIndex = 20;
+            this.picPaymentType.TabStop = false;
+            this.picPaymentType.Visible = false;
+            this.picPaymentType.Click += new System.EventHandler(this.picPaymentType_Click);
+            this.picPaymentType.MouseEnter += new System.EventHandler(this.picPaymentType_MouseEnter);
+            this.picPaymentType.MouseLeave += new System.EventHandler(this.picPaymentType_MouseLeave);
+            // 
             // picLogOut
             // 
             this.picLogOut.Image = global::Belfray.Properties.Resources.LogOutLogo1;
@@ -166,20 +203,6 @@
             this.picTabDelete.Click += new System.EventHandler(this.picTabDelete_Click);
             this.picTabDelete.MouseEnter += new System.EventHandler(this.picTabDelete_MouseEnter);
             this.picTabDelete.MouseLeave += new System.EventHandler(this.picTabDelete_MouseLeave);
-            // 
-            // picTabEdit
-            // 
-            this.picTabEdit.Image = global::Belfray.Properties.Resources.EditButton1;
-            this.picTabEdit.Location = new System.Drawing.Point(677, 9);
-            this.picTabEdit.Name = "picTabEdit";
-            this.picTabEdit.Size = new System.Drawing.Size(123, 60);
-            this.picTabEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabEdit.TabIndex = 15;
-            this.picTabEdit.TabStop = false;
-            this.picTabEdit.Visible = false;
-            this.picTabEdit.Click += new System.EventHandler(this.picTabEdit_Click);
-            this.picTabEdit.MouseEnter += new System.EventHandler(this.picTabEdit_MouseEnter);
-            this.picTabEdit.MouseLeave += new System.EventHandler(this.picTabEdit_MouseLeave);
             // 
             // picTabDisplay
             // 
@@ -222,6 +245,34 @@
             this.picTabAdd.Click += new System.EventHandler(this.picTabAdd_Click);
             this.picTabAdd.MouseEnter += new System.EventHandler(this.picTabAdd_MouseEnter);
             this.picTabAdd.MouseLeave += new System.EventHandler(this.picTabAdd_MouseLeave);
+            // 
+            // picReports
+            // 
+            this.picReports.Image = global::Belfray.Properties.Resources.Reports_sample1;
+            this.picReports.Location = new System.Drawing.Point(677, 9);
+            this.picReports.Name = "picReports";
+            this.picReports.Size = new System.Drawing.Size(123, 60);
+            this.picReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picReports.TabIndex = 22;
+            this.picReports.TabStop = false;
+            this.picReports.Visible = false;
+            this.picReports.Click += new System.EventHandler(this.picReports_Click);
+            this.picReports.MouseEnter += new System.EventHandler(this.picReports_MouseEnter);
+            this.picReports.MouseLeave += new System.EventHandler(this.picReports_MouseLeave);
+            // 
+            // picTabEdit
+            // 
+            this.picTabEdit.Image = global::Belfray.Properties.Resources.EditButton1;
+            this.picTabEdit.Location = new System.Drawing.Point(677, 9);
+            this.picTabEdit.Name = "picTabEdit";
+            this.picTabEdit.Size = new System.Drawing.Size(123, 60);
+            this.picTabEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabEdit.TabIndex = 15;
+            this.picTabEdit.TabStop = false;
+            this.picTabEdit.Visible = false;
+            this.picTabEdit.Click += new System.EventHandler(this.picTabEdit_Click);
+            this.picTabEdit.MouseEnter += new System.EventHandler(this.picTabEdit_MouseEnter);
+            this.picTabEdit.MouseLeave += new System.EventHandler(this.picTabEdit_MouseLeave);
             // 
             // picAdmin
             // 
@@ -331,12 +382,15 @@
             this.pnlMenu.ResumeLayout(false);
             this.pnlTabControl.ResumeLayout(false);
             this.pnlTabControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picStaff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPaymentType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTabAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRestaurantStock)).EndInit();
@@ -370,5 +424,8 @@
         private System.Windows.Forms.Panel pnlMainBody;
         private System.Windows.Forms.Panel pnlRoomSelect;
         private System.Windows.Forms.Panel pnlTableSelect;
+        private System.Windows.Forms.PictureBox picReports;
+        private System.Windows.Forms.PictureBox picStaff;
+        private System.Windows.Forms.PictureBox picPaymentType;
     }
 }

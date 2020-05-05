@@ -239,7 +239,64 @@ namespace Belfray
             //Set menu option select to Administration
             menuSelected = 6;
 
-            TabVisible();
+
+        }
+
+        private void adminTabs()
+        {
+            picReports.Visible = true;
+            picStaff.Visible = true;
+            picPaymentType.Visible = true;
+
+            TabReset();
+        }
+
+        //Staff Button Controls
+        private void picStaff_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picStaff_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        //Payment Type Button Controls
+        private void picPaymentType_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picPaymentType_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picPaymentType_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        //Reports Button Controls
+        private void picReports_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picReports_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picReports_MouseLeave(object sender, EventArgs e)
+        {
+
         }
 
         private void picLogOut_Click(object sender, EventArgs e)

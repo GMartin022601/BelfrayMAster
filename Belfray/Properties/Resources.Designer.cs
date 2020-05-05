@@ -443,6 +443,16 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PaymentType_sample1 {
+            get {
+                object obj = ResourceManager.GetObject("PaymentType_sample1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Red {
             get {
                 object obj = ResourceManager.GetObject("Red", resourceCulture);
@@ -476,6 +486,26 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap Reports_sample {
             get {
                 object obj = ResourceManager.GetObject("Reports_sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Reports_sample__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Reports_sample (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Reports_sample1 {
+            get {
+                object obj = ResourceManager.GetObject("Reports_sample1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -686,6 +716,46 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap Single_Room {
             get {
                 object obj = ResourceManager.GetObject("Single Room", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Staff_sample {
+            get {
+                object obj = ResourceManager.GetObject("Staff_sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Staff2 {
+            get {
+                object obj = ResourceManager.GetObject("Staff2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Staff21 {
+            get {
+                object obj = ResourceManager.GetObject("Staff21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Staff3 {
+            get {
+                object obj = ResourceManager.GetObject("Staff3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

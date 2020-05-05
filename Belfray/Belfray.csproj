@@ -555,5 +555,26 @@
   <ItemGroup>
     <None Include="Resources\Add.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reports_sample %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reports_sample1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff_sample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PaymentType_sample1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
