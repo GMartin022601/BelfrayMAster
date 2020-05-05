@@ -29,6 +29,36 @@ namespace Belfray
                 lblPTC.Text = drMethod["productTypeCode"].ToString();
                 txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
             }
+            if (txtProdDesc2.Text.Equals("Alcohol"))
+            {
+                //pnlImage.BringToFront();
+                picAlcohol.Visible = true;
+                picAlcohol.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Alcohol Free"))
+            {
+                //pnlImage.BringToFront();
+                picAF.Visible = true;
+                picAF.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Linen"))
+            {
+                //pnlImage.BringToFront();
+                picLinen.Visible = true;
+                picLinen.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Fresh Goods"))
+            {
+                //pnlImage.BringToFront();
+                picFood.Visible = true;
+                picFood.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Room Extras"))
+            {
+                //pnlImage.BringToFront();
+                picRoomService.Visible = true;
+                picRoomService.BringToFront();
+            }
         }
 
         private void CbSuppID_SelectedIndexChanged(object sender, EventArgs e)
@@ -514,6 +544,38 @@ namespace Belfray
             txtSuppPC.Text = drSupplier["supplierPostCode"].ToString();
             txtSuppEmail.Text = drSupplier["supplierEmail"].ToString();
             txtSuppTel.Text = drSupplier["supplierTelNo"].ToString();
+
+            //Images
+            if (txtProdDesc2.Text.Equals("Alcohol"))
+            {
+                //pnlImage.BringToFront();
+                picAlcohol.Visible = true;
+                picAlcohol.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Alcohol Free"))
+            {
+                //pnlImage.BringToFront();
+                picAF.Visible = true;
+                picAF.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Linen"))
+            {
+                //pnlImage.BringToFront();
+                picLinen.Visible = true;
+                picLinen.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Fresh Goods"))
+            {
+                //pnlImage.BringToFront();
+                picFood.Visible = true;
+                picFood.BringToFront();
+            }
+            if (txtProdDesc2.Text.Equals("Room Extras"))
+            {
+                //pnlImage.BringToFront();
+                picRoomService.Visible = true;
+                picRoomService.BringToFront();
+            }
 
             formLoad = false;
 

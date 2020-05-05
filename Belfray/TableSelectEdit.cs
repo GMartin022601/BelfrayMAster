@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 
 namespace Belfray
@@ -816,6 +817,10 @@ namespace Belfray
             }
             else if (dgvBooking.SelectedRows.Count == 1)
             {
+                //Format
+                dgvMenuItems.Columns[2].DefaultCellStyle.Format = "c2";
+                dgvMenuItems.Columns[2].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+
                 Globals.itemSel = dgvMenuItems.SelectedRows[0].Cells[0].Value.ToString();
                 lblItemSelected.Text = dgvMenuItems.SelectedRows[0].Cells[1].Value.ToString();
                 lblPriceSelItem.Text = "£" + dgvMenuItems.SelectedRows[0].Cells[2].Value.ToString();
@@ -831,9 +836,19 @@ namespace Belfray
             lblItemNoDIsplay.Text = "";
 
         }
-        private void picAddtoTable_Click(object sender, EventArgs e)
+        private void picAddtoTable_Click(object sender, EventArgs e) //NEEDS WORK
         {
-            dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
+            int add;
+
+            //Format
+            dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
+            dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+
+            foreach (DataGridViewRow row in dgvTableItems.Rows)
+            {
+                if dgvTableItems.Rows[0].
+            }
+                dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
             numQTY.Value = 0;
             ClearLabels();
         }
@@ -1121,14 +1136,6 @@ namespace Belfray
             catch (Exception ex)
             {
                 MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-            }
-        }
-
-        private void dgvTableItems_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == 3)
-            {
-                e.CellStyle.Format = "N2";
             }
         }
 

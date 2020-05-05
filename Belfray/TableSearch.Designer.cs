@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableSearch));
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.pnlDetails = new System.Windows.Forms.Panel();
-            this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.picShowBill = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblCustNo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblBNoTag = new System.Windows.Forms.Label();
             this.lblPartySize = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.picClear = new System.Windows.Forms.PictureBox();
             this.picSearch = new System.Windows.Forms.PictureBox();
@@ -55,26 +57,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBookingNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.picShowBill = new System.Windows.Forms.PictureBox();
             this.pnlBill = new System.Windows.Forms.Panel();
+            this.lblTotalCost = new System.Windows.Forms.Label();
+            this.lblTotalItems = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblTables = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dgvTableBill = new System.Windows.Forms.DataGridView();
-            this.lblTables = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblTotalItems = new System.Windows.Forms.Label();
-            this.lblTotalCost = new System.Windows.Forms.Label();
             this.gbBill = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.pnlDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShowBill)).BeginInit();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picShowBill)).BeginInit();
             this.pnlBill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTableBill)).BeginInit();
             this.gbBill.SuspendLayout();
@@ -115,14 +116,6 @@
             this.pnlDetails.Size = new System.Drawing.Size(285, 343);
             this.pnlDetails.TabIndex = 1;
             // 
-            // txtLastName
-            // 
-            this.txtLastName.Enabled = false;
-            this.txtLastName.Location = new System.Drawing.Point(107, 299);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 25);
-            this.txtLastName.TabIndex = 59;
-            // 
             // txtFirstName
             // 
             this.txtFirstName.Enabled = false;
@@ -140,6 +133,18 @@
             this.label7.Size = new System.Drawing.Size(75, 18);
             this.label7.TabIndex = 57;
             this.label7.Text = "Last Name:";
+            // 
+            // picShowBill
+            // 
+            this.picShowBill.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picShowBill.Location = new System.Drawing.Point(235, 284);
+            this.picShowBill.Name = "picShowBill";
+            this.picShowBill.Size = new System.Drawing.Size(40, 40);
+            this.picShowBill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picShowBill.TabIndex = 71;
+            this.picShowBill.TabStop = false;
+            this.picShowBill.Visible = false;
+            this.picShowBill.Click += new System.EventHandler(this.picShowBill_Click);
             // 
             // label6
             // 
@@ -264,6 +269,14 @@
             this.lblPartySize.TabIndex = 45;
             this.lblPartySize.Text = "Party Size:";
             // 
+            // txtLastName
+            // 
+            this.txtLastName.Enabled = false;
+            this.txtLastName.Location = new System.Drawing.Point(107, 299);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(100, 25);
+            this.txtLastName.TabIndex = 59;
+            // 
             // pnlSearch
             // 
             this.pnlSearch.Controls.Add(this.picClear);
@@ -292,14 +305,13 @@
             // 
             // picSearch
             // 
-            this.picSearch.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSearch.Image = ((System.Drawing.Image)(resources.GetObject("picSearch.Image")));
             this.picSearch.Location = new System.Drawing.Point(378, 107);
             this.picSearch.Name = "picSearch";
             this.picSearch.Size = new System.Drawing.Size(40, 40);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSearch.TabIndex = 64;
             this.picSearch.TabStop = false;
-            this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
             // 
             // txtSurname
             // 
@@ -307,7 +319,7 @@
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(171, 25);
             this.txtSurname.TabIndex = 45;
-            this.txtSurname.TextChanged += new System.EventHandler(this.TableSearch_TextChanged);
+            this.txtSurname.TextChanged += new System.EventHandler(this.txtSurname_TextChanged_1);
             // 
             // label3
             // 
@@ -353,17 +365,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by Booking Number:";
             // 
-            // picShowBill
-            // 
-            this.picShowBill.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picShowBill.Location = new System.Drawing.Point(235, 284);
-            this.picShowBill.Name = "picShowBill";
-            this.picShowBill.Size = new System.Drawing.Size(40, 40);
-            this.picShowBill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picShowBill.TabIndex = 71;
-            this.picShowBill.TabStop = false;
-            this.picShowBill.Click += new System.EventHandler(this.picShowBill_Click);
-            // 
             // pnlBill
             // 
             this.pnlBill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -382,6 +383,64 @@
             this.pnlBill.Size = new System.Drawing.Size(285, 343);
             this.pnlBill.TabIndex = 60;
             this.pnlBill.Visible = false;
+            // 
+            // lblTotalCost
+            // 
+            this.lblTotalCost.AutoSize = true;
+            this.lblTotalCost.Enabled = false;
+            this.lblTotalCost.Location = new System.Drawing.Point(104, 184);
+            this.lblTotalCost.Name = "lblTotalCost";
+            this.lblTotalCost.Size = new System.Drawing.Size(16, 18);
+            this.lblTotalCost.TabIndex = 61;
+            this.lblTotalCost.Text = "--";
+            // 
+            // lblTotalItems
+            // 
+            this.lblTotalItems.AutoSize = true;
+            this.lblTotalItems.Enabled = false;
+            this.lblTotalItems.Location = new System.Drawing.Point(104, 148);
+            this.lblTotalItems.Name = "lblTotalItems";
+            this.lblTotalItems.Size = new System.Drawing.Size(16, 18);
+            this.lblTotalItems.TabIndex = 60;
+            this.lblTotalItems.Text = "--";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(11, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 18);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "Total Cost:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 148);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 18);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "Total Items:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(107, 83);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 26);
+            this.comboBox1.TabIndex = 57;
+            // 
+            // lblTables
+            // 
+            this.lblTables.AutoSize = true;
+            this.lblTables.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTables.Location = new System.Drawing.Point(7, 86);
+            this.lblTables.Name = "lblTables";
+            this.lblTables.Size = new System.Drawing.Size(57, 18);
+            this.lblTables.TabIndex = 56;
+            this.lblTables.Text = "Table(s):";
             // 
             // label9
             // 
@@ -432,64 +491,6 @@
             this.dgvTableBill.TabIndex = 72;
             this.dgvTableBill.Visible = false;
             // 
-            // lblTables
-            // 
-            this.lblTables.AutoSize = true;
-            this.lblTables.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTables.Location = new System.Drawing.Point(7, 86);
-            this.lblTables.Name = "lblTables";
-            this.lblTables.Size = new System.Drawing.Size(57, 18);
-            this.lblTables.TabIndex = 56;
-            this.lblTables.Text = "Table(s):";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(107, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 57;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 148);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 18);
-            this.label5.TabIndex = 58;
-            this.label5.Text = "Total Items:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(11, 184);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 18);
-            this.label8.TabIndex = 59;
-            this.label8.Text = "Total Cost:";
-            // 
-            // lblTotalItems
-            // 
-            this.lblTotalItems.AutoSize = true;
-            this.lblTotalItems.Enabled = false;
-            this.lblTotalItems.Location = new System.Drawing.Point(104, 148);
-            this.lblTotalItems.Name = "lblTotalItems";
-            this.lblTotalItems.Size = new System.Drawing.Size(16, 18);
-            this.lblTotalItems.TabIndex = 60;
-            this.lblTotalItems.Text = "--";
-            // 
-            // lblTotalCost
-            // 
-            this.lblTotalCost.AutoSize = true;
-            this.lblTotalCost.Enabled = false;
-            this.lblTotalCost.Location = new System.Drawing.Point(104, 184);
-            this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(16, 18);
-            this.lblTotalCost.TabIndex = 61;
-            this.lblTotalCost.Text = "--";
-            // 
             // gbBill
             // 
             this.gbBill.Controls.Add(this.dgvTableBill);
@@ -499,6 +500,7 @@
             this.gbBill.TabIndex = 73;
             this.gbBill.TabStop = false;
             this.gbBill.Text = "Table Items";
+            this.gbBill.Visible = false;
             // 
             // TableSearch
             // 
@@ -506,25 +508,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 349);
             this.Controls.Add(this.gbBill);
-            this.Controls.Add(this.pnlBill);
             this.Controls.Add(this.dgvSearch);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.pnlDetails);
+            this.Controls.Add(this.pnlBill);
             this.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TableSearch";
             this.Text = "TableSearch";
             this.Load += new System.EventHandler(this.TableSearch_Load);
-            this.TextChanged += new System.EventHandler(this.TableSearch_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShowBill)).EndInit();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picShowBill)).EndInit();
             this.pnlBill.ResumeLayout(false);
             this.pnlBill.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTableBill)).EndInit();

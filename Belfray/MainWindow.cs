@@ -351,9 +351,9 @@ namespace Belfray
             }
 
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -492,6 +492,12 @@ namespace Belfray
                     frm3.Show();
                     break;
                 case 4: //Restaurant Stock
+                    RestaurantProdSearch frm4 = new RestaurantProdSearch();
+                    frm4.TopLevel = false;
+                    frm4.FormBorderStyle = FormBorderStyle.None;
+                    frm4.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm4);
+                    frm4.Show();
                     break;
                 case 5: //Staff
                     break;

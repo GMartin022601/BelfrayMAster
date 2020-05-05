@@ -80,8 +80,13 @@
             this.lblCostPrice = new System.Windows.Forms.Label();
             this.lblProdTypeCode = new System.Windows.Forms.Label();
             this.lblProdDesc = new System.Windows.Forms.Label();
-            this.pnlImage = new System.Windows.Forms.Panel();
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pnlImage = new System.Windows.Forms.Panel();
+            this.picRoomService = new System.Windows.Forms.PictureBox();
+            this.picFood = new System.Windows.Forms.PictureBox();
+            this.picLinen = new System.Windows.Forms.PictureBox();
+            this.picAF = new System.Windows.Forms.PictureBox();
+            this.picAlcohol = new System.Windows.Forms.PictureBox();
             this.pnlRestStockEdit.SuspendLayout();
             this.pnlSuppDetails.SuspendLayout();
             this.gbSupplierDetails.SuspendLayout();
@@ -96,14 +101,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCancProdDet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveProductEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
+            this.pnlImage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomService)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLinen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAlcohol)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlRestStockEdit
             // 
+            this.pnlRestStockEdit.Controls.Add(this.pnlImage);
             this.pnlRestStockEdit.Controls.Add(this.pnlSuppDetails);
             this.pnlRestStockEdit.Controls.Add(this.pnlProdType);
             this.pnlRestStockEdit.Controls.Add(this.pnlDetails);
-            this.pnlRestStockEdit.Controls.Add(this.pnlImage);
             this.pnlRestStockEdit.Location = new System.Drawing.Point(-8, 2);
             this.pnlRestStockEdit.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRestStockEdit.Name = "pnlRestStockEdit";
@@ -578,9 +589,9 @@
             this.lblProductNumberDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductNumberDisplay.Location = new System.Drawing.Point(170, 33);
             this.lblProductNumberDisplay.Name = "lblProductNumberDisplay";
-            this.lblProductNumberDisplay.Size = new System.Drawing.Size(44, 16);
+            this.lblProductNumberDisplay.Size = new System.Drawing.Size(12, 16);
             this.lblProductNumberDisplay.TabIndex = 8;
-            this.lblProductNumberDisplay.Text = "xxxxxx";
+            this.lblProductNumberDisplay.Text = "-";
             // 
             // lblProdNo
             // 
@@ -622,16 +633,76 @@
             this.lblProdDesc.TabIndex = 1;
             this.lblProdDesc.Text = "PRODUCT DESCRIPTION";
             // 
-            // pnlImage
-            // 
-            this.pnlImage.Location = new System.Drawing.Point(12, 8);
-            this.pnlImage.Name = "pnlImage";
-            this.pnlImage.Size = new System.Drawing.Size(232, 329);
-            this.pnlImage.TabIndex = 4;
-            // 
             // errP
             // 
             this.errP.ContainerControl = this;
+            // 
+            // pnlImage
+            // 
+            this.pnlImage.Controls.Add(this.picRoomService);
+            this.pnlImage.Controls.Add(this.picFood);
+            this.pnlImage.Controls.Add(this.picLinen);
+            this.pnlImage.Controls.Add(this.picAF);
+            this.pnlImage.Controls.Add(this.picAlcohol);
+            this.pnlImage.Location = new System.Drawing.Point(18, 8);
+            this.pnlImage.Name = "pnlImage";
+            this.pnlImage.Size = new System.Drawing.Size(234, 329);
+            this.pnlImage.TabIndex = 5;
+            // 
+            // picRoomService
+            // 
+            this.picRoomService.Image = global::Belfray.Properties.Resources.two_bottles_of_wine_in_ice_bucket_3933170;
+            this.picRoomService.Location = new System.Drawing.Point(11, 4);
+            this.picRoomService.Name = "picRoomService";
+            this.picRoomService.Size = new System.Drawing.Size(241, 322);
+            this.picRoomService.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picRoomService.TabIndex = 4;
+            this.picRoomService.TabStop = false;
+            this.picRoomService.Visible = false;
+            // 
+            // picFood
+            // 
+            this.picFood.Image = global::Belfray.Properties.Resources.uncooked_patties_3877666;
+            this.picFood.Location = new System.Drawing.Point(11, 4);
+            this.picFood.Name = "picFood";
+            this.picFood.Size = new System.Drawing.Size(241, 322);
+            this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picFood.TabIndex = 3;
+            this.picFood.TabStop = false;
+            this.picFood.Visible = false;
+            // 
+            // picLinen
+            // 
+            this.picLinen.Image = global::Belfray.Properties.Resources.photo_of_bed_near_window_3753435;
+            this.picLinen.Location = new System.Drawing.Point(11, 4);
+            this.picLinen.Name = "picLinen";
+            this.picLinen.Size = new System.Drawing.Size(241, 322);
+            this.picLinen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picLinen.TabIndex = 2;
+            this.picLinen.TabStop = false;
+            this.picLinen.Visible = false;
+            // 
+            // picAF
+            // 
+            this.picAF.Image = global::Belfray.Properties.Resources.closed_soda_bottles_1904262;
+            this.picAF.Location = new System.Drawing.Point(11, 4);
+            this.picAF.Name = "picAF";
+            this.picAF.Size = new System.Drawing.Size(241, 322);
+            this.picAF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picAF.TabIndex = 1;
+            this.picAF.TabStop = false;
+            this.picAF.Visible = false;
+            // 
+            // picAlcohol
+            // 
+            this.picAlcohol.Image = global::Belfray.Properties.Resources.alcohol;
+            this.picAlcohol.Location = new System.Drawing.Point(11, 4);
+            this.picAlcohol.Name = "picAlcohol";
+            this.picAlcohol.Size = new System.Drawing.Size(241, 322);
+            this.picAlcohol.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picAlcohol.TabIndex = 0;
+            this.picAlcohol.TabStop = false;
+            this.picAlcohol.Visible = false;
             // 
             // RestaurantStockEdit
             // 
@@ -660,6 +731,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCancProdDet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveProductEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
+            this.pnlImage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomService)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLinen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAlcohol)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -705,7 +782,6 @@
         private System.Windows.Forms.Label lblCostPrice;
         private System.Windows.Forms.Label lblProdTypeCode;
         private System.Windows.Forms.Label lblProdDesc;
-        private System.Windows.Forms.Panel pnlImage;
         private System.Windows.Forms.Label lblESupplierID;
         private System.Windows.Forms.PictureBox btnCancelEditSupp;
         private System.Windows.Forms.PictureBox picSaveSupplier;
@@ -719,5 +795,11 @@
         private System.Windows.Forms.ErrorProvider errP;
         private System.Windows.Forms.PictureBox btnCancProdDet;
         private System.Windows.Forms.Label lblPTC;
+        private System.Windows.Forms.Panel pnlImage;
+        private System.Windows.Forms.PictureBox picRoomService;
+        private System.Windows.Forms.PictureBox picFood;
+        private System.Windows.Forms.PictureBox picLinen;
+        private System.Windows.Forms.PictureBox picAF;
+        private System.Windows.Forms.PictureBox picAlcohol;
     }
 }
