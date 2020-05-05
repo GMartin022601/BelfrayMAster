@@ -838,19 +838,19 @@ namespace Belfray
         }
         private void picAddtoTable_Click(object sender, EventArgs e) //NEEDS WORK
         {
-            int add;
+            //int add;
 
-            //Format
-            dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
-            dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+            ////Format
+            //dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
+            //dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
 
-            foreach (DataGridViewRow row in dgvTableItems.Rows)
-            {
-                if dgvTableItems.Rows[0].
-            }
-                dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
-            numQTY.Value = 0;
-            ClearLabels();
+            //foreach (DataGridViewRow row in dgvTableItems.Rows)
+            //{
+            //    if dgvTableItems.Rows[0].
+            //}
+            //    dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
+            //numQTY.Value = 0;
+            //ClearLabels();
         }
 
         private void dgvAddNewTables_Click(object sender, EventArgs e)

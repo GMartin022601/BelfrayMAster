@@ -1709,7 +1709,7 @@
             // 
             // picTables
             // 
-            this.picTables.Image = ((System.Drawing.Image)(resources.GetObject("picTables.Image")));
+            this.picTables.Image = global::Belfray.Properties.Resources.tablesmallfinal;
             this.picTables.Location = new System.Drawing.Point(408, 73);
             this.picTables.Name = "picTables";
             this.picTables.Size = new System.Drawing.Size(40, 40);

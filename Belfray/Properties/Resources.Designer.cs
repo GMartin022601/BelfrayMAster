@@ -19,7 +19,7 @@ namespace Belfray.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -143,6 +143,16 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alcohol {
+            get {
+                object obj = ResourceManager.GetObject("alcohol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap animal_chihuahua_cute_39317 {
             get {
                 object obj = ResourceManager.GetObject("animal-chihuahua-cute-39317", resourceCulture);
@@ -226,6 +236,16 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap CleanningSupplies {
             get {
                 object obj = ResourceManager.GetObject("CleanningSupplies", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap closed_soda_bottles_1904262 {
+            get {
+                object obj = ResourceManager.GetObject("closed-soda-bottles-1904262", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -446,6 +466,16 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap PaymentType_sample1 {
             get {
                 object obj = ResourceManager.GetObject("PaymentType_sample1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_of_bed_near_window_3753435 {
+            get {
+                object obj = ResourceManager.GetObject("photo-of-bed-near-window-3753435", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -713,6 +743,16 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap searchfinal {
+            get {
+                object obj = ResourceManager.GetObject("searchfinal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Single_Room {
             get {
                 object obj = ResourceManager.GetObject("Single Room", resourceCulture);
@@ -853,6 +893,16 @@ namespace Belfray.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tablesmallfinal {
+            get {
+                object obj = ResourceManager.GetObject("tablesmallfinal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap thumbnail_image {
             get {
                 object obj = ResourceManager.GetObject("thumbnail_image", resourceCulture);
@@ -866,6 +916,26 @@ namespace Belfray.Properties {
         internal static System.Drawing.Bitmap Twin_Room {
             get {
                 object obj = ResourceManager.GetObject("Twin Room", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap two_bottles_of_wine_in_ice_bucket_3933170 {
+            get {
+                object obj = ResourceManager.GetObject("two-bottles-of-wine-in-ice-bucket-3933170", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uncooked_patties_3877666 {
+            get {
+                object obj = ResourceManager.GetObject("uncooked-patties-3877666", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

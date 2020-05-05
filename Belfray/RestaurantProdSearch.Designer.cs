@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestaurantProdSearch));
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.pnlSearch = new System.Windows.Forms.Panel();
+            this.txtProdDesc = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtProdType = new System.Windows.Forms.TextBox();
             this.picClear = new System.Windows.Forms.PictureBox();
             this.picSearch = new System.Windows.Forms.PictureBox();
             this.txtSupplier = new System.Windows.Forms.TextBox();
@@ -38,9 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtProdNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtProdType = new System.Windows.Forms.TextBox();
-            this.txtProdDesc = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClear)).BeginInit();
@@ -74,6 +73,31 @@
             this.pnlSearch.Size = new System.Drawing.Size(738, 158);
             this.pnlSearch.TabIndex = 4;
             // 
+            // txtProdDesc
+            // 
+            this.txtProdDesc.Location = new System.Drawing.Point(201, 42);
+            this.txtProdDesc.Name = "txtProdDesc";
+            this.txtProdDesc.Size = new System.Drawing.Size(171, 25);
+            this.txtProdDesc.TabIndex = 73;
+            this.txtProdDesc.TextChanged += new System.EventHandler(this.txtProdDesc_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(191, 18);
+            this.label4.TabIndex = 72;
+            this.label4.Text = "Search by Product Description:";
+            // 
+            // txtProdType
+            // 
+            this.txtProdType.Location = new System.Drawing.Point(536, 7);
+            this.txtProdType.Name = "txtProdType";
+            this.txtProdType.Size = new System.Drawing.Size(171, 25);
+            this.txtProdType.TabIndex = 71;
+            this.txtProdType.TextChanged += new System.EventHandler(this.txtProdType_TextChanged);
+            // 
             // picClear
             // 
             this.picClear.Image = global::Belfray.Properties.Resources.Cancel3;
@@ -88,7 +112,7 @@
             // 
             // picSearch
             // 
-            this.picSearch.Image = ((System.Drawing.Image)(resources.GetObject("picSearch.Image")));
+            this.picSearch.Image = global::Belfray.Properties.Resources.searchfinal;
             this.picSearch.Location = new System.Drawing.Point(667, 73);
             this.picSearch.Name = "picSearch";
             this.picSearch.Size = new System.Drawing.Size(40, 40);
@@ -139,31 +163,6 @@
             this.label1.Size = new System.Drawing.Size(173, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by Product Number:";
-            // 
-            // txtProdType
-            // 
-            this.txtProdType.Location = new System.Drawing.Point(536, 7);
-            this.txtProdType.Name = "txtProdType";
-            this.txtProdType.Size = new System.Drawing.Size(171, 25);
-            this.txtProdType.TabIndex = 71;
-            this.txtProdType.TextChanged += new System.EventHandler(this.txtProdType_TextChanged);
-            // 
-            // txtProdDesc
-            // 
-            this.txtProdDesc.Location = new System.Drawing.Point(201, 42);
-            this.txtProdDesc.Name = "txtProdDesc";
-            this.txtProdDesc.Size = new System.Drawing.Size(171, 25);
-            this.txtProdDesc.TabIndex = 73;
-            this.txtProdDesc.TextChanged += new System.EventHandler(this.txtProdDesc_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 18);
-            this.label4.TabIndex = 72;
-            this.label4.Text = "Search by Product Description:";
             // 
             // RestaurantProdSearch
             // 

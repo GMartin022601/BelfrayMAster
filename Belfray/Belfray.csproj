@@ -75,6 +75,12 @@
     <Compile Include="MyCustomer.cs" />
     <Compile Include="MyStaff.cs" />
     <Compile Include="MySupplier.cs" />
+    <Compile Include="RestaurantProdSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestaurantProdSearch.Designer.cs">
+      <DependentUpon>RestaurantProdSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="RestaurantStockDelete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     <EmbeddedResource Include="AppDisplay.resx">
       <DependentUpon>AppDisplay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantProdSearch.resx">
+      <DependentUpon>RestaurantProdSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RestaurantStockDelete.resx">
       <DependentUpon>RestaurantStockDelete.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +311,7 @@
     <EmbeddedResource Include="Template.resx">
       <DependentUpon>Template.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -575,6 +585,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PaymentType_sample1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tablesmallfinal1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\alcohol.jpg" />
+    <None Include="Resources\searchfinal1.png" />
+    <None Include="Resources\closed-soda-bottles-19042621.jpg" />
+    <None Include="Resources\photo-of-bed-near-window-37534351.jpg" />
+    <None Include="Resources\uncooked-patties-38776661.jpg" />
+    <None Include="Resources\alcohol1.jpg" />
+    <Content Include="Resources\closed-soda-bottles-1904262.jpg" />
+    <Content Include="Resources\photo-of-bed-near-window-3753435.jpg" />
+    <Content Include="Resources\two-bottles-of-wine-in-ice-bucket-3933170.jpg" />
+    <None Include="Resources\two-bottles-of-wine-in-ice-bucket-39331701.jpg" />
+    <Content Include="Resources\uncooked-patties-3877666.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

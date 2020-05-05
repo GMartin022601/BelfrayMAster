@@ -29,14 +29,14 @@ namespace Belfray
                 MessageBox.Show("Supplier ID is a max 8 characters beginning SUP.", "Search error", MessageBoxButtons.OK);
                 txtSupplier.Text = "";
             }
-            txtProdDesc.Enabled = false;
-            txtProdDesc.BackColor = Color.LightCoral;
-            txtProdNumber.Enabled = false;
-            txtProdNumber.BackColor = Color.LightCoral;
-            txtProdType.Enabled = false;
-            txtProdType.BackColor = Color.LightCoral;
+                txtProdDesc.Enabled = false;
+                txtProdDesc.BackColor = Color.LightCoral;
+                txtProdNumber.Enabled = false;
+                txtProdNumber.BackColor = Color.LightCoral;
+                txtProdType.Enabled = false;
+                txtProdType.BackColor = Color.LightCoral;
 
-            DataView supSearch = new DataView(dsBelfray.Tables["Product"], "supplierID LIKE '" + txtProdType.Text.ToString() + "%'", "supplierID", DataViewRowState.CurrentRows);
+            DataView supSearch = new DataView(dsBelfray.Tables["Product"], "supplierID LIKE '%" + txtSupplier.Text.ToString() + "%'", "supplierID", DataViewRowState.CurrentRows);
             dgvSearch.DataSource = supSearch;
 
             if (txtSupplier.Text.Length == 0)
@@ -68,10 +68,9 @@ namespace Belfray
 
             DataView ptSearch = new DataView(dsBelfray.Tables["Product"], "productTypeCode LIKE '" + txtProdType.Text.ToString() + "%'", "productTypeCode", DataViewRowState.CurrentRows);
             dgvSearch.DataSource = ptSearch;
-            
+
             if (txtProdType.Text.Length == 0)
             {
-                MessageBox.Show("Product Type Code is 2 characters.", "Search error", MessageBoxButtons.OK);
                 txtProdType.Text = "";
                 txtProdDesc.Enabled = Enabled;
                 txtProdDesc.BackColor = Color.White;
