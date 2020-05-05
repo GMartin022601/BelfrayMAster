@@ -806,6 +806,7 @@ namespace Belfray
                 pnlMenuItems.Visible = true;
                 pnlMenuItems.BringToFront();
                 LoadMenu();
+
             }
         }
 
