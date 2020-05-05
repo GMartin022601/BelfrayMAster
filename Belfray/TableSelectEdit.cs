@@ -838,19 +838,101 @@ namespace Belfray
         }
         private void picAddtoTable_Click(object sender, EventArgs e) //NEEDS WORK
         {
-            //int add;
+            bool ok = true;
+            int rows = dgvTableItems.RowCount;
+            bool newItem = false;
+            int qty = 0;
 
-            ////Format
-            //dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
-            //dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+            if (rows > 1)
+            {
+                for (int x = 0; x < rows - 1; x++)
+                {
+                    if (!lblItemNoDIsplay.Text.ToString().Equals(dgvTableItems.Rows[x].Cells[0].Value.ToString()))
+                    {
+                        newItem = true;
+                    }
+                    else
+                    {
+                        newItem = false;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                newItem = true;
+            }
 
-            //foreach (DataGridViewRow row in dgvTableItems.Rows)
-            //{
-            //    if dgvTableItems.Rows[0].
-            //}
-            //    dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
-            //numQTY.Value = 0;
-            //ClearLabels();
+            if (newItem)
+            {
+                try
+                {
+                    qty = Convert.ToInt32(numQTY.Value);
+                    if (qty < 1 || qty > 9)
+                    {
+                        throw new MyException("Quantity must be a number between 1 and 9.");
+                    }
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(numQTY, MyEx.toString());
+                }
+                //Try Adding
+                try
+                {
+                    if (ok)
+                    {
+                        //bool itemExist = false;
+
+                        //if (dgvTableItems.RowCount == 1)
+                        //{
+                        //    //itemExist = false;
+                        //}
+                        //else
+                        //{
+                        //    for (int x = 0; x < dgvTableItems.RowCount; x++)
+                        //    {
+                        //        if (dgvTableItems.Rows[x].Cells[0].Value.ToString().Equals(lblItemNoDIsplay.Text))
+                        //        {
+                        //            //itemExist = true;
+                        //            break;
+                        //        }
+                        //    }
+                        //}
+                            //if (!itemExist)
+                            //{
+                                dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
+                            //}
+                            //else
+                            //{
+                            //    MessageBox.Show("Item Number " + lblItemNoDIsplay.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Add Room Service", MessageBoxButtons.OK);
+                            //}
+                        
+
+                        ////Format
+                        //dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
+                        //dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+
+                        //foreach (DataGridViewRow row in dgvTableItems.Rows)
+                        //{
+                        //    if dgvTableItems.Rows[0].
+                        //}
+                        //    dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
+                        //numQTY.Value = 0;
+                        //ClearLabels();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Item Number " + lblItemNoDIsplay.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Add Room Service", MessageBoxButtons.OK);
+            }
         }
 
         private void dgvAddNewTables_Click(object sender, EventArgs e)
@@ -1910,8 +1992,6 @@ namespace Belfray
             {
                 foreach (DataRow drBookingType in dsBelfray.Tables["BType"].Rows)
                 {
-                    foreach (DataRow drPaymentType2 in dsBelfray.Tables["Payment"].Rows)
-                    {
                         string bDate = drBooking["checkInDate"].ToString();
                         string bTime = drBooking["bookingTime"].ToString();
                         partySize2 = Convert.ToInt32(drBooking["partySize"].ToString());
@@ -1920,9 +2000,7 @@ namespace Belfray
                         txtTime.Text = bTime;
                         numPartySize.Value = partySize2;
                         lblCustNo.Text = drBooking["customerNo"].ToString();
-                        cbPaymentTyp.SelectedValue = drPaymentType2["paymentTypeDesc"].ToString();
-
-                    }
+                        cbPaymentTyp.SelectedValue = drBooking["paymentTypeID"].ToString();
                 }
             }
             //DGV Populate

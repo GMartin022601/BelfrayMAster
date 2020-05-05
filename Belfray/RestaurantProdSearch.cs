@@ -41,14 +41,15 @@ namespace Belfray
 
             if (txtSupplier.Text.Length == 0)
             {
-                txtSupplier.Text = "";
+                txtSupplier.Text = ""; 
+                txtProdDesc.Enabled = true;
+                txtProdDesc.BackColor = Color.White;
+                txtProdNumber.Enabled = true;
+                txtProdNumber.BackColor = Color.White;
+                txtProdType.Enabled = true;
+                txtProdType.BackColor = Color.White;
             }
-            txtProdDesc.Enabled = true;
-            txtProdDesc.BackColor = Color.White;
-            txtProdNumber.Enabled = true;
-            txtProdNumber.BackColor = Color.White;
-            txtProdType.Enabled = true;
-            txtProdType.BackColor = Color.White;
+
 
         }
 

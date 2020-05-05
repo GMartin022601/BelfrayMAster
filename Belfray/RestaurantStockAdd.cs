@@ -303,7 +303,7 @@ namespace Belfray
                         //clearAddPanel();
                         txtProdTypeCode.Text = "";
                         txtProdDesc2.Text = "";
-                        formLoad = false;
+                        formLoad = true;
                         //getProdNum(dsBelfray.Tables["ProductTy"].Rows.Count);
                     }
                     else
@@ -356,8 +356,8 @@ namespace Belfray
             txtCostPrice.Clear();
             txtQTY.Clear();
             txtReOrder.Clear();
-            cbSuppID.SelectedValue = " ";
-            cbTypeCode.SelectedValue = " ";
+            cbSuppID.SelectedIndex = -1;
+            cbTypeCode.SelectedIndex = -1;
         }
         //clear supplier panel
         void clearSuppPanel()
@@ -476,16 +476,16 @@ namespace Belfray
 
                     if (MessageBox.Show("Do you wish to add another product?", "AddProduct", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
+                        formLoad = true;
                         clearAddPanel();
                         getProdNum(dsBelfray.Tables["Product"].Rows.Count);
                         string s = drProduct["productNumber"].ToString();
                         string s1 = "PRD" + (Convert.ToInt32(s.Replace("PRD", "")) + 1).ToString().PadLeft(5, '0');
-                        lblProductNumberDisplay.Text = s1;
-                        //formLoad = true;
+                        lblProductNumberDisplay.Text = s1;                        
                     }
                     else
                     {
-                        clearAddPanel();
+                        this.Close();
                     }
                 }
             }

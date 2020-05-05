@@ -40,10 +40,11 @@ namespace Belfray
             if (txtSurname.Text.Length == 0)
             {
                 txtSurname.Text = "";
+                txtBookingNumber.Enabled = true;
+                txtBookingNumber.BackColor = Color.White;
+                dtpSearch.Enabled = true;
             }
-            txtBookingNumber.Enabled = true;
-            txtBookingNumber.BackColor = Color.White;
-            dtpSearch.Enabled = true;
+
 
 
         }
@@ -149,9 +150,10 @@ namespace Belfray
             if (txtBookingNumber.Text.Length == 0)
             {
                 txtBookingNumber.Text = "";
+                txtSurname.Enabled = true;
+                txtSurname.BackColor = Color.White;
             }
-            txtSurname.Enabled = true;
-            txtSurname.BackColor = Color.White;
+
         }
 
         //private void picSearch_Click(object sender, EventArgs e)

@@ -170,8 +170,6 @@
             this.gbDGV = new System.Windows.Forms.GroupBox();
             this.lblTblNoSelDisplay = new System.Windows.Forms.Label();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
-            this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picRemoveTable = new System.Windows.Forms.PictureBox();
             this.lblTableNoSelected = new System.Windows.Forms.Label();
             this.gbCustomerDetails = new System.Windows.Forms.GroupBox();
@@ -183,6 +181,8 @@
             this.txtCounty = new System.Windows.Forms.TextBox();
             this.lbCounty = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
+            this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBookingDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
             this.pnlFloorPlan.SuspendLayout();
@@ -1813,18 +1813,6 @@
             this.dgvBooking.TabIndex = 2;
             this.dgvBooking.Click += new System.EventHandler(this.dgvBooking_Click);
             // 
-            // BookingNumber
-            // 
-            this.BookingNumber.HeaderText = "Booking Number";
-            this.BookingNumber.Name = "BookingNumber";
-            this.BookingNumber.Width = 150;
-            // 
-            // tableNo
-            // 
-            this.tableNo.HeaderText = "Table Number";
-            this.tableNo.Name = "tableNo";
-            this.tableNo.Width = 130;
-            // 
             // picRemoveTable
             // 
             this.picRemoveTable.Image = global::Belfray.Properties.Resources.Remove__2_;
@@ -1937,6 +1925,18 @@
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(100, 25);
             this.txtCity.TabIndex = 13;
+            // 
+            // BookingNumber
+            // 
+            this.BookingNumber.HeaderText = "Booking Number";
+            this.BookingNumber.Name = "BookingNumber";
+            this.BookingNumber.Width = 150;
+            // 
+            // tableNo
+            // 
+            this.tableNo.HeaderText = "Table Number";
+            this.tableNo.Name = "tableNo";
+            this.tableNo.Width = 155;
             // 
             // TableSelectEdit
             // 
@@ -2165,8 +2165,6 @@
         private System.Windows.Forms.DataGridView dgvAddNewTables;
         private System.Windows.Forms.DataGridViewTextBoxColumn bkNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn tbNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tableNo;
         private System.Windows.Forms.Label lblQty;
         private System.Windows.Forms.NumericUpDown numQTY;
         private System.Windows.Forms.PictureBox picTables;
@@ -2174,5 +2172,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn itemDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn itmQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tableNo;
     }
 }
