@@ -29,7 +29,7 @@ namespace Belfray
             txtProdTypeCode.Text = "";
             txtProdDesc2.Text = "";
             errP.Clear();
-            formLoad = false;
+            formLoad = true;
             this.Close();
             //pnlDetails.Enabled = false;
             //pnlProdType.Enabled = false;
