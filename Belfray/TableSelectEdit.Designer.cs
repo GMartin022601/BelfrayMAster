@@ -130,6 +130,8 @@
             this.pnlTableSelect = new System.Windows.Forms.Panel();
             this.pnlMenuItems = new System.Windows.Forms.Panel();
             this.gbItems = new System.Windows.Forms.GroupBox();
+            this.lbltesttotal = new System.Windows.Forms.Label();
+            this.lblTestQTY = new System.Windows.Forms.Label();
             this.lblItemNoSel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblCurrentBillDisplay = new System.Windows.Forms.Label();
@@ -170,6 +172,8 @@
             this.gbDGV = new System.Windows.Forms.GroupBox();
             this.lblTblNoSelDisplay = new System.Windows.Forms.Label();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
+            this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picRemoveTable = new System.Windows.Forms.PictureBox();
             this.lblTableNoSelected = new System.Windows.Forms.Label();
             this.gbCustomerDetails = new System.Windows.Forms.GroupBox();
@@ -181,8 +185,6 @@
             this.txtCounty = new System.Windows.Forms.TextBox();
             this.lbCounty = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
-            this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBookingDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
             this.pnlFloorPlan.SuspendLayout();
@@ -1387,6 +1389,8 @@
             // 
             // gbItems
             // 
+            this.gbItems.Controls.Add(this.lbltesttotal);
+            this.gbItems.Controls.Add(this.lblTestQTY);
             this.gbItems.Controls.Add(this.lblItemNoSel);
             this.gbItems.Controls.Add(this.label9);
             this.gbItems.Controls.Add(this.lblCurrentBillDisplay);
@@ -1400,6 +1404,24 @@
             this.gbItems.TabIndex = 3;
             this.gbItems.TabStop = false;
             this.gbItems.Text = "Items Added";
+            // 
+            // lbltesttotal
+            // 
+            this.lbltesttotal.AutoSize = true;
+            this.lbltesttotal.Location = new System.Drawing.Point(426, 210);
+            this.lbltesttotal.Name = "lbltesttotal";
+            this.lbltesttotal.Size = new System.Drawing.Size(16, 18);
+            this.lbltesttotal.TabIndex = 90;
+            this.lbltesttotal.Text = "--";
+            // 
+            // lblTestQTY
+            // 
+            this.lblTestQTY.AutoSize = true;
+            this.lblTestQTY.Location = new System.Drawing.Point(265, 210);
+            this.lblTestQTY.Name = "lblTestQTY";
+            this.lblTestQTY.Size = new System.Drawing.Size(16, 18);
+            this.lblTestQTY.TabIndex = 89;
+            this.lblTestQTY.Text = "--";
             // 
             // lblItemNoSel
             // 
@@ -1431,7 +1453,7 @@
             // lblBill
             // 
             this.lblBill.AutoSize = true;
-            this.lblBill.Location = new System.Drawing.Point(7, 216);
+            this.lblBill.Location = new System.Drawing.Point(10, 219);
             this.lblBill.Name = "lblBill";
             this.lblBill.Size = new System.Drawing.Size(90, 18);
             this.lblBill.TabIndex = 85;
@@ -1451,7 +1473,7 @@
             // picRemoveItem
             // 
             this.picRemoveItem.Image = global::Belfray.Properties.Resources.Remove__2_;
-            this.picRemoveItem.Location = new System.Drawing.Point(277, 186);
+            this.picRemoveItem.Location = new System.Drawing.Point(546, 186);
             this.picRemoveItem.Name = "picRemoveItem";
             this.picRemoveItem.Size = new System.Drawing.Size(24, 24);
             this.picRemoveItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1536,7 +1558,7 @@
             // 
             this.lblTableSelected.AutoSize = true;
             this.lblTableSelected.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableSelected.Location = new System.Drawing.Point(507, 214);
+            this.lblTableSelected.Location = new System.Drawing.Point(506, 213);
             this.lblTableSelected.Name = "lblTableSelected";
             this.lblTableSelected.Size = new System.Drawing.Size(19, 15);
             this.lblTableSelected.TabIndex = 94;
@@ -1583,7 +1605,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(143, 210);
+            this.label7.Location = new System.Drawing.Point(143, 211);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 18);
             this.label7.TabIndex = 89;
@@ -1611,7 +1633,7 @@
             // picAddtoTable
             // 
             this.picAddtoTable.Image = global::Belfray.Properties.Resources.AddNew;
-            this.picAddtoTable.Location = new System.Drawing.Point(576, 196);
+            this.picAddtoTable.Location = new System.Drawing.Point(576, 204);
             this.picAddtoTable.Name = "picAddtoTable";
             this.picAddtoTable.Size = new System.Drawing.Size(24, 24);
             this.picAddtoTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1813,6 +1835,18 @@
             this.dgvBooking.TabIndex = 2;
             this.dgvBooking.Click += new System.EventHandler(this.dgvBooking_Click);
             // 
+            // BookingNumber
+            // 
+            this.BookingNumber.HeaderText = "Booking Number";
+            this.BookingNumber.Name = "BookingNumber";
+            this.BookingNumber.Width = 150;
+            // 
+            // tableNo
+            // 
+            this.tableNo.HeaderText = "Table Number";
+            this.tableNo.Name = "tableNo";
+            this.tableNo.Width = 155;
+            // 
             // picRemoveTable
             // 
             this.picRemoveTable.Image = global::Belfray.Properties.Resources.Remove__2_;
@@ -1925,18 +1959,6 @@
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(100, 25);
             this.txtCity.TabIndex = 13;
-            // 
-            // BookingNumber
-            // 
-            this.BookingNumber.HeaderText = "Booking Number";
-            this.BookingNumber.Name = "BookingNumber";
-            this.BookingNumber.Width = 150;
-            // 
-            // tableNo
-            // 
-            this.tableNo.HeaderText = "Table Number";
-            this.tableNo.Name = "tableNo";
-            this.tableNo.Width = 155;
             // 
             // TableSelectEdit
             // 
@@ -2174,5 +2196,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn itemPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn tableNo;
+        private System.Windows.Forms.Label lblTestQTY;
+        private System.Windows.Forms.Label lbltesttotal;
     }
 }

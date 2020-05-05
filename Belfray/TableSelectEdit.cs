@@ -824,7 +824,8 @@ namespace Belfray
 
                 Globals.itemSel = dgvMenuItems.SelectedRows[0].Cells[0].Value.ToString();
                 lblItemSelected.Text = dgvMenuItems.SelectedRows[0].Cells[1].Value.ToString();
-                lblPriceSelItem.Text = "£" + dgvMenuItems.SelectedRows[0].Cells[2].Value.ToString();
+                lblPriceSelItem.Text = "£" + Math.Round(Convert.ToDecimal(dgvMenuItems.SelectedRows[0].Cells[2].Value.ToString()), 2);
+                //Math.Round(Convert.ToDecimal(dgvMenuItems.SelectedRows[0].Cells[2].Value.ToString()), 2);
                 lblItemNoDIsplay.Text = dgvMenuItems.SelectedRows[0].Cells[0].Value.ToString();
                 //prdSel = Globals.prdNoSel;
             }
@@ -884,44 +885,7 @@ namespace Belfray
                 {
                     if (ok)
                     {
-                        //bool itemExist = false;
-
-                        //if (dgvTableItems.RowCount == 1)
-                        //{
-                        //    //itemExist = false;
-                        //}
-                        //else
-                        //{
-                        //    for (int x = 0; x < dgvTableItems.RowCount; x++)
-                        //    {
-                        //        if (dgvTableItems.Rows[x].Cells[0].Value.ToString().Equals(lblItemNoDIsplay.Text))
-                        //        {
-                        //            //itemExist = true;
-                        //            break;
-                        //        }
-                        //    }
-                        //}
-                            //if (!itemExist)
-                            //{
                                 dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
-                            //}
-                            //else
-                            //{
-                            //    MessageBox.Show("Item Number " + lblItemNoDIsplay.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Add Room Service", MessageBoxButtons.OK);
-                            //}
-                        
-
-                        ////Format
-                        //dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
-                        //dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
-
-                        //foreach (DataGridViewRow row in dgvTableItems.Rows)
-                        //{
-                        //    if dgvTableItems.Rows[0].
-                        //}
-                        //    dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
-                        //numQTY.Value = 0;
-                        //ClearLabels();
                     }
 
                 }
@@ -934,6 +898,32 @@ namespace Belfray
             {
                 MessageBox.Show("Item Number " + lblItemNoDIsplay.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Add Room Service", MessageBoxButtons.OK);
             }
+
+            //decimal price = Math.Round(Convert.ToDecimal(dgvTableItems.SelectedRows[0].Cells[3].Value.ToString()), 2);
+            //lblItemPrice.Text = price.ToString();
+            //txtQty.Text = "0";
+            //lblCurrentBillDisplay.Text = Convert.ToString((Convert.ToDouble(dgvTableItems.SelectedRows[0].Cells[3].Value.ToString())) * (Convert.ToDouble(dgvTableItems.SelectedRows[0].Cells[2].Value.ToString())));
+
+            //Sum of party size
+            //int qty = 0;
+            double price = 0.0;
+            double total = 0.0;
+
+            for (int i = 0; i < dgvTableItems.Rows.Count -2; ++i)
+            {
+                qty += Convert.ToInt32(dgvTableItems.Rows[i].Cells[2].Value);
+                //price += Convert.ToDouble(dgvTableItems.Rows[i].Cells[3].Value);
+            }
+            //for (int i = 0; i < dgvTableItems.Rows.Count; ++i)
+            //{
+            //    price += Convert.ToDouble(dgvTableItems.Rows[i].Cells[3].Value);
+            //}
+            lblTestQTY.Text = qty.ToString();
+
+            total = price * qty;
+            lbltesttotal.Text = total.ToString();
+
+            //lblCurrentBillDisplay.Text = "£" + Math.Round(Convert.ToDecimal(price * qty));
         }
 
         private void dgvAddNewTables_Click(object sender, EventArgs e)

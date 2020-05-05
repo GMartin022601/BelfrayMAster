@@ -861,7 +861,7 @@
             // picAddTable
             // 
             this.picAddTable.Image = global::Belfray.Properties.Resources.AddNew;
-            this.picAddTable.Location = new System.Drawing.Point(595, 417);
+            this.picAddTable.Location = new System.Drawing.Point(592, 420);
             this.picAddTable.Name = "picAddTable";
             this.picAddTable.Size = new System.Drawing.Size(40, 40);
             this.picAddTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
