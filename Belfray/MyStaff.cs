@@ -137,7 +137,7 @@ namespace Belfray
             {
                 if (MyValidation.validLength(value, 7, 8) && MyValidation.validLetterNumberWhiteSpace(value))
                 {
-                    staffPC = MyValidation.firstLetterEachWordToUpper(value);
+                    staffPC = MyValidation.EachLetterToUpper(value);
                 }
                 else
                 {
@@ -154,7 +154,7 @@ namespace Belfray
             {
                 if (MyValidation.validLength(value, 11, 15) && MyValidation.validNumber(value))
                 {
-                    staffTel = MyValidation.firstLetterEachWordToUpper(value);
+                    staffTel = value;
                 }
                 else
                 {
@@ -174,7 +174,7 @@ namespace Belfray
                 }
                 else
                 {
-                    throw new MyException("Forename must be between 4-30 letters");
+                    throw new MyException("Name must be between 4-30 letters");
                 }
             }
         }
@@ -186,7 +186,7 @@ namespace Belfray
             {
                 if (MyValidation.validLength(value, 11, 15) && MyValidation.validNumber(value))
                 {
-                    contactTel = MyValidation.firstLetterEachWordToUpper(value);
+                    contactTel = value;
                 }
                 else
                 {
@@ -206,7 +206,7 @@ namespace Belfray
                 }
                 else
                 {
-                    throw new MyException("Forename must be between 4-20 letters");
+                    throw new MyException("Login must be between 4-20 letters");
                 }
             }
         }

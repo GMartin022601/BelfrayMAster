@@ -236,10 +236,8 @@ namespace Belfray
 
         private void picAdmin_Click(object sender, EventArgs e)
         {
-            //Set menu option select to Administration
-            menuSelected = 6;
-
-
+            pnlMainBody.Controls.Clear();
+            adminTabs();
         }
 
         private void adminTabs()
@@ -259,7 +257,10 @@ namespace Belfray
 
         private void picStaff_Click(object sender, EventArgs e)
         {
+            //Set menu option select to Administration
+            menuSelected = 6;
 
+            picTabDisplay_Click(sender, e);
         }
 
         private void picStaff_MouseLeave(object sender, EventArgs e)
@@ -351,9 +352,9 @@ namespace Belfray
             }
 
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -443,7 +444,14 @@ namespace Belfray
                     break;
                 case 5: //Staff
                     break;
-                case 6: //Administration
+                case 6: //Administration Staff
+                    StaffDisplay frm6 = new StaffDisplay();
+                    frm6.TopLevel = false;
+                    frm6.FormBorderStyle = FormBorderStyle.None;
+                    frm6.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm6);
+                    frm6.Show();
+                    TabVisible();
                     break;
             }
 
@@ -501,7 +509,13 @@ namespace Belfray
                     break;
                 case 5: //Staff
                     break;
-                case 6: //Administration
+                case 6: //Administration Staff
+                    StaffSearch frm6 = new StaffSearch();
+                    frm6.TopLevel = false;
+                    frm6.FormBorderStyle = FormBorderStyle.None;
+                    frm6.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm6);
+                    frm6.Show();
                     break;
             }
 
@@ -581,7 +595,13 @@ namespace Belfray
                     break;
                 case 5: //Staff
                     break;
-                case 6: //Administration
+                case 6: //Administration Staff
+                    StaffAdd frm6 = new StaffAdd();
+                    frm6.TopLevel = false;
+                    frm6.FormBorderStyle = FormBorderStyle.None;
+                    frm6.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm6);
+                    frm6.Show();
                     break;
             }
 
@@ -685,7 +705,13 @@ namespace Belfray
                     break;
                 case 5: //Staff
                     break;
-                case 6: //Administration
+                case 6: //Administration Staff
+                    StaffEdit frm6 = new StaffEdit();
+                    frm6.TopLevel = false;
+                    frm6.FormBorderStyle = FormBorderStyle.None;
+                    frm6.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm6);
+                    frm6.Show();
                     break;
             }
 
@@ -742,7 +768,13 @@ namespace Belfray
                     break;
                 case 5: //Staff
                     break;
-                case 6: //Administration
+                case 6: //Administration Staff
+                    StaffDelete frm6 = new StaffDelete();
+                    frm6.TopLevel = false;
+                    frm6.FormBorderStyle = FormBorderStyle.None;
+                    frm6.WindowState = FormWindowState.Maximized;
+                    pnlMainBody.Controls.Add(frm6);
+                    frm6.Show();
                     break;
             }
 

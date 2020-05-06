@@ -190,6 +190,36 @@
     <Compile Include="RoomServiceSearch.Designer.cs">
       <DependentUpon>RoomServiceSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffAdd.Designer.cs">
+      <DependentUpon>StaffAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffDelete.Designer.cs">
+      <DependentUpon>StaffDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffDisplay.Designer.cs">
+      <DependentUpon>StaffDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffEdit.Designer.cs">
+      <DependentUpon>StaffEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffSearch.Designer.cs">
+      <DependentUpon>StaffSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="TableBookingDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +325,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomServiceSearch.resx">
       <DependentUpon>RoomServiceSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffAdd.resx">
+      <DependentUpon>StaffAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffDelete.resx">
+      <DependentUpon>StaffDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffDisplay.resx">
+      <DependentUpon>StaffDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffEdit.resx">
+      <DependentUpon>StaffEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffSearch.resx">
+      <DependentUpon>StaffSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableBookingDisplay.resx">
       <DependentUpon>TableBookingDisplay.cs</DependentUpon>

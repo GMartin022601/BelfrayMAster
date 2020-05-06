@@ -148,7 +148,7 @@ namespace Belfray
             {
                 if (MyValidation.validLength(value, 11, 15) && MyValidation.validNumber(value))
                 {
-                    cusTel = MyValidation.firstLetterEachWordToUpper(value);
+                    cusTel = value;
                 }
                 else
                 {
