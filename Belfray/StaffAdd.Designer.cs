@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlProfilePic = new System.Windows.Forms.Panel();
             this.pnlUserInfo = new System.Windows.Forms.Panel();
             this.gbEmergency = new System.Windows.Forms.GroupBox();
@@ -67,6 +68,7 @@
             this.picCurrVisible = new System.Windows.Forms.PictureBox();
             this.picPassSave = new System.Windows.Forms.PictureBox();
             this.picPassCancel = new System.Windows.Forms.PictureBox();
+            this.errP = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlUserInfo.SuspendLayout();
             this.gbEmergency.SuspendLayout();
             this.gbUserInfo.SuspendLayout();
@@ -79,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCurrVisible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProfilePic
@@ -107,6 +110,7 @@
             this.gbEmergency.Controls.Add(this.txtContactName);
             this.gbEmergency.Controls.Add(this.lblEmergencyTel);
             this.gbEmergency.Controls.Add(this.lblEmergencyName);
+            this.gbEmergency.Enabled = false;
             this.gbEmergency.Location = new System.Drawing.Point(3, 254);
             this.gbEmergency.Name = "gbEmergency";
             this.gbEmergency.Size = new System.Drawing.Size(510, 89);
@@ -116,7 +120,6 @@
             // 
             // txtContactTel
             // 
-            this.txtContactTel.Enabled = false;
             this.txtContactTel.Location = new System.Drawing.Point(120, 58);
             this.txtContactTel.Name = "txtContactTel";
             this.txtContactTel.Size = new System.Drawing.Size(136, 20);
@@ -124,7 +127,6 @@
             // 
             // txtContactName
             // 
-            this.txtContactName.Enabled = false;
             this.txtContactName.Location = new System.Drawing.Point(120, 24);
             this.txtContactName.Name = "txtContactName";
             this.txtContactName.Size = new System.Drawing.Size(198, 20);
@@ -181,7 +183,6 @@
             // 
             // txtPhoneNo
             // 
-            this.txtPhoneNo.Enabled = false;
             this.txtPhoneNo.Location = new System.Drawing.Point(116, 169);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(136, 20);
@@ -199,7 +200,6 @@
             // 
             // txtPostcode
             // 
-            this.txtPostcode.Enabled = false;
             this.txtPostcode.Location = new System.Drawing.Point(354, 169);
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(147, 20);
@@ -207,7 +207,6 @@
             // 
             // txtCounty
             // 
-            this.txtCounty.Enabled = false;
             this.txtCounty.Location = new System.Drawing.Point(354, 139);
             this.txtCounty.Name = "txtCounty";
             this.txtCounty.Size = new System.Drawing.Size(147, 20);
@@ -215,7 +214,6 @@
             // 
             // txtCity
             // 
-            this.txtCity.Enabled = false;
             this.txtCity.Location = new System.Drawing.Point(116, 139);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(136, 20);
@@ -223,7 +221,6 @@
             // 
             // txtStreet
             // 
-            this.txtStreet.Enabled = false;
             this.txtStreet.Location = new System.Drawing.Point(116, 109);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(196, 20);
@@ -231,7 +228,6 @@
             // 
             // txtSurname
             // 
-            this.txtSurname.Enabled = false;
             this.txtSurname.Location = new System.Drawing.Point(116, 79);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(196, 20);
@@ -239,7 +235,6 @@
             // 
             // txtForename
             // 
-            this.txtForename.Enabled = false;
             this.txtForename.Location = new System.Drawing.Point(116, 49);
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(196, 20);
@@ -345,6 +340,7 @@
             this.gbAccountInfo.Controls.Add(this.lblLoginID);
             this.gbAccountInfo.Controls.Add(this.txtCurrent);
             this.gbAccountInfo.Controls.Add(this.lblCurrent);
+            this.gbAccountInfo.Enabled = false;
             this.gbAccountInfo.Location = new System.Drawing.Point(3, 3);
             this.gbAccountInfo.Name = "gbAccountInfo";
             this.gbAccountInfo.Size = new System.Drawing.Size(341, 340);
@@ -366,7 +362,6 @@
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Enabled = false;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.Location = new System.Drawing.Point(160, 30);
             this.lblLogin.Name = "lblLogin";
@@ -387,7 +382,6 @@
             // 
             // txtCurrent
             // 
-            this.txtCurrent.Enabled = false;
             this.txtCurrent.Location = new System.Drawing.Point(163, 99);
             this.txtCurrent.Name = "txtCurrent";
             this.txtCurrent.Size = new System.Drawing.Size(153, 20);
@@ -407,7 +401,6 @@
             // 
             // cmbAccountType
             // 
-            this.cmbAccountType.Enabled = false;
             this.cmbAccountType.FormattingEnabled = true;
             this.cmbAccountType.Location = new System.Drawing.Point(163, 64);
             this.cmbAccountType.Name = "cmbAccountType";
@@ -424,6 +417,9 @@
             this.picEmergeCancel.TabIndex = 91;
             this.picEmergeCancel.TabStop = false;
             this.picEmergeCancel.Visible = false;
+            this.picEmergeCancel.Click += new System.EventHandler(this.picEmergeCancel_Click);
+            this.picEmergeCancel.MouseEnter += new System.EventHandler(this.picEmergeCancel_MouseEnter);
+            this.picEmergeCancel.MouseLeave += new System.EventHandler(this.picEmergeCancel_MouseLeave);
             // 
             // picEmergeSave
             // 
@@ -435,6 +431,9 @@
             this.picEmergeSave.TabIndex = 90;
             this.picEmergeSave.TabStop = false;
             this.picEmergeSave.Visible = false;
+            this.picEmergeSave.Click += new System.EventHandler(this.picEmergeSave_Click);
+            this.picEmergeSave.MouseEnter += new System.EventHandler(this.picEmergeSave_MouseEnter);
+            this.picEmergeSave.MouseLeave += new System.EventHandler(this.picEmergeSave_MouseLeave);
             // 
             // picStaffSave
             // 
@@ -445,6 +444,9 @@
             this.picStaffSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picStaffSave.TabIndex = 103;
             this.picStaffSave.TabStop = false;
+            this.picStaffSave.Click += new System.EventHandler(this.picStaffSave_Click);
+            this.picStaffSave.MouseEnter += new System.EventHandler(this.picStaffSave_MouseEnter);
+            this.picStaffSave.MouseLeave += new System.EventHandler(this.picStaffSave_MouseLeave);
             // 
             // picStaffCancel
             // 
@@ -455,6 +457,9 @@
             this.picStaffCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picStaffCancel.TabIndex = 87;
             this.picStaffCancel.TabStop = false;
+            this.picStaffCancel.Click += new System.EventHandler(this.picStaffCancel_Click);
+            this.picStaffCancel.MouseEnter += new System.EventHandler(this.picStaffCancel_MouseEnter);
+            this.picStaffCancel.MouseLeave += new System.EventHandler(this.picStaffCancel_MouseLeave);
             // 
             // picCurrVisible
             // 
@@ -465,6 +470,7 @@
             this.picCurrVisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCurrVisible.TabIndex = 110;
             this.picCurrVisible.TabStop = false;
+            this.picCurrVisible.Visible = false;
             // 
             // picPassSave
             // 
@@ -476,6 +482,9 @@
             this.picPassSave.TabIndex = 108;
             this.picPassSave.TabStop = false;
             this.picPassSave.Visible = false;
+            this.picPassSave.Click += new System.EventHandler(this.picPassSave_Click);
+            this.picPassSave.MouseEnter += new System.EventHandler(this.picPassSave_MouseEnter);
+            this.picPassSave.MouseLeave += new System.EventHandler(this.picPassSave_MouseLeave);
             // 
             // picPassCancel
             // 
@@ -487,6 +496,13 @@
             this.picPassCancel.TabIndex = 106;
             this.picPassCancel.TabStop = false;
             this.picPassCancel.Visible = false;
+            this.picPassCancel.Click += new System.EventHandler(this.picPassCancel_Click);
+            this.picPassCancel.MouseEnter += new System.EventHandler(this.picPassCancel_MouseEnter);
+            this.picPassCancel.MouseLeave += new System.EventHandler(this.picPassCancel_MouseLeave);
+            // 
+            // errP
+            // 
+            this.errP.ContainerControl = this;
             // 
             // StaffAdd
             // 
@@ -499,6 +515,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StaffAdd";
             this.Text = "StaffAdd";
+            this.Load += new System.EventHandler(this.StaffAdd_Load);
             this.pnlUserInfo.ResumeLayout(false);
             this.gbEmergency.ResumeLayout(false);
             this.gbEmergency.PerformLayout();
@@ -514,6 +531,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCurrVisible)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -559,5 +577,6 @@
         private System.Windows.Forms.TextBox txtCurrent;
         private System.Windows.Forms.Label lblCurrent;
         private System.Windows.Forms.ComboBox cmbAccountType;
+        private System.Windows.Forms.ErrorProvider errP;
     }
 }
