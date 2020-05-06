@@ -130,8 +130,6 @@
             this.pnlTableSelect = new System.Windows.Forms.Panel();
             this.pnlMenuItems = new System.Windows.Forms.Panel();
             this.gbItems = new System.Windows.Forms.GroupBox();
-            this.lbltesttotal = new System.Windows.Forms.Label();
-            this.lblTestQTY = new System.Windows.Forms.Label();
             this.lblItemNoSel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblCurrentBillDisplay = new System.Windows.Forms.Label();
@@ -1389,8 +1387,6 @@
             // 
             // gbItems
             // 
-            this.gbItems.Controls.Add(this.lbltesttotal);
-            this.gbItems.Controls.Add(this.lblTestQTY);
             this.gbItems.Controls.Add(this.lblItemNoSel);
             this.gbItems.Controls.Add(this.label9);
             this.gbItems.Controls.Add(this.lblCurrentBillDisplay);
@@ -1405,24 +1401,6 @@
             this.gbItems.TabStop = false;
             this.gbItems.Text = "Items Added";
             // 
-            // lbltesttotal
-            // 
-            this.lbltesttotal.AutoSize = true;
-            this.lbltesttotal.Location = new System.Drawing.Point(426, 210);
-            this.lbltesttotal.Name = "lbltesttotal";
-            this.lbltesttotal.Size = new System.Drawing.Size(16, 18);
-            this.lbltesttotal.TabIndex = 90;
-            this.lbltesttotal.Text = "--";
-            // 
-            // lblTestQTY
-            // 
-            this.lblTestQTY.AutoSize = true;
-            this.lblTestQTY.Location = new System.Drawing.Point(265, 210);
-            this.lblTestQTY.Name = "lblTestQTY";
-            this.lblTestQTY.Size = new System.Drawing.Size(16, 18);
-            this.lblTestQTY.TabIndex = 89;
-            this.lblTestQTY.Text = "--";
-            // 
             // lblItemNoSel
             // 
             this.lblItemNoSel.AutoSize = true;
@@ -1431,6 +1409,7 @@
             this.lblItemNoSel.Size = new System.Drawing.Size(16, 18);
             this.lblItemNoSel.TabIndex = 88;
             this.lblItemNoSel.Text = "--";
+            this.lblItemNoSel.Visible = false;
             // 
             // label9
             // 
@@ -1440,11 +1419,12 @@
             this.label9.Size = new System.Drawing.Size(145, 18);
             this.label9.TabIndex = 87;
             this.label9.Text = "Item Number Selected:";
+            this.label9.Visible = false;
             // 
             // lblCurrentBillDisplay
             // 
             this.lblCurrentBillDisplay.AutoSize = true;
-            this.lblCurrentBillDisplay.Location = new System.Drawing.Point(103, 217);
+            this.lblCurrentBillDisplay.Location = new System.Drawing.Point(106, 219);
             this.lblCurrentBillDisplay.Name = "lblCurrentBillDisplay";
             this.lblCurrentBillDisplay.Size = new System.Drawing.Size(16, 18);
             this.lblCurrentBillDisplay.TabIndex = 86;
@@ -2196,7 +2176,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn itemPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn tableNo;
-        private System.Windows.Forms.Label lblTestQTY;
-        private System.Windows.Forms.Label lbltesttotal;
     }
 }
