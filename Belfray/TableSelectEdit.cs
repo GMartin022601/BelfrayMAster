@@ -15,13 +15,13 @@ namespace Belfray
 {
     public partial class TableSelectEdit : Form
     {
-        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem, sqlItem, sqlBreakfast, sqlBookingDetails;
+        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem, sqlItem, sqlBreakfast, sqlBookingDetails, sqlBill;
         String tableNumber = "", test = "", addTable = "";
         bool formLoad = true;
         bool getInfo, bookingInfo, avail, itemSelected;
         bool newCustomer, newBooking, tableSelected;
         int tableNoSelected, partySize, partySize2, tableSize, itemNoSelected;
-        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem, daItem, daBreakfast, daBDetails;// daSupplier;
+        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem, daItem, daBreakfast, daBDetails, daBill;// daSupplier;
         DataSet dsBelfray = new DataSet();
         SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBBookingItem, cmdBItem, cmdBBDetails;
         DataRow drCustomer, drBooking, drBookingType, drPaymentType, drBookingItem, drItem, drBookingDetails;
@@ -794,20 +794,60 @@ namespace Belfray
 
         private void picFood_Click(object sender, EventArgs e)
         {
+            bool existing = false;
+
             if (tableSelected == false)
             {
                 MessageBox.Show("Please select a table.");
             }
-            else
-            {
-                pnlTableSelect.SendToBack();
-                pnlFloorPlan.Visible = false;
-                pnlFloorPlan.SendToBack();
-                pnlMenuItems.Visible = true;
-                pnlMenuItems.BringToFront();
-                LoadMenu();
+            //else
+            //{
+            //    tableSelected = true;
+            //}
+            //if (existing == true && tableSelected == true)
+            //{
 
+            foreach (DataRow drDetails in dsBelfray.Tables["BookingDetails"].Rows)
+            {
+                string split = "";
+                double price = 0.0;
+                double qty = 0.0;
+                double total = 0.0;
+
+                if (drDetails["bookingNo"].Equals(lblBookingNo.Text) && drDetails["itemNo"].Equals(lblTblNoSelDisplay.Text))
+                {
+                    dgvTableItems.Columns.Clear();
+                    DataView existingSearch = new DataView(dsBelfray.Tables["Book"], "bookingNo = '" + lblBookingNo.Text.ToString() + "' ", "bookingNo", DataViewRowState.CurrentRows);
+                    //dgvTableItems.DataSource = existingSearch;
+                    //for each dr row in existingsearch 
+                    //in the dog house check foreach dr in table whatever new row for dgv append into 0-1-2 add row to dgv
+                    dgvTableItems.Columns[0].Visible = false;
+                    dgvTableItems.Columns[2].Width = 250;
+                    dgvTableItems.Columns[4].DefaultCellStyle.Format = "c2";
+                    dgvTableItems.Columns[4].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+
+                    for (int i = 0; i < dgvTableItems.Rows.Count - 1; ++i)
+                    {
+                        qty = Convert.ToDouble(dgvTableItems.Rows[i].Cells[3].Value);
+                        split = dgvTableItems.Rows[i].Cells[4].Value.ToString().Split('£').Last();
+                        price = Convert.ToDouble(split);
+                        total += price * qty;
+                    }
+
+                    lblCurrentBillDisplay.Text = total.ToString();
+
+                }
+                else //if (existing == false && tableSelected == true)
+                {
+                    pnlTableSelect.SendToBack();
+                    pnlFloorPlan.Visible = false;
+                    pnlFloorPlan.SendToBack();
+                    pnlMenuItems.Visible = true;
+                    pnlMenuItems.BringToFront();
+                    LoadMenu();
+                }
             }
+            //}
         }
 
         private void dgvMenuItems_Click(object sender, EventArgs e)
@@ -842,16 +882,19 @@ namespace Belfray
         {
             bool ok = true;
             int rows = dgvTableItems.RowCount;
-            bool newItem = false;
-            int qty = 0;
+            bool newItem = false, firstline = false;
+            double qty = 0.0;
 
             if (rows > 1)
             {
+                firstline = false;
+
                 for (int x = 0; x < rows - 1; x++)
                 {
                     if (!lblItemNoDIsplay.Text.ToString().Equals(dgvTableItems.Rows[x].Cells[0].Value.ToString()))
                     {
                         newItem = true;
+
                     }
                     else
                     {
@@ -863,6 +906,7 @@ namespace Belfray
             else
             {
                 newItem = true;
+                firstline = true;
             }
 
             if (newItem)
@@ -899,31 +943,35 @@ namespace Belfray
                 MessageBox.Show("Item Number " + lblItemNoDIsplay.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Add Room Service", MessageBoxButtons.OK);
             }
 
-            //decimal price = Math.Round(Convert.ToDecimal(dgvTableItems.SelectedRows[0].Cells[3].Value.ToString()), 2);
-            //lblItemPrice.Text = price.ToString();
-            //txtQty.Text = "0";
-            //lblCurrentBillDisplay.Text = Convert.ToString((Convert.ToDouble(dgvTableItems.SelectedRows[0].Cells[3].Value.ToString())) * (Convert.ToDouble(dgvTableItems.SelectedRows[0].Cells[2].Value.ToString())));
-
             //Sum of party size
-            //int qty = 0;
             double price = 0.0;
             double total = 0.0;
+            string split = "";
 
-            for (int i = 0; i < dgvTableItems.Rows.Count -2; ++i)
+            if (firstline)
             {
-                qty += Convert.ToInt32(dgvTableItems.Rows[i].Cells[2].Value);
-                //price += Convert.ToDouble(dgvTableItems.Rows[i].Cells[3].Value);
-            }
-            //for (int i = 0; i < dgvTableItems.Rows.Count; ++i)
-            //{
-            //    price += Convert.ToDouble(dgvTableItems.Rows[i].Cells[3].Value);
-            //}
-            lblTestQTY.Text = qty.ToString();
+                split = lblPriceSelItem.Text.ToString().Split('£').Last();
 
-            total = price * qty;
-            lbltesttotal.Text = total.ToString();
+                price = Convert.ToDouble(split);
+                qty = Convert.ToDouble(numQTY.Value.ToString());
+                lblCurrentBillDisplay.Text = Convert.ToString(qty * price);
+            }
+            else
+            {
+                for (int i = 0; i < dgvTableItems.Rows.Count -1; ++i)
+                {
+                    qty = Convert.ToDouble(dgvTableItems.Rows[i].Cells[2].Value);
+                    split = dgvTableItems.Rows[i].Cells[3].Value.ToString().Split('£').Last();
+                    price = Convert.ToDouble(split);
+                    total += price * qty;
+                }
+
+                lblCurrentBillDisplay.Text = total.ToString();
+            }
 
             //lblCurrentBillDisplay.Text = "£" + Math.Round(Convert.ToDecimal(price * qty));
+
+
         }
 
         private void dgvAddNewTables_Click(object sender, EventArgs e)
@@ -1964,6 +2012,13 @@ namespace Belfray
             cmdBBDetails = new SqlCommandBuilder(daBDetails);
             daBDetails.FillSchema(dsBelfray, SchemaType.Source, "BookingDetails");
             daBDetails.Fill(dsBelfray, "BookingDetails");
+            //sql for bookings bill
+            sqlBill = @"SELECT BookingDetails.bookingNo, Item.itemNo AS 'Item No', Item.itemDesc AS 'Item Description', BookingDetails.bookingItemQty AS 'Qty', Item.itemPrice AS 'Price' FROM BookingDetails       
+                        LEFT JOIN Item on Item.itemNo = BookingDetails.bookingItemNo";
+            //WHERE BookingDetails.itemNo LIKE '%TB%'";
+            daBill = new SqlDataAdapter(sqlBill, connStr);
+            daBill.FillSchema(dsBelfray, SchemaType.Source, "Book");
+            daBill.Fill(dsBelfray, "Book");
             //cbPayment type
             cbPaymentTyp.DataSource = dsBelfray.Tables["Payment"];
             cbPaymentTyp.ValueMember = "paymentTypeID";
