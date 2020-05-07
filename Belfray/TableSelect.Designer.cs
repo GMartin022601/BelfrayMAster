@@ -671,18 +671,16 @@
             this.lblBookingNo.AutoSize = true;
             this.lblBookingNo.Location = new System.Drawing.Point(92, 23);
             this.lblBookingNo.Name = "lblBookingNo";
-            this.lblBookingNo.Size = new System.Drawing.Size(28, 18);
+            this.lblBookingNo.Size = new System.Drawing.Size(0, 18);
             this.lblBookingNo.TabIndex = 82;
-            this.lblBookingNo.Text = "-----";
             // 
             // lblTableNo
             // 
             this.lblTableNo.AutoSize = true;
-            this.lblTableNo.Location = new System.Drawing.Point(117, 51);
+            this.lblTableNo.Location = new System.Drawing.Point(108, 51);
             this.lblTableNo.Name = "lblTableNo";
-            this.lblTableNo.Size = new System.Drawing.Size(28, 18);
+            this.lblTableNo.Size = new System.Drawing.Size(0, 18);
             this.lblTableNo.TabIndex = 38;
-            this.lblTableNo.Text = "-----";
             // 
             // label2
             // 
@@ -884,7 +882,6 @@
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Table Selected";
-            this.groupBox1.Visible = false;
             // 
             // lblSeatsAvail
             // 
@@ -894,6 +891,7 @@
             this.lblSeatsAvail.Size = new System.Drawing.Size(32, 18);
             this.lblSeatsAvail.TabIndex = 5;
             this.lblSeatsAvail.Text = "------";
+            this.lblSeatsAvail.Visible = false;
             // 
             // label6
             // 
@@ -903,15 +901,15 @@
             this.label6.Size = new System.Drawing.Size(99, 18);
             this.label6.TabIndex = 4;
             this.label6.Text = "Seats Available:";
+            this.label6.Visible = false;
             // 
             // lblTableCapacity
             // 
             this.lblTableCapacity.AutoSize = true;
             this.lblTableCapacity.Location = new System.Drawing.Point(120, 61);
             this.lblTableCapacity.Name = "lblTableCapacity";
-            this.lblTableCapacity.Size = new System.Drawing.Size(32, 18);
+            this.lblTableCapacity.Size = new System.Drawing.Size(0, 18);
             this.lblTableCapacity.TabIndex = 3;
-            this.lblTableCapacity.Text = "------";
             // 
             // label4
             // 
@@ -927,9 +925,8 @@
             this.lblTableNumDisplay.AutoSize = true;
             this.lblTableNumDisplay.Location = new System.Drawing.Point(120, 30);
             this.lblTableNumDisplay.Name = "lblTableNumDisplay";
-            this.lblTableNumDisplay.Size = new System.Drawing.Size(32, 18);
+            this.lblTableNumDisplay.Size = new System.Drawing.Size(0, 18);
             this.lblTableNumDisplay.TabIndex = 1;
-            this.lblTableNumDisplay.Text = "------";
             // 
             // label1
             // 
