@@ -814,7 +814,7 @@ namespace Belfray
                                         {
                                             if (drBooking["bookingNo"].ToString().Equals(test.ToString()))
                                             {
-                                                drBookingItem.Delete();
+                                                drBookingItem.Delete();                                                
                                                 daBookingItem.Update(dsBelfray, "BookingItem");
                                                 drBooking.Delete();
                                                 //daBookingItem.Update(dsBelfray, "BookingItem");
