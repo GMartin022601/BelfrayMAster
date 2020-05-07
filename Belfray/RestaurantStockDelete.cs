@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Belfray
 {
@@ -179,7 +180,19 @@ namespace Belfray
                     dgvOptions.Visible = true;
                     dgvOptions.DataSource = dsBelfray.Tables["Product"];
                     //Resize
-                    dgvOptions.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                    dgvOptions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    //Format
+                    dgvOptions.Columns[3].DefaultCellStyle.Format = "c2";
+                    dgvOptions.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+                    //Headers
+                    dgvOptions.Columns[0].HeaderCell.Value = "Product Number";
+                    dgvOptions.Columns[1].HeaderCell.Value = "Product Type Code";
+                    dgvOptions.Columns[2].HeaderCell.Value = "Description";
+                    dgvOptions.Columns[3].HeaderCell.Value = "Cost Price";
+                    dgvOptions.Columns[4].HeaderCell.Value = "Qty in Stock";
+                    dgvOptions.Columns[5].HeaderCell.Value = "Pack Size";
+                    dgvOptions.Columns[6].HeaderCell.Value = "Re-Order Level";
+                    dgvOptions.Columns[7].HeaderCell.Value = "Supplier ID";
                 }
                 else if (cbSelect.Text == "Product Type")
                 {
@@ -189,7 +202,10 @@ namespace Belfray
                     dgvOptions.Visible = true;
                     dgvOptions.DataSource = dsBelfray.Tables["ProductType"];
                     //Resize
-                    dgvOptions.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                    dgvOptions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    //Headers
+                    dgvOptions.Columns[0].HeaderCell.Value = "Product Type ID";
+                    dgvOptions.Columns[1].HeaderCell.Value = "Description";
                 }
                 else if (cbSelect.Text == "Supplier")
                 {
@@ -199,7 +215,16 @@ namespace Belfray
                     dgvOptions.Visible = true;
                     dgvOptions.DataSource = dsBelfray.Tables["Supplier"];
                     //Resize
-                    dgvOptions.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                    dgvOptions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    //Headers
+                    dgvOptions.Columns[0].HeaderCell.Value = "Supplier ID";
+                    dgvOptions.Columns[1].HeaderCell.Value = "Name";
+                    dgvOptions.Columns[2].HeaderCell.Value = "Address";
+                    dgvOptions.Columns[3].HeaderCell.Value = "Town";
+                    dgvOptions.Columns[4].HeaderCell.Value = "County";
+                    dgvOptions.Columns[5].HeaderCell.Value = "Postcode";
+                    dgvOptions.Columns[6].HeaderCell.Value = "Email";
+                    dgvOptions.Columns[7].HeaderCell.Value = "Telephone Number";
                 }
             }
         }

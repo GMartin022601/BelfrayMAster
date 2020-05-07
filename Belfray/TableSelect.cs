@@ -1403,6 +1403,7 @@ namespace Belfray
                             daBookingItem.Update(dsBelfray, "BookingItem");
                         }
                         MessageBox.Show("Booking Added");
+                    this.Close();
                     }
                     catch (Exception ex)
                     {
@@ -1504,6 +1505,7 @@ namespace Belfray
                             daBookingItem.Update(dsBelfray, "BookingItem");
                         }
                         MessageBox.Show("Booking Added");
+                        this.Close();
                     }
 
                     catch (Exception ex)

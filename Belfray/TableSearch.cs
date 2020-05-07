@@ -235,16 +235,16 @@ namespace Belfray
             dgvSearch.Columns[0].HeaderText = "Booking Number";
             dgvSearch.Columns[1].HeaderText = "Booking Date";
             dgvSearch.Columns[6].HeaderText = "Surname";
-            dgvSearch.Columns[0].Width = 100;
-            dgvSearch.Columns[1].Width = 100;
-            dgvSearch.Columns[2].Width = 81;
-            dgvSearch.Columns[3].Width = 81;
-            dgvSearch.Columns[4].Width = 100;
-            dgvSearch.Columns[5].Width = 100;
-            dgvSearch.Columns[6].Width = 100;
-            dgvSearch.Columns[7].Width = 71;
-            dgvSearch.Columns[8].Width = 61;
-            dgvSearch.Columns[9].Width = 61;
+            //dgvSearch.Columns[0].Width = 100;
+            //dgvSearch.Columns[1].Width = 100;
+            //dgvSearch.Columns[2].Width = 81;
+            //dgvSearch.Columns[3].Width = 81;
+            //dgvSearch.Columns[4].Width = 100;
+            //dgvSearch.Columns[5].Width = 100;
+            //dgvSearch.Columns[6].Width = 100;
+            //dgvSearch.Columns[7].Width = 71;
+            //dgvSearch.Columns[8].Width = 61;
+            //dgvSearch.Columns[9].Width = 61;
         }
         private void TableSearch_Load(object sender, EventArgs e)
         {
@@ -307,7 +307,7 @@ namespace Belfray
             dgvSearch.Visible = true;
             dgvSearch.DataSource = dsBelfray.Tables["Booking"];
             //Resize
-            dgvSearch.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvSearch.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             FormatDGV();
 
         }

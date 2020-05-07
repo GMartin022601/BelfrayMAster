@@ -794,18 +794,11 @@ namespace Belfray
 
         private void picFood_Click(object sender, EventArgs e)
         {
-            bool existing = false;
 
             if (tableSelected == false)
             {
                 MessageBox.Show("Please select a table.");
             }
-            //else
-            //{
-            //    tableSelected = true;
-            //}
-            //if (existing == true && tableSelected == true)
-            //{
 
             foreach (DataRow drDetails in dsBelfray.Tables["BookingDetails"].Rows)
             {
@@ -818,7 +811,7 @@ namespace Belfray
                 {
                     dgvTableItems.Columns.Clear();
                     DataView existingSearch = new DataView(dsBelfray.Tables["Book"], "bookingNo = '" + lblBookingNo.Text.ToString() + "' ", "bookingNo", DataViewRowState.CurrentRows);
-                    //dgvTableItems.DataSource = existingSearch;
+                    dgvTableItems.DataSource = existingSearch;
                     //for each dr row in existingsearch 
                     //in the dog house check foreach dr in table whatever new row for dgv append into 0-1-2 add row to dgv
                     dgvTableItems.Columns[0].Visible = false;
@@ -837,7 +830,7 @@ namespace Belfray
                     lblCurrentBillDisplay.Text = total.ToString();
 
                 }
-                else //if (existing == false && tableSelected == true)
+                else
                 {
                     pnlTableSelect.SendToBack();
                     pnlFloorPlan.Visible = false;
@@ -847,7 +840,6 @@ namespace Belfray
                     LoadMenu();
                 }
             }
-            //}
         }
 
         private void dgvMenuItems_Click(object sender, EventArgs e)
@@ -940,7 +932,7 @@ namespace Belfray
             }
             else
             {
-                MessageBox.Show("Item Number " + lblItemNoDIsplay.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Add Room Service", MessageBoxButtons.OK);
+                MessageBox.Show("Item Number " + lblItemNoDIsplay.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Add to bill", MessageBoxButtons.OK);
             }
 
             //Sum of party size

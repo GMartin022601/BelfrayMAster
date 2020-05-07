@@ -65,7 +65,7 @@ namespace Belfray
             dgvRestStock.Visible = true;
             dgvRestStock.DataSource = dsBelfray.Tables["Product"];
             //Resize
-            dgvRestStock.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvRestStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //Rename
             dgvRestStock.Columns[0].HeaderCell.Value = "Product Number";
             dgvRestStock.Columns[1].HeaderCell.Value = "Product Type Code";

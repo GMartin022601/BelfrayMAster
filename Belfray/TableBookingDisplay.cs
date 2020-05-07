@@ -70,7 +70,7 @@ namespace Belfray
             dgvBooking.Visible = true;
             dgvBooking.DataSource = dsBelfray.Tables["Booking"];
             //Resize
-            dgvBooking.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvBooking.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
