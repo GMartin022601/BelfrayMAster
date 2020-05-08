@@ -32,11 +32,16 @@
             this.pnlProfilePic = new System.Windows.Forms.Panel();
             this.pnlUserInfo = new System.Windows.Forms.Panel();
             this.gbEmergency = new System.Windows.Forms.GroupBox();
+            this.picEmergeEdit = new System.Windows.Forms.PictureBox();
+            this.picEmergeCancel = new System.Windows.Forms.PictureBox();
+            this.picEmergeSave = new System.Windows.Forms.PictureBox();
             this.txtContactTel = new System.Windows.Forms.TextBox();
             this.txtContactName = new System.Windows.Forms.TextBox();
             this.lblEmergencyTel = new System.Windows.Forms.Label();
             this.lblEmergencyName = new System.Windows.Forms.Label();
             this.gbUserInfo = new System.Windows.Forms.GroupBox();
+            this.picStaffSave = new System.Windows.Forms.PictureBox();
+            this.picStaffEdit = new System.Windows.Forms.PictureBox();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
             this.lblPhoneNo = new System.Windows.Forms.Label();
             this.txtPostcode = new System.Windows.Forms.TextBox();
@@ -51,10 +56,17 @@
             this.lblStreet = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblForename = new System.Windows.Forms.Label();
+            this.picStaffCancel = new System.Windows.Forms.PictureBox();
             this.lblStaffNo = new System.Windows.Forms.Label();
             this.lblStaffNum = new System.Windows.Forms.Label();
             this.pnlAccountSettings = new System.Windows.Forms.Panel();
             this.gbAccountInfo = new System.Windows.Forms.GroupBox();
+            this.picCurrVisible = new System.Windows.Forms.PictureBox();
+            this.picNew1Visible = new System.Windows.Forms.PictureBox();
+            this.picNew2Visible = new System.Windows.Forms.PictureBox();
+            this.picPassSave = new System.Windows.Forms.PictureBox();
+            this.picPassEdit = new System.Windows.Forms.PictureBox();
+            this.picPassCancel = new System.Windows.Forms.PictureBox();
             this.lblType = new System.Windows.Forms.Label();
             this.lblAcoountType = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
@@ -66,36 +78,24 @@
             this.lblNew1 = new System.Windows.Forms.Label();
             this.lblCurrent = new System.Windows.Forms.Label();
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.picEmergeEdit = new System.Windows.Forms.PictureBox();
-            this.picEmergeCancel = new System.Windows.Forms.PictureBox();
-            this.picEmergeSave = new System.Windows.Forms.PictureBox();
-            this.picStaffSave = new System.Windows.Forms.PictureBox();
-            this.picStaffEdit = new System.Windows.Forms.PictureBox();
-            this.picStaffCancel = new System.Windows.Forms.PictureBox();
-            this.picCurrVisible = new System.Windows.Forms.PictureBox();
-            this.picNew1Visible = new System.Windows.Forms.PictureBox();
-            this.picNew2Visible = new System.Windows.Forms.PictureBox();
-            this.picPassSave = new System.Windows.Forms.PictureBox();
-            this.picPassEdit = new System.Windows.Forms.PictureBox();
-            this.picPassCancel = new System.Windows.Forms.PictureBox();
             this.pnlUserInfo.SuspendLayout();
             this.gbEmergency.SuspendLayout();
-            this.gbUserInfo.SuspendLayout();
-            this.pnlAccountSettings.SuspendLayout();
-            this.gbAccountInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEmergeEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEmergeCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEmergeSave)).BeginInit();
+            this.gbUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffCancel)).BeginInit();
+            this.pnlAccountSettings.SuspendLayout();
+            this.gbAccountInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCurrVisible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNew1Visible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNew2Visible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProfilePic
@@ -132,6 +132,48 @@
             this.gbEmergency.TabStop = false;
             this.gbEmergency.Text = "Emergency Contact";
             // 
+            // picEmergeEdit
+            // 
+            this.picEmergeEdit.BackColor = System.Drawing.Color.White;
+            this.picEmergeEdit.Image = global::Belfray.Properties.Resources.EditTab_EditButton1;
+            this.picEmergeEdit.Location = new System.Drawing.Point(464, 27);
+            this.picEmergeEdit.Name = "picEmergeEdit";
+            this.picEmergeEdit.Size = new System.Drawing.Size(40, 40);
+            this.picEmergeEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEmergeEdit.TabIndex = 103;
+            this.picEmergeEdit.TabStop = false;
+            this.picEmergeEdit.Click += new System.EventHandler(this.picEmergeEdit_Click);
+            this.picEmergeEdit.MouseEnter += new System.EventHandler(this.picEmergeEdit_MouseEnter);
+            this.picEmergeEdit.MouseLeave += new System.EventHandler(this.picEmergeEdit_MouseLeave);
+            // 
+            // picEmergeCancel
+            // 
+            this.picEmergeCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picEmergeCancel.Location = new System.Drawing.Point(421, 27);
+            this.picEmergeCancel.Name = "picEmergeCancel";
+            this.picEmergeCancel.Size = new System.Drawing.Size(40, 40);
+            this.picEmergeCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEmergeCancel.TabIndex = 91;
+            this.picEmergeCancel.TabStop = false;
+            this.picEmergeCancel.Visible = false;
+            this.picEmergeCancel.Click += new System.EventHandler(this.picEmergeCancel_Click);
+            this.picEmergeCancel.MouseEnter += new System.EventHandler(this.picEmergeCancel_MouseEnter);
+            this.picEmergeCancel.MouseLeave += new System.EventHandler(this.picEmergeCancel_MouseLeave);
+            // 
+            // picEmergeSave
+            // 
+            this.picEmergeSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picEmergeSave.Location = new System.Drawing.Point(464, 27);
+            this.picEmergeSave.Name = "picEmergeSave";
+            this.picEmergeSave.Size = new System.Drawing.Size(40, 40);
+            this.picEmergeSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEmergeSave.TabIndex = 90;
+            this.picEmergeSave.TabStop = false;
+            this.picEmergeSave.Visible = false;
+            this.picEmergeSave.Click += new System.EventHandler(this.picEmergeSave_Click);
+            this.picEmergeSave.MouseEnter += new System.EventHandler(this.picEmergeSave_MouseEnter);
+            this.picEmergeSave.MouseLeave += new System.EventHandler(this.picEmergeSave_MouseLeave);
+            // 
             // txtContactTel
             // 
             this.txtContactTel.Enabled = false;
@@ -164,9 +206,9 @@
             this.lblEmergencyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmergencyName.Location = new System.Drawing.Point(9, 27);
             this.lblEmergencyName.Name = "lblEmergencyName";
-            this.lblEmergencyName.Size = new System.Drawing.Size(78, 15);
+            this.lblEmergencyName.Size = new System.Drawing.Size(45, 15);
             this.lblEmergencyName.TabIndex = 86;
-            this.lblEmergencyName.Text = "FORENAME:";
+            this.lblEmergencyName.Text = "NAME:";
             // 
             // gbUserInfo
             // 
@@ -195,6 +237,34 @@
             this.gbUserInfo.TabIndex = 0;
             this.gbUserInfo.TabStop = false;
             this.gbUserInfo.Text = "User Info";
+            // 
+            // picStaffSave
+            // 
+            this.picStaffSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picStaffSave.Location = new System.Drawing.Point(257, 199);
+            this.picStaffSave.Name = "picStaffSave";
+            this.picStaffSave.Size = new System.Drawing.Size(40, 40);
+            this.picStaffSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStaffSave.TabIndex = 103;
+            this.picStaffSave.TabStop = false;
+            this.picStaffSave.Visible = false;
+            this.picStaffSave.Click += new System.EventHandler(this.picStaffSave_Click);
+            this.picStaffSave.MouseEnter += new System.EventHandler(this.picStaffSave_MouseEnter);
+            this.picStaffSave.MouseLeave += new System.EventHandler(this.picStaffSave_MouseLeave);
+            // 
+            // picStaffEdit
+            // 
+            this.picStaffEdit.BackColor = System.Drawing.Color.White;
+            this.picStaffEdit.Image = global::Belfray.Properties.Resources.EditTab_EditButton1;
+            this.picStaffEdit.Location = new System.Drawing.Point(235, 199);
+            this.picStaffEdit.Name = "picStaffEdit";
+            this.picStaffEdit.Size = new System.Drawing.Size(40, 40);
+            this.picStaffEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStaffEdit.TabIndex = 102;
+            this.picStaffEdit.TabStop = false;
+            this.picStaffEdit.Click += new System.EventHandler(this.picStaffEdit_Click);
+            this.picStaffEdit.MouseEnter += new System.EventHandler(this.picStaffEdit_MouseEnter);
+            this.picStaffEdit.MouseLeave += new System.EventHandler(this.picStaffEdit_MouseLeave);
             // 
             // txtPhoneNo
             // 
@@ -322,6 +392,20 @@
             this.lblForename.TabIndex = 88;
             this.lblForename.Text = "FORENAME:";
             // 
+            // picStaffCancel
+            // 
+            this.picStaffCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picStaffCancel.Location = new System.Drawing.Point(213, 199);
+            this.picStaffCancel.Name = "picStaffCancel";
+            this.picStaffCancel.Size = new System.Drawing.Size(40, 40);
+            this.picStaffCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStaffCancel.TabIndex = 87;
+            this.picStaffCancel.TabStop = false;
+            this.picStaffCancel.Visible = false;
+            this.picStaffCancel.Click += new System.EventHandler(this.picStaffCancel_Click);
+            this.picStaffCancel.MouseEnter += new System.EventHandler(this.picStaffCancel_MouseEnter);
+            this.picStaffCancel.MouseLeave += new System.EventHandler(this.picStaffCancel_MouseLeave);
+            // 
             // lblStaffNo
             // 
             this.lblStaffNo.AutoSize = true;
@@ -375,6 +459,84 @@
             this.gbAccountInfo.TabIndex = 2;
             this.gbAccountInfo.TabStop = false;
             this.gbAccountInfo.Text = "Account Info";
+            // 
+            // picCurrVisible
+            // 
+            this.picCurrVisible.Image = global::Belfray.Properties.Resources.RevealPW;
+            this.picCurrVisible.Location = new System.Drawing.Point(317, 99);
+            this.picCurrVisible.Name = "picCurrVisible";
+            this.picCurrVisible.Size = new System.Drawing.Size(20, 20);
+            this.picCurrVisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCurrVisible.TabIndex = 110;
+            this.picCurrVisible.TabStop = false;
+            this.picCurrVisible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCurrVisible_MouseDown);
+            this.picCurrVisible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCurrVisible_MouseUp);
+            // 
+            // picNew1Visible
+            // 
+            this.picNew1Visible.Image = global::Belfray.Properties.Resources.RevealPW;
+            this.picNew1Visible.Location = new System.Drawing.Point(317, 134);
+            this.picNew1Visible.Name = "picNew1Visible";
+            this.picNew1Visible.Size = new System.Drawing.Size(20, 20);
+            this.picNew1Visible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picNew1Visible.TabIndex = 109;
+            this.picNew1Visible.TabStop = false;
+            this.picNew1Visible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picNew1Visible_MouseDown);
+            this.picNew1Visible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picNew1Visible_MouseUp);
+            // 
+            // picNew2Visible
+            // 
+            this.picNew2Visible.Image = global::Belfray.Properties.Resources.RevealPW;
+            this.picNew2Visible.Location = new System.Drawing.Point(317, 169);
+            this.picNew2Visible.Name = "picNew2Visible";
+            this.picNew2Visible.Size = new System.Drawing.Size(20, 20);
+            this.picNew2Visible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picNew2Visible.TabIndex = 80;
+            this.picNew2Visible.TabStop = false;
+            this.picNew2Visible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picNew2Visible_MouseDown);
+            this.picNew2Visible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picNew2Visible_MouseUp);
+            // 
+            // picPassSave
+            // 
+            this.picPassSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picPassSave.Location = new System.Drawing.Point(173, 289);
+            this.picPassSave.Name = "picPassSave";
+            this.picPassSave.Size = new System.Drawing.Size(40, 40);
+            this.picPassSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPassSave.TabIndex = 108;
+            this.picPassSave.TabStop = false;
+            this.picPassSave.Visible = false;
+            this.picPassSave.Click += new System.EventHandler(this.picPassSave_Click);
+            this.picPassSave.MouseEnter += new System.EventHandler(this.picPassSave_MouseEnter);
+            this.picPassSave.MouseLeave += new System.EventHandler(this.picPassSave_MouseLeave);
+            // 
+            // picPassEdit
+            // 
+            this.picPassEdit.BackColor = System.Drawing.Color.White;
+            this.picPassEdit.Image = global::Belfray.Properties.Resources.EditTab_EditButton1;
+            this.picPassEdit.Location = new System.Drawing.Point(150, 289);
+            this.picPassEdit.Name = "picPassEdit";
+            this.picPassEdit.Size = new System.Drawing.Size(40, 40);
+            this.picPassEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPassEdit.TabIndex = 107;
+            this.picPassEdit.TabStop = false;
+            this.picPassEdit.Click += new System.EventHandler(this.picPassEdit_Click);
+            this.picPassEdit.MouseEnter += new System.EventHandler(this.picPassEdit_MouseEnter);
+            this.picPassEdit.MouseLeave += new System.EventHandler(this.picPassEdit_MouseLeave);
+            // 
+            // picPassCancel
+            // 
+            this.picPassCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picPassCancel.Location = new System.Drawing.Point(130, 289);
+            this.picPassCancel.Name = "picPassCancel";
+            this.picPassCancel.Size = new System.Drawing.Size(40, 40);
+            this.picPassCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPassCancel.TabIndex = 106;
+            this.picPassCancel.TabStop = false;
+            this.picPassCancel.Visible = false;
+            this.picPassCancel.Click += new System.EventHandler(this.picPassCancel_Click);
+            this.picPassCancel.MouseEnter += new System.EventHandler(this.picPassCancel_MouseEnter);
+            this.picPassCancel.MouseLeave += new System.EventHandler(this.picPassCancel_MouseLeave);
             // 
             // lblType
             // 
@@ -477,168 +639,6 @@
             // 
             this.errP.ContainerControl = this;
             // 
-            // picEmergeEdit
-            // 
-            this.picEmergeEdit.BackColor = System.Drawing.Color.White;
-            this.picEmergeEdit.Image = global::Belfray.Properties.Resources.EditTab_EditButton1;
-            this.picEmergeEdit.Location = new System.Drawing.Point(464, 27);
-            this.picEmergeEdit.Name = "picEmergeEdit";
-            this.picEmergeEdit.Size = new System.Drawing.Size(40, 40);
-            this.picEmergeEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picEmergeEdit.TabIndex = 103;
-            this.picEmergeEdit.TabStop = false;
-            this.picEmergeEdit.Click += new System.EventHandler(this.picEmergeEdit_Click);
-            this.picEmergeEdit.MouseEnter += new System.EventHandler(this.picEmergeEdit_MouseEnter);
-            this.picEmergeEdit.MouseLeave += new System.EventHandler(this.picEmergeEdit_MouseLeave);
-            // 
-            // picEmergeCancel
-            // 
-            this.picEmergeCancel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picEmergeCancel.Location = new System.Drawing.Point(421, 27);
-            this.picEmergeCancel.Name = "picEmergeCancel";
-            this.picEmergeCancel.Size = new System.Drawing.Size(40, 40);
-            this.picEmergeCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picEmergeCancel.TabIndex = 91;
-            this.picEmergeCancel.TabStop = false;
-            this.picEmergeCancel.Visible = false;
-            this.picEmergeCancel.Click += new System.EventHandler(this.picEmergeCancel_Click);
-            this.picEmergeCancel.MouseEnter += new System.EventHandler(this.picEmergeCancel_MouseEnter);
-            this.picEmergeCancel.MouseLeave += new System.EventHandler(this.picEmergeCancel_MouseLeave);
-            // 
-            // picEmergeSave
-            // 
-            this.picEmergeSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picEmergeSave.Location = new System.Drawing.Point(464, 27);
-            this.picEmergeSave.Name = "picEmergeSave";
-            this.picEmergeSave.Size = new System.Drawing.Size(40, 40);
-            this.picEmergeSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picEmergeSave.TabIndex = 90;
-            this.picEmergeSave.TabStop = false;
-            this.picEmergeSave.Visible = false;
-            this.picEmergeSave.Click += new System.EventHandler(this.picEmergeSave_Click);
-            this.picEmergeSave.MouseEnter += new System.EventHandler(this.picEmergeSave_MouseEnter);
-            this.picEmergeSave.MouseLeave += new System.EventHandler(this.picEmergeSave_MouseLeave);
-            // 
-            // picStaffSave
-            // 
-            this.picStaffSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picStaffSave.Location = new System.Drawing.Point(257, 199);
-            this.picStaffSave.Name = "picStaffSave";
-            this.picStaffSave.Size = new System.Drawing.Size(40, 40);
-            this.picStaffSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picStaffSave.TabIndex = 103;
-            this.picStaffSave.TabStop = false;
-            this.picStaffSave.Visible = false;
-            this.picStaffSave.Click += new System.EventHandler(this.picStaffSave_Click);
-            this.picStaffSave.MouseEnter += new System.EventHandler(this.picStaffSave_MouseEnter);
-            this.picStaffSave.MouseLeave += new System.EventHandler(this.picStaffSave_MouseLeave);
-            // 
-            // picStaffEdit
-            // 
-            this.picStaffEdit.BackColor = System.Drawing.Color.White;
-            this.picStaffEdit.Image = global::Belfray.Properties.Resources.EditTab_EditButton1;
-            this.picStaffEdit.Location = new System.Drawing.Point(235, 199);
-            this.picStaffEdit.Name = "picStaffEdit";
-            this.picStaffEdit.Size = new System.Drawing.Size(40, 40);
-            this.picStaffEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picStaffEdit.TabIndex = 102;
-            this.picStaffEdit.TabStop = false;
-            this.picStaffEdit.Click += new System.EventHandler(this.picStaffEdit_Click);
-            this.picStaffEdit.MouseEnter += new System.EventHandler(this.picStaffEdit_MouseEnter);
-            this.picStaffEdit.MouseLeave += new System.EventHandler(this.picStaffEdit_MouseLeave);
-            // 
-            // picStaffCancel
-            // 
-            this.picStaffCancel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picStaffCancel.Location = new System.Drawing.Point(213, 199);
-            this.picStaffCancel.Name = "picStaffCancel";
-            this.picStaffCancel.Size = new System.Drawing.Size(40, 40);
-            this.picStaffCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picStaffCancel.TabIndex = 87;
-            this.picStaffCancel.TabStop = false;
-            this.picStaffCancel.Visible = false;
-            this.picStaffCancel.Click += new System.EventHandler(this.picStaffCancel_Click);
-            this.picStaffCancel.MouseEnter += new System.EventHandler(this.picStaffCancel_MouseEnter);
-            this.picStaffCancel.MouseLeave += new System.EventHandler(this.picStaffCancel_MouseLeave);
-            // 
-            // picCurrVisible
-            // 
-            this.picCurrVisible.Image = global::Belfray.Properties.Resources.RevealPW;
-            this.picCurrVisible.Location = new System.Drawing.Point(317, 99);
-            this.picCurrVisible.Name = "picCurrVisible";
-            this.picCurrVisible.Size = new System.Drawing.Size(20, 20);
-            this.picCurrVisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCurrVisible.TabIndex = 110;
-            this.picCurrVisible.TabStop = false;
-            this.picCurrVisible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCurrVisible_MouseDown);
-            this.picCurrVisible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCurrVisible_MouseUp);
-            // 
-            // picNew1Visible
-            // 
-            this.picNew1Visible.Image = global::Belfray.Properties.Resources.RevealPW;
-            this.picNew1Visible.Location = new System.Drawing.Point(317, 134);
-            this.picNew1Visible.Name = "picNew1Visible";
-            this.picNew1Visible.Size = new System.Drawing.Size(20, 20);
-            this.picNew1Visible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picNew1Visible.TabIndex = 109;
-            this.picNew1Visible.TabStop = false;
-            this.picNew1Visible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picNew1Visible_MouseDown);
-            this.picNew1Visible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picNew1Visible_MouseUp);
-            // 
-            // picNew2Visible
-            // 
-            this.picNew2Visible.Image = global::Belfray.Properties.Resources.RevealPW;
-            this.picNew2Visible.Location = new System.Drawing.Point(317, 169);
-            this.picNew2Visible.Name = "picNew2Visible";
-            this.picNew2Visible.Size = new System.Drawing.Size(20, 20);
-            this.picNew2Visible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picNew2Visible.TabIndex = 80;
-            this.picNew2Visible.TabStop = false;
-            this.picNew2Visible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picNew2Visible_MouseDown);
-            this.picNew2Visible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picNew2Visible_MouseUp);
-            // 
-            // picPassSave
-            // 
-            this.picPassSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picPassSave.Location = new System.Drawing.Point(173, 289);
-            this.picPassSave.Name = "picPassSave";
-            this.picPassSave.Size = new System.Drawing.Size(40, 40);
-            this.picPassSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPassSave.TabIndex = 108;
-            this.picPassSave.TabStop = false;
-            this.picPassSave.Visible = false;
-            this.picPassSave.Click += new System.EventHandler(this.picPassSave_Click);
-            this.picPassSave.MouseEnter += new System.EventHandler(this.picPassSave_MouseEnter);
-            this.picPassSave.MouseLeave += new System.EventHandler(this.picPassSave_MouseLeave);
-            // 
-            // picPassEdit
-            // 
-            this.picPassEdit.BackColor = System.Drawing.Color.White;
-            this.picPassEdit.Image = global::Belfray.Properties.Resources.EditTab_EditButton1;
-            this.picPassEdit.Location = new System.Drawing.Point(150, 289);
-            this.picPassEdit.Name = "picPassEdit";
-            this.picPassEdit.Size = new System.Drawing.Size(40, 40);
-            this.picPassEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPassEdit.TabIndex = 107;
-            this.picPassEdit.TabStop = false;
-            this.picPassEdit.Click += new System.EventHandler(this.picPassEdit_Click);
-            this.picPassEdit.MouseEnter += new System.EventHandler(this.picPassEdit_MouseEnter);
-            this.picPassEdit.MouseLeave += new System.EventHandler(this.picPassEdit_MouseLeave);
-            // 
-            // picPassCancel
-            // 
-            this.picPassCancel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picPassCancel.Location = new System.Drawing.Point(130, 289);
-            this.picPassCancel.Name = "picPassCancel";
-            this.picPassCancel.Size = new System.Drawing.Size(40, 40);
-            this.picPassCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPassCancel.TabIndex = 106;
-            this.picPassCancel.TabStop = false;
-            this.picPassCancel.Visible = false;
-            this.picPassCancel.Click += new System.EventHandler(this.picPassCancel_Click);
-            this.picPassCancel.MouseEnter += new System.EventHandler(this.picPassCancel_MouseEnter);
-            this.picPassCancel.MouseLeave += new System.EventHandler(this.picPassCancel_MouseLeave);
-            // 
             // AccountPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -655,24 +655,24 @@
             this.pnlUserInfo.ResumeLayout(false);
             this.gbEmergency.ResumeLayout(false);
             this.gbEmergency.PerformLayout();
-            this.gbUserInfo.ResumeLayout(false);
-            this.gbUserInfo.PerformLayout();
-            this.pnlAccountSettings.ResumeLayout(false);
-            this.gbAccountInfo.ResumeLayout(false);
-            this.gbAccountInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEmergeEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEmergeCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEmergeSave)).EndInit();
+            this.gbUserInfo.ResumeLayout(false);
+            this.gbUserInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffCancel)).EndInit();
+            this.pnlAccountSettings.ResumeLayout(false);
+            this.gbAccountInfo.ResumeLayout(false);
+            this.gbAccountInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCurrVisible)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNew1Visible)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNew2Visible)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.ResumeLayout(false);
 
         }

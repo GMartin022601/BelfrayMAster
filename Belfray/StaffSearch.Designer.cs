@@ -39,12 +39,10 @@
             this.lblStreet = new System.Windows.Forms.Label();
             this.lblStaffTel = new System.Windows.Forms.Label();
             this.lblStaffCity = new System.Windows.Forms.Label();
-            this.lblStaffTown = new System.Windows.Forms.Label();
             this.lblStaffSurname = new System.Windows.Forms.Label();
             this.lblStaffForename = new System.Windows.Forms.Label();
             this.lblTelNo = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
-            this.lblTown = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblForename = new System.Windows.Forms.Label();
             this.lblStaffID = new System.Windows.Forms.Label();
@@ -95,12 +93,10 @@
             this.pnlStaffDets.Controls.Add(this.lblStreet);
             this.pnlStaffDets.Controls.Add(this.lblStaffTel);
             this.pnlStaffDets.Controls.Add(this.lblStaffCity);
-            this.pnlStaffDets.Controls.Add(this.lblStaffTown);
             this.pnlStaffDets.Controls.Add(this.lblStaffSurname);
             this.pnlStaffDets.Controls.Add(this.lblStaffForename);
             this.pnlStaffDets.Controls.Add(this.lblTelNo);
             this.pnlStaffDets.Controls.Add(this.lblCity);
-            this.pnlStaffDets.Controls.Add(this.lblTown);
             this.pnlStaffDets.Controls.Add(this.lblSurname);
             this.pnlStaffDets.Controls.Add(this.lblForename);
             this.pnlStaffDets.Controls.Add(this.lblStaffID);
@@ -115,7 +111,7 @@
             // 
             this.lblStaffPcode.AutoSize = true;
             this.lblStaffPcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffPcode.Location = new System.Drawing.Point(128, 216);
+            this.lblStaffPcode.Location = new System.Drawing.Point(128, 188);
             this.lblStaffPcode.Name = "lblStaffPcode";
             this.lblStaffPcode.Size = new System.Drawing.Size(15, 15);
             this.lblStaffPcode.TabIndex = 115;
@@ -125,7 +121,7 @@
             // 
             this.lblStaffCounty.AutoSize = true;
             this.lblStaffCounty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffCounty.Location = new System.Drawing.Point(128, 186);
+            this.lblStaffCounty.Location = new System.Drawing.Point(128, 158);
             this.lblStaffCounty.Name = "lblStaffCounty";
             this.lblStaffCounty.Size = new System.Drawing.Size(15, 15);
             this.lblStaffCounty.TabIndex = 114;
@@ -135,7 +131,7 @@
             // 
             this.lblPostcode.AutoSize = true;
             this.lblPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostcode.Location = new System.Drawing.Point(10, 216);
+            this.lblPostcode.Location = new System.Drawing.Point(10, 188);
             this.lblPostcode.Name = "lblPostcode";
             this.lblPostcode.Size = new System.Drawing.Size(76, 15);
             this.lblPostcode.TabIndex = 113;
@@ -145,7 +141,7 @@
             // 
             this.lblCounty.AutoSize = true;
             this.lblCounty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCounty.Location = new System.Drawing.Point(10, 186);
+            this.lblCounty.Location = new System.Drawing.Point(10, 158);
             this.lblCounty.Name = "lblCounty";
             this.lblCounty.Size = new System.Drawing.Size(59, 15);
             this.lblCounty.TabIndex = 112;
@@ -175,7 +171,7 @@
             // 
             this.lblStaffTel.AutoSize = true;
             this.lblStaffTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffTel.Location = new System.Drawing.Point(128, 245);
+            this.lblStaffTel.Location = new System.Drawing.Point(128, 217);
             this.lblStaffTel.Name = "lblStaffTel";
             this.lblStaffTel.Size = new System.Drawing.Size(15, 15);
             this.lblStaffTel.TabIndex = 108;
@@ -185,21 +181,11 @@
             // 
             this.lblStaffCity.AutoSize = true;
             this.lblStaffCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffCity.Location = new System.Drawing.Point(128, 157);
+            this.lblStaffCity.Location = new System.Drawing.Point(128, 129);
             this.lblStaffCity.Name = "lblStaffCity";
             this.lblStaffCity.Size = new System.Drawing.Size(15, 15);
             this.lblStaffCity.TabIndex = 107;
             this.lblStaffCity.Text = "X";
-            // 
-            // lblStaffTown
-            // 
-            this.lblStaffTown.AutoSize = true;
-            this.lblStaffTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffTown.Location = new System.Drawing.Point(128, 127);
-            this.lblStaffTown.Name = "lblStaffTown";
-            this.lblStaffTown.Size = new System.Drawing.Size(15, 15);
-            this.lblStaffTown.TabIndex = 106;
-            this.lblStaffTown.Text = "X";
             // 
             // lblStaffSurname
             // 
@@ -225,7 +211,7 @@
             // 
             this.lblTelNo.AutoSize = true;
             this.lblTelNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelNo.Location = new System.Drawing.Point(10, 245);
+            this.lblTelNo.Location = new System.Drawing.Point(10, 217);
             this.lblTelNo.Name = "lblTelNo";
             this.lblTelNo.Size = new System.Drawing.Size(104, 15);
             this.lblTelNo.TabIndex = 93;
@@ -235,21 +221,11 @@
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(10, 157);
+            this.lblCity.Location = new System.Drawing.Point(10, 129);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(35, 15);
             this.lblCity.TabIndex = 92;
             this.lblCity.Text = "CITY:";
-            // 
-            // lblTown
-            // 
-            this.lblTown.AutoSize = true;
-            this.lblTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTown.Location = new System.Drawing.Point(10, 127);
-            this.lblTown.Name = "lblTown";
-            this.lblTown.Size = new System.Drawing.Size(46, 15);
-            this.lblTown.TabIndex = 91;
-            this.lblTown.Text = "TOWN:";
             // 
             // lblSurname
             // 
@@ -378,12 +354,10 @@
         private System.Windows.Forms.Label lblStreet;
         private System.Windows.Forms.Label lblStaffTel;
         private System.Windows.Forms.Label lblStaffCity;
-        private System.Windows.Forms.Label lblStaffTown;
         private System.Windows.Forms.Label lblStaffSurname;
         private System.Windows.Forms.Label lblStaffForename;
         private System.Windows.Forms.Label lblTelNo;
         private System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.Label lblTown;
         private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.Label lblForename;
         private System.Windows.Forms.Label lblStaffID;

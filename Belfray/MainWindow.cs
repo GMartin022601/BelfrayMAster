@@ -252,7 +252,7 @@ namespace Belfray
         //Staff Button Controls
         private void picStaff_MouseEnter(object sender, EventArgs e)
         {
-
+            picStaff.BackColor = Color.FromArgb(19, 19, 19);
         }
 
         private void picStaff_Click(object sender, EventArgs e)
@@ -265,13 +265,13 @@ namespace Belfray
 
         private void picStaff_MouseLeave(object sender, EventArgs e)
         {
-
+            picStaff.BackColor = Color.Transparent;
         }
 
         //Payment Type Button Controls
         private void picPaymentType_MouseEnter(object sender, EventArgs e)
         {
-
+            picPaymentType.BackColor = Color.FromArgb(19, 19, 19);
         }
 
         private void picPaymentType_Click(object sender, EventArgs e)
@@ -281,13 +281,13 @@ namespace Belfray
 
         private void picPaymentType_MouseLeave(object sender, EventArgs e)
         {
-
+            picPaymentType.BackColor = Color.Transparent;
         }
 
         //Reports Button Controls
         private void picReports_MouseEnter(object sender, EventArgs e)
         {
-
+            picReports.BackColor = Color.FromArgb(19, 19, 19);
         }
 
         private void picReports_Click(object sender, EventArgs e)
@@ -297,7 +297,7 @@ namespace Belfray
 
         private void picReports_MouseLeave(object sender, EventArgs e)
         {
-
+            picReports.BackColor = Color.Transparent;
         }
 
         private void picLogOut_Click(object sender, EventArgs e)
@@ -352,9 +352,9 @@ namespace Belfray
             }
 
             //DB Connection
-            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -420,7 +420,10 @@ namespace Belfray
         {
             tabSelected = 0;
 
-            switch(menuSelected)
+            Globals.bookNoSel = "";
+            Globals.staffSel = "";
+
+            switch (menuSelected)
             {
                 case 0: //Welcome
                     break;
@@ -615,6 +618,7 @@ namespace Belfray
                     frm6.TopLevel = false;
                     frm6.FormBorderStyle = FormBorderStyle.None;
                     frm6.WindowState = FormWindowState.Maximized;
+                    frm6.FormClosed += StaffAdd_Closed;
                     pnlMainBody.Controls.Add(frm6);
                     frm6.Show();
                     break;
@@ -722,27 +726,47 @@ namespace Belfray
                 case 5: //Staff
                     break;
                 case 6: //Administration Staff
-                    StaffEdit frm6 = new StaffEdit();
-                    frm6.TopLevel = false;
-                    frm6.FormBorderStyle = FormBorderStyle.None;
-                    frm6.WindowState = FormWindowState.Maximized;
-                    pnlMainBody.Controls.Add(frm6);
-                    frm6.Show();
+                    if (Globals.staffSel == "")
+                    {
+                        MessageBox.Show("Error: No Staff Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        error = true;
+                    }
+                    else
+                    {
+                        StaffEdit frm6 = new StaffEdit();
+                        frm6.TopLevel = false;
+                        frm6.FormBorderStyle = FormBorderStyle.None;
+                        frm6.WindowState = FormWindowState.Maximized;
+                        pnlMainBody.Controls.Add(frm6);
+                        frm6.Show();
+                    }
                     break;
             }
 
             if (!error)
             {
-                //Disable Selected Tab
-                picTabEdit.Enabled = false;
+                if (menuSelected == 1)
+                {
+                    //Disable All Tab
+                    picTabEdit.Enabled = false;
+                    picTabDisplay.Enabled = false;
+                    picTabSearch.Enabled = false;
+                    picTabAdd.Enabled = false;
+                    picTabDelete.Enabled = false;
+                }
+                else
+                {
+                    //Disable Selected Tab
+                    picTabEdit.Enabled = false;
 
-                //Enable All Other Tabs
-                picTabDisplay.Enabled = true;
-                picTabSearch.Enabled = true;
-                picTabAdd.Enabled = true;
-                picTabDelete.Enabled = true;
+                    //Enable All Other Tabs
+                    picTabDisplay.Enabled = true;
+                    picTabSearch.Enabled = true;
+                    picTabAdd.Enabled = true;
+                    picTabDelete.Enabled = true;
 
-                //Globals.bookNoSel = "";
+                    //Globals.bookNoSel = "";
+                }
             }
         }
 
@@ -1049,6 +1073,12 @@ namespace Belfray
 
         //Room Booking Delete Close
         private void RoomServiceDel_Closed(object sender, FormClosedEventArgs e)
+        {
+            picTabDisplay_Click(sender, e);
+        }
+
+        //Room Booking Delete Close
+        private void StaffAdd_Closed(object sender, FormClosedEventArgs e)
         {
             picTabDisplay_Click(sender, e);
         }

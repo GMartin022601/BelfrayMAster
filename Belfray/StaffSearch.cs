@@ -38,7 +38,7 @@ namespace Belfray
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Staff
-            sqlStaff = @"SELECT staffID, staffFName, staffLName, staffStreet AS 'Street', staffTown AS 'Town',
+            sqlStaff = @"SELECT staffID, staffFName, staffLName, staffStreet AS 'Street',
                             staffCity AS 'City', staffCounty AS 'County',  staffPcode AS 'Postcode', staffTelNo As 'Tel No', staffEmergName AS 'Emergency Contact',
                             staffEmergTel AS 'Emergency Tel No', staffLogin AS 'Login', accTypeID AS 'Account Type' FROM Staff
                             ORDER BY staffID";
@@ -67,11 +67,10 @@ namespace Belfray
                 lblStaffForename.Text = dgvStaffSearch.SelectedRows[0].Cells[1].Value.ToString();
                 lblStaffSurname.Text = dgvStaffSearch.SelectedRows[0].Cells[2].Value.ToString(); ;
                 lblStaffStreet.Text = dgvStaffSearch.SelectedRows[0].Cells[3].Value.ToString();
-                lblStaffTown.Text = dgvStaffSearch.SelectedRows[0].Cells[4].Value.ToString();
-                lblStaffCity.Text = dgvStaffSearch.SelectedRows[0].Cells[5].Value.ToString();
-                lblStaffCounty.Text = dgvStaffSearch.SelectedRows[0].Cells[6].Value.ToString();
-                lblStaffPcode.Text = dgvStaffSearch.SelectedRows[0].Cells[7].Value.ToString();
-                lblStaffTel.Text = dgvStaffSearch.SelectedRows[0].Cells[8].Value.ToString();
+                lblStaffCity.Text = dgvStaffSearch.SelectedRows[0].Cells[4].Value.ToString();
+                lblStaffCounty.Text = dgvStaffSearch.SelectedRows[0].Cells[5].Value.ToString();
+                lblStaffPcode.Text = dgvStaffSearch.SelectedRows[0].Cells[6].Value.ToString();
+                lblStaffTel.Text = dgvStaffSearch.SelectedRows[0].Cells[7].Value.ToString();
             }
         }
 
@@ -94,19 +93,18 @@ namespace Belfray
             dgvStaffSearch.Sort(dgvStaffSearch.Columns[0], ListSortDirection.Ascending);
 
             //Resize
-            dgvStaffSearch.Columns[0].Width = 76;
-            dgvStaffSearch.Columns[1].Width = 80;
-            dgvStaffSearch.Columns[2].Width = 80;
+            dgvStaffSearch.Columns[0].Width = 96;
+            dgvStaffSearch.Columns[1].Width = 100;
+            dgvStaffSearch.Columns[2].Width = 100;
             dgvStaffSearch.Columns[3].Width = 110;
-            dgvStaffSearch.Columns[4].Width = 90;
-            dgvStaffSearch.Columns[5].Width = 60;
-            dgvStaffSearch.Columns[6].Width = 110;
-            dgvStaffSearch.Columns[7].Width = 102;
-            dgvStaffSearch.Columns[8].Width = 100;
-            dgvStaffSearch.Columns[9].Width = 108;
+            dgvStaffSearch.Columns[4].Width = 70;
+            dgvStaffSearch.Columns[5].Width = 110;
+            dgvStaffSearch.Columns[6].Width = 112;
+            dgvStaffSearch.Columns[7].Width = 110;
+            dgvStaffSearch.Columns[8].Width = 108;
+            dgvStaffSearch.Columns[9].Width = 80;
             dgvStaffSearch.Columns[10].Width = 80;
             dgvStaffSearch.Columns[11].Width = 80;
-            dgvStaffSearch.Columns[12].Width = 80;
         }
 
         //Forename Text Changed
@@ -128,19 +126,18 @@ namespace Belfray
             dgvStaffSearch.Sort(dgvStaffSearch.Columns[0], ListSortDirection.Ascending);
 
             //Resize
-            dgvStaffSearch.Columns[0].Width = 76;
-            dgvStaffSearch.Columns[1].Width = 80;
-            dgvStaffSearch.Columns[2].Width = 80;
+            dgvStaffSearch.Columns[0].Width = 96;
+            dgvStaffSearch.Columns[1].Width = 100;
+            dgvStaffSearch.Columns[2].Width = 100;
             dgvStaffSearch.Columns[3].Width = 110;
-            dgvStaffSearch.Columns[4].Width = 90;
-            dgvStaffSearch.Columns[5].Width = 60;
-            dgvStaffSearch.Columns[6].Width = 110;
-            dgvStaffSearch.Columns[7].Width = 102;
-            dgvStaffSearch.Columns[8].Width = 100;
-            dgvStaffSearch.Columns[9].Width = 108;
+            dgvStaffSearch.Columns[4].Width = 70;
+            dgvStaffSearch.Columns[5].Width = 110;
+            dgvStaffSearch.Columns[6].Width = 112;
+            dgvStaffSearch.Columns[7].Width = 110;
+            dgvStaffSearch.Columns[8].Width = 108;
+            dgvStaffSearch.Columns[9].Width = 80;
             dgvStaffSearch.Columns[10].Width = 80;
             dgvStaffSearch.Columns[11].Width = 80;
-            dgvStaffSearch.Columns[12].Width = 80;
         }
 
         //Surname Text Changed
@@ -162,19 +159,18 @@ namespace Belfray
             dgvStaffSearch.Sort(dgvStaffSearch.Columns[0], ListSortDirection.Ascending);
 
             //Resize
-            dgvStaffSearch.Columns[0].Width = 76;
-            dgvStaffSearch.Columns[1].Width = 80;
-            dgvStaffSearch.Columns[2].Width = 80;
+            dgvStaffSearch.Columns[0].Width = 96;
+            dgvStaffSearch.Columns[1].Width = 100;
+            dgvStaffSearch.Columns[2].Width = 100;
             dgvStaffSearch.Columns[3].Width = 110;
-            dgvStaffSearch.Columns[4].Width = 90;
-            dgvStaffSearch.Columns[5].Width = 60;
-            dgvStaffSearch.Columns[6].Width = 110;
-            dgvStaffSearch.Columns[7].Width = 102;
-            dgvStaffSearch.Columns[8].Width = 100;
-            dgvStaffSearch.Columns[9].Width = 108;
+            dgvStaffSearch.Columns[4].Width = 70;
+            dgvStaffSearch.Columns[5].Width = 110;
+            dgvStaffSearch.Columns[6].Width = 112;
+            dgvStaffSearch.Columns[7].Width = 110;
+            dgvStaffSearch.Columns[8].Width = 108;
+            dgvStaffSearch.Columns[9].Width = 80;
             dgvStaffSearch.Columns[10].Width = 80;
             dgvStaffSearch.Columns[11].Width = 80;
-            dgvStaffSearch.Columns[12].Width = 80;
         }
 
         //Display Staff
@@ -189,19 +185,18 @@ namespace Belfray
             dgvStaffSearch.Sort(dgvStaffSearch.Columns[0], ListSortDirection.Ascending);
 
             //Resize
-            dgvStaffSearch.Columns[0].Width = 76;
-            dgvStaffSearch.Columns[1].Width = 80;
-            dgvStaffSearch.Columns[2].Width = 80;
+            dgvStaffSearch.Columns[0].Width = 96;
+            dgvStaffSearch.Columns[1].Width = 100;
+            dgvStaffSearch.Columns[2].Width = 100;
             dgvStaffSearch.Columns[3].Width = 110;
-            dgvStaffSearch.Columns[4].Width = 90;
-            dgvStaffSearch.Columns[5].Width = 60;
-            dgvStaffSearch.Columns[6].Width = 110;
-            dgvStaffSearch.Columns[7].Width = 102;
-            dgvStaffSearch.Columns[8].Width = 100;
-            dgvStaffSearch.Columns[9].Width = 108;
+            dgvStaffSearch.Columns[4].Width = 70;
+            dgvStaffSearch.Columns[5].Width = 110;
+            dgvStaffSearch.Columns[6].Width = 112;
+            dgvStaffSearch.Columns[7].Width = 110;
+            dgvStaffSearch.Columns[8].Width = 108;
+            dgvStaffSearch.Columns[9].Width = 80;
             dgvStaffSearch.Columns[10].Width = 80;
             dgvStaffSearch.Columns[11].Width = 80;
-            dgvStaffSearch.Columns[12].Width = 80;
         }
     }
 }

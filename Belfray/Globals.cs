@@ -18,6 +18,8 @@ namespace Belfray
 
         public static string itemSel = "";
 
+        public static string staffSel = "";
+
         public static int roomNoSel = 0;
 
         public static bool firstLoad = true;

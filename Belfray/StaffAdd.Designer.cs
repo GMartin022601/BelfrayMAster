@@ -32,11 +32,14 @@
             this.pnlProfilePic = new System.Windows.Forms.Panel();
             this.pnlUserInfo = new System.Windows.Forms.Panel();
             this.gbEmergency = new System.Windows.Forms.GroupBox();
+            this.picEmergeCancel = new System.Windows.Forms.PictureBox();
+            this.picEmergeSave = new System.Windows.Forms.PictureBox();
             this.txtContactTel = new System.Windows.Forms.TextBox();
             this.txtContactName = new System.Windows.Forms.TextBox();
             this.lblEmergencyTel = new System.Windows.Forms.Label();
             this.lblEmergencyName = new System.Windows.Forms.Label();
             this.gbUserInfo = new System.Windows.Forms.GroupBox();
+            this.picStaffSave = new System.Windows.Forms.PictureBox();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
             this.lblPhoneNo = new System.Windows.Forms.Label();
             this.txtPostcode = new System.Windows.Forms.TextBox();
@@ -51,33 +54,30 @@
             this.lblStreet = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblForename = new System.Windows.Forms.Label();
+            this.picStaffCancel = new System.Windows.Forms.PictureBox();
             this.lblStaffNo = new System.Windows.Forms.Label();
             this.lblStaffNum = new System.Windows.Forms.Label();
             this.pnlAccountSettings = new System.Windows.Forms.Panel();
             this.gbAccountInfo = new System.Windows.Forms.GroupBox();
-            this.lblAcoountType = new System.Windows.Forms.Label();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.lblLoginID = new System.Windows.Forms.Label();
-            this.txtCurrent = new System.Windows.Forms.TextBox();
-            this.lblCurrent = new System.Windows.Forms.Label();
             this.cmbAccountType = new System.Windows.Forms.ComboBox();
-            this.picEmergeCancel = new System.Windows.Forms.PictureBox();
-            this.picEmergeSave = new System.Windows.Forms.PictureBox();
-            this.picStaffSave = new System.Windows.Forms.PictureBox();
-            this.picStaffCancel = new System.Windows.Forms.PictureBox();
             this.picCurrVisible = new System.Windows.Forms.PictureBox();
             this.picPassSave = new System.Windows.Forms.PictureBox();
             this.picPassCancel = new System.Windows.Forms.PictureBox();
+            this.lblAcoountType = new System.Windows.Forms.Label();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.lblLoginID = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblCurrent = new System.Windows.Forms.Label();
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlUserInfo.SuspendLayout();
             this.gbEmergency.SuspendLayout();
-            this.gbUserInfo.SuspendLayout();
-            this.pnlAccountSettings.SuspendLayout();
-            this.gbAccountInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmergeCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEmergeSave)).BeginInit();
+            this.gbUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffCancel)).BeginInit();
+            this.pnlAccountSettings.SuspendLayout();
+            this.gbAccountInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCurrVisible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassCancel)).BeginInit();
@@ -118,6 +118,34 @@
             this.gbEmergency.TabStop = false;
             this.gbEmergency.Text = "Emergency Contact";
             // 
+            // picEmergeCancel
+            // 
+            this.picEmergeCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picEmergeCancel.Location = new System.Drawing.Point(421, 27);
+            this.picEmergeCancel.Name = "picEmergeCancel";
+            this.picEmergeCancel.Size = new System.Drawing.Size(40, 40);
+            this.picEmergeCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEmergeCancel.TabIndex = 91;
+            this.picEmergeCancel.TabStop = false;
+            this.picEmergeCancel.Visible = false;
+            this.picEmergeCancel.Click += new System.EventHandler(this.picEmergeCancel_Click);
+            this.picEmergeCancel.MouseEnter += new System.EventHandler(this.picEmergeCancel_MouseEnter);
+            this.picEmergeCancel.MouseLeave += new System.EventHandler(this.picEmergeCancel_MouseLeave);
+            // 
+            // picEmergeSave
+            // 
+            this.picEmergeSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picEmergeSave.Location = new System.Drawing.Point(464, 27);
+            this.picEmergeSave.Name = "picEmergeSave";
+            this.picEmergeSave.Size = new System.Drawing.Size(40, 40);
+            this.picEmergeSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEmergeSave.TabIndex = 90;
+            this.picEmergeSave.TabStop = false;
+            this.picEmergeSave.Visible = false;
+            this.picEmergeSave.Click += new System.EventHandler(this.picEmergeSave_Click);
+            this.picEmergeSave.MouseEnter += new System.EventHandler(this.picEmergeSave_MouseEnter);
+            this.picEmergeSave.MouseLeave += new System.EventHandler(this.picEmergeSave_MouseLeave);
+            // 
             // txtContactTel
             // 
             this.txtContactTel.Location = new System.Drawing.Point(120, 58);
@@ -135,7 +163,6 @@
             // lblEmergencyTel
             // 
             this.lblEmergencyTel.AutoSize = true;
-            this.lblEmergencyTel.Enabled = false;
             this.lblEmergencyTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmergencyTel.Location = new System.Drawing.Point(11, 61);
             this.lblEmergencyTel.Name = "lblEmergencyTel";
@@ -146,13 +173,12 @@
             // lblEmergencyName
             // 
             this.lblEmergencyName.AutoSize = true;
-            this.lblEmergencyName.Enabled = false;
             this.lblEmergencyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmergencyName.Location = new System.Drawing.Point(9, 27);
             this.lblEmergencyName.Name = "lblEmergencyName";
-            this.lblEmergencyName.Size = new System.Drawing.Size(78, 15);
+            this.lblEmergencyName.Size = new System.Drawing.Size(45, 15);
             this.lblEmergencyName.TabIndex = 86;
-            this.lblEmergencyName.Text = "FORENAME:";
+            this.lblEmergencyName.Text = "NAME:";
             // 
             // gbUserInfo
             // 
@@ -181,6 +207,19 @@
             this.gbUserInfo.TabStop = false;
             this.gbUserInfo.Text = "User Info";
             // 
+            // picStaffSave
+            // 
+            this.picStaffSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picStaffSave.Location = new System.Drawing.Point(257, 199);
+            this.picStaffSave.Name = "picStaffSave";
+            this.picStaffSave.Size = new System.Drawing.Size(40, 40);
+            this.picStaffSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStaffSave.TabIndex = 103;
+            this.picStaffSave.TabStop = false;
+            this.picStaffSave.Click += new System.EventHandler(this.picStaffSave_Click);
+            this.picStaffSave.MouseEnter += new System.EventHandler(this.picStaffSave_MouseEnter);
+            this.picStaffSave.MouseLeave += new System.EventHandler(this.picStaffSave_MouseLeave);
+            // 
             // txtPhoneNo
             // 
             this.txtPhoneNo.Location = new System.Drawing.Point(116, 169);
@@ -202,14 +241,14 @@
             // 
             this.txtPostcode.Location = new System.Drawing.Point(354, 169);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(147, 20);
+            this.txtPostcode.Size = new System.Drawing.Size(127, 20);
             this.txtPostcode.TabIndex = 99;
             // 
             // txtCounty
             // 
             this.txtCounty.Location = new System.Drawing.Point(354, 139);
             this.txtCounty.Name = "txtCounty";
-            this.txtCounty.Size = new System.Drawing.Size(147, 20);
+            this.txtCounty.Size = new System.Drawing.Size(127, 20);
             this.txtCounty.TabIndex = 98;
             // 
             // txtCity
@@ -300,6 +339,19 @@
             this.lblForename.TabIndex = 88;
             this.lblForename.Text = "FORENAME:";
             // 
+            // picStaffCancel
+            // 
+            this.picStaffCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picStaffCancel.Location = new System.Drawing.Point(213, 199);
+            this.picStaffCancel.Name = "picStaffCancel";
+            this.picStaffCancel.Size = new System.Drawing.Size(40, 40);
+            this.picStaffCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStaffCancel.TabIndex = 87;
+            this.picStaffCancel.TabStop = false;
+            this.picStaffCancel.Click += new System.EventHandler(this.picStaffCancel_Click);
+            this.picStaffCancel.MouseEnter += new System.EventHandler(this.picStaffCancel_MouseEnter);
+            this.picStaffCancel.MouseLeave += new System.EventHandler(this.picStaffCancel_MouseLeave);
+            // 
             // lblStaffNo
             // 
             this.lblStaffNo.AutoSize = true;
@@ -338,7 +390,7 @@
             this.gbAccountInfo.Controls.Add(this.lblAcoountType);
             this.gbAccountInfo.Controls.Add(this.lblLogin);
             this.gbAccountInfo.Controls.Add(this.lblLoginID);
-            this.gbAccountInfo.Controls.Add(this.txtCurrent);
+            this.gbAccountInfo.Controls.Add(this.txtPassword);
             this.gbAccountInfo.Controls.Add(this.lblCurrent);
             this.gbAccountInfo.Enabled = false;
             this.gbAccountInfo.Location = new System.Drawing.Point(3, 3);
@@ -348,118 +400,17 @@
             this.gbAccountInfo.TabStop = false;
             this.gbAccountInfo.Text = "Account Info";
             // 
-            // lblAcoountType
-            // 
-            this.lblAcoountType.AutoSize = true;
-            this.lblAcoountType.Enabled = false;
-            this.lblAcoountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAcoountType.Location = new System.Drawing.Point(16, 65);
-            this.lblAcoountType.Name = "lblAcoountType";
-            this.lblAcoountType.Size = new System.Drawing.Size(100, 15);
-            this.lblAcoountType.TabIndex = 104;
-            this.lblAcoountType.Text = "ACCOUNT TYPE:";
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(160, 30);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(11, 15);
-            this.lblLogin.TabIndex = 103;
-            this.lblLogin.Text = "-";
-            // 
-            // lblLoginID
-            // 
-            this.lblLoginID.AutoSize = true;
-            this.lblLoginID.Enabled = false;
-            this.lblLoginID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginID.Location = new System.Drawing.Point(16, 30);
-            this.lblLoginID.Name = "lblLoginID";
-            this.lblLoginID.Size = new System.Drawing.Size(62, 15);
-            this.lblLoginID.TabIndex = 102;
-            this.lblLoginID.Text = "LOGIN ID:";
-            // 
-            // txtCurrent
-            // 
-            this.txtCurrent.Location = new System.Drawing.Point(163, 99);
-            this.txtCurrent.Name = "txtCurrent";
-            this.txtCurrent.Size = new System.Drawing.Size(153, 20);
-            this.txtCurrent.TabIndex = 100;
-            this.txtCurrent.UseSystemPasswordChar = true;
-            // 
-            // lblCurrent
-            // 
-            this.lblCurrent.AutoSize = true;
-            this.lblCurrent.Enabled = false;
-            this.lblCurrent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrent.Location = new System.Drawing.Point(16, 100);
-            this.lblCurrent.Name = "lblCurrent";
-            this.lblCurrent.Size = new System.Drawing.Size(105, 15);
-            this.lblCurrent.TabIndex = 97;
-            this.lblCurrent.Text = "SET PASSWORD:";
-            // 
             // cmbAccountType
             // 
             this.cmbAccountType.FormattingEnabled = true;
+            this.cmbAccountType.Items.AddRange(new object[] {
+            "ADM",
+            "HTL",
+            "RES"});
             this.cmbAccountType.Location = new System.Drawing.Point(163, 64);
             this.cmbAccountType.Name = "cmbAccountType";
             this.cmbAccountType.Size = new System.Drawing.Size(153, 21);
             this.cmbAccountType.TabIndex = 111;
-            // 
-            // picEmergeCancel
-            // 
-            this.picEmergeCancel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picEmergeCancel.Location = new System.Drawing.Point(421, 27);
-            this.picEmergeCancel.Name = "picEmergeCancel";
-            this.picEmergeCancel.Size = new System.Drawing.Size(40, 40);
-            this.picEmergeCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picEmergeCancel.TabIndex = 91;
-            this.picEmergeCancel.TabStop = false;
-            this.picEmergeCancel.Visible = false;
-            this.picEmergeCancel.Click += new System.EventHandler(this.picEmergeCancel_Click);
-            this.picEmergeCancel.MouseEnter += new System.EventHandler(this.picEmergeCancel_MouseEnter);
-            this.picEmergeCancel.MouseLeave += new System.EventHandler(this.picEmergeCancel_MouseLeave);
-            // 
-            // picEmergeSave
-            // 
-            this.picEmergeSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picEmergeSave.Location = new System.Drawing.Point(464, 27);
-            this.picEmergeSave.Name = "picEmergeSave";
-            this.picEmergeSave.Size = new System.Drawing.Size(40, 40);
-            this.picEmergeSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picEmergeSave.TabIndex = 90;
-            this.picEmergeSave.TabStop = false;
-            this.picEmergeSave.Visible = false;
-            this.picEmergeSave.Click += new System.EventHandler(this.picEmergeSave_Click);
-            this.picEmergeSave.MouseEnter += new System.EventHandler(this.picEmergeSave_MouseEnter);
-            this.picEmergeSave.MouseLeave += new System.EventHandler(this.picEmergeSave_MouseLeave);
-            // 
-            // picStaffSave
-            // 
-            this.picStaffSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picStaffSave.Location = new System.Drawing.Point(257, 199);
-            this.picStaffSave.Name = "picStaffSave";
-            this.picStaffSave.Size = new System.Drawing.Size(40, 40);
-            this.picStaffSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picStaffSave.TabIndex = 103;
-            this.picStaffSave.TabStop = false;
-            this.picStaffSave.Click += new System.EventHandler(this.picStaffSave_Click);
-            this.picStaffSave.MouseEnter += new System.EventHandler(this.picStaffSave_MouseEnter);
-            this.picStaffSave.MouseLeave += new System.EventHandler(this.picStaffSave_MouseLeave);
-            // 
-            // picStaffCancel
-            // 
-            this.picStaffCancel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picStaffCancel.Location = new System.Drawing.Point(213, 199);
-            this.picStaffCancel.Name = "picStaffCancel";
-            this.picStaffCancel.Size = new System.Drawing.Size(40, 40);
-            this.picStaffCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picStaffCancel.TabIndex = 87;
-            this.picStaffCancel.TabStop = false;
-            this.picStaffCancel.Click += new System.EventHandler(this.picStaffCancel_Click);
-            this.picStaffCancel.MouseEnter += new System.EventHandler(this.picStaffCancel_MouseEnter);
-            this.picStaffCancel.MouseLeave += new System.EventHandler(this.picStaffCancel_MouseLeave);
             // 
             // picCurrVisible
             // 
@@ -471,6 +422,8 @@
             this.picCurrVisible.TabIndex = 110;
             this.picCurrVisible.TabStop = false;
             this.picCurrVisible.Visible = false;
+            this.picCurrVisible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCurrVisible_MouseDown);
+            this.picCurrVisible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCurrVisible_MouseUp);
             // 
             // picPassSave
             // 
@@ -500,6 +453,54 @@
             this.picPassCancel.MouseEnter += new System.EventHandler(this.picPassCancel_MouseEnter);
             this.picPassCancel.MouseLeave += new System.EventHandler(this.picPassCancel_MouseLeave);
             // 
+            // lblAcoountType
+            // 
+            this.lblAcoountType.AutoSize = true;
+            this.lblAcoountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAcoountType.Location = new System.Drawing.Point(16, 65);
+            this.lblAcoountType.Name = "lblAcoountType";
+            this.lblAcoountType.Size = new System.Drawing.Size(100, 15);
+            this.lblAcoountType.TabIndex = 104;
+            this.lblAcoountType.Text = "ACCOUNT TYPE:";
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(160, 30);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(11, 15);
+            this.lblLogin.TabIndex = 103;
+            this.lblLogin.Text = "-";
+            // 
+            // lblLoginID
+            // 
+            this.lblLoginID.AutoSize = true;
+            this.lblLoginID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginID.Location = new System.Drawing.Point(16, 30);
+            this.lblLoginID.Name = "lblLoginID";
+            this.lblLoginID.Size = new System.Drawing.Size(62, 15);
+            this.lblLoginID.TabIndex = 102;
+            this.lblLoginID.Text = "LOGIN ID:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(163, 99);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(153, 20);
+            this.txtPassword.TabIndex = 100;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // lblCurrent
+            // 
+            this.lblCurrent.AutoSize = true;
+            this.lblCurrent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrent.Location = new System.Drawing.Point(16, 100);
+            this.lblCurrent.Name = "lblCurrent";
+            this.lblCurrent.Size = new System.Drawing.Size(105, 15);
+            this.lblCurrent.TabIndex = 97;
+            this.lblCurrent.Text = "SET PASSWORD:";
+            // 
             // errP
             // 
             this.errP.ContainerControl = this;
@@ -519,15 +520,15 @@
             this.pnlUserInfo.ResumeLayout(false);
             this.gbEmergency.ResumeLayout(false);
             this.gbEmergency.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEmergeCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEmergeSave)).EndInit();
             this.gbUserInfo.ResumeLayout(false);
             this.gbUserInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picStaffSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStaffCancel)).EndInit();
             this.pnlAccountSettings.ResumeLayout(false);
             this.gbAccountInfo.ResumeLayout(false);
             this.gbAccountInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEmergeCancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEmergeSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picStaffSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picStaffCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCurrVisible)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassCancel)).EndInit();
@@ -574,7 +575,7 @@
         private System.Windows.Forms.Label lblAcoountType;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblLoginID;
-        private System.Windows.Forms.TextBox txtCurrent;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblCurrent;
         private System.Windows.Forms.ComboBox cmbAccountType;
         private System.Windows.Forms.ErrorProvider errP;

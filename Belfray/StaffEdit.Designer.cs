@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlProfilePic = new System.Windows.Forms.Panel();
             this.pnlUserInfo = new System.Windows.Forms.Panel();
             this.gbEmergency = new System.Windows.Forms.GroupBox();
@@ -60,6 +61,7 @@
             this.lblStaffNum = new System.Windows.Forms.Label();
             this.pnlAccountSettings = new System.Windows.Forms.Panel();
             this.gbAccountInfo = new System.Windows.Forms.GroupBox();
+            this.cmbAccountType = new System.Windows.Forms.ComboBox();
             this.picCurrVisible = new System.Windows.Forms.PictureBox();
             this.picPassSave = new System.Windows.Forms.PictureBox();
             this.picPassEdit = new System.Windows.Forms.PictureBox();
@@ -69,7 +71,7 @@
             this.lblLoginID = new System.Windows.Forms.Label();
             this.txtCurrent = new System.Windows.Forms.TextBox();
             this.lblCurrent = new System.Windows.Forms.Label();
-            this.cmbAccountType = new System.Windows.Forms.ComboBox();
+            this.errP = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlUserInfo.SuspendLayout();
             this.gbEmergency.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmergeEdit)).BeginInit();
@@ -85,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPassSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProfilePic
@@ -131,6 +134,9 @@
             this.picEmergeEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picEmergeEdit.TabIndex = 103;
             this.picEmergeEdit.TabStop = false;
+            this.picEmergeEdit.Click += new System.EventHandler(this.picEmergeEdit_Click);
+            this.picEmergeEdit.MouseEnter += new System.EventHandler(this.picEmergeEdit_MouseEnter);
+            this.picEmergeEdit.MouseLeave += new System.EventHandler(this.picEmergeEdit_MouseLeave);
             // 
             // picEmergeCancel
             // 
@@ -142,6 +148,9 @@
             this.picEmergeCancel.TabIndex = 91;
             this.picEmergeCancel.TabStop = false;
             this.picEmergeCancel.Visible = false;
+            this.picEmergeCancel.Click += new System.EventHandler(this.picEmergeCancel_Click);
+            this.picEmergeCancel.MouseEnter += new System.EventHandler(this.picEmergeCancel_MouseEnter);
+            this.picEmergeCancel.MouseLeave += new System.EventHandler(this.picEmergeCancel_MouseLeave);
             // 
             // picEmergeSave
             // 
@@ -153,6 +162,9 @@
             this.picEmergeSave.TabIndex = 90;
             this.picEmergeSave.TabStop = false;
             this.picEmergeSave.Visible = false;
+            this.picEmergeSave.Click += new System.EventHandler(this.picEmergeSave_Click);
+            this.picEmergeSave.MouseEnter += new System.EventHandler(this.picEmergeSave_MouseEnter);
+            this.picEmergeSave.MouseLeave += new System.EventHandler(this.picEmergeSave_MouseLeave);
             // 
             // txtContactTel
             // 
@@ -228,6 +240,9 @@
             this.picStaffSave.TabIndex = 103;
             this.picStaffSave.TabStop = false;
             this.picStaffSave.Visible = false;
+            this.picStaffSave.Click += new System.EventHandler(this.picStaffSave_Click);
+            this.picStaffSave.MouseEnter += new System.EventHandler(this.picStaffSave_MouseEnter);
+            this.picStaffSave.MouseLeave += new System.EventHandler(this.picStaffSave_MouseLeave);
             // 
             // picStaffEdit
             // 
@@ -239,6 +254,9 @@
             this.picStaffEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picStaffEdit.TabIndex = 102;
             this.picStaffEdit.TabStop = false;
+            this.picStaffEdit.Click += new System.EventHandler(this.picStaffEdit_Click);
+            this.picStaffEdit.MouseEnter += new System.EventHandler(this.picStaffEdit_MouseEnter);
+            this.picStaffEdit.MouseLeave += new System.EventHandler(this.picStaffEdit_MouseLeave);
             // 
             // txtPhoneNo
             // 
@@ -263,7 +281,7 @@
             this.txtPostcode.Enabled = false;
             this.txtPostcode.Location = new System.Drawing.Point(354, 169);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(147, 20);
+            this.txtPostcode.Size = new System.Drawing.Size(124, 20);
             this.txtPostcode.TabIndex = 99;
             // 
             // txtCounty
@@ -271,7 +289,7 @@
             this.txtCounty.Enabled = false;
             this.txtCounty.Location = new System.Drawing.Point(354, 139);
             this.txtCounty.Name = "txtCounty";
-            this.txtCounty.Size = new System.Drawing.Size(147, 20);
+            this.txtCounty.Size = new System.Drawing.Size(124, 20);
             this.txtCounty.TabIndex = 98;
             // 
             // txtCity
@@ -376,6 +394,9 @@
             this.picStaffCancel.TabIndex = 87;
             this.picStaffCancel.TabStop = false;
             this.picStaffCancel.Visible = false;
+            this.picStaffCancel.Click += new System.EventHandler(this.picStaffCancel_Click);
+            this.picStaffCancel.MouseEnter += new System.EventHandler(this.picStaffCancel_MouseEnter);
+            this.picStaffCancel.MouseLeave += new System.EventHandler(this.picStaffCancel_MouseLeave);
             // 
             // lblStaffNo
             // 
@@ -425,6 +446,19 @@
             this.gbAccountInfo.TabStop = false;
             this.gbAccountInfo.Text = "Account Info";
             // 
+            // cmbAccountType
+            // 
+            this.cmbAccountType.Enabled = false;
+            this.cmbAccountType.FormattingEnabled = true;
+            this.cmbAccountType.Items.AddRange(new object[] {
+            "ADM",
+            "HTL",
+            "RES"});
+            this.cmbAccountType.Location = new System.Drawing.Point(163, 64);
+            this.cmbAccountType.Name = "cmbAccountType";
+            this.cmbAccountType.Size = new System.Drawing.Size(153, 21);
+            this.cmbAccountType.TabIndex = 112;
+            // 
             // picCurrVisible
             // 
             this.picCurrVisible.Image = global::Belfray.Properties.Resources.RevealPW;
@@ -434,6 +468,8 @@
             this.picCurrVisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCurrVisible.TabIndex = 110;
             this.picCurrVisible.TabStop = false;
+            this.picCurrVisible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCurrVisible_MouseDown);
+            this.picCurrVisible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCurrVisible_MouseUp);
             // 
             // picPassSave
             // 
@@ -445,6 +481,9 @@
             this.picPassSave.TabIndex = 108;
             this.picPassSave.TabStop = false;
             this.picPassSave.Visible = false;
+            this.picPassSave.Click += new System.EventHandler(this.picPassSave_Click);
+            this.picPassSave.MouseEnter += new System.EventHandler(this.picPassSave_MouseEnter);
+            this.picPassSave.MouseLeave += new System.EventHandler(this.picPassSave_MouseLeave);
             // 
             // picPassEdit
             // 
@@ -456,6 +495,9 @@
             this.picPassEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPassEdit.TabIndex = 107;
             this.picPassEdit.TabStop = false;
+            this.picPassEdit.Click += new System.EventHandler(this.picPassEdit_Click);
+            this.picPassEdit.MouseEnter += new System.EventHandler(this.picPassEdit_MouseEnter);
+            this.picPassEdit.MouseLeave += new System.EventHandler(this.picPassEdit_MouseLeave);
             // 
             // picPassCancel
             // 
@@ -467,6 +509,9 @@
             this.picPassCancel.TabIndex = 106;
             this.picPassCancel.TabStop = false;
             this.picPassCancel.Visible = false;
+            this.picPassCancel.Click += new System.EventHandler(this.picPassCancel_Click);
+            this.picPassCancel.MouseEnter += new System.EventHandler(this.picPassCancel_MouseEnter);
+            this.picPassCancel.MouseLeave += new System.EventHandler(this.picPassCancel_MouseLeave);
             // 
             // lblAcoountType
             // 
@@ -517,14 +562,9 @@
             this.lblCurrent.TabIndex = 97;
             this.lblCurrent.Text = "SET PASSWORD:";
             // 
-            // cmbAccountType
+            // errP
             // 
-            this.cmbAccountType.Enabled = false;
-            this.cmbAccountType.FormattingEnabled = true;
-            this.cmbAccountType.Location = new System.Drawing.Point(163, 64);
-            this.cmbAccountType.Name = "cmbAccountType";
-            this.cmbAccountType.Size = new System.Drawing.Size(153, 21);
-            this.cmbAccountType.TabIndex = 112;
+            this.errP.ContainerControl = this;
             // 
             // StaffEdit
             // 
@@ -537,6 +577,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StaffEdit";
             this.Text = "StaffEdit";
+            this.Load += new System.EventHandler(this.StaffEdit_Load);
             this.pnlUserInfo.ResumeLayout(false);
             this.gbEmergency.ResumeLayout(false);
             this.gbEmergency.PerformLayout();
@@ -555,6 +596,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPassSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,5 +645,6 @@
         private System.Windows.Forms.TextBox txtCurrent;
         private System.Windows.Forms.Label lblCurrent;
         private System.Windows.Forms.ComboBox cmbAccountType;
+        private System.Windows.Forms.ErrorProvider errP;
     }
 }

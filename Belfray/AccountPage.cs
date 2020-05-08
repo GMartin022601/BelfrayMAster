@@ -379,24 +379,31 @@ namespace Belfray
                     {
                         if(txtNew1.Text.ToString().Equals(txtNew2.Text.ToString()))
                         {
-                            drStaff.BeginEdit();
-                            drStaff["staffPassword"] = txtNew1.Text.ToString();
-                            drStaff.EndEdit();
-                            daStaff.Update(dsBelfray, "Staff");
+                            if (txtNew1.Text.Length > 8)
+                            {
+                                drStaff.BeginEdit();
+                                drStaff["staffPassword"] = txtNew1.Text.ToString();
+                                drStaff.EndEdit();
+                                daStaff.Update(dsBelfray, "Staff");
 
-                            MessageBox.Show("Password successfully changed");
+                                MessageBox.Show("Password successfully changed");
 
-                            picPassCancel.Visible = false;
-                            picPassSave.Visible = false;
-                            picPassEdit.Visible = true;
+                                picPassCancel.Visible = false;
+                                picPassSave.Visible = false;
+                                picPassEdit.Visible = true;
 
-                            txtCurrent.Enabled = false;
-                            txtNew1.Enabled = false;
-                            txtNew2.Enabled = false;
+                                txtCurrent.Enabled = false;
+                                txtNew1.Enabled = false;
+                                txtNew2.Enabled = false;
 
-                            txtCurrent.Text = "";
-                            txtNew1.Text = "";
-                            txtNew2.Text = "";
+                                txtCurrent.Text = "";
+                                txtNew1.Text = "";
+                                txtNew2.Text = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("Your new password must be at least 8 characters long.", "Password error", MessageBoxButtons.OK);
+                            }
                         }
                         else
                         {

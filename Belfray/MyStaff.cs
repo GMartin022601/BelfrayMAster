@@ -216,13 +216,13 @@ namespace Belfray
             get { return staffPW; }
             set
             {
-                if (MyValidation.validLength(value, 4, 20) && MyValidation.validPW(value))
+                if (MyValidation.validLength(value, 8, 20) && MyValidation.validPW(value))
                 {
                     staffPW = value;
                 }
                 else
                 {
-                    throw new MyException("Password can only contain numbers, letters and special characters like (@-_.!?$*). Please try again.");
+                    throw new MyException("Password must be between 8 and 20 characters long and can only contain numbers, letters and special characters like (@-_.!?$*). Please try again.");
                 }
             }
         }

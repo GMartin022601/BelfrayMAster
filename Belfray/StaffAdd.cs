@@ -30,6 +30,8 @@ namespace Belfray
         //Form Load
         private void StaffAdd_Load(object sender, EventArgs e)
         {
+            string staffNo = "";
+
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
             //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
@@ -41,6 +43,32 @@ namespace Belfray
             cmdBStaff = new SqlCommandBuilder(daStaff);
             daStaff.FillSchema(dsBelfray, SchemaType.Source, "Staff");
             daStaff.Fill(dsBelfray, "Staff");
+
+            int noRows = dsBelfray.Tables["Staff"].Rows.Count;
+
+            if (noRows == 0)
+            {
+                staffNo = "EMP100001";
+            }
+            else
+            {
+                getBookingNum(noRows);
+
+                string code = drStaff["staffID"].ToString();
+                string letters = "EMP";
+                string numStr = code.Split('P').Last();
+                int num = int.Parse(numStr) + 1;
+
+                staffNo = letters + num.ToString();
+            }
+
+            lblStaffNo.Text = staffNo;
+        }
+
+        //Get Booking Number
+        private void getBookingNum(int noRows)
+        {
+            drStaff = dsBelfray.Tables["Staff"].Rows[noRows - 1];
         }
 
         //Staff Save Button Function
@@ -221,6 +249,14 @@ namespace Belfray
                     gbAccountInfo.Enabled = true;
                     picPassSave.Visible = true;
                     picPassCancel.Visible = true;
+                    picCurrVisible.Visible = true;
+
+                    int length = txtSurname.Text.ToString().Length;
+                    string lastInitial = txtSurname.Text.ToString().Substring(0,1);
+                    string lName = txtSurname.Text.ToString().Substring(1,length - 1);
+                    char[] fName = txtForename.Text.ToString().ToCharArray();
+                    string initial = fName[0].ToString().ToUpper();
+                    lblLogin.Text = lastInitial.ToUpper() + lName + initial;
                 }
             }
             catch (Exception ex)
@@ -266,7 +302,65 @@ namespace Belfray
 
         private void picPassSave_Click(object sender, EventArgs e)
         {
-            
+            bool ok = true;
+            errP.Clear();
+
+            //Customer Number
+            try
+            {
+                myStaff.AccType = cmbAccountType.SelectedText.ToString();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(cmbAccountType, MyEx.toString());
+            }
+
+            //Customer Number
+            try
+            {
+                myStaff.StaffPW = txtPassword.Text.ToString();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errP.SetError(txtPassword, MyEx.toString());
+            }
+
+            //Try Adding
+            try
+            {
+                if (ok)
+                {
+                    drStaff = dsBelfray.Tables["Staff"].NewRow();
+                    drStaff["staffID"] = lblStaffNo.Text.ToString();
+                    drStaff["staffFName"] = myStaff.Forename;
+                    drStaff["staffLName"] = myStaff.Surname;
+                    drStaff["staffStreet"] = myStaff.Street;
+                    drStaff["staffCity"] = myStaff.City;
+                    drStaff["staffCounty"] = myStaff.County;
+                    drStaff["staffPcode"] = myStaff.Postcode;
+                    drStaff["staffTelNo"] = myStaff.TelNo;
+
+                    drStaff["staffEmergName"] = myStaff.ContactName;
+                    drStaff["staffEmergTel"] = myStaff.ContactTelNo;
+
+                    drStaff["staffLogin"] = lblLogin.Text.ToString();
+                    drStaff["staffPassword"] = myStaff.StaffPW;
+                    drStaff["accTypeID"] = myStaff.AccType;
+
+                    dsBelfray.Tables["Staff"].Rows.Add(drStaff);
+                    daStaff.Update(dsBelfray, "Staff");
+
+                    MessageBox.Show("Staff Added");
+
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
         }
 
         private void picPassSave_MouseLeave(object sender, EventArgs e)
@@ -283,9 +377,10 @@ namespace Belfray
         private void picPassCancel_Click(object sender, EventArgs e)
         {
             //Disable User Info
-            gbUserInfo.Enabled = false;
-            picStaffCancel.Visible = false;
-            picStaffSave.Visible = false;
+            gbAccountInfo.Enabled = false;
+            picPassCancel.Visible = false;
+            picPassSave.Visible = false;
+            picCurrVisible.Visible = false;
 
             //Enable Emergency Info
             gbEmergency.Enabled = true;
@@ -296,6 +391,19 @@ namespace Belfray
         private void picPassCancel_MouseLeave(object sender, EventArgs e)
         {
             picPassCancel.BackColor = Color.Transparent;
+        }
+
+        //Current Password Visible
+        private void picCurrVisible_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = false;
+            picCurrVisible.BackColor = Color.FromArgb(57, 181, 74);
+        }
+
+        private void picCurrVisible_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+            picCurrVisible.BackColor = Color.Transparent;
         }
     }
 }

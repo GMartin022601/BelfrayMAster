@@ -24,6 +24,18 @@ namespace Belfray
             InitializeComponent();
         }
 
+        private void dgvStaff_Click(object sender, EventArgs e)
+        {
+            if (dgvStaff.SelectedRows.Count == 0)
+            {
+                Globals.staffSel = null;
+            }
+            else if (dgvStaff.SelectedRows.Count == 1)
+            {
+                Globals.staffSel = dgvStaff.SelectedRows[0].Cells[0].Value.ToString();
+            }
+        }
+
         //Form Load
         private void StaffDisplay_Load(object sender, EventArgs e)
         {
@@ -37,7 +49,7 @@ namespace Belfray
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Booking
-            sqlStaff = @"SELECT staffID AS 'Staff ID', staffFName AS 'Forename', staffLName AS 'Surname', staffStreet AS 'Street', staffTown AS 'Town',
+            sqlStaff = @"SELECT staffID AS 'Staff ID', staffFName AS 'Forename', staffLName AS 'Surname', staffStreet AS 'Street', 
                             staffCity AS 'City', staffCounty AS 'County',  staffPcode AS 'Postcode', staffTelNo As 'Tel No', staffEmergName AS 'Emergency Contact',
                             staffEmergTel AS 'Emergency Tel No', staffLogin AS 'Login', accTypeID AS 'Account Type' FROM Staff";
 
@@ -47,19 +59,18 @@ namespace Belfray
             dgvStaff.DataSource = dsBelfray.Tables["Staff"];
 
             //Resize
-            dgvStaff.Columns[0].Width = 76;
-            dgvStaff.Columns[1].Width = 80;
-            dgvStaff.Columns[2].Width = 80;
+            dgvStaff.Columns[0].Width = 96;
+            dgvStaff.Columns[1].Width = 100;
+            dgvStaff.Columns[2].Width = 100;
             dgvStaff.Columns[3].Width = 110;
-            dgvStaff.Columns[4].Width = 90;
-            dgvStaff.Columns[5].Width = 60;
-            dgvStaff.Columns[6].Width = 110;
-            dgvStaff.Columns[7].Width = 102;
-            dgvStaff.Columns[8].Width = 100;
-            dgvStaff.Columns[9].Width = 108;
+            dgvStaff.Columns[4].Width = 70;
+            dgvStaff.Columns[5].Width = 110;
+            dgvStaff.Columns[6].Width = 112;
+            dgvStaff.Columns[7].Width = 110;
+            dgvStaff.Columns[8].Width = 108;
+            dgvStaff.Columns[9].Width = 80;
             dgvStaff.Columns[10].Width = 80;
             dgvStaff.Columns[11].Width = 80;
-            dgvStaff.Columns[12].Width = 80;
         }
     }
 }

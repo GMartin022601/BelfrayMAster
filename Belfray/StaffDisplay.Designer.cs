@@ -40,6 +40,7 @@
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(1216, 347);
             this.dgvStaff.TabIndex = 1;
+            this.dgvStaff.Click += new System.EventHandler(this.dgvStaff_Click);
             // 
             // StaffDisplay
             // 
