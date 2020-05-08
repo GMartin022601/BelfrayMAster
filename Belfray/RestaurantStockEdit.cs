@@ -522,10 +522,11 @@ namespace Belfray
             drProduct = dsBelfray.Tables["Product"].Rows.Find(lblProductNumberDisplay.Text);
             //drProductType = dsBelfray.Tables["ProductType"].Rows.Find(txtProdDesc2)
             //drProduct = dsBelfray.Tables["Product"].Rows.Find(cbTypeCode.SelectedValue);
+            decimal price = Convert.ToDecimal(drProduct["costPrice"].ToString());
 
             cbTypeCode.SelectedValue = drProduct["productTypeCode"].ToString();
             txtProdDesc.Text = drProduct["productDesc"].ToString();
-            txtCostPrice.Text = drProduct["costPrice"].ToString();
+            txtCostPrice.Text = Math.Round(price, 2).ToString();
             txtQTY.Text = drProduct["qtyInStock"].ToString();
             txtPackSize.Text = drProduct["packSize"].ToString();
             txtReOrder.Text = drProduct["reorderLvl"].ToString();

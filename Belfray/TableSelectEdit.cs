@@ -827,7 +827,7 @@ namespace Belfray
                         total += price * qty;
                     }
 
-                    lblCurrentBillDisplay.Text = total.ToString();
+                    lblCurrentBillDisplay.Text = "£" + total.ToString();
 
                 }
                 else
@@ -932,7 +932,7 @@ namespace Belfray
             }
             else
             {
-                MessageBox.Show("Item Number " + lblItemNoDIsplay.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Add to bill", MessageBoxButtons.OK);
+                MessageBox.Show("Item Number " + lblItemNoDIsplay.Text + " has already been added, choose a new item or remove current Item from the order and add with correct quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             //Sum of party size
@@ -958,7 +958,7 @@ namespace Belfray
                     total += price * qty;
                 }
 
-                lblCurrentBillDisplay.Text = total.ToString();
+                lblCurrentBillDisplay.Text = "£" + total.ToString();
             }
 
             //lblCurrentBillDisplay.Text = "£" + Math.Round(Convert.ToDecimal(price * qty));
@@ -1209,11 +1209,9 @@ namespace Belfray
                             dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
                             //daBookingItem.Update(dsBelfray, "BookingItem");
                         }
-
-                        //daBookingItem.Update(dsBelfray, "BookingItem");
-                    //}
                     daBookingItem.Update(dsBelfray, "BookingItem");
                     MessageBox.Show("Booking has been edited.");
+                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -1273,15 +1271,6 @@ namespace Belfray
                 dgvTableItems.Rows.Remove(dgvTableItems.Rows[itemNoSelected]);
                 lblItemNoSel.Text = "-";
                 dgvTableItems.ClearSelection();
-                //Sum of party size
-                //int currentTableSize = partySize2; //Convert.ToInt32(numPartySize.Value);
-                //numPartySize.Value = currentTableSize - tableSize;
-
-                //if (numPartySize.Value == 0)
-                //{
-                //    MessageBox.Show("Unable to remove all tables, Please delete booking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
-
             }
         }
 
@@ -1304,18 +1293,53 @@ namespace Belfray
 
         private void picDrinks_Click(object sender, EventArgs e)
         {
-            if (tableSelected == false)
             {
-                MessageBox.Show("Please select a table.");
-            }
-            else
-            {
-                pnlTableSelect.SendToBack();
-                pnlFloorPlan.Visible = false;
-                pnlFloorPlan.SendToBack();
-                pnlMenuItems.Visible = true;
-                pnlMenuItems.BringToFront();
-                LoadMenu();
+
+                if (tableSelected == false)
+                {
+                    MessageBox.Show("Please select a table.");
+                }
+
+                foreach (DataRow drDetails in dsBelfray.Tables["BookingDetails"].Rows)
+                {
+                    string split = "";
+                    double price = 0.0;
+                    double qty = 0.0;
+                    double total = 0.0;
+
+                    if (drDetails["bookingNo"].Equals(lblBookingNo.Text) && drDetails["itemNo"].Equals(lblTblNoSelDisplay.Text))
+                    {
+                        dgvTableItems.Columns.Clear();
+                        DataView existingSearch = new DataView(dsBelfray.Tables["Book"], "bookingNo = '" + lblBookingNo.Text.ToString() + "' ", "bookingNo", DataViewRowState.CurrentRows);
+                        dgvTableItems.DataSource = existingSearch;
+                        //for each dr row in existingsearch 
+                        //in the dog house check foreach dr in table whatever new row for dgv append into 0-1-2 add row to dgv
+                        dgvTableItems.Columns[0].Visible = false;
+                        dgvTableItems.Columns[2].Width = 250;
+                        dgvTableItems.Columns[4].DefaultCellStyle.Format = "c2";
+                        dgvTableItems.Columns[4].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+
+                        for (int i = 0; i < dgvTableItems.Rows.Count - 1; ++i)
+                        {
+                            qty = Convert.ToDouble(dgvTableItems.Rows[i].Cells[3].Value);
+                            split = dgvTableItems.Rows[i].Cells[4].Value.ToString().Split('£').Last();
+                            price = Convert.ToDouble(split);
+                            total += price * qty;
+                        }
+
+                        lblCurrentBillDisplay.Text = "£" + total.ToString();
+
+                    }
+                    else
+                    {
+                        pnlTableSelect.SendToBack();
+                        pnlFloorPlan.Visible = false;
+                        pnlFloorPlan.SendToBack();
+                        pnlMenuItems.Visible = true;
+                        pnlMenuItems.BringToFront();
+                        LoadMenu();
+                    }
+                }
             }
         }
 
@@ -1337,10 +1361,8 @@ namespace Belfray
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Breakfast"];
                 //Resize
-                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-                dgvMenuItems.Columns[0].Width = 175;
-                dgvMenuItems.Columns[1].Width = 175;
-                dgvMenuItems.Columns[2].Width = 175;
+                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 1)
             {
@@ -1354,7 +1376,8 @@ namespace Belfray
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Lunch"];
                 //Resize
-                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 2)
             {
@@ -1368,7 +1391,8 @@ namespace Belfray
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Starter"];
                 //Resize
-                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 3)
             {
@@ -1382,7 +1406,8 @@ namespace Belfray
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Main"];
                 //Resize
-                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 4)
             {
@@ -1396,7 +1421,8 @@ namespace Belfray
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Desert"];
                 //Resize
-                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 5)
             {
@@ -1410,7 +1436,8 @@ namespace Belfray
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Drinks"];
                 //Resize
-                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 6)
             {
@@ -1424,11 +1451,17 @@ namespace Belfray
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Kids"];
                 //Resize
-                dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvMenuItemFormat();
             }
 
         }
-
+        public void dgvMenuItemFormat()
+        {
+            dgvMenuItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMenuItems.Columns[2].DefaultCellStyle.Format = "c2";
+            dgvMenuItems.Columns[2].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+        }
         private void tbl17_Click(object sender, EventArgs e)
         {
             partySize = 4;
@@ -1594,19 +1627,9 @@ namespace Belfray
         {
             try
             {
-                //string str1 = dgvBooking.SelectedRows[0].Cells[1].Value.ToString();
-                //string str2 = dgvAddNewTables.SelectedRows[0].Cells[1].Value.ToString();
-
-                //if (lblTableNumDisplay.Text == str1)
-                //{
-                //    MessageBox.Show("This table already exists in the current booking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
-                //else
-                //{
                     dgvAddNewTables.Rows.Add(lblBookingNo.Text, lblTableNumDisplay.Text);
                     int currentTableSize = Convert.ToInt32(numPartySize.Value);
                     numPartySize.Value = currentTableSize + partySize;
-               // }
             }
             catch (Exception exc)
             {
@@ -2055,10 +2078,10 @@ namespace Belfray
 
                     dgvBooking.ColumnCount = 2;
                     dgvBooking.Columns[0].Name = "Booking Number";
-                    dgvBooking.Columns[0].Width = 150;
+                    //dgvBooking.Columns[0].Width = 150;
                     dgvBooking.Columns[1].Name = "Table Number";
-                    dgvBooking.Columns[1].Width = 130;
-
+                    //dgvBooking.Columns[1].Width = 130;
+                    dgvBooking.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     dgvBooking.Rows.Add(bookingNo, itemNo);
                 }
             }
@@ -2072,6 +2095,8 @@ namespace Belfray
             txtPC.Text = drCustomer["customerPostcode"].ToString();
             txtTelNo.Text = drCustomer["customerTel"].ToString();
             cbTitle.SelectedValue = drCustomer["customerTitle"].ToString();
+
+            dgvAddNewTables.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 
