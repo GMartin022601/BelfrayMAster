@@ -57,7 +57,7 @@ namespace Belfray
                             LEFT JOIN BookingItem on BookingItem.bookingNo = Booking.bookingNo
                             LEFT JOIN Item ON  Item.itemNo = BookingItem.itemNo
                             LEFT JOIN BType ON  BType.typeID = Item.typeID
-                            WHERE BType.typeID = 'TYP100002'
+                            WHERE BType.typeID = 'TYP100002' AND Booking.checkInDate >= (CURRENT_TIMESTAMP-1)
                             GROUP BY Booking.bookingNo, Booking.checkInDate, Booking.checkOutDate,  BType.typeDesc, 
 							Booking.bookingTime, Booking.customerNo, Customer.customerForename, Customer.customerSurname,
 							Payment.paymentTypeDesc, Booking.partySize";

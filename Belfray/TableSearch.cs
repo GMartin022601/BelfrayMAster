@@ -44,16 +44,19 @@ namespace Belfray
                 txtBookingNumber.BackColor = Color.White;
                 dtpSearch.Enabled = true;
             }
-
-
-
         }
+
         private void dtpSearch_ValueChanged(object sender, EventArgs e)
         {
             searchOption = 3;
-            txtSurname.Text = "";
-            txtBookingNumber.Text = "";
-            //dtpSearch.Value = Convert.ToDateTime(bDate);
+            bDate = dtpSearch.Value.ToShortDateString();
+            DataView dateSearch = new DataView(dsBelfray.Tables["Booking"], "checkInDate = '" + Convert.ToDateTime(bDate) + "'", "checkInDate", DataViewRowState.CurrentRows);
+            dgvSearch.DataSource = dateSearch;
+
+            //txtBookingNumber.Enabled = false;
+            //txtBookingNumber.BackColor = Color.LightCoral;
+            //txtSurname.Enabled = false;
+            //txtSurname.BackColor = Color.LightCoral;
         }
         private void picClear_Click(object sender, EventArgs e)
         {
@@ -143,6 +146,7 @@ namespace Belfray
             }
             txtSurname.BackColor = Color.LightCoral;
             txtSurname.Enabled = false;
+            dtpSearch.Enabled = false;
 
             DataView bkSearch = new DataView(dsBelfray.Tables["Booking"], "bookingNo LIKE '%" + txtBookingNumber.Text.ToString() + "%'", "bookingNo", DataViewRowState.CurrentRows);
             dgvSearch.DataSource = bkSearch;
@@ -152,6 +156,7 @@ namespace Belfray
                 txtBookingNumber.Text = "";
                 txtSurname.Enabled = true;
                 txtSurname.BackColor = Color.White;
+                dtpSearch.Enabled = true;
             }
 
         }

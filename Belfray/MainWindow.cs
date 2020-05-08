@@ -352,9 +352,9 @@ namespace Belfray
             }
 
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
             //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
@@ -369,7 +369,7 @@ namespace Belfray
             //SQL for Booking
             sqlBooking = @"select * from Booking";
             daBooking = new SqlDataAdapter(sqlBooking, connStr);
-            cmdBBooking = new SqlCommandBuilder(daLogin);
+            cmdBBooking = new SqlCommandBuilder(daBooking);
 
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
             daBooking.Fill(dsBelfray, "Booking");
@@ -377,7 +377,7 @@ namespace Belfray
             //SQL for Product
             sqlProduct = @"select * from Product";
             daProduct = new SqlDataAdapter(sqlProduct, connStr);
-            cmdBProduct = new SqlCommandBuilder(daLogin);
+            cmdBProduct = new SqlCommandBuilder(daProduct);
 
             daProduct.FillSchema(dsBelfray, SchemaType.Source, "Product");
             daProduct.Fill(dsBelfray, "Product");
@@ -385,7 +385,7 @@ namespace Belfray
             //SQL For ProductType
             sqlProductType = @"select * from ProductType";
             daProductType = new SqlDataAdapter(sqlProductType, connStr);
-            cmdBProductType = new SqlCommandBuilder(daLogin);
+            cmdBProductType = new SqlCommandBuilder(daProductType);
 
             daProductType.FillSchema(dsBelfray, SchemaType.Source, "ProductType");
             daProductType.Fill(dsBelfray, "ProductType");
@@ -393,7 +393,7 @@ namespace Belfray
             //SQL For Supplier
             sqlSupplier = @"select * from Supplier";
             daSupplier = new SqlDataAdapter(sqlSupplier, connStr);
-            cmdBSupplier = new SqlCommandBuilder(daLogin);
+            cmdBSupplier = new SqlCommandBuilder(daSupplier);
 
             daSupplier.FillSchema(dsBelfray, SchemaType.Source, "Supplier");
             daSupplier.Fill(dsBelfray, "Supplier");
@@ -608,6 +608,7 @@ namespace Belfray
                     frm4.TopLevel = false;
                     frm4.FormBorderStyle = FormBorderStyle.None;
                     frm4.WindowState = FormWindowState.Maximized;
+                    frm4.FormClosed += RestaurantStockAdd_Closed;
                     pnlMainBody.Controls.Add(frm4);
                     frm4.Show();
                     break;
@@ -798,7 +799,6 @@ namespace Belfray
                     break;
                 case 3: //Table Booking
                     bool found = false;
-
                     if (Globals.bookSel == null)
                     {
                         MessageBox.Show("Error: No Booking Selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -807,15 +807,14 @@ namespace Belfray
                     else
                     {
                         string temp = "";
-                        string find = "";
                         string test = "";
                         test = Globals.bookSel.ToString();
 
                         drBooking = dsBelfray.Tables["Booking"].Rows.Find(Globals.bookSel.ToString());
-                        //drBookingDetails = dsBelfray.Tables["BookingDetails"].Rows.Find(test.ToString());
+
 
                         temp = drBooking["bookingNo"].ToString();
-                        //find = drBookingDetails["bookingNo"].ToString();
+
 
                         if (MessageBox.Show("Are you sure you want to delete Booking: " + temp + " ?", "Delete Booking", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                         {
@@ -834,16 +833,13 @@ namespace Belfray
                                     foreach (DataRow drBookingItem in dsBelfray.Tables["BookingItem"].Rows)
                                     {
                                         if (drBookingItem["bookingNo"].ToString().Equals(test.ToString()))
-
                                         {
                                             if (drBooking["bookingNo"].ToString().Equals(test.ToString()))
                                             {
-                                                drBookingItem.Delete();                                                
+                                                drBookingItem.Delete();
                                                 daBookingItem.Update(dsBelfray, "BookingItem");
                                                 drBooking.Delete();
-                                                //daBookingItem.Update(dsBelfray, "BookingItem");
-                                                //daBooking.Update(dsBelfray, "Booking");
-                                                //MessageBox.Show("Success, Booking: " + temp + " has been successfully Deleted!");
+                                                MessageBox.Show("Success, Booking: " + temp + " has been successfully Deleted!");
                                                 break;
                                             }
                                         }
@@ -852,13 +848,11 @@ namespace Belfray
                             }
                             if (found)
                             {
-                                MessageBox.Show("Sorry, We are unable to delete booking: " + temp + " as there are currently items on the table!");
+                                MessageBox.Show("Sorry, We are unable to delete booking: " + temp + " as there are currently items on the table!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
-
-                        //daBookingItem.Update(dsBelfray, "BookingItem");
                         daBooking.Update(dsBelfray, "Booking");
-                        MessageBox.Show("Success, Booking: " + temp + " has been successfully Deleted!");
+                        picTabDisplay_Click(sender, e);
                     }
                     break;
                 case 4: //Restaurant Stock
@@ -970,25 +964,32 @@ namespace Belfray
         {
             pnlTableSelect.Visible = false;
 
-            TableBookingDisplay frm = new TableBookingDisplay();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.WindowState = FormWindowState.Maximized;
-            pnlMainBody.Controls.Add(frm);
-            frm.Show();
-            TabVisible();
+            ////TableBookingDisplay frm = new TableBookingDisplay();
+            //frm.TopLevel = false;
+            //frm.FormBorderStyle = FormBorderStyle.None;
+            //frm.WindowState = FormWindowState.Maximized;
+            //pnlMainBody.Controls.Add(frm);
+            //frm.Show();
+            //TabVisible();
+            picTabDisplay_Click(sender, e);
         }
         private void TableSelectEdit_Closed(object sender, FormClosedEventArgs e)
         {
             pnlTableSelect.Visible = false;
+            picTabDisplay_Click(sender, e);
 
-            TableBookingDisplay frm = new TableBookingDisplay();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.WindowState = FormWindowState.Maximized;
-            pnlMainBody.Controls.Add(frm);
-            frm.Show();
-            TabVisible();
+            //TableBookingDisplay frm = new TableBookingDisplay();
+            //frm.TopLevel = false;
+            //frm.FormBorderStyle = FormBorderStyle.None;
+            //frm.WindowState = FormWindowState.Maximized;
+            //pnlMainBody.Controls.Add(frm);
+            //frm.Show();
+            //TabVisible();
+        }
+        private void RestaurantStockAdd_Closed(object sender, FormClosedEventArgs e)
+        {
+            //pnlTableSelect.Visible = false;
+            picTabDisplay_Click(sender, e);
         }
 
         //Room Booking Add Closing

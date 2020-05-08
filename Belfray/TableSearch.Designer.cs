@@ -301,6 +301,7 @@
             this.picClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picClear.TabIndex = 70;
             this.picClear.TabStop = false;
+            this.picClear.Visible = false;
             this.picClear.Click += new System.EventHandler(this.picClear_Click);
             // 
             // picSearch
@@ -312,6 +313,7 @@
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSearch.TabIndex = 64;
             this.picSearch.TabStop = false;
+            this.picSearch.Visible = false;
             // 
             // txtSurname
             // 

@@ -20,6 +20,7 @@ namespace Belfray
         DataRow drProduct, drProductType, drSupplier;
         String connStr, sqlProduct, sqlProductType, sqlSupplier;
         bool formLoad = true;
+        bool test = false;
 
         private void picCancellAddProd_Click(object sender, EventArgs e)
         {
@@ -170,19 +171,14 @@ namespace Belfray
                     if (MessageBox.Show("Do you wish to add another Supplier?", "AddSupplier", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
                         clearSuppPanel();
+                        test = true;
                     }
                     else
                     {
                         pnlSuppDetails.Enabled = false;
                         pnlDetails.Enabled = true;
                         clearSuppPanel();
-                        clearAddPanel();
-
-                        //cb ProductType
-                        //cbSuppID.DataSource = dsBelfray.Tables["Supplier"];
-                        //cbSuppID.ValueMember = "supplierID";
-                        //cbSuppID.DisplayMember = "supplierName";
-                        //cbSuppID.SelectedIndex = -1;
+                        test = true;
                     }
                 }
             }
@@ -196,6 +192,12 @@ namespace Belfray
         {
 
             if (!formLoad)
+            {
+                DataRow drMethod = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue.ToString());
+                txtProdTypeCode.Text = drMethod["productTypeCode"].ToString();
+                txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
+            }
+            if (test)
             {
                 DataRow drMethod = dsBelfray.Tables["ProductType"].Rows.Find(cbTypeCode.SelectedValue.ToString());
                 txtProdTypeCode.Text = drMethod["productTypeCode"].ToString();
@@ -237,6 +239,18 @@ namespace Belfray
         private void CbSuppID_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!formLoad)
+            {
+                DataRow drSuppCombo = dsBelfray.Tables["Supplier"].Rows.Find(cbSuppID.SelectedValue.ToString());
+                lblSupplierID.Text = drSuppCombo["supplierID"].ToString();
+                txtSuppName.Text = drSuppCombo["supplierName"].ToString();
+                txtSuppAddress.Text = drSuppCombo["supplierAddress"].ToString();
+                txtSuppCounty.Text = drSuppCombo["supplierCounty"].ToString();
+                txtSuppTown.Text = drSuppCombo["supplierTown"].ToString();
+                txtSuppPC.Text = drSuppCombo["supplierPostCode"].ToString();
+                txtSuppEmail.Text = drSuppCombo["supplierEmail"].ToString();
+                txtSuppTel.Text = drSuppCombo["supplierTelNo"].ToString();
+            }
+            if (test)
             {
                 DataRow drSuppCombo = dsBelfray.Tables["Supplier"].Rows.Find(cbSuppID.SelectedValue.ToString());
                 lblSupplierID.Text = drSuppCombo["supplierID"].ToString();
@@ -304,6 +318,7 @@ namespace Belfray
                         txtProdTypeCode.Text = "";
                         txtProdDesc2.Text = "";
                         formLoad = true;
+                        test = true;
                         //getProdNum(dsBelfray.Tables["ProductTy"].Rows.Count);
                     }
                     else
@@ -312,13 +327,10 @@ namespace Belfray
                         txtProdTypeCode.Text = "";
                         txtProdDesc2.Text = "";
                         pnlDetails.Enabled = true;
-                        clearAddPanel();
+                        //clearAddPanel();
+                        formLoad = true;
+                        test = true;
 
-                        //cb ProductType
-                       //cbTypeCode.DataSource = dsBelfray.Tables["ProductType"];
-                       //cbTypeCode.ValueMember = "productTypeCode";
-                       //cbTypeCode.DisplayMember = "productTypeDesc";
-                       //cbTypeCode.SelectedIndex = -1;
                     }
                 }
             }
@@ -344,9 +356,6 @@ namespace Belfray
         private void getProdNum(int noRows)
         {
             drProduct = dsBelfray.Tables["Product"].Rows[noRows - 1];
-            //lblProductNumberDisplay.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
-            //lblSupplierID.Text = (int.Parse(drProduct["supplierID"].ToString()) + 1).ToString();
-            //lblAddProdNum.Text = (int.Parse(drProduct["productNumber"].ToString()) + 1).ToString();
         }
         //clear add panel
        void clearAddPanel()
@@ -525,9 +534,6 @@ namespace Belfray
             tpCancelAddSupp.SetToolTip(picCancelAddSupp, "Cancel Add New Supplier");
 
             //End of tooltips
-
-            //PANEL PRODUCT TYPE AND SUPPLIER ARE NOT ENABLED
-            //ENABLE ONCE ADD NEW IS PRESSED
 
         }
 
