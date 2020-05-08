@@ -13,11 +13,11 @@ namespace Belfray
 {
     public partial class StaffDelete : Form
     {
-        SqlDataAdapter daStaff, daStaffDel;
+        SqlDataAdapter daStaff;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBStaff, cmdBStaffDel;
-        DataRow drStaff, drStaffDel;
-        String connStr, sqlStaff, sqlStaffDel;
+        SqlCommandBuilder cmdBStaff;
+        DataRow drStaff;
+        String connStr, sqlStaff;
 
         private bool rowSel = false;
 
@@ -43,14 +43,9 @@ namespace Belfray
                             staffEmergTel AS 'Emergency Tel No', staffLogin AS 'Login', accTypeID AS 'Account Type' FROM Staff
                             ORDER BY staffID";
             daStaff = new SqlDataAdapter(sqlStaff, connStr);
+            cmdBStaff = new SqlCommandBuilder(daStaff);
             daStaff.FillSchema(dsBelfray, SchemaType.Source, "Staff");
             daStaff.Fill(dsBelfray, "Staff");
-
-            //SQL for Staff
-            sqlStaffDel = @"SELECT * FROM Staff";
-            daStaffDel = new SqlDataAdapter(sqlStaffDel, connStr);
-            daStaffDel.FillSchema(dsBelfray, SchemaType.Source, "delStaff");
-            daStaffDel.Fill(dsBelfray, "delStaff");
 
             displayStaff();
         }
