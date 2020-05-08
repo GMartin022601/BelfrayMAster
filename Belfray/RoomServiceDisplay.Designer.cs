@@ -34,9 +34,12 @@
             // 
             // dgvRooms
             // 
+            this.dgvRooms.AllowUserToAddRows = false;
+            this.dgvRooms.AllowUserToDeleteRows = false;
             this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRooms.Location = new System.Drawing.Point(2, 1);
             this.dgvRooms.Name = "dgvRooms";
+            this.dgvRooms.ReadOnly = true;
             this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRooms.Size = new System.Drawing.Size(1216, 347);
             this.dgvRooms.TabIndex = 1;

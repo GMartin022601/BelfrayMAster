@@ -75,11 +75,13 @@
             this.txtSearchItemName = new System.Windows.Forms.TextBox();
             this.dgvRoomSearch = new System.Windows.Forms.DataGridView();
             this.dgvItemSearch = new System.Windows.Forms.DataGridView();
+            this.picCancel = new System.Windows.Forms.PictureBox();
             this.pnlSearchDetails.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.pnlRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancel)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSearchCustomerName
@@ -113,6 +115,7 @@
             // pnlSearchDetails
             // 
             this.pnlSearchDetails.BackColor = System.Drawing.Color.White;
+            this.pnlSearchDetails.Controls.Add(this.picCancel);
             this.pnlSearchDetails.Controls.Add(this.pnlItem);
             this.pnlSearchDetails.Controls.Add(this.pnlRoom);
             this.pnlSearchDetails.Controls.Add(this.txtSearchItemNo);
@@ -566,9 +569,11 @@
             // 
             // dgvRoomSearch
             // 
+            this.dgvRoomSearch.AllowUserToAddRows = false;
             this.dgvRoomSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoomSearch.Location = new System.Drawing.Point(2, 1);
             this.dgvRoomSearch.Name = "dgvRoomSearch";
+            this.dgvRoomSearch.ReadOnly = true;
             this.dgvRoomSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRoomSearch.Size = new System.Drawing.Size(755, 347);
             this.dgvRoomSearch.TabIndex = 7;
@@ -576,15 +581,32 @@
             // 
             // dgvItemSearch
             // 
+            this.dgvItemSearch.AllowUserToAddRows = false;
+            this.dgvItemSearch.AllowUserToOrderColumns = true;
             this.dgvItemSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItemSearch.Location = new System.Drawing.Point(2, 1);
             this.dgvItemSearch.Name = "dgvItemSearch";
+            this.dgvItemSearch.ReadOnly = true;
             this.dgvItemSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItemSearch.Size = new System.Drawing.Size(755, 347);
             this.dgvItemSearch.TabIndex = 8;
             this.dgvItemSearch.Visible = false;
             this.dgvItemSearch.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvItemSearch_CellFormatting);
             this.dgvItemSearch.Click += new System.EventHandler(this.dgvItemSearch_Click);
+            // 
+            // picCancel
+            // 
+            this.picCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picCancel.Location = new System.Drawing.Point(408, 304);
+            this.picCancel.Name = "picCancel";
+            this.picCancel.Size = new System.Drawing.Size(40, 40);
+            this.picCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCancel.TabIndex = 124;
+            this.picCancel.TabStop = false;
+            this.picCancel.Visible = false;
+            this.picCancel.Click += new System.EventHandler(this.picCancel_Click);
+            this.picCancel.MouseEnter += new System.EventHandler(this.picCancel_MouseEnter);
+            this.picCancel.MouseLeave += new System.EventHandler(this.picCancel_MouseLeave);
             // 
             // RoomServiceSearch
             // 
@@ -606,6 +628,7 @@
             this.pnlRoom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -658,5 +681,6 @@
         private System.Windows.Forms.Label lblItemBookNum;
         private System.Windows.Forms.Label lblRoomNo;
         private System.Windows.Forms.Label lblRoomNum;
+        private System.Windows.Forms.PictureBox picCancel;
     }
 }

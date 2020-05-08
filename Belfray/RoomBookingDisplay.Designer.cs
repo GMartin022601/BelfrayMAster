@@ -34,9 +34,11 @@
             // 
             // dgvBookings
             // 
+            this.dgvBookings.AllowUserToAddRows = false;
             this.dgvBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBookings.Location = new System.Drawing.Point(2, 1);
             this.dgvBookings.Name = "dgvBookings";
+            this.dgvBookings.ReadOnly = true;
             this.dgvBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBookings.Size = new System.Drawing.Size(1216, 347);
             this.dgvBookings.TabIndex = 0;

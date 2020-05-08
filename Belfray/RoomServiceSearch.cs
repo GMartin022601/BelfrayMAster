@@ -37,59 +37,71 @@ namespace Belfray
         //Search Item Name Text Changed
         private void txtSearchItemName_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearchItemName.Text.Length > 0)
+            if(txtSearchItemName.Text.Length == 0)
+            {
+                dgvItemSearch.Visible = false;
+                dgvRoomSearch.Visible = true;
+            }
+            else if (txtSearchItemName.Text.Length > 0)
             {
                 txtSearchItemNo.Text = "";
                 txtSearchRoomNo.Text = "";
                 //displayItems();
+
+                dgvItemSearch.Visible = true;
+                dgvRoomSearch.Visible = false;
+
+                DataView item2Search = new DataView(dsBelfray.Tables["BookingDets"], "itemDesc LIKE '%" + txtSearchItemName.Text.ToString() + "%'", "itemDesc", DataViewRowState.CurrentRows);
+                dgvItemSearch.DataSource = item2Search;
+
+                dgvItemSearch.Columns[0].HeaderText = "Room Number";
+                dgvItemSearch.Columns[2].HeaderText = "Item Number";
+                dgvItemSearch.Columns[3].HeaderText = "Item Description";
+
+                dgvItemSearch.Columns[0].Width = 72;
+                dgvItemSearch.Columns[1].Width = 90;
+                dgvItemSearch.Columns[2].Width = 82;
+                dgvItemSearch.Columns[3].Width = 292;
+                dgvItemSearch.Columns[4].Width = 72;
+                dgvItemSearch.Columns[5].Width = 62;
+                dgvItemSearch.Columns[6].Width = 42;
             }
-
-            dgvItemSearch.Visible = true;
-            dgvRoomSearch.Visible = false;
-
-            DataView itemSearch = new DataView(dsBelfray.Tables["BookingDets"], "bookingItemNo LIKE '%" + txtSearchItemNo.Text.ToString() + "%'", "bookingItemNo", DataViewRowState.CurrentRows);
-            dgvItemSearch.DataSource = itemSearch;
-
-            dgvItemSearch.Columns[0].HeaderText = "Room Number";
-            dgvItemSearch.Columns[2].HeaderText = "Item Number";
-            dgvItemSearch.Columns[3].HeaderText = "Item Description";
-
-            dgvItemSearch.Columns[0].Width = 72;
-            dgvItemSearch.Columns[1].Width = 90;
-            dgvItemSearch.Columns[2].Width = 82;
-            dgvItemSearch.Columns[3].Width = 292;
-            dgvItemSearch.Columns[4].Width = 72;
-            dgvItemSearch.Columns[5].Width = 62;
-            dgvItemSearch.Columns[6].Width = 42;
         }
 
         //Search Item Number Text Changed
         private void txtSearchItemNo_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearchItemNo.Text.Length > 0)
+            if (txtSearchItemNo.Text.Length == 0)
+            {
+                dgvItemSearch.Visible = false;
+                dgvRoomSearch.Visible = true;
+            }
+            else if (txtSearchItemNo.Text.Length > 0)
             {
                 txtSearchItemName.Text = "";
                 txtSearchRoomNo.Text = "";
                 //displayItems();
+
+
+                dgvItemSearch.Visible = true;
+                dgvRoomSearch.Visible = false;
+
+
+                DataView itemSearch = new DataView(dsBelfray.Tables["BookingDets"], "bookingItemNo LIKE '%" + txtSearchItemNo.Text.ToString() + "%'", "bookingItemNo", DataViewRowState.CurrentRows);
+                dgvItemSearch.DataSource = itemSearch;
+
+                dgvItemSearch.Columns[0].HeaderText = "Room Number";
+                dgvItemSearch.Columns[2].HeaderText = "Item Number";
+                dgvItemSearch.Columns[3].HeaderText = "Item Description";
+
+                dgvItemSearch.Columns[0].Width = 72;
+                dgvItemSearch.Columns[1].Width = 90;
+                dgvItemSearch.Columns[2].Width = 82;
+                dgvItemSearch.Columns[3].Width = 292;
+                dgvItemSearch.Columns[4].Width = 72;
+                dgvItemSearch.Columns[5].Width = 62;
+                dgvItemSearch.Columns[6].Width = 42;
             }
-
-            dgvItemSearch.Visible = true;
-            dgvRoomSearch.Visible = false;
-
-            DataView item2Search = new DataView(dsBelfray.Tables["BookingDets"], "itemDesc LIKE '%" + txtSearchItemName.Text.ToString() + "%'", "itemDesc", DataViewRowState.CurrentRows);
-            dgvItemSearch.DataSource = item2Search;
-
-            dgvItemSearch.Columns[0].HeaderText = "Room Number";
-            dgvItemSearch.Columns[2].HeaderText = "Item Number";
-            dgvItemSearch.Columns[3].HeaderText = "Item Description";
-
-            dgvItemSearch.Columns[0].Width = 72;
-            dgvItemSearch.Columns[1].Width = 90;
-            dgvItemSearch.Columns[2].Width = 82;
-            dgvItemSearch.Columns[3].Width = 292;
-            dgvItemSearch.Columns[4].Width = 72;
-            dgvItemSearch.Columns[5].Width = 62;
-            dgvItemSearch.Columns[6].Width = 42;
         }
 
         //Search Room Number Text Changed
@@ -119,6 +131,8 @@ namespace Belfray
             dgvRoomSearch.Columns[7].Width = 71;
             dgvRoomSearch.Columns[8].Width = 61;
             dgvRoomSearch.Columns[9].Width = 61;
+
+            picCancel.Visible = false;
         }
 
         //Row Clicked Rooms
@@ -169,6 +183,8 @@ namespace Belfray
                 lblCusSurname.Text = dgvRoomSearch.SelectedRows[0].Cells[7].Value.ToString();
                 lblBookingPayment.Text = dgvRoomSearch.SelectedRows[0].Cells[8].Value.ToString();
                 lblBookingPartySize.Text = dgvRoomSearch.SelectedRows[0].Cells[9].Value.ToString();
+
+                picCancel.Visible = true;
             }
         }
 
@@ -308,7 +324,7 @@ namespace Belfray
                             LEFT JOIN Booking Bk ON bk.bookingNo = Bi.bookingNo
                             LEFT JOIN Customer C on C.customerNo = Bk.customerNo
                             LEFT JOIN Payment P on P.paymentTypeID = Bk.paymentTypeID
-                            WHERE itemNo LIKE '%RM%' AND Bk.checkInDate <= GETDATE() AND Bk.checkOutDate >= GETDATE()
+                            WHERE itemNo LIKE '%RM%'
                             ORDER BY itemNo ASC";
             daBookingItem = new SqlDataAdapter(sqlBookingItem, connStr);
             cmdBBookingItem = new SqlCommandBuilder(daBookingItem);
@@ -389,6 +405,32 @@ namespace Belfray
             {
                 e.CellStyle.Format = "N2";
             }
+        }
+
+        //Cancel Button Functions
+        private void picCancel_MouseEnter(object sender, EventArgs e)
+        {
+            picCancel.BackColor = Color.FromArgb(205, 36, 36);
+        }
+
+        private void picCancel_Click(object sender, EventArgs e)
+        {
+            dgvItemSearch.Visible = false;
+            dgvRoomSearch.Visible = true;
+
+            txtSearchItemName.Text = "";
+            txtSearchItemNo.Text = "";
+            txtSearchRoomNo.Text = "";
+
+            pnlItem.Visible = false;
+            pnlRoom.Visible = false;
+
+            picCancel.Visible = false;
+        }
+
+        private void picCancel_MouseLeave(object sender, EventArgs e)
+        {
+            picCancel.BackColor = Color.Transparent;
         }
     }
 }

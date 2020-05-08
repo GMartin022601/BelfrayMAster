@@ -30,6 +30,7 @@
         {
             this.dgvStaffSearch = new System.Windows.Forms.DataGridView();
             this.pnlSearchDetails = new System.Windows.Forms.Panel();
+            this.picDelete = new System.Windows.Forms.PictureBox();
             this.pnlStaffDets = new System.Windows.Forms.Panel();
             this.lblStaffPcode = new System.Windows.Forms.Label();
             this.lblStaffCounty = new System.Windows.Forms.Label();
@@ -47,18 +48,19 @@
             this.lblForename = new System.Windows.Forms.Label();
             this.lblStaffID = new System.Windows.Forms.Label();
             this.lblStaffNo = new System.Windows.Forms.Label();
-            this.picDelete = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffSearch)).BeginInit();
             this.pnlSearchDetails.SuspendLayout();
-            this.pnlStaffDets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
+            this.pnlStaffDets.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvStaffSearch
             // 
+            this.dgvStaffSearch.AllowUserToAddRows = false;
             this.dgvStaffSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStaffSearch.Location = new System.Drawing.Point(2, 1);
             this.dgvStaffSearch.Name = "dgvStaffSearch";
+            this.dgvStaffSearch.ReadOnly = true;
             this.dgvStaffSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaffSearch.Size = new System.Drawing.Size(755, 347);
             this.dgvStaffSearch.TabIndex = 12;
@@ -73,6 +75,20 @@
             this.pnlSearchDetails.Name = "pnlSearchDetails";
             this.pnlSearchDetails.Size = new System.Drawing.Size(455, 347);
             this.pnlSearchDetails.TabIndex = 11;
+            // 
+            // picDelete
+            // 
+            this.picDelete.Image = global::Belfray.Properties.Resources.FinalDeleteButton;
+            this.picDelete.Location = new System.Drawing.Point(392, 284);
+            this.picDelete.Name = "picDelete";
+            this.picDelete.Size = new System.Drawing.Size(60, 60);
+            this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDelete.TabIndex = 123;
+            this.picDelete.TabStop = false;
+            this.picDelete.Visible = false;
+            this.picDelete.Click += new System.EventHandler(this.picDelete_Click);
+            this.picDelete.MouseEnter += new System.EventHandler(this.picDelete_MouseEnter);
+            this.picDelete.MouseLeave += new System.EventHandler(this.picDelete_MouseLeave);
             // 
             // pnlStaffDets
             // 
@@ -258,20 +274,6 @@
             this.lblStaffNo.TabIndex = 86;
             this.lblStaffNo.Text = "STAFF ID:";
             // 
-            // picDelete
-            // 
-            this.picDelete.Image = global::Belfray.Properties.Resources.FinalDeleteButton;
-            this.picDelete.Location = new System.Drawing.Point(392, 284);
-            this.picDelete.Name = "picDelete";
-            this.picDelete.Size = new System.Drawing.Size(60, 60);
-            this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picDelete.TabIndex = 123;
-            this.picDelete.TabStop = false;
-            this.picDelete.Visible = false;
-            this.picDelete.Click += new System.EventHandler(this.picDelete_Click);
-            this.picDelete.MouseEnter += new System.EventHandler(this.picDelete_MouseEnter);
-            this.picDelete.MouseLeave += new System.EventHandler(this.picDelete_MouseLeave);
-            // 
             // StaffDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,9 +287,9 @@
             this.Load += new System.EventHandler(this.StaffDelete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffSearch)).EndInit();
             this.pnlSearchDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             this.pnlStaffDets.ResumeLayout(false);
             this.pnlStaffDets.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             this.ResumeLayout(false);
 
         }

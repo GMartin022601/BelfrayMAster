@@ -47,6 +47,17 @@
             this.lblCustStreet = new System.Windows.Forms.Label();
             this.lblCustSurname = new System.Windows.Forms.Label();
             this.lblCustForename = new System.Windows.Forms.Label();
+            this.lblCustTitle = new System.Windows.Forms.Label();
+            this.lblPhoneNo = new System.Windows.Forms.Label();
+            this.lblPostcode = new System.Windows.Forms.Label();
+            this.lblCounty = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblStreet = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.lblForename = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblCustNo = new System.Windows.Forms.Label();
+            this.lblCustNum = new System.Windows.Forms.Label();
             this.pnlBooking = new System.Windows.Forms.Panel();
             this.lblRooms = new System.Windows.Forms.Label();
             this.lblRoom = new System.Windows.Forms.Label();
@@ -66,17 +77,6 @@
             this.lblArrive = new System.Windows.Forms.Label();
             this.lblBookingNo = new System.Windows.Forms.Label();
             this.lblBookingNum = new System.Windows.Forms.Label();
-            this.lblCustTitle = new System.Windows.Forms.Label();
-            this.lblPhoneNo = new System.Windows.Forms.Label();
-            this.lblPostcode = new System.Windows.Forms.Label();
-            this.lblCounty = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.lblStreet = new System.Windows.Forms.Label();
-            this.lblSurname = new System.Windows.Forms.Label();
-            this.lblForename = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblCustNo = new System.Windows.Forms.Label();
-            this.lblCustNum = new System.Windows.Forms.Label();
             this.dgvCustomerSearch = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookingSearch)).BeginInit();
             this.pnlSearchMethod.SuspendLayout();
@@ -88,9 +88,11 @@
             // 
             // dgvBookingSearch
             // 
+            this.dgvBookingSearch.AllowUserToAddRows = false;
             this.dgvBookingSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBookingSearch.Location = new System.Drawing.Point(2, 1);
             this.dgvBookingSearch.Name = "dgvBookingSearch";
+            this.dgvBookingSearch.ReadOnly = true;
             this.dgvBookingSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBookingSearch.Size = new System.Drawing.Size(755, 347);
             this.dgvBookingSearch.TabIndex = 1;
@@ -301,6 +303,116 @@
             this.lblCustForename.TabIndex = 104;
             this.lblCustForename.Text = "X";
             // 
+            // lblCustTitle
+            // 
+            this.lblCustTitle.AutoSize = true;
+            this.lblCustTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustTitle.Location = new System.Drawing.Point(117, 35);
+            this.lblCustTitle.Name = "lblCustTitle";
+            this.lblCustTitle.Size = new System.Drawing.Size(15, 15);
+            this.lblCustTitle.TabIndex = 103;
+            this.lblCustTitle.Text = "X";
+            // 
+            // lblPhoneNo
+            // 
+            this.lblPhoneNo.AutoSize = true;
+            this.lblPhoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneNo.Location = new System.Drawing.Point(10, 215);
+            this.lblPhoneNo.Name = "lblPhoneNo";
+            this.lblPhoneNo.Size = new System.Drawing.Size(74, 15);
+            this.lblPhoneNo.TabIndex = 102;
+            this.lblPhoneNo.Text = "PHONE NO:";
+            // 
+            // lblPostcode
+            // 
+            this.lblPostcode.AutoSize = true;
+            this.lblPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostcode.Location = new System.Drawing.Point(10, 245);
+            this.lblPostcode.Name = "lblPostcode";
+            this.lblPostcode.Size = new System.Drawing.Size(76, 15);
+            this.lblPostcode.TabIndex = 94;
+            this.lblPostcode.Text = "POSTCODE:";
+            // 
+            // lblCounty
+            // 
+            this.lblCounty.AutoSize = true;
+            this.lblCounty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCounty.Location = new System.Drawing.Point(10, 185);
+            this.lblCounty.Name = "lblCounty";
+            this.lblCounty.Size = new System.Drawing.Size(59, 15);
+            this.lblCounty.TabIndex = 93;
+            this.lblCounty.Text = "COUNTY:";
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(10, 155);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(35, 15);
+            this.lblCity.TabIndex = 92;
+            this.lblCity.Text = "CITY:";
+            // 
+            // lblStreet
+            // 
+            this.lblStreet.AutoSize = true;
+            this.lblStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreet.Location = new System.Drawing.Point(10, 125);
+            this.lblStreet.Name = "lblStreet";
+            this.lblStreet.Size = new System.Drawing.Size(57, 15);
+            this.lblStreet.TabIndex = 91;
+            this.lblStreet.Text = "STREET:";
+            // 
+            // lblSurname
+            // 
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSurname.Location = new System.Drawing.Point(10, 95);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(71, 15);
+            this.lblSurname.TabIndex = 90;
+            this.lblSurname.Text = "SURNAME:";
+            // 
+            // lblForename
+            // 
+            this.lblForename.AutoSize = true;
+            this.lblForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForename.Location = new System.Drawing.Point(10, 65);
+            this.lblForename.Name = "lblForename";
+            this.lblForename.Size = new System.Drawing.Size(78, 15);
+            this.lblForename.TabIndex = 89;
+            this.lblForename.Text = "FORENAME:";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(10, 35);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(42, 15);
+            this.lblTitle.TabIndex = 88;
+            this.lblTitle.Text = "TITLE:";
+            // 
+            // lblCustNo
+            // 
+            this.lblCustNo.AutoSize = true;
+            this.lblCustNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustNo.Location = new System.Drawing.Point(117, 7);
+            this.lblCustNo.Name = "lblCustNo";
+            this.lblCustNo.Size = new System.Drawing.Size(15, 15);
+            this.lblCustNo.TabIndex = 87;
+            this.lblCustNo.Text = "X";
+            // 
+            // lblCustNum
+            // 
+            this.lblCustNum.AutoSize = true;
+            this.lblCustNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustNum.Location = new System.Drawing.Point(10, 5);
+            this.lblCustNum.Name = "lblCustNum";
+            this.lblCustNum.Size = new System.Drawing.Size(100, 15);
+            this.lblCustNum.TabIndex = 86;
+            this.lblCustNum.Text = "CUSTOMER NO:";
+            // 
             // pnlBooking
             // 
             this.pnlBooking.Controls.Add(this.lblRooms);
@@ -507,121 +619,13 @@
             this.lblBookingNum.TabIndex = 86;
             this.lblBookingNum.Text = "BOOKING NO:";
             // 
-            // lblCustTitle
-            // 
-            this.lblCustTitle.AutoSize = true;
-            this.lblCustTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustTitle.Location = new System.Drawing.Point(117, 35);
-            this.lblCustTitle.Name = "lblCustTitle";
-            this.lblCustTitle.Size = new System.Drawing.Size(15, 15);
-            this.lblCustTitle.TabIndex = 103;
-            this.lblCustTitle.Text = "X";
-            // 
-            // lblPhoneNo
-            // 
-            this.lblPhoneNo.AutoSize = true;
-            this.lblPhoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNo.Location = new System.Drawing.Point(10, 215);
-            this.lblPhoneNo.Name = "lblPhoneNo";
-            this.lblPhoneNo.Size = new System.Drawing.Size(74, 15);
-            this.lblPhoneNo.TabIndex = 102;
-            this.lblPhoneNo.Text = "PHONE NO:";
-            // 
-            // lblPostcode
-            // 
-            this.lblPostcode.AutoSize = true;
-            this.lblPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostcode.Location = new System.Drawing.Point(10, 245);
-            this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(76, 15);
-            this.lblPostcode.TabIndex = 94;
-            this.lblPostcode.Text = "POSTCODE:";
-            // 
-            // lblCounty
-            // 
-            this.lblCounty.AutoSize = true;
-            this.lblCounty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCounty.Location = new System.Drawing.Point(10, 185);
-            this.lblCounty.Name = "lblCounty";
-            this.lblCounty.Size = new System.Drawing.Size(59, 15);
-            this.lblCounty.TabIndex = 93;
-            this.lblCounty.Text = "COUNTY:";
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(10, 155);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(35, 15);
-            this.lblCity.TabIndex = 92;
-            this.lblCity.Text = "CITY:";
-            // 
-            // lblStreet
-            // 
-            this.lblStreet.AutoSize = true;
-            this.lblStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreet.Location = new System.Drawing.Point(10, 125);
-            this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(57, 15);
-            this.lblStreet.TabIndex = 91;
-            this.lblStreet.Text = "STREET:";
-            // 
-            // lblSurname
-            // 
-            this.lblSurname.AutoSize = true;
-            this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname.Location = new System.Drawing.Point(10, 95);
-            this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(71, 15);
-            this.lblSurname.TabIndex = 90;
-            this.lblSurname.Text = "SURNAME:";
-            // 
-            // lblForename
-            // 
-            this.lblForename.AutoSize = true;
-            this.lblForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForename.Location = new System.Drawing.Point(10, 65);
-            this.lblForename.Name = "lblForename";
-            this.lblForename.Size = new System.Drawing.Size(78, 15);
-            this.lblForename.TabIndex = 89;
-            this.lblForename.Text = "FORENAME:";
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(10, 35);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(42, 15);
-            this.lblTitle.TabIndex = 88;
-            this.lblTitle.Text = "TITLE:";
-            // 
-            // lblCustNo
-            // 
-            this.lblCustNo.AutoSize = true;
-            this.lblCustNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustNo.Location = new System.Drawing.Point(117, 7);
-            this.lblCustNo.Name = "lblCustNo";
-            this.lblCustNo.Size = new System.Drawing.Size(15, 15);
-            this.lblCustNo.TabIndex = 87;
-            this.lblCustNo.Text = "X";
-            // 
-            // lblCustNum
-            // 
-            this.lblCustNum.AutoSize = true;
-            this.lblCustNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustNum.Location = new System.Drawing.Point(10, 5);
-            this.lblCustNum.Name = "lblCustNum";
-            this.lblCustNum.Size = new System.Drawing.Size(100, 15);
-            this.lblCustNum.TabIndex = 86;
-            this.lblCustNum.Text = "CUSTOMER NO:";
-            // 
             // dgvCustomerSearch
             // 
+            this.dgvCustomerSearch.AllowUserToAddRows = false;
             this.dgvCustomerSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomerSearch.Location = new System.Drawing.Point(2, 1);
             this.dgvCustomerSearch.Name = "dgvCustomerSearch";
+            this.dgvCustomerSearch.ReadOnly = true;
             this.dgvCustomerSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerSearch.Size = new System.Drawing.Size(755, 347);
             this.dgvCustomerSearch.TabIndex = 4;

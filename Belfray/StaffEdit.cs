@@ -443,8 +443,6 @@ namespace Belfray
 
                             txtCurrent.Enabled = false;
                             cmbAccountType.Enabled = false;
-
-                            txtCurrent.Text = "";
                         }
                     }
                     catch (Exception ex)
@@ -501,7 +499,6 @@ namespace Belfray
 
                 txtCurrent.Enabled = false;
 
-                txtCurrent.Text = "";
                 cmbAccountType.Enabled = false;
             }
 
@@ -550,6 +547,8 @@ namespace Belfray
                                 cmbAccountType.SelectedIndex = 2;
                                 break;
                         }
+
+                        txtCurrent.Text = drStaff["staffPassword"].ToString();
                     }
                 }
             }

@@ -34,9 +34,11 @@
             // 
             // dgvStaff
             // 
+            this.dgvStaff.AllowUserToAddRows = false;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStaff.Location = new System.Drawing.Point(2, 1);
             this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.ReadOnly = true;
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(1216, 347);
             this.dgvStaff.TabIndex = 1;

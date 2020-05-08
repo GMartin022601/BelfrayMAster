@@ -1062,19 +1062,19 @@ namespace Belfray
         //Room Booking Edit Close
         private void RoomServiceAdd_Closed(object sender, FormClosedEventArgs e)
         {
-            picTabDisplay_Click(sender, e);
+            picTabAdd_Click(sender, e);
         }
 
         //Room Booking Edit Close
         private void RoomServiceEdit_Closed(object sender, FormClosedEventArgs e)
         {
-            picTabDisplay_Click(sender, e);
+            picTabEdit_Click(sender, e);
         }
 
         //Room Booking Delete Close
         private void RoomServiceDel_Closed(object sender, FormClosedEventArgs e)
         {
-            picTabDisplay_Click(sender, e);
+            picTabDelete_Click(sender, e);
         }
 
         //Room Booking Delete Close

@@ -48,14 +48,19 @@ namespace Belfray
             this.lblStreet = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblForename = new System.Windows.Forms.Label();
+            this.picCustomerCancel = new System.Windows.Forms.PictureBox();
+            this.picCustomerSave = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblCustNo = new System.Windows.Forms.Label();
             this.lblCustNum = new System.Windows.Forms.Label();
             this.pnlBookingDets = new System.Windows.Forms.Panel();
             this.gbBookingDetails = new System.Windows.Forms.GroupBox();
+            this.picRemoveRoom = new System.Windows.Forms.PictureBox();
+            this.picAddRoom = new System.Windows.Forms.PictureBox();
             this.lblRoomNo = new System.Windows.Forms.Label();
             this.txtPartySize = new System.Windows.Forms.TextBox();
             this.cmbPayType = new System.Windows.Forms.ComboBox();
+            this.picAddNewCust = new System.Windows.Forms.PictureBox();
             this.cmbCustomerNo = new System.Windows.Forms.ComboBox();
             this.lblCheckInTime = new System.Windows.Forms.Label();
             this.lblPartySize = new System.Windows.Forms.Label();
@@ -67,6 +72,8 @@ namespace Belfray
             this.dtpBookingCheckOut = new System.Windows.Forms.DateTimePicker();
             this.lblCheckOutDate = new System.Windows.Forms.Label();
             this.dtpBookingCheckIn = new System.Windows.Forms.DateTimePicker();
+            this.picBookingCancel = new System.Windows.Forms.PictureBox();
+            this.picBookingSave = new System.Windows.Forms.PictureBox();
             this.lblCheckInDate = new System.Windows.Forms.Label();
             this.lblBookingNo = new System.Windows.Forms.Label();
             this.lblBookingNum = new System.Windows.Forms.Label();
@@ -81,30 +88,23 @@ namespace Belfray
             this.lblRedRoom = new System.Windows.Forms.Label();
             this.pnlGreen = new System.Windows.Forms.Panel();
             this.lblGreenRoom = new System.Windows.Forms.Label();
-            this.picRemoveRoom = new System.Windows.Forms.PictureBox();
-            this.picAddRoom = new System.Windows.Forms.PictureBox();
-            this.picAddNewCust = new System.Windows.Forms.PictureBox();
-            this.picBookingCancel = new System.Windows.Forms.PictureBox();
-            this.picBookingSave = new System.Windows.Forms.PictureBox();
-            this.picCustomerCancel = new System.Windows.Forms.PictureBox();
-            this.picCustomerSave = new System.Windows.Forms.PictureBox();
             this.pnlCustomer.SuspendLayout();
             this.gbCustomerDets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomerCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomerSave)).BeginInit();
             this.pnlBookingDets.SuspendLayout();
             this.gbBookingDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemoveRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddNewCust)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBookingCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBookingSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.pnlRooms.SuspendLayout();
             this.gbRoomsAdded.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
             this.pnlRed.SuspendLayout();
             this.pnlGreen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRemoveRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddNewCust)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBookingCancel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBookingSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomerCancel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomerSave)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCustomer
@@ -280,6 +280,34 @@ namespace Belfray
             this.lblForename.TabIndex = 64;
             this.lblForename.Text = "FORENAME:";
             // 
+            // picCustomerCancel
+            // 
+            this.picCustomerCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picCustomerCancel.Location = new System.Drawing.Point(234, 196);
+            this.picCustomerCancel.Name = "picCustomerCancel";
+            this.picCustomerCancel.Size = new System.Drawing.Size(40, 40);
+            this.picCustomerCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCustomerCancel.TabIndex = 62;
+            this.picCustomerCancel.TabStop = false;
+            this.picCustomerCancel.Visible = false;
+            this.picCustomerCancel.Click += new System.EventHandler(this.picCustomerCancel_Click);
+            this.picCustomerCancel.MouseEnter += new System.EventHandler(this.picCustomerCancel_MouseEnter);
+            this.picCustomerCancel.MouseLeave += new System.EventHandler(this.picCustomerCancel_MouseLeave);
+            // 
+            // picCustomerSave
+            // 
+            this.picCustomerSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picCustomerSave.Location = new System.Drawing.Point(277, 196);
+            this.picCustomerSave.Name = "picCustomerSave";
+            this.picCustomerSave.Size = new System.Drawing.Size(40, 40);
+            this.picCustomerSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCustomerSave.TabIndex = 61;
+            this.picCustomerSave.TabStop = false;
+            this.picCustomerSave.Visible = false;
+            this.picCustomerSave.Click += new System.EventHandler(this.picCustomerSave_Click);
+            this.picCustomerSave.MouseEnter += new System.EventHandler(this.picCustomerSave_MouseEnter);
+            this.picCustomerSave.MouseLeave += new System.EventHandler(this.picCustomerSave_MouseLeave);
+            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -351,6 +379,32 @@ namespace Belfray
             this.gbBookingDetails.TabStop = false;
             this.gbBookingDetails.Text = "Booking Details";
             // 
+            // picRemoveRoom
+            // 
+            this.picRemoveRoom.Image = global::Belfray.Properties.Resources.Remove__2_;
+            this.picRemoveRoom.Location = new System.Drawing.Point(211, 129);
+            this.picRemoveRoom.Name = "picRemoveRoom";
+            this.picRemoveRoom.Size = new System.Drawing.Size(24, 24);
+            this.picRemoveRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRemoveRoom.TabIndex = 80;
+            this.picRemoveRoom.TabStop = false;
+            this.picRemoveRoom.Click += new System.EventHandler(this.picRemoveRoom_Click);
+            this.picRemoveRoom.MouseEnter += new System.EventHandler(this.picRemoveRoom_MouseEnter);
+            this.picRemoveRoom.MouseLeave += new System.EventHandler(this.picRemoveRoom_MouseLeave);
+            // 
+            // picAddRoom
+            // 
+            this.picAddRoom.Image = global::Belfray.Properties.Resources.AddNew;
+            this.picAddRoom.Location = new System.Drawing.Point(181, 129);
+            this.picAddRoom.Name = "picAddRoom";
+            this.picAddRoom.Size = new System.Drawing.Size(24, 24);
+            this.picAddRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAddRoom.TabIndex = 79;
+            this.picAddRoom.TabStop = false;
+            this.picAddRoom.Click += new System.EventHandler(this.picAddRoom_Click);
+            this.picAddRoom.MouseEnter += new System.EventHandler(this.picAddRoom_MouseEnter);
+            this.picAddRoom.MouseLeave += new System.EventHandler(this.picAddRoom_MouseLeave);
+            // 
             // lblRoomNo
             // 
             this.lblRoomNo.AutoSize = true;
@@ -376,6 +430,19 @@ namespace Belfray
             this.cmbPayType.Name = "cmbPayType";
             this.cmbPayType.Size = new System.Drawing.Size(133, 23);
             this.cmbPayType.TabIndex = 75;
+            // 
+            // picAddNewCust
+            // 
+            this.picAddNewCust.Image = global::Belfray.Properties.Resources.AddNew;
+            this.picAddNewCust.Location = new System.Drawing.Point(276, 197);
+            this.picAddNewCust.Name = "picAddNewCust";
+            this.picAddNewCust.Size = new System.Drawing.Size(24, 24);
+            this.picAddNewCust.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAddNewCust.TabIndex = 74;
+            this.picAddNewCust.TabStop = false;
+            this.picAddNewCust.Click += new System.EventHandler(this.picAddNewCust_Click);
+            this.picAddNewCust.MouseEnter += new System.EventHandler(this.picAddNewCust_MouseEnter);
+            this.picAddNewCust.MouseLeave += new System.EventHandler(this.picAddNewCust_MouseLeave);
             // 
             // cmbCustomerNo
             // 
@@ -487,6 +554,32 @@ namespace Belfray
             this.dtpBookingCheckIn.Size = new System.Drawing.Size(161, 21);
             this.dtpBookingCheckIn.TabIndex = 63;
             // 
+            // picBookingCancel
+            // 
+            this.picBookingCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picBookingCancel.Location = new System.Drawing.Point(113, 295);
+            this.picBookingCancel.Name = "picBookingCancel";
+            this.picBookingCancel.Size = new System.Drawing.Size(40, 40);
+            this.picBookingCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBookingCancel.TabIndex = 62;
+            this.picBookingCancel.TabStop = false;
+            this.picBookingCancel.Click += new System.EventHandler(this.picBookingCancel_Click);
+            this.picBookingCancel.MouseEnter += new System.EventHandler(this.picBookingCancel_MouseEnter);
+            this.picBookingCancel.MouseLeave += new System.EventHandler(this.picBookingCancel_MouseLeave);
+            // 
+            // picBookingSave
+            // 
+            this.picBookingSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picBookingSave.Location = new System.Drawing.Point(156, 295);
+            this.picBookingSave.Name = "picBookingSave";
+            this.picBookingSave.Size = new System.Drawing.Size(40, 40);
+            this.picBookingSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBookingSave.TabIndex = 61;
+            this.picBookingSave.TabStop = false;
+            this.picBookingSave.Click += new System.EventHandler(this.picBookingSave_Click);
+            this.picBookingSave.MouseEnter += new System.EventHandler(this.picBookingSave_MouseEnter);
+            this.picBookingSave.MouseLeave += new System.EventHandler(this.picBookingSave_MouseLeave);
+            // 
             // lblCheckInDate
             // 
             this.lblCheckInDate.AutoSize = true;
@@ -551,12 +644,14 @@ namespace Belfray
             // 
             // dgvRooms
             // 
+            this.dgvRooms.AllowUserToAddRows = false;
             this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BookingNumber,
             this.RoomNum});
             this.dgvRooms.Location = new System.Drawing.Point(6, 16);
             this.dgvRooms.Name = "dgvRooms";
+            this.dgvRooms.ReadOnly = true;
             this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRooms.Size = new System.Drawing.Size(539, 67);
             this.dgvRooms.TabIndex = 0;
@@ -567,6 +662,7 @@ namespace Belfray
             this.BookingNumber.Frozen = true;
             this.BookingNumber.HeaderText = "Booking Number";
             this.BookingNumber.Name = "BookingNumber";
+            this.BookingNumber.ReadOnly = true;
             this.BookingNumber.Width = 300;
             // 
             // RoomNum
@@ -574,6 +670,7 @@ namespace Belfray
             this.RoomNum.Frozen = true;
             this.RoomNum.HeaderText = "Room Number";
             this.RoomNum.Name = "RoomNum";
+            this.RoomNum.ReadOnly = true;
             this.RoomNum.Width = 200;
             // 
             // pnlRed
@@ -620,99 +717,6 @@ namespace Belfray
             this.lblGreenRoom.TabIndex = 47;
             this.lblGreenRoom.Text = "Add another room to the booking.";
             // 
-            // picRemoveRoom
-            // 
-            this.picRemoveRoom.Image = global::Belfray.Properties.Resources.Remove__2_;
-            this.picRemoveRoom.Location = new System.Drawing.Point(211, 129);
-            this.picRemoveRoom.Name = "picRemoveRoom";
-            this.picRemoveRoom.Size = new System.Drawing.Size(24, 24);
-            this.picRemoveRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRemoveRoom.TabIndex = 80;
-            this.picRemoveRoom.TabStop = false;
-            this.picRemoveRoom.Click += new System.EventHandler(this.picRemoveRoom_Click);
-            this.picRemoveRoom.MouseEnter += new System.EventHandler(this.picRemoveRoom_MouseEnter);
-            this.picRemoveRoom.MouseLeave += new System.EventHandler(this.picRemoveRoom_MouseLeave);
-            // 
-            // picAddRoom
-            // 
-            this.picAddRoom.Image = global::Belfray.Properties.Resources.AddNew;
-            this.picAddRoom.Location = new System.Drawing.Point(181, 129);
-            this.picAddRoom.Name = "picAddRoom";
-            this.picAddRoom.Size = new System.Drawing.Size(24, 24);
-            this.picAddRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAddRoom.TabIndex = 79;
-            this.picAddRoom.TabStop = false;
-            this.picAddRoom.Click += new System.EventHandler(this.picAddRoom_Click);
-            this.picAddRoom.MouseEnter += new System.EventHandler(this.picAddRoom_MouseEnter);
-            this.picAddRoom.MouseLeave += new System.EventHandler(this.picAddRoom_MouseLeave);
-            // 
-            // picAddNewCust
-            // 
-            this.picAddNewCust.Image = global::Belfray.Properties.Resources.AddNew;
-            this.picAddNewCust.Location = new System.Drawing.Point(276, 197);
-            this.picAddNewCust.Name = "picAddNewCust";
-            this.picAddNewCust.Size = new System.Drawing.Size(24, 24);
-            this.picAddNewCust.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAddNewCust.TabIndex = 74;
-            this.picAddNewCust.TabStop = false;
-            this.picAddNewCust.Click += new System.EventHandler(this.picAddNewCust_Click);
-            this.picAddNewCust.MouseEnter += new System.EventHandler(this.picAddNewCust_MouseEnter);
-            this.picAddNewCust.MouseLeave += new System.EventHandler(this.picAddNewCust_MouseLeave);
-            // 
-            // picBookingCancel
-            // 
-            this.picBookingCancel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picBookingCancel.Location = new System.Drawing.Point(113, 295);
-            this.picBookingCancel.Name = "picBookingCancel";
-            this.picBookingCancel.Size = new System.Drawing.Size(40, 40);
-            this.picBookingCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBookingCancel.TabIndex = 62;
-            this.picBookingCancel.TabStop = false;
-            this.picBookingCancel.Click += new System.EventHandler(this.picBookingCancel_Click);
-            this.picBookingCancel.MouseEnter += new System.EventHandler(this.picBookingCancel_MouseEnter);
-            this.picBookingCancel.MouseLeave += new System.EventHandler(this.picBookingCancel_MouseLeave);
-            // 
-            // picBookingSave
-            // 
-            this.picBookingSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picBookingSave.Location = new System.Drawing.Point(156, 295);
-            this.picBookingSave.Name = "picBookingSave";
-            this.picBookingSave.Size = new System.Drawing.Size(40, 40);
-            this.picBookingSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBookingSave.TabIndex = 61;
-            this.picBookingSave.TabStop = false;
-            this.picBookingSave.Click += new System.EventHandler(this.picBookingSave_Click);
-            this.picBookingSave.MouseEnter += new System.EventHandler(this.picBookingSave_MouseEnter);
-            this.picBookingSave.MouseLeave += new System.EventHandler(this.picBookingSave_MouseLeave);
-            // 
-            // picCustomerCancel
-            // 
-            this.picCustomerCancel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picCustomerCancel.Location = new System.Drawing.Point(234, 196);
-            this.picCustomerCancel.Name = "picCustomerCancel";
-            this.picCustomerCancel.Size = new System.Drawing.Size(40, 40);
-            this.picCustomerCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCustomerCancel.TabIndex = 62;
-            this.picCustomerCancel.TabStop = false;
-            this.picCustomerCancel.Visible = false;
-            this.picCustomerCancel.Click += new System.EventHandler(this.picCustomerCancel_Click);
-            this.picCustomerCancel.MouseEnter += new System.EventHandler(this.picCustomerCancel_MouseEnter);
-            this.picCustomerCancel.MouseLeave += new System.EventHandler(this.picCustomerCancel_MouseLeave);
-            // 
-            // picCustomerSave
-            // 
-            this.picCustomerSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picCustomerSave.Location = new System.Drawing.Point(277, 196);
-            this.picCustomerSave.Name = "picCustomerSave";
-            this.picCustomerSave.Size = new System.Drawing.Size(40, 40);
-            this.picCustomerSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCustomerSave.TabIndex = 61;
-            this.picCustomerSave.TabStop = false;
-            this.picCustomerSave.Visible = false;
-            this.picCustomerSave.Click += new System.EventHandler(this.picCustomerSave_Click);
-            this.picCustomerSave.MouseEnter += new System.EventHandler(this.picCustomerSave_MouseEnter);
-            this.picCustomerSave.MouseLeave += new System.EventHandler(this.picCustomerSave_MouseLeave);
-            // 
             // RoomBookingAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -731,9 +735,16 @@ namespace Belfray
             this.pnlCustomer.ResumeLayout(false);
             this.gbCustomerDets.ResumeLayout(false);
             this.gbCustomerDets.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomerCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomerSave)).EndInit();
             this.pnlBookingDets.ResumeLayout(false);
             this.gbBookingDetails.ResumeLayout(false);
             this.gbBookingDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemoveRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddNewCust)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBookingCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBookingSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
             this.pnlRooms.ResumeLayout(false);
             this.gbRoomsAdded.ResumeLayout(false);
@@ -742,13 +753,6 @@ namespace Belfray
             this.pnlRed.PerformLayout();
             this.pnlGreen.ResumeLayout(false);
             this.pnlGreen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRemoveRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddNewCust)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBookingCancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBookingSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomerCancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomerSave)).EndInit();
             this.ResumeLayout(false);
 
         }

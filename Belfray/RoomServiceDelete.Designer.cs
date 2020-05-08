@@ -84,7 +84,7 @@
             this.ItemNumber,
             this.Price,
             this.Qty});
-            this.dgvCurrentOrder.Location = new System.Drawing.Point(600, 220);
+            this.dgvCurrentOrder.Location = new System.Drawing.Point(603, 223);
             this.dgvCurrentOrder.Name = "dgvCurrentOrder";
             this.dgvCurrentOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurrentOrder.Size = new System.Drawing.Size(615, 125);
@@ -126,7 +126,7 @@
             this.pnlSearchDetails.Controls.Add(this.gbBookingInfo);
             this.pnlSearchDetails.Controls.Add(this.gbItemInfo);
             this.pnlSearchDetails.Controls.Add(this.gbCustomerDets);
-            this.pnlSearchDetails.Location = new System.Drawing.Point(600, -2);
+            this.pnlSearchDetails.Location = new System.Drawing.Point(603, 1);
             this.pnlSearchDetails.Name = "pnlSearchDetails";
             this.pnlSearchDetails.Size = new System.Drawing.Size(615, 219);
             this.pnlSearchDetails.TabIndex = 17;
@@ -462,7 +462,7 @@
             // dgvRooms
             // 
             this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRooms.Location = new System.Drawing.Point(-2, -2);
+            this.dgvRooms.Location = new System.Drawing.Point(1, 1);
             this.dgvRooms.Name = "dgvRooms";
             this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRooms.Size = new System.Drawing.Size(596, 347);
@@ -473,7 +473,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 343);
+            this.ClientSize = new System.Drawing.Size(1220, 349);
             this.Controls.Add(this.dgvCurrentOrder);
             this.Controls.Add(this.pnlSearchDetails);
             this.Controls.Add(this.dgvRooms);

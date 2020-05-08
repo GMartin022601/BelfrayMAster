@@ -541,9 +541,11 @@
             // 
             // dgvDisplay
             // 
+            this.dgvDisplay.AllowUserToAddRows = false;
             this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplay.Location = new System.Drawing.Point(10, 38);
             this.dgvDisplay.Name = "dgvDisplay";
+            this.dgvDisplay.ReadOnly = true;
             this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDisplay.Size = new System.Drawing.Size(793, 300);
             this.dgvDisplay.TabIndex = 1;

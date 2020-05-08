@@ -39,6 +39,10 @@
             this.lblRoomNo = new System.Windows.Forms.Label();
             this.lblRoomNum = new System.Windows.Forms.Label();
             this.gbItemInfo = new System.Windows.Forms.GroupBox();
+            this.picAdd = new System.Windows.Forms.PictureBox();
+            this.picRemove = new System.Windows.Forms.PictureBox();
+            this.picCancel = new System.Windows.Forms.PictureBox();
+            this.picSave = new System.Windows.Forms.PictureBox();
             this.lblItemTotal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
@@ -59,36 +63,35 @@
             this.lblCustomerNo = new System.Windows.Forms.Label();
             this.lblCustomerNum = new System.Windows.Forms.Label();
             this.dgvCurrentOrder = new System.Windows.Forms.DataGridView();
-            this.dgvItemList = new System.Windows.Forms.DataGridView();
             this.BookingNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvItemList = new System.Windows.Forms.DataGridView();
             this.errP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.picAdd = new System.Windows.Forms.PictureBox();
-            this.picRemove = new System.Windows.Forms.PictureBox();
-            this.picCancel = new System.Windows.Forms.PictureBox();
-            this.picSave = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
             this.pnlSearchDetails.SuspendLayout();
             this.gbBookingInfo.SuspendLayout();
             this.gbItemInfo.SuspendLayout();
-            this.gbCustomerDets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItemList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSave)).BeginInit();
+            this.gbCustomerDets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errP)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRooms
             // 
+            this.dgvRooms.AllowUserToAddRows = false;
+            this.dgvRooms.AllowUserToDeleteRows = false;
             this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRooms.Location = new System.Drawing.Point(1, 1);
             this.dgvRooms.Name = "dgvRooms";
+            this.dgvRooms.ReadOnly = true;
             this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRooms.Size = new System.Drawing.Size(596, 347);
             this.dgvRooms.TabIndex = 9;
@@ -203,6 +206,61 @@
             this.gbItemInfo.TabIndex = 1;
             this.gbItemInfo.TabStop = false;
             this.gbItemInfo.Text = "Item Info";
+            // 
+            // picAdd
+            // 
+            this.picAdd.Image = global::Belfray.Properties.Resources.Add;
+            this.picAdd.Location = new System.Drawing.Point(44, 177);
+            this.picAdd.Name = "picAdd";
+            this.picAdd.Size = new System.Drawing.Size(30, 30);
+            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAdd.TabIndex = 100;
+            this.picAdd.TabStop = false;
+            this.picAdd.Visible = false;
+            this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
+            this.picAdd.MouseEnter += new System.EventHandler(this.picAdd_MouseEnter);
+            this.picAdd.MouseLeave += new System.EventHandler(this.picAdd_MouseLeave);
+            // 
+            // picRemove
+            // 
+            this.picRemove.Image = global::Belfray.Properties.Resources.Remove;
+            this.picRemove.Location = new System.Drawing.Point(6, 177);
+            this.picRemove.Name = "picRemove";
+            this.picRemove.Size = new System.Drawing.Size(30, 30);
+            this.picRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRemove.TabIndex = 99;
+            this.picRemove.TabStop = false;
+            this.picRemove.Visible = false;
+            this.picRemove.Click += new System.EventHandler(this.picRemove_Click);
+            this.picRemove.MouseEnter += new System.EventHandler(this.picRemove_MouseEnter);
+            this.picRemove.MouseLeave += new System.EventHandler(this.picRemove_MouseLeave);
+            // 
+            // picCancel
+            // 
+            this.picCancel.Image = global::Belfray.Properties.Resources.Cancel3;
+            this.picCancel.Location = new System.Drawing.Point(235, 177);
+            this.picCancel.Name = "picCancel";
+            this.picCancel.Size = new System.Drawing.Size(30, 30);
+            this.picCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCancel.TabIndex = 98;
+            this.picCancel.TabStop = false;
+            this.picCancel.Click += new System.EventHandler(this.picCancel_Click);
+            this.picCancel.MouseEnter += new System.EventHandler(this.picCancel_MouseEnter);
+            this.picCancel.MouseLeave += new System.EventHandler(this.picCancel_MouseLeave);
+            // 
+            // picSave
+            // 
+            this.picSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picSave.Location = new System.Drawing.Point(199, 177);
+            this.picSave.Name = "picSave";
+            this.picSave.Size = new System.Drawing.Size(30, 30);
+            this.picSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSave.TabIndex = 97;
+            this.picSave.TabStop = false;
+            this.picSave.Visible = false;
+            this.picSave.Click += new System.EventHandler(this.picSave_Click);
+            this.picSave.MouseEnter += new System.EventHandler(this.picSave_MouseEnter);
+            this.picSave.MouseLeave += new System.EventHandler(this.picSave_MouseLeave);
             // 
             // lblItemTotal
             // 
@@ -407,6 +465,8 @@
             // 
             // dgvCurrentOrder
             // 
+            this.dgvCurrentOrder.AllowUserToAddRows = false;
+            this.dgvCurrentOrder.AllowUserToOrderColumns = true;
             this.dgvCurrentOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCurrentOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BookingNumber,
@@ -416,10 +476,46 @@
             this.Qty});
             this.dgvCurrentOrder.Location = new System.Drawing.Point(603, 223);
             this.dgvCurrentOrder.Name = "dgvCurrentOrder";
+            this.dgvCurrentOrder.ReadOnly = true;
             this.dgvCurrentOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurrentOrder.Size = new System.Drawing.Size(615, 125);
             this.dgvCurrentOrder.TabIndex = 11;
+//            this.dgvCurrentOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurrentOrder_CellContentClick);
             this.dgvCurrentOrder.Click += new System.EventHandler(this.dgvCurrentOrder_Click);
+            // 
+            // BookingNumber
+            // 
+            this.BookingNumber.HeaderText = "Booking Number";
+            this.BookingNumber.Name = "BookingNumber";
+            this.BookingNumber.ReadOnly = true;
+            this.BookingNumber.Width = 120;
+            // 
+            // RoomNumber
+            // 
+            this.RoomNumber.HeaderText = "Room";
+            this.RoomNumber.Name = "RoomNumber";
+            this.RoomNumber.ReadOnly = true;
+            this.RoomNumber.Width = 120;
+            // 
+            // ItemNumber
+            // 
+            this.ItemNumber.HeaderText = "Item";
+            this.ItemNumber.Name = "ItemNumber";
+            this.ItemNumber.ReadOnly = true;
+            this.ItemNumber.Width = 120;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 110;
+            // 
+            // Qty
+            // 
+            this.Qty.HeaderText = "Quantity";
+            this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
             // 
             // dgvItemList
             // 
@@ -433,93 +529,9 @@
             this.dgvItemList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvItemList_CellFormatting);
             this.dgvItemList.Click += new System.EventHandler(this.dgvItemList_Click);
             // 
-            // BookingNumber
-            // 
-            this.BookingNumber.HeaderText = "Booking Number";
-            this.BookingNumber.Name = "BookingNumber";
-            this.BookingNumber.Width = 120;
-            // 
-            // RoomNumber
-            // 
-            this.RoomNumber.HeaderText = "Room";
-            this.RoomNumber.Name = "RoomNumber";
-            this.RoomNumber.Width = 120;
-            // 
-            // ItemNumber
-            // 
-            this.ItemNumber.HeaderText = "Item";
-            this.ItemNumber.Name = "ItemNumber";
-            this.ItemNumber.Width = 120;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.Width = 110;
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Quantity";
-            this.Qty.Name = "Qty";
-            // 
             // errP
             // 
             this.errP.ContainerControl = this;
-            // 
-            // picAdd
-            // 
-            this.picAdd.Image = global::Belfray.Properties.Resources.Add;
-            this.picAdd.Location = new System.Drawing.Point(44, 177);
-            this.picAdd.Name = "picAdd";
-            this.picAdd.Size = new System.Drawing.Size(30, 30);
-            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAdd.TabIndex = 100;
-            this.picAdd.TabStop = false;
-            this.picAdd.Visible = false;
-            this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
-            this.picAdd.MouseEnter += new System.EventHandler(this.picAdd_MouseEnter);
-            this.picAdd.MouseLeave += new System.EventHandler(this.picAdd_MouseLeave);
-            // 
-            // picRemove
-            // 
-            this.picRemove.Image = global::Belfray.Properties.Resources.Remove;
-            this.picRemove.Location = new System.Drawing.Point(6, 177);
-            this.picRemove.Name = "picRemove";
-            this.picRemove.Size = new System.Drawing.Size(30, 30);
-            this.picRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRemove.TabIndex = 99;
-            this.picRemove.TabStop = false;
-            this.picRemove.Visible = false;
-            this.picRemove.Click += new System.EventHandler(this.picRemove_Click);
-            this.picRemove.MouseEnter += new System.EventHandler(this.picRemove_MouseEnter);
-            this.picRemove.MouseLeave += new System.EventHandler(this.picRemove_MouseLeave);
-            // 
-            // picCancel
-            // 
-            this.picCancel.Image = global::Belfray.Properties.Resources.Cancel3;
-            this.picCancel.Location = new System.Drawing.Point(235, 177);
-            this.picCancel.Name = "picCancel";
-            this.picCancel.Size = new System.Drawing.Size(30, 30);
-            this.picCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCancel.TabIndex = 98;
-            this.picCancel.TabStop = false;
-            this.picCancel.Click += new System.EventHandler(this.picCancel_Click);
-            this.picCancel.MouseEnter += new System.EventHandler(this.picCancel_MouseEnter);
-            this.picCancel.MouseLeave += new System.EventHandler(this.picCancel_MouseLeave);
-            // 
-            // picSave
-            // 
-            this.picSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
-            this.picSave.Location = new System.Drawing.Point(199, 177);
-            this.picSave.Name = "picSave";
-            this.picSave.Size = new System.Drawing.Size(30, 30);
-            this.picSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSave.TabIndex = 97;
-            this.picSave.TabStop = false;
-            this.picSave.Visible = false;
-            this.picSave.Click += new System.EventHandler(this.picSave_Click);
-            this.picSave.MouseEnter += new System.EventHandler(this.picSave_MouseEnter);
-            this.picSave.MouseLeave += new System.EventHandler(this.picSave_MouseLeave);
             // 
             // RoomServiceAdd
             // 
@@ -540,15 +552,15 @@
             this.gbBookingInfo.PerformLayout();
             this.gbItemInfo.ResumeLayout(false);
             this.gbItemInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemove)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSave)).EndInit();
             this.gbCustomerDets.ResumeLayout(false);
             this.gbCustomerDets.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRemove)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSave)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -60,9 +60,11 @@
             // 
             // dgvStaffSearch
             // 
+            this.dgvStaffSearch.AllowUserToAddRows = false;
             this.dgvStaffSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStaffSearch.Location = new System.Drawing.Point(2, 1);
             this.dgvStaffSearch.Name = "dgvStaffSearch";
+            this.dgvStaffSearch.ReadOnly = true;
             this.dgvStaffSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaffSearch.Size = new System.Drawing.Size(755, 347);
             this.dgvStaffSearch.TabIndex = 10;

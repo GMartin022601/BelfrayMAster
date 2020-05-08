@@ -68,14 +68,7 @@ namespace Belfray
             daItem = new SqlDataAdapter(sqlItem, connStr);
             cmdBItem = new SqlCommandBuilder(daItem);
             daItem.FillSchema(dsBelfray, SchemaType.Source, "Item");
-            daItem.Fill(dsBelfray, "Item");
-
-            //SQL for Room who already ordered room service
-            sqlDets = @"SELECT itemNo FROM BookingDetails Group BY itemNo";
-            daDets = new SqlDataAdapter(sqlDets, connStr);
-            cmdBDets = new SqlCommandBuilder(daDets);
-            daDets.FillSchema(dsBelfray, SchemaType.Source, "Dets");
-            daDets.Fill(dsBelfray, "Dets");
+            daItem.Fill(dsBelfray, "Item");                     
 
             //SQL for Booking Details
             sqlDetails = @"SELECT * FROM BookingDetails";
@@ -83,6 +76,13 @@ namespace Belfray
             cmdBDetails = new SqlCommandBuilder(daDetails);
             daDetails.FillSchema(dsBelfray, SchemaType.Source, "Details");
             daDetails.Fill(dsBelfray, "Details");
+
+            //SQL for Room who already ordered room service
+            sqlDets = @"SELECT itemNo FROM BookingDetails Group BY itemNo";
+            daDets = new SqlDataAdapter(sqlDets, connStr);
+            cmdBDets = new SqlCommandBuilder(daDets);
+            daDets.FillSchema(dsBelfray, SchemaType.Source, "Dets");
+            daDets.Fill(dsBelfray, "Dets");
 
             //SQL For Customer
             sqlCustomer = @"select * from Customer";
@@ -111,7 +111,7 @@ namespace Belfray
 
         //Display Rooms
         public void displayRooms()
-        {
+        {       
             string[] stArray = new string[19] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
             int x = 0;
             foreach (DataRow drDets in dsBelfray.Tables["Dets"].Rows)
@@ -145,7 +145,7 @@ namespace Belfray
         //Current Order Click
         private void dgvCurrentOrder_Click(object sender, EventArgs e)
         {
-            if (dgvCurrentOrder.RowCount > 1)
+            if (dgvCurrentOrder.RowCount > 0)
             {
                 if (dgvCurrentOrder.SelectedRows.Count == 0)
                 {
@@ -515,6 +515,11 @@ namespace Belfray
                     {
                         newItem = true;
                     }
+                    else
+                    {
+                        newItem = false;
+                        break;
+                    }
                 }
             }
             else
@@ -546,18 +551,19 @@ namespace Belfray
                 {
                     if (ok)
                     {
-                        bool itemExist = false;
-
-                        for (int x = 0; x < dgvCurrentOrder.ColumnCount; x++)
+                        if (rows > 1)
                         {
-                            if(dgvCurrentOrder.Rows[x].Cells[2].Value.ToString().Equals(lblItemNo.Text))
+                            for (int x = 0; x < rows -1; x++)
                             {
-                                newItem = true;
-                                break;
+                                if (dgvCurrentOrder.Rows[x].Cells[2].Value.ToString().Equals(lblItemNo.Text))
+                                {
+                                    newItem = false;
+                                    break;
+                                }
                             }
                         }
 
-                        if (!itemExist)
+                        if (newItem)
                         {
                             dgvCurrentOrder.Rows.Add(lblBookingNo.Text, lblRoomNo.Text, lblItemNo.Text, lblItemPrice.Text, txtQty.Text);
                         }
@@ -648,50 +654,51 @@ namespace Belfray
 
         private void picCancel_Click(object sender, EventArgs e)
         {
-            displayRooms();
+            //displayRooms();
 
-            picRemove.Visible = false;
-            picAdd.Visible = false;
-            picSave.Visible = false;
+            //picRemove.Visible = false;
+            //picAdd.Visible = false;
+            //picSave.Visible = false;
 
-            //Rest Customer Dets
-            gbCustomerDets.Enabled = false;
-            lblCustomerNo.Text = "-";
-            lblCustomerTitle.Text = "-";
-            lblCustForename.Text = "-";
-            lblCustSurname.Text = "-";
+            ////Rest Customer Dets
+            //gbCustomerDets.Enabled = false;
+            //lblCustomerNo.Text = "-";
+            //lblCustomerTitle.Text = "-";
+            //lblCustForename.Text = "-";
+            //lblCustSurname.Text = "-";
 
-            userChange = false;
-            userCancel = false;
+            //userChange = false;
+            //userCancel = false;
 
-            //Reset Item Detals
-            lblItemNo.Enabled = false;
-            lblItemDescription.Enabled = false;
-            lblItemPrice.Enabled = false;
-            txtQty.Enabled = false;
-            lblItemTotal.Enabled = false;
-            lblItemNo.Text = "-";
-            lblItemDescription.Text = "-";
-            lblItemPrice.Text = "-";
-            txtQty.Text = "0";
-            lblItemTotal.Text = "-";
+            ////Reset Item Detals
+            //lblItemNo.Enabled = false;
+            //lblItemDescription.Enabled = false;
+            //lblItemPrice.Enabled = false;
+            //txtQty.Enabled = false;
+            //lblItemTotal.Enabled = false;
+            //lblItemNo.Text = "-";
+            //lblItemDescription.Text = "-";
+            //lblItemPrice.Text = "-";
+            //txtQty.Text = "0";
+            //lblItemTotal.Text = "-";
 
-            //Reset Booking Detals
-            lblBookingNo.Text = "-";
-            lblRoomNo.Text = "-";
-            cmbItemType.SelectedIndex = -1;
-            cmbItemType.Enabled = false;
+            ////Reset Booking Detals
+            //lblBookingNo.Text = "-";
+            //lblRoomNo.Text = "-";
+            //cmbItemType.SelectedIndex = -1;
+            //cmbItemType.Enabled = false;
 
-            dgvCurrentOrder.Rows.Clear();
+            //dgvCurrentOrder.Rows.Clear();
 
-            dgvItemList.ClearSelection();
-            dgvItemList.Visible = false;
-            dgvRooms.ClearSelection();
-            dgvRooms.Visible = true;
+            //dgvItemList.ClearSelection();
+            //dgvItemList.Visible = false;
+            //dgvRooms.ClearSelection();
+            //dgvRooms.Visible = true;
 
 
-            userCancel = true;
-            userChange = true;
+            //userCancel = true;
+            //userChange = true;
+            this.Close();
         }
 
         private void picCancel_MouseLeave(object sender, EventArgs e)

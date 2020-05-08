@@ -526,6 +526,11 @@ namespace Belfray
                     {
                         newItem = true;
                     }
+                    else
+                    {
+                        newItem = false;
+                        break;
+                    }
                 }
             }
             else
@@ -557,18 +562,19 @@ namespace Belfray
                 {
                     if (ok)
                     {
-                        bool itemExist = false;
-
-                        for (int x = 0; x < dgvCurrentOrder.ColumnCount; x++)
+                        if (rows > 1)
                         {
-                            if (dgvCurrentOrder.Rows[x].Cells[2].Value.ToString().Equals(lblItemNo.Text))
+                            for (int x = 0; x < rows - 1; x++)
                             {
-                                itemExist = true;
-                                break;
+                                if (dgvCurrentOrder.Rows[x].Cells[2].Value.ToString().Equals(lblItemNo.Text))
+                                {
+                                    newItem = false;
+                                    break;
+                                }
                             }
                         }
 
-                        if (!itemExist)
+                        if (newItem)
                         {
                             dgvCurrentOrder.Rows.Add(lblBookingNo.Text, lblRoomNo.Text, lblItemNo.Text, lblItemPrice.Text, txtQty.Text);
                         }
