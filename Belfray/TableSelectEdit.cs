@@ -803,16 +803,16 @@ namespace Belfray
             foreach (DataRow drBook in dsBelfray.Tables["Book"].Rows)
             {
                 string split = "";
+                string priceText;
                 double price = 0.0;
                 double qty = 0.0;
                 double total = 0.0;
-                
+
                 if (drBook["bookingNo"].Equals(lblBookingNo.Text) && drBook["itemNo"].Equals(lblTblNoSelDisplay.Text))
                 {
-                    dgvTableItems.Rows.Add(drBook["bookingItemNo"].ToString(), drBook["itemDesc"].ToString(), drBook["bookingItemQty"].ToString(), drBook["itemPrice"].ToString());
-
-                    //dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
-                    //dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+                    dgvTableItemsFormat();
+                    dgvTableItems.Rows.Add(drBook["bookingItemNo"].ToString(), drBook["itemDesc"].ToString(), drBook["bookingItemQty"].ToString(), drBook["itemPrice"].ToString(), drBook["itemPrice"].ToString());
+                    dgvTableItems.Refresh();
 
                     for (int i = 0; i < dgvTableItems.Rows.Count - 1; ++i)
                     {
@@ -835,8 +835,6 @@ namespace Belfray
                     LoadMenu();
                 }
             }
-            dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
-            dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
         }
 
         private void dgvMenuItems_Click(object sender, EventArgs e)
@@ -1363,6 +1361,7 @@ namespace Belfray
                 MessageBox.Show("Items added to table.");
                 dgvTableItems.Rows.Clear();
                 dgvTableItems.Refresh();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -1582,6 +1581,13 @@ namespace Belfray
             dgvMenuItems.Columns[2].DefaultCellStyle.Format = "c2";
             dgvMenuItems.Columns[2].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
         }
+        public void dgvTableItemsFormat()
+        {
+            dgvTableItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTableItems.Columns[2].DefaultCellStyle.Format = "c2";
+            dgvTableItems.Columns[2].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+        }
+
         private void tbl17_Click(object sender, EventArgs e)
         {
             partySize = 4;

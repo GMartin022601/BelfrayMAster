@@ -81,13 +81,8 @@ namespace Belfray
         {
             if (MessageBox.Show("Cancel the edit of Product: " + lblProductNumberDisplay.Text + "?", "Edit Product", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                //clearSuppPanel();
-                //pnlSuppDetails.Enabled = false;
-                //pnlDetails.Enabled = true;
-                //pnlRestStockEdit.Visible = false;
                 errP.Clear();
                 this.Close();
-                //MessageBox.Show("Press display to show Products.");
             }
         }
 
@@ -163,7 +158,6 @@ namespace Belfray
             try
             {
                 myProduct.SupplierID = cbSuppID.Text.Trim();
-                //Convert.ToInt32(cbSuppID.SelectedValue.ToString());
             }
             catch (MyException MyEx)
             {
@@ -230,7 +224,6 @@ namespace Belfray
                 if (ok)
                 {
                     drProductType.BeginEdit();
-                    //drProductType["productTypeCode"] = myProdType.ProdTypeCode;
                     drProductType["productTypeDesc"] = myProdType.ProdTypeDesc;
                     drProductType.EndEdit();
                     daProductType.Update(dsBelfray, "ProductType");
@@ -260,7 +253,6 @@ namespace Belfray
             try
             {
                 mySupp.SupplierID = lblESupplierID.Text.Trim();
-                    //Convert.ToInt32(lblESupplierID.Text.Trim());
             }
             catch (MyException MyEx)
             {
@@ -337,7 +329,6 @@ namespace Belfray
                 if (ok)
                 {
                     drSupplier.BeginEdit();
-                    //drSupplier["supplierID"] = mySupp.SupplierID;
                     drSupplier["supplierName"] = mySupp.SupplierName;
                     drSupplier["supplierAddress"] = mySupp.SupplierAddress;
                     drSupplier["supplierTown"] = mySupp.SupplierTown;
@@ -394,11 +385,8 @@ namespace Belfray
             if (MessageBox.Show("Cancel the edit of Product Type Code: " + lblPTC.Text + "?", "Edit Product Type Code", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
                 pnlProdType.Enabled = false;
-                //lblPTC.Text = "";
-                //txtProdDesc2.Text = "";
                 pnlDetails.Enabled = true;
                 chkBxEditPTD.Checked = false;
-                //clearAddPanel();
                 errP.Clear();
             }
         }
@@ -467,9 +455,6 @@ namespace Belfray
 
         private void RestaurantStockEdit_Load(object sender, EventArgs e)
         {
-            //Current User
-            //lblUser.Text = LoginPage.currUser;
-
             //DB Connection
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
@@ -520,8 +505,6 @@ namespace Belfray
             lblProductNumberDisplay.Text = Globals.prdNoSel.ToString();
 
             drProduct = dsBelfray.Tables["Product"].Rows.Find(lblProductNumberDisplay.Text);
-            //drProductType = dsBelfray.Tables["ProductType"].Rows.Find(txtProdDesc2)
-            //drProduct = dsBelfray.Tables["Product"].Rows.Find(cbTypeCode.SelectedValue);
             decimal price = Convert.ToDecimal(drProduct["costPrice"].ToString());
 
             cbTypeCode.SelectedValue = drProduct["productTypeCode"].ToString();
