@@ -2456,7 +2456,9 @@ namespace Belfray
                             int max = checkOut.Day;
                             int arrive = dtpCheckInDate.Value.Day;
                             int leave = dtpCheckOutDate.Value.Day;
-                            if (arrive <= min && leave >= max)
+                            int month1 = checkIn.Month;
+                            int month2 = checkOut.Month;
+                            if (arrive <= min && leave >= max && month1 == month2)
                             {
                                 available = false;
                             }

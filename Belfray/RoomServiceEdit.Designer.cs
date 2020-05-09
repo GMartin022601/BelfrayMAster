@@ -86,6 +86,7 @@
             // 
             // dgvCurrentOrder
             // 
+            this.dgvCurrentOrder.AllowUserToAddRows = false;
             this.dgvCurrentOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCurrentOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BookingNumber,
@@ -95,6 +96,7 @@
             this.Qty});
             this.dgvCurrentOrder.Location = new System.Drawing.Point(604, 223);
             this.dgvCurrentOrder.Name = "dgvCurrentOrder";
+            this.dgvCurrentOrder.ReadOnly = true;
             this.dgvCurrentOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurrentOrder.Size = new System.Drawing.Size(615, 125);
             this.dgvCurrentOrder.TabIndex = 15;
@@ -104,30 +106,35 @@
             // 
             this.BookingNumber.HeaderText = "Booking Number";
             this.BookingNumber.Name = "BookingNumber";
+            this.BookingNumber.ReadOnly = true;
             this.BookingNumber.Width = 120;
             // 
             // RoomNumber
             // 
             this.RoomNumber.HeaderText = "Room";
             this.RoomNumber.Name = "RoomNumber";
+            this.RoomNumber.ReadOnly = true;
             this.RoomNumber.Width = 120;
             // 
             // ItemNumber
             // 
             this.ItemNumber.HeaderText = "Item";
             this.ItemNumber.Name = "ItemNumber";
+            this.ItemNumber.ReadOnly = true;
             this.ItemNumber.Width = 120;
             // 
             // Price
             // 
             this.Price.HeaderText = "Price";
             this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             this.Price.Width = 110;
             // 
             // Qty
             // 
             this.Qty.HeaderText = "Quantity";
             this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
             // 
             // pnlSearchDetails
             // 

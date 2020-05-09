@@ -78,7 +78,10 @@ namespace Belfray
             daDetails.Fill(dsBelfray, "Details");
 
             //SQL for Room who already ordered room service
-            sqlDets = @"SELECT itemNo FROM BookingDetails Group BY itemNo";
+            sqlDets = @"SELECT itemNo FROM BookingDetails bd
+                        LEFT JOIN Booking Bk ON bk.bookingNo = Bd.bookingNo
+                        WHERE Bk.checkInDate <= GETDATE() AND Bk.checkOutDate >= GETDATE()
+                        Group BY itemNo";
             daDets = new SqlDataAdapter(sqlDets, connStr);
             cmdBDets = new SqlCommandBuilder(daDets);
             daDets.FillSchema(dsBelfray, SchemaType.Source, "Dets");
