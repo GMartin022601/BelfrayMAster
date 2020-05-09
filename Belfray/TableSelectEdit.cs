@@ -800,29 +800,24 @@ namespace Belfray
                 MessageBox.Show("Please select a table.");
             }
 
-            foreach (DataRow drDetails in dsBelfray.Tables["BookingDetails"].Rows)
+            foreach (DataRow drBook in dsBelfray.Tables["Book"].Rows)
             {
                 string split = "";
                 double price = 0.0;
                 double qty = 0.0;
                 double total = 0.0;
-
-                if (drDetails["bookingNo"].Equals(lblBookingNo.Text) && drDetails["itemNo"].Equals(lblTblNoSelDisplay.Text))
+                
+                if (drBook["bookingNo"].Equals(lblBookingNo.Text) && drBook["itemNo"].Equals(lblTblNoSelDisplay.Text))
                 {
-                    dgvTableItems.Columns.Clear();
-                    DataView existingSearch = new DataView(dsBelfray.Tables["Book"], "bookingNo = '" + lblBookingNo.Text.ToString() + "' ", "bookingNo", DataViewRowState.CurrentRows);
-                    dgvTableItems.DataSource = existingSearch;
-                    //for each dr row in existingsearch 
-                    //in the dog house check foreach dr in table whatever new row for dgv append into 0-1-2 add row to dgv
-                    dgvTableItems.Columns[0].Visible = false;
-                    dgvTableItems.Columns[2].Width = 250;
-                    dgvTableItems.Columns[4].DefaultCellStyle.Format = "c2";
-                    dgvTableItems.Columns[4].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
+                    dgvTableItems.Rows.Add(drBook["bookingItemNo"].ToString(), drBook["itemDesc"].ToString(), drBook["bookingItemQty"].ToString(), drBook["itemPrice"].ToString());
+
+                    //dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
+                    //dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
 
                     for (int i = 0; i < dgvTableItems.Rows.Count - 1; ++i)
                     {
-                        qty = Convert.ToDouble(dgvTableItems.Rows[i].Cells[3].Value);
-                        split = dgvTableItems.Rows[i].Cells[4].Value.ToString().Split('£').Last();
+                        qty = Convert.ToDouble(dgvTableItems.Rows[i].Cells[2].Value);
+                        split = dgvTableItems.Rows[i].Cells[3].Value.ToString().Split('£').Last();
                         price = Convert.ToDouble(split);
                         total += price * qty;
                     }
@@ -840,6 +835,8 @@ namespace Belfray
                     LoadMenu();
                 }
             }
+            dgvTableItems.Columns[3].DefaultCellStyle.Format = "c2";
+            dgvTableItems.Columns[3].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-GB");
         }
 
         private void dgvMenuItems_Click(object sender, EventArgs e)
@@ -870,7 +867,127 @@ namespace Belfray
             lblItemNoDIsplay.Text = "";
 
         }
-        private void picAddtoTable_Click(object sender, EventArgs e) //NEEDS WORK
+
+        private bool checkAvailibility(string tableNo)
+        {
+            bool available = true;
+
+            foreach (DataRow drVal in dsBelfray.Tables["Val"].Rows)
+            {
+                DateTime checkIn = Convert.ToDateTime(drVal["checkInDate"]);
+                string bookingTime = drVal["bookingTime"].ToString().Substring(0, 5);
+
+                if (tableNo.Equals(drVal["itemNo"].ToString()))
+                {
+                    if (dateBooking.Value.Year.CompareTo(checkIn.Year) == 0)
+                    {
+                        if (dateBooking.Value.Month.CompareTo(checkIn.Month) == 0)
+                        {
+                            if (dateBooking.Value.Day.CompareTo(checkIn.Day) == 0)
+                            {
+                                if (txtTime.Text.ToString().Equals(bookingTime))
+                                {
+                                    available = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return available;
+        }
+        private void picEditSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataRow drBookingDetails in dsBelfray.Tables["BookingDetails"].Rows)
+                {
+                    if (drBookingDetails["bookingNo"].ToString().Equals(lblBookingNo.Text) && drBookingDetails["itemNo"].ToString().Equals(lblTblNoSelDisplay.Text))
+                    {
+                        drBookingDetails.Delete();
+                    }
+                }
+                daBDetails.Update(dsBelfray, "BookingDetails");
+
+                int rowCount = dgvTableItems.RowCount;
+
+                for (int x = 0; x < rowCount - 1; x++)
+                {
+                    drBookingDetails = dsBelfray.Tables["BookingDetails"].NewRow();
+                    drBookingDetails["bookingNo"] = lblBookingNo.Text;
+                    drBookingDetails["itemNo"] = lblTableSelected.Text;
+                    drBookingDetails["bookingItemNo"] = dgvTableItems.Rows[x].Cells[0].Value.ToString();
+                    drBookingDetails["bookingItemQty"] = Convert.ToInt32(dgvTableItems.Rows[x].Cells[2].Value.ToString());
+                    dsBelfray.Tables["BookingDetails"].Rows.Add(drBookingDetails);
+                }
+
+                daBDetails.Update(dsBelfray, "BookingDetails");
+
+                MessageBox.Show("Table Items Edited");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+        }
+
+        private void picEditSave_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip editSave = new ToolTip();
+            editSave.ShowAlways = true;
+            editSave.ToolTipTitle = "Save Changes";
+            editSave.ToolTipIcon = ToolTipIcon.Info;
+            editSave.SetToolTip(picEditSave, "Please save if changes have been made to order");
+        }
+
+        private void picAddtoTable_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip addToTable = new ToolTip();
+            addToTable.ShowAlways = true;
+            addToTable.ToolTipTitle = "Add";
+            addToTable.ToolTipIcon = ToolTipIcon.Info;
+            addToTable.SetToolTip(picAddtoTable, "Add the selected item to the bill");
+        }
+
+        private void picAddToBill_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip addtoBill = new ToolTip();
+            addtoBill.ShowAlways = true;
+            addtoBill.ToolTipTitle = "Add";
+            addtoBill.ToolTipIcon = ToolTipIcon.Info;
+            addtoBill.SetToolTip(picAddToBill, "Add the selected items to the Table");
+        }
+
+        private void picRemoveItem_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip removeFromBill = new ToolTip();
+            removeFromBill.ShowAlways = true;
+            removeFromBill.ToolTipTitle = "Remove";
+            removeFromBill.ToolTipIcon = ToolTipIcon.Info;
+            removeFromBill.SetToolTip(picRemoveItem, "Remove the selected item from the Table");
+        }
+
+        private void picSaveBooking_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip saveEdit = new ToolTip();
+            saveEdit.ShowAlways = true;
+            saveEdit.ToolTipTitle = "Save";
+            saveEdit.ToolTipIcon = ToolTipIcon.Info;
+            saveEdit.SetToolTip(picSaveBooking, "Save any changes made to the booking.");
+        }
+
+        private void picExit_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip cancelEdit = new ToolTip();
+            cancelEdit.ShowAlways = true;
+            cancelEdit.ToolTipTitle = "Cancel";
+            cancelEdit.ToolTipIcon = ToolTipIcon.Info;
+            cancelEdit.SetToolTip(picExit, "Exit without saving any changes.");
+        }
+
+        private void picAddtoTable_Click(object sender, EventArgs e)
         {
             bool ok = true;
             int rows = dgvTableItems.RowCount;
@@ -960,10 +1077,6 @@ namespace Belfray
 
                 lblCurrentBillDisplay.Text = "£" + total.ToString();
             }
-
-            //lblCurrentBillDisplay.Text = "£" + Math.Round(Convert.ToDecimal(price * qty));
-
-
         }
 
         private void dgvAddNewTables_Click(object sender, EventArgs e)
@@ -1012,6 +1125,7 @@ namespace Belfray
             MyCustomer myCust = new MyCustomer();
             MyBooking myBook = new MyBooking();
             bool ok = true;
+            bool available = checkAvailibility(lblTableNo.Text.ToString());
             errP.Clear();
 
             //Customer Number
@@ -1159,7 +1273,18 @@ namespace Belfray
                 ok = false;
                 errP.SetError(cbPaymentTyp, MyEx.toString());
             }
-
+            //Val
+            if (available)
+            {
+                ok = true;
+            }
+            else
+            {
+                string s1 = "Sorry\nTable already booked at this time.\n";
+                string s2 = "Please try another table, or change time.";
+                MessageBox.Show(s1 + s2, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ok = false;
+            }
             //try editing now
             //Try Adding
             try
@@ -1194,20 +1319,15 @@ namespace Belfray
                 }
                 if (ok)
                 {
-                    //foreach (DataRow drTables in dsBelfray.Tables["BookingItem"].Rows)
-                    //{
                         int tableRows = dgvAddNewTables.RowCount - 1;
 
                         for (int x = 0; x < tableRows; x++)
                         {
                             drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
-                            //run through each line bookingitem table. where itemno = itemselected check if row exists skip
                             drBookingItem["bookingNo"] = dgvAddNewTables.Rows[x].Cells[0].Value.ToString();
                             drBookingItem["itemNo"] = dgvAddNewTables.Rows[x].Cells[1].Value.ToString();
-                            //"TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
                             drBookingItem["itemQty"] = DBNull.Value;
                             dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
-                            //daBookingItem.Update(dsBelfray, "BookingItem");
                         }
                     daBookingItem.Update(dsBelfray, "BookingItem");
                     MessageBox.Show("Booking has been edited.");
@@ -2028,9 +2148,8 @@ namespace Belfray
             daBDetails.FillSchema(dsBelfray, SchemaType.Source, "BookingDetails");
             daBDetails.Fill(dsBelfray, "BookingDetails");
             //sql for bookings bill
-            sqlBill = @"SELECT BookingDetails.bookingNo, Item.itemNo AS 'Item No', Item.itemDesc AS 'Item Description', BookingDetails.bookingItemQty AS 'Qty', Item.itemPrice AS 'Price' FROM BookingDetails       
+            sqlBill = @"SELECT BookingDetails.bookingNo, BookingDetails.itemNo, BookingDetails.bookingItemNo, Item.itemDesc, BookingDetails.bookingItemQty, Item.itemPrice FROM BookingDetails       
                         LEFT JOIN Item on Item.itemNo = BookingDetails.bookingItemNo";
-            //WHERE BookingDetails.itemNo LIKE '%TB%'";
             daBill = new SqlDataAdapter(sqlBill, connStr);
             daBill.FillSchema(dsBelfray, SchemaType.Source, "Book");
             daBill.Fill(dsBelfray, "Book");

@@ -8,17 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace Belfray
 {
     public partial class TableSelect : Form
     {
         //SQL links
-        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem;// daSupplier;
+        SqlDataAdapter daCustomer, daBooking, daBookingType, daPaymentType, daBookingDGV, daBookingItem, daVal;// daSupplier;
         DataSet dsBelfray = new DataSet();
-        SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBBookingItem;
+        SqlCommandBuilder cmdBCustomer, cmdBBooking, cmdBBookingType, cmdBPaymentType, cmdBBookingItem, cmdBVal;
         DataRow drCustomer, drBooking, drBookingType, drPaymentType, drBookingItem;
-        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem;
+        String connStr, sqlBooking, sqlCustomer, sqlBookingType, sqlPaymentType, sqlBookingDGV, sqlBookingItem, sqlVal;
         bool formLoad = true;
         bool getInfo, bookingInfo;
         bool newCustomer, newBooking, tableSelected;
@@ -92,14 +93,7 @@ namespace Belfray
         //Table1 Effects
         private void tbl1_MouseHover(object sender, EventArgs e)
         {
-            //string s1 = "Table Number: 1\n";
-            //string s2 = "Party Size: 2\n";
-            //string s3 = "Increase Size: Yes";
-            //ToolTip tpTable1 = new ToolTip();
-            //tpTable1.ShowAlways = true;
-            //tpTable1.ToolTipTitle = "Table Information";
-            //tpTable1.ToolTipIcon = ToolTipIcon.Info;
-            //tpTable1.SetToolTip(tbl1, s1 + s2 + s3);
+
             bool available = true;
             Color colour = new Color();
             arrowCreated = false;
@@ -943,7 +937,7 @@ namespace Belfray
             txtTime.Enabled = true;
             cbPaymentTyp.Enabled = true;
             newBooking = true;
-            
+
             //generate booking number
             int noRows = dsBelfray.Tables["Booking"].Rows.Count;
 
@@ -1199,320 +1193,378 @@ namespace Belfray
                 //prdSel = Globals.prdNoSel;
             }
         }
+        private bool checkAvailibility(string tableNo)
+        {
+            bool available = true;
+
+            foreach (DataRow drVal in dsBelfray.Tables["Val"].Rows)
+            {
+                DateTime checkIn = Convert.ToDateTime(drVal["checkInDate"]);
+                string bookingTime = drVal["bookingTime"].ToString().Substring(0,5);
+
+                if (tableNo.Equals(drVal["itemNo"].ToString()))
+                {
+                    if (dateBooking.Value.Year.CompareTo(checkIn.Year) == 0)
+                    {
+                        if (dateBooking.Value.Month.CompareTo(checkIn.Month) == 0)
+                        {
+                            if (dateBooking.Value.Day.CompareTo(checkIn.Day) == 0)
+                            {
+                                if (txtTime.Text.ToString().Equals(bookingTime))
+                                {
+                                    available = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return available;
+        }
 
         private void picSaveBooking_Click(object sender, EventArgs e)
         {
-                if (newCustomer == true && newBooking == true)
+            if (newCustomer == true && newBooking == true)
+            {
+                MyCustomer myCust = new MyCustomer();
+                MyBooking myBook = new MyBooking();
+                bool ok = true;
+                bool available = checkAvailibility(lblTableNo.Text.ToString());
+                errP.Clear();
+
+                //Customer Number
+                try
                 {
-                    MyCustomer myCust = new MyCustomer();
-                    MyBooking myBook = new MyBooking();
-                    bool ok = true;
-                    errP.Clear();
-
-                    //Customer Number
-                    try
-                    {
-                        myCust.CustomerNumber = cbCustNo.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(cbCustNo, MyEx.toString());
-                    }
-
-                    //Customer Title
-                    try
-                    {
-                        myCust.Title = cbTitle.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(cbTitle, MyEx.toString());
-                    }
-
-                    //Customer Forename
-                    try
-                    {
-                        myCust.Forename = txtFname.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(txtFname, MyEx.toString());
-                    }
-
-                    //Customer Surname
-                    try
-                    {
-                        myCust.Surname = txtLName.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(txtLName, MyEx.toString());
-                    }
-
-                    //Customer Street
-                    try
-                    {
-                        myCust.Street = txtStreet.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(txtStreet, MyEx.toString());
-                    }
-
-                    //Customer City
-                    try
-                    {
-                        myCust.City = txtCity.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(txtCity, MyEx.toString());
-                    }
-
-                    //Customer County
-                    try
-                    {
-                        myCust.County = txtCounty.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(txtCounty, MyEx.toString());
-                    }
-
-                    //Customer PostCode
-                    try
-                    {
-                        myCust.Postcode = txtPC.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(txtPC, MyEx.toString());
-                    }
-
-                    //Customer TelNo
-                    try
-                    {
-                        myCust.TelNo = txtTelNo.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(txtTelNo, MyEx.toString());
-                    }
-
-                    //Try Booking
-                    try
-                    {
-                        myBook.BookingNumber = lblBookingNo.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(lblBookingNo, MyEx.toString());
-                    }
-                    try
-                    {
-                        myBook.PartySize = Convert.ToInt32(numPartySize.Value);
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(numPartySize, MyEx.toString());
-                    }
-                    try
-                    {
-                        myBook.CheckInDate = dateBooking.Value;
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(dateBooking, MyEx.toString());
-                    }
-                    try
-                    {
-                        myBook.BookingTime = txtTime.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(txtTime, MyEx.toString());
-                    }
-                    try
-                    {
-                        myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(cbPaymentTyp, MyEx.toString());
-                    }
-
-                    //Try Adding
-                    try
-                    {
-                        if (ok)
-                        {
-                            drCustomer = dsBelfray.Tables["Customer"].NewRow();
-                            drCustomer["customerNo"] = myCust.CustomerNumber;
-                            drCustomer["customerTitle"] = myCust.Title;
-                            drCustomer["customerForename"] = myCust.Forename;
-                            drCustomer["customerSurname"] = myCust.Surname;
-                            drCustomer["customerStreet"] = myCust.Street;
-                            drCustomer["customerCity"] = myCust.City;
-                            drCustomer["customerCounty"] = myCust.County;
-                            drCustomer["customerPostcode"] = myCust.Postcode;
-                            drCustomer["customerTel"] = myCust.TelNo;
-                            dsBelfray.Tables["Customer"].Rows.Add(drCustomer);
-                            daCustomer.Update(dsBelfray, "Customer");
-
-                        }
-                        if (ok)
-                        {
-                            drBooking = dsBelfray.Tables["Booking"].NewRow();
-                            drBooking["bookingNo"] = myBook.BookingNumber;
-                            drBooking["checkInDate"] = myBook.CheckInDate;
-                            drBooking["bookingTime"] = myBook.BookingTime;
-                            drBooking["customerNo"] = myCust.CustomerNumber;
-                            drBooking["paymentTypeID"] = myBook.PaymentTypeID;
-                            drBooking["partySize"] = myBook.PartySize;
-                            dsBelfray.Tables["Booking"].Rows.Add(drBooking);
-                            daBooking.Update(dsBelfray, "Booking");
-                        }
-                        if (ok)
-                        {
-                            int tableRows = dgvBooking.RowCount - 1;
-
-                            for (int x = 0; x < tableRows; x++)
-                            {
-                                drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
-                                drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
-                                drBookingItem["itemNo"] = dgvBooking.Rows[x].Cells[1].Value.ToString();
-                            //"TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
-                            drBookingItem["itemQty"] = DBNull.Value;
-                                dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
-                            }
-
-                            daBookingItem.Update(dsBelfray, "BookingItem");
-                        }
-                        MessageBox.Show("Booking Added");
-                    this.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-                    }
+                    myCust.CustomerNumber = cbCustNo.Text.Trim();
                 }
-                if (newCustomer == false)
+                catch (MyException MyEx)
                 {
-                    MyBooking myBook = new MyBooking();
-                    MyCustomer myCust = new MyCustomer();
-                    bool ok = true;
-                    errP.Clear();
+                    ok = false;
+                    errP.SetError(cbCustNo, MyEx.toString());
+                }
 
-                    //Customer Number
-                    try
-                    {
-                        myCust.CustomerNumber = cbCustNo.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(cbCustNo, MyEx.toString());
-                    }
-                    //Try Booking
-                    try
-                    {
-                        myBook.BookingNumber = lblBookingNo.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(lblBookingNo, MyEx.toString());
-                    }
-                    try
-                    {
-                        myBook.PartySize = Convert.ToInt32(numPartySize.Value);
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(numPartySize, MyEx.toString());
-                    }
-                    try
-                    {
-                        myBook.CheckInDate = dateBooking.Value;
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(dateBooking, MyEx.toString());
-                    }
-                    try
-                    {
-                        myBook.BookingTime = txtTime.Text.Trim();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(txtTime, MyEx.toString());
-                    }
-                    try
-                    {
-                        myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
-                    }
-                    catch (MyException MyEx)
-                    {
-                        ok = false;
-                        errP.SetError(cbPaymentTyp, MyEx.toString());
-                    }
-                    //Try Adding
-                    try
-                    {
-                        if (ok)
-                        {
-                            drBooking = dsBelfray.Tables["Booking"].NewRow();
-                            drBooking["bookingNo"] = myBook.BookingNumber;
-                            drBooking["checkInDate"] = myBook.CheckInDate;
-                            drBooking["bookingTime"] = myBook.BookingTime;
-                            drBooking["customerNo"] = myCust.CustomerNumber;
-                            drBooking["paymentTypeID"] = myBook.PaymentTypeID;
-                            drBooking["partySize"] = myBook.PartySize;
-                            dsBelfray.Tables["Booking"].Rows.Add(drBooking);
-                            daBooking.Update(dsBelfray, "Booking");
-                        }
-                        if (ok)
-                        {
-                            int tableRows = dgvBooking.RowCount - 1;
+                //Customer Title
+                try
+                {
+                    myCust.Title = cbTitle.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(cbTitle, MyEx.toString());
+                }
 
-                            for (int x = 0; x < tableRows; x++)
-                            {
-                                drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
-                                drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
-                                drBookingItem["itemNo"] = dgvBooking.Rows[x].Cells[1].Value.ToString();
-                            //"TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+                //Customer Forename
+                try
+                {
+                    myCust.Forename = txtFname.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtFname, MyEx.toString());
+                }
+
+                //Customer Surname
+                try
+                {
+                    myCust.Surname = txtLName.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtLName, MyEx.toString());
+                }
+
+                //Customer Street
+                try
+                {
+                    myCust.Street = txtStreet.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtStreet, MyEx.toString());
+                }
+
+                //Customer City
+                try
+                {
+                    myCust.City = txtCity.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtCity, MyEx.toString());
+                }
+
+                //Customer County
+                try
+                {
+                    myCust.County = txtCounty.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtCounty, MyEx.toString());
+                }
+
+                //Customer PostCode
+                try
+                {
+                    myCust.Postcode = txtPC.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtPC, MyEx.toString());
+                }
+
+                //Customer TelNo
+                try
+                {
+                    myCust.TelNo = txtTelNo.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtTelNo, MyEx.toString());
+                }
+
+                //Try Booking
+                try
+                {
+                    myBook.BookingNumber = lblBookingNo.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(lblBookingNo, MyEx.toString());
+                }
+                try
+                {
+                    myBook.PartySize = Convert.ToInt32(numPartySize.Value);
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(numPartySize, MyEx.toString());
+                }
+                try
+                {
+                    myBook.CheckInDate = dateBooking.Value;
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(dateBooking, MyEx.toString());
+                }
+                try
+                {
+                    myBook.BookingTime = txtTime.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtTime, MyEx.toString());
+                }
+                try
+                {
+                    myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(cbPaymentTyp, MyEx.toString());
+                }
+
+                if (available)
+                {
+                    ok = true;
+                }
+                else
+                {
+                    string s1 = "Sorry\nTable already booked at this time.\n";
+                    string s2 = "Please try another table, or change time.";
+                    MessageBox.Show(s1 + s2, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ok = false;
+                }
+                //validation try checking date and time of table no
+                //catch
+                //ok = false
+                //set error sorry table already booked at this time please try another table
+
+                //Try Adding
+                try
+                {
+                    if (ok)
+                    {
+                        drCustomer = dsBelfray.Tables["Customer"].NewRow();
+                        drCustomer["customerNo"] = myCust.CustomerNumber;
+                        drCustomer["customerTitle"] = myCust.Title;
+                        drCustomer["customerForename"] = myCust.Forename;
+                        drCustomer["customerSurname"] = myCust.Surname;
+                        drCustomer["customerStreet"] = myCust.Street;
+                        drCustomer["customerCity"] = myCust.City;
+                        drCustomer["customerCounty"] = myCust.County;
+                        drCustomer["customerPostcode"] = myCust.Postcode;
+                        drCustomer["customerTel"] = myCust.TelNo;
+                        dsBelfray.Tables["Customer"].Rows.Add(drCustomer);
+                        daCustomer.Update(dsBelfray, "Customer");
+
+                    }
+                    if (ok)
+                    {
+                        drBooking = dsBelfray.Tables["Booking"].NewRow();
+                        drBooking["bookingNo"] = myBook.BookingNumber;
+                        drBooking["checkInDate"] = myBook.CheckInDate;
+                        drBooking["bookingTime"] = myBook.BookingTime;
+                        drBooking["customerNo"] = myCust.CustomerNumber;
+                        drBooking["paymentTypeID"] = myBook.PaymentTypeID;
+                        drBooking["partySize"] = myBook.PartySize;
+                        dsBelfray.Tables["Booking"].Rows.Add(drBooking);
+                        daBooking.Update(dsBelfray, "Booking");
+                    }
+                    if (ok)
+                    {
+                        int tableRows = dgvBooking.RowCount - 1;
+
+                        for (int x = 0; x < tableRows; x++)
+                        {
+                            drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
+                            drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
+                            drBookingItem["itemNo"] = dgvBooking.Rows[x].Cells[1].Value.ToString();
                             drBookingItem["itemQty"] = DBNull.Value;
-                                dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
-                            }
-
-                            daBookingItem.Update(dsBelfray, "BookingItem");
+                            dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
                         }
+
+                        daBookingItem.Update(dsBelfray, "BookingItem");
                         MessageBox.Show("Booking Added");
                         this.Close();
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                }
+            }
+            if (newCustomer == false)
+            {
+                MyBooking myBook = new MyBooking();
+                MyCustomer myCust = new MyCustomer();
+                bool ok = true;
+                bool available = checkAvailibility(lblTableNo.Text.ToString());
+                errP.Clear();
 
-                    catch (Exception ex)
+                //Customer Number
+                try
+                {
+                    myCust.CustomerNumber = cbCustNo.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(cbCustNo, MyEx.toString());
+                }
+                //Try Booking
+                try
+                {
+                    myBook.BookingNumber = lblBookingNo.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(lblBookingNo, MyEx.toString());
+                }
+                try
+                {
+                    myBook.PartySize = Convert.ToInt32(numPartySize.Value);
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(numPartySize, MyEx.toString());
+                }
+                try
+                {
+                    myBook.CheckInDate = dateBooking.Value;
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(dateBooking, MyEx.toString());
+                }
+                try
+                {
+                    myBook.BookingTime = txtTime.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(txtTime, MyEx.toString());
+                }
+                try
+                {
+                    myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errP.SetError(cbPaymentTyp, MyEx.toString());
+                }
+                //Val
+                if (available)
+                {
+                    ok = true;
+                }
+                else
+                {
+                    string s1 = "Sorry\nTable already booked at this time.\n";
+                    string s2 = "Please try another table, or change time.";
+                    MessageBox.Show(s1 + s2, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ok = false;
+                }
+                //Try Adding
+                try
+                {
+                    if (ok)
                     {
-                        MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                        drBooking = dsBelfray.Tables["Booking"].NewRow();
+                        drBooking["bookingNo"] = myBook.BookingNumber;
+                        drBooking["checkInDate"] = myBook.CheckInDate;
+                        drBooking["bookingTime"] = myBook.BookingTime;
+                        drBooking["customerNo"] = myCust.CustomerNumber;
+                        drBooking["paymentTypeID"] = myBook.PaymentTypeID;
+                        drBooking["partySize"] = myBook.PartySize;
+                        dsBelfray.Tables["Booking"].Rows.Add(drBooking);
+                        daBooking.Update(dsBelfray, "Booking");
                     }
-                }   
+                    if (ok)
+                    {
+                        int tableRows = dgvBooking.RowCount - 1;
+
+                        for (int x = 0; x < tableRows; x++)
+                        {
+                            drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
+                            drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
+                            drBookingItem["itemNo"] = dgvBooking.Rows[x].Cells[1].Value.ToString();
+                            //"TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
+                            drBookingItem["itemQty"] = DBNull.Value;
+                            dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
+                        }
+
+                        daBookingItem.Update(dsBelfray, "BookingItem");
+                        MessageBox.Show("Booking Added");
+                        this.Close();
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void picExit_Click(object sender, EventArgs e)
@@ -1576,10 +1628,10 @@ namespace Belfray
             numPartySize.Value = sum;
         }
 
-        private void picAddRoom_Click(object sender, EventArgs e)
-        {
+        //private void picAddRoom_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void tbl16_MouseLeave(object sender, EventArgs e)
         {
@@ -1601,7 +1653,6 @@ namespace Belfray
         {
             if (!formLoad)
             {
-                //int noRows = dsBelfray.Tables["Customer"].Rows.Count;
                 getInfo = true;
 
                 foreach (DataRow drCustomer in dsBelfray.Tables["Customer"].Rows)
@@ -1647,313 +1698,6 @@ namespace Belfray
 
         //private void btnAdd_Click(object sender, EventArgs e)
         //{
-        //    if (newCustomer == true && newBooking == true)
-        //    {
-        //        MyCustomer myCust = new MyCustomer();
-        //        MyBooking myBook = new MyBooking();
-        //        bool ok = true;
-        //        errP.Clear();
-
-        //        //Customer Number
-        //        try
-        //        {
-        //            myCust.CustomerNumber = cbCustNo.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(cbCustNo, MyEx.toString());
-        //        }
-
-        //        //Customer Title
-        //        try
-        //        {
-        //            myCust.Title = cbTitle.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(cbTitle, MyEx.toString());
-        //        }
-
-        //        //Customer Forename
-        //        try
-        //        {
-        //            myCust.Forename = txtFname.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(txtFname, MyEx.toString());
-        //        }
-
-        //        //Customer Surname
-        //        try
-        //        {
-        //            myCust.Surname = txtLName.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(txtLName, MyEx.toString());
-        //        }
-
-        //        //Customer Street
-        //        try
-        //        {
-        //            myCust.Street = txtStreet.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(txtStreet, MyEx.toString());
-        //        }
-
-        //        //Customer City
-        //        try
-        //        {
-        //            myCust.City = txtCity.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(txtCity, MyEx.toString());
-        //        }
-
-        //        //Customer County
-        //        try
-        //        {
-        //            myCust.County = txtCounty.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(txtCounty, MyEx.toString());
-        //        }
-
-        //        //Customer PostCode
-        //        try
-        //        {
-        //            myCust.Postcode = txtPC.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(txtPC, MyEx.toString());
-        //        }
-
-        //        //Customer TelNo
-        //        try
-        //        {
-        //            myCust.TelNo = txtTelNo.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(txtTelNo, MyEx.toString());
-        //        }
-
-        //        //Try Booking
-        //        try
-        //        {
-        //            myBook.BookingNumber = lblBookingNo.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(lblBookingNo, MyEx.toString());
-        //        }
-        //        try
-        //        {
-        //            myBook.PartySize = Convert.ToInt32(numPartySize.Value);
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(numPartySize, MyEx.toString());
-        //        }
-        //        try
-        //        {
-        //            myBook.CheckInDate = dateBooking.Value;
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(dateBooking, MyEx.toString());
-        //        }
-        //        try
-        //        {
-        //            myBook.BookingTime = txtTime.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(txtTime, MyEx.toString());
-        //        }
-        //        try
-        //        {
-        //            myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(cbPaymentTyp, MyEx.toString());
-        //        }
-
-        //        //Try Adding
-        //        try
-        //        {
-        //            if (ok)
-        //            {
-        //                drCustomer = dsBelfray.Tables["Customer"].NewRow();
-        //                drCustomer["customerNo"] = myCust.CustomerNumber;
-        //                drCustomer["customerTitle"] = myCust.Title;
-        //                drCustomer["customerForename"] = myCust.Forename;
-        //                drCustomer["customerSurname"] = myCust.Surname;
-        //                drCustomer["customerStreet"] = myCust.Street;
-        //                drCustomer["customerCity"] = myCust.City;
-        //                drCustomer["customerCounty"] = myCust.County;
-        //                drCustomer["customerPostcode"] = myCust.Postcode;
-        //                drCustomer["customerTel"] = myCust.TelNo;
-        //                dsBelfray.Tables["Customer"].Rows.Add(drCustomer);
-        //                daCustomer.Update(dsBelfray, "Customer");
-
-        //            }
-        //            if (ok)
-        //            {
-        //                drBooking = dsBelfray.Tables["Booking"].NewRow();
-        //                drBooking["bookingNo"] = myBook.BookingNumber;
-        //                drBooking["checkInDate"] = myBook.CheckInDate;
-        //                drBooking["bookingTime"] = myBook.BookingTime;
-        //                drBooking["customerNo"] = myCust.CustomerNumber;
-        //                drBooking["paymentTypeID"] = myBook.PaymentTypeID;
-        //                drBooking["partySize"] = myBook.PartySize;
-        //                dsBelfray.Tables["Booking"].Rows.Add(drBooking);
-        //                daBooking.Update(dsBelfray, "Booking");
-        //            }
-        //            if (ok)
-        //            {
-        //                int tableRows = dgvBooking.RowCount - 1;
-
-        //                for (int x = 0; x < tableRows; x++)
-        //                {
-        //                    drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
-        //                    drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
-        //                    drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
-        //                    drBookingItem["itemQty"] = DBNull.Value;
-        //                    dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
-        //                }
-
-        //                daBookingItem.Update(dsBelfray, "BookingItem");
-        //            }
-        //            MessageBox.Show("Booking Addedc");
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //    if (newCustomer == false)
-        //    {
-        //        MyBooking myBook = new MyBooking();
-        //        MyCustomer myCust = new MyCustomer();
-        //        bool ok = true;
-        //        errP.Clear();
-
-        //        //Customer Number
-        //        try
-        //        {
-        //            myCust.CustomerNumber = cbCustNo.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(cbCustNo, MyEx.toString());
-        //        }
-        //        //Try Booking
-        //        try
-        //        {
-        //            myBook.BookingNumber = lblBookingNo.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(lblBookingNo, MyEx.toString());
-        //        }
-        //        try
-        //        {
-        //            myBook.PartySize = Convert.ToInt32(numPartySize.Value);
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(numPartySize, MyEx.toString());
-        //        }
-        //        try
-        //        {
-        //            myBook.CheckInDate = dateBooking.Value;
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(dateBooking, MyEx.toString());
-        //        }
-        //        try
-        //        {
-        //            myBook.BookingTime = txtTime.Text.Trim();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(txtTime, MyEx.toString());
-        //        }
-        //        try
-        //        {
-        //            myBook.PaymentTypeID = cbPaymentTyp.SelectedValue.ToString();
-        //        }
-        //        catch (MyException MyEx)
-        //        {
-        //            ok = false;
-        //            errP.SetError(cbPaymentTyp, MyEx.toString());
-        //        }
-        //        //Try Adding
-        //        try
-        //        {
-        //            if (ok)
-        //            {
-        //                drBooking = dsBelfray.Tables["Booking"].NewRow();
-        //                drBooking["bookingNo"] = myBook.BookingNumber;
-        //                drBooking["checkInDate"] = myBook.CheckInDate;
-        //                drBooking["bookingTime"] = myBook.BookingTime;
-        //                drBooking["customerNo"] = myCust.CustomerNumber;
-        //                drBooking["paymentTypeID"] = myBook.PaymentTypeID;
-        //                drBooking["partySize"] = myBook.PartySize;
-        //                dsBelfray.Tables["Booking"].Rows.Add(drBooking);
-        //                daBooking.Update(dsBelfray, "Booking");
-        //            }
-        //            if (ok)
-        //            {
-        //                int tableRows = dgvBooking.RowCount - 1;
-
-        //                for (int x = 0; x < tableRows; x++)
-        //                {
-        //                    drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
-        //                    drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
-        //                    drBookingItem["itemNo"] = "TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
-        //                    drBookingItem["itemQty"] = DBNull.Value;
-        //                    dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
-        //                }
-
-        //                daBookingItem.Update(dsBelfray, "BookingItem");
-        //            }
-        //            MessageBox.Show("Booking Added");
-        //        }
-
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-        //        }
-        //    }
         //}
 
         private void tbl17_MouseEnter(object sender, EventArgs e)
@@ -2218,12 +1962,6 @@ namespace Belfray
 
         //private void cbBookingType_SelectedIndexChanged(object sender, EventArgs e)
         //{
-        //    if (!formLoad)
-        //    {
-        //        DataRow drMethod = dsBelfray.Tables["BType"].Rows.Find(cbBookingType.SelectedValue.ToString());
-        //        //txtProdTypeCode.Text = drMethod["productTypeCode"].ToString();
-        //        //txtProdDesc2.Text = drMethod["productTypeDesc"].ToString();
-        //    }
         //}
 
         private void tbl20_MouseLeave(object sender, EventArgs e)
@@ -2345,9 +2083,6 @@ namespace Belfray
 
             //Change Picture background colour
             tbl18.BackColor = colour;
-
-            //Color of arrow, if the arrow is created, x of point of arrow & y of point of arrow
-            //arrowControlUp(colour, arrowCreated, 103, 165);
         }
 
         private void tbl1_Click(object sender, EventArgs e)
@@ -2411,39 +2146,6 @@ namespace Belfray
 
         //private void chkNewBooking_CheckedChanged(object sender, EventArgs e)
         //{
-        //    if (chkNewBooking.Checked)
-        //    {
-        //        numPartySize.Enabled = true;
-        //        dateBooking.Enabled = true;
-        //        txtTime.Enabled = true;
-        //        cbPaymentTyp.Enabled = true;
-        //        newBooking = true;
-
-        //        //generate booking number
-        //        int noRows = dsBelfray.Tables["Booking"].Rows.Count;
-
-        //        if (noRows == 0)
-        //        {
-        //            lblBookingNo.Text = "BK100000000";
-        //        }
-        //        else
-        //        {
-        //            getBookingNum(noRows);
-        //        }
-
-        //        string s = drBooking["bookingNo"].ToString();
-        //        string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
-        //        lblBookingNo.Text = s1;
-        //    }
-        //    else if (chkNewBooking.Checked == false)
-        //    {
-        //        numPartySize.Enabled = false;
-        //        dateBooking.Enabled = false;
-        //        txtTime.Enabled = false;
-        //        cbPaymentTyp.Enabled = false;
-        //        lblBookingNo.Text = "";
-        //        newBooking = false;
-        //    }
         //}
 
         private void TableSelect_Load(object sender, EventArgs e)
@@ -2463,6 +2165,16 @@ namespace Belfray
             cmdBBooking = new SqlCommandBuilder(daBooking);
             daBooking.FillSchema(dsBelfray, SchemaType.Source, "Booking");
             daBooking.Fill(dsBelfray, "Booking");
+            //sql for validation
+            sqlVal = @"select Booking.bookingNo, Booking.checkInDate, Booking.bookingTime, BType.typeID, BookingItem.itemNo FROM Booking
+							LEFT JOIN BookingItem on BookingItem.bookingNo = Booking.bookingNo
+							LEFT JOIN Item ON  Item.itemNo = BookingItem.itemNo
+							LEFT JOIN BType ON  BType.typeID = Item.typeID
+							WHERE BType.typeID = 'TYP100002' AND Booking.checkInDate >= (CURRENT_TIMESTAMP-1)";
+            daVal = new SqlDataAdapter(sqlVal, connStr);
+            cmdBVal = new SqlCommandBuilder(daVal);
+            daVal.FillSchema(dsBelfray, SchemaType.Source, "Val");
+            daVal.Fill(dsBelfray, "Val");
             //SQL For Customer
             sqlCustomer = @"select * from Customer";
             daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
@@ -2508,21 +2220,6 @@ namespace Belfray
             txtCounty.Text = "";
             txtPC.Text = "";
             txtTelNo.Text = "";
-
-            //int noRows = dsBelfray.Tables["Booking"].Rows.Count;
-
-            //if (noRows == 0)
-            //{
-            //    lblBookingNo.Text = "BK10000001";
-            //}
-            //else
-            //{
-            //    getBookingNum(noRows);
-
-            //}
-            //string s = drBooking["bookingNo"].ToString();
-            //string s1 = "BK" + (Convert.ToInt32(s.Replace("BK", "")) + 1).ToString().PadLeft(5, '0');
-            //lblBookingNo.Text = s1;
         }
     }
 }

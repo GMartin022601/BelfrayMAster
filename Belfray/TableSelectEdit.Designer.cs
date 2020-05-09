@@ -183,6 +183,7 @@
             this.txtCounty = new System.Windows.Forms.TextBox();
             this.lbCounty = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
+            this.picEditSave = new System.Windows.Forms.PictureBox();
             this.gbBookingDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPartySize)).BeginInit();
             this.pnlFloorPlan.SuspendLayout();
@@ -240,6 +241,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRemoveTable)).BeginInit();
             this.gbCustomerDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditSave)).BeginInit();
             this.SuspendLayout();
             // 
             // txtStreet
@@ -1277,6 +1279,7 @@
             this.picExit.TabIndex = 69;
             this.picExit.TabStop = false;
             this.picExit.Click += new System.EventHandler(this.picExit_Click);
+            this.picExit.MouseEnter += new System.EventHandler(this.picExit_MouseEnter);
             // 
             // pnlGreen
             // 
@@ -1387,6 +1390,7 @@
             // 
             // gbItems
             // 
+            this.gbItems.Controls.Add(this.picEditSave);
             this.gbItems.Controls.Add(this.lblItemNoSel);
             this.gbItems.Controls.Add(this.label9);
             this.gbItems.Controls.Add(this.lblCurrentBillDisplay);
@@ -1449,6 +1453,7 @@
             this.picAddToBill.TabIndex = 84;
             this.picAddToBill.TabStop = false;
             this.picAddToBill.Click += new System.EventHandler(this.picAddToBill_Click);
+            this.picAddToBill.MouseEnter += new System.EventHandler(this.picAddToBill_MouseEnter);
             // 
             // picRemoveItem
             // 
@@ -1460,6 +1465,7 @@
             this.picRemoveItem.TabIndex = 83;
             this.picRemoveItem.TabStop = false;
             this.picRemoveItem.Click += new System.EventHandler(this.picRemoveItem_Click);
+            this.picRemoveItem.MouseEnter += new System.EventHandler(this.picRemoveItem_MouseEnter);
             // 
             // dgvTableItems
             // 
@@ -1620,6 +1626,7 @@
             this.picAddtoTable.TabIndex = 86;
             this.picAddtoTable.TabStop = false;
             this.picAddtoTable.Click += new System.EventHandler(this.picAddtoTable_Click);
+            this.picAddtoTable.MouseEnter += new System.EventHandler(this.picAddtoTable_MouseEnter);
             // 
             // dgvMenuItems
             // 
@@ -1693,6 +1700,7 @@
             this.picSaveBooking.TabIndex = 62;
             this.picSaveBooking.TabStop = false;
             this.picSaveBooking.Click += new System.EventHandler(this.picSaveBooking_Click);
+            this.picSaveBooking.MouseEnter += new System.EventHandler(this.picSaveBooking_MouseEnter);
             // 
             // gbAddTables
             // 
@@ -1940,6 +1948,18 @@
             this.txtCity.Size = new System.Drawing.Size(100, 25);
             this.txtCity.TabIndex = 13;
             // 
+            // picEditSave
+            // 
+            this.picEditSave.Image = global::Belfray.Properties.Resources.SaveButtonTest2;
+            this.picEditSave.Location = new System.Drawing.Point(560, 222);
+            this.picEditSave.Name = "picEditSave";
+            this.picEditSave.Size = new System.Drawing.Size(40, 40);
+            this.picEditSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEditSave.TabIndex = 89;
+            this.picEditSave.TabStop = false;
+            this.picEditSave.Click += new System.EventHandler(this.picEditSave_Click);
+            this.picEditSave.MouseEnter += new System.EventHandler(this.picEditSave_MouseEnter);
+            // 
             // TableSelectEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2017,6 +2037,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRemoveTable)).EndInit();
             this.gbCustomerDetails.ResumeLayout(false);
             this.gbCustomerDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditSave)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2176,5 +2197,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn itemPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn tableNo;
+        private System.Windows.Forms.PictureBox picEditSave;
     }
 }
