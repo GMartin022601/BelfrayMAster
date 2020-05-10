@@ -1183,14 +1183,12 @@ namespace Belfray
             {
                 tableSelected = false;
                 tableNoSelected = 0;
-                //prdSel = null;
             }
             else if (dgvBooking.SelectedRows.Count == 1)
             {
                 tableSelected = true;
                 lblTableNo.Text = dgvBooking.SelectedRows[0].Cells[1].Value.ToString();
                 tableNoSelected = dgvBooking.SelectedRows[0].Index;
-                //prdSel = Globals.prdNoSel;
             }
         }
         private bool checkAvailibility(string tableNo)
@@ -1390,11 +1388,6 @@ namespace Belfray
                     MessageBox.Show(s1 + s2, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     ok = false;
                 }
-                //validation try checking date and time of table no
-                //catch
-                //ok = false
-                //set error sorry table already booked at this time please try another table
-
                 //Try Adding
                 try
                 {
@@ -1440,7 +1433,9 @@ namespace Belfray
                         }
 
                         daBookingItem.Update(dsBelfray, "BookingItem");
-                        MessageBox.Show("Booking Added");
+                        string cust = "New Customer Added Successfully.\n\n";
+                        string book = "Booking complete.";
+                        MessageBox.Show(cust + book, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
@@ -1549,13 +1544,12 @@ namespace Belfray
                             drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
                             drBookingItem["bookingNo"] = dgvBooking.Rows[x].Cells[0].Value.ToString();
                             drBookingItem["itemNo"] = dgvBooking.Rows[x].Cells[1].Value.ToString();
-                            //"TB" + dgvBooking.Rows[x].Cells[1].Value.ToString();
                             drBookingItem["itemQty"] = DBNull.Value;
                             dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
                         }
 
                         daBookingItem.Update(dsBelfray, "BookingItem");
-                        MessageBox.Show("Booking Added");
+                        MessageBox.Show("Booking Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
