@@ -328,7 +328,6 @@ namespace Belfray
             else if (dgvItemList.SelectedRows.Count == 1)
             {
                 itemSel = true;
-                gbItemInfo.Enabled = true;
                 picRemove.Visible = false;
 
                 //Reset Item Detals
@@ -337,6 +336,11 @@ namespace Belfray
                 lblItemPrice.Enabled = true;
                 txtQty.Enabled = true;
                 lblItemTotal.Enabled = true;
+                lblItemNum.Enabled = true;
+                lblItemDesc.Enabled = true;
+                lblPrice.Enabled = true;
+                lblQty.Enabled = true;
+                lblTotal.Enabled = true;
 
                 lblItemNo.Text = dgvItemList.SelectedRows[0].Cells[0].Value.ToString();
 
@@ -475,6 +479,11 @@ namespace Belfray
             txtQty.Enabled = false;
             lblItemTotal.Text = "-";
             lblItemTotal.Enabled = false;
+            lblItemNum.Enabled = false;
+            lblItemDesc.Enabled = false;
+            lblPrice.Enabled = false;
+            lblQty.Enabled = false;
+            lblTotal.Enabled = false;
 
             int rowIndex = dgvCurrentOrder.CurrentRow.Index;
             dgvCurrentOrder.Rows.RemoveAt(rowIndex);
@@ -589,6 +598,11 @@ namespace Belfray
                         txtQty.Enabled = false;
                         lblItemTotal.Text = "-";
                         lblItemTotal.Enabled = false;
+                        lblItemNum.Enabled = false;
+                        lblItemDesc.Enabled = false;
+                        lblPrice.Enabled = false;
+                        lblQty.Enabled = false;
+                        lblTotal.Enabled = false;
 
                         dgvItemList.ClearSelection();
                     }
@@ -622,7 +636,7 @@ namespace Belfray
             {
                 int rowCount = dgvCurrentOrder.RowCount;
 
-                for(int x = 0; x < rowCount-1; x++)
+                for(int x = 0; x < rowCount; x++)
                 {
                     drDetails = dsBelfray.Tables["Details"].NewRow();
                     drDetails["bookingNo"] = dgvCurrentOrder.Rows[x].Cells[0].Value.ToString();
@@ -656,51 +670,7 @@ namespace Belfray
         }
 
         private void picCancel_Click(object sender, EventArgs e)
-        {
-            //displayRooms();
-
-            //picRemove.Visible = false;
-            //picAdd.Visible = false;
-            //picSave.Visible = false;
-
-            ////Rest Customer Dets
-            //gbCustomerDets.Enabled = false;
-            //lblCustomerNo.Text = "-";
-            //lblCustomerTitle.Text = "-";
-            //lblCustForename.Text = "-";
-            //lblCustSurname.Text = "-";
-
-            //userChange = false;
-            //userCancel = false;
-
-            ////Reset Item Detals
-            //lblItemNo.Enabled = false;
-            //lblItemDescription.Enabled = false;
-            //lblItemPrice.Enabled = false;
-            //txtQty.Enabled = false;
-            //lblItemTotal.Enabled = false;
-            //lblItemNo.Text = "-";
-            //lblItemDescription.Text = "-";
-            //lblItemPrice.Text = "-";
-            //txtQty.Text = "0";
-            //lblItemTotal.Text = "-";
-
-            ////Reset Booking Detals
-            //lblBookingNo.Text = "-";
-            //lblRoomNo.Text = "-";
-            //cmbItemType.SelectedIndex = -1;
-            //cmbItemType.Enabled = false;
-
-            //dgvCurrentOrder.Rows.Clear();
-
-            //dgvItemList.ClearSelection();
-            //dgvItemList.Visible = false;
-            //dgvRooms.ClearSelection();
-            //dgvRooms.Visible = true;
-
-
-            //userCancel = true;
-            //userChange = true;
+        {            
             this.Close();
         }
 

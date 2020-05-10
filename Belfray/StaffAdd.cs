@@ -256,7 +256,40 @@ namespace Belfray
                     string lName = txtSurname.Text.ToString().Substring(1,length - 1);
                     char[] fName = txtForename.Text.ToString().ToCharArray();
                     string initial = fName[0].ToString().ToUpper();
-                    lblLogin.Text = lastInitial.ToUpper() + lName + initial;
+                    string login = lastInitial.ToUpper() + lName + initial;
+
+                    int inst = 0;
+                    bool found = false;
+
+                    foreach(DataRow drStaff in dsBelfray.Tables["Staff"].Rows)
+                    {
+                        if (found)
+                        {
+                            string newLogin = login + Convert.ToString(inst);
+                            if (drStaff["staffLogin"].ToString().Equals(newLogin))
+                            {
+                                inst++;
+                                found = true;
+                            }
+                        }
+                        else
+                        {
+                            if (drStaff["staffLogin"].ToString().Equals(login))
+                            {
+                                inst++;
+                                found = true;
+                            }
+                        }                        
+                    }
+
+                    if (found)
+                    {
+                        lblLogin.Text = lastInitial.ToUpper() + lName + initial + Convert.ToString(inst);
+                    }
+                    else
+                    {
+                        lblLogin.Text = lastInitial.ToUpper() + lName + initial;
+                    }
                 }
             }
             catch (Exception ex)
@@ -308,7 +341,18 @@ namespace Belfray
             //Customer Number
             try
             {
-                myStaff.AccType = cmbAccountType.SelectedText.ToString();
+                switch (cmbAccountType.SelectedIndex)
+                {
+                    case 0:
+                        myStaff.AccType = "ADM";
+                        break;
+                    case 1:
+                        myStaff.AccType = "HTL";
+                        break;
+                    case 2:
+                        myStaff.AccType = "RES";
+                        break;
+                }
             }
             catch (MyException MyEx)
             {
