@@ -130,46 +130,6 @@ namespace Belfray
 
         private void txtProdNumber_TextChanged(object sender, EventArgs e)
         {
-            //if (txtProdNumber.Text.Length == 9)
-            //{
-            //    searchOption = 1;
-            //    txtProdNumber.BackColor = Color.LightGreen;
-            //    txtProdType.Enabled = false;
-            //    txtProdType.BackColor = Color.LightCoral;
-            //    txtSupplier.Enabled = false;
-            //    txtSupplier.BackColor = Color.LightCoral;
-            //}
-            //if (txtProdNumber.Text.Length < 9)
-            //{
-            //    txtProdType.Enabled = false;
-            //    txtProdType.BackColor = Color.LightCoral;
-            //    txtSupplier.Enabled = false;
-            //    txtSupplier.BackColor = Color.LightCoral;
-            //    txtProdNumber.BackColor = Color.LightCoral;
-            //    //MessageBox.Show("Booking number must be 10 characters beginnin BK.", "Search error", MessageBoxButtons.OK);
-
-            //}
-            //if (txtProdNumber.Text.Length >= 10)
-            //{
-            //    //txtSurname.Text = "";
-            //    txtProdType.Enabled = false;
-            //    txtProdType.BackColor = Color.LightCoral;
-            //    txtSupplier.Enabled = false;
-            //    txtSupplier.BackColor = Color.LightCoral;
-            //    txtProdNumber.BackColor = Color.LightCoral;
-            //    MessageBox.Show("Booking number must be 10 characters beginnin PRD.", "Search error", MessageBoxButtons.OK);
-
-            //}
-            //if (txtProdNumber.Text.Length == 0)
-            //{
-            //    txtProdNumber.BackColor = Color.White;
-            //    txtProdType.Enabled = true;
-            //    txtProdType.BackColor = Color.White;
-            //    txtSupplier.Enabled = true;
-            //    txtSupplier.BackColor = Color.White;
-            //    txtProdNumber.BackColor = Color.White;
-
-            //}
             if (txtProdNumber.Text.Length > 10)
             {
                 MessageBox.Show("Product number must be max 10 characters beginnin PRD.", "Search error", MessageBoxButtons.OK);
@@ -230,7 +190,7 @@ namespace Belfray
             dgvSearch.Visible = true;
             dgvSearch.DataSource = dsBelfray.Tables["Product"];
             //Resize
-            dgvSearch.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvSearch.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //Rename
             dgvSearch.Columns[0].HeaderCell.Value = "Product Number";
             dgvSearch.Columns[1].HeaderCell.Value = "Product Type Code";

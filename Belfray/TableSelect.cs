@@ -1622,11 +1622,6 @@ namespace Belfray
             numPartySize.Value = sum;
         }
 
-        //private void picAddRoom_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
         private void tbl16_MouseLeave(object sender, EventArgs e)
         {
             arrowCreated = true;
@@ -1689,11 +1684,6 @@ namespace Belfray
                 }
             }
         }
-
-        //private void btnAdd_Click(object sender, EventArgs e)
-        //{
-        //}
-
         private void tbl17_MouseEnter(object sender, EventArgs e)
         {
             bool available = true;
@@ -1785,12 +1775,6 @@ namespace Belfray
             //lblRedRoomType.Text = "Double";
             lblRedCapacityValue.Text = "4";
         }
-
-        //Close Button
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    this.Close();
-        //}
 
         private void tbl23_MouseLeave(object sender, EventArgs e)
         {
@@ -2138,9 +2122,6 @@ namespace Belfray
 
         }
 
-        //private void chkNewBooking_CheckedChanged(object sender, EventArgs e)
-        //{
-        //}
 
         private void TableSelect_Load(object sender, EventArgs e)
         {

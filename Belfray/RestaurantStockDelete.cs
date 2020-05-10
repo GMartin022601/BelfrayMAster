@@ -83,7 +83,6 @@ namespace Belfray
             lblSuName.Text = "";
             lblSuID.Text = "";
             lblSuAdd.Text = "";
-            //.Text = drSupplier["supplierCounty"].ToString();
             lblSuTown.Text = "";
             lblSuPC.Text = "";
             lblSuEma.Text = "";
@@ -114,18 +113,10 @@ namespace Belfray
             {
                 prdSelected = true;
                 Globals.prdNoSel = dgvOptions.SelectedRows[0].Cells[0].Value.ToString();
-
-                //Load data
-                //drProduct = dsBelfray.Tables["Product"].Rows.Find(Globals.prdNoSel.ToString());
-                //drProductType = dsBelfray.Tables["ProductType"].Rows.Find(Globals.prdNoSel.ToString());
-                //drSupplier = dsBelfray.Tables["Supplier"].Rows.Find(Globals.prdNoSel.ToString());
-
-                //Display info in groupbox
                 //Product
                 if (menuSel == 1)
                 {
                     drProduct = dsBelfray.Tables["Product"].Rows.Find(Globals.prdNoSel.ToString());
-                    //drSupplier = dsBelfray.Tables["Supplier"].Rows.Find(Globals.prdNoSel.ToString());
                     pnlProduct.BringToFront();
                     pnlProdType.SendToBack();
                     pnlProduct.Visible = true;
@@ -134,7 +125,6 @@ namespace Belfray
                     lblProdNumber.Text = drProduct["productNumber"].ToString();
                     lblQty.Text = drProduct["qtyInStock"].ToString();
                     lblSupplierID.Text = drProduct["supplierID"].ToString();
-                    //lblSuppName.Text = lblSuName.ToString();
                     lblSuppName.Visible = false;
                     label2.Visible = false;
                 }
@@ -157,7 +147,6 @@ namespace Belfray
                     lblSuName.Text = drSupplier["supplierName"].ToString();
                     lblSuID.Text = drSupplier["supplierID"].ToString();
                     lblSuAdd.Text = drSupplier["supplierAddress"].ToString();
-                    //.Text = drSupplier["supplierCounty"].ToString();
                     lblSuTown.Text = drSupplier["supplierTown"].ToString();
                     lblSuPC.Text = drSupplier["supplierPostCode"].ToString();
                     lblSuEma.Text = drSupplier["supplierEmail"].ToString();
@@ -233,8 +222,6 @@ namespace Belfray
         public RestaurantStockDelete()
         {
             InitializeComponent();
-            //picTabDelete.BackColor = Color.FromArgb(233, 233, 233);
-            //picTabDelete.BackColor = Color.FromArgb(63, 63, 63);
         }
 
         private void RestaurantStockDelete_Load(object sender, EventArgs e)

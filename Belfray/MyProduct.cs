@@ -8,18 +8,18 @@ namespace Belfray
 {
     class MyProduct
     {
-        private int qtyInStock, packSize, reorderLvl; // supplierID;
-        private double costPrice;
-        private string productNo, productTypeCode, productDesc, supplierID;
+        //private int qtyInStock, packSize, reorderLvl;
+        //private double costPrice;
+        private string productNo, productTypeCode, productDesc, supplierID, qtyInStock, packSize, reorderLvl, costPrice;
 
         public MyProduct()
         {
             this.productNo = ""; this.productTypeCode = ""; this.productDesc = "";
-            this.qtyInStock = 0; this.packSize = 0; this.reorderLvl = 0; this.supplierID = "";
-            this.costPrice = 0.0;
+            this.qtyInStock = ""; this.packSize = ""; this.reorderLvl = ""; this.supplierID = "";
+            this.costPrice = "";
         }
 
-        public MyProduct(int qtyInStock, int packSize, int reorderLvl, string supplierID, double costPrice, string productNo, string productTypeCode, string productDesc)
+        public MyProduct(string qtyInStock, string packSize, string reorderLvl, string supplierID, string costPrice, string productNo, string productTypeCode, string productDesc)
         {
             this.productNo = productNo; this.productTypeCode = productTypeCode; this.productDesc = productDesc;
             this.qtyInStock = qtyInStock; this.packSize = packSize; this.reorderLvl = reorderLvl; this.supplierID = supplierID;
@@ -37,10 +37,6 @@ namespace Belfray
         {
             get { return productTypeCode; }
             set { productTypeCode = value; }
-            //set { if (value.ToUpper() != "A" && value.ToUpper() != "L" && value.ToUpper() != "AF" && value.ToUpper() != "F" && value.ToUpper() != "F" && value.ToUpper() != "RE")
-            //        throw new MyException("Product Code should be one of the following: A, AF, L, F, RE");
-            //    else
-            //        productTypeCode = MyValidation.EachLetterToUpper(value); }
         }
         //ProductDesc
         public string ProductDesc
@@ -54,34 +50,66 @@ namespace Belfray
                     throw new MyException("Product Description must be between 5-30 Characters"); }
         }
         //QtyInStock **NEEDS VALIDATION**
-        public int QtyInStock
+        public string QtyInStock
         {
             get { return qtyInStock; }
-            set { qtyInStock = value; }
+            set {
+                if (MyValidation.validLength(value, 1, 50) && MyValidation.validNumber(value))
+                {
+                    qtyInStock = value;
+                }
+                else
+                    throw new MyException("Quantity must be a valid number between 1 - 50");
+            }
+
         }
         //PackSize
-        public int PackSize
+        public string PackSize
         {
             get { return packSize; }
-            set { packSize = value; }
+            set {
+                if (MyValidation.validNumber(value) && MyValidation.validLength(value, 1, 24))
+                {
+                    packSize = value;
+                }
+                else
+                    throw new MyException("Pack Size must be a valid number between 1 - 24");
+            }
         }
         //ReOrderLvl
-        public int ReOrderLvl
+        public string ReOrderLvl
         {
             get { return reorderLvl; }
-            set { reorderLvl = value; }
+            set
+            {
+                if (MyValidation.validNumber(value) && MyValidation.validLength(value, 1, 5))
+                {
+                    reorderLvl = value;
+                }
+                else
+                    throw new MyException("Re-order level must be a valid number between 1 - 5");
+            }
         }
         //SupplierID
         public string SupplierID
         {
             get { return supplierID; }
-            set { supplierID = value; }
+            set
+            {
+                if (MyValidation.validLength(value, 8, 8))
+                {
+                    supplierID = value;
+                }
+                else
+                    throw new MyException("Supplier ID must be 8 Characters");
+            }
         }
         //CostPrice
-        public double CostPrice
+        public string CostPrice
         {
             get { return costPrice; }
-            set { costPrice = value; }
+            set { costPrice = value;
+            }
         }
     }
 }
