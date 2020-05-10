@@ -96,7 +96,7 @@ namespace Belfray
             return ok;
         }
         //Valid Forename
-        public static bool validForename(string txt) //allows aphatbetic, dash and whitespace
+        public static bool validForename(string txt) //allows aphatbetic and dash
         {
             bool ok = true;
 
@@ -108,7 +108,7 @@ namespace Belfray
             {
                 for (int x = 0; x < txt.Length; x++)
                 {
-                    if (!(char.IsLetter(txt[x])) && !(char.IsWhiteSpace(txt[x])) && !(txt[x].Equals('-')))
+                    if (!(char.IsLetter(txt[x])) && !(txt[x].Equals('-')))
                         ok = false;
                 }
             }
@@ -127,7 +127,7 @@ namespace Belfray
             {
                 for (int x = 0; x < txt.Length; x++)
                 {
-                    if (!(char.IsLetter(txt[x])) && !(char.IsWhiteSpace(txt[x])) && !(txt[x].Equals('-')))
+                    if (!(char.IsLetter(txt[x])) && !(txt[x].Equals('-')))
                     {
                         ok = false;
                     }
