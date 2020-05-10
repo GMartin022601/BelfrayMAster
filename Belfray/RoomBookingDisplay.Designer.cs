@@ -35,6 +35,7 @@
             // dgvBookings
             // 
             this.dgvBookings.AllowUserToAddRows = false;
+            this.dgvBookings.AllowUserToOrderColumns = true;
             this.dgvBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBookings.Location = new System.Drawing.Point(2, 1);
             this.dgvBookings.Name = "dgvBookings";

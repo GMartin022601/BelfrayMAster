@@ -655,6 +655,7 @@ namespace Belfray
             this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRooms.Size = new System.Drawing.Size(539, 67);
             this.dgvRooms.TabIndex = 0;
+//            this.dgvRooms.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRooms_CellContentClick);
             this.dgvRooms.Click += new System.EventHandler(this.dgvRooms_Click);
             // 
             // BookingNumber

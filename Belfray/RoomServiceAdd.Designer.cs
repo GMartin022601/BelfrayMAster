@@ -199,7 +199,6 @@
             this.gbItemInfo.Controls.Add(this.lblItemDesc);
             this.gbItemInfo.Controls.Add(this.lblItemNo);
             this.gbItemInfo.Controls.Add(this.lblItemNum);
-            this.gbItemInfo.Enabled = false;
             this.gbItemInfo.Location = new System.Drawing.Point(341, 3);
             this.gbItemInfo.Name = "gbItemInfo";
             this.gbItemInfo.Size = new System.Drawing.Size(271, 213);
@@ -276,6 +275,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
+            this.lblTotal.Enabled = false;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.Location = new System.Drawing.Point(6, 152);
             this.lblTotal.Name = "lblTotal";
@@ -295,6 +295,7 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
+            this.lblQty.Enabled = false;
             this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQty.Location = new System.Drawing.Point(6, 130);
             this.lblQty.Name = "lblQty";
@@ -316,6 +317,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
+            this.lblPrice.Enabled = false;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.Location = new System.Drawing.Point(6, 108);
             this.lblPrice.Name = "lblPrice";
@@ -337,6 +339,7 @@
             // lblItemDesc
             // 
             this.lblItemDesc.AutoSize = true;
+            this.lblItemDesc.Enabled = false;
             this.lblItemDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemDesc.Location = new System.Drawing.Point(6, 42);
             this.lblItemDesc.Name = "lblItemDesc";
@@ -358,6 +361,7 @@
             // lblItemNum
             // 
             this.lblItemNum.AutoSize = true;
+            this.lblItemNum.Enabled = false;
             this.lblItemNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemNum.Location = new System.Drawing.Point(6, 20);
             this.lblItemNum.Name = "lblItemNum";
@@ -480,7 +484,6 @@
             this.dgvCurrentOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurrentOrder.Size = new System.Drawing.Size(615, 125);
             this.dgvCurrentOrder.TabIndex = 11;
-//            this.dgvCurrentOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurrentOrder_CellContentClick);
             this.dgvCurrentOrder.Click += new System.EventHandler(this.dgvCurrentOrder_Click);
             // 
             // BookingNumber

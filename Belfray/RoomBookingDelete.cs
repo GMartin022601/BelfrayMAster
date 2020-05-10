@@ -229,7 +229,7 @@ namespace Belfray
                 }
                 else if (cmbSelect.SelectedIndex == 1)
                 {
-                    if (MessageBox.Show("Deleting the customer: " + lblBookingNo.Text + " will delete any bookings and Items made by this customer. deleting the customer is not recommended, are you sure you wish to delete this Customer?", "Delete Customer", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    if (MessageBox.Show("Deleting the customer: " + lblCustNo.Text + " will delete any bookings and Items made by this customer. deleting the customer is not recommended, are you sure you wish to delete this Customer?", "Delete Customer", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
                         foreach (DataRow drBooking in dsBelfray.Tables["Booking"].Rows)
                         {
