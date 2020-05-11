@@ -42,11 +42,11 @@ namespace Belfray
             dgvStaff.ClearSelection();
 
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
             //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
-            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Booking
             sqlStaff = @"SELECT staffID AS 'Staff ID', staffFName AS 'Forename', staffLName AS 'Surname', staffStreet AS 'Street', 

@@ -31,11 +31,11 @@ namespace Belfray
         //Form Load
         private void AccountPage_Load(object sender, EventArgs e)
         {
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
             //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
-            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             sqlStaff = @"select * from Staff";
             daStaff = new SqlDataAdapter(sqlStaff, connStr);

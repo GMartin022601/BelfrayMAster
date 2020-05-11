@@ -22,11 +22,11 @@ namespace Belfray
         private void RoomServiceDisplay_Load(object sender, EventArgs e)
         {
             //DB Connection
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
             //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
-            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Booking
             sqlBookingItem = @"SELECT Bi.itemNo AS 'Room Number', Bi.bookingNo AS 'Booking Number', Bk.checkInDate AS 'Check In Date', Bk.checkOutDate AS 'Check Out Date', 
