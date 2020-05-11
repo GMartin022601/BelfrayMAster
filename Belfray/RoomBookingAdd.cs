@@ -404,7 +404,7 @@ namespace Belfray
                     dsBelfray.Tables["Booking"].Rows.Add(drBooking);
                     daBooking.Update(dsBelfray, "Booking");
 
-                    int roomRows = dgvRooms.RowCount - 1;
+                    int roomRows = dgvRooms.RowCount;
 
                     for(int x = 0; x < roomRows; x++)
                     {

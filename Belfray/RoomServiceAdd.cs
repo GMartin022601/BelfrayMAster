@@ -449,13 +449,16 @@ namespace Belfray
         {
             if (userCancel)
             {
-                if (txtQty.Text.Length > 0 && !txtQty.Text.ToString().Equals("0"))
+                if (MyValidation.validNumber(txtQty.Text.ToString()))
                 {
-                    lblItemTotal.Text = Convert.ToString((Convert.ToDouble(txtQty.Text.ToString())) * (Convert.ToDouble(lblItemPrice.Text.ToString())));
-                }
-                else if (txtQty.Text.ToString().Equals("") || txtQty.Text.ToString().Equals("0"))
-                {
-                    lblItemTotal.Text = "-";
+                    if (txtQty.Text.Length > 0 && !txtQty.Text.ToString().Equals("0"))
+                    {
+                        lblItemTotal.Text = Convert.ToString((Convert.ToDouble(txtQty.Text.ToString())) * (Convert.ToDouble(lblItemPrice.Text.ToString())));
+                    }
+                    else if (txtQty.Text.ToString().Equals("") || txtQty.Text.ToString().Equals("0"))
+                    {
+                        lblItemTotal.Text = "-";
+                    }
                 }
             }
         }

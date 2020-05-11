@@ -465,7 +465,7 @@ namespace Belfray
                     drBooking["partySize"] = myBook.PartySize;
                     drBooking["customerNo"] = myBook.CustomerNumber;
                     drBooking.EndEdit();
-                    daBooking.Update(dsBelfray, "Booking");
+                    daBooking.Update(dsBelfray, "Booking");                    
 
                     MessageBox.Show("Booking Updated");
 
@@ -1004,7 +1004,7 @@ namespace Belfray
         {
             MainWindow.maxCap = 0;
 
-            for (int x = 0; x < (dgvRooms.RowCount - 1); x++)
+            for (int x = 0; x < (dgvRooms.RowCount); x++)
             {
                 foreach (DataRow drItem in dsBelfray.Tables["Item"].Rows)
                 {
