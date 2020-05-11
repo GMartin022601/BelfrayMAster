@@ -30,11 +30,9 @@ namespace Belfray
             txtProdTypeCode.Text = "";
             txtProdDesc2.Text = "";
             errP.Clear();
-            formLoad = true;
+            //formLoad = true;
+            test = true;
             this.Close();
-            //pnlDetails.Enabled = false;
-            //pnlProdType.Enabled = false;
-            //pnlSuppDetails.Enabled = false;
         }
 
         private void picCancelAddSupp_Click(object sender, EventArgs e)
@@ -66,8 +64,6 @@ namespace Belfray
             string s1 = "SUP" + (Convert.ToInt32(s.Replace("SUP", "")) + 1).ToString().PadLeft(5, '0');
 
             lblSupplierID.Text = s1;
-                //(int.Parse(drProduct["supplierID"].ToString()) + 1).ToString();
-
         }
 
         private void picSaveADDSupp_Click(object sender, EventArgs e)
@@ -79,7 +75,6 @@ namespace Belfray
             try
             {
                 mySupp.SupplierID = lblSupplierID.Text.Trim();
-                //Convert.ToInt32(lblSupplierID.Text.Trim());
             }
             catch (MyException MyEx)
             {
@@ -187,7 +182,6 @@ namespace Belfray
                 MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
             }
         }
-        //**THIS NEEDS WORK**
         private void CbTypeCode_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -273,14 +267,11 @@ namespace Belfray
             clearAddPanel();
             errP.Clear();
         }
-
-        //ADD Product Type Details
         private void picSaveADDPTD_Click(object sender, EventArgs e)
         {
             MyProdTypeCode myProdType = new MyProdTypeCode();
             bool ok = true;
             errP.Clear();
-            //ErrP to be added!
 
             try
             {
@@ -314,12 +305,10 @@ namespace Belfray
                     MessageBox.Show("Product Type Added");
                     if (MessageBox.Show("Do you wish to add another product type?", "AddProductType", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
-                        //clearAddPanel();
                         txtProdTypeCode.Text = "";
                         txtProdDesc2.Text = "";
                         formLoad = true;
                         test = true;
-                        //getProdNum(dsBelfray.Tables["ProductTy"].Rows.Count);
                     }
                     else
                     {
@@ -327,7 +316,6 @@ namespace Belfray
                         txtProdTypeCode.Text = "";
                         txtProdDesc2.Text = "";
                         pnlDetails.Enabled = true;
-                        //clearAddPanel();
                         formLoad = true;
                         test = true;
 
@@ -339,9 +327,6 @@ namespace Belfray
                 MessageBox.Show("" + ex.TargetSite + "", ex.Message + "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
             }
         }
-        //End Add Product Type Details Save
-        
-        //AddNew Product Type
         private void picAddNewPT_Click(object sender, EventArgs e)
         {
             pnlDetails.Enabled = false;
@@ -350,14 +335,10 @@ namespace Belfray
             txtProdDesc2.Text = "";
 
         }
-        //end of add prod type
-
-        //GetProductNumber
         private void getProdNum(int noRows)
         {
             drProduct = dsBelfray.Tables["Product"].Rows[noRows - 1];
         }
-        //clear add panel
        void clearAddPanel()
         {
             txtProdDesc.Clear();
@@ -368,7 +349,6 @@ namespace Belfray
             cbSuppID.SelectedIndex = -1;
             cbTypeCode.SelectedIndex = -1;
         }
-        //clear supplier panel
         void clearSuppPanel()
         {
             lblSupplierID.Text = "";
@@ -387,7 +367,6 @@ namespace Belfray
             MyProduct myProduct = new MyProduct();
             bool ok = true;
             errP.Clear();
-            //ErrP to be added!
 
             try
             {
@@ -418,7 +397,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.CostPrice = Convert.ToDouble(txtCostPrice.Text.Trim());
+                myProduct.CostPrice = txtCostPrice.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -427,7 +406,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.QtyInStock = Convert.ToInt32(txtQTY.Text.Trim());
+                myProduct.QtyInStock = txtQTY.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -436,7 +415,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.PackSize = Convert.ToInt32(txtPackSize.Text.Trim());
+                myProduct.PackSize = txtPackSize.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -445,7 +424,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.ReOrderLvl = Convert.ToInt32(txtReOrder.Text.Trim());
+                myProduct.ReOrderLvl = txtReOrder.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -455,7 +434,6 @@ namespace Belfray
             try
             {
                 myProduct.SupplierID = cbSuppID.SelectedValue.ToString();
-                //Convert.ToInt32(cbSuppID.SelectedValue.ToString());
             }
             catch (MyException MyEx)
             {
@@ -539,15 +517,12 @@ namespace Belfray
 
         private void RestaurantStockAdd_Load(object sender, EventArgs e)
         {
-            //Current User
-            //lblUser.Text = LoginPage.currUser;
-
             //DB Connection
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
-            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Product
             sqlProduct = @"select * from Product";
@@ -582,12 +557,6 @@ namespace Belfray
             cbTypeCode.DisplayMember = "productTypeDesc";
             cbTypeCode.SelectedIndex = -1;
 
-            //ProductTypePanel
-            //cbTypeCode2.DataSource = dsBelfray.Tables["ProductType"];
-            //cbTypeCode2.ValueMember = "productTypeCode";
-            //cbTypeCode.DisplayMember = "productTypeDesc";
-            //cbTypeCode2.SelectedIndex = -1;
-
             pnlDetails.Visible = true;
             pnlImage.Visible = true;
             pnlProdType.Visible = true;
@@ -609,7 +578,6 @@ namespace Belfray
             string s = drProduct["productNumber"].ToString();
             string s1 = "PRD" + (Convert.ToInt32(s.Replace("PRD", "")) + 1).ToString().PadLeft(5, '0');
             lblProductNumberDisplay.Text = s1;
-            //(drProduct["productNumber"].ToString() + 1).ToString();
         }
     }
 }

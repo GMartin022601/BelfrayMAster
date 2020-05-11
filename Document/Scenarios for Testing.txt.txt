@@ -1,0 +1,46 @@
+1. Table of 4 Lunch
+	1 x Garlic Bread		2.99
+	2 x Wings			2.99
+	1 x Breaded Mushroom		2.99
+	2 x Burger			19.98
+	2 x Cod				19.98
+	4 x Corona			14
+	4 x Coors			12.40
+	3 x Magners			14
+Total: £69.35
+
+2. Table of 2 Dinner
+	1 x Garlic			2.99
+	1 x Wings			2.99
+	1 x Sirloin			12.99
+	1 x Fillet			16.99
+	2 x Cheesecake			13.98 / 6.99 x 2	
+	1 x Wine			18.99 french merlot
+	2 x Carlsberg			5.80 / 2.90 x 2
+	2 x Gordons Gin			5.80 /2.90 x 2
+	2 x Tonic			3.00
+Total: 83.53
+
+3. Table of 2 Breakfast
+	2 x Full Breakfast 15.98
+	
+
+
+4. Table of 4 Dinner
+	2 x wings			5.98
+	2 x mushrooms			5.98
+	1 steak burger 			11.99
+	1 sea bass			13.99
+	1 fillet 			16.99
+	1 goujon			11.99
+	2 cheesecake			13.98
+	1 toffee			6.99
+	1 profiteroles			6.99
+	2 pino grigio			25.98
+	4 desperados			14
+	4 hop house			14
+	4 jack daniels			11.60
+	4 coke				7.60
+	3 barcardi			8.70
+	3 diet coke			5.70			
+Total 182.46

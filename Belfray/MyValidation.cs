@@ -38,6 +38,20 @@ namespace Belfray
             }
             return ok;
         }
+        //Valid Price
+        public static bool validPrice(string txt)
+        {
+            bool ok = true;
+
+            for (int x = 0; x < txt.Length; x++)
+            {
+                if (!(char.IsNumber(txt[x]) && !(char.IsLetter(txt[x]))))
+                {
+                    ok = false;
+                }
+            }
+            return ok;
+        }
         //Valid Letter
         public static bool validLetter(string txt)  //allows alphabetic characters
         {

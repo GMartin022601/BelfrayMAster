@@ -121,7 +121,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.CostPrice = Convert.ToDouble(txtCostPrice.Text.Trim());
+                myProduct.CostPrice = txtCostPrice.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -130,7 +130,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.QtyInStock = Convert.ToInt32(txtQTY.Text.Trim());
+                myProduct.QtyInStock = txtQTY.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -139,7 +139,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.PackSize = Convert.ToInt32(txtPackSize.Text.Trim());
+                myProduct.PackSize = txtPackSize.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -148,7 +148,7 @@ namespace Belfray
             }
             try
             {
-                myProduct.ReOrderLvl = Convert.ToInt32(txtReOrder.Text.Trim());
+                myProduct.ReOrderLvl = txtReOrder.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -458,9 +458,9 @@ namespace Belfray
             //DB Connection
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
-            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             //SQL for Product
             sqlProduct = @"select * from Product";

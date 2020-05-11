@@ -1036,7 +1036,7 @@ namespace Belfray
                 {
                     if (ok)
                     {
-                                dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
+                        dgvTableItems.Rows.Add(lblItemNoDIsplay.Text, lblItemSelected.Text, numQTY.Value, lblPriceSelItem.Text);
                     }
 
                 }
@@ -1065,7 +1065,7 @@ namespace Belfray
             }
             else
             {
-                for (int i = 0; i < dgvTableItems.Rows.Count -1; ++i)
+                for (int i = 0; i < dgvTableItems.Rows.Count - 1; ++i)
                 {
                     qty = Convert.ToDouble(dgvTableItems.Rows[i].Cells[2].Value);
                     split = dgvTableItems.Rows[i].Cells[3].Value.ToString().Split('£').Last();
@@ -1317,16 +1317,16 @@ namespace Belfray
                 }
                 if (ok)
                 {
-                        int tableRows = dgvAddNewTables.RowCount - 1;
+                    int tableRows = dgvAddNewTables.RowCount - 1;
 
-                        for (int x = 0; x < tableRows; x++)
-                        {
-                            drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
-                            drBookingItem["bookingNo"] = dgvAddNewTables.Rows[x].Cells[0].Value.ToString();
-                            drBookingItem["itemNo"] = dgvAddNewTables.Rows[x].Cells[1].Value.ToString();
-                            drBookingItem["itemQty"] = DBNull.Value;
-                            dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
-                        }
+                    for (int x = 0; x < tableRows; x++)
+                    {
+                        drBookingItem = dsBelfray.Tables["BookingItem"].NewRow();
+                        drBookingItem["bookingNo"] = dgvAddNewTables.Rows[x].Cells[0].Value.ToString();
+                        drBookingItem["itemNo"] = dgvAddNewTables.Rows[x].Cells[1].Value.ToString();
+                        drBookingItem["itemQty"] = DBNull.Value;
+                        dsBelfray.Tables["BookingItem"].Rows.Add(drBookingItem);
+                    }
                     daBookingItem.Update(dsBelfray, "BookingItem");
                     MessageBox.Show("Booking has been edited.");
                     this.Close();
@@ -1350,7 +1350,7 @@ namespace Belfray
                 {
                     drBookingDetails = dsBelfray.Tables["BookingDetails"].NewRow();
                     drBookingDetails["bookingNo"] = lblBookingNo.Text;
-                    drBookingDetails["itemNo"] = lblTableSelected.Text;    
+                    drBookingDetails["itemNo"] = lblTableSelected.Text;
                     drBookingDetails["bookingItemNo"] = dgvTableItems.Rows[x].Cells[0].Value.ToString();
                     drBookingDetails["bookingItemQty"] = Convert.ToInt32(dgvTableItems.Rows[x].Cells[2].Value.ToString());
                     dsBelfray.Tables["BookingDetails"].Rows.Add(drBookingDetails);
@@ -1431,8 +1431,6 @@ namespace Belfray
                         dgvTableItems.Columns.Clear();
                         DataView existingSearch = new DataView(dsBelfray.Tables["Book"], "bookingNo = '" + lblBookingNo.Text.ToString() + "' ", "bookingNo", DataViewRowState.CurrentRows);
                         dgvTableItems.DataSource = existingSearch;
-                        //for each dr row in existingsearch 
-                        //in the dog house check foreach dr in table whatever new row for dgv append into 0-1-2 add row to dgv
                         dgvTableItems.Columns[0].Visible = false;
                         dgvTableItems.Columns[2].Width = 250;
                         dgvTableItems.Columns[4].DefaultCellStyle.Format = "c2";
@@ -1468,19 +1466,11 @@ namespace Belfray
             {
                 //Load Menu DGV
                 sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100003'";
-                //sqlItem = @"SELECT Item.itemNo, Item.itemDesc, Item.typeID FROM Item
-                //LEFT JOIN BType ON BType.typeID = Item.typeID
-                //WHERE Item.typeID = 'TYP100003'";
                 daItem = new SqlDataAdapter(sqlItem, connStr);
-                //@"SELECT Item.itemNo AS 'Item No', Item.itemDesc AS 'Item Description', Item.itemPrice AS 'Price', BType.typeID AS 'Type ID' FROM Item
-
                 daItem.FillSchema(dsBelfray, SchemaType.Source, "Breakfast");
                 daItem.Fill(dsBelfray, "Breakfast");
-
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Breakfast"];
-                //Resize
-                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 1)
@@ -1488,14 +1478,10 @@ namespace Belfray
                 //Load Menu DGV
                 sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100004'";
                 daItem = new SqlDataAdapter(sqlItem, connStr);
-
                 daItem.FillSchema(dsBelfray, SchemaType.Source, "Lunch");
                 daItem.Fill(dsBelfray, "Lunch");
-
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Lunch"];
-                //Resize
-                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 2)
@@ -1503,14 +1489,10 @@ namespace Belfray
                 //Load Menu DGV
                 sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100005'";
                 daItem = new SqlDataAdapter(sqlItem, connStr);
-
                 daItem.FillSchema(dsBelfray, SchemaType.Source, "Starter");
                 daItem.Fill(dsBelfray, "Starter");
-
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Starter"];
-                //Resize
-                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 3)
@@ -1518,14 +1500,10 @@ namespace Belfray
                 //Load Menu DGV
                 sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100006'";
                 daItem = new SqlDataAdapter(sqlItem, connStr);
-
                 daItem.FillSchema(dsBelfray, SchemaType.Source, "Main");
                 daItem.Fill(dsBelfray, "Main");
-
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Main"];
-                //Resize
-                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 4)
@@ -1533,14 +1511,10 @@ namespace Belfray
                 //Load Menu DGV
                 sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100007'";
                 daItem = new SqlDataAdapter(sqlItem, connStr);
-
                 daItem.FillSchema(dsBelfray, SchemaType.Source, "Desert");
                 daItem.Fill(dsBelfray, "Desert");
-
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Desert"];
-                //Resize
-                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 5)
@@ -1548,14 +1522,10 @@ namespace Belfray
                 //Load Menu DGV
                 sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100008'";
                 daItem = new SqlDataAdapter(sqlItem, connStr);
-
                 daItem.FillSchema(dsBelfray, SchemaType.Source, "Drinks");
                 daItem.Fill(dsBelfray, "Drinks");
-
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Drinks"];
-                //Resize
-                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvMenuItemFormat();
             }
             if (cbMenuSelect.SelectedIndex == 6)
@@ -1563,14 +1533,10 @@ namespace Belfray
                 //Load Menu DGV
                 sqlItem = @"select itemNo AS 'Item No', itemDesc AS 'Item Desc', itemPrice AS 'Price' FROM Item WHERE typeID = 'TYP100010'";
                 daItem = new SqlDataAdapter(sqlItem, connStr);
-
                 daItem.FillSchema(dsBelfray, SchemaType.Source, "Kids");
                 daItem.Fill(dsBelfray, "Kids");
-
                 dgvMenuItems.Visible = true;
                 dgvMenuItems.DataSource = dsBelfray.Tables["Kids"];
-                //Resize
-                //dgvMenuItems.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvMenuItemFormat();
             }
 
@@ -1657,10 +1623,10 @@ namespace Belfray
 
                     drBookingItem = dsBelfray.Tables["BookingItem"].Rows.Find(new object[] { key1, key2 });
 
-                    if (drBookingItem["bookingNo"].Equals(key1) && drBookingItem["itemNo"].Equals(key2));                                                                                                            
-                        {
-                            drBookingItem.Delete();
-                        }
+                    if (drBookingItem["bookingNo"].Equals(key1) && drBookingItem["itemNo"].Equals(key2)) ;
+                    {
+                        drBookingItem.Delete();
+                    }
                     MessageBox.Show("Table has been removed from this booking.");
                     daBookingItem.Update(dsBelfray, "BookingItem");
 
@@ -1675,7 +1641,7 @@ namespace Belfray
                     string search2 = "TB01";
                     string search3 = "TB02";
 
-                    if (lblTblNoSelDisplay.Text.Contains(search) )
+                    if (lblTblNoSelDisplay.Text.Contains(search))
                     {
                         tableSize = 2;
                     }
@@ -1753,9 +1719,9 @@ namespace Belfray
         {
             try
             {
-                    dgvAddNewTables.Rows.Add(lblBookingNo.Text, lblTableNumDisplay.Text);
-                    int currentTableSize = Convert.ToInt32(numPartySize.Value);
-                    numPartySize.Value = currentTableSize + partySize;
+                dgvAddNewTables.Rows.Add(lblBookingNo.Text, lblTableNumDisplay.Text);
+                int currentTableSize = Convert.ToInt32(numPartySize.Value);
+                numPartySize.Value = currentTableSize + partySize;
             }
             catch (Exception exc)
             {
@@ -2105,9 +2071,9 @@ namespace Belfray
             //DB Connection
             //connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial catalog = BelfrayHotel; Integrated Security = true";
             //****Code for Seans Laptop*****
-            connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
+            //connStr = @"Data Source = .\SQLEXPRESS; Initial catalog = BelfrayHotel; Integrated Security = true";
             //Connection for Tech Machine***
-            //connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
+            connStr = @"Data Source = .; Initial catalog = BelfrayHotel; Integrated Security = true";
 
             formLoad = false;
 
@@ -2174,21 +2140,16 @@ namespace Belfray
             lblBookingNo.Text = Globals.bookSel.ToString();
             drBooking = dsBelfray.Tables["Booking"].Rows.Find(lblBookingNo.Text);
 
-            foreach (DataRow drBooking in dsBelfray.Tables["Booking"].Rows)
-            {
-                foreach (DataRow drBookingType in dsBelfray.Tables["BType"].Rows)
-                {
-                        string bDate = drBooking["checkInDate"].ToString();
-                        string bTime = drBooking["bookingTime"].ToString();
-                        partySize2 = Convert.ToInt32(drBooking["partySize"].ToString());
+            string bDate = drBooking["checkInDate"].ToString();
+            string bTime = drBooking["bookingTime"].ToString();
+            partySize2 = Convert.ToInt32(drBooking["partySize"].ToString());
 
-                        dateBooking.Value = Convert.ToDateTime(bDate);
-                        txtTime.Text = bTime;
-                        numPartySize.Value = partySize2;
-                        lblCustNo.Text = drBooking["customerNo"].ToString();
-                        cbPaymentTyp.SelectedValue = drBooking["paymentTypeID"].ToString();
-                }
-            }
+            dateBooking.Value = Convert.ToDateTime(bDate);
+            txtTime.Text = bTime;
+            numPartySize.Value = partySize2;
+            lblCustNo.Text = drBooking["customerNo"].ToString();
+            cbPaymentTyp.SelectedValue = drBooking["paymentTypeID"].ToString();
+
             //DGV Populate
             foreach (DataRow drTable in dsBelfray.Tables["BookingItem"].Rows)
             {
@@ -2230,13 +2191,6 @@ namespace Belfray
             bool available = true;
             Color colour = new Color();
 
-            //foreach (DataGridViewRow row in dgvBooking.Rows)
-            //{
-            //    if (row.Cells[1].Value.ToString().Equals(tableNumber.ToString()))
-            //    {
-            //        avail = false;
-            //    }
-            //}
             if (available == true)
             {
                 colour = Color.FromArgb(57, 181, 74);
